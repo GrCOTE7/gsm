@@ -4,8 +4,17 @@
 
 ### Win
 
+Éxécuter
+
+
 ```bash
 ./go
+```
+
+Lancer le build APK
+
+```bash
+./apk
 ```
 
 ### uv - Alternative à pip + env + flet run
