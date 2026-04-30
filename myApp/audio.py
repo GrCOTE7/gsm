@@ -1,17 +1,50 @@
 import asyncio
-import threading
+import io
+import math
+import struct
+import wave
 
 import flet as ft
+import flet_audio as fta
 
-try:
-    import winsound
-except ImportError:
-    winsound = None
+
+def _tone_wav_bytes(
+    frequency: int, duration_ms: int = 120, sample_rate: int = 22050
+) -> bytes:
+    frame_count = int(sample_rate * duration_ms / 1000)
+    amplitude = 0.35 * 32767
+    buffer = io.BytesIO()
+
+    with wave.open(buffer, "wb") as wav_file:
+        wav_file.setnchannels(1)
+        wav_file.setsampwidth(2)
+        wav_file.setframerate(sample_rate)
+
+        frames = bytearray()
+        for index in range(frame_count):
+            sample = math.sin(2 * math.pi * frequency * index / sample_rate)
+            frames.extend(struct.pack("<h", int(amplitude * sample)))
+
+        wav_file.writeframes(bytes(frames))
+
+    return buffer.getvalue()
 
 
 def main(page: ft.Page):
     page.title = "Countdown avec tic-tac"
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+
+    tick_audio = fta.Audio(
+        src=_tone_wav_bytes(930),
+        volume=1,
+        release_mode=fta.ReleaseMode.STOP,
+    )
+    tack_audio = fta.Audio(
+        src=_tone_wav_bytes(670),
+        volume=1,
+        release_mode=fta.ReleaseMode.STOP,
+    )
+    page.services.extend([tick_audio, tack_audio])
 
     secondes_input = ft.TextField(
         label="Durée (secondes)",
@@ -25,17 +58,9 @@ def main(page: ft.Page):
     task_id = 0
     is_running = False
 
-    def play_tick(seconds_left: int) -> None:
-        if winsound is None:
-            return
-
-        # Légère alternance de fréquence pour un effet "tic-tac".
-        freq = 930 if seconds_left % 2 == 0 else 670
-        threading.Thread(
-            target=winsound.Beep,
-            args=(freq, 120),
-            daemon=True,
-        ).start()
+    async def play_tick(seconds_left: int) -> None:
+        player = tick_audio if seconds_left % 2 == 0 else tack_audio
+        await player.play()
 
     async def run_countdown(current_task_id: int, total_seconds: int) -> None:
         nonlocal is_running, task_id
@@ -52,7 +77,7 @@ def main(page: ft.Page):
             remaining_text.value = str(sec)
             if sec > 0:
                 status_text.value = "Tic" if sec % 2 == 0 else "Tac"
-                play_tick(sec)
+                page.run_task(play_tick, sec)
             else:
                 status_text.value = "Terminé"
 

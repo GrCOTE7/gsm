@@ -1,4 +1,5 @@
 import flet as ft
+import flet_audio  # noqa: F401
 
 import tools.gc7 as gc7
 import tools.screen_utils as screen_utils
