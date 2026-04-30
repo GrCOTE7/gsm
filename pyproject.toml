@@ -1,0 +1,39 @@
+
+[project]
+name = "MyAppTestGC7"
+version = "0.0.1"
+description = "Up U!"
+readme = "README.md"
+requires-python = ">=3.13"
+authors = [{ name = "GrCOTE7", email = "GrCOTE7@gmail.com" }]
+dependencies = ["flet", "pymox_kit"]
+
+[project.optional-dependencies]
+dev = ["flet[all]"]
+
+[tool.flet]
+org = "com.mycompany"
+product = "Test GC7"
+company = "NewNRJ"
+copyright = "Copyright (C) 2026 by GrCOTE7"
+compile.app = true
+compile.packages = true
+compile.cleanup = true
+build_number = 1
+
+[tool.flet.app]
+path = "myApp"
+
+[tool.flet.android]
+split_per_abi = true
+min_sdk_version = 24
+target_sdk_version = 35
+
+[tool.flet.splash]
+android = false
+
+# [tool.flet.android.permission]
+# "android.permission.CAMERA" = true
+
+# [tool.flet.android.feature] # --android-features
+# "android.hardware.camera" = true
