@@ -99,15 +99,13 @@ uv run flet build apk -v
 
 For more details on building and signing `.apk` or `.aab`, refer to the [Android Packaging Guide](https://flet.dev/docs/publish/android/).
 
-### iOS
+### iOS & macOS (Need macOS comme système hôte)
 
 ```bash
 uv run flet build ipa -v
 ```
 
 For more details on building and signing `.ipa`, refer to the [iOS Packaging Guide](https://flet.dev/docs/publish/ios/).
-
-### macOS
 
 ```bash
 uv run flet build macos -v
@@ -126,6 +124,7 @@ For more details on building Linux package, refer to the [Linux Packaging Guide]
 ### Windows Pb de place
 
 Efface les builds précédents
+
 ```bash
 uv run rm -r c:\gsm\src\build\flutter\build -Force -ErrorAction SilentlyContinue
 rm -r $env:LOCALAPPDATA\Temp\serious_python_* -Force -ErrorAction SilentlyContinueflet build windows -v
