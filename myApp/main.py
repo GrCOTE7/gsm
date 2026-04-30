@@ -15,7 +15,7 @@ def main(page: ft.Page):
 
     # audio_main(page)
 
-    page.add(ft.Text(f"{APP_NAME} Ready."))
+    page.add(ft.Text(f"{APP_NAME} is ready."))
 
     print(gc7.curr_time(), page.route, ">")
 

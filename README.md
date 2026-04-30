@@ -2,6 +2,12 @@
 
 ## Run the app
 
+### Win
+
+```bash
+./go
+```
+
 ### uv - Alternative à pip + env + flet run
 
 Outil **ultra‑rapide** et minimaliste pour installer, exécuter et gérer des environnements.
