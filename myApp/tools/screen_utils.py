@@ -126,7 +126,8 @@ def gc7_rules(
     name: str = "Ready",
     left: int = 1912,
     # left: int = 1520,  # 1912 - 392
-    width: int = 392,
+    # width: int = 392,
+    width: int = 400,
     height: int = 1088,
     defaultColors: bool = True,
 ) -> None:

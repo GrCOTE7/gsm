@@ -11,7 +11,7 @@ VERSION = "0.0.1"
 
 
 def main(page: ft.Page):
-    screen_utils.gc7_rules(page, left=1520)  # 1520 ou 1912
+    screen_utils.gc7_rules(page, left=1526)  # 1526 ou 1912
     page.title = f"{APP_NAME} - v{VERSION}"
 
     audio_main(page)
