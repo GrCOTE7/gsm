@@ -10,6 +10,7 @@ import flet_audio as fta
 def build_beep_bytes() -> bytes:
     sr = 22050
     n = sr // 8
+    amplitude = 24000
     out = io.BytesIO()
     with wave.open(out, "wb") as w:
         w.setnchannels(1)
@@ -20,7 +21,7 @@ def build_beep_bytes() -> bytes:
                 struct.pack(
                     "<h",
                     int(
-                        14000
+                        amplitude
                         * math.sin(2 * math.pi * 1200 * i / sr)
                         * math.exp(-6 * i / n)
                     ),
