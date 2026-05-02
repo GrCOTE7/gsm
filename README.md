@@ -121,6 +121,12 @@ uv run flet build linux -v
 
 For more details on building Linux package, refer to the [Linux Packaging Guide](https://flet.dev/docs/publish/linux/).
 
+### Windows
+
+```bash
+flet build windows -v
+```
+
 ### Windows Pb de place
 
 Efface les builds précédents
