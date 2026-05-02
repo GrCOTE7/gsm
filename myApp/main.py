@@ -14,7 +14,7 @@ def main(page: ft.Page):
     screen_utils.gc7_rules(page, left=1526)  # 1526 ou 1912
     page.title = f"{APP_NAME} - v{VERSION}"
 
-    # audio_main(page)
+    audio_main(page)
 
     page.add(ft.Text(f"{APP_NAME} is ready."))
 

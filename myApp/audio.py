@@ -1,77 +1,31 @@
 import asyncio
-import io
-import math
-import struct
-import wave
 
 import flet as ft
-import flet_audio as fta
 
-
-def _beep_bytes() -> bytes:
-    sr = 22050
-    n = sr // 8
-    out = io.BytesIO()
-    with wave.open(out, "wb") as w:
-        w.setnchannels(1)
-        w.setsampwidth(2)
-        w.setframerate(sr)
-        w.writeframes(
-            b"".join(
-                struct.pack(
-                    "<h",
-                    int(
-                        14000
-                        * math.sin(2 * math.pi * 1200 * i / sr)
-                        * math.exp(-6 * i / n)
-                    ),
-                )
-                for i in range(n)
-            )
-        )
-    return out.getvalue()
+try:
+    from .beep_engine import BeepEngine
+    from .countdown import run_countdown
+except ImportError:
+    from beep_engine import BeepEngine
+    from countdown import run_countdown
 
 
 def main(page: ft.Page):
     page.title = "Countdown minimal"
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
-    
-    start = 10
+
+    start = 20
 
     txt = ft.Text(str(start), size=80, weight=ft.FontWeight.BOLD)
     status = ft.Text("", size=14)
     start_btn = ft.Button("Démarrer", visible=False)
-    beep = _beep_bytes()
-    player = fta.Audio(src=beep, volume=1, release_mode=fta.ReleaseMode.STOP)
-    page.services.append(player)
+    beep = BeepEngine(page)
     page.add(txt, status, start_btn)
 
     is_running = False
-    play_in_flight = False
 
-    def reset_player() -> None:
-        nonlocal player, play_in_flight
-        for service in list(page.services):
-            if isinstance(service, fta.Audio):
-                page.services.remove(service)
-        player = fta.Audio(src=beep, volume=1, release_mode=fta.ReleaseMode.STOP)
-        page.services.append(player)
-        play_in_flight = False
-
-    async def safe_play() -> None:
-        nonlocal play_in_flight
-        if play_in_flight:
-            return
-        play_in_flight = True
-        try:
-            await player.play()
-        except RuntimeError:
-            pass
-        finally:
-            play_in_flight = False
-
-    async def run_countdown() -> None:
+    async def run_countdown_ui() -> None:
         nonlocal is_running
         if is_running:
             return
@@ -79,33 +33,38 @@ def main(page: ft.Page):
         start_btn.disabled = True
         page.update()
 
-        for sec in range(start, -1, -1):
+        def on_tick(sec: int) -> None:
             txt.value = str(sec)
             page.update()
-            if sec > 0:
-                page.run_task(safe_play)
-                await asyncio.sleep(1)
+
+        async def on_step(sec: int) -> None:
+            in_first_five = sec > start - 5
+            in_last_five = sec <= 5
+            if in_first_five or in_last_five:
+                page.run_task(beep.safe_play)
+
+        await run_countdown(start=start, on_tick=on_tick, on_step=on_step)
 
         is_running = False
         start_btn.disabled = False
         page.update()
 
     async def boot() -> None:
-        reset_player()
+        beep.reset_player()
         await asyncio.sleep(0.2)
         try:
-            await player.play()
-            await run_countdown()
+            await beep.play()
+            await run_countdown_ui()
         except RuntimeError:
-            status.value = "Clique sur Demarrer pour activer le son"
+            status.value = "Clique sur Démarrer pour activer le son"
             start_btn.visible = True
             page.update()
 
     def on_start(_):
-        reset_player()
+        beep.reset_player()
         status.value = ""
         page.update()
-        page.run_task(run_countdown)
+        page.run_task(run_countdown_ui)
 
     start_btn.on_click = on_start
     page.run_task(boot)
