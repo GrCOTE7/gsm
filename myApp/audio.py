@@ -36,8 +36,10 @@ def main(page: ft.Page):
     page.title = "Countdown minimal"
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    
+    start = 10
 
-    txt = ft.Text("10", size=80, weight=ft.FontWeight.BOLD)
+    txt = ft.Text(str(start), size=80, weight=ft.FontWeight.BOLD)
     status = ft.Text("", size=14)
     start_btn = ft.Button("Démarrer", visible=False)
     beep = _beep_bytes()
@@ -77,7 +79,7 @@ def main(page: ft.Page):
         start_btn.disabled = True
         page.update()
 
-        for sec in range(10, -1, -1):
+        for sec in range(start, -1, -1):
             txt.value = str(sec)
             page.update()
             if sec > 0:
