@@ -1,6 +1,6 @@
 import flet as ft
 from typing import Callable
-from tools.constants import theme
+from .constants import theme
 
 
 def get_colors_theme(page: ft.Page) -> dict:

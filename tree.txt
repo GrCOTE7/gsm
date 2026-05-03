@@ -1,0 +1,34 @@
+C:\gsm
+├── myApp
+│   ├── assets
+│   │   └── icon.png
+│   ├── gc7_tools
+│   │   ├── __init__.py
+│   │   ├── constants.py
+│   │   ├── gc7.py
+│   │   ├── home_ui.py
+│   │   ├── locale_utils.py
+│   │   ├── screen_utils.py
+│   │   └── tree_pretty.py
+│   ├── tools
+│   │   ├── __init__.py
+│   │   ├── constants.py
+│   │   ├── gc7.py
+│   │   ├── home_ui.py
+│   │   ├── locale_utils.py
+│   │   └── screen_utils.py
+│   ├── __init__.py
+│   ├── apk.ps1
+│   ├── audio.py
+│   ├── beep_engine.py
+│   ├── countdown.py
+│   ├── go.ps1
+│   └── main.py
+├── .gitignore
+├── apk.ps1
+├── go.ps1
+├── pyproject.toml
+├── README.md
+├── requirements.txt
+├── tree.txt
+└── uv.lock

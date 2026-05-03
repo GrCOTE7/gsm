@@ -1,7 +1,7 @@
 from datetime import datetime as dt
 
 import flet as ft
-import tools.screen_utils as screen_utils
+from . import screen_utils
 
 THEME_MODE = ft.ThemeMode.DARK
 

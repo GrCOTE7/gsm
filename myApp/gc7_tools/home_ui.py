@@ -1,15 +1,13 @@
 import flet as ft
 
-from tools.constants import theme
-import tools.gc7 as gc7
-import tools.screen_utils as screen_utils
+from .constants import theme
+from . import gc7
+from . import screen_utils
 
 
 def status_line(current_time: str, page: ft.Page, sample_value: str) -> str:
     current_time = gc7.curr_time()
-    theme_label = (
-        "sombre" if page.theme_mode == ft.ThemeMode.DARK else "clair"
-    )
+    theme_label = "sombre" if page.theme_mode == ft.ThemeMode.DARK else "clair"
     return f"{current_time} - {page.route} - Thème {theme_label} - {sample_value}"
 
 
