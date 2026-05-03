@@ -127,7 +127,7 @@ def gc7_rules(
     left: int = 1912,
     # left: int = 1520,  # 1912 - 392
     # width: int = 392,
-    width: int = 400,
+    width: int = 400, # Note : 2 * 8 de marge → page.windows_width = 384
     height: int = 1088,
     defaultColors: bool = True,
 ) -> None:
