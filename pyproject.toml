@@ -1,6 +1,6 @@
 
 [project]
-name = "TicTac_5_Test"
+name = "GSM_Test_001"
 version = "0.0.1"
 description = "Up U!"
 readme = "README.md"
@@ -13,7 +13,7 @@ dev = ["flet[all]"]
 
 [tool.flet]
 org = "com.mycompany"
-product = "Test GC7"
+product = "Test GC7 001"
 company = "NewNRJ"
 copyright = "Copyright (C) 2026 by GrCOTE7"
 compile.app = true

@@ -15,7 +15,7 @@ def main(page: ft.Page):
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
 
-    start = 20
+    start = 15
 
     txt = ft.Text(str(start), size=80, weight=ft.FontWeight.BOLD)
     status = ft.Text("", size=14)
