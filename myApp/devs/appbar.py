@@ -10,7 +10,7 @@ def Drawer(page: ft.Page) -> ft.NavigationDrawer:
             target_route = NAV_ITEMS[index]["route"]
             if page.route != target_route:
                 page.run_task(page.push_route, target_route)
-        page.run_task(page.close_drawer)
+        # pas besoin de close_drawer: push_route reconstruit la vue et ferme le drawer
 
     drawer = ft.NavigationDrawer(
         controls=[
