@@ -25,9 +25,9 @@ def named_view(
     if extra is not None:
         controls.extend([ft.Container(height=16), extra])
 
-    return ft.Container(
+    return ft.SafeArea(
         expand=True,
-        padding=ft.Padding(top=24, right=20, bottom=20, left=20),
+        minimum_padding=ft.Padding(top=24, right=20, bottom=20, left=20),
         content=ft.Column(
             expand=True,
             horizontal_alignment=ft.CrossAxisAlignment.CENTER,

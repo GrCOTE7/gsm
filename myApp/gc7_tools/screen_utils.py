@@ -121,14 +121,15 @@ def _is_mobile_platform(page: ft.Page) -> bool:
 
 
 def gc7_rules(
+    # endu identique Galaxy A5: 373 x 742
     page: ft.Page,
     mode: str = "DARK",
     name: str = "Ready",
     left: int = 1912,
     # left: int = 1520,  # 1912 - 392
-    # width: int = 392,
-    width: int = 400, # Note : 2 * 8 de marge → page.windows_width = 384
-    height: int = 1088,
+    # width: int = 392, ou 400
+    width: int = 373, # Note : 2 * 8 de marge → page.windows_width = 384 // 392
+    height: int = 742, # Note : 1088 - 24 (padding top) - 20 (padding bottom) = 1044 → page.window_height = 1044
     defaultColors: bool = True,
 ) -> None:
     configure_window(page, left=left, width=width, height=height)
