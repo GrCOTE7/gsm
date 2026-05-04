@@ -1,6 +1,6 @@
 
 [project]
-name = "Simple_Nav_002"
+name = "Simple_Nav_003"
 version = "0.0.1"
 description = "Up U!"
 readme = "README.md"
@@ -13,7 +13,7 @@ dev = ["flet[all]"]
 
 [tool.flet]
 org = "com.mycompany"
-product = "Simple Nav 002"
+product = "Simple Nav 003"
 company = "NewNRJ"
 copyright = "Copyright (C) 2026 by GrCOTE7"
 compile.app = true

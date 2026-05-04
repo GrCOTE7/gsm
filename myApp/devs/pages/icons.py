@@ -34,9 +34,10 @@ def build() -> ft.Control:
     ]
     sport_container = ft.Container(
         width=320,
+        height=500,
         padding=ft.padding.symmetric(horizontal=10, vertical=3),
         border_radius=7,
-        bgcolor=ft.Colors.SURFACE_CONTAINER_HIGHEST,
+        # bgcolor=ft.Colors.SURFACE_CONTAINER_HIGHEST,
         content=ft.Column(
             [
                 ft.Row(

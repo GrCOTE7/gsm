@@ -5,7 +5,7 @@ import gc7_tools.gc7 as gc7
 import gc7_tools.screen_utils as screen_utils
 
 from devs.appbar import AppBar, Drawer
-from devs.pages import home, sport, settings
+from devs.pages import home, sport, icons, settings
 
 APP_NAME = "MyApp Test GC7"
 VERSION = "0.0.1"
@@ -13,6 +13,7 @@ VERSION = "0.0.1"
 VIEWS = {
     "/home": home.build,
     "/sport": sport.build,
+    "/icons": icons.build,
     "/settings": settings.build,
 }
 

@@ -14,6 +14,12 @@ NAV_ITEMS = [
         "selected_icon": ft.Icons.DIRECTIONS_RUN,
     },
     {
+        "route": "/icons",
+        "label": "Icônes",
+        "icon": ft.Icons.DIRECTIONS_RUN_OUTLINED,
+        "selected_icon": ft.Icons.DIRECTIONS_RUN,
+    },
+    {
         "route": "/settings",
         "label": "Parametres",
         "icon": ft.Icons.SETTINGS_OUTLINED,
