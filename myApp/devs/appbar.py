@@ -1,3 +1,5 @@
+import asyncio
+
 import flet as ft
 
 from devs.navigation import NAV_ITEMS, route_to_index
@@ -28,17 +30,44 @@ def Drawer(page: ft.Page) -> ft.NavigationDrawer:
 
 
 def AppBar(page: ft.Page) -> ft.AppBar:
-    def open_drawer(e) -> None:
-        if page.views:
-            top_view = page.views[-1]
-            if top_view.drawer is not None:
+    async def open_drawer_safe() -> None:
+        if getattr(page, "_drawer_opening", False):
+            return
+
+        setattr(page, "_drawer_opening", True)
+        try:
+            for attempt in range(2):
+                if not page.views:
+                    return
+
+                top_view = page.views[-1]
+                if top_view.drawer is None:
+                    return
+
                 top_view.drawer.selected_index = route_to_index(page.route)
-        page.run_task(page.show_drawer)
+
+                try:
+                    await page.show_drawer()
+                    return
+                except RuntimeError as err:
+                    msg = str(err)
+                    timed_out = (
+                        "Timeout waiting for invoke method listener" in msg
+                        and ".show_drawer" in msg
+                    )
+                    if not timed_out or attempt == 1:
+                        raise
+                    await asyncio.sleep(0.05)
+        finally:
+            setattr(page, "_drawer_opening", False)
+
+    def open_drawer(e) -> None:
+        page.run_task(open_drawer_safe)
 
     return ft.AppBar(
         leading=ft.IconButton(icon=ft.Icons.MENU, on_click=open_drawer),
         leading_width=48,
-        title=ft.Text("MyApp"),
+        title=ft.Text("GC7 Test"),
         center_title=False,
         bgcolor=ft.Colors.SURFACE,
         elevation=2,

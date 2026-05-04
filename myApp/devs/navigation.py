@@ -8,11 +8,17 @@ NAV_ITEMS = [
         "selected_icon": ft.Icons.HOME,
     },
     {
+        "route": "/sport",
+        "label": "Sport",
+        "icon": ft.Icons.SETTINGS_OUTLINED,
+        "selected_icon": ft.Icons.SETTINGS,
+    },
+    {
         "route": "/settings",
         "label": "Parametres",
         "icon": ft.Icons.SETTINGS_OUTLINED,
         "selected_icon": ft.Icons.SETTINGS,
-    },
+    }
 ]
 
 

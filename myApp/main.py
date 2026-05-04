@@ -1,16 +1,18 @@
 import flet as ft
 import flet_audio  # noqa: F401
 
-from devs.appbar import AppBar, Drawer
-from devs import home, settings
 import gc7_tools.gc7 as gc7
 import gc7_tools.screen_utils as screen_utils
+
+from devs.appbar import AppBar, Drawer
+from devs.pages import home, sport, settings
 
 APP_NAME = "MyApp Test GC7"
 VERSION = "0.0.1"
 
 VIEWS = {
     "/home": home.build,
+    "/sport": sport.build,
     "/settings": settings.build,
 }
 
@@ -18,6 +20,9 @@ VIEWS = {
 def main(page: ft.Page):
     screen_utils.gc7_rules(page, left=1526)  # 1526 ou 1912
     page.title = f"{APP_NAME} - v{VERSION}"
+
+    def invite() -> None:
+        print(gc7.curr_time(), page.route, ">")
 
     def build_view(route: str) -> ft.View:
         builder = VIEWS.get(route, home.build)
@@ -58,8 +63,8 @@ def main(page: ft.Page):
     else:
         render_current_route()
 
-    print(gc7.curr_time(), page.route, ">")
-    print(page.width)
+    invite()
+    # print(page.width)
 
 
 ft.run(main)

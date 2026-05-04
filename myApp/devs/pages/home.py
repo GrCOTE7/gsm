@@ -1,6 +1,6 @@
 import flet as ft
 
-from devs.page_content import named_view
+from devs.pages.page_template import named_view
 
 
 def build() -> ft.Control:

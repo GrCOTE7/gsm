@@ -1,6 +1,6 @@
 import flet as ft
 
-from devs.page_content import named_view
+from devs.pages.page_template import named_view
 
 
 def build() -> ft.Control:
@@ -11,4 +11,11 @@ def build() -> ft.Control:
         "ullamcorper tristique, libero lectus vehicula elit, vitae posuere "
         "quam erat at magna. Donec porta, turpis nec eleifend tincidunt, "
         "massa turpis gravida sapien, sed feugiat odio velit ut nisl of Settings.",
+        extra=ft.Container(
+            width=320,
+            padding=ft.Padding.symmetric(horizontal=10, vertical=3),
+            border_radius=7,
+            bgcolor=ft.Colors.SURFACE_CONTAINER_HIGHEST,
+            content=ft.Column(controls=[ft.Text("Oki 21a"), ft.Text("OKi 21b")]),
+        ),
     )
