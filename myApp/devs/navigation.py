@@ -16,7 +16,7 @@ NAV_ITEMS = [
     {
         "route": "/icons",
         "label": "Icônes",
-        "icon": ft.Icons.DIRECTIONS_RUN_OUTLINED,
+        "icon": ft.Icons.APPS,
         "selected_icon": ft.Icons.DIRECTIONS_RUN,
     },
     {

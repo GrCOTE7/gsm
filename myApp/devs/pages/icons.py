@@ -5,6 +5,7 @@ from devs.pages.page_template import named_view
 
 def build() -> ft.Control:
     icons_list = [
+        "APPS",
         "HOME",
         "DIRECTIONS_RUN",
         "SETTINGS",
@@ -55,11 +56,11 @@ def build() -> ft.Control:
     )
 
     return named_view(
-        "Sport",
-        "Sport Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non "
+        "🎛️" + "Icônes",
+        "Icônes Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non "
         "urna sit amet augue tempor faucibus. Cras facilisis, purus ut "
         "ullamcorper tristique, libero lectus vehicula elit, vitae posuere "
         "quam erat at magna. Donec porta, turpis nec eleifend tincidunt, "
-        "massa turpis gravida sapien, sed feugiat odio velit ut nisl of Sport.",
+        "massa turpis gravida sapien, sed feugiat odio velit ut nisl of Icônes.",
         sport_container,
     )
