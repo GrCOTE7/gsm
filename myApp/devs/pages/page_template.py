@@ -1,9 +1,16 @@
 import flet as ft
 
 
-def named_view(title: str, body: str, extra: ft.Control | None = None) -> ft.Control:
+def named_view(
+    title: str | ft.Control, body: str, extra: ft.Control | None = None
+) -> ft.Control:
+    title_control = (
+        ft.Text(title, size=28, weight=ft.FontWeight.W_600)
+        if isinstance(title, str)
+        else title
+    )
     controls = [
-        ft.Text(title, size=28, weight=ft.FontWeight.W_600),
+        title_control,
         ft.Container(height=16),
         ft.Container(
             width=320,

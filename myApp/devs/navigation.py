@@ -10,15 +10,15 @@ NAV_ITEMS = [
     {
         "route": "/sport",
         "label": "Sport",
-        "icon": ft.Icons.SETTINGS_OUTLINED,
-        "selected_icon": ft.Icons.SETTINGS,
+        "icon": ft.Icons.DIRECTIONS_RUN_OUTLINED,
+        "selected_icon": ft.Icons.DIRECTIONS_RUN,
     },
     {
         "route": "/settings",
         "label": "Parametres",
         "icon": ft.Icons.SETTINGS_OUTLINED,
         "selected_icon": ft.Icons.SETTINGS,
-    }
+    },
 ]
 
 
