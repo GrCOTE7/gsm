@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/GrCOTE7/gsm/compare/v1.0.0...v1.0.1) (2026-05-18)
+
+
+### Bug Fixes
+
+* close app auto when upgrade ([4b3baeb](https://github.com/GrCOTE7/gsm/commit/4b3baeb9b14397818bd3b72c2b713163f60fac4e))
+
 # 1.0.0 (2026-05-18)
 
 
