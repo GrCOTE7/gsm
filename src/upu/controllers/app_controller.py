@@ -302,7 +302,7 @@ class AppController:
         if not closed:
             self._show_snackbar(
                 "Installation lancee. Si Open ne reagit pas, revenez manuellement a l'app.",
-                4200,
+                7700,
             )
 
     def _install_update(self, release_url: str) -> None:
