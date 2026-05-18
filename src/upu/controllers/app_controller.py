@@ -273,6 +273,38 @@ class AppController:
         except OSError as exc:
             return 1, "", str(exc)
 
+    def _close_app_best_effort(self) -> bool:
+        # Sur mobile, plusieurs versions de Flet exposent des APIs differentes.
+        # On tente la fermeture via window.close(), puis via des variantes connues.
+        try:
+            window = getattr(self.page, "window", None)
+            close_fn = getattr(window, "close", None) if window is not None else None
+            if callable(close_fn):
+                close_fn()
+                return True
+        except Exception:
+            pass
+
+        for attr_name in ("window_close", "close"):
+            try:
+                fn = getattr(self.page, attr_name, None)
+                if callable(fn):
+                    fn()
+                    return True
+            except Exception:
+                continue
+
+        return False
+
+    async def _close_app_after_install_delay(self, delay_seconds: float = 1.2) -> None:
+        await asyncio.sleep(delay_seconds)
+        closed = self._close_app_best_effort()
+        if not closed:
+            self._show_snackbar(
+                "Installation lancee. Si Open ne reagit pas, revenez manuellement a l'app.",
+                4200,
+            )
+
     def _install_update(self, release_url: str) -> None:
 
         print(">>> CLICK REÇU DANS _install_update()")
@@ -283,6 +315,14 @@ class AppController:
         opened = open_release_url(self.page, release_url, force=True)
         if not opened:
             self._show_snackbar("Impossible d'ouvrir le lien de mise a jour.", 3000)
+            return
+
+        if self._is_mobile_platform():
+            self._show_snackbar(
+                "Installateur ouvert. Fermeture de l'app pour permettre Open.",
+                2600,
+            )
+            self.page.run_task(self._close_app_after_install_delay)
             return
 
         self._show_snackbar(
