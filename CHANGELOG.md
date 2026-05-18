@@ -3,6 +3,13 @@
 
 ### Bug Fixes
 
+* Nett ([3d9bfc1](https://github.com/GrCOTE7/gsm/commit/3d9bfc17dc2bd800407c43e773ae6b4109c7abdf))
+
+# 1.0.0 (2026-05-18)
+
+
+### Bug Fixes
+
 * Nett ([a9612e3](https://github.com/GrCOTE7/gsm/commit/a9612e3c1e29a388763b7b050f56a630ea15f028))
 
 ## [1.0.38](https://github.com/GrCOTE7/gsm/compare/v1.0.37...v1.0.38) (2026-05-18)
