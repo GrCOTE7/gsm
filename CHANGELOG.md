@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/GrCOTE7/gsm/compare/v1.0.2...v1.0.3) (2026-05-18)
+
+
+### Bug Fixes
+
+* close app forced ([6238fad](https://github.com/GrCOTE7/gsm/commit/6238fad6da64c39d8ec0af12640ba02e6792409f))
+
 ## [1.0.2](https://github.com/GrCOTE7/gsm/compare/v1.0.1...v1.0.2) (2026-05-18)
 
 
