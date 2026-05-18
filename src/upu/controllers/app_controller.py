@@ -297,13 +297,14 @@ class AppController:
         return False
 
     async def _close_app_after_install_delay(self, delay_seconds: float = 1.2) -> None:
+        import sys
+
         await asyncio.sleep(delay_seconds)
         closed = self._close_app_best_effort()
         if not closed:
-            self._show_snackbar(
-                "Installation lancee. Si Open ne reagit pas, revenez manuellement a l'app.",
-                7700,
-            )
+            # Ne pas afficher de snackbar, forcer la fermeture du process (sur mobile)
+            if self._is_mobile_platform():
+                sys.exit(0)
 
     def _install_update(self, release_url: str) -> None:
 
