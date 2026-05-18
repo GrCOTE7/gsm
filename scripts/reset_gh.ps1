@@ -51,7 +51,7 @@ git remote add origin $remote
 
 # Push forcé
 Write-Host "Push forcé vers GitHub ..."
-git push -f origin main
+# git push -f origin main
 
 Write-Host ""
 Write-Host "=== RESET TERMINE AVEC SUCCES ===" -ForegroundColor Green
