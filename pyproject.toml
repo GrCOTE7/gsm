@@ -1,0 +1,47 @@
+[project]
+name = "UpU"
+version = "0.0.0"
+description = "Up U!"
+readme = "README.md"
+requires-python = ">=3.13"
+authors = [{ name = "GrCOTE7", email = "GrCOTE7@gmail.com" }]
+dependencies = [
+    "flet==0.85.*",
+    "flet-audio",
+    "certifi",
+    "google-api-python-client>=2.196.0",
+    "google-auth>=2.51.0",
+    "google-auth-httplib2>=0.4.0",
+    "google-auth-oauthlib>=1.4.0",
+    "pymox_kit",
+]
+
+[project.optional-dependencies]
+dev = ["flet[all]==0.85.*", "pytest>=8.0.0"]
+
+[tool.flet]
+org = "com.mycompany"
+product = "Up You!"
+company = "NewNRJ"
+copyright = "Copyright (C) 2026 by GrCOTE7"
+compile.app = true
+compile.packages = true
+cleanup.packages = false
+build_number = 1
+
+[tool.flet.app]
+path = "src"
+
+[tool.flet.android]
+split_per_abi = false
+min_sdk_version = 24
+target_sdk_version = 35
+
+[tool.flet.splash]
+android = false
+
+# [tool.flet.android.permission]
+# "android.permission.CAMERA" = true
+
+# [tool.flet.android.feature] # --android-features
+# "android.hardware.camera" = true

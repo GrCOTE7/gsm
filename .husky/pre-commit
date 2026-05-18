@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+set -e
+
+ROOT_DIR="$(dirname -- "$0")/.."
+
+# Prefer uv-managed environment so dev dependencies (pytest) are available.
+if command -v uv >/dev/null 2>&1; then
+    cd "$ROOT_DIR"
+    uv run --extra dev python -m pytest -q
+    exit $?
+fi
+
+if [ -x "$ROOT_DIR/.venv/bin/python" ]; then
+    PYTHON_BIN="$ROOT_DIR/.venv/bin/python"
+    elif [ -x "$ROOT_DIR/.venv/Scripts/python.exe" ]; then
+    PYTHON_BIN="$ROOT_DIR/.venv/Scripts/python.exe"
+    elif command -v python3 >/dev/null 2>&1; then
+    PYTHON_BIN="$(command -v python3)"
+    elif command -v python >/dev/null 2>&1; then
+    PYTHON_BIN="$(command -v python)"
+else
+    echo "Python executable not found for pytest" >&2
+    exit 1
+fi
+
+"$PYTHON_BIN" -m pytest -q
