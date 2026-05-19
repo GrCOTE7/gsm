@@ -8,9 +8,9 @@ from upu.views.page_template import named_view
 
 def build() -> ft.Control:
 
-    def close_app(e: ft.ControlEvent) -> None:
+    async def close_app(e: ft.ControlEvent) -> None:
         _android_force_exit()  # no-op hors Android
-        e.page.window.close()
+        await e.page.window.close()
 
     tests_container = ft.Row(
         [

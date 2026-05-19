@@ -197,7 +197,7 @@ def _env_int(name: str, default: int = 0) -> int:
 
 
 APP_NAME = "Up You!"
-DEFAULT_ROUTE = "/home"
+DEFAULT_ROUTE = "/tests"
 WINDOW_LEFT = _env_int("UPU_WINDOW_LEFT", 0)  # 1526 - 1912
 print(f"{WINDOW_LEFT=}")
 GITHUB_OWNER = "GrCOTE7"
