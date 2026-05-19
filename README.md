@@ -147,8 +147,8 @@ Mise à jour à partir de GH - releases
 'fix!' or 'feat!' : major ❌
 'BREAKING CHANGE:'
 
-SyntaxeExemple :
-! après n'importe quel typ	feat!:, fix!:, chore!:, refactor!: …
+Essai : Exemples :
+! après n'importe quel type feat!:, fix!:, chore!:, refactor!: …
 BREAKING CHANGE: dans le footer du message sur n'importe quel commit
 
 ---
