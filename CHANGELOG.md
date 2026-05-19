@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/GrCOTE7/gsm/compare/v1.0.6...v1.0.7) (2026-05-19)
+
+
+### Bug Fixes
+
+* ↑ redir default route ([c9aaacb](https://github.com/GrCOTE7/gsm/commit/c9aaacbf612f149630c068ce52177533ae35a9e8))
+
 ## [1.0.6](https://github.com/GrCOTE7/gsm/compare/v1.0.5...v1.0.6) (2026-05-19)
 
 
