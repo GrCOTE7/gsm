@@ -142,6 +142,9 @@ For more details on building Windows package, refer to the [Windows Packaging Gu
 Process des updates :
 
 Mise à jour à partir de GH - releases
+fix: patch
+feat: minor
+fix! or feat! : major
 
 ---
 
