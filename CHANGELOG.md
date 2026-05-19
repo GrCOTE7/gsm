@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/GrCOTE7/gsm/compare/v1.1.2...v1.2.0) (2026-05-19)
+
+
+### Features
+
+* PAge Tests ([a0b3225](https://github.com/GrCOTE7/gsm/commit/a0b3225802a3b3214aa165c11d6492f828e0fb68))
+
 ## [1.1.2](https://github.com/GrCOTE7/gsm/compare/v1.1.1...v1.1.2) (2026-05-19)
 
 
