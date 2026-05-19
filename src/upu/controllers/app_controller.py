@@ -318,17 +318,31 @@ class AppController:
             return
 
         if self._is_mobile_platform():
-            self._show_snackbar(
-                "Installateur ouvert. Fermeture de l'app pour permettre Open.",
-                2600,
-            )
-            self.page.run_task(self._close_app_after_install_delay)
+            self.page.run_task(self._handle_successful_update)
             return
 
         self._show_snackbar(
             f"Si rien ne s'ouvre, consultez le log: {get_update_log_path()}",
             7700,
         )
+
+    async def _handle_successful_update(self) -> None:
+        update_dialog = ft.AlertDialog(
+            modal=True,
+            title=ft.Text("Installation"),
+            content=ft.Text(
+                "L'application va maintenant se fermer pour permettre l'installation. "
+                "Veuillez la rouvrir manuellement après la mise à jour."
+            ),
+            actions=[
+                ft.TextButton(
+                    "Compris", on_click=lambda _: self._close_app_best_effort()
+                )
+            ],
+        )
+        self.page.dialog = update_dialog
+        update_dialog.open = True
+        await self.page.update_async()
 
     async def _view_pop(self, e: ft.ViewPopEvent) -> None:
         if e.view is not None and e.view in self.page.views:
