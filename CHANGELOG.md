@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/GrCOTE7/gsm/compare/v1.0.4...v1.0.5) (2026-05-19)
+
+
+### Bug Fixes
+
+* try redirrection after upgrade ([71045f4](https://github.com/GrCOTE7/gsm/commit/71045f47d9698dbfacc4ed94bef2136a1fb54681))
+
 ## [1.0.4](https://github.com/GrCOTE7/gsm/compare/v1.0.3...v1.0.4) (2026-05-19)
 
 
