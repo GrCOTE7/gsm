@@ -144,7 +144,7 @@ Process des updates :
 Mise à jour à partir de GH - releases
 'fix:' patch
 'feat:' minor
-'fix!' or 'feat!' : major
+'fix!' or 'feat!' : major ❌
 
 ---
 
