@@ -20,6 +20,8 @@ from upu.config import (
     is_update_available,
 )
 from upu.routes.registry import get_view_builder, has_route
+from upu.services.android_bridge import force_exit as _android_force_exit
+from upu.services.android_bridge import launch_url_intent as _android_launch_url
 from upu.services.release_service import get_update_log_path, open_release_url
 from upu.ui.navigation import AppBar, Drawer
 
@@ -367,53 +369,42 @@ class AppController:
         )
 
     async def _open_url_and_close_parallel(self, release_url: str) -> None:
-        """Ouvre l'URL dans un process separe et ferme l'app en parallele."""
+        """Ouvre l'URL via Intent Android et ferme l'app en parallele.
+
+        Les deux coroutines s'executent simultanement via asyncio.gather :
+        - _open : Intent Android (jnius) -> Flet launch_url -> webbrowser
+        - _close : attend 1.5 s, puis System.exit (jnius) -> Flet window.close
+        """
 
         async def _open() -> None:
+            # 1. Intent Android direct via jnius — le plus fiable sur Android.
+            opened = await asyncio.to_thread(_android_launch_url, release_url)
+            if opened:
+                return
+            # 2. Flet launch_url — fallback si jnius non disponible.
             try:
-                print(f">>> _open_url_and_close_parallel: launch_url({release_url})")
                 await self.page.launch_url(release_url)
-                print(">>> _open_url_and_close_parallel: launch_url OK")
+                return
             except Exception as exc:
-                print(
-                    f">>> _open_url_and_close_parallel: launch_url echec ({exc}), fallback webbrowser"
+                lg.warning(
+                    "_open_url_and_close_parallel._open: launch_url echec: %s", exc
                 )
-                try:
-                    await asyncio.to_thread(webbrowser.open, release_url)
-                except Exception as exc2:
-                    print(
-                        f">>> _open_url_and_close_parallel: webbrowser echec ({exc2})"
-                    )
+            # 3. Dernier recours : webbrowser dans un thread.
+            try:
+                await asyncio.to_thread(webbrowser.open, release_url)
+            except Exception as exc:
+                lg.warning(
+                    "_open_url_and_close_parallel._open: webbrowser echec: %s", exc
+                )
 
         async def _close() -> None:
             await asyncio.sleep(1.5)
-            print(">>> _open_url_and_close_parallel: fermeture app")
-            try:
-                window = getattr(self.page, "window", None)
-                if window is not None:
-                    close_fn = getattr(window, "close", None)
-                    if callable(close_fn):
-                        if asyncio.iscoroutinefunction(close_fn):
-                            await close_fn()
-                        else:
-                            close_fn()
-                        return
-            except Exception:
-                pass
-            for attr in ("window_close", "close"):
-                try:
-                    fn = getattr(self.page, attr, None)
-                    if callable(fn):
-                        if asyncio.iscoroutinefunction(fn):
-                            await fn()
-                        else:
-                            fn()
-                        return
-                except Exception:
-                    continue
+            # 1. System.exit via Android bridge — ne retourne jamais si OK.
+            await asyncio.to_thread(_android_force_exit)
+            # 2. Atteint uniquement si System.exit a echoue (desktop / tests).
+            await self._close_app_after_install_delay(0)
 
         await asyncio.gather(_open(), _close(), return_exceptions=True)
-        print(">>> _open_url_and_close_parallel: done")
 
     async def _view_pop(self, e: ft.ViewPopEvent) -> None:
         if e.view is not None and e.view in self.page.views:
