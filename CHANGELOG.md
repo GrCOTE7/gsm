@@ -1,3 +1,12 @@
+## [1.1.1](https://github.com/GrCOTE7/gsm/compare/v1.1.0...v1.1.1) (2026-05-19)
+
+
+### Bug Fixes
+
+* clean requirements ([7b508cd](https://github.com/GrCOTE7/gsm/commit/7b508cdcc9a3152295a0ae86e68015eccea6f733))
+* rename req ([7cccfad](https://github.com/GrCOTE7/gsm/commit/7cccfaddde02826d73a3910279bb4f0a8c2ddaa5))
+* try a patch ([e56342d](https://github.com/GrCOTE7/gsm/commit/e56342d19ab388c034b8aa05abc90cf58abb3cee))
+
 # [1.1.0](https://github.com/GrCOTE7/gsm/compare/v1.0.10...v1.1.0) (2026-05-19)
 
 
