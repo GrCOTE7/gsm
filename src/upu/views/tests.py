@@ -6,7 +6,19 @@ from upu.views.page_template import named_view
 
 
 def build() -> ft.Control:
-    tests_container = ft.Text("Tests OK")
+
+    def close_app():
+        print("Je vais fermer")
+
+    tests_container = ft.Row(
+        [
+            ft.Button(
+                "Ouvrir Google",
+                on_click=lambda _: webbrowser.open("https://www.google.com"),
+            ),
+            ft.Button("Fermer l'application", on_click=close_app),
+        ]
+    )
 
     return named_view(
         ft.Row(
