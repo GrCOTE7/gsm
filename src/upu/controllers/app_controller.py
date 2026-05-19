@@ -40,10 +40,7 @@ class AppController:
         self.page.on_route_change = self._route_change
         self.page.on_view_pop = self._view_pop
 
-        if not has_route(self.page.route):
-            self.page.run_task(self.page.push_route, DEFAULT_ROUTE)
-        else:
-            self._render_route(self.page.route or DEFAULT_ROUTE)
+        self.page.run_task(self.page.push_route, DEFAULT_ROUTE)
 
         self._invite()
 
