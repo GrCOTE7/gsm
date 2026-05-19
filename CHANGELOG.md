@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/GrCOTE7/gsm/compare/v1.2.0...v1.2.1) (2026-05-19)
+
+
+### Bug Fixes
+
+* try close app in tests page ([2989496](https://github.com/GrCOTE7/gsm/commit/2989496f138bdcb18791f3614601eaca55809ebe))
+
 # [1.2.0](https://github.com/GrCOTE7/gsm/compare/v1.1.2...v1.2.0) (2026-05-19)
 
 
