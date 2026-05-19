@@ -40,7 +40,9 @@ class AppController:
         self.page.on_route_change = self._route_change
         self.page.on_view_pop = self._view_pop
 
-        self.page.run_task(self.page.push_route, DEFAULT_ROUTE)
+        # Rendu synchrone : push_route ne déclenche pas on_route_change
+        # si la route est déjà DEFAULT_ROUTE (pas de changement détecté).
+        self._render_route(DEFAULT_ROUTE)
 
         self._invite()
 
@@ -293,14 +295,15 @@ class AppController:
 
         return False
 
-    async def _close_app_after_install_delay(self, delay_seconds: float = 1.2) -> None:
-        import sys
+    async def _close_app_after_install_delay(self, delay_seconds: float = 2.5) -> None:
+        import os
 
+        # Laisser le temps à launch_url de s'exécuter avant de tuer le process.
         await asyncio.sleep(delay_seconds)
-        closed = self._close_app_best_effort()
-        if not closed:
-            if self._is_mobile_platform():
-                sys.exit(0)
+        self._close_app_best_effort()
+        # window.close() peut ne pas tuer le process Android (il minimise
+        # l'activité sans fin du process). os._exit() force la terminaison.
+        os._exit(0)
 
     def _install_update(self, release_url: str) -> None:
 
