@@ -302,7 +302,6 @@ class AppController:
         await asyncio.sleep(delay_seconds)
         closed = self._close_app_best_effort()
         if not closed:
-            # Ne pas afficher de snackbar, forcer la fermeture du process (sur mobile)
             if self._is_mobile_platform():
                 sys.exit(0)
 
