@@ -145,6 +145,7 @@ Mise à jour à partir de GH - releases
 'fix:' patch
 'feat:' minor
 'fix!' or 'feat!' : major ❌
+'BREAKING CHANGE:'
 
 ---
 
