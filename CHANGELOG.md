@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/GrCOTE7/gsm/compare/v1.1.1...v1.1.2) (2026-05-19)
+
+
+### Bug Fixes
+
+* try android_bridge ([d531ab5](https://github.com/GrCOTE7/gsm/commit/d531ab5cbfaeb8c46ee678c56a3c7c435d15fb41))
+
 ## [1.1.1](https://github.com/GrCOTE7/gsm/compare/v1.1.0...v1.1.1) (2026-05-19)
 
 
