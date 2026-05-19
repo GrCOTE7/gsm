@@ -344,10 +344,6 @@ class AppController:
         self._close_update_dialog()
 
         self._show_snackbar("Tentative d'ouverture de la mise a jour...", 2000)
-        opened = open_release_url(self.page, release_url, force=True)
-        if not opened:
-            self._show_snackbar("Impossible d'ouvrir le lien de mise a jour.", 3000)
-            return
 
         if self._is_mobile_platform():
             # Naviguer vers /home immediatement.
@@ -355,13 +351,69 @@ class AppController:
             # Armer le flag : si le close echoue et Android reprend l'app
             # (singleTop), on retournera quand meme sur /home.
             self._pending_home = True
-            self.page.run_task(self._close_app_after_install_delay)
+            # Lancer l'ouverture du lien ET la fermeture en parallele
+            # dans une seule tache coordonnee.
+            self.page.run_task(self._open_url_and_close_parallel, release_url)
+            return
+
+        opened = open_release_url(self.page, release_url, force=True)
+        if not opened:
+            self._show_snackbar("Impossible d'ouvrir le lien de mise a jour.", 3000)
             return
 
         self._show_snackbar(
             f"Si rien ne s'ouvre, consultez le log: {get_update_log_path()}",
             7700,
         )
+
+    async def _open_url_and_close_parallel(self, release_url: str) -> None:
+        """Ouvre l'URL dans un process separe et ferme l'app en parallele."""
+
+        async def _open() -> None:
+            try:
+                print(f">>> _open_url_and_close_parallel: launch_url({release_url})")
+                await self.page.launch_url(release_url)
+                print(">>> _open_url_and_close_parallel: launch_url OK")
+            except Exception as exc:
+                print(
+                    f">>> _open_url_and_close_parallel: launch_url echec ({exc}), fallback webbrowser"
+                )
+                try:
+                    await asyncio.to_thread(webbrowser.open, release_url)
+                except Exception as exc2:
+                    print(
+                        f">>> _open_url_and_close_parallel: webbrowser echec ({exc2})"
+                    )
+
+        async def _close() -> None:
+            await asyncio.sleep(1.5)
+            print(">>> _open_url_and_close_parallel: fermeture app")
+            try:
+                window = getattr(self.page, "window", None)
+                if window is not None:
+                    close_fn = getattr(window, "close", None)
+                    if callable(close_fn):
+                        if asyncio.iscoroutinefunction(close_fn):
+                            await close_fn()
+                        else:
+                            close_fn()
+                        return
+            except Exception:
+                pass
+            for attr in ("window_close", "close"):
+                try:
+                    fn = getattr(self.page, attr, None)
+                    if callable(fn):
+                        if asyncio.iscoroutinefunction(fn):
+                            await fn()
+                        else:
+                            fn()
+                        return
+                except Exception:
+                    continue
+
+        await asyncio.gather(_open(), _close(), return_exceptions=True)
+        print(">>> _open_url_and_close_parallel: done")
 
     async def _view_pop(self, e: ft.ViewPopEvent) -> None:
         if e.view is not None and e.view in self.page.views:
