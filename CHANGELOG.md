@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/GrCOTE7/gsm/compare/v1.0.10...v1.1.0) (2026-05-19)
+
+
+### Features
+
+* 24 ([ef19028](https://github.com/GrCOTE7/gsm/commit/ef19028bd2c9a7d6352ea951493d948a9b7ca321))
+
 ## [1.0.10](https://github.com/GrCOTE7/gsm/compare/v1.0.9...v1.0.10) (2026-05-19)
 
 
