@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/GrCOTE7/gsm/compare/v1.0.3...v1.0.4) (2026-05-19)
+
+
+### Bug Fixes
+
+* try open btn OK ([047c1fa](https://github.com/GrCOTE7/gsm/commit/047c1fa95ee188a841323bdd187c0f83e8a7a4cd))
+
 ## [1.0.3](https://github.com/GrCOTE7/gsm/compare/v1.0.2...v1.0.3) (2026-05-18)
 
 
