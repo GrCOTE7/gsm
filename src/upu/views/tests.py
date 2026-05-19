@@ -2,13 +2,15 @@ import webbrowser
 
 import flet as ft
 
+from upu.services.android_bridge import force_exit as _android_force_exit
 from upu.views.page_template import named_view
 
 
 def build() -> ft.Control:
 
-    def close_app():
-        print("Je vais fermer")
+    def close_app(e: ft.ControlEvent) -> None:
+        _android_force_exit()  # no-op hors Android
+        e.page.window.close()
 
     tests_container = ft.Row(
         [
