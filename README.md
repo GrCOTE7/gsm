@@ -4,13 +4,13 @@
 
 ### Win
 
-Éxécuter
+Éxécuter :
 
 ```bash
 ./go
 ```
 
-Lancer le build APK
+Lancer le build APK :
 
 ```bash
 ./apk
