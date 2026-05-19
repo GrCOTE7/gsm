@@ -52,7 +52,8 @@ class AppController:
 
         # Rendu synchrone garanti (push_route ne declenche pas on_route_change
         # si la route est deja DEFAULT_ROUTE).
-        self._render_route(DEFAULT_ROUTE)
+        initial_route = self.page.route or DEFAULT_ROUTE
+        self._render_route(initial_route)
 
         self._invite()
 
