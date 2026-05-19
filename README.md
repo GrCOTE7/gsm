@@ -235,7 +235,7 @@ C:\Users\utilisateur\AppData\Local\Android\Sdk\build-tools\34.0.0\apksigner.bat 
 
 ## ❌ Pour logs du mobile dans PC
 
-Debug / Iphone
+Debug / Iphone :
 
 .\adb logcat | Select-String "com.mycompany.upu"
 
