@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/GrCOTE7/gsm/compare/v1.2.1...v2.0.0) (2026-05-19)
+
+
+### Features
+
+* node 24 ready ([a29ebcc](https://github.com/GrCOTE7/gsm/commit/a29ebcc3481883565153f10bd8a2387f8cfd7c94))
+
+
+### BREAKING CHANGES
+
+* For workflow
+
 ## [1.2.1](https://github.com/GrCOTE7/gsm/compare/v1.2.0...v1.2.1) (2026-05-19)
 
 
