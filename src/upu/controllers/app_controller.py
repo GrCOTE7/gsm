@@ -32,6 +32,9 @@ class AppController:
         self._update_check_started = False
         self._update_dialog: ft.AlertDialog | None = None
         self._desktop_update_dialog: ft.AlertDialog | None = None
+        # True si l'utilisateur vient de lancer une MAJ : forcer /home
+        # au prochain resume (cas ou l'app n'est pas tuee par Android).
+        self._pending_home = False
         self._setup()
 
     def _setup(self) -> None:
@@ -40,11 +43,22 @@ class AppController:
         self.page.on_route_change = self._route_change
         self.page.on_view_pop = self._view_pop
 
-        # Rendu synchrone : push_route ne déclenche pas on_route_change
-        # si la route est déjà DEFAULT_ROUTE (pas de changement détecté).
+        # Listener lifecycle Android : si l'app revient au premier plan
+        # apres une MAJ (close echoue), forcer le retour a /home.
+        if hasattr(self.page, "on_app_lifecycle_state_change"):
+            self.page.on_app_lifecycle_state_change = self._on_lifecycle_change
+
+        # Rendu synchrone garanti (push_route ne declenche pas on_route_change
+        # si la route est deja DEFAULT_ROUTE).
         self._render_route(DEFAULT_ROUTE)
 
         self._invite()
+
+    def _on_lifecycle_change(self, e: ft.AppLifecycleStateChangeEvent) -> None:
+        state = str(getattr(e, "state", "")).lower()
+        if state == "resume" and self._pending_home:
+            self._pending_home = False
+            self._render_route(DEFAULT_ROUTE)
 
     def _invite(self) -> None:
         print(self.version, "-", gc7.curr_time(), self.page.route, ">")
@@ -295,15 +309,33 @@ class AppController:
 
         return False
 
-    async def _close_app_after_install_delay(self, delay_seconds: float = 2.5) -> None:
-        import os
-
-        # Laisser le temps à launch_url de s'exécuter avant de tuer le process.
+    async def _close_app_after_install_delay(self, delay_seconds: float = 3.0) -> None:
+        # Laisser le temps a launch_url de s'executer avant de fermer.
         await asyncio.sleep(delay_seconds)
-        self._close_app_best_effort()
-        # window.close() peut ne pas tuer le process Android (il minimise
-        # l'activité sans fin du process). os._exit() force la terminaison.
-        os._exit(0)
+        try:
+            window = getattr(self.page, "window", None)
+            if window is not None:
+                close_fn = getattr(window, "close", None)
+                if callable(close_fn):
+                    if asyncio.iscoroutinefunction(close_fn):
+                        await close_fn()
+                    else:
+                        close_fn()
+                    return
+        except Exception:
+            pass
+        # Fallbacks page-level
+        for attr in ("window_close", "close"):
+            try:
+                fn = getattr(self.page, attr, None)
+                if callable(fn):
+                    if asyncio.iscoroutinefunction(fn):
+                        await fn()
+                    else:
+                        fn()
+                    return
+            except Exception:
+                continue
 
     def _install_update(self, release_url: str) -> None:
 
@@ -318,9 +350,11 @@ class AppController:
             return
 
         if self._is_mobile_platform():
-            # Revenir à l'accueil AVANT de fermer : si Android reprend l'app
-            # depuis l'arrière-plan, elle sera déjà sur la bonne page.
+            # Naviguer vers /home immediatement.
             self._render_route(DEFAULT_ROUTE)
+            # Armer le flag : si le close echoue et Android reprend l'app
+            # (singleTop), on retournera quand meme sur /home.
+            self._pending_home = True
             self.page.run_task(self._close_app_after_install_delay)
             return
 
