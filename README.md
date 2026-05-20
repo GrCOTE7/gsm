@@ -142,15 +142,13 @@ For more details on building Windows package, refer to the [Windows Packaging Gu
 Process des updates :
 
 Mise à jour à partir de GH - releases
-✔ feat!: doc => major
-✔ fix!: bug => major
-✔ feat: normal => minor
-✔ fix: normal => patch
-minor & patch avec 'BREAKING CHANGE:' (commentaires) ou 'BREAKING CHANGES:' => major
 
-* [ ] Essai : Exemples :
-! après n'importe quel type feat!:, fix!:, chore!:, refactor!: …
-BREAKING CHANGE: dans le footer du message sur n'importe quel commit
+Semantic versioning (semantic-release):
+- `upgrade: description` → **major**
+- `feat: description` + `BREAKING CHANGE: detail` en footer → **major**
+- `feat: description` → **minor**
+- `fix:` ou `perf:` → **patch**
+- `revert:` → **patch**
 
 ---
 

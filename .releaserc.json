@@ -26,11 +26,7 @@
             "release": "major"
           },
           {
-            "header": "feat*!:*",
-            "release": "major"
-          },
-          {
-            "header": "fix*!:*",
+            "type": "upgrade",
             "release": "major"
           },
           {
