@@ -1,3 +1,5 @@
+# [3.0.0](https://github.com/GrCOTE7/gsm/compare/v2.0.0...v3.0.0) (2026-05-20)
+
 # [2.0.0](https://github.com/GrCOTE7/gsm/compare/v1.2.1...v2.0.0) (2026-05-19)
 
 
