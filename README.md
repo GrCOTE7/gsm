@@ -146,7 +146,7 @@ Mise à jour à partir de GH - releases
 ✔ fix!: bug => major
 ✔ feat: normal => minor
 ✔ fix: normal => patch
-✔ En commentaire: 'BREAKING CHANGE:'
+En commentaire: 'BREAKING CHANGE:' ou 'BREAKING CHANGES:'
 
 * [ ] Essai : Exemples :
 ! après n'importe quel type feat!:, fix!:, chore!:, refactor!: …
@@ -171,7 +171,7 @@ c:\gsm/
 
 ---
 
-Pour les mise à jour, besoin d'utiliser toujours la même clé de signature (keystore)
+Pour les mises à jour, besoin d'utiliser toujours la même clé de signature (keystore)
 entre les <> versions.
 
 * 1 Générer le keystore une seule fois (à faire localement, une seule fois) :
