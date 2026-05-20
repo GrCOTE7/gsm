@@ -1,3 +1,10 @@
+# [4.1.0](https://github.com/GrCOTE7/gsm/compare/v4.0.0...v4.1.0) (2026-05-20)
+
+
+### Features
+
+* major ([89148d3](https://github.com/GrCOTE7/gsm/commit/89148d387b7ec6183176f427fa289dd9fdd96791))
+
 # [4.0.0](https://github.com/GrCOTE7/gsm/compare/v3.0.1...v4.0.0) (2026-05-20)
 
 ## [3.0.1](https://github.com/GrCOTE7/gsm/compare/v3.0.0...v3.0.1) (2026-05-20)
