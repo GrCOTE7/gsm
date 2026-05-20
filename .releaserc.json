@@ -8,6 +8,13 @@
       {
         "preset": "angular",
         "parserOpts": {
+          "headerPattern": "^(\\w*)(?:\\((.*)\\))?(!)?: (.*)$",
+          "headerCorrespondence": [
+            "type",
+            "scope",
+            "breaking",
+            "subject"
+          ],
           "noteKeywords": [
             "BREAKING CHANGE",
             "BREAKING CHANGES"
@@ -16,6 +23,14 @@
         "releaseRules": [
           {
             "breaking": true,
+            "release": "major"
+          },
+          {
+            "header": "feat*!:*",
+            "release": "major"
+          },
+          {
+            "header": "fix*!:*",
             "release": "major"
           },
           {
