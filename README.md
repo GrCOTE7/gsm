@@ -148,7 +148,7 @@ Mise à jour à partir de GH - releases
 'feat!:' ❌
 'fix!'
 'feat!' : major ❌
-'breaking!' major
+'breaking!' major ❌
 'breaking!:' major
 ✔ En commentaire: 'BREAKING CHANGE:'
 
