@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/GrCOTE7/gsm/compare/v3.0.0...v3.0.1) (2026-05-20)
+
+
+### Bug Fixes
+
+* tatati ([6f57daf](https://github.com/GrCOTE7/gsm/commit/6f57dafdd1e88e10ec2bb1a0b29b40c99f904431))
+
 # [3.0.0](https://github.com/GrCOTE7/gsm/compare/v2.0.0...v3.0.0) (2026-05-20)
 
 # [2.0.0](https://github.com/GrCOTE7/gsm/compare/v1.2.1...v2.0.0) (2026-05-19)
