@@ -146,7 +146,7 @@ Mise à jour à partir de GH - releases
 ✔ fix!: bug => major
 ✔ feat: normal => minor
 ✔ fix: normal => patch
-En commentaire: 'BREAKING CHANGE:' ou 'BREAKING CHANGES:'
+minor & patch avec 'BREAKING CHANGE:' (commentaires) ou 'BREAKING CHANGES:' => major
 
 * [ ] Essai : Exemples :
 ! après n'importe quel type feat!:, fix!:, chore!:, refactor!: …
