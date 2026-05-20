@@ -144,7 +144,7 @@ Process des updates : Mise à jour à partir des push/main → GH - releases
 Semantic versioning (semantic-release): major.minor.patch
 
 * `upgrade: description` → **major** ✔
-* `feat: description` + `BREAKING CHANGE: detail` en footer → **major**
+* `feat: description` + `BREAKING CHANGE: detail` en footer → **major** ✔ à re
 * `feat: description` → **minor**
 * `fix:` ou `perf:` ou `revert:` → **patch**
 
