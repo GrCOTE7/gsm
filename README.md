@@ -142,10 +142,12 @@ For more details on building Windows package, refer to the [Windows Packaging Gu
 Process des updates :
 
 Mise à jour à partir de GH - releases
-'fix:' patch
-'feat:' minor
+✔ 'fix:' patch
+✔ 'feat:' minor
+'fix!:'
+'feat!:'
 'fix!' or 'feat!' : major ❌
-'BREAKING CHANGE:'
+✔ En commentaire: 'BREAKING CHANGE:'
 
 Essai : Exemples :
 ! après n'importe quel type feat!:, fix!:, chore!:, refactor!: …
