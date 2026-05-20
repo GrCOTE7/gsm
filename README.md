@@ -139,16 +139,14 @@ For more details on building Windows package, refer to the [Windows Packaging Gu
 
 ---
 
-Process des updates :
+Process des updates : Mise à jour à partir des push/main → GH - releases
 
-Mise à jour à partir de GH - releases
+Semantic versioning (semantic-release): major.minor.patch
 
-Semantic versioning (semantic-release):
-- `upgrade: description` → **major**
-- `feat: description` + `BREAKING CHANGE: detail` en footer → **major**
-- `feat: description` → **minor**
-- `fix:` ou `perf:` → **patch**
-- `revert:` → **patch**
+* `upgrade: description` → **major** ✔
+* `feat: description` + `BREAKING CHANGE: detail` en footer → **major**
+* `feat: description` → **minor**
+* `fix:` ou `perf:` ou `revert:` → **patch**
 
 ---
 
