@@ -6,4 +6,4 @@
 
 [Emojis](https://emojipedia.org/fr/smileys)
 
-## 😀 😉 😊 🥳 👌
+## 😀 😉 😊 🥳 👌 🙁

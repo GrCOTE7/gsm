@@ -59,9 +59,36 @@ On adapte le name et la descr si on veut, mais surtout, on 'décoche' pour avoir
 
 Maintenant, pour jouer avec ce code adopté, va falloir le mettre sur ta machine...
 
+Mais attention... : Si quelques temps sont passés depuis notre fork, p't'être que le dépôt à évoluer... Du coups, on n'est plus à jour... Et on va voir un truc style :
+
+---
+
+### → ***behind*** = derrière en anglais... Pô glop 🙁
+
+![Fork behind GSM](./imgs/05_required_sync.png)
+
+---
+
+### → Mais 2 clics, et c'est réglé 😊 :
+
+![Fork behind GSM](./imgs/06_required_sync.png)
+
+---
+
+### → la preuve :
+
+![Fork behind GSM](./imgs/07_required_sync.png)
+
+---
+
+Et quand on est Ok, on y va ! On descends le code surt notre Machine :
+
 ```bash
 git clone https://github.com/MP21170/gsm.git
 ```
+
+⚠️ N'oublie pas que ***MP21170***, c'est que pour notre exemple... Remplace ça par **TON UserName** !
+
 
 * [ ] To be continued...
 
