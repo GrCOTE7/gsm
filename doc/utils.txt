@@ -1,0 +1,25 @@
+Un doc non embarqué dans l'apk
+
+config/
+
+app_build = vérité de la build locale embarquée
+app_state = état runtime mutable et caches
+le code = seule couche qui compose les deux
+
+Dans le code actuel, c’est déjà presque ce modèle:
+
+la version locale vient de config.py:60, donc de app_build.json
+la release GitHub mise en cache vient de config.py:108 puis est sauvegardée dans app_state.json
+la card combine les deux dans release_update_card.py:13
+
+La solution la plus propre est de garder:
+
+app_build.json pour la build locale: version, cache_delay, éventuellement d’autres métadonnées embarquées
+app_state.json pour latest_check_at, update.latest_release_info, last_open_release_url_at, etc.
+config.py comme couche d’accès centralisée, idéalement renommée ou refactorée plus tard vers un petit service de persistance/config
+C’est le modèle le plus professionnel parce qu’il respecte:
+
+séparation des responsabilités
+lisibilité métier
+absence de duplication dangereuse
+évolutivité

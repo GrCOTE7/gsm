@@ -1,0 +1,404 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Show current time and +15 min target
+        shell: bash
+        run: |
+          set -euo pipefail
+          # now_utc=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          # plus15_utc=$(date -u -d "+15 minutes" +"%Y-%m-%d %H:%M:%S UTC")
+          # now_paris=$(TZ=Europe/Paris date +"%Y-%m-%d %H:%M:%S %Z")
+          plus15_paris=$(TZ=Europe/Paris date -d "+15 minutes" +"%Y-%m-%d %H:%M:%S %Z")
+
+          # echo "Current time (UTC):      $now_utc"
+          # echo "Target time +15min (UTC): $plus15_utc"
+          # echo "Current time (Paris):    $now_paris"
+          echo "Fin du upgrade prête max ~ $plus15_paris"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install Python dependencies
+        run: pip install -r doc/old_requirements.txt
+
+      - name: Run tests
+        run: pytest
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Run semantic-release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ github.token }}
+          HUSKY: "0"
+        run: npx semantic-release
+
+      - name: Detect released tag at HEAD
+        id: release_tag
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag=$(git tag --points-at HEAD | head -n 1 || true)
+          if [ -n "$tag" ]; then
+            echo "release_created=true" >> "$GITHUB_OUTPUT"
+            echo "release_tag=$tag" >> "$GITHUB_OUTPUT"
+            echo "Release detected at HEAD: $tag"
+          else
+            echo "release_created=false" >> "$GITHUB_OUTPUT"
+            echo "No release tag at HEAD; skipping APK build/upload/publish steps."
+          fi
+
+      - name: Sync app_build version from release tag
+        if: steps.release_tag.outputs.release_created == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag="${{ steps.release_tag.outputs.release_tag }}"
+          version="${tag#v}"
+          APP_BUILD_VERSION="$version" python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          version = os.environ["APP_BUILD_VERSION"]
+          path = Path("src/upu/app_data/app_build.json")
+
+          if not path.exists():
+            raise SystemExit(f"Missing {path}")
+
+          payload = json.loads(path.read_text(encoding="utf-8"))
+          if not isinstance(payload, dict):
+            raise SystemExit(f"Invalid JSON object in {path}")
+
+          payload["version"] = version
+          path.write_text(json.dumps(payload, ensure_ascii=True, indent=2) + "\n", encoding="utf-8")
+          print(f"app_build version synced to {version}")
+          PY
+
+          cat src/upu/app_data/app_build.json
+
+      - name: Set up Java
+        if: steps.release_tag.outputs.release_created == 'true'
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Flutter
+        if: steps.release_tag.outputs.release_created == 'true'
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.41.4"
+          channel: stable
+
+      - name: Accept Android licenses
+        if: steps.release_tag.outputs.release_created == 'true'
+        run: yes | flutter doctor --android-licenses
+
+      - name: Build APK
+        if: steps.release_tag.outputs.release_created == 'true'
+        env:
+          GRADLE_OPTS:
+            '-Dorg.gradle.jvmargs="-Xmx1500m -XX:MaxMetaspaceSize=512m
+            -XX:ReservedCodeCacheSize=128m -XX:+HeapDumpOnOutOfMemoryError"
+            -Dorg.gradle.daemon=false'
+        shell: bash
+        run: |
+          set -euo pipefail
+          fallback_used=0
+          manual_gradle_fallback=0
+
+          if ! flet build apk -v 2>&1 | tee flet-build.log; then
+            fallback_used=1
+            echo "::warning::flet build apk failed; applying workarounds and retrying flet build."
+
+            gradle_file="build/flutter/android/build.gradle.kts"
+            if [ -f "$gradle_file" ] && ! grep -q "lintVitalAnalyzeRelease" "$gradle_file"; then
+              printf '%s\n' \
+                '' \
+                '// Work around AGP/Kotlin lint crashes seen on some Flutter plugin release builds.' \
+                'subprojects {' \
+                '    tasks.matching {' \
+                '        it.name == "lintVitalAnalyzeRelease" ||' \
+                '            it.name == "lintAnalyzeRelease" ||' \
+                '            it.name == "lintRelease"' \
+                '    }.configureEach {' \
+                '        enabled = false' \
+                '    }' \
+                '}' \
+                >> "$gradle_file"
+            fi
+
+            app_gradle_file="build/flutter/android/app/build.gradle.kts"
+            if [ -f "$app_gradle_file" ] && ! grep -q "ci-package-workaround" "$app_gradle_file"; then
+              printf '%s\n' \
+                '' \
+                '// ci-package-workaround: avoid duplicate native Python libs during packageRelease.' \
+                'android {' \
+                '    packaging {' \
+                '        jniLibs {' \
+                '            pickFirsts += listOf(' \
+                '                "**/*.so",' \
+                '                "**/libpython*.so",' \
+                '                "**/libpythonsitepackages.so"' \
+                '            )' \
+                '        }' \
+                '    }' \
+                '}' \
+                >> "$app_gradle_file"
+            fi
+
+            export SERIOUS_PYTHON_SITE_PACKAGES="${GITHUB_WORKSPACE}/build/site-packages"
+            if [ ! -d "$SERIOUS_PYTHON_SITE_PACKAGES" ]; then
+              echo "::error::SERIOUS_PYTHON_SITE_PACKAGES not found: $SERIOUS_PYTHON_SITE_PACKAGES"
+              exit 1
+            fi
+
+            if ! flet build apk -v 2>&1 | tee -a flet-build.log; then
+              echo "::warning::Second flet build attempt failed; trying direct Gradle assembleRelease fallback."
+              manual_gradle_fallback=1
+              pushd build/flutter/android
+              if ! ./gradlew clean :app:assembleRelease --stacktrace --info --warning-mode all --no-daemon 2>&1 | tee -a ../../../flet-build.log; then
+                echo "::error::Gradle fallback assembleRelease failed. Extracting diagnostics."
+                grep -nE 'FAILURE: Build failed with an exception\.|What went wrong:|Execution failed for task|A problem occurred|Could not ' ../../../flet-build.log | tail -n 40 || true
+                echo "=== Tail of generated app/build.gradle.kts ==="
+                tail -n 80 app/build.gradle.kts || true
+                exit 1
+              fi
+              popd
+            fi
+          fi
+
+          mkdir -p build/apk
+          if [ "$manual_gradle_fallback" -eq 1 ]; then
+            find build/flutter/build/app/outputs -type f -name "*.apk" -exec cp -f {} build/apk/ \;
+          fi
+
+          if [ "$manual_gradle_fallback" -eq 1 ]; then
+            app_artifact_name=$(python -c 'import re,tomllib,pathlib; name="app"; p=pathlib.Path("pyproject.toml"); data=tomllib.loads(p.read_text(encoding="utf-8")) if p.exists() else {}; name=(data.get("project",{}).get("name") or data.get("tool",{}).get("flet",{}).get("product") or "app"); print(re.sub(r"[^A-Za-z0-9]+","_",name).strip("_") or "app")')
+
+            shopt -s nullglob
+            for apk in build/apk/app-*-release.apk; do
+              base=$(basename "$apk")
+              abi=${base#app-}
+              abi=${abi%-release.apk}
+              mv -f "$apk" "build/apk/${app_artifact_name}-${abi}.apk"
+            done
+            if [ -f build/apk/app-release.apk ]; then
+              mv -f build/apk/app-release.apk "build/apk/${app_artifact_name}.apk"
+            fi
+
+            for apk in build/apk/*.apk; do
+              if [ ! -f "$apk.sha1" ]; then
+                sha1sum "$apk" > "$apk.sha1"
+              fi
+            done
+          fi
+
+          compgen -G "build/apk/*.apk" > /dev/null || {
+            echo "::error::No APK produced after fallback assembleRelease."
+            exit 1
+          }
+
+      - name: Upload build log artifact
+        if: always() && steps.release_tag.outputs.release_created == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: flet-build-log-${{ github.sha }}
+          path: flet-build.log
+
+      - name: Re-sign APKs with release keystore
+        if: steps.release_tag.outputs.release_created == 'true'
+        env:
+          ANDROID_KEYSTORE_B64: ${{ secrets.ANDROID_KEYSTORE_B64 }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+          ANDROID_STORE_PASSWORD: ${{ secrets.ANDROID_STORE_PASSWORD }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${ANDROID_KEYSTORE_B64:-}" ]; then
+            echo "::warning::ANDROID_KEYSTORE_B64 not set – APKs keep debug signature. Add the 4 ANDROID_* secrets to enable stable release signing."
+            exit 0
+          fi
+          echo "$ANDROID_KEYSTORE_B64" | base64 -d > /tmp/release.keystore
+          APKSIGNER=$(find "$ANDROID_SDK_ROOT/build-tools" -name "apksigner" -type f | sort -V | tail -1)
+          if [ -z "${APKSIGNER:-}" ]; then
+            rm -f /tmp/release.keystore
+            echo "::error::apksigner not found in Android SDK build-tools."
+            exit 1
+          fi
+          shopt -s nullglob
+          for apk in build/apk/*.apk; do
+            echo "Re-signing: $apk"
+            "$APKSIGNER" sign \
+              --ks /tmp/release.keystore \
+              --ks-key-alias "$ANDROID_KEY_ALIAS" \
+              --ks-pass "pass:$ANDROID_STORE_PASSWORD" \
+              --key-pass "pass:$ANDROID_KEY_PASSWORD" \
+              "$apk"
+            sha1sum "$apk" > "$apk.sha1"
+          done
+          rm -f /tmp/release.keystore
+          echo "APK re-signing complete."
+
+      - name: Upload APKs to GitHub draft release
+        if: steps.release_tag.outputs.release_created == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.release_tag.outputs.release_tag }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          apks=(build/apk/*.apk)
+          if [ ${#apks[@]} -eq 0 ]; then
+            echo "::error::No APK found in build/apk for release upload."
+            exit 1
+          fi
+          for apk in "${apks[@]}"; do
+            gh release upload "$RELEASE_TAG" "$apk" --clobber
+          done
+      # Les APKs seront désormais disponibles à deux endroits :
+      # - GitHub Release (onglet Releases du repo) — attachés automatiquement à la release créée par semantic-release via gh release upload
+      #  - Artefacts du workflow (onglet Actions → run → Artifacts) — téléchargeables 90 jours, nommés apk-<sha>
+      # Avec ce code :
+      # - name: Upload APKs to GitHub Release
+      #   env:
+      #     GH_TOKEN: ${{ github.token }}
+      #   run: |
+      #     tag=$(git describe --tags --abbrev=0)
+      #     for apk in build/apk/*.apk; do
+      #       gh release upload "$tag" "$apk" --clobber
+      #     done
+
+      # - name: Upload APKs as workflow artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: apk-${{ github.sha }}
+      #     path: build/apk/*.apk
+      #
+      - name: Upload APK to Google Drive
+        if: steps.release_tag.outputs.release_created == 'true'
+        env:
+          GDRIVE_CLIENT_ID: ${{ secrets.GDRIVE_CLIENT_ID }}
+          GDRIVE_CLIENT_SECRET: ${{ secrets.GDRIVE_CLIENT_SECRET }}
+          GDRIVE_REFRESH_TOKEN: ${{ secrets.GDRIVE_REFRESH_TOKEN }}
+          GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+        shell: bash
+        run: |
+          echo "=== Secrets length check ==="
+          echo "GDRIVE_CLIENT_ID     len=${#GDRIVE_CLIENT_ID}"
+          echo "GDRIVE_CLIENT_SECRET len=${#GDRIVE_CLIENT_SECRET}"
+          echo "GDRIVE_REFRESH_TOKEN len=${#GDRIVE_REFRESH_TOKEN}"
+          echo "GDRIVE_FOLDER_ID     len=${#GDRIVE_FOLDER_ID}"
+          echo "=== build/apk/ contents ==="
+          ls -lh build/apk/ || echo "(directory missing or empty)"
+          shopt -s nullglob
+          project_name=$(python -c 'import re,tomllib,pathlib; p=pathlib.Path("pyproject.toml"); data=tomllib.loads(p.read_text(encoding="utf-8")) if p.exists() else {}; name=data.get("project",{}).get("name") or data.get("tool",{}).get("flet",{}).get("product") or "Upu"; print(re.sub(r"[^A-Za-z0-9]+","_",name).strip("_") or "Upu")')
+          universal_apk="build/apk/${project_name}.apk"
+          if [ -f "$universal_apk" ]; then
+            source_apk="$universal_apk"
+            target_suffix="universal"
+          else
+            arm64_apks=(build/apk/*-arm64-v8a*.apk)
+            if [ ${#arm64_apks[@]} -gt 0 ]; then
+              source_apk="${arm64_apks[0]}"
+              target_suffix="arm64-v8a"
+            else
+              universal_apks=(build/apk/*-universal.apk build/apk/app-release.apk)
+              if [ ${#universal_apks[@]} -gt 0 ]; then
+                source_apk="${universal_apks[0]}"
+                target_suffix="universal"
+                echo "::warning::No arm64 split APK found. Using universal APK fallback: $source_apk"
+              else
+                echo "::error::No arm64-v8a or universal APK found in build/apk/."
+                ls -lh build/apk/ || true
+                exit 1
+              fi
+            fi
+          fi
+          if [ "$target_suffix" = "universal" ] && [ "$(basename "$source_apk")" = "${project_name}.apk" ]; then
+            target_apk="$source_apk"
+          else
+            target_apk="build/apk/${project_name}-${target_suffix}.apk"
+          fi
+          if [ "$(realpath "$source_apk")" != "$(realpath "$target_apk")" ]; then
+            cp -f "$source_apk" "$target_apk"
+          fi
+          echo "Uploading $target_apk"
+          python scripts/upload_drive_workflow.py "$target_apk"
+
+      - name: Publish GitHub release
+        if: steps.release_tag.outputs.release_created == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.release_tag.outputs.release_tag }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh release edit "$RELEASE_TAG" --draft=false --latest
+
+      - name: Sync pyproject version and validate consistency
+        if: steps.release_tag.outputs.release_created == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          app_build_version=$(python -c "import json,pathlib; payload=json.loads(pathlib.Path('src/upu/app_data/app_build.json').read_text(encoding='utf-8')); print(str(payload.get('version','')).strip())")
+
+          # Keep packaging metadata aligned with embedded app version.
+          if [ -z "$app_build_version" ]; then
+            echo "::error::Empty app_build version before pyproject sync."
+            exit 1
+          fi
+
+          sed -i "s/^version = \".*\"/version = \"${app_build_version}\"/" pyproject.toml
+
+          pyproject_version=$(python -c "import pathlib,tomllib; data=tomllib.loads(pathlib.Path('pyproject.toml').read_text(encoding='utf-8')); print(str(data.get('project',{}).get('version','')).strip())")
+
+          echo "app_build version: ${app_build_version}"
+          echo "pyproject version: ${pyproject_version}"
+
+          if [ -z "$app_build_version" ] || [ -z "$pyproject_version" ]; then
+            echo "::error::Empty version value detected during consistency check."
+            exit 1
+          fi
+
+          if [ "$app_build_version" != "$pyproject_version" ]; then
+            echo "::error::Version mismatch between src/upu/app_data/app_build.json and pyproject.toml"
+            exit 1
+          fi
+
+      - name: Commit build metadata sync
+        if: steps.release_tag.outputs.release_created == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/upu/app_data/app_build.json pyproject.toml
+          git diff --cached --quiet && echo "Nothing to commit." && exit 0
+          git commit -m "chore: sync versions to ${{ steps.release_tag.outputs.release_tag }} [skip ci]"
+          git push

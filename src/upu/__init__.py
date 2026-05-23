@@ -1,0 +1,1 @@
+"""Up U! application package."""

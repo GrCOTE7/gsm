@@ -1,0 +1,16 @@
+{
+  "app_name": "Up U!",
+  "tagline": "Build new habits, boost your energy!",
+  "btn_start": "Start",
+  "btn_add_habit": "Add Habit",
+  "btn_done": "Done",
+  "nav_habits": "My Habits",
+  "nav_history": "History",
+  "nav_settings": "Settings",
+  "checkin_message": "Great! New energy unlocked.",
+  "habit_name_label": "Habit name",
+  "habit_frequency_label": "Frequency",
+  "frequency_daily": "Daily",
+  "frequency_weekly": "Weekly",
+  "language_label": "Language"
+}
