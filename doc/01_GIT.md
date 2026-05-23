@@ -21,16 +21,31 @@ Pour travailler dessus, chacun crée sa copie personnelle.
 
 Et comme 1 dessin > 1000 mots... :
 
+---
+→ The origin :
 
 ![Fork du dépôt GSM](./imgs/01_fork.png)
 
+---
+→ On config notre copie pour usage perso...:
+
+On adapte le name et la descr si on veut, mais surtout, on 'décoche' pour avoir TOUT
+
 ![Fork du dépôt GSM](./imgs/02_fork.png)
 
-### ⚠️ Dans notre exemple, notre nouveau contributeur s'appelle MP21170...
+---
 
-### Bien-sûr, toi, c'est ton *UserName* que tu dois voir à chaque fois à la place 😉
+### ⚠️ Dans notre exemple, notre nouveau contributeur s'appelle MP21170... ⚠️
+
+### 😉 Mais bien-sûr, toi, c'est ton *UserName* que tu dois voir à chaque fois à la place 😉
+
+---
+→ Envoyez ! C'est pesé ! OU Les jeux sont faits ! OU C'est dans la boîte !
 
 ![Forking du dépôt GSM](./imgs/03_forking.png)
+
+---
+→ GG, dans ton compte GH !
 
 ![Forked du dépôt GSM](./imgs/04_forked.png)
 
