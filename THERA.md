@@ -14,7 +14,7 @@ Il n’y a que des humains qui avancent ensemble.
 
 ## Philosophie - Union-DRY
 
-### L'oignon fait la soupe... Mais l'Union, la Force :-)
+### L'oignon fait la soupe... Mais l'Union, la Force 😊
 
 On dirait le titre d'un film d'[Audiard](https://fr.wikipedia.org/wiki/Michel_Audiard)...
 
@@ -32,7 +32,7 @@ Donc, ici, ce projet, n'a vraiment qu'une seule intention :
 
 Permettre aux Hommes de bonnes volontés (Je ne vous fais pas l'affront de vous rappeler ce que le 'H' signifie... Et oui, vous avez raison, le 'de bonnes volontés' fait cliché et cinéma...) de s'unir pour oeuvrer à partager des compétences, s'améliorer perso à l'aide d'autres et en aidant d'autres, pour réaliser une appli qui permet à chaque humain, de s'améliorer (Donc, inévitablement, tôt ou tard, de comprendre devoir aussi venir collaborer pour encore + améliorer cette App....)
 
-À l'heure qu'il est, on est... 2 !!! GrCOTE7 et Thera... Mais la volonté est là, de toujours s'améliorer perso, et d'aider à améliorer la condition de Vie du + grand nombre :-) !
+À l'heure qu'il est, on est... 2 !!! GrCOTE7 et Thera... Mais la volonté est là, de toujours s'améliorer perso, et d'aider à améliorer la condition de Vie du + grand nombre 😊 !
 
 Alors, venez jouer **VOTRE RÔLE** dans ce film !
 
@@ -59,11 +59,11 @@ Allez, la philo, c'est sympa, mais ça fait pas chauffer tant que ça les proces
 
 ##### Technique
 
-* Le **Git** — Savoir (ou apprendre) : Clone, Commit, Push, Pull, Branch, PR… Bref, les bases (Et ça suffit large, pour démarrer).
+* Le **Git** — Savoir (ou apprendre) : Clone, Commit, Push, Pull, Branch, PR… Bref, les bases (Et ça suffit large, pour démarrer)
 
 * Avoir **1 éditeur privilégié** ([VSCode hautement préconisé](https://code.visualstudio.com/) - Gratos, et de très nombreuses extensions existent, dont beaucoup pour le Git... Comme par hasard...Et qui rende son usage (du Git) aussi ludique qu'un Tétris!)
 
-* Algorithmie — Pas besoin d’être un '[Knuth](https://fr.wikipedia.org/wiki/Donald_Knuth)', mais comprendre ce qu’est une variable, une boucle, une condition, une fonction, c’est mieux. Note: Si vous avez juste commencé un jour un tuto de n'importe quel langage, ceci est assurément atteint et fait ! :-)
+* Algorithmie — Pas besoin d’être un '[Knuth](https://fr.wikipedia.org/wiki/Donald_Knuth)', mais comprendre ce qu’est une variable, une boucle, une condition, une fonction, c’est mieux. Note: Si vous avez juste commencé un jour un tuto de n'importe quel langage, ceci est assurément atteint et fait ! 😊
 
 → Bref, vous êtes absolument et assurément APTE à contribuer, car si il manque une c*h*ouille (une brindille - Heureusement que là aussi, j'ai bien mis le 'h'... ;-) ), alors quelques minutes (voire heures) suffisent pour l'être !
 
@@ -72,15 +72,16 @@ Une seule chose ne compte maintenant !
 ### ==> **VOTRE décision !!!**
 
 Elle est majeure, et doit être immédiate ! Car demain veut souvent dire jamais !
+
 Et au final, surtout, c'est VOTRE Vie, et donc logiquement, de votre décision !
 
 ## 🚀 Comment contribuer
 
-Wahooo :-) ! Si vous lisez encore, et cela, arrêtez-de vous mentir ! Cest que vous avez déjà décidé ! Car sinon, c'est tellement facile de zapper, de basculer et passer à autre chose... Alors, vraiment, et du fond du coeur: Bravos, et merci :-) !
+Wahooo :-) ! Si vous lisez encore, et cela, arrêtez-de vous mentir ! C'est que vous avez déjà décidé ! Car sinon, c'est tellement facile de zapper, de basculer et de passer à autre chose... Alors, vraiment, et du fond du coeur: Bravos, et Merci :-) !
 
-Maintenant, attaquons les choses concrètement utiles (Et, + cool, dorénavant, on s'tutoie !)  :-) ! :
+Maintenant, attaquons les choses concrètement utiles (Et, + cool, dorénavant, car vu qu'on "bosse" ensemble maintenant, on s'tutoie, ok ?)  :-) ! :
 
-Voici les grandes lignes ci-dessous, mais ne pas hésiter à consulter ./doc/01_GIT à la moindre difficulté *(Et même si vous savez tout accomplir spontanément, parcourez-le tout de même rapidement, car on est jamais à l'abri de découvrir un Tip (Astuce)...)*
+Ci-dessous, voici les grandes lignes  mais ne pas hésiter à consulter [./doc/01_GIT](./doc/01_GIT.md) à la moindre difficulté *(Et même si vous savez tout accomplir spontanément, parcourez-le tout de même rapidement, car on est jamais à l'abri de découvrir un Tip (Astuce)...)*
 
 ### 1. Forke le dépôt
 

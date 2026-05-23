@@ -49,9 +49,19 @@ On adapte le name et la descr si on veut, mais surtout, on 'décoche' pour avoir
 
 ![Forked du dépôt GSM](./imgs/04_forked.png)
 
-### 🥳 Bravo ! Ceci est TON dépôt ! Une copie conforme et intégrale de la toute dernière version la plus aboutie du Projet GSM Officiel 😊
+### 🥳 Bravo ! Ceci est TON dépôt 👌
+
+### Une copie conforme et intégrale de la toute dernière version la plus aboutie du Projet GSM Officiel original 😊
+
+---
 
 ## 2. Clone ton fork en local
+
+Maintenant, pour jouer avec ce code adopté, va falloir le mettre sur ta machine...
+
+```bash
+git clone https://github.com/MP21170/gsm.git
+```
 
 * [ ] To be continued...
 
