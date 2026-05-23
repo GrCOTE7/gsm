@@ -149,4 +149,9 @@ On adapte le name et la descr si on veut, mais surtout, on 'décoche' pour avoir
     * Jamais condescendants
 
     * Raisonables
+
 ## Extensions VSCode recommandées
+
+### Spéciales Git
+
+### Et autres importantes
