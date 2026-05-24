@@ -24,7 +24,13 @@ Et comme 1 dessin > 1000 mots... :
 ---
 → The origin :
 
-![Fork du dépôt GSM](./imgs/01_fork.png)
+<p align="center">
+  <a href="./imgs/01_fork.png" target="_blank">
+    <img src="./imgs/01_fork.png" width="500">
+  </a>
+</p>
+
+
 
 ---
 → On config notre copie pour usage perso...:
