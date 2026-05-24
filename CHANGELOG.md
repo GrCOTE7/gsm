@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/GrCOTE7/gsm/compare/v1.0.3...v1.0.4) (2026-05-24)
+
+
+### Bug Fixes
+
+* add tips ([0a3acba](https://github.com/GrCOTE7/gsm/commit/0a3acba0cc59ee00a8d9dde58a04b9ae5fe909fe))
+
 ## [1.0.3](https://github.com/GrCOTE7/gsm/compare/v1.0.2...v1.0.3) (2026-05-24)
 
 
