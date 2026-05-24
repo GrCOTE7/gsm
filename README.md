@@ -8,13 +8,13 @@
 [![Commits per Month](https://img.shields.io/github/commit-activity/m/grcote7/gsm)](https://github.com/grcote7/gsm/commits)
 [![Total Commits](https://img.shields.io/github/commit-activity/t/grcote7/gsm)](https://github.com/grcote7/gsm/commits)
 [![Last Commit](https://img.shields.io/github/last-commit/grcote7/gsm)](https://github.com/grcote7/gsm/commits)
-![](https://img.shields.io/badge/Android-3ddc84?logo=android&logoColor=white)
+![Android](https://img.shields.io/badge/Android-3ddc84?logo=android&logoColor=white)
 
-## Collaboration
+## 🤝 Collaboration
 
-[Pour contribuer au dev, lire THERADOC](https://github.com/GrCOTE7/gsm/blob/main/THERA.md)
+Pour **contribuer** au dev de ce projet, **lire [THERADOC](https://github.com/GrCOTE7/gsm/blob/main/THERA.md)**
 
-## Run the app
+## 🚀 Run the app
 
 ### Win
 
@@ -102,7 +102,7 @@ Pour savoir quel Py est utilisé par uv
 
 For more details on running the app, refer to the [Getting Started Guide](https://flet.dev/docs/getting-started/).
 
-## Build the app ONLY from C:\
+## 🏗️ Build the app ONLY from C:\
 
 ### Android
 
@@ -264,11 +264,11 @@ Debug / Iphone :
 
 | Action                                    | Rebuild APK ? |
 |-------------------------------------------|---------------|
-| Modifier du Python                        | ❌ Non         |
-| Modifier du Flet                          | ❌ Non         |
-| Modifier la logique d’update              | ❌ Non         |
-| Modifier comment tu télécharges l’APK     | ❌ Non         |
-| Modifier comment tu lances l’installation | ❌ Non         |
+| Modifier du Python                        | ❌ Non        |
+| Modifier du Flet                          | ❌ Non        |
+| Modifier la logique d’update              | ❌ Non        |
+| Modifier comment tu télécharges l’APK     | ❌ Non        |
+| Modifier comment tu lances l’installation | ❌ Non        |
 | Ajouter un appel Android natif            | ✔️ Oui        |
 | Modifier le manifest Android              | ✔️ Oui        |
 | Ajouter un service Android                | ✔️ Oui        |
@@ -276,5 +276,7 @@ Debug / Iphone :
 
 ---
 
-Actuel goal: Problème de fin de process d'upgrade
-Add theradoc
+## 🎯 Actuel goal prioritaire
+
+* Problème de fin du process d'upgrade
+* Finir docs de base (Git, VSC, Py) + Add docs initiatiques
