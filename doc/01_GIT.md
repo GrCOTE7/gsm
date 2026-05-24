@@ -123,6 +123,13 @@ git clone https://github.com/MP21170/gsm.git
 
 ### → Cela créée un dossier gsm/ dans lequel tu y as TOUT le code ! 👌
 
+Allons, n'attendons plus ! Voyons ce que cela donne (Entrons dzans le dossier, et lançons le run !
+
+```bash
+cd gsm
+uv run flet run
+```
+
 * [ ] To be continued...
 
 ## 3. Installe les dépendances si nécessaire

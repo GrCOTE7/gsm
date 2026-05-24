@@ -103,6 +103,7 @@ def _should_use_cached_release(cached: dict[str, str | bool] | None) -> bool:
 
 def _env_int(name: str, default: int = 0) -> int:
     raw = str(os.getenv(name, str(default)) or "").strip()
+
     if not raw:
         return default
 
@@ -120,7 +121,7 @@ def _env_int(name: str, default: int = 0) -> int:
 
 APP_NAME = "Up You!"
 DEFAULT_ROUTE = "/tests"
-WINDOW_LEFT = _env_int("UPU_WINDOW_LEFT", 0)  # 1526 - 1912
+WINDOW_LEFT = _env_int(name="UPU_WINDOW_LEFT", default=1526)  # 1526 - 1912
 DEBUG_RELEASE_JSON = _env_int("UPU_DEBUG_RELEASE_JSON", 0) == 1
 GITHUB_OWNER = "GrCOTE7"
 GITHUB_REPO = "gsm"
