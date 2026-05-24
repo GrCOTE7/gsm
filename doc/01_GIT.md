@@ -24,11 +24,12 @@ Et comme 1 dessin > 1000 mots... :
 ---
 → The origin :
 
-<div style="text-align:center;">
+<div align="center">
   <a href="./imgs/01_fork.png" target="_blank">
-    <img src="./imgs/01_fork.png" style="max-width:500px; width:100%; height:auto;">
+    <img src="./imgs/01_fork.png" width="500">
   </a>
 </div>
+
 
 
 ---
