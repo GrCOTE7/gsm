@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/GrCOTE7/gsm/compare/v1.0.4...v1.0.5) (2026-05-24)
+
+
+### Bug Fixes
+
+* Set Discord badge in Doc ([2c886ba](https://github.com/GrCOTE7/gsm/commit/2c886ba9696f7eff14a4474e2eec68eeb0007b4e))
+
 ## [1.0.4](https://github.com/GrCOTE7/gsm/compare/v1.0.3...v1.0.4) (2026-05-24)
 
 
