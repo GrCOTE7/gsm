@@ -276,7 +276,7 @@ Debug / Iphone :
 
 ---
 
-## 🎯 Actuel goal prioritaire
+## 🎯 Actuels goals prioritaires
 
 * Problème de fin du process d'upgrade
-* Finir docs de base (Git, VSC, Py) + Add docs initiatiques
+* Finir docs de base (Git, VSC, Py) + Add autres docs initiatiques
