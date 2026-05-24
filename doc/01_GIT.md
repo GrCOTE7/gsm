@@ -24,12 +24,11 @@ Et comme 1 dessin > 1000 mots... :
 ---
 → The origin :
 
-<p align="center">
+<div style="text-align:center;">
   <a href="./imgs/01_fork.png" target="_blank">
-    <img src="./imgs/01_fork.png" width="500">
+    <img src="./imgs/01_fork.png" style="max-width:500px; width:100%; height:auto;">
   </a>
-</p>
-
+</div>
 
 
 ---
@@ -37,7 +36,11 @@ Et comme 1 dessin > 1000 mots... :
 
 On adapte le name et la descr si on veut, mais surtout, on 'décoche' pour avoir TOUT
 
-![Fork du dépôt GSM](./imgs/02_fork.png)
+<div style="text-align:center;">
+  <a href="./imgs/02_fork.png" target="_blank">
+    <img src="./imgs/02_fork.png" style="max-width:500px; width:100%; height:auto;">
+  </a>
+</div>
 
 ---
 
@@ -48,12 +51,20 @@ On adapte le name et la descr si on veut, mais surtout, on 'décoche' pour avoir
 ---
 → Envoyez ! C'est pesé ! OU Les jeux sont faits ! OU C'est dans la boîte !
 
-![Forking du dépôt GSM](./imgs/03_forking.png)
+<div style="text-align:center;">
+  <a href="./imgs/03_forking.png" target="_blank">
+    <img src="./imgs/03_forking.png" style="max-width:500px; width:100%; height:auto;">
+  </a>
+</div>
 
 ---
 → GG, dans ton compte GH !
 
-![Forked du dépôt GSM](./imgs/04_forked.png)
+<div style="text-align:center;">
+  <a href="./imgs/04_forked.png" target="_blank">
+    <img src="./imgs/04_forked.png" style="max-width:500px; width:100%; height:auto;">
+  </a>
+</div>
 
 ### 🥳 Bravo ! Ceci est TON dépôt 👌
 
@@ -71,19 +82,31 @@ Mais attention... : Si quelques temps sont passés depuis notre fork, p't'être 
 
 ### → ***behind*** = derrière en anglais... Pô glop 🙁
 
-![Fork behind GSM](./imgs/05_required_sync.png)
+<div style="text-align:center;">
+  <a href="./imgs/05_required_sync.png" target="_blank">
+    <img src="./imgs/05_required_sync.png" style="max-width:500px; width:100%; height:auto;">
+  </a>
+</div>
 
 ---
 
 ### → Mais 2 clics, et c'est réglé 😊 :
 
-![Fork behind GSM](./imgs/06_required_sync.png)
+<div style="text-align:center;">
+  <a href="./imgs/06_required_sync.png" target="_blank">
+    <img src="./imgs/06_required_sync.png" style="max-width:500px; width:100%; height:auto;">
+  </a>
+</div>
 
 ---
 
 ### → la preuve :
 
-![Fork behind GSM](./imgs/07_required_sync.png)
+<div style="text-align:center;">
+  <a href="./imgs/07_required_sync.png" target="_blank">
+    <img src="./imgs/07_required_sync.png" style="max-width:500px; width:100%; height:auto;">
+  </a>
+</div>
 
 ---
 
@@ -94,7 +117,6 @@ git clone https://github.com/MP21170/gsm.git
 ```
 
 ⚠️ N'oublie pas que ***MP21170***, c'est que pour notre exemple... Remplace ça par **TON UserName** !
-
 
 * [ ] To be continued...
 
