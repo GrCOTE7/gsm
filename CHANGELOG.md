@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/GrCOTE7/gsm/compare/v1.0.5...v1.0.6) (2026-05-24)
+
+
+### Bug Fixes
+
+* ↑ workflow ([2b3aafb](https://github.com/GrCOTE7/gsm/commit/2b3aafba8d7b0b7cec4ef5b77982e7a6d5b3feba))
+
 ## [1.0.5](https://github.com/GrCOTE7/gsm/compare/v1.0.4...v1.0.5) (2026-05-24)
 
 
