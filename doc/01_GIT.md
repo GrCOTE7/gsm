@@ -77,7 +77,7 @@ On adapte le name et la descr si on veut, mais surtout, on 'décoche' pour avoir
 
 Maintenant, pour jouer avec ce code adopté, va falloir le mettre sur ta machine...
 
-Mais attention... : Si quelques temps sont passés depuis notre fork, p't'être que le dépôt à évoluer... Du coups, on n'est plus à jour... Et on va voir un truc style :
+Mais attention... : Si quelques temps sont passés depuis notre fork, p't'être que le dépôt à évolué... Du coups, on n'est plus à jour... Et on va voir un truc style :
 
 ---
 
@@ -111,13 +111,17 @@ Mais attention... : Si quelques temps sont passés depuis notre fork, p't'être 
 
 ---
 
-Et quand on est Ok, on y va ! On descends le code surt notre Machine :
+Et quand on est Ok, on y va ! On descend le code sur notre Mc (Machine) :
+
+Dans le dossier de ton choix, ouvre une CLI (Command Line Interface), la console de commande, et tapes-y :
 
 ```bash
 git clone https://github.com/MP21170/gsm.git
 ```
 
-⚠️ N'oublie pas que ***MP21170***, c'est que pour notre exemple... Remplace ça par **TON UserName** !
+⚠️ N'oublie pas que ***MP21170***, c'est que pour notre exemple ici... Remplace ça par **TON UserName** !
+
+### → Cela créée un dossier gsm/ dans lequel tu y as TOUT le code ! 👌
 
 * [ ] To be continued...
 
