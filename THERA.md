@@ -51,7 +51,7 @@ Allez, la philo, c'est sympa, mais ça fait pas chauffer tant que ça les proces
 ##### Mental
 
 <div align="center">
-  <a href="./doc/imgs/tps-espace-nrj.jpg" target="_blank">
+  <a href="./doc/imgs/tee.jpg" target="_blank">
     <img src="./doc/imgs/tps-espace-nrj.jpg" width="200">
   </a>
 </div>
