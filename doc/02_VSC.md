@@ -12,14 +12,16 @@ Mais libre à vous d'utiliser l'éditeur que vous voulez, quitte a en adapter vo
 
 → * [ ] LK VSC
 
-## Racxcourcis usuels
-## Racxcourcis usuels
+## Raccourcis usuels
 
 Liste non exhaustive :
+
+```dos
 ALT + 24 à 27: ↑ ↓ → ←
 ALT + 144, 183 : É À
 ALT + 3 → 31 : ♥ ... ▼
 MAJ + ALT + ↑ ou ↓ : COPIÉ/COllÉ décalé d'une ligne
+```
 
 
 ## Extensions VSCode recommandées
@@ -48,9 +50,9 @@ Nous allons nous limiter ici à découvrir comment trouver, choisir, et installe
       <img src="./imgs/201_gg.png" width='500'>
     </a>
   </div>
-  
+
 * [ ] To be continued...
-  
+
 * [ ] Git File History - Rodrigo Pombo
 * [ ] gitignore - michelemelluso - Add file to .gitignore
 * [ ] GitHub Repositories - GitHub - Remotely browse and edit any GitHub repository
@@ -77,3 +79,8 @@ Gerald Liu
 248 987
 (30)
 Visualize your markdown in VSCode - Ma 2ème préférée...
+
+## Autres outils Git pouvant servir
+
+* [ ] GitDesktop → LK
+* [ ] Kraken → LK
