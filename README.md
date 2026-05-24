@@ -19,7 +19,7 @@
 Lance la comm. et reste branché !
 À un moment, quelqu'un y répondra :-) !">
 
-    Tu ❤️ Python...? Rejoins le chat en LIVE !
+Tu ❤️ Python...? Rejoins le chat en LIVE !
 
 ![Discord](https://img.shields.io/discord/1056923339546968127)
 </a>
