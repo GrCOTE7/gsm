@@ -37,9 +37,9 @@ Et comme 1 dessin > 1000 mots... :
 
 On adapte le name et la descr si on veut, mais surtout, on 'décoche' pour avoir TOUT
 
-<div style="text-align:center;">
+<div align="center">
   <a href="./imgs/02_fork.png" target="_blank">
-    <img src="./imgs/02_fork.png" style="max-width:500px; width:100%; height:auto;">
+    <img src="./imgs/02_fork.png" width="500">
   </a>
 </div>
 
@@ -52,18 +52,18 @@ On adapte le name et la descr si on veut, mais surtout, on 'décoche' pour avoir
 ---
 → Envoyez ! C'est pesé ! OU Les jeux sont faits ! OU C'est dans la boîte !
 
-<div style="text-align:center;">
+<div align="center">
   <a href="./imgs/03_forking.png" target="_blank">
-    <img src="./imgs/03_forking.png" style="max-width:500px; width:100%; height:auto;">
+    <img src="./imgs/03_forking.png" width='500'>
   </a>
 </div>
 
 ---
 → GG, dans ton compte GH !
 
-<div style="text-align:center;">
+<div align="center">
   <a href="./imgs/04_forked.png" target="_blank">
-    <img src="./imgs/04_forked.png" style="max-width:500px; width:100%; height:auto;">
+    <img src="./imgs/04_forked.png" width='500'>
   </a>
 </div>
 
@@ -83,9 +83,9 @@ Mais attention... : Si quelques temps sont passés depuis notre fork, p't'être 
 
 ### → ***behind*** = derrière en anglais... Pô glop 🙁
 
-<div style="text-align:center;">
+<div align="center">
   <a href="./imgs/05_required_sync.png" target="_blank">
-    <img src="./imgs/05_required_sync.png" style="max-width:500px; width:100%; height:auto;">
+    <img src="./imgs/05_required_sync.png" width='500'>
   </a>
 </div>
 
@@ -93,9 +93,9 @@ Mais attention... : Si quelques temps sont passés depuis notre fork, p't'être 
 
 ### → Mais 2 clics, et c'est réglé 😊 :
 
-<div style="text-align:center;">
+<div align="center">
   <a href="./imgs/06_required_sync.png" target="_blank">
-    <img src="./imgs/06_required_sync.png" style="max-width:500px; width:100%; height:auto;">
+    <img src="./imgs/06_required_sync.png" width='500'>
   </a>
 </div>
 
@@ -103,9 +103,9 @@ Mais attention... : Si quelques temps sont passés depuis notre fork, p't'être 
 
 ### → la preuve :
 
-<div style="text-align:center;">
+<div align="center">
   <a href="./imgs/07_required_sync.png" target="_blank">
-    <img src="./imgs/07_required_sync.png" style="max-width:500px; width:100%; height:auto;">
+    <img src="./imgs/07_required_sync.png" width='500'>
   </a>
 </div>
 
