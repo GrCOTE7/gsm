@@ -15,8 +15,7 @@
 ---
 
 <div align="center">
-  <a href = "https://discord.com/channels/1056923339546968127/1507316257580519445" title="
-Lance la comm. et reste branché !
+  <a href = "https://discord.com/channels/1056923339546968127/1507316257580519445" title="Lance la comm. et reste branché !
 À un moment, quelqu'un y répondra :-) !">
 
 Tu ❤️ Python...? Rejoins le chat en LIVE !
