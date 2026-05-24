@@ -25,8 +25,8 @@ Et comme 1 dessin > 1000 mots... :
 → The origin :
 
 <div align="center">
-  <a href="./imgs/01_fork.png" target="_blank">
-    <img src="./imgs/01_fork.png" width="500">
+  <a href="./imgs/101_fork.png" target="_blank">
+    <img src="./imgs/101_fork.png" width="500">
   </a>
 </div>
 
@@ -38,8 +38,8 @@ Et comme 1 dessin > 1000 mots... :
 On adapte le name et la descr si on veut, mais surtout, on 'décoche' pour avoir TOUT
 
 <div align="center">
-  <a href="./imgs/02_fork.png" target="_blank">
-    <img src="./imgs/02_fork.png" width="500">
+  <a href="./imgs/102_fork.png" target="_blank">
+    <img src="./imgs/102_fork.png" width="500">
   </a>
 </div>
 
@@ -53,8 +53,8 @@ On adapte le name et la descr si on veut, mais surtout, on 'décoche' pour avoir
 → Envoyez ! C'est pesé ! OU Les jeux sont faits ! OU C'est dans la boîte !
 
 <div align="center">
-  <a href="./imgs/03_forking.png" target="_blank">
-    <img src="./imgs/03_forking.png" width='500'>
+  <a href="./imgs/103_forking.png" target="_blank">
+    <img src="./imgs/103_forking.png" width='500'>
   </a>
 </div>
 
@@ -62,8 +62,8 @@ On adapte le name et la descr si on veut, mais surtout, on 'décoche' pour avoir
 → GG, dans ton compte GH !
 
 <div align="center">
-  <a href="./imgs/04_forked.png" target="_blank">
-    <img src="./imgs/04_forked.png" width='500'>
+  <a href="./imgs/104_forked.png" target="_blank">
+    <img src="./imgs/104_forked.png" width='500'>
   </a>
 </div>
 
@@ -84,8 +84,8 @@ Mais attention... : Si quelques temps sont passés depuis notre fork, p't'être 
 ### → ***behind*** = derrière en anglais... Pô glop 🙁
 
 <div align="center">
-  <a href="./imgs/05_required_sync.png" target="_blank">
-    <img src="./imgs/05_required_sync.png" width='500'>
+  <a href="./imgs/105_required_sync.png" target="_blank">
+    <img src="./imgs/105_required_sync.png" width='500'>
   </a>
 </div>
 
@@ -94,8 +94,8 @@ Mais attention... : Si quelques temps sont passés depuis notre fork, p't'être 
 ### → Mais 2 clics, et c'est réglé 😊 :
 
 <div align="center">
-  <a href="./imgs/06_required_sync.png" target="_blank">
-    <img src="./imgs/06_required_sync.png" width='500'>
+  <a href="./imgs/106_required_sync.png" target="_blank">
+    <img src="./imgs/106_required_sync.png" width='500'>
   </a>
 </div>
 
@@ -104,8 +104,8 @@ Mais attention... : Si quelques temps sont passés depuis notre fork, p't'être 
 ### → la preuve :
 
 <div align="center">
-  <a href="./imgs/07_required_sync.png" target="_blank">
-    <img src="./imgs/07_required_sync.png" width='500'>
+  <a href="./imgs/107_required_sync.png" target="_blank">
+    <img src="./imgs/107_required_sync.png" width='500'>
   </a>
 </div>
 
@@ -169,15 +169,15 @@ git clone https://github.com/MP21170/gsm.git
 
     Avant de voir le détail de cette étape, juste, prenons du recul...:
 
-    - T'as t'on demandé un diploume ?
+    * T'as t'on demandé un diploume ?
 
-    - Demandé pour qui tu te prends ? De quel droit tu te permets d'émettre un avis ?
+    * Demandé pour qui tu te prends ? De quel droit tu te permets d'émettre un avis ?
 
-    - Vérifier que t'es le fils à tel Papa, ou autre privilègié ?
+    * Vérifier que t'es le fils à tel Papa, ou autre privilègié ?
 
-    - À quelle dininité tu crois ?
+    * À quelle dininité tu crois ?
 
-    - Au fait, t'es plutôt caucasien, jaune, gris, brown...? vert ?:?
+    * Au fait, t'es plutôt caucasien, jaune, gris, brown...? vert ?:?
 
     → Non : **Ici, là et maintenant, TU ES TOI ! Et enfin, là, ici et maintenant, enfin au bon endroit !!! Seulement TOI, et TOI SEUL**, peut comprendre et accepter l'idée que **TON RÔLE est CAPITAL**, pas indispensable, juste CAPITAL **et IMPORTANT !**
 
@@ -219,9 +219,3 @@ git clone https://github.com/MP21170/gsm.git
     * Jamais condescendants
 
     * Raisonables
-
-## Extensions VSCode recommandées
-
-### Spéciales Git
-
-### Et autres importantes
