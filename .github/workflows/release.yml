@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
 
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -12,6 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: ${{ github.ref_name }}
           fetch-depth: 0
 
       - name: Show current time and +15 min target
@@ -396,9 +401,11 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          branch="${GITHUB_REF_NAME:-main}"
           git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src/upu/app_data/app_build.json pyproject.toml
           git diff --cached --quiet && echo "Nothing to commit." && exit 0
           git commit -m "chore: sync versions to ${{ steps.release_tag.outputs.release_tag }} [skip ci]"
-          git push
+          git pull --rebase origin "$branch"
+          git push origin "HEAD:refs/heads/$branch"
