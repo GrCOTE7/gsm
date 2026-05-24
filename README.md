@@ -10,13 +10,12 @@
 [![Last Commit](https://img.shields.io/github/last-commit/grcote7/gsm)](https://github.com/grcote7/gsm/commits)
 ![Android](https://img.shields.io/badge/Android-3ddc84?logo=android&logoColor=white)
 [![Discord](https://img.shields.io/discord/1056923339546968127)](https://discord.com/channels/1056923339546968127/1507316257580519445)
-<br>
 
 ---
 
 <div align="center">
   <a href = "https://discord.com/channels/1056923339546968127/1507316257580519445" title="Lance la comm. et reste branché !
-À un moment, quelqu'un y répondra :-) !">
+À un moment, quelqu'un y répondra :-) !" target="_blank">
 
 Tu ❤️ Python...? Rejoins le chat en LIVE !
 
