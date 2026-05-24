@@ -125,14 +125,27 @@ git clone https://github.com/MP21170/gsm.git
 
 Allons, n'attendons plus ! Voyons ce que cela donne (Entrons dzans le dossier, et lançons le run !
 
+## 3. Installe les dépendances si nécessaire
+
 ```bash
 cd gsm
 uv run flet run
 ```
 
-* [ ] To be continued...
+À noter: Sur Win, il existe un raccourci à exécuter en CLI à la racine :
 
-## 3. Installe les dépendances si nécessaire
+```bash
+./go
+```
+
+Tous linuxien et MacOxien sont invités à compléter ces docs pour adapter ces helpers sur ces Mc
+
+* [ ] To be continued... 🚧
+
+* [ ] config .env < .env_example
+      → Pour l'heure, la seule valeur à impérativement configurer est **UPU_WINDOW_LEFT** : Elle défini où se positionnera la fenêtre de l'app sur PC...
+      Nous verrons les autres en temps utile.
+
 
 ## 4. Teste que l'app marche au moins pour TOI, en local (Et sinon: [ISSUE](https://github.com/GrCOTE7/gsm/issues/new/choose) !)
 
