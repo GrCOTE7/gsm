@@ -19,7 +19,7 @@
 
 Tu ❤️ Python...? Rejoins le chat en LIVE !
 
-![Discord](https://img.shields.io/discord/1056923339546968127)
+[![Discord](https://img.shields.io/discord/1056923339546968127)](https://discord.com/channels/1056923339546968127/1507316257580519445)
 </a>
 </div>
 
