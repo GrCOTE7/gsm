@@ -50,12 +50,20 @@ Allez, la philo, c'est sympa, mais ça fait pas chauffer tant que ça les proces
 
 ##### Mental
 
+<div align="center">
+  <a href="./doc/imgs/tps-espace-nrj.jpg" target="_blank">
+    <img src="./doc/imgs/tps-espace-nrj.jpg" width="200">
+  </a>
+</div>
+
 * Volonté
   * Aider pour améliorer le Groupe
   * Profiter des infos pour s'améliorer perso
 * Curiosité — Accepter de ne pas tout savoir, et d’apprendre chaque jour.
 * Humilité — Comprendre que le code parfait n’existe pas.
 * Esprit d’équipe — On avance plus vite ensemble que seul.
+  
+  
 
 ##### Technique
 
