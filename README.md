@@ -11,11 +11,21 @@
 ![Android](https://img.shields.io/badge/Android-3ddc84?logo=android&logoColor=white)
 [![Discord](https://img.shields.io/discord/1056923339546968127)](https://discord.com/channels/1056923339546968127/1507316257580519445)
 <br>
-<div align="center">
-Viens chat en LIVE !
 
-[![Discord](https://img.shields.io/discord/1056923339546968127)](https://discord.com/channels/1056923339546968127/1507316257580519445)
+---
+
+<div align="center">
+  <a href = "https://discord.com/channels/1056923339546968127/1507316257580519445" title="
+Lance la comm. et reste branché !
+À un moment, quelqu'un y répondra :-) !">
+
+    Tu ❤️ Python...? Rejoins le chat en LIVE !
+
+![Discord](https://img.shields.io/discord/1056923339546968127)
+</a>
 </div>
+
+---
 
 ## 🤝 Collaboration
 
@@ -271,11 +281,11 @@ Debug / Iphone :
 
 | Action                                    | Rebuild APK ? |
 |-------------------------------------------|---------------|
-| Modifier du Python                        | ❌ Non        |
-| Modifier du Flet                          | ❌ Non        |
-| Modifier la logique d’update              | ❌ Non        |
-| Modifier comment tu télécharges l’APK     | ❌ Non        |
-| Modifier comment tu lances l’installation | ❌ Non        |
+| Modifier du Python                        | ❌ Non         |
+| Modifier du Flet                          | ❌ Non         |
+| Modifier la logique d’update              | ❌ Non         |
+| Modifier comment tu télécharges l’APK     | ❌ Non         |
+| Modifier comment tu lances l’installation | ❌ Non         |
 | Ajouter un appel Android natif            | ✔️ Oui        |
 | Modifier le manifest Android              | ✔️ Oui        |
 | Ajouter un service Android                | ✔️ Oui        |
