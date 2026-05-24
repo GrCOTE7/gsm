@@ -9,6 +9,13 @@
 [![Total Commits](https://img.shields.io/github/commit-activity/t/grcote7/gsm)](https://github.com/grcote7/gsm/commits)
 [![Last Commit](https://img.shields.io/github/last-commit/grcote7/gsm)](https://github.com/grcote7/gsm/commits)
 ![Android](https://img.shields.io/badge/Android-3ddc84?logo=android&logoColor=white)
+[![Discord](https://img.shields.io/discord/1056923339546968127)](https://discord.com/channels/1056923339546968127/1507316257580519445)
+<br>
+<div align="center">
+Viens chat en LIVE !
+
+[![Discord](https://img.shields.io/discord/1056923339546968127)](https://discord.com/channels/1056923339546968127/1507316257580519445)
+</div>
 
 ## 🤝 Collaboration
 
