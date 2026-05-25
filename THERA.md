@@ -119,14 +119,13 @@ Pour travailler dessus, chacun crée sa copie personnelle.
     → Code
     → Commits
 
-Et ainsi, à terme, des fois, tu vas aboutir complètement à ce que tu voulais :-) : Tout roule comme tu veux et tu te dis alors qu'il te faut impérativement en faire profiter tout le monde, c'est normal, c'est instinctif chez les Hommes de bonnes volontrés... ;-)
-
+Et ainsi, à terme, des fois, tu vas aboutir complètement à ce que tu voulais :-) : Tout roule comme tu veux et tu te dis alors qu'il te faut impérativement en faire profiter tout le monde, c'est normal, c'est instinctif chez les Hommes de bonnes volontés... 😉 Ça sent la **PR**... 💪
 
 👉 Et si problème : **[Page d'aide](./doc/0000_HELPME.md)** !
 
-* [ ] To be continued... 🚧
 
-### 3. AGIR, faire une **PR** (**P**ull **R**equest) - Le graal du codeur, le cœur de la Collaboration
+### 3. AGIR, faire une **PR** (**P**ull **R**equest) - Le graal du codeur, le cœur de la Collaboration ❤️
+
 
 Là, ça ne rigole plus car c'est maintenant que ton dev peut devenir absolument 'officiel' et être utilisé par tous 😁
 
@@ -141,6 +140,8 @@ Là, ça ne rigole plus car c'est maintenant que ton dev peut devenir absolument
 ---
 
     → Non : Ici, là et maintenant, TU ES TOI ! Et enfin, là, ici et maintenant, enfin au bon endroit au bon moment !!! Seulement TOI et TOI SEUL peut comprendre et doit accepter l'idée que TON RÔLE est CAPITAL, pas indispensable, juste CAPITAL et IMPORTANT !
+
+* [ ] To be continued... 🚧
 
 Concrètement, pour faire valoir ton dev, tu dois :
 
