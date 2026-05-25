@@ -32,7 +32,7 @@ Mais attention... : Si quelques temps sont passés depuis notre fork, p't'être 
 
 ---
 
-### → la preuve :
+### → la preuve dans la 'seconde' qui suit :
 
 <div align="center">
   <a href="./imgs/107_required_sync.png" target="_blank">
@@ -44,7 +44,7 @@ Mais attention... : Si quelques temps sont passés depuis notre fork, p't'être 
 
 Et quand on est Ok, on y va ! On descend le code sur notre Mc (Machine) :
 
-Dans le dossier de ton choix, ouvre une CLI (Command Line Interface), la console de commande, et tapes-y :
+Dans le dossier de ton choix, ouvre une **CLI** (**C**ommand **L**ine **I**nterface), la console de commande, et tapes-y :
 
 ```bash
 git clone https://github.com/MP21170/gsm.git
@@ -54,7 +54,7 @@ git clone https://github.com/MP21170/gsm.git
 
 ### → Cela créée un dossier gsm/ dans lequel tu y as TOUT le code ! 👌
 
-Allons, n'attendons plus ! Voyons ce que cela donne (Entrons dzans le dossier, et lançons le run !
+Allons, n'attendons plus ! Voyons ce que cela donne (Entrons dans le dossier, et lançons le *run* (On va mettre en route !) !
 
 ---
 

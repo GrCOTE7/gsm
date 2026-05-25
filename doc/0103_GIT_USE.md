@@ -4,7 +4,7 @@
 
 ## 3. Installe les dépendances si nécessaire et lance l'app
 
-Déjà, on 'rentre en CLI ('Rappel: = Console) dans le dossier du projet **gsm/**
+Déjà, depuis le dossier où l'on a exécuté le clône, on 'rentre en CLI' (Rappel : = Console) et maintenant dans le dossier du projet **gsm/**
 
 ```bash
 cd gsm
@@ -16,15 +16,15 @@ Et l'install des libs, et le run, tout cela se fait normalement en une seule com
 uv run flet run
 ```
 
-👉 À noter: Sur Win, il existe un raccourci... (encore + court !!!) à exécuter en CLI à la racine :
+👉 À noter: Sur Win, il existe même un raccourci... (... Encore + court !!! Lol) à exécuter en CLI à la racine :
 
 ```bash
 ./go
 ```
 
-💡 Tous linuxien et MacOxien sont invités à compléter ces docs pour adapter ces helpers sur ces Mc
+💡 Tous linuxien et MacOxien sont invités à compléter ces docs pour adapter ces helpers sur ces Mc et bien-sûr, faire les **PR** qui s'imposent alors...
 
-## Teste que l'app marche au moins pour TOI, en local (Et sinon: CHAT, [ISSUE](https://github.com/GrCOTE7/gsm/issues/new/choose) !)
+## Teste que l'app marche au moins pour TOI, en local (Et sinon: CHAT, [ISSUE](https://github.com/GrCOTE7/gsm/issues/new/choose) bref, plan [ORSEC](https://fr.wikipedia.org/wiki/Dispositif_ORSEC)!!! Heu... Simplement **[page d'aide](./0000_HELPME.md)** plutôt !)
 
 En principe, l'app doit se lancer, là, et tu dois en voir la page d'accueil...
 
@@ -57,7 +57,7 @@ Perso, dans un tel cas (1 seul écran dispo), je consacre 2/3 à 4/5 de la surfa
 Alors, bonne nouvelle, c'est juste une valeur à indiquer dans un fichier :
 
 1. Copie .env_example à la racine en .env
-2. Pour l'heure, la seule valeur à impérativement y configurer est **UPU_WINDOW_LEFT** : Elle défini où se positionnera la fenêtre de l'app sur PC...
+2. Pour l'heure, la seule valeur y configurer est **UPU_WINDOW_LEFT** : Elle défini où se positionnera la fenêtre de l'app sur PC... Trouve TA valeur idéale pour un positionnement aux petits oignons... (*[Encore des Oignons ?!?](../THERA.md#Philosophie---Union-DRY)*)
       Nous verrons les autres en temps utile.
 
 📄 Pour info : Ce **fichier ./.env n'est jamais dans le Git** (Il est à toi, et rien qu'à toi, uniquement local, donc tu peux y mettre toutes infos sensibles sans inquiétude...)
