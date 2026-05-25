@@ -69,7 +69,7 @@ def build() -> ft.Control:
             ],
             alignment=ft.MainAxisAlignment.CENTER,
         ),
-        "Page de MP21170 pour tests rapides.",
+        "Page pour tests rapides.",
         extra_top_gap=0,
         extra=ft.Column(
             [
