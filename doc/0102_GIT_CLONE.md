@@ -52,7 +52,7 @@ git clone https://github.com/MP21170/gsm.git
 
 ⚠️ N'oublie pas que ***MP21170***, c'est que pour notre exemple ici... Remplace ça par **TON UserName** !
 
-### → Cela créée un dossier gsm/ dans lequel tu y as TOUT le code ! 👌
+### → Cela **te créée un dossier gsm/ dans lequel tu y as TOUT le code ! 👌**
 
 Allons, n'attendons plus ! Voyons ce que cela donne (Entrons dans le dossier, et lançons le *run* (On va mettre en route !) !
 

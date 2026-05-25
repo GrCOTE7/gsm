@@ -4,15 +4,16 @@
 
 ## 4. 🏗️ On attaque **le dev** ?
 
+Juste pour te rassurer : Bon, beaucoup de lecture pour bien comprendre et assimiler tout... Mais crois-moi: Si demain, tu dois tout recommencer, tu mettras max 2 minutes même si t'es pas doué 😉 ! Et ce principe sera toujours vrai 👍 - Bref, tu ne t'en aperçois p't'être même pas, mais tu d'viens bon 👌 ! Alors, courage pour la suite !
+
 ### .🎯 L’idée principale
 
-Toujours créer une branche dédiée avant de commencer un développement.
-Cela garde l’historique propre, facilite les revues de code et évite de casser la branche principale qui doit toujours rester stable.
+Toujours oeuver dans une branche dédiée avant de commencer un développement.
+Cela garde l’historique propre, facilite les revues de code et évite de casser la branche principale qui doit toujours rester stable, au cas où...
 
-    Pour info, une branche est comme une sorte d'autre copie intégrale du projet ! À ceci prêt que l'algorithme de GitHub ne duplique pas vraiment tous les fichiers, mais garde 'simplement' en mémoire toutes les modifications, bref, quelques fichiers texte de quelques octets....
+    Pour info, une branche est comme une sorte d'autre copie intégrale du projet ! À ceci prêt que l'algorithme de GitHub (ou autre fournisseru) ne duplique pas vraiment tous les fichiers, mais garde 'simplement' en mémoire toutes les modifications, bref, quelques fichiers texte de quelques octets....
 
-
-### 🧩 Étape 1 — Créer une branche de travail
+### 🧩Donc, étape 1 — Créer une branche de travail
 
 Tu peux nommer ta branche comme tu veux, mais voici la [norme idéalement](https://codeheroes.fr/blog/git-comment-nommer-ses-branches-et-ses-commits) :
 
