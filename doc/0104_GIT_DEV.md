@@ -12,7 +12,7 @@ Cela garde l’historique propre, facilite les revues de code et évite de casse
     Pour info, une branche est comme une sorte d'autre copie intégrale du projet ! À ceci prêt que l'algorithme de GitHub ne duplique pas vraiment tous les fichiers, mais garde 'simplement' en mémoire toutes les modifications, bref, quelques fichiers texte de quelques octets....
 
 
-### 🧩 Étape 1 — Créer une branche
+### 🧩 Étape 1 — Créer une branche de travail
 
 Tu peux nommer ta branche comme tu veux, mais voici la [norme idéalement](https://codeheroes.fr/blog/git-comment-nommer-ses-branches-et-ses-commits) :
 
@@ -28,7 +28,7 @@ Exemples de conventions :
 
 Cela rend l’historique compréhensible et navigable pour toute l’équipe.
 
-### 🛠️ 1ère Commande Git
+### → 🛠️ 1ère Commande Git
 
 En CLI, créée la branche 'upgrade/01_git-dev' et te pose dessus :
 
@@ -41,6 +41,10 @@ Pour faire si besoin le point et avoir la liste des branches existantes :
 ```bash
 git branch
 ```
+
+Affiche les branches locales, avec * sur celle où tu es.
+
+(Si " :" au lieu de ton invite habituelle : tape 'x' ou ':q' pour *eXit* (sortir de cet éditeur vi ou vim))
 
 Pour passer sur une autre branche (Par exemple, revenir sur la branche main) :
 
