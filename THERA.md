@@ -299,8 +299,14 @@ et surtout… collaborent.
 
 ---
 
-Alors si tu lis encore ces lignes, **tu fais déjà partie du film**.
+Alors si tu lis encore ces lignes, alors **tu es PARFAIT, et déjà partie INTÉGRANTE du film**.
 
-**À toi de jouer maintenant vraiment TON RÔLE :-) !**
+**À toi maintenant d'y jouer vraiment TON RÔLE, de jouer TA SCÈNE, D’OSER ton mouvement, d’écrire la suite comme TOI SEUL.E PEUX LE FAIRE. :-) !**
 
-Aller, soit Heureux.se ! :-)
+Aller, soies Heureux.se ! :-)
+
+Avance. Souris. Et laisse-toi surprendre par ce qui t’attend...
+
+## [Attaque la doc](./doc/0101_GIT_FORK.md), ici et maintenant !
+
+Nous seront tous fiers de toi 😀 !
