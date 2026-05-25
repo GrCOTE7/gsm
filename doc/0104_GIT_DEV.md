@@ -2,37 +2,54 @@
 
 ## ← 3. [0103_GIT_USE](./0103_GIT_USE.md)
 
-## 4. On attaque **le dev** 👌 ?
+## 4. 🏗️ On attaque **le dev** ?
 
 ### .🎯 L’idée principale
 
 Toujours créer une branche dédiée avant de commencer un développement.
-Cela garde l’historique propre, facilite les revues de code et évite de casser la branche principale.
+Cela garde l’historique propre, facilite les revues de code et évite de casser la branche principale qui doit toujours rester stable.
+
+    Pour info, une branche est comme une sorte d'autre copie intégrale du projet ! À ceci prêt que l'algorithme de GitHub ne duplique pas vraiment tous les fichiers, mais garde 'simplement' en mémoire toutes les modifications, bref, quelques fichiers texte de quelques octets....
+
 
 ### 🧩 Étape 1 — Créer une branche
 
-Tu peux nommer ta branche comme tu veux, mais [idéalement](https://codeheroes.fr/blog/git-comment-nommer-ses-branches-et-ses-commits) :
+Tu peux nommer ta branche comme tu veux, mais voici la [norme idéalement](https://codeheroes.fr/blog/git-comment-nommer-ses-branches-et-ses-commits) :
 
-* pas d’espaces
-* utiliser des tirets - ou /
-* refléter le type de travail (feature, fix, doc…)
-* refléter le sujet du dev
+* tout en minuscule, aucun accent
+* pas d’espaces, utiliser des tirets - ou /
+* refléter le type de travail (feature, fix, doc…) et le sujet du dev
 
 Exemples de conventions :
 
-* feature/ma-nouvelle-fonctionnalite
-* fix/bug-du-bouton
-* doc/amelioration-readme
+* feature/new-service
+* fix/bug-update-btn
+* doc/upgrade-readme
 
 Cela rend l’historique compréhensible et navigable pour toute l’équipe.
 
 ### 🛠️ 1ère Commande Git
 
-Créée la branche 'amelioration-01_git-dev' et te pose dessus :
+En CLI, créée la branche 'upgrade/01_git-dev' et te pose dessus :
 
 ```bash
-git checkout -b amelioration-01_git-dev
+git checkout -b upgrade/01_git-dev
 ```
+
+Pour faire si besoin le point et avoir la liste des branches existantes :
+
+```bash
+git branch
+```
+
+Pour passer sur une autre branche (Par exemple, revenir sur la branche main) :
+
+```bash
+git checkout main
+```
+
+git checkout -b uuu
+
 
 * [ ] To be continued... 🚧
 1. Crée une branche
