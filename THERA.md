@@ -1,5 +1,7 @@
 # Collaboration GSM
 
+### 👉 PRÉAMBULE: À la moindre difficulté, consulter la **[page d'aide](./doc/0000_HELPME.md)**
+
 ## 🧭 Objectifs du projet
 
 L’ambition est simple : Créer un espace où chacun peut :
