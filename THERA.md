@@ -20,7 +20,7 @@ Il n’y a que des humains qui avancent ensemble.
 
 On dirait presque le titre d'un film d'[Audiard](https://fr.wikipedia.org/wiki/Michel_Audiard)...
 
-À l'heure où l'IA aurait tendance à vouloir évincer, voire nous remplacer, il n'y a qu'une attitude à adopter face à la puissance toujours + vertigineuse de cette ennemie... : 
+À l'heure où l'IA aurait tendance à vouloir nous évincer, voire remplacer, il n'y a qu'une attitude à adopter face à la puissance toujours + vertigineuse de cette ennemie... : 
 
 C'est de ne pas (ou plus) la considérer comme une ennemie, mais une alliée en fait, car créée par nous, pour nous, et donc, destinée à effectuer à notre place, les tâches les + ingrates, peu valorisantes, et souvent cependant et généralement aussi très répétitives et chronophages...
 
@@ -87,67 +87,50 @@ Une seule chose ne compte maintenant !
 
 Elle est MAJEURE, et doit être immédiate ! Car demain veut souvent dire jamais !
 
-Et au final, surtout, c'est VOTRE Vie, et donc logiquement, de votre décision !
+Et au final, surtout, c'est VOTRE Vie, et donc logiquement, selon VOTRE seule décision !
 
-## 🚀 Comment contribuer
+## 🚀 Comment contribuer ?
 
-Wahooo :-) ! Si vous lisez encore, et ces mots, arrêtez-de vous mentir ! C'est que vous avez déjà décidé ! Car sinon, c'est tellement facile de zapper, de basculer et de passer à autre chose... Alors, vraiment, et du fond du coeur: Bravos, et Merci :-) !
+Wahooo :-) ! Si vous lisez encore, là, maintenant, ces mots, alors arrêtez-de vous mentir ! C'est que vous avez déjà décidé ! Car sinon, c'est tellement si facile de zapper, de basculer et de passer à autre chose... Alors vraiment, et du fond du coeur: Bravos, et Merci 😊 !
 
-Maintenant, attaquons les choses concrètement utiles (Et, + cool, dorénavant, car vu qu'on "bosse" ensemble maintenant, on s'tutoie, ok ?)  :-) ! :
+Donc, attaquons les choses concrètement utiles (Et, + cool, dorénavant, car vu qu'on "bosse" ensemble maintenant, on s'tutoie, ok 😉 ?) :
 
-Ci-dessous, voici les grandes lignes  mais ne pas hésiter à consulter [./doc/0101_GIT_FORK](./doc/0101_GIT_FORK.md) à la moindre difficulté *(Et même si vous savez tout accomplir spontanément, parcourez-le tout de même rapidement, car on est jamais à l'abri de découvrir un Tip (Astuce)...)*
+Ci-dessous, voici les grandes lignes  mais ne pas hésiter à consulter [./doc/0101_GIT_FORK](./doc/0101_GIT_FORK.md) à la moindre difficulté *(Et même si vous savez tout accomplir spontanément, parcourez-le tout de même rapidement, car on est jamais à l'abri de découvrir un Tip (Une astuce)...)*
 
-### 1. Forke le dépôt
+### 1. [Forke, clône, & utilise le dépôt en local](./doc/0101_GIT_FORK.md)
 
 Le dépôt principal est sacré : c’est LA source de vérité.
 Pour travailler dessus, chacun crée sa copie personnelle.
   
-    → Forke le repo
-    → Clone ce fork en local
-    → Installe les dépendances si nécessaire
-    → Teste que l'app marche au moins pour TOI, en local
-      (Et sinon: [ISSUE](https://github.com/GrCOTE7/gsm/issues/new/choose) !)
+#### → [Forke le repo](./doc/0101_GIT_FORK.md)
 
-### 2. Crée une branche
+#### → [Clone ce fork en local](./0102_GIT_CLONE.md)
 
-→ Toujours travailler sur une branche dédiée - Cool:
-  Tu lui donnes le noms que tu veux
+#### → [Installe les dépendances, lance l'Appet teste que tout marche au moins bien pour TOI, en local](./0103_GIT_USE.md)
 
-([Enfin, selon le dev que tu penses faire, au moins pas d'espaces, et que cela ait un sens par rapport à ton dev](https://codeheroes.fr/blog/git-comment-nommer-ses-branches-et-ses-commits/)) :
+👉 Et si problème : **[Page d'aide](./doc/0000_HELPME.md)** !
 
-Exemples:
+### 2. [Commence à dev](./doc/0104_GIT_DEV.md)
 
-* feature/ma-nouvelle-fonctionnalite
-* fix/bug-du-bouton
-* doc/amelioration-readme
+→ Toujours travailler sur une branche dédiée - Cool :
+  Tu lui donnes le nom que tu veux
+
+    → Crée une branche pour ton dev
+    → Code
+    → Commits
+
+Et ainsi, à terme, des fois, tu vas aboutir complètement à ce que tu voulais :-) : Tout roule comme tu veux et tu te dis alors qu'il te faut impérativement en faire profiter tout le monde, c'est normal, c'est instinctif chez les Hommes de bonnes volontrés... ;-)
 
 
-    → Cela permet de garder l’historique propre et compréhensible.
+👉 Et si problème : **[Page d'aide](./doc/0000_HELPME.md)** !
 
-    Mais du coup, là, t'es 'chez toi', c'est hyper cool ! Tu y dev ce que tu veux, cela ne peut jamais rien casser d'important, et tu te plantes ? Bravo, c'est que tu as poussé tes limites :-) ! Et si tu les as trop dépassées... Pas grave: Revient sur la branche main ! Rien n'est jamais perdu ! Rien qagné sur ce coup, mais rien de perdu ! En renouvellant X fois ce genre d'expériences, tu ne peux à termes et statistiquement qu'y gagner, et GRANDIR :-) !
+* [ ] To be continued... 🚧
 
-### 3. Commiter proprement
+### 3. AGIR, faire une **PR** (**P**ull **R**equest) - Le graal du codeur, le cœur de la Collaboration
 
-Des fois, tu vas réussir ton dev :-) : Tout roule comme tu veux :-) Et tu te dis qu'il te faut impérativement en faire profiter tout le monde, c'est normal, c'est instinctif chez les Hommes de bonnes volontrés... ;-)
-    
-Alors, tu vas commit et proposer ton dev: Et un bon commit, c’est :
+Là, ça ne rigole plus car c'est maintenant que ton dev peut devenir absolument 'officiel' et être utilisé par tous 😁
 
-        Petit
-        Clair
-        Utile
-        Avec un message explicite
-
-Exemples :
-
-        feat: ajout du module d'analyse
-        fix: correction du calcul de score
-        docs: ajout section contribution
-
-### 4. Faire une **PR** (**P**ull **R**equest) - Le graal du codeur
-
-    La **PR** est le cœur de la collaboration. (Là, ça rigole plus car c'est maintenat que ton dev peut devenir 'officiel' :-))
-
-    Avant de voir le détail de cette étape, juste, prenons du recul...:
+    Avant de voir le détail de cette étape, juste,ensemble, prenons du recul...:
 
     - T'as t'on demandé un diploume ?
     - Demandé pour qui tu te prends ? De quel droit tu te permets d'émettre un avis ?
@@ -155,7 +138,9 @@ Exemples :
     - À quelle dininité tu crois ?
     - Au fait, t'es plutôt caucasien, jaune, gris, brown...? vert ?:?
 
-#### → Non : **Ici, là et maintenant, TU ES TOI ! Et enfin, là, ici et maintenant, enfin au bon endroit !!! Seulement TOI, et TOI SEUL**, peut comprendre et accepter l'idée que **TON RÔLE est CAPITAL**, pas indispensable, juste CAPITAL **et IMPORTANT !**
+---
+
+    → Non : Ici, là et maintenant, TU ES TOI ! Et enfin, là, ici et maintenant, enfin au bon endroit au bon moment !!! Seulement TOI et TOI SEUL peut comprendre et doit accepter l'idée que TON RÔLE est CAPITAL, pas indispensable, juste CAPITAL et IMPORTANT !
 
 Concrètement, pour faire valoir ton dev, tu dois :
 
@@ -166,6 +151,8 @@ Concrètement, pour faire valoir ton dev, tu dois :
     Une PR n’est pas un examen.
 
 → C’est une discussion technique entre humains bienveillants, et la scenette qui s'ajoute et fait qu'on aura ensemble un super film au final !
+
+👉 Et si problème : **[Page d'aide](./doc/0000_HELPME.md)** !
 
 ### 5. Participer aux revues de code
 
