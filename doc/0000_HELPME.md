@@ -8,11 +8,11 @@ Utilise un des moyens ci-dessous pour résoudre SEUL ton problème et trouver de
 
 Ce bon vieux 'Google reste ton ami' pour trouver la doc, ou n'importe quelle IA saura aussi t'y aider.
 
-Mais attention à cette dernière: Car elle peut faire beacoup + et ne lui demmande pas : "mon script bug, corrige cela !"
+Mais attention à cette dernière: Car elle peut faire beacoup + et ne lui demande pas : "mon script bugue, corrige cela !"
 
-→ 9.99 / 10 chances qu'elle va intervenir et résoudre ton problème, peut-être même en venant directement dans ton éditeur modifier le code 😁 !!!
+→ 9.99 / 10 chances qu'elle va intervenir et résoudre ton problème, peut-être même en venant directement dans ton éditeur modifier le code dans tes fichiers 😁 !!! (Avec VSCode, c'est non seulement possible, mais même gratos !!!)
 
-Bref, tu as rien à faire, juste à 'demander et tu auras...' (Ah ces bons vieux contes des 1000 et 1 nuits...; ça devriendrait-y pas réalité ?)
+Bref, tu as même plus rien à faire, si tu le souhaites, juste à 'demander et tu auras...' (Ah ces bons vieux contes des 1000 et 1 nuits...; ça devriendrait-y pas réalité ?)
 
 Alors, la GOOD NEWS, c'est que : Ça marche, mais la BAD NEWS: Pas longtemps !
 

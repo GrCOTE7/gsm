@@ -52,10 +52,27 @@ Pour passer sur une autre branche (Par exemple, revenir sur la branche main) :
 git checkout main
 ```
 
-git checkout -b uuu
+Voici qqes commandes utiles liées aux branches
 
+```bash
+git branch ma-branche                # créée la branche mais sans passer dessus
+git branch -d ma-branche             # détruit la branche
+git branch -m ancien-nom nouveau-nom # renomme la branche
+git branch -a                        # voir les branches distantes
+```
+
+### 👉 Même si vous découvrirez bientôt des outils qui rendent intuitives ces commandes car applicables 'à coups de souris', il est toujours bon et parfois salvateur de connaître les commandes de base en console.
 
 * [ ] To be continued... 🚧
+
+Exercies :
+
+Comprendre la magie du git par exemple en cas d'erreur qui dans d'autres circonstances, sans le git, pourrait être catastrophique
+
+Efface tout un dossier/ par accident
+→ git checkout -b uuu → efface tout un / 
+git restore chemin/du/dossier
+
 1. Crée une branche
     → Toujours travailler sur une branche dédiée - Cool: Tu lui donnes le noms que tu veux ([Enfin, selon le dev que tu penses faire, au moins pas d'espaces, et que cela ait un sens par rapport à ton dev](https://codeheroes.fr/blog/git-comment-nommer-ses-branches-et-ses-commits/)) :
 
