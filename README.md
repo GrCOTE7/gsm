@@ -294,5 +294,6 @@ Debug / Iphone :
 ## 🎯 Actuels goals prioritaires
 
 * [ ] Finir docs de base (Git, VSC, Py) + Add autres docs initiatiques
-* [ ] Problème de fin du process d'upgrade
 * [ ] Mettre en place dans le WorkFlow, le build pour IPhone (→ $Thera...)
+* [ ] Problème de fin du process d'upgrade
+* [x] Dernier reset complet du n° de V

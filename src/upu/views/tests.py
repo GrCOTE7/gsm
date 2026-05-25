@@ -7,6 +7,7 @@ from upu.views.page_template import named_view
 
 import webbrowser
 
+
 def open_external(e):
     webbrowser.open("https://example.com")
 
@@ -14,10 +15,10 @@ def open_external(e):
 def build() -> ft.Control:
 
     def ext_link(e, type):
-        if type==1 :
+        if type == 1:
             open_url(e, "https://example.com/1")
         open_url(e, "https://example.com/1")
-        
+
     def open_external(e):
         webbrowser.open("https://example.com")
 
@@ -68,7 +69,7 @@ def build() -> ft.Control:
             ],
             alignment=ft.MainAxisAlignment.CENTER,
         ),
-        "Page pour tests rapides.",
+        "Page de MP21170 pour tests rapides.",
         extra_top_gap=0,
         extra=ft.Column(
             [

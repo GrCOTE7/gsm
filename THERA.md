@@ -32,17 +32,21 @@ Donc, ici, ce projet, n'a vraiment qu'une seule intention :
 
 Permettre aux Hommes de bonnes volontés (Je ne vous fais pas l'affront de vous rappeler ce que le 'H' signifie... Et oui, vous avez raison, le 'de bonnes volontés' fait cliché et cinéma...) de s'unir pour oeuvrer à partager des compétences, s'améliorer perso à l'aide d'autres et en aidant d'autres, pour réaliser une appli qui permet à chaque humain, de s'améliorer (Donc, inévitablement, tôt ou tard, de comprendre devoir aussi venir collaborer pour encore + améliorer cette App....)
 
-À l'heure qu'il est, on est... 2 !!! GrCOTE7 et Thera... Mais la volonté est là, de toujours s'améliorer perso, et d'aider à améliorer la condition de Vie du + grand nombre 😊 !
+À l'heure qu'il est, on est qu'une poignée (Voir [le **nombre de *Forks*** et **Qui**](https://github.com/GrCOTE7/gsm/forks?include=active%2Cinactive&page=1&period=&sort_by=stargazer_counts) (*Notez qu'**MP21170** n'est du'un "fake user" qui nous sert à imager nos exemples dans la doc*), mais la volonté est là, de toujours s'améliorer perso, et d'aider à améliorer la condition de Vie du + grand nombre 😊 !
 
 Alors, venez jouer **VOTRE RÔLE** dans ce film !
 
-### DRY: 1 seule source de vérité : **GH**
+### DRY: 1 seule source de vérité : **GH** (Ce dépôt GitHub)
 
 #### Principe
 
 De grands hommes ont compris beaucoup de choses... Et certains (Le créateur de Linux, un autre, co-fondateur d'Apple, ALC, etc...) que le Git est sans doute la + grande révolution de tous les temps (Oui, avant n'importe quel langage, ou techno, y compris la boîte de conserve !!!)
 
-Donc, nous décidons qu'un seul dépôt doit être ce que les informaticiens appellent LA source de Vérité. C'est celui dont vous lisez présentement le 'Thera doc'.
+Donc, 1, nous décidons qu'un seul dépôt doit être ce que les informaticiens appellent LA source de Vérité. C'est celui dont vous lisez présentement le 'Thera doc'.
+
+Après, 2, un bon ouvrier a de bons outils... Nous découvrirons l'éditeur recommandé.
+
+Et enfin, 3, la Teck, connaître la programmation reste indispensable.... Auriez-vous pensé Python ?
 
 Allez, la philo, c'est sympa, mais ça fait pas chauffer tant que ça les processeurs... Lol (Encore que, avec l'IA, même cela peut-être faux...)
 
@@ -67,11 +71,11 @@ Allez, la philo, c'est sympa, mais ça fait pas chauffer tant que ça les proces
 
 ##### Technique
 
-* Le **Git** — Savoir (ou apprendre) : Clone, Commit, Push, Pull, Branch, PR… Bref, les bases (Et ça suffit large, pour démarrer)
+1. Le **[Git](https://fr.wikipedia.org/wiki/Git)** — Savoir (ou apprendre) : Clone, Commit, Push, Pull, Branch, PR… Bref, les bases (Et ça suffit large, pour démarrer)
 
-* Avoir **1 éditeur privilégié** ([VSCode hautement préconisé](https://code.visualstudio.com/) - Gratos, et de très nombreuses extensions existent, dont beaucoup pour le Git... Comme par hasard...Et qui rende son usage (du Git) aussi ludique qu'un Tétris!)
+2. Avoir **1 éditeur privilégié** ([VSCode hautement préconisé](https://code.visualstudio.com/) - Gratos, et de très nombreuses extensions existent, dont beaucoup pour le Git... Comme par hasard...Et qui rende son usage (du Git) aussi ludique qu'[une partie de Tétris](https://fr.wikipedia.org/wiki/Tetris) !)
 
-* Algorithmie — Pas besoin d’être un '[Knuth](https://fr.wikipedia.org/wiki/Donald_Knuth)', mais comprendre ce qu’est une variable, une boucle, une condition, une fonction, c’est mieux. Note: Si vous avez juste commencé un jour un tuto de n'importe quel langage, ceci est assurément atteint et fait ! 😊
+3. Algorithmie — Pas besoin d’être un '[Knuth](https://fr.wikipedia.org/wiki/Donald_Knuth)', mais comprendre ce qu’est une variable, une boucle, une condition, une fonction, c’est mieux. Note: Si vous avez juste commencé un jour un tuto de n'importe quel langage, ceci est assurément atteint et fait ! 😊
 
 → Bref, vous êtes absolument et assurément APTE à contribuer, car si il manque une c*h*ouille (une brindille - Heureusement que là aussi, j'ai bien mis le 'h'... ;-) ), alors quelques minutes (voire heures) suffisent pour l'être !
 
@@ -85,11 +89,11 @@ Et au final, surtout, c'est VOTRE Vie, et donc logiquement, de votre décision !
 
 ## 🚀 Comment contribuer
 
-Wahooo :-) ! Si vous lisez encore, et cela, arrêtez-de vous mentir ! C'est que vous avez déjà décidé ! Car sinon, c'est tellement facile de zapper, de basculer et de passer à autre chose... Alors, vraiment, et du fond du coeur: Bravos, et Merci :-) !
+Wahooo :-) ! Si vous lisez encore, et ces mots, arrêtez-de vous mentir ! C'est que vous avez déjà décidé ! Car sinon, c'est tellement facile de zapper, de basculer et de passer à autre chose... Alors, vraiment, et du fond du coeur: Bravos, et Merci :-) !
 
 Maintenant, attaquons les choses concrètement utiles (Et, + cool, dorénavant, car vu qu'on "bosse" ensemble maintenant, on s'tutoie, ok ?)  :-) ! :
 
-Ci-dessous, voici les grandes lignes  mais ne pas hésiter à consulter [./doc/01_GIT](./doc/01_GIT.md) à la moindre difficulté *(Et même si vous savez tout accomplir spontanément, parcourez-le tout de même rapidement, car on est jamais à l'abri de découvrir un Tip (Astuce)...)*
+Ci-dessous, voici les grandes lignes  mais ne pas hésiter à consulter [./doc/0101_GIT_FORK](./doc/0101_GIT_FORK.md) à la moindre difficulté *(Et même si vous savez tout accomplir spontanément, parcourez-le tout de même rapidement, car on est jamais à l'abri de découvrir un Tip (Astuce)...)*
 
 ### 1. Forke le dépôt
 
@@ -121,7 +125,7 @@ Pour travailler dessus, chacun crée sa copie personnelle.
 
     Mais du coup, là, t'es 'chez toi', c'est hyper cool ! Tu y dev ce que tu veux, cela ne peut jamais rien casser d'important, et tu te plantes ? Bravo, c'est que tu as poussé tes limites :-) ! Et si tu les as trop dépassées... Pas grave: Revient sur la branche main ! Rien n'est jamais perdu ! Rien qagné sur ce coup, mais rien de perdu ! En renouvellant X fois ce genre d'expériences, tu ne peux à termes et statistiquement qu'y gagner, et grandir :-) !
 
-2. Commiter proprement
+### 3. Commiter proprement
 
     Des fois, tu vas réussir ton dev :-) : Tout roule comme tu veux :-) Et tu te dis qu'il te faut impérativement en faire profiter tout le monde, c'est normal, c'est instinctif chez les Hommes de bonnes volontrés... ;-)
     
@@ -138,7 +142,7 @@ Pour travailler dessus, chacun crée sa copie personnelle.
         fix: correction du calcul de score
         docs: ajout section contribution
 
-3. Faire une Pull Request (PR)
+### 4. Faire une Pull Request (PR)
 
     La PR est le cœur de la collaboration. (Là, ça rigole plus car c'est maintenat que ton dev peut devenir 'officiel' :-))
 
@@ -169,7 +173,7 @@ Pour travailler dessus, chacun crée sa copie personnelle.
     Une PR n’est pas un examen.
     C’est une discussion technique entre humains bienveillants, et la scenette qui s'ajoute et fait qu'on aura ensemble un super film au final !
 
-4. Participer aux revues de code
+### 5. Participer aux revues de code
 
     Grâce à ton fork, puis clone, un simple Fetch et tu as le dernier apport le + top, et le + récent, d'un collaborateur, et ce, 24/24 - 7/7 et à volonté...
 
@@ -252,7 +256,7 @@ Tu es le bienvenu, vraiment.
 
 Même si tu penses “je suis trop débutant”, “je vais ralentir les autres”, “je ne suis pas légitime”.
 
-C’est faux : Déjà, parce que TU ES UNIQUE ! Donc, si en +, tu es de bonne volonté, absolunment personne ne peux ne serait-ce te critiquer, et encore moins te nuire et t'empêcher de t'épanouir ! Débutant, on l'a tous été en info, par exemple, mais on l'est encore complètement tous face à n'importe quel autre domaine nouveau...
+C’est faux : Déjà, parce que TU ES UNIQUE ! Donc, si en +, tu es de bonne volonté, absolument personne ne peux ne serait-ce te critiquer, et encore moins te nuire et t'empêcher de t'épanouir ! Débutant, on l'a tous été en info, par exemple, mais on l'est encore complètement tous face à n'importe quel autre domaine nouveau...
 
 Tu es exactement la personne qu’on veut ici.
 
