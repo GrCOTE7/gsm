@@ -9,6 +9,12 @@ Outre le fait que Git ait été créé en 2005 par **[Linus Torvalds](https://fr
 
 Et ce n’est pas qu’une formule : Dans le monde professionnel, **MAÎTRISER GIT est un PRÉREQUIS ABSOLU**. Sans versioning, pas de collaboration, pas d’historique, pas de fiabilité.
 
+<div align="center">
+  <a href="./imgs/git_important.jpg" target="_blank">
+    <img src="./imgs/git_important.jpg" width="300">
+  </a>
+</div>
+
 **Git, c’est la base du développement moderne.**
 
 ## Bases
