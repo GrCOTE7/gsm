@@ -17,6 +17,16 @@ Et ce n’est pas qu’une formule : Dans le monde professionnel, **MAÎTRISER
 
 **Git, c’est la base du développement moderne.**
 
+Et ici, ça veut dire :
+
+<div align="center">
+  <a href="./imgs/301_GIT.png" target="_blank">
+    <img src="./imgs/301_GIT.png" width="700">
+  </a>
+</div>
+
+#### → *Ne vous inquiétez pas des termes de ces illustrations, vous les comprendrez bientôt tous...*
+
 ## Bases
 
 Les cours magistraux sont du passé ! Apprenons-le Git pas l'action !
