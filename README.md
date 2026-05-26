@@ -106,7 +106,8 @@ tasks.register<Delete>("clean") {
     delete(rootProject.layout.buildDirectory)
 }
 
-* [ ] Voir la procédure exacte pour signer le fichier APK généré →  GgleStore
+* [x] Pour les updates, dans le workflow, procédure exacte pour signer le fichier APK généré →  GgleStore
+      de toujours la même signature
 
 Pour savoir quel Py est utilisé par uv
 

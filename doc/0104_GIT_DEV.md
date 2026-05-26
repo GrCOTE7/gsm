@@ -4,14 +4,15 @@
 
 ## 4. 🏗️ On attaque **le dev** ?
 
-Juste pour te rassurer : Bon, beaucoup de lecture pour bien comprendre et assimiler tout... Mais crois-moi: Si demain, tu dois tout recommencer, tu mettras max 2 minutes même si t'es pas doué 😉 ! Et ce principe sera toujours vrai 👍 - Bref, tu ne t'en aperçois p't'être même pas, mais tu d'viens bon 👌 ! Alors, courage pour la suite !
+Juste pour te rassurer : Bon, jusqu'à maintenant, beaucoup de lecture pour bien comprendre et tout assimiler... Mais crois-moi: Si demain, tu dois tout recommencer, tu mettras max 2 minutes même si t'es pas doué 😉 ! Et ce principe sera toujours vrai 👍 - Bref, tu ne t'en aperçois p't'être même pas, mais tu d'viens bon 👌 ! Alors, courage pour la suite !
 
 ### .🎯 L’idée principale
 
-Toujours oeuver dans une branche dédiée avant de commencer un développement.
-Cela garde l’historique propre, facilite les revues de code et évite de casser la branche principale qui doit toujours rester stable, au cas où...
+Toujours oeuvrer dans une branche dédiée avant de commencer un développement spécifique. Cela garde un historique propre au moins sur la branche main, facilite les revues de code et évite donc de casser la branche principale qui doit toujours rester stable, au cas où... Et insdipensable pour un dev collaboratif.
 
-    Pour info, une branche est comme une sorte d'autre copie intégrale du projet ! À ceci prêt que l'algorithme de GitHub (ou autre fournisseru) ne duplique pas vraiment tous les fichiers, mais garde 'simplement' en mémoire toutes les modifications, bref, quelques fichiers texte de quelques octets....
+    Pour info, une branche est comme une sorte d'autre copie intégrale du projet ! À ceci prêt que l'algorithme de GitHub (ou autre fournisseur) ne duplique pas vraiment tous les fichiers, mais garde 'simplement' en mémoire toutes les modifications, bref, quelques fichiers texte de quelques octets...
+    
+    Donc, très léger, mais surtout complètement transparent pour nous : Ne pas hésiter à en abuuser !
 
 ### 🧩Donc, étape 1 — Créer une branche de travail
 
@@ -29,12 +30,17 @@ Exemples de conventions :
 
 Cela rend l’historique compréhensible et navigable pour toute l’équipe.
 
-### → 🛠️ 1ère Commande Git
+### → 🛠️ 2ème Commande Git (Car déjà vu 'le' *clone*...)
 
-En CLI, créée la branche 'upgrade/01_git-dev' et te pose dessus :
+En CLI, elle créée la branche 'upgrade/01_git-dev' et te pose dessus :
 
 ```bash
+git branch upgrade/01_git-dev
+git checkout upgrade/01_git-dev
+    # OU - ménémonique, mais + court :
 git checkout -b upgrade/01_git-dev
+    # ET + moderne :
+git switch -c upgrade/01_git-dev
 ```
 
 Pour faire si besoin le point et avoir la liste des branches existantes :
@@ -42,41 +48,62 @@ Pour faire si besoin le point et avoir la liste des branches existantes :
 ```bash
 git branch
 ```
-
+    
 Affiche les branches locales, avec * sur celle où tu es.
 
-(Si " :" au lieu de ton invite habituelle : tape 'x' ou ':q' pour *eXit* (sortir de cet éditeur vi ou vim))
+(Si " :" au lieu de ton invite habituelle :, c'est qu'on est en mode édition. Tape 'ESC4, 'x' ou ':q' pour *e**X**it* ou ***Q**uit* (sortir de cet éditeur [**vi** ou **vim**](https://blog.stephane-robert.info/_astro/vi_demo.9jUPpoF3_Z27rg4g.webp)))
 
 Pour passer sur une autre branche (Par exemple, revenir sur la branche main) :
 
 ```bash
 git checkout main
+    # ET + moderne :
+git switch main
+    # À noter
+git switch - # Retour sur la branche précédente
 ```
 
 Voici qqes commandes utiles liées aux branches
 
 ```bash
-git branch ma-branche                # créée la branche mais sans passer dessus
-git branch -d ma-branche             # détruit la branche
-git branch -m ancien-nom nouveau-nom # renomme la branche
-git branch -a                        # voir les branches distantes
+git branch ma-branche                    # créée la branche mais sans passer dessus
+
+git branch -d ma-branche                 # détruit la branche
+    # + moderne :
+git branch --delete ma-branche
+
+git branch -m ancien-nom nouveau-nom     # renomme la branche
+    # + moderne :
+git branch --move ancien-nom nouveau-nom
+
+git branch -a                        # voir les branches distantes (- a = all)
+    # OU :
+git branch --all
+
+git checkout HEAD -- fichier.txt
+    # + moderne :
+git restore fichier.txt
 ```
 
-### 👉 Même si vous découvrirez bientôt des outils qui rendent intuitives ces commandes car applicables 'à coups de souris', il est toujours bon et parfois salvateur de connaître les commandes de base en console.
+### 👉 Même si vous découvrirez bientôt des outils qui rendent intuitives et ludiques ces commandes car applicables 'à coups de souris', il est toujours bon et parfois salvateur de connaître les commandes de base en console.
 
-* [ ] To be continued... 🚧
+### 🚧 T.P. - Exercice
 
-Exercies :
+Pour comprendre la magie du git, voyons un exemple exagérer extrême :
+Imaginons que fatigués, tu effaces par erreur tout un dossier important...
+Sans le git, cela serait assurément catastrophique, on ne sauvegarde pas toutes les 2 minutes !!!
 
-Comprendre la magie du git par exemple en cas d'erreur qui dans d'autres circonstances, sans le git, pourrait être catastrophique
+Donc, passe sur une nouvelle branche
+
+```bash
+git checkout -b action_debile
+```
 
 Efface tout un dossier/ par accident
 → git checkout -b uuu → efface tout un / 
 git restore chemin/du/dossier
 
-1. Crée une branche
-    → Toujours travailler sur une branche dédiée - Cool: Tu lui donnes le noms que tu veux ([Enfin, selon le dev que tu penses faire, au moins pas d'espaces, et que cela ait un sens par rapport à ton dev](https://codeheroes.fr/blog/git-comment-nommer-ses-branches-et-ses-commits/)) :
-
+* [ ] To be continued... 🚧
     Exemples:
     
         feature/ma-nouvelle-fonctionnalite

@@ -32,7 +32,7 @@ En principe, l'app doit se lancer, là, et tu dois en voir la page d'accueil...
 
 Donc, si tout va bien, à ce stade, l'app 'tourne', et tu dois voir que la fenêtre de sortie de l'app s'actualise automatiquement dès un seul caractère du code modifié... Même si elle n'est pas forcément à un endroit optimal, selon ton matériel... Pour le moment, le cas échéant, fais la simplement glisser ailleurs afin qu'elle ne te gêne pas !
 
-### 💡 Pour modifier la page d'accueil et ainsi **voir IMMÉDIATEMENT que tout marche bien**, dont le hot-reload: Ouvre ce fichier: gsm\src\upu\views\tests.py et modifie la ligne - elle se trouve plutôt sur la fin du script...
+### 💡 Pour modifier la page d'accueil avec n'importe quel éditeur, et ainsi **voir IMMÉDIATEMENT que tout marche bien** dont le hot-reload : Ouvre ce fichier: gsm\src\upu\views\tests.py et modifie la ligne - elle se trouve plutôt sur la fin du script, dans le *return* de la fct *build()*...
 
 ```python
 "Page pour tests rapides.",
@@ -60,13 +60,13 @@ Alors, **bonne nouvelle, c'est juste une valeur à indiquer dans un fichier** :
 2. Pour l'heure, la seule valeur à y configurer est **UPU_WINDOW_LEFT** : Elle définit où se positionnera la fenêtre de l'App sur le système d'affichage d'écran par rapport au bord gauche de l'ensemble... **Trouve TA valeur idéale pour un positionnement aux petits oignons**... (*[Encore des Oignons ?!?](../THERA.md#Philosophie---Union-&-DRY)*)
       Nous verrons les autres paramètres en temps utile.
 
-📄 Pour info : Ce **fichier ./.env n'est jamais dans le Git** (Il est à toi, et rien qu'à toi, uniquement local, donc tu peux y mettre toutes infos sensibles sans inquiétude... Et u verrfas que tuy poseras des mots de passes parfois très sensibles... No soucis ! - *Prononcer 'soucaïde'*)
+📄 Pour info : Ce **fichier ./.env n'est jamais dans le Git** (Il est à toi, et rien qu'à toi, uniquement local, donc tu peux y mettre toutes infos sensibles sans inquiétude... Et u verrfas que tuy poseras des mots de passes parfois très sensibles... No soucis ! - *Prononcer 'No souçaïde'*)
 
-## 💡 Avoir un dépot 'private' (Que pour TOI)
+## 💡 Avoir un dépot 'private' (Que pour TOI !)
 
-On est jamais à l'abri de devoir re-initialiser un projet, même GSM (et peut-être, si on est aussi actifs qu'on l'espère, surtout, GSM !)... Et donc, toutes les valeurs qui sont strictement tiennes dans ce .env risquent d'être perdues à jamais (Sauf si tu es absolument sûr de penser à le mettre de côté si un jour cette situation de reset extrême arrive... Et crois-moi que ce jour là, 9/10 chances que tu comprennes que le Père Noël , c'est que pour les tous petits... De nombreuses sociétés ont disparus à cause des conséquences fiancières dramatiques de ce seul risque !)
+On est jamais à l'abri de devoir un jour re-initialiser un projet, même GSM (et peut-être, si on est aussi actifs qu'on l'espère, surtout, GSM !)... Et donc, toutes les valeurs qui sont strictement tiennes dans ce ***.env*** risquent d'être perdues à jamais (Sauf si tu es absolument sûr de penser à le mettre de côté si un jour cette situation de reset extrême arrive... Et crois-moi que ce jour là, 9/10 chances que tu comprennes que le Père Noël , c'est que pour les tous petits... De nombreuses sociétés ont disparus à cause des conséquences fiancières dramatiques de ce seul risque non couvert !)
 
-Note: Rien ne t'empêche d'y stocker, aussi dans ce 'private dépôt', vraiment tout ce que tu veux : De docs admins, factures, etc... Pas besoin forcément du code d'un quelconque langage, mais pas contre, une bonne artborescence bien réfléchie pour y retrouver facilement et rapidement tout doc au besoin... SSL, hautement sécurisé, décentralisé, gratos... Bref, tous tes trucs clés dans un unique support, dispo 24/24, indépendant de tout ton matos perso... Mais n'oublie pazs, donc, d'y mettre aussi la copie de ton .env de ton projet GSM ! ;-) !
+*Tip*: Rien ne t'empêche d'y stocker, aussi dans ce 'private dépôt', vraiment tout ce que tu veux : De docs admins, factures, etc... Pas besoin forcément du code d'un quelconque langage, mais pas contre, une bonne artborescence bien réfléchie pour y retrouver facilement et rapidement tout doc au besoin... SSL, hautement sécurisé, décentralisé, gratos... Bref, tous tes trucs clés dans un unique support, dispo 24/24, indépendant de tout ton matos perso... Mais n'oublie pas, donc, d'y mettre aussi la copie de ton .env de ton projet GSM ! 😉 !
 
 
 ---

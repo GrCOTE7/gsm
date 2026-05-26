@@ -68,8 +68,6 @@ Allez, la philo, c'est sympa, mais ça fait pas chauffer tant que ça les proces
 * Curiosité — Accepter de ne pas tout savoir, et d’apprendre chaque jour.
 * Humilité — Comprendre que le code parfait n’existe pas.
 * Esprit d’équipe — On avance plus vite ensemble que seul.
-  
-  
 
 ##### Technique
 
@@ -97,7 +95,7 @@ En effet, si vous lisez encore, là, maintenant, ces mots, alors arrêtez-de vou
 
 Donc, attaquons les choses concrètement utiles (Et, + cool, dorénavant, car vu qu'on "bosse" ensemble maintenant, on s'tutoie, ok 😉 ?) :
 
-Ci-dessous, voici les grandes lignes  mais ne pas hésiter à consulter [le programme détaillé (./doc/0101_GIT_FORK)](./doc/0101_GIT_FORK.md) à la moindre difficulté *(Et même si vous savez tout accomplir spontanément, parcourez-le tout de même rapidement, car on est jamais à l'abri de découvrir un Tip (Une astuce) ou autre...)*
+Ci-dessous, voici les grandes lignes  mais ne pas hésiter à consulter [le début du programme complet et détaillé (./doc/0101_GIT_FORK)](./doc/0101_GIT_FORK.md) à la moindre difficulté *(Et même si tu as su tout accomplir spontanément, parcoure-le tout de même rapidement, car on est jamais à l'abri de découvrir un Tip (Une astuce) ou autre...)*
 
 ### 1. [Forke, clône, & utilise le dépôt en local](./doc/0101_GIT_FORK.md)
 
@@ -108,30 +106,25 @@ Pour travailler dessus, chacun crée sa copie personnelle.
 
 #### → [Clone ce fork en local](./0102_GIT_CLONE.md)
 
-#### → [Installe les dépendances, lance l'Appet teste que tout marche au moins bien pour TOI, en local](./0103_GIT_USE.md)
+#### → [Installe les dépendances, lance l'App et teste que tout marche bien, au moins pour TOI en local](./0103_GIT_USE.md)
 
 👉 Et si problème : **[Page d'aide](./doc/0000_HELPME.md)** !
 
 ### 2. [Commence à dev](./doc/0104_GIT_DEV.md)
 
-→ Toujours travailler sur une branche dédiée - Cool :
-  Tu lui donnes le nom que tu veux
+→ Travaille sur une branche dédiée
 
-    → Crée une branche pour ton dev
-    → Code
-    → Commits
+* [ ] To be continued... 🚧
 
-Et ainsi, à terme, des fois, tu vas aboutir complètement à ce que tu voulais :-) : Tout roule comme tu veux et tu te dis alors qu'il te faut impérativement en faire profiter tout le monde, c'est normal, c'est instinctif chez les Hommes de bonnes volontés... 😉 Ça sent la **PR**... 💪
+À terme, des fois, tu vas aboutir complètement à ce que tu voulais :-) : Tout roule comme tu veux et tu te dis alors qu'il te faut impérativement en faire profiter tout le monde, c'est normal, c'est instinctif chez les Hommes de bonnes volontés... 😉 Ça sent la **PR**... 💪
 
 👉 Et si problème : **[Page d'aide](./doc/0000_HELPME.md)** !
 
-
 ### 3. AGIR, faire une **PR** (**P**ull **R**equest) - Le graal du codeur, le cœur de la Collaboration ❤️
-
 
 Là, ça ne rigole plus car c'est maintenant que ton dev peut devenir absolument 'officiel' et être utilisé par tous 😁
 
-    Avant de voir le détail de cette étape, juste,ensemble, prenons du recul...:
+    Avant de voir le détail de ce process, juste, prenons ensemble un peu de recul...:
 
     - T'as t'on demandé un diploume ?
     - Demandé pour qui tu te prends ? De quel droit tu te permets d'émettre un avis ?
@@ -139,11 +132,7 @@ Là, ça ne rigole plus car c'est maintenant que ton dev peut devenir absolument
     - À quelle dininité tu crois ?
     - Au fait, t'es plutôt caucasien, jaune, gris, brown...? vert ?:?
 
----
-
     → Non : Ici, là et maintenant, TU ES TOI ! Et enfin, là, ici et maintenant, enfin au bon endroit au bon moment !!! Seulement TOI et TOI SEUL peut comprendre et doit accepter l'idée que TON RÔLE est CAPITAL, pas indispensable, juste CAPITAL et IMPORTANT !
-
-* [ ] To be continued... 🚧
 
 Concrètement, pour faire valoir ton dev, tu dois :
 
