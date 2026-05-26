@@ -26,7 +26,7 @@ Tu ❤️ Python...? Rejoins le chat en LIVE !
 
 ## 🤝 Collaboration
 
-Pour **contribuer** au dev de ce projet, **lire [THERADOC](https://github.com/GrCOTE7/gsm/blob/main/THERA.md)**
+Pour **contribuer** au dev de ce projet (Et **en connaître tous les rouages et secrets**) : **Lire [THERADOC](https://github.com/GrCOTE7/gsm/blob/main/THERA.md)**
 
 ## 🚀 Run the app
 
