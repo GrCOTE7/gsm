@@ -73,29 +73,31 @@ Allez, la philo, c'est sympa, mais ça fait pas chauffer tant que ça les proces
 
 ##### Technique
 
-1. Le **[Git](https://fr.wikipedia.org/wiki/Git)** — Savoir (ou apprendre) : Clone, Commit, Push, Pull, Branch, PR… Bref, les bases (Et ça suffit large, pour démarrer)
+1. Le **[Git](https://fr.wikipedia.org/wiki/Git)** — Savoir (ou apprendre) : Fork, Clone, Branch, Commit, Push, Pull, PR… Bref, les bases (Et ça suffit large, pour démarrer et Être)
 
 2. Avoir **1 éditeur privilégié** ([VSCode hautement préconisé](https://code.visualstudio.com/) - Gratos, et de très nombreuses extensions existent, dont beaucoup pour le Git... Comme par hasard... Et qui rende son usage (celui du Git) aussi ludique qu'[une partie de Tétris](https://fr.wikipedia.org/wiki/Tetris) !)
 
 3. Algorithmie — Pas besoin d’être un '[Knuth](https://fr.wikipedia.org/wiki/Donald_Knuth)', mais comprendre ce qu’est une variable, une boucle, une condition, une fonction, c’est mieux. Note: Si vous avez juste commencé un jour un tuto de n'importe quel langage, ceci est assurément atteint et fait ! 😊
 
-→ Bref, vous êtes absolument et assurément APTE à contribuer, car si il manque une c*h*ouille (une brindille - Heureusement que là aussi, j'ai bien mis le 'h'... ;-) ), alors quelques minutes (voire heures) suffisent pour l'être !
+→ Bref, vous êtes absolument et assurément APTE à contribuer, car si il manque une c*h*ouille (une brindille - Heureusement que là aussi, j'ai bien mis le 'h'... 🫨 ), alors quelques minutes (voire heures) suffisent pour l'être !
 
 Une seule chose ne compte maintenant !
 
 ### ==> **VOTRE DÉCISION !!!**
 
-Elle est MAJEURE, et doit être immédiate ! Car demain veut souvent dire jamais !
+Elle est **MAJEURE**, et doit être immédiate ! Car demain veut souvent dire jamais !
 
-Et au final, surtout, c'est VOTRE Vie, et donc logiquement, selon VOTRE seule décision !
+Et au final, surtout, c'est **VOTRE Vie**, et **donc** logiquement, selon **VOTRE seule décision** !
 
 ## 🚀 Comment contribuer ?
 
-Wahooo :-) ! Si vous lisez encore, là, maintenant, ces mots, alors arrêtez-de vous mentir ! C'est que vous avez déjà décidé ! Car sinon, c'est tellement si facile de zapper, de basculer et de passer à autre chose... Alors vraiment, et du fond du coeur: Bravos, et Merci 😊 !
+## Wahooo 👏 ✌️ 👍 🤝 🥰 🥳 💪 !
+
+En effet, si vous lisez encore, là, maintenant, ces mots, alors arrêtez-de vous mentir ! C'est que vous avez déjà décidé ! Car sinon, c'est tellement si facile de zapper, de basculer et de passer à autre chose... Alors vraiment, et du fond du coeur: Bravos, et Merci 😊 !
 
 Donc, attaquons les choses concrètement utiles (Et, + cool, dorénavant, car vu qu'on "bosse" ensemble maintenant, on s'tutoie, ok 😉 ?) :
 
-Ci-dessous, voici les grandes lignes  mais ne pas hésiter à consulter [./doc/0101_GIT_FORK](./doc/0101_GIT_FORK.md) à la moindre difficulté *(Et même si vous savez tout accomplir spontanément, parcourez-le tout de même rapidement, car on est jamais à l'abri de découvrir un Tip (Une astuce)...)*
+Ci-dessous, voici les grandes lignes  mais ne pas hésiter à consulter [le programme détaillé (./doc/0101_GIT_FORK)](./doc/0101_GIT_FORK.md) à la moindre difficulté *(Et même si vous savez tout accomplir spontanément, parcourez-le tout de même rapidement, car on est jamais à l'abri de découvrir un Tip (Une astuce) ou autre...)*
 
 ### 1. [Forke, clône, & utilise le dépôt en local](./doc/0101_GIT_FORK.md)
 
