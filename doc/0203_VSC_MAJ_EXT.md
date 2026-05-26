@@ -1,4 +1,6 @@
-# VSC - Extensions Majures
+# VSC - Extensions Majeures
+
+* [ ] To be continued... 🚧
 
 * [ ] ToDO avec settings comments + ToDo *[ ], ⚠️ , ✅ , ✔* [x] ↗️ , etc....
       pour affichage, comptage, et linting des todos
