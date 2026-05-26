@@ -105,6 +105,9 @@ Efface tout un dossier/ par accident
 git restore chemin/du/dossier
 
 * [ ] To be continued... 🚧
+
+Test push depuis codespace
+
     Exemples:
     
         feature/ma-nouvelle-fonctionnalite
