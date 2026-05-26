@@ -42,9 +42,9 @@ Mais attention... : Si quelques temps sont passés depuis notre fork, p't'être 
 
 ---
 
-Et quand on est Ok, on y va ! On descend le code sur notre Mc (Machine) :
+Et quand on est Ok, on y va ! On descend le code sur **notre Mc** (Machine) **LOCALE** :
 
-Dans le dossier de ton choix, ouvre une **CLI** (**C**ommand **L**ine **I**nterface), la console de commande, et tapes-y :
+Dans le dossier de ton choix de ta Mc, ouvre une **CLI** (**C**ommand **L**ine **I**nterface), la console de commande, et tapes-y :
 
 ```bash
 git clone https://github.com/MP21170/gsm.git
