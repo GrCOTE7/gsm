@@ -38,11 +38,14 @@ Pour **contribuer** au dev de ce projet (Et **en connaître tous les rouages et 
 ./go
 ```
 
-Lancer le build APK :
+Lancer le build APK pour construire l'app pour ton mobile ou tablette **Androïd** :
 
 ```bash
 ./apk
 ```
+
+(Sinon, ouvre cette page avec ton mobile et télech directement :
+  **https://github.com/GrCOTE7/gsm/releases** - La der version, le lien **Upu.apk**)
 
 ### uv - Alternative à pip + env + flet run
 
