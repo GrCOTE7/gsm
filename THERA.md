@@ -38,7 +38,7 @@ Permettre aux Hommes de bonnes volontés (Je ne vous fais pas l'affront de vous 
 
 → Alors, venez jouer **VOTRE RÔLE** dans ce film !
 
-### 2. DRY: 1 seule source de vérité : **GH** (Ce dépôt GitHub)
+### 2. DRY: 1 seule source de vérité : **GH** (Ce dépôt **G**it**H**ub)
 
 #### Principe
 
