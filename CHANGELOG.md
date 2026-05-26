@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/GrCOTE7/gsm/compare/v1.0.7...v1.0.8) (2026-05-26)
+
+
+### Bug Fixes
+
+* colorized equation ([e32b56c](https://github.com/GrCOTE7/gsm/commit/e32b56cb79bf18bc32a721daa0a4ef649ddafdbb))
+
 ## [1.0.7](https://github.com/GrCOTE7/gsm/compare/v1.0.6...v1.0.7) (2026-05-25)
 
 
