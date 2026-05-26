@@ -32,11 +32,11 @@ On sera balayé de la planète encore + vite que nous seuls allions parfaitement
 
 Donc, ici, ce projet, n'a vraiment qu'une seule intention ou ambition :
 
-Permettre aux Hommes de bonnes volontés (Je ne vous fais pas l'affront de vous rappeler ce que le 'H' signifie... Et oui, vous avez raison, le 'de bonnes volontés' fait cliché et cinéma...) de s'unir pour oeuvrer à partager des compétences, s'améliorer perso à l'aide d'autres et en aidant d'autres, pour réaliser une appli qui permet à chaque humain, de s'améliorer (Donc, inévitablement, tôt ou tard, de comprendre devoir aussi venir collaborer pour encore + améliorer cette App....)
+Permettre aux Hommes de bonnes volontés (Je ne vous fais pas l'affront de vous rappeler ce que le 'H' signifie... Et oui, vous avez raison, le 'de bonnes volontés' fait cliché et cinéma...) de s'unir pour oeuvrer à partager des compétences, s'améliorer perso à l'aide d'autres et en aidant d'autres, pour réaliser une appli (**UpU** - *Up You!* - **Élevez-VOUS !**) qui permet à chaque humain, de s'améliorer (Donc, inévitablement, tôt ou tard, de comprendre devoir aussi venir collaborer pour encore + et toujours, améliorer cette App....)
 
-À l'heure qu'il est, on est qu'une poignée (Voir [le **nombre de *Forks*** et **Qui**](https://github.com/GrCOTE7/gsm/forks?include=active%2Cinactive&page=1&period=&sort_by=stargazer_counts) (*Notez qu'**MP21170** n'est du'un "fake user" qui nous sert à imager nos exemples dans la doc*), mais la volonté est là, de toujours s'améliorer perso, et d'aider à améliorer la condition de Vie du + grand nombre 😊 !
+À l'heure qu'il est, on est qu'une poignée (Voir [le **nombre de *Forks*** et **Qui**](https://github.com/GrCOTE7/gsm/forks?include=active%2Cinactive&page=1&period=&sort_by=stargazer_counts) (*Oui, très petite, la poignée, car notez qu'**MP21170** n'est qu'un "fake user" qui nous sert à imager nos exemples dans la doc* !), mais la volonté est là, de toujours s'améliorer perso, et d'aider à améliorer la condition de Vie du + grand nombre 😊 !
 
-Alors, venez jouer **VOTRE RÔLE** dans ce film !
+→ Alors, venez jouer **VOTRE RÔLE** dans ce film !
 
 ### 2. DRY: 1 seule source de vérité : **GH** (Ce dépôt GitHub)
 
