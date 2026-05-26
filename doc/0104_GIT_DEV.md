@@ -89,7 +89,8 @@ git restore fichier.txt
 
 ### 🚧 T.P. - Exercice
 
-Pour comprendre la magie du git, voyons un exemple exagérer extrême :
+
+Pour comprendre l'importance et la magie du git, voyons un exemple exagéré extrême :
 Imaginons que fatigués, tu effaces par erreur tout un dossier important...
 Sans le git, cela serait assurément catastrophique, on ne sauvegarde pas toutes les 2 minutes !!!
 
