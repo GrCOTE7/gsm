@@ -174,3 +174,5 @@ sync.ffs_lock
 
 # Runtime state (modifié à chaque lancement, ne pas tracker)
 src/upu/app_data/app_state.json
+
+flet-desktop-light.zip

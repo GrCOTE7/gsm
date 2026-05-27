@@ -22,6 +22,10 @@ uv sync
 echo "📦 Téléchargement de flet-desktop-light..."
 curl -LO https://github.com/flet-dev/flet/releases/latest/download/flet-desktop-light.zip
 
+# curl -L -o flet-desktop-light.zip https://github.com/flet-dev/flet/releases/download/v0.21.0/flet-desktop-light.zip
+curl -L -o flet-desktop-light.zip https://github.com/flet-dev/flet/releases/download/v0.21.0/flet-desktop-light.zip
+
+
 # Extraire dans un dossier local
 unzip -o flet-desktop-light.zip -d flet-desktop-light
 
