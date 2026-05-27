@@ -1,2 +1,4 @@
 flet
+flet-cli
 pytest
+uv
