@@ -18,19 +18,19 @@ fi
 # Installer les dépendances Python
 uv sync
 
-# Télécharger flet-desktop-light dans le codespace
-echo "📦 Téléchargement de flet-desktop-light..."
-curl -LO https://github.com/flet-dev/flet/releases/latest/download/flet-desktop-light.zip
+# # Télécharger flet-desktop-light dans le codespace
+# echo "📦 Téléchargement de flet-desktop-light..."
+# curl -LO https://github.com/flet-dev/flet/releases/latest/download/flet-desktop-light.zip
 
+# # curl -L -o flet-desktop-light.zip https://github.com/flet-dev/flet/releases/download/v0.21.0/flet-desktop-light.zip
 # curl -L -o flet-desktop-light.zip https://github.com/flet-dev/flet/releases/download/v0.21.0/flet-desktop-light.zip
-curl -L -o flet-desktop-light.zip https://github.com/flet-dev/flet/releases/download/v0.21.0/flet-desktop-light.zip
 
 
-# Extraire dans un dossier local
-unzip -o flet-desktop-light.zip -d flet-desktop-light
+# # Extraire dans un dossier local
+# unzip -o flet-desktop-light.zip -d flet-desktop-light
 
-# Rendre exécutable
-chmod +x flet-desktop-light/fletd
+# # Rendre exécutable
+# chmod +x flet-desktop-light/fletd
 
-echo "✅ flet-desktop-light installé localement dans ./flet-desktop-light/"
-echo "➡️ Lance ton app avec : ./flet-desktop-light/fletd app.py"
+# echo "✅ flet-desktop-light installé localement dans ./flet-desktop-light/"
+# echo "➡️ Lance ton app avec : ./flet-desktop-light/fletd app.py"
