@@ -10,7 +10,7 @@ Mais attention à cette dernière: Car elle peut faire beaucoup + et ne lui dema
 
 → Car 9.999 / 10 chances qu'elle va intervenir et résoudre ton problème, peut-être même en venant directement dans ton éditeur modifier le code dans tes fichiers 😁 !!! (Avec **VSCode**, c'est **non seulement possible, mais même gratos !!!**)
 
-Bref, tu as même plus rien à faire, si tu le souhaites, juste à 'demander et tu auras...' (Ah ces bons vieux contes des 1000 et 1 nuits...; ça devriendrait-y pas à la moide, et réalité maintenant... ?)
+Bref, tu as même plus rien à faire, si tu le souhaites, juste à 'demander et tu auras...' (Ah ces bons vieux contes des 1000 et 1 nuits...; ça ne re-devriendrait-y pas de noouveau à la mode, etcar réalité maintenant... ?)
 
 Alors, la **GOOD NEWS**, c'est que : **Ça marche, mais** la **BAD NEWS** : **Pas longtemps !**
 
@@ -27,14 +27,14 @@ Et là, tu vas constater 2-3 choses:
 - **Tu vas aussi et surtout, réussir** à passer l'épreuve de cette difficulté provisoire,
 - Et **tu sortiras GRANDI de cette épreuve !**
 
-### ❤️ Après, si tu sais faire, s'impose une **PR** (**P**ull **R**equest) qui pourra sûrement aider quelqu'un d'autre à ne même pas rencontrer ce problème, si grâce à TOI, la doc (ou le code) devient mieux élaboré, + adapté ❤️
+### ❤️ Après, si tu sais faire, s'impose une **PR** (**P**ull **R**equest) qui pourra sûrement aider quelqu'un d'autre à ne même pas rencontrer ce problème, si grâce à TOI, la doc (ou le code) du projet devient mieux élaboré, + adapté ❤️
 
-### Et sinon, apprends vite pour savoir faire une **PR** ! **👉 Lis au moins La doc GIT d'ici** 🧠 (*la série des fichiers ./doc/01XX_GIT_NNN.md*) 👌
+### Et sinon, apprends vite pour savoir faire une **PR** ! **👉 Pour cela, lis au moins rapidement la doc GIT d'ici** 🧠 (*la série des fichiers ./doc/01XX_GIT_NNN.md*) 👌
 
 ## 2. Selon l'heure, tu peux dial directement avec un 'collègue' dans notre [Chat LIVE](https://discord.com/channels/1056923339546968127/1507316257580519445) ( [![Discord](https://img.shields.io/discord/1056923339546968127)](https://discord.com/channels/1056923339546968127/1507316257580519445) )
 
-## 3. Enfin, tu peux ouvrir une [ISSUE](https://github.com/GrCOTE7/gsm/issues/new/choose)
+## 3. Enfin, tu peux aussi ouvrir une [ISSUE](https://github.com/GrCOTE7/gsm/issues/new/choose)
 
-Particulièrement adapté si tu penses qu'expliquer le cas peut être long...
+Particulièrement adaptée si tu penses qu'expliquer le cas peut être long...
 
 Au passage, un des modèles des ISSUES permet de te présenter, si tu le souhaites...

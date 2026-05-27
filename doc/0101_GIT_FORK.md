@@ -2,6 +2,8 @@
 
 ### 👉 PRÉAMBULE: À la moindre difficulté, consulte la **[page d'aide](./0000_HELPME.md)**
 
+---
+
 Outre le fait que Git ait été créé en 2005 par **[Linus Torvalds](https://fr.wikipedia.org/wiki/Linus_Torvalds)**, les grands noms du développement ont rapidement compris qu’il s’agissait d’un outil essentiel. L’une des phrases les plus marquantes est attribuée à **Chris Lattner**, ingénieur d’Apple (créateur du langage Swift et contributeur majeur à LLVM) :
 
 > **« If it’s not in Git, it doesn’t exist. »**  
@@ -25,7 +27,7 @@ Et ici, ça veut dire :
   </a>
 </div>
 
-#### → *Ne vous inquiétez pas des termes de ces illustrations, vous les comprendrez bientôt tous...*
+#### → *Ne t'inquiéte pas des termes de ces illustrations, tu les comprendras bientôt tous...*
 
 ## Bases
 

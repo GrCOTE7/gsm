@@ -4,11 +4,13 @@
 
 ### 👉 PRÉAMBULE (RAPPEL) : À la moindre difficulté, consulte la **[page d'aide](./0000_HELPME.md)**
 
+---
+
 ## 2. Clone ton fork en local
 
 Maintenant, pour jouer avec ce code adopté, va falloir le mettre sur ta machine...
 
-Mais attention... : Si quelques temps sont passés depuis notre fork, p't'être que le dépôt à évolué... Du coups, on n'est plus à jour... Et on va voir un truc style :
+Mais attention... : Si quelques temps sont passés depuis ton fork, p't'être que le dépôt à évolué... Du coups, tu n'es plus à jour... Et tu vas voir un truc style :
 
 ---
 
@@ -32,7 +34,7 @@ Mais attention... : Si quelques temps sont passés depuis notre fork, p't'être 
 
 ---
 
-### → la preuve dans la 'seconde' qui suit :
+### → La preuve dans la 'seconde' qui suit :
 
 <div align="center">
   <a href="./imgs/107_required_sync.png" target="_blank">
@@ -42,9 +44,13 @@ Mais attention... : Si quelques temps sont passés depuis notre fork, p't'être 
 
 ---
 
-Et quand on est Ok, on y va ! On descend le code sur **notre Mc** (Machine) **LOCALE** :
+Et quand on est Ok, on y va ! On descend le code sur **notre Mc** (Machine) **personelle LOCALE** :
 
-Dans le dossier de ton choix de ta Mc, ouvre une **CLI** (**C**ommand **L**ine **I**nterface), la console de commande, et tapes-y :
+### 1. Selon ton OS, tu [installes le Git adapté](https://git-scm.com/install)
+
+### 2. Récupère tout le code de ton fork sur ta Mc locale
+
+Dans le dossier de ton choix de ta Mc, ouvre une **CLI** (**C**ommand **L**ine **I**nterface), la console de commandes, et tapes-y :
 
 ```bash
 git clone https://github.com/MP21170/gsm.git
@@ -52,7 +58,7 @@ git clone https://github.com/MP21170/gsm.git
 
 ⚠️ N'oublie pas que ***MP21170***, c'est que pour notre exemple ici... Remplace ça par **TON UserName** !
 
-### → Cela **te créée un dossier gsm/ dans lequel tu y as TOUT le code ! 👌**
+### 3. BILAN → Cela **te créée un dossier gsm/ dans lequel tu y as TOUT le code ! 👌**
 
 Allons, n'attendons plus ! Voyons ce que cela donne (Entrons dans le dossier, et lançons le *run* (On va mettre en route !) !
 
