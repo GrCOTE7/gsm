@@ -30,7 +30,7 @@ Pour **contribuer** au dev de ce projet (Et **en connaître tous les rouages et 
 
 ## 🚀 Run the app
 
-### En ligne - Sans rien n'installer !
+### * En ligne - Sans rien n'installer !
 
 Dans le page du dépôt (Original, ou de votre fork), appuyer sir ' , ' et générer un workspace.
 
@@ -38,12 +38,14 @@ Dans le terminal qui apparaît :
 
 ```bash
 uv run flet run --web
+    # OU, raccourci
+./go
 ```
 
 NB : Dans un codespace, seule la version Flet Web fonctionne (Avec l'option --web)
 
 
-### Win
+### * Local - Win OS
 
 Éxécuter :
 
