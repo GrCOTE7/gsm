@@ -42,7 +42,7 @@ uv run flet run --web
 ./go
 ```
 
-NB : Dans un codespace, seule la version Flet Web fonctionne (Avec l'option --web)
+NB : Dans un codespace, seule la version Flet Web fonctionne (Avec l'option --web), et attention, pas de refresh, hotreload, etc... Bref, ne sert qu'à partager un rendi, voire éditer du code, ou éventuellement coder un script très simple...
 
 
 ### * Local - Win OS

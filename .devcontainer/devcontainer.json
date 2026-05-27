@@ -11,5 +11,5 @@
       ]
     }
   },
-  "postCreateCommand": "pip install -r requirements.txt"
+  "postCreateCommand": "./.devcontainer/postCreateCommand.sh"
 }

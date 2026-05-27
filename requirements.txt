@@ -8,5 +8,3 @@ flet-desktop==0.85.2 ; sys_platform == "win32"
 
 # Linux (Codespace) → installer la version light
 flet-desktop-light==0.85.2 ; sys_platform == "linux"
-
-uv
