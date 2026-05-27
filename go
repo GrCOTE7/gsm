@@ -1,7 +1,4 @@
 #!/bin/bash
-
-# Aller à la racine du projet
 cd "$(dirname "$0")"
 
-# Lancer l'app en mode web
-uv run flet run --web
+uv run flet run --web --host 0.0.0.0 --port 8550
