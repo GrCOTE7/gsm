@@ -81,7 +81,7 @@ Allez, la philo, c'est sympa, mais ça fait pas chauffer tant que ça les proces
 
 Une seule chose ne compte maintenant !
 
-### ==> **VOTRE DÉCISION !!!**
+#### ==> **VOTRE DÉCISION !!!**
 
 Elle est **MAJEURE**, et doit être immédiate ! Car demain veut souvent dire jamais !
 
@@ -95,140 +95,46 @@ En effet, si vous lisez encore, là, maintenant, ces mots, alors arrêtez-de vou
 
 Donc, attaquons les choses concrètement utiles (Et, + cool, dorénavant, car vu qu'on "bosse" ensemble maintenant, on s'tutoie, ok 😉 ?) :
 
-Ci-dessous, voici les grandes lignes  mais ne pas hésiter à consulter [le début du programme complet et détaillé (./doc/0101_GIT_FORK)](./doc/0101_GIT_FORK.md) à la moindre difficulté *(Et même si tu as su tout accomplir spontanément, parcoure-le tout de même rapidement, car on est jamais à l'abri de découvrir un Tip (Une astuce) ou autre...)*
+### [Ça commence ICI, le début du programme complet et détaillé : ./doc/0101_GIT_FORK)](./doc/0101_GIT_FORK.md)
 
-### 1. [Forke, clône, & utilise le dépôt en local](./doc/0101_GIT_FORK.md)
 
-Le dépôt principal est sacré : c’est LA source de vérité.
-Pour travailler dessus, chacun crée sa copie personnelle.
-  
-#### → [Forke le repo](./doc/0101_GIT_FORK.md)
+Et observe juste 2-3 p'tites choses... :
 
-#### → [Clone ce fork en local](./0102_GIT_CLONE.md)
-
-#### → [Installe les dépendances, lance l'App et teste que tout marche bien, au moins pour TOI en local](./0103_GIT_USE.md)
-
-👉 Et si problème : **[Page d'aide](./doc/0000_HELPME.md)** !
-
-### 2. [Commence à dev](./doc/0104_GIT_DEV.md)
-
-→ Travaille sur une branche dédiée
-
-* [ ] To be continued... 🚧
-
-À terme, des fois, tu vas aboutir complètement à ce que tu voulais :-) : Tout roule comme tu veux et tu te dis alors qu'il te faut impérativement en faire profiter tout le monde, c'est normal, c'est instinctif chez les Hommes de bonnes volontés... 😉 Ça sent la **PR**... 💪
-
-👉 Et si problème : **[Page d'aide](./doc/0000_HELPME.md)** !
-
-### 3. AGIR, faire une **PR** (**P**ull **R**equest) - Le graal du codeur, le cœur de la Collaboration ❤️
-
-Là, ça ne rigole plus car c'est maintenant que ton dev peut devenir absolument 'officiel' et être utilisé par tous 😁
-
-    Avant de voir le détail de ce process, juste, prenons ensemble un peu de recul...:
-
-    - T'as t'on demandé un diploume ?
+    - T'as t'on demandé ici, un *diploume* ?
     - Demandé pour qui tu te prends ? De quel droit tu te permets d'émettre un avis ?
     - Vérifier que t'es le fils à tel Papa, ou autre privilègié ?
     - À quelle dininité tu crois ?
     - Au fait, t'es plutôt caucasien, jaune, gris, brown...? vert ?:?
 
-    → Non : Ici, là et maintenant, TU ES TOI ! Et enfin, là, ici et maintenant, enfin au bon endroit au bon moment !!! Seulement TOI et TOI SEUL peut comprendre et doit accepter l'idée que TON RÔLE est CAPITAL, pas indispensable, juste CAPITAL et IMPORTANT !
+→ Non : Ici, là et maintenant, **TU ES TOI** ! Et enfin, là, ici et maintenant, **enfin au bon endroit au bon moment !!!** Et seulement TOI et TOI SEUL peut comprendre et doit accepter l'idée que **TON RÔLE est CAPITAL,** pas indispensable, juste CAPITAL **et IMPORTANT** et que **TU VAS** CEPENDANT, SOUS PEU, **AGIR** CONCRÈTEMENT **SUR LE PROJET OFFICIEL !** 
 
-Concrètement, pour faire valoir ton dev, tu dois :
-
-    Expliquer ce qui a été fait
-    Expliquer pourquoi
-    Mentionner les issues liées
-    Être ouverte au dialogue
-    Une PR n’est pas un examen.
-
-→ C’est une discussion technique entre humains bienveillants, et la scenette qui s'ajoute et fait qu'on aura ensemble un super film au final !
-
-👉 Et si problème : **[Page d'aide](./doc/0000_HELPME.md)** !
-
-### 5. Participer aux revues de code
-
-Grâce à ton fork, puis clone, un simple Fetch et tu as le dernier apport le + top, et le + récent, d'un collaborateur, et ce, 24/24 - 7/7 et à volonté...
-
-Et relire le code des autres, c’est :
-
-    * Apprendre
-    * Aider facilement
-    * Améliorer la qualité globale
-    * Renforcer l’esprit d’équipe
-
-Les commentaires doivent être :
-
-    * Constructifs
-    * Respectueux
- 
-Argumentés
-  
-    * Jamais condescendants
-    * Raisonables
-
-## 🧩 Organisation du code
-
-Structure générale
-(À adapter selon ton projet, mais voici une base générique)
-
-    /src — cœur de l’application
-    /docs — documentation
-    /tests — tests unitaires
-    /scripts — outils internes
-    /assets — images, icônes, etc.
-    
-Chaque dossier peut contenir un README.md expliquant son rôle.
-
-## 🛠️ Outils de base recommandés
-
-* Git
-* VSCode
-
-## 🤝 Règles de collaboration
-
-Communication
+Rappel de bases de communication quelque soit l'endroit, et le support :
 
     Toujours poser des questions quand quelque chose n’est pas clair.
     Toujours remercier quand quelqu’un aide.
     Toujours expliquer ses choix techniques.
 
-Respect
-
-    Pas de jugement.
-    Pas de sarcasme blessant.
-    Pas de “RTFM”.
-    On est là pour apprendre, pas pour se mesurer.
+    Respect :
+        - Pas de jugement.
+        - Pas de sarcasme blessant.
+        - Pas de “RTFM”.
+        - On est là pour apprendre, pas pour se mesurer.
     
-Transparence
+    Transparence :
 
     Si tu ne sais pas faire → dis‑le.
     Si tu bloques → dis‑le.
     Si tu veux essayer quelque chose → propose‑le.
     
-## 🌱 Pour les nouveaux contributeurs
 
-Tu es le bienvenu, vraiment.
+Vraiment, tu es le bienvenu.
 
 Même si tu penses “je suis trop débutant”, “je vais ralentir les autres”, “je ne suis pas légitime”.
 
-C’est archi faux : Déjà, parce que TU ES UNIQUE ! Donc, si en +, tu es de bonne volonté, absolument personne ne peux ne serait-ce te critiquer, et encore moins te nuire et t'empêcher de t'épanouir ! Débutant, on l'a tous été en info, par exemple, mais on l'est encore complètement tous face à n'importe quel autre domaine nouveau...
+C’est archi faux : Déjà, parce que **TU ES UNIQUE !** Donc, si en +, tu es de bonne volonté, absolument personne ne peux ne serait-ce te critiquer, et encore moins te nuire et t'empêcher de t'épanouir ! Débutant, on l'a tous été en info, par exemple, mais on l'est encore complètement tous face à n'importe quel autre domaine nouveau...
 
-Tu es exactement la personne qu’on veut ici.
+**Tu es exactement la personne qu’on veut ici.**
 
-Tu peux commencer par :
-
-    - Lire les issues
-    - Corriger une faute dans la doc
-
-### → 💡 Tiens! Deal ! C'est sûrement pas les fautes qui manquent dans toutes ces pages de docs, et ne serait-ce dans cette seule page... Fixe toi un tout ch'ti premier objectif: Y corriger ne serait-ce une virgule mal placée ! De grands auteurs ont souvent commencés ainsi... ;-)... Alors Deal, on attend de voir passer ta **PR** ;-) !
-
-Proposer une idée
-
-    Tester l’app
-    Poser une question
-    Chaque geste compte.
-    
 ## 🎬 Conclusion
 
 Ce projet n’est pas seulement du code.
@@ -242,10 +148,8 @@ On veut des gens qui :
     apprennent,
     partagent,
     et surtout… collaborent.
-    
----
 
-### Alors si tu es encore là, à lire encore ces dernières lignes, alors **tu es vraiment PARFAIT et EST déjà partie INTÉGRANTE du film**.
+### Et si tu es résolument encore là, à lire encore ces dernières lignes, alors **tu es vraiment PARFAIT et EST déjà partie INTÉGRANTE du film**.
 
 **À toi maintenant d'y jouer complètement TON RÔLE, de jouer TA SCÈNE, D’OSER ton mouvement, d’écrire la suite comme TOI SEUL.E PEUX LE FAIRE. 👌 !**
 
@@ -255,4 +159,4 @@ Avance. Souris. Et laisse-toi surprendre par ce qui t’attend...
 
 ## 📄 [Attaque la doc](./doc/0101_GIT_FORK.md), ici et maintenant !
 
-Nous seront tous très fiers de toi 😀 !
+### Nous seront bientôt tous très fiers de toi. 😀 
