@@ -37,13 +37,10 @@ Dans le page du dépôt (Original, ou de votre fork), appuyer sir ' , ' et gén�
 Dans le terminal qui apparaît :
 
 ```bash
-uv run flet run --web
-    # OU, raccourci
 ./go
 ```
 
-NB : Dans un codespace, seule la version Flet Web fonctionne (Avec l'option --web), et attention, pas de refresh, hotreload, etc... Bref, ne sert qu'à partager un rendi, voire éditer du code, ou éventuellement coder un script très simple...
-
+NB : Dans un codespace, seule la version Flet Web fonctionne (Avec l'option --web), et attention, pas de refresh, hotreload, etc... Bref, ne sert qu'à partager un rendu, voire éditer du code, ou éventuellement coder / modifier un script très simple...
 
 ### * Local - Win OS
 
@@ -59,7 +56,7 @@ Lancer le build APK pour construire l'app pour ton mobile ou tablette **Androïd
 ./apk
 ```
 
-(Sinon, ouvre cette page avec ton mobile et télech directement :
+(Sinon, ouvre cette page avec ton appareil mobile et télech directement :
   **https://github.com/GrCOTE7/gsm/releases** - La der version, le lien **Upu.apk**)
 
 ### uv - Alternative à pip + env + flet run
