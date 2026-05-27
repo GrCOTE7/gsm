@@ -1,10 +1,11 @@
-pytest
+# pytest
 
-flet-cli==0.85.2
-flet-web==0.85.2
+# flet-cli==0.85.2
+# flet-web==0.85.2
 
-# Windows → installer le vrai Flet Desktop
-flet-desktop==0.85.2 ; sys_platform == "win32"
+# # Windows → installer le vrai Flet Desktop
+# flet-desktop==0.85.2 ; sys_platform == "win32"
 
-# Linux (Codespace) → installer la version light
-flet-desktop-light==0.85.2 ; sys_platform == "linux"
+# # Linux (Codespace) → installer la version light
+# flet-desktop-light==0.85.2 ; sys_platform == "linux"
+# #
