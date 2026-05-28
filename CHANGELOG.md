@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/GrCOTE7/gsm/compare/v1.0.8...v1.0.9) (2026-05-28)
+
+
+### Bug Fixes
+
+* set LVs ([716fd3f](https://github.com/GrCOTE7/gsm/commit/716fd3fb57fe1ca7161858b609ffd130302a49b3))
+
 ## [1.0.8](https://github.com/GrCOTE7/gsm/compare/v1.0.7...v1.0.8) (2026-05-26)
 
 
