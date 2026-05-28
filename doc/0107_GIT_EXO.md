@@ -1,4 +1,4 @@
-# GIT
+# GIT - EXO
 
 ## ← 6. [GIT COMMIT ↑](./0106_GIT_COMMIT.md)
 

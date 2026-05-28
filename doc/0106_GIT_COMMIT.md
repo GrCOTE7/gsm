@@ -1,4 +1,4 @@
-# GIT
+# GIT - COMMIT
 
 ## ← 5. [GIT STATUS](./0105_GIT_STATUS.md)
 

@@ -294,11 +294,11 @@ Debug / Iphone :
 
 | Action                                    | Rebuild APK ? |
 |-------------------------------------------|---------------|
-| Modifier du Python                        | ❌ Non         |
-| Modifier du Flet                          | ❌ Non         |
-| Modifier la logique d’update              | ❌ Non         |
-| Modifier comment tu télécharges l’APK     | ❌ Non         |
-| Modifier comment tu lances l’installation | ❌ Non         |
+| Modifier du Python                        | ❌ Non        |
+| Modifier du Flet                          | ❌ Non        |
+| Modifier la logique d’update              | ❌ Non        |
+| Modifier comment tu télécharges l’APK     | ❌ Non        |
+| Modifier comment tu lances l’installation | ❌ Non        |
 | Ajouter un appel Android natif            | ✔️ Oui        |
 | Modifier le manifest Android              | ✔️ Oui        |
 | Ajouter un service Android                | ✔️ Oui        |

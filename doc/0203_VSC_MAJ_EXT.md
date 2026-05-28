@@ -1,6 +1,8 @@
 # VSC - Extensions Majeures
 
-* [ ] To be continued... 🚧
+* [ ] To be continued... 🚧 
+
+* [ ] Cf. découpage files éventuel
 
 * [ ] ToDO avec settings comments + ToDo *[ ], ⚠️ , ✅ , ✔* [x] ↗️ , etc....
       pour affichage, comptage, et linting des todos
@@ -17,13 +19,15 @@ Matt Bierner
 (57)
 Adds Mermaid diagram and flowchart support to VS Code's builtin markdown preview
 
+* [ ] Mermaid
+
+* [ ] Markdown+Math - goessner - 412 626 - LaTeX Math for Markdown ... with macros and more
+
 * [ ] Markmap
 Gerald Liu
 248 987
 (30)
 Visualize your markdown in VSCode - Ma 2ème préférée...
-
-* [ ] Mermaid
 
 * [ ] Jupyter
   

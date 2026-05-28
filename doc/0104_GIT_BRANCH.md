@@ -1,4 +1,4 @@
-# GIT
+# GIT - BRANCH
 
 ## ← 3. [0103_GIT_USE](./0103_GIT_USE.md)
 

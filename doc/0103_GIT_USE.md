@@ -1,10 +1,10 @@
-# GIT
+# GIT - USE
 
 ## ← [0102_GIT_CLONE](./0102_GIT_CLONE.md)
 
 ## 3. Installation des dépendances si nécessaire et lancement de l'App
 
-Déjà, depuis le dossier où l'on a exécuté le clône, on 'rentre en **CLI**' (Rappel : CLI = Console) et maintenant dans le dossier du projet **gsm/** avec :
+Déjà, depuis le dossier où l'on a exécuté le clône, on 'rentre en **CLI**' (Rappel : CLI = Console) dans le dossier du projet **gsm/** avec :
 
 ```bash
 cd gsm

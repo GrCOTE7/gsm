@@ -1,4 +1,4 @@
-# GIT
+# GIT - STATUS
 
 ## ← 4. [On attaque **le dev** ?](./0104_GIT_BRANCH.md)
 
