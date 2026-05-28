@@ -8,19 +8,26 @@ Juste pour te rassurer : Bon, jusqu'à maintenant, beaucoup de lecture pour bien
 
 ### .🎯 L’idée principale : Une ***BRANCH*** SPÉCIFIQUE pour le dev actuel courant
 
-**Toujours oeuvrer dans une branche (*BRANCH* en anglais) dédiée** avant de commencer un développement spécifique. Cela garde un historique propre au moins sur la branche main, facilite les revues de code et évite donc de casser **la branche principale** (souvent **"main"** par défaut) qui **doit toujours rester stable**, au cas où... Et insdipensable pour un dev collaboratif.
+**Toujours travailler dans une branche dédiée** avant de commencer un développement spécifique.
+Cela permet de garder un **historique propre** sur la branche principale (souvent nommée **main**), de **faciliter les revues de code** et d’éviter de casser cette branche critique qui **doit rester stable en permanence**.
 
-    Pour info, une branche est comme une sorte d'autre copie intégrale du projet ! À ceci prêt que l'algorithme de GitHub (ou autre fournisseur) ne duplique pas vraiment tous les fichiers, mais garde 'simplement' en mémoire toutes les modifications, bref, quelques fichiers texte de quelques octets...
-    
-    Donc, très léger, mais surtout, ce traitement est complètement transparent pour nous : Alors, ne pas hésiter à en abuser !
+C’est une pratique indispensable en **développement collaboratif**, où la stabilité de la branche principale garantit la fluidité et la qualité du travail d’équipe.
+
+Pour info, une **branche** est comme une sorte d’autre **copie intégrale** du projet ! À ceci près que Git (GitHub, GitLab, etc...) ne **duplique pas réellement** tous les fichiers :
+
+→ il stocke simplement les **différences** entre les versions, sous forme de petits fichiers texte de quelques octets.
+
+En réalité, Git garde 'simplement' un **historique d’instantanés** (*snapshots*) et de **deltas**, ce qui permet de créer des branches très rapidement, sans consommer d’espace disque inutile.
+
+C’est pour cela qu’on peut **multiplier les branches** sans “gonfler” le dépôt car très léger, mais aussi et surtout, ce traitement est complètement transparent pour nous : Alors, ne pas hésiter à en abuser !
 
 ### 🛠️ Donc, étape 1 — Crééer une branche de travail
 
 Tu peux nommer ta branche comme tu veux, mais voici la [norme idéalement](https://codeheroes.fr/blog/git-comment-nommer-ses-branches-et-ses-commits) :
 
-* Tout en minuscule, aucun accent
-* pas d’espaces, utiliser des tirets - ou /
-* refléter le type de travail (feature, fix, doc…) et le sujet du dev
+* Tout en minuscule, aucun accent,
+* pas d’espaces, utiliser des tirets - ou /, et
+* refléter le type de travail (*feature*, *fix*, doc…) et le sujet du dev
 
 Exemples de conventions :
 
@@ -32,32 +39,25 @@ Cela rend l’historique compréhensible et navigable pour toute l’équipe.
 
 → 🧩 C'est notre 2ème type de commande Git (On a déjà vu *clone*...)
 
-En CLI, elle créée la branche 'upgrade/01_git-dev' et te pose dessus :
+En CLI, elle créée donc une branche 'upgrade/01_git-dev' et te pose dessus :
 
 ```bash
-git branch upgrade/01_git-dev         # Créée la branche
-git checkout upgrade/01_git-dev       # Passe sur la branche
-    # OU - ménémonique, mais + court (et fais les 2 actions) :
-git checkout -b upgrade/01_git-dev
-    # ET + moderne :
 git switch -c upgrade/01_git-dev
 ```
 
-Pour faire si besoin le point et avoir la liste des branches existantes :
+Si besoin, pour faire le point et avoir la liste des branches existantes :
 
 ```bash
 git branch
 ```
-    
-Affiche les branches locales, avec * sur celle où tu es.
 
-(Si " :" au lieu de ton invite habituelle :, c'est qu'on est en mode édition. Tape 'ESC4, 'x' ou ':q' pour *e**X**it* ou ***Q**uit* (sortir de cet éditeur [**vi** ou **vim**](https://blog.stephane-robert.info/_astro/vi_demo.9jUPpoF3_Z27rg4g.webp)))
+→ Affiche les branches locales, avec * sur celle où tu es.
+
+(Si dans ta CLI, tu " :" au lieu de ton invite habituelle, c'est que tu es en mode édition. Tape 'ESC', 'x' ou ':q' pour *e**X**it* ou ***Q**uit* (Pour sortir de cet éditeur [**vi** ou **vim**](https://blog.stephane-robert.info/_astro/vi_demo.9jUPpoF3_Z27rg4g.webp)) )
 
 Pour passer sur une autre branche (Par exemple, revenir sur la branche *main*) :
 
 ```bash
-git checkout main
-    # ET + moderne :
 git switch main
     # À noter
 git switch - # Retour sur la branche précédente (Pas forcément la main)

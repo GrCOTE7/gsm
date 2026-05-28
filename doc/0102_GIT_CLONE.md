@@ -50,17 +50,17 @@ Et quand on est Ok, on y va ! On descend le code sur **notre Mc** (Machine) **pe
 
 ### 2. Récupère tout le code de ton fork sur ta Mc locale
 
-Dans le dossier de ton choix de ta Mc, ouvre une **CLI** (**C**ommand **L**ine **I**nterface), la console de commandes, et exécute :
+Dans le dossier de ton choix de ta Mc, ouvre une ***CLI*** (***C**ommand **L**ine **I**nterface*), la console de commandes, et exécute :
 
 ```bash
 git clone https://github.com/MP21170/gsm.git
 ```
 
-⚠️ Rappel : N'oublie pas que ***MP21170***, c'est que pour notre exemple ici... Remplace ça par **TON UserName** GH !
+⚠️ Rappel : N'oublie pas que ***MP21170***, c'est que pour notre exemple ici... Remplace ça par **TON UserName GH** !
 
 ### 3. BILAN → Cela **te créée un dossier gsm/ dans lequel tu y as TOUT le code ! 👌**
 
-Allons, n'attendons plus ! Voyons ce que cela donne (Entrons dans le dossier, et lançons le *run* (On va mettre en route !) !
+Allons, n'attendons plus ! Voyons ce que cela donne (Entrons dans le dossier, et lançons le *run* ( = On va mettre en route ! ) !
 
 ---
 

@@ -2,9 +2,9 @@
 
 ## ← [0102_GIT_CLONE](./0102_GIT_CLONE.md)
 
-## 3. Installation des dépendances (si nécessaire) et lancement de l'App
+## 3. Avoir le programme en local, et installation des dépendances (si nécessaire) et lancement de l'App
 
-Depuis le dossier où tu as cloné le repo, ouvre une **CLI**' (Rappel : CLI = Consol)  et entre dans le dossier du projet **gsm/** avec :
+Depuis le dossier où tu as cloné le repo, ouvre une **CLI**' (Rappel : CLI = Console)  et entre dans le dossier du projet **gsm/** avec :
 
 ```bash
 cd gsm
@@ -94,4 +94,4 @@ On est jamais à l'abri de devoir un jour re-initialiser un projet, même GSM (e
 
 ---
 
-## → 4. [On attaque **le dev** 👌 ? Faisons une BRANCHE !](./0104_GIT_BRANCH.md)
+## → 4. [On attaque **le dev** 👌 ? Existons, faisons une BRANCHE !](./0104_GIT_BRANCH.md)
