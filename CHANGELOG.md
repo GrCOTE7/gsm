@@ -6,6 +6,14 @@
 * colorized equation ([e32b56c](https://github.com/GrCOTE7/gsm/commit/e32b56cb79bf18bc32a721daa0a4ef649ddafdbb))
 * set LVs ([716fd3f](https://github.com/GrCOTE7/gsm/commit/716fd3fb57fe1ca7161858b609ffd130302a49b3))
 
+## [1.0.8](https://github.com/GrCOTE7/gsm/compare/v1.0.7...v1.0.8) (2026-05-28)
+
+
+### Bug Fixes
+
+* colorized equation ([e32b56c](https://github.com/GrCOTE7/gsm/commit/e32b56cb79bf18bc32a721daa0a4ef649ddafdbb))
+* set LVs ([716fd3f](https://github.com/GrCOTE7/gsm/commit/716fd3fb57fe1ca7161858b609ffd130302a49b3))
+
 ## [1.0.9](https://github.com/GrCOTE7/gsm/compare/v1.0.8...v1.0.9) (2026-05-28)
 
 
