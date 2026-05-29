@@ -15,7 +15,7 @@ C’est une pratique indispensable en **développement collaboratif**, où la st
 
 Pour info, une **branche** est comme une sorte d’autre **copie intégrale** du projet ! À ceci près que Git (GitHub, GitLab, etc...) ne **duplique pas réellement** tous les fichiers :
 
-→ il stocke simplement les **différences** entre les versions, sous forme de petits fichiers texte de quelques octets.
+→ Il stocke simplement les **différences** entre les versions, sous forme de petits fichiers texte de quelques octets.
 
 En réalité, Git garde 'simplement' un **historique d’instantanés** (*snapshots*) et de **deltas**, ce qui permet de créer des branches très rapidement, sans consommer d’espace disque inutile.
 
