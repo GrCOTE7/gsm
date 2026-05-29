@@ -24,7 +24,10 @@ Elle vous donnera quelque chose comme :
 
 ```bash
 gsm> git status
-XXX ds
+On branch  demo/mon_dev
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
 ```
 
 Du coup, pas besoin de faire évoluer votre GH... 😭
