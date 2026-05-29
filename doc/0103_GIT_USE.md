@@ -59,7 +59,7 @@ uv run flet run
 
 ---
 
-#### .❌ Si ce n'est pas le cas : Signale-le dans le [Chat LIVE](https://discord.com/channels/1056923339546968127/1507316257580519445) à minima, ou [ISSUE](https://github.com/GrCOTE7/gsm/issues/new/choose) ! Et bien-sûr, et c'est **10 000 X mieux**, si tu sais déjà la faire : **PR** (**P**ull **R**equest) pour corriger la doc tel que ce problème soit définitivement résolu  pour tous ! Ne tkt pas si tu n'en es pas encore là, car **que TU en soies capable au + vite est notre 1er objectif** 👌.
+#### .❌ Si ce n'est pas le cas : Signale-le dans le [Chat LIVE](https://discord.com/channels/1056923339546968127/1507316257580519445) à minima, ou [ISSUE](https://github.com/GrCOTE7/gsm/issues/new/choose) ! Et bien-sûr, et c'est **10 000 X mieux**, si tu sais déjà la faire : **PR** (**P**ull **R**equest) pour corriger la doc tel que ce problème soit définitivement résolu  pour tous ! Ne tkt pas si tu n'en es pas encore là, car **que TU EN SOIES CAPABLE AU + VITE EST NOTRE 1ER OBJECTIF** 👌.
 
 Donc, si tout va bien, à ce stade, l'app 'tourne', et tu dois voir que la fenêtre de sortie de l'app s'actualise automatiquement dès un seul caractère du code modifié... Même si elle n'est pas forcément à un endroit optimal, selon ton matériel... Pour le moment, le cas échéant, fais la simplement glisser ailleurs afin qu'elle ne te gêne pas !
 
@@ -77,7 +77,7 @@ Donc, si tout va bien, à ce stade, l'app 'tourne', et tu dois voir que la fenê
 
 #### Et observe ta fenêtre de l'app : Se met-elle bien à jour 'toute seule' ?
 
-( *Psssiiittt: On est d'accord, tu as spontanéménent pensé à bien remplacer MP21170 par TON NOM d'UserName GH 😜...?* )
+( *Psssiiittt: On est d'accord, tu as spontanéménent pensé à bien **remplacer MP21170 par TON NOM d'UserName GH** 😜...(Même si là, ce n'est pas gravissime) ?* )
 
 ## 🛠️ Gérons maintenant la position de la fenêtre de l'App
 
