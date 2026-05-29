@@ -69,8 +69,8 @@ def build() -> ft.Control:
             ],
             alignment=ft.MainAxisAlignment.CENTER,
         ),
-        "Page pour tests rapides 123.",
-        # 2ar 123 après vidéo
+        "Page pour tests rapides.",
+
         extra_top_gap=0,
         extra=ft.Column(
             [
