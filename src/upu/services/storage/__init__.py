@@ -1,1 +1,0 @@
-"""Up U! Storage Service."""

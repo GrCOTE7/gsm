@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*pyc
 
 # C extensions
 *.so
@@ -176,3 +177,5 @@ sync.ffs_lock
 src/upu/app_data/app_state.json
 
 flet-desktop-light.zip
+
+/src/upu/services/storage/__pycache__/
