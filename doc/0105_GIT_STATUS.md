@@ -20,9 +20,9 @@ Elle vous donnera quelque chose comme :
 
 ### 1. Tout est à jour... ☹️
 
-☹️, car ça veut dire aussi que vous n'avez pas encore changé ne serait-ce une virgule...
+Ça paraît bien, mais ☹️, car ça veut aussi dire que vous n'avez sans doute pas encore changé ne serait-ce une virgule...
 
-# ```bash
+```bash
 gsm> git status
 XXX ds
 ```
