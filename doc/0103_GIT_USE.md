@@ -55,7 +55,7 @@ uv run flet run
 
 En principe, l'app doit se lancer, là, et tu dois en voir la page d'accueil
 
-lien aperçu, au moemnt de la rédaction de ces lignes
+❌ lien aperçu, au moemnt de la rédaction de ces lignes
 
 #### .❌ Si ce n'est pas le cas : Signale-le dans le [Chat LIVE](https://discord.com/channels/1056923339546968127/1507316257580519445) à minima, ou [ISSUE](https://github.com/GrCOTE7/gsm/issues/new/choose) ! Et bien-sûr, et c'est **10 000 X mieux**, si tu sais déjà la faire : **PR** (**P**ull **R**equest) pour corriger la doc tel que ce problème soit définitivement résolu  pour tous ! Ne tkt pas si tu n'en es pas encore là, car **que TU en soies capable au + vite est notre 1er objectif** 👌.
 
