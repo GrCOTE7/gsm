@@ -27,7 +27,7 @@ Et ici, ça veut dire :
   </a>
 </div>
 
-#### → *Ne t'inquiéte pas des termes de ces illustrations, tu les comprendras bientôt tous...*
+#### → *Ne t'inquiéte pas des termes de ces illustrations,* **tu les comprendras bientôt tous.**
 
 ## Bases
 

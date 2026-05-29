@@ -20,14 +20,11 @@ Elle vous donnera quelque chose comme :
 
 ```bash
 gsm> git status
-❌ ...
 ```
 
 Du coup, pas besoin de faire évoluer votre GH... 😭
 
-
 ### Vous avez déjà agît 😁
-
 
 ```bash
 gsm> git status

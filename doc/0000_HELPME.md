@@ -27,7 +27,7 @@ Et là, tu vas constater 2-3 choses:
 - **Tu vas aussi et surtout, réussir** à passer l'épreuve de cette difficulté provisoire,
 - Et **tu sortiras GRANDI de cette épreuve !**
 
-### ❤️ Après, si tu sais faire, s'impose une **PR** (**P**ull **R**equest) qui pourra sûrement aider quelqu'un d'autre à ne même pas rencontrer ce problème, si grâce à TOI, la doc (ou le code) du projet devient mieux élaboré, + adapté ❤️
+### ❤️ Après, si tu sais faire, s'impose une **PR** (***P**ull **R**equest*) qui pourra sûrement aider quelqu'un d'autre à ne même pas rencontrer ce problème, si grâce à TOI, la doc (ou le code) du projet devient mieux élaboré, + adapté ❤️
 
 ### Et sinon, apprends vite pour savoir faire une **PR** ! **👉 Pour cela, lis au moins rapidement la doc GIT d'ici** 🧠 (*la série des fichiers ./doc/01XX_GIT_NNN.md*) 👌
 

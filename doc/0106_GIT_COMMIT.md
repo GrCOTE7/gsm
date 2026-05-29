@@ -6,11 +6,9 @@
 
 Alors, comme ça... **Vous avez agît**...? **B R A VO S !**
 
-Maintenant, afin que ce que vous avez fait compte vraiemnt, il faut le '*commit*' !
+Maintenant, afin que ce que vous avez fait compte vraiment, il faut le '*commit*' !
 
-
-❌ ...
-
+❌ Commandes commit
 
 
 

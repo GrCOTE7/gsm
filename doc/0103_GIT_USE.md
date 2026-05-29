@@ -2,7 +2,10 @@
 
 ## ← [0102_GIT_CLONE](./0102_GIT_CLONE.md)
 
-## 3. Avoir le programme en local, et installation des dépendances (si nécessaire) et lancement de l'App
+## 3. Utilise ton projet
+
+
+Pour se faire, et avoir le programme en local opérationnel, il te faut installer les dépendances (si nécessaire) et lancer l'App.
 
 Depuis le dossier où tu as cloné le repo, ouvre une **CLI**' (Rappel : CLI = Console)  et entre dans le dossier du projet **gsm/** avec :
 
@@ -12,7 +15,7 @@ cd gsm
 
 ### 🔧 Vérifie que **uv** est installé
 
-Mais pour exécuter cette commande, tu dois l'avoir, cet outil 'magique' :
+Pour exécuter cet outil 'magique', vérifie que tu l'as installé :
 
 ```bash
 uv --version
@@ -36,7 +39,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ## 🚀 Lancer l’app
 
-→ L’**installation des dépendances et** le **lancement** se font en **une seule commande** 💪
+→ L’**installation des dépendances et** le **lancement del'App** se font en **une seule commande** 💪 !
 
 ```bash
 uv run flet run
@@ -50,7 +53,9 @@ uv run flet run
 
 ## Teste que l'app marche au moins pour TOI, en local (Et sinon: CHAT, [ISSUE](https://github.com/GrCOTE7/gsm/issues/new/choose) bref, plan [ORSEC](https://fr.wikipedia.org/wiki/Dispositif_ORSEC)!!! Heu... Simplement **[page d'aide](./0000_HELPME.md)** plutôt !)
 
-En principe, l'app doit se lancer, là, et tu dois en voir la page d'accueil...
+En principe, l'app doit se lancer, là, et tu dois en voir la page d'accueil
+
+lien aperçu, au moemnt de la rédaction de ces lignes
 
 #### .❌ Si ce n'est pas le cas : Signale-le dans le [Chat LIVE](https://discord.com/channels/1056923339546968127/1507316257580519445) à minima, ou [ISSUE](https://github.com/GrCOTE7/gsm/issues/new/choose) ! Et bien-sûr, et c'est **10 000 X mieux**, si tu sais déjà la faire : **PR** (**P**ull **R**equest) pour corriger la doc tel que ce problème soit définitivement résolu  pour tous ! Ne tkt pas si tu n'en es pas encore là, car **que TU en soies capable au + vite est notre 1er objectif** 👌.
 
