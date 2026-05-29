@@ -53,9 +53,8 @@ uv run flet run
 
 ## Teste que l'app marche au moins pour TOI, en local (Et sinon: CHAT, [ISSUE](https://github.com/GrCOTE7/gsm/issues/new/choose) bref, plan [ORSEC](https://fr.wikipedia.org/wiki/Dispositif_ORSEC)!!! Heu... Simplement **[page d'aide](./0000_HELPME.md)** plutôt !)
 
----
-
-### En principe, l'app doit se lancer, là, et tu dois en **[voir la page d'accueil](https://www.youtube.com/watch?v=UFc07Os-qTo)**, telle qu'elle est, au moment de la rédaction de ces lignes.
+| <img src="imgs/movie_time.png" width="120"> | En principe, l'app doit se lancer, là, et tu dois en [voir la page d'accueil](https://www.youtube.com/watch?v=UFc07Os-qTo), telle qu'elle est, au moment de la rédaction de ces lignes. |
+|---------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 ---
 

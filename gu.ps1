@@ -40,7 +40,7 @@ if (-not $set) {
 # --- Appliquer l'identité demandée ---
 switch ($set) {
     "mp" {
-        git config --global user.name "MP"
+        git config --global user.name "MP21170"
         git config --global user.email $email_mp
         Write-Host "Git identity set to MP"
     }
