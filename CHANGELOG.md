@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/GrCOTE7/gsm/compare/v1.0.8...v1.0.9) (2026-05-29)
+
+
+### Bug Fixes
+
+* set YT post clone demo video ([b658dda](https://github.com/GrCOTE7/gsm/commit/b658ddae89a8af0d9ffc27c93e28ca0681711d90))
+
 ## [1.0.8](https://github.com/GrCOTE7/gsm/compare/v1.0.7...v1.0.8) (2026-05-28)
 
 
