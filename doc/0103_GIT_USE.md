@@ -1,6 +1,14 @@
-# GIT - USE
+<h3><div align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md">TOC</a></span></div></h3>
 
-## ← [0102_GIT_CLONE](./0102_GIT_CLONE.md)
+<h1><div align='center'>GIT‑CLONE</div></h1>
+
+<h3 align="center">
+  <a href="./0101_GIT_FORK.md">← 0101_GIT_FORK</a>
+                     
+  <a href="./0103_GIT_USE.md">0103_GIT_USE →</a>
+</h3>
+
+---
 
 ## 3. Utilise ton projet
 

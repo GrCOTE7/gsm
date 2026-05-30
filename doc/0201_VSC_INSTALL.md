@@ -27,6 +27,9 @@ ALT + 144, 183 : É À
 MAJ + ALT + ↑ ou ↓ : COPIÉ/COLLÉ décalé d'une ligne
 ALT + ← : Retourner au précédent code édité (historique)
 ALT + → : Revenir au dernier code édité
+
+CTRL + ALT + S : Surround
+CTRL + u + u : Min/MAJ switch (bascule)
 ```
 
 ---
