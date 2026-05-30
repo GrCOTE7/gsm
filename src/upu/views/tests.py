@@ -65,7 +65,7 @@ def build() -> ft.Control:
         rep = "\n".join(
             " ".join(str(i * j) for j in range(1, i + 1)) for i in range(1, 6)
         )
-        return ft.Text(rep, size=20, weight=ft.FontWeight.W_500)
+        return ft.Text('Nom & Thomas \'s script:\n'+rep, size=20, weight=ft.FontWeight.W_500)
 
     return named_view(
         ft.Row(
