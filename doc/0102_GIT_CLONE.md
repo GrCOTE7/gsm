@@ -6,7 +6,7 @@ md">TOC</a></span></div></h3>
 <h3 align="center">
   <a href="./0101_GIT_FORK.md">← 0101_GIT_FORK</a>
                      
-  <a href="./0102_GIT_USEE.md">0103_GIT_USE →</a>
+  <a href="./0102_GIT_USE.md">0103_GIT_USE →</a>
 </h3>
 
 ---
