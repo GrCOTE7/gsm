@@ -61,6 +61,12 @@ def build() -> ft.Control:
             ),
         )
 
+    def nom_thomas():
+        rep = "\n".join(
+            " ".join(str(i * j) for j in range(1, i + 1)) for i in range(1, 6)
+        )
+        return ft.Text(rep, size=20, weight=ft.FontWeight.W_500)
+
     return named_view(
         ft.Row(
             controls=[
@@ -70,13 +76,13 @@ def build() -> ft.Control:
             alignment=ft.MainAxisAlignment.CENTER,
         ),
         "Page pour tests rapides.",
-
         extra_top_gap=0,
         extra=ft.Column(
             [
                 provisorySubMenu(),
                 extLinks(),
                 build_release_update_card(),
+                nom_thomas(),
             ]
         ),
     )
