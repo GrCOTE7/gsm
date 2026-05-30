@@ -166,7 +166,7 @@ cython_debug/
 #.idea/
 
 # Flet
-storage/
+
 # !src/upu/services/storage/
 # !src/upu/services/storage/**
 
