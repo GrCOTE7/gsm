@@ -1,5 +1,12 @@
 # GIT - FORK
 
+<div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+    <a href="#toc">←</a> | <a href="#toc">TOC</a>
+    <span style="font-size:1.6em; font-weight:bold;">GIT‑FORK</span>
+    <a href="#help">HELP</a> | <a href="#toc">→</a>
+</div>
+
+
 ### 👉 PRÉAMBULE: À la moindre difficulté, consulte la **[page d'aide](./0000_HELPME.md)**
 
 ---

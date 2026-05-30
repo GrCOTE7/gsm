@@ -1,6 +1,8 @@
 # HELP
 
-Coincé quelque part ? Utilise un des moyens ci-dessous pour résoudre SEUL ton problème et trouver de l'aide à defaut
+Coincé quelque part ? Utilise un des moyens ci-dessous pour résoudre SEUL ton problème et trouver de l'aide à defaut.
+
+## Besoin de retrouver une notion assurément déjà vue ? **[PAGE TOC](./0001_TOC.md) !**
 
 ## 1. La doc si possible Officielle du 'truc' qui te pose problème ou l'**IA**
 
