@@ -1,6 +1,15 @@
-# GIT - CLONE
+<h3><div align='right'><span style="text-decoration:none;"><a href="./0001_TOC.
+md">TOC</a></span></div></h3>
 
-## ← [0101_GIT_FORK](./0101_GIT_FORK.md)
+<h1><div align='center'>GIT‑CLONE</div></h1>
+
+<h3 align="center">
+  <a href="./0101_GIT_FORK.md">← 0101_GIT_FORK</a>
+                     
+  <a href="./0102_GIT_USEE.md">0103_GIT_USE →</a>
+</h3>
+
+---
 
 ### 👉 PRÉAMBULE (RAPPEL) : À la moindre difficulté, consulte la **[page d'aide](./0000_HELPME.md)**
 
