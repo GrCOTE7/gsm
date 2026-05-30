@@ -6,6 +6,11 @@
 
 * [ ] ToDO avec settings comments + ToDo *[ ], ⚠️ , ✅ , ✔* [x] ↗️ , etc....
       pour affichage, comptage, et linting des todos
+      
+      Note:
+      * [ ] To do à réaliser
+      * [/] To do en cours
+      * [x] To do réalisé
 
 * [ ] Auto-Open Markdown Preview
 hnw

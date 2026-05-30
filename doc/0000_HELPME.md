@@ -1,4 +1,7 @@
-# HELP
+<h3><div align='right'><span style="text-decoration:none;"><a href="./0001_TOC.
+md">TOC</a></span></div></h3>
+
+<h1><div align='center'><strong>HELP ME!</strong> (Aide-moi !)</div></h1>
 
 Coincé quelque part ? Utilise un des moyens ci-dessous pour résoudre SEUL ton problème et trouver de l'aide à defaut.
 

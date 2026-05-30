@@ -6,7 +6,7 @@ md">TOC</a></span></div></h3>
 <h3 align="center">
   <a href="./0000_HELPME.md">← HELP</a>
                      
-  <a href="./0000_GIT_CLONE.md">GIT CLONE →</a>
+  <a href="./0102_GIT_CLONE.md">GIT CLONE →</a>
 </h3>
 
 ---
