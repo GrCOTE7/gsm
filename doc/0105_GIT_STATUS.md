@@ -1,8 +1,14 @@
-# GIT - STATUS
+<h3><div align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md">TOC</a></span></div></h3>
 
-## ← 4. [On attaque **le dev** ?](./0104_GIT_BRANCH.md)
+<h1><div align='center'>GIT STATUS</div></h1>
 
-## 5. GIT STATUS
+<h3 align="center">
+  <a href="./0104_GIT_BRANCH.md">← 0104_GIT_BRANCH</a>
+                     
+  <a href="./0106_GIT_COMMIT.md">0106_GIT_COMMIT →</a>
+</h3>
+
+---
 
 *Avant de savoir où aller, savoir où l'on est et quand !*
 

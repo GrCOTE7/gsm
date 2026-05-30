@@ -1,12 +1,20 @@
-# GIT - BRANCH
+<h3><div align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md">TOC</a></span></div></h3>
 
-## ← 3. [0103_GIT_USE](./0103_GIT_USE.md)
+<h1><div align='center'>GIT - BRANCH</div></h1>
 
-## 4. 🏗️ On attaque **le dev** ?
+<h3 align="center">
+  <a href="./0103_GIT_USE.md">← 0103_GIT_USE</a>
+                     
+  <a href="./0105_GIT_STATUS.md">0105_GIT_STATUS →</a>
+</h3>
+
+---
+
+## 4. 🏗️ On attaque **le dev** ? Pas encore ! Car AVANT : 🚨 **BRANCHE & STATUT !**
 
 Juste pour te rassurer : Bon, jusqu'à maintenant, beaucoup de lecture pour bien comprendre et tout assimiler... Mais crois-moi : Si demain, tu dois tout recommencer, tu mettras max 2 minutes même si t'es pas doué 😉 ! Et ce principe sera toujours vrai 👍 - Bref, tu ne t'en aperçois p't'être même pas, mais tu d'viens bon 👌 ! Alors, courage pour la suite !
 
-### .🎯 L’idée principale : Une ***BRANCH*** SPÉCIFIQUE pour le dev actuel courant
+### L’idée principale : 🎯 Une ***BRANCH*** SPÉCIFIQUE pour le dev actuel courant
 
 **Toujours travailler dans une branche dédiée** avant de commencer un développement spécifique.
 Cela permet de garder un **historique propre** sur la branche principale (souvent nommée **main**), de **faciliter les revues de code** et d’éviter de casser cette branche critique qui **doit rester stable en permanence**.
