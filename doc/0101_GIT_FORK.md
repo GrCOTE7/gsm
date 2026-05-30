@@ -104,4 +104,8 @@ On adapte le name et la descr si on veut, mais surtout, on 'décoche' pour avoir
 
 ---
 
-## → 2. [Clone ton fork en local](./0102_GIT_CLONE.md)
+<h3 align="center">
+  <a href="./0000_HELPME.md">← HELP</a>
+                     
+  <a href="./0000_GIT_CLONE.md">GIT CLONE →</a>
+</h3>
