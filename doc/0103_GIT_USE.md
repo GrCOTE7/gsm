@@ -3,7 +3,7 @@
 <h1><div align='center'>GIT‑USE</div></h1>
 
 <h3 align="center">
-  <a href="./0102_GIT_CLONE.md">← 0103_GIT_CLONE</a>
+  <a href="./0102_GIT_CLONE.md">← 0102_GIT_CLONE</a>
                      
   <a href="./0104_GIT_BRANCH.md">0104_GIT_BRANCH →</a>
 </h3>
