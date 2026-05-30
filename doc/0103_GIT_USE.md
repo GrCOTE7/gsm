@@ -3,7 +3,7 @@
 <h1><div align='center'>GIT‑USE</div></h1>
 
 <h3 align="center">
-  <a href="./0103_GIT_USE.md">← 0103_GIT_USE</a>
+  <a href="./0104_GIT_CLONE.md">← 0103_GIT_USE</a>
                      
   <a href="./0104_GIT_BRANCH.md">0104_GIT_BRANCH →</a>
 </h3>
@@ -11,7 +11,6 @@
 ---
 
 ## 3. Utilise ton projet
-
 
 Pour se faire, et avoir le programme en local opérationnel, il te faut installer les dépendances (si nécessaire) et lancer l'App.
 
