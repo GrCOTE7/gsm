@@ -1,10 +1,16 @@
-# GIT - FORK
+<h3><div align='right'><span style="text-decoration:none;"><a href="./0001_TOC.
+md">TOC</a></span></div></h3>
 
-<div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
-    <a href="#toc">←</a> | <a href="#toc">TOC</a>
-    <span style="font-size:1.6em; font-weight:bold;">GIT‑FORK</span>
-    <a href="#help">HELP</a> | <a href="#toc">→</a>
-</div>
+<h1><div align='center'>GIT‑FORK</div></h1>
+
+<h3 align="center">
+  <a href="./0000_HELPME.md">← HELP</a>
+                     
+  <a href="./0000_GIT_CLONE.md">GIT CLONE →</a>
+</h3>
+
+---
+
 
 
 ### 👉 PRÉAMBULE: À la moindre difficulté, consulte la **[page d'aide](./0000_HELPME.md)**
