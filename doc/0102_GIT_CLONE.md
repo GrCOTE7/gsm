@@ -70,7 +70,7 @@ git clone https://github.com/MP21170/gsm.git
 
 <div align="center">
   <a href="./imgs/user_fork_upstreal.png" target="_blank">
-    <img src="./imgs/user_fork_upstreal.png" width='4500'>
+    <img src="./imgs/user_fork_upstreal.png" width='700'>
   </a>
 </div>
 
