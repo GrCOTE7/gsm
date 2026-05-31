@@ -58,9 +58,9 @@ uv run flet run
 ./go
 ```
 
-## Teste que l'app marche au moins pour TOI, en local (Et sinon: CHAT, [ISSUE](https://github.com/GrCOTE7/gsm/issues/new/choose) bref, plan [ORSEC](https://fr.wikipedia.org/wiki/Dispositif_ORSEC)!!! Heu... Simplement **[page d'aide](./0000_HELPME.md)** plutôt !)
+### Avant d'aller + loin, teste que l'app marche au moins pour TOI, là, en local (Et sinon: CHAT, [ISSUE](https://github.com/GrCOTE7/gsm/issues/new/choose) bref, plan [ORSEC](https://fr.wikipedia.org/wiki/Dispositif_ORSEC)!!! Heu... Simplement **[page d'aide](./0000_HELPME.md)** plutôt !)
 
-| <img src="imgs/movie_time.png" width="120"> | En principe, l'app doit se lancer, là, et tu dois en [voir la page d'accueil](https://www.youtube.com/watch?v=UFc07Os-qTo), telle qu'elle est, au moment de la rédaction de ces lignes. |
+| <img src="imgs/movie_time.png" width="250"> | En principe, l'app doit se lancer, donc, et tu dois en [voir la page d'accueil](https://www.youtube.com/watch?v=UFc07Os-qTo), telle qu'elle est, au moment de la rédaction de ces lignes, et même interagir avec elle, comme ce que tu vois dans [la vidéo (3'18)](https://www.youtube.com/watch?v=UFc07Os-qTo), après exécution de la commande **./go** ! |
 |---------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 ---
@@ -69,13 +69,13 @@ uv run flet run
 
 Donc, si tout va bien, à ce stade, l'app 'tourne', et tu dois voir que la fenêtre de sortie de l'app s'actualise automatiquement dès un seul caractère du code modifié... Même si elle n'est pas forcément à un endroit optimal, selon ton matériel... Pour le moment, le cas échéant, fais la simplement glisser ailleurs afin qu'elle ne te gêne pas !
 
-### 💡 Pour modifier la page d'accueil avec n'importe quel éditeur, et ainsi **voir IMMÉDIATEMENT que tout marche bien** dont le hot-reload : Ouvre ce fichier: ***gsm\src\upu\views\tests.py*** et modifie la ligne - elle se trouve plutôt sur la fin du script, dans le *return* de la fct *build()*...
+#### 💡 Pour modifier la page d'accueil avec n'importe quel éditeur, et ainsi **voir IMMÉDIATEMENT que tout marche bien** dont le hot-reload : Ouvre ce fichier: ***gsm\src\upu\views\tests.py*** et modifie la ligne - elle se trouve plutôt sur la fin du script, dans le *return* de la fct *build()*...
 
 ```python
 "Page pour tests rapides.",
 ```
 
-### en :
+#### en :
 
 ```python
 "Page de MP21170 pour tests rapides.",
