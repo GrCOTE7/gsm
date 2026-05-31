@@ -14,7 +14,7 @@
 
 *Et avant l'heure, c'est pas l'heure, et après l'heure, c'est plus l'heure...*
 
-## → Synchro de ton dépôt distant (Sur GH) et de ton projet en local (tes fichiers)
+## 1. Position de ton projet en local (tes fichiers) VS ton dépôt distant (Sur GH)
 
 Voyons tout de suite une autre commande souvent utile qui permet de faire le point :
 
@@ -24,7 +24,19 @@ git status
 
 Elle vous donnera quelque chose comme :
 
-### 1. Tout est à jour... ☹️
+### 1. Quelqu'un d'autre a déjà agît (Behind) 😁
+
+```bash
+On branch main
+Your branch is behind 'origin/main' by 1 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working tree clean
+```
+
+On a déjà eût ce cas, et on l'avait [résolu sur GH directement](XXX) : 
+
+### 2. Tout est à jour... (Up to date) ☹️
 
 Ça paraît bien, mais ☹️, car ça veut aussi dire que vous n'avez sans doute pas encore changé ne serait-ce une virgule...
 
@@ -38,19 +50,8 @@ nothing to commit, working tree clean
 
 Du coup, pas besoin de faire évoluer votre GH... 😭
 
-### 2. quelqu'un d'autre à déjà agît 😁
 
-```bash
-On branch main
-Your branch is behind 'origin/main' by 1 commits, and can be fast-forwarded.
-  (use "git pull" to update your local branch)
-
-nothing to commit, working tree clean
-```
-
-On a déjà eût ce cas, et on l'avait [résolu sur GH directement](XXX) : 
-
-### 3. Vous avez déjà agît 😁
+### 3. Tu as déjà agît (Before) 😁
 
 ```bash
 gsm> git status

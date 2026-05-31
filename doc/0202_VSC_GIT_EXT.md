@@ -59,7 +59,12 @@ Visualize your markdown in VSCode - Ma 2ème préférée...
 * [ ] Mermaid
 
 * [ ] Jupyter
-  
+
+* [ ] Markdown Emoji
+Matt Bierner
+1 372 735
+(14)
+Adds emoji syntax support to VS Code's built-in markdown preview and markdown cells in notebook - CTRL + MAJ+ E
 
 ## Autres outils Git pouvant servir
 

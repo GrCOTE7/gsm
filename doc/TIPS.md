@@ -4,6 +4,8 @@
 
 ### [Emojis](https://emojipedia.org/fr/smileys)
 
+Alternative : Extension VSC Markdown Emoji - Matt Bierner → CTRL + MAJ + E
+
 # 😀 😉 😊 😁 🥳 👍 👌 👏 🙁 🤝 💙 ⚠️ ⌨️ 💻 🔍 📦  📋 📄 📂 🛠️ 🧰 🧵 🧪 🏛️ ⚡👉 📞 🎨 🚀 ✅ 🎯 ❌ 💡 🧱 📫 🧸 🚧 🏗️ 🥖 👨‍🍳 🧠 🌍 🤞 💪 ❤️ 🌐 🌱 🔄 🚨 📚
 
 ---
