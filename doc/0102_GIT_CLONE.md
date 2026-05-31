@@ -74,9 +74,10 @@ git clone https://github.com/MP21170/gsm.git
   </a>
 </div>
 
-Allons, n'attendons plus ! Voyons ce que cela donne (Entrons dans le dossier, et lançons le *run* ( = On va mettre en route ! ) !
+Allons, n'attendons plus ! Voyons ce que cela donne (Entrons dans le dossier, et lançons le *run* ( = On va mettre en route l'application en local ! ) !
 
-Dans un second temps, nous verrons comment interagir avec ces 3 espaces de dev.
+Dans les étapes suivantes, nous verrons comment interagir avec ces 3 espaces de dev
+(Nous comprendrons les termes posés sur les flèches dans le shéma ci-dessus).
 
 ---
 
