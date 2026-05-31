@@ -68,7 +68,15 @@ git clone https://github.com/MP21170/gsm.git
 
 ### 3. BILAN → Cela **te créée un dossier gsm/ dans lequel tu y as TOUT le code ! 👌**
 
+<div align="center">
+  <a href="./imgs/user_fork_upstreal.png" target="_blank">
+    <img src="./imgs/user_fork_upstreal.png" width='4500'>
+  </a>
+</div>
+
 Allons, n'attendons plus ! Voyons ce que cela donne (Entrons dans le dossier, et lançons le *run* ( = On va mettre en route ! ) !
+
+Dans un second temps, nous verrons comment interagir avec ces 3 espaces de dev.
 
 ---
 
