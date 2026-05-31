@@ -21,7 +21,7 @@ Cela permet de garder un **historique propre** sur la branche principale (souven
 
 C’est une pratique indispensable en **développement collaboratif**, où la stabilité de la branche principale garantit la fluidité et la qualité du travail d’équipe.
 
-Pour info, une **branche** est comme une sorte d’autre **copie intégrale** du projet ! À ceci près que Git (GitHub, GitLab, etc...) ne **duplique pas réellement** tous les fichiers :
+Pour info, une **branche** est comme une sorte d’autre **copie intégrale** du projet ! À ceci près que Git (GitHub, GitLab, etc...) ne **duplique pas réellement** tous les fichiers (Mais de cela, pour l'heure, on peut continuer à l'ignorer :):
 
 → Il stocke simplement les **différences** entre les versions, sous forme de petits fichiers texte de quelques octets.
 
