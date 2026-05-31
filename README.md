@@ -8,12 +8,13 @@
 [![Commits per Month](https://img.shields.io/github/commit-activity/m/grcote7/gsm)](https://github.com/grcote7/gsm/commits)
 [![Total Commits](https://img.shields.io/github/commit-activity/t/grcote7/gsm)](https://github.com/grcote7/gsm/commits)
 [![Last Commit](https://img.shields.io/github/last-commit/grcote7/gsm)](https://github.com/grcote7/gsm/commits)
-[![CodeSpace Ready](https://img.shields.io/badge/Github%20Codespace%20Ready-green.svg)](https://codespaces.new/GrCOTE7/gsm)
 
 ![Windows](https://img.shields.io/badge/OS-Windows-0078D6?style=flat-square&logo=windows11&logoColor=white")
 ![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)
 ![Android](https://img.shields.io/badge/Android-3ddc84?logo=android&logoColor=white)
-
+<a href="https://codespaces.new/GrCOTE7/gsm" title="Open YOUR CodeSpace Now... Click HERE!">
+    <img src="https://img.shields.io/badge/Github%20Codespace%20Ready-green.svg" alt="CodeSpace link" />
+  </a>
 ---
 
 <div align="center">
