@@ -1,6 +1,5 @@
 # <img src="src/assets/icon.png" alt="Aegis Stack" width="25"> GSM
 
-
 <!-- [![CI](https://github.com/grcote7/gsm/workflows/CI/badge.svg)](https://github.com/grcote7/gsm//actions/workflows/ci.yml)
 [![Documentation](https://github.com/grcote7/gsm/workflows/Deploy%20Documentation/badge.svg)](https://github.com/grcote7/gsm/actions/workflows/docs.yml) -->
 [![GitHub Release](https://img.shields.io/github/v/release/GrCOTE7/gsm)](https://github.com/GrCOTE7/gsm)
@@ -9,6 +8,7 @@
 [![Commits per Month](https://img.shields.io/github/commit-activity/m/grcote7/gsm)](https://github.com/grcote7/gsm/commits)
 [![Total Commits](https://img.shields.io/github/commit-activity/t/grcote7/gsm)](https://github.com/grcote7/gsm/commits)
 [![Last Commit](https://img.shields.io/github/last-commit/grcote7/gsm)](https://github.com/grcote7/gsm/commits)
+[![CodeSpace Ready](https://img.shields.io/badge/Github%20Codespace%20Ready-green.svg)](https://codespaces.new/GrCOTE7/gsm)
 
 ![Windows](https://img.shields.io/badge/Windows-0078D6?style=flat-square&logo=windows11&logoColor=white")
 ![Android](https://img.shields.io/badge/Android-3ddc84?logo=android&logoColor=white)
