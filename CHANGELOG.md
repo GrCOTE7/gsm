@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/GrCOTE7/gsm/compare/v1.0.10...v1.0.11) (2026-05-31)
+
+
+### Bug Fixes
+
+* versionning is not copy for GH ([1a413c3](https://github.com/GrCOTE7/gsm/commit/1a413c34aeeb1dad301922346e22fd23ed71d253))
+
 ## [1.0.10](https://github.com/GrCOTE7/gsm/compare/v1.0.9...v1.0.10) (2026-05-30)
 
 
