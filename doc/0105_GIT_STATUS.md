@@ -34,7 +34,13 @@ Your branch is behind 'origin/main' by 1 commits, and can be fast-forwarded.
 nothing to commit, working tree clean
 ```
 
-On a déjà eût ce cas, et on l'avait [résolu sur GH directement](XXX) : 
+❌ On a déjà eût ce cas, et on l'avait [résolu directement sur GH](XXX)
+
+Mais on peut aussi le faire + simplement, car normalement toujours prête, et ouverte, depuis / avec la CLI :
+
+```bash
+❌ 
+```
 
 ### 2. Tout est à jour... (Up to date) ☹️
 
