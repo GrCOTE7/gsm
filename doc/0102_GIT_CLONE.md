@@ -32,7 +32,7 @@ Mais attention... : Si quelques temps sont passés depuis ton fork, p't'être qu
 
 ---
 
-### → Mais 2 clics, et c'est réglé 😊 :
+### → Mais 2 clics, et c'est réglé 😊
 
 <div align="center">
   <a href="./imgs/106_required_sync.png" target="_blank">

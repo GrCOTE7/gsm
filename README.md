@@ -15,6 +15,7 @@
 <a href="https://codespaces.new/GrCOTE7/gsm" title="Open YOUR CodeSpace Now... Click HERE!">
     <img src="https://img.shields.io/badge/Github%20Codespace%20Ready-green.svg" alt="CodeSpace link" />
   </a>
+
 ---
 
 <div align="center">
