@@ -24,7 +24,7 @@ git status
 
 git restore chemin/du/dossier
 
-* [ ] To be continued... 🚧
+# * [ ] To be continued... 🚧
 
 Test push depuis codespace
 

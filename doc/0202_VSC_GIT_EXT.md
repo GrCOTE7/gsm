@@ -19,7 +19,7 @@ Nous allons nous limiter ici à découvrir comment trouver, choisir, et installe
   
 * Git Graph - mhutchie - View a Git Graph of your repository, and perform Git actions from the graph.
   Mon extension préférée - Le grand frère + PRO d'Ungit qui peut faillir sur de gros dépôts...
-  Outre le fait de commit, push, fetch, etc.... d'un simple clic ou coup de souris, donc simple et rapide, permet aussi de visualiser le positionnement d'autre contributeurs !
+  Outre le fait de commit, push, fetch, etc.... d'un simple clic ou coup de souris, donc simple et rapide, permet aussi de visualiser le positionnement d'autre contributeurs ! Et fonctionne aussi en codespace !!!
   
   <div align="center">
     <a href="./imgs/201_gg.png" target="_blank">

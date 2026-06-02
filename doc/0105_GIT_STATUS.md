@@ -10,13 +10,11 @@
 
 ---
 
-*Avant de savoir où aller, savoir où l'on est et quand !*
-
-*Et avant l'heure, c'est pas l'heure, et après l'heure, c'est plus l'heure...*
+*Avant de savoir où aller, savoir où l'on est et quand !* *Et comme avant l'heure, c'est pas l'heure, et qu'après l'heure, c'est plus l'heure...*
 
 ## 1. Position de ton projet en local (tes fichiers) VS ton dépôt distant (Sur GH)
 
-Voyons tout de suite une autre commande souvent utile qui permet de faire le point :
+Voyons tout de suite une commande souvent utile ouisqu'elle permet de faire le point :
 
 ```bash
 git status
@@ -24,7 +22,33 @@ git status
 
 Elle vous donnera quelque chose comme :
 
-### 1. Quelqu'un d'autre a déjà agît (Behind) 😁
+### 1. " Quelqu'un d'autre " a déjà agît... Tu es ***Behind*** (En retard sur ton dépôt GH)😁
+
+Cela peut te surprendre, vu qu'on parle là, de ton dépôt distant, sur GH, et qu'à priori, pour l'instant, tu n'as sans doute encore pas trop partager le lien de ton repository...
+
+Mais en fait, cela peut quand même probablement t'arriver... Mais ce ne serait pas forcément quelqu'un d'autre... Que toi !
+
+En effet, il peut t'arriver de rapidement vouloir mettre à jour un détail (ou +) depuis un codespace de ton fork...
+
+**Dans ce code source** ci-dessous, tu connais la musique maintenant, **remplace MP21170 par ton UserName GH** pour y avoir TON badge et clique dessus ! 
+
+<br>
+<div align='center'>
+  <a href="https://codespaces.new/MP21170/gsm" title="Open YOUR CodeSpace Now... Click HERE!">
+      <img src="https://img.shields.io/badge/Github%20Codespace%20Ready-green.svg" alt="CodeSpace link" />
+  </a>
+</div>
+<br>
+
+Comme tu l'auras lu dans le README, tu peux y voir ton code 'comme à la maison', dans ton éditeur, et même y lancer le script !!!
+
+Mais tu verras que tu peux mettre y faire commits, et push !!!
+
+Donc, ce sera en gros le moyen de mettre de suite à jour ton GH, avant même ton dépôt local ! @ retenir !
+
+Ou encore, plus tard, il suffit que toi ou un collègue push depuis un autre compte GH à qui tu auras accordé les droits d'accès, codespace ou pas !...
+
+Dans tous ces cas, tu verras quelque chose comme :
 
 ```bash
 On branch main
@@ -34,13 +58,13 @@ Your branch is behind 'origin/main' by 1 commits, and can be fast-forwarded.
 nothing to commit, working tree clean
 ```
 
-❌ On a déjà eût ce cas, et on l'avait [résolu directement sur GH](XXX)
-
-Mais on peut aussi le faire + simplement, car normalement toujours prête, et ouverte, depuis / avec la CLI :
+Alors, il suffit de faire ce que recommande la CLI :
 
 ```bash
-❌ 
+git pull
 ```
+
+❌ 
 
 ### 2. Tout est à jour... (Up to date) ☹️
 
