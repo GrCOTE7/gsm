@@ -1,8 +1,9 @@
-# GIT - COMMIT
+<h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
 
-## ← 5. [GIT STATUS](./0105_GIT_STATUS.md)
 
 ## 6. GIT COMMIT ↑
+
+# ❌ To be continued... 🚧
 
 ---
 

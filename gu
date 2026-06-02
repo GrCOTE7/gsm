@@ -4,56 +4,51 @@ set -euo pipefail
 
 # Git User Switcher (Linux/Codespaces)
 # Usage:
-#   ./gu        -> show current global git identity
+#   ./gu        -> show current git identity
 #   ./gu mp     -> set MP identity
 #   ./gu gc7    -> set GrCOTE7 identity
 
-cd "$(dirname "$0")"
-
 set_name="${1:-}"
 
+# Allowed values
 if [[ -n "$set_name" && "$set_name" != "mp" && "$set_name" != "gc7" ]]; then
     echo "Usage: ./gu [mp|gc7]"
     exit 1
 fi
 
-env_path=".env"
-if [[ ! -f "$env_path" ]]; then
-    echo "Warning: .env file not found"
-    exit 1
-fi
+# Read secrets (Codespaces)
+email_mp="${EMAIL_MP:-}"
+email_gc7="${EMAIL_GC7:-}"
 
-get_env_value() {
-    local key="$1"
-    local line
-    line=$(grep -E "^${key}=" "$env_path" | head -n 1 || true)
-    if [[ -n "$line" ]]; then
-        echo "${line#*=}"
-    fi
+# Function to get identity from any level
+get_git_value() {
+    git config --local "$1" 2>/dev/null && return
+    git config --global "$1" 2>/dev/null && return
+    git config --system "$1" 2>/dev/null && return
+    echo ""
 }
 
-email_mp="$(get_env_value "EMAIL_MP")"
-email_gc7="$(get_env_value "EMAIL_GC7")"
-
+# Show identity
 if [[ -z "$set_name" ]]; then
-    name="$(git config --global user.name || true)"
-    email="$(git config --global user.email || true)"
-    
-    echo "Current Git identity:"
+    name="$(get_git_value user.name)"
+    email="$(get_git_value user.email)"
+
+    echo "Current Git identity (local > global > system):"
     echo "  user.name  = ${name}"
     echo "  user.email = ${email}"
     exit 0
 fi
 
+# Apply identity (always global)
 case "$set_name" in
     mp)
         git config --global user.name "MP21170"
-        git config --global user.email "$email_mp"
+        git config --global user.email "${email_mp:-undefined}"
         echo "Git identity set to MP"
     ;;
     gc7)
         git config --global user.name "GrCOTE7"
-        git config --global user.email "$email_gc7"
+        git config --global user.email "${email_gc7:-undefined}"
         echo "Git identity set to GrCOTE7"
     ;;
 esac

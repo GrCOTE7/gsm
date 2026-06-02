@@ -1,4 +1,8 @@
-# Éditeur VSC - Visual Studio Code
+<h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
+
+# ❌ To be continued... 🚧
+
+## Éditeur VSC - Visual Studio Code
 
 Il existe des milliers d'éditeurs, + ou moins spécialisés pour une techno voire un language spécifique...
 
