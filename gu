@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Git User Switcher (Linux/Codespaces)
+# Usage:
+#   ./gu        -> show current global git identity
+#   ./gu mp     -> set MP identity
+#   ./gu gc7    -> set GrCOTE7 identity
+
+cd "$(dirname "$0")"
+
+set_name="${1:-}"
+
+if [[ -n "$set_name" && "$set_name" != "mp" && "$set_name" != "gc7" ]]; then
+    echo "Usage: ./gu [mp|gc7]"
+    exit 1
+fi
+
+env_path=".env"
+if [[ ! -f "$env_path" ]]; then
+    echo "Warning: .env file not found"
+    exit 1
+fi
+
+get_env_value() {
+    local key="$1"
+    local line
+    line=$(grep -E "^${key}=" "$env_path" | head -n 1 || true)
+    if [[ -n "$line" ]]; then
+        echo "${line#*=}"
+    fi
+}
+
+email_mp="$(get_env_value "EMAIL_MP")"
+email_gc7="$(get_env_value "EMAIL_GC7")"
+
+if [[ -z "$set_name" ]]; then
+    name="$(git config --global user.name || true)"
+    email="$(git config --global user.email || true)"
+    
+    echo "Current Git identity:"
+    echo "  user.name  = ${name}"
+    echo "  user.email = ${email}"
+    exit 0
+fi
+
+case "$set_name" in
+    mp)
+        git config --global user.name "MP21170"
+        git config --global user.email "$email_mp"
+        echo "Git identity set to MP"
+    ;;
+    gc7)
+        git config --global user.name "GrCOTE7"
+        git config --global user.email "$email_gc7"
+        echo "Git identity set to GrCOTE7"
+    ;;
+esac
