@@ -1,6 +1,6 @@
 # Collaboration GSM
 
-<h3><div align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md">TOC</a></span></div></h3>
+<h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md">TOC</a></span></div></h3>
 
 
 ### 👉 PRÉAMBULE: À la moindre difficulté, consulter la **[page d'aide](./doc/0000_HELPME.md)**
