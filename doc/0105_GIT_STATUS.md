@@ -22,7 +22,7 @@ git status
 
 Elle vous donnera quelque chose comme :
 
-### 1. " Quelqu'un d'autre " a déjà agît... Tu es ***Behind*** (En retard sur ton dépôt GH)😁
+### 1. " Quelqu'un d'autre " a déjà agît... Tu es ***Behind*** - En retard sur ton dépôt GH 😁
 
 Cela peut te surprendre, vu qu'on parle là, de ton dépôt distant, sur GH, et qu'à priori, pour l'instant, tu n'as sans doute encore pas trop partager le lien de ton repository...
 
@@ -58,15 +58,15 @@ Your branch is behind 'origin/main' by 1 commits, and can be fast-forwarded.
 nothing to commit, working tree clean
 ```
 
-Alors, il suffit de faire ce que recommande la CLI :
+Alors, **il suffit de faire ce que recommande la CLI** :
 
 ```bash
 git pull
 ```
 
-❌ 
+À l'issue, tu auras ce genre de réponse de la commande 😊 (Le nom de ta branche pouvant bien écidement varier selon ton dev... ;-) 😉 ):
 
-### 2. Tout est à jour... (Up to date) ☹️
+### 2. Tout est à jour... (Tu es ***Up to date***) ☹️
 
 Ça paraît bien, mais ☹️, car ça veut aussi dire que vous n'avez sans doute pas encore changé ne serait-ce une virgule...
 
@@ -80,8 +80,7 @@ nothing to commit, working tree clean
 
 Du coup, pas besoin de faire évoluer votre GH... 😭
 
-
-### 3. Tu as déjà agît (Before) 😁
+### 3. Tu as déjà agît (Tu es ***Before*** - En avance sur ton dépôt GH) 😁
 
 ```bash
 gsm> git status
@@ -91,8 +90,16 @@ Your branch is up to date with 'origin/main'.
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-        modified:   doc/0104_GIT_DEV.md
+        modified:   doc/0105_GIT_STATUS.md
 
 no changes added to commit (use "git add" and/or "git commit -a")
 gsm>
 ```
+
+Bravo, tu as déjà codé, et il te faut donc simplement... 👍 :
+
+(Dans notre exemple ci-dessus, de la saisie dans cettge page)
+
+---
+
+## → 6. [GIT COMMIT](./0106_GIT_COMMIT.md)
