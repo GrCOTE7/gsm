@@ -1,6 +1,6 @@
-# GIT - EXO
+<h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
 
-## ← 6. [GIT COMMIT ↑](./0106_GIT_COMMIT.md)
+# ❌ To be continued... 🚧
 
 ## 7. 🚧 T.P. - Exercice 🏗️
 
