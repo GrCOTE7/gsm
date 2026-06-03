@@ -1,20 +1,10 @@
 import flet as ft
 from typing import Callable
+from gc7_tools.helpers import sepa, sepa_outlined
 
 # trame = "0010101011001000010010001100011000101101" # valid
 trame = "0010101011001000010010001100011000101100"  # unvalid
 # Réf.: https://glassus.github.io/terminale_nsi/T6_6_Epreuve_pratique/data2026/26_BCG_NSI_23/sujet.pdf)
-
-def sepa(color="LIGHT_GREEN_ACCENT_400"):
-        return ft.Column(
-            controls=[
-                ft.Divider(
-                    height=16,
-                    thickness=2,
-                    color=getattr(ft.Colors, color),
-                ),
-            ],
-        )
 
 def is_valid_mln(trame: str) -> bool:
     compteur1 = 0
@@ -92,16 +82,16 @@ def show_trame(id_trame=0):
 def tests_views():
     return ft.Column(
             [
-                sepa("YELLOW_400"),
+                sepa("CYAN_400"),
                 show_trame(),
                 sepa(),
                 trame_validation_text("mln", trames[0], is_valid_mln),
                 trame_validation_text("thomas", trames[0], is_valid_thomas),
-                sepa("YELLOW_400"),
+                sepa_outlined("YELLOW_400"),
                 show_trame(1),
                 sepa("RED_400"),
                 trame_validation_text("mln", trames[1], is_valid_mln),
                 trame_validation_text("thomas", trames[1], is_valid_thomas),
-                sepa("YELLOW_400")
+                sepa("CYAN_400")
             ]
         )

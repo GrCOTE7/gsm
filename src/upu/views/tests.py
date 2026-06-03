@@ -1,7 +1,7 @@
 import flet as ft
 
+from gc7_tools.helpers import sepa, sepa_outlined
 from upu.views.page_template import named_view
-
 from upu.guests.mlm_913 import tests_views
 
 
@@ -25,5 +25,11 @@ def build() -> ft.Control:
         _tests_header(),
         "Page pour tests rapides.",
         extra_top_gap=0,
-        extra=tests_views(),
+        # extra=sepa_outlined('ORANGE_400'),
+        extra=ft.Column(
+            controls=[
+                tests_views(),
+                sepa_outlined(),
+            ]
+        ),
     )
