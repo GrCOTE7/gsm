@@ -2,23 +2,7 @@
 
 ## 6. GIT COMMIT ↑
 
-On va reprendre ce qu'on avait comme réponse de la CLI avec 'git status', car il est primordial d'en comprendre chaque terme
-
-```bash
-gsm> git status
-On branch main
-Your branch is up to date with 'origin/main'.
-
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-        modified:   doc/0105_GIT_STATUS.md
-
-no changes added to commit (use "git add" and/or "git commit -a")
-gsm>
-```
-
-Il faut y déceler 3 zônes importantes
+On va reprendre ce qu'on avait comme réponse de la CLI avec 'git status', car il est primordial d'en comprendre chaque terme. Reprenions sa réponse dans laquelle il faut y déceler 3 zônes importantes
 
 <div align="center">
   <a href="./imgs/106_commit.png" target="_blank">

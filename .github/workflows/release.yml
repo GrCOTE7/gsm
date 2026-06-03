@@ -39,7 +39,12 @@ jobs:
           python-version: "3.13"
 
       - name: Install Python dependencies
-        run: pip install -r doc/old_requirements.txt
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          # Keep CI deps aligned with pyproject/uv.lock and avoid encoding issues from legacy txt files.
+          python -m pip install -e ".[dev]"
 
       - name: Run tests
         run: pytest
@@ -187,6 +192,10 @@ jobs:
               if ! ./gradlew clean :app:assembleRelease --stacktrace --info --warning-mode all --no-daemon 2>&1 | tee -a ../../../flet-build.log; then
                 echo "::error::Gradle fallback assembleRelease failed. Extracting diagnostics."
                 grep -nE 'FAILURE: Build failed with an exception\.|What went wrong:|Execution failed for task|A problem occurred|Could not ' ../../../flet-build.log | tail -n 40 || true
+                echo "=== Nearby pip resolver errors ==="
+                grep -nE 'Could not find a version that satisfies the requirement|No matching distribution found' ../../../flet-build.log || true
+                echo "=== requirements*.txt detected under build/ (first 120 lines each) ==="
+                find ../../../build -type f \( -name 'requirements.txt' -o -name 'requirements-*.txt' -o -name '*requirements*.txt' \) -print -exec sh -c 'echo "----- $1"; sed -n "1,120p" "$1"' _ {} \; || true
                 echo "=== Tail of generated app/build.gradle.kts ==="
                 tail -n 80 app/build.gradle.kts || true
                 exit 1
