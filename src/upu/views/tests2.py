@@ -11,11 +11,26 @@ from upu.helpers.snackbar import show_snackbar
 from upu.views.partials import build_release_update_card
 from upu.views.page_template import named_view
 
-
-def ext_link(e, type):
-    if type == 1:
-        open_url(e, "https://example.com/1")
-    open_url(e, "https://example.com/1")
+def extLinks():
+    return ft.Container(
+        padding=ft.Padding.only(bottom=20),
+        content=ft.Row(
+            controls=[
+                filled_button(
+                    content=ft.Row(
+                        controls=[
+                            ft.Icon(ft.Icons.OPEN_IN_NEW, size=16),
+                            ft.Text("open_url()"),
+                        ],
+                        spacing=8,
+                        alignment=ft.MainAxisAlignment.CENTER,
+                    ),
+                    on_click=lambda e: open_url(e, "https://example.com"),
+                ),
+            ],
+            alignment=ft.MainAxisAlignment.CENTER,
+        ),
+    )
 
 
 # ------------------------------------------------------------
@@ -199,6 +214,7 @@ def build() -> ft.Control:
                     alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                 ),
                 build_release_update_card(),
+                extLinks(),
             ]
         ),
     )
