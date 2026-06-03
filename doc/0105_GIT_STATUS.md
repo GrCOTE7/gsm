@@ -96,7 +96,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 gsm>
 ```
 
-Bravo, tu as déjà codé, et il te faut donc simplement... 👍 :
+Bravo, tu as déjà codé, et il te faut donc simplementfaire un ***commit* + *push*** sur ton dépôt GH... On va voir cela maintenat 👍 :
 
 (Dans notre exemple ci-dessus, de la saisie dans cettge page)
 
