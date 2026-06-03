@@ -5,11 +5,6 @@ from upu.views.page_template import named_view
 
 def build() -> ft.Control:
 
-    def ext_link(e, type):
-        if type == 1:
-            open_url(e, "https://example.com/1")
-        open_url(e, "https://example.com/1")
-
     def nom_thomas():
         rep = "\n".join(
             " ".join(str(i * j) for j in range(1, i + 1)) for i in range(1, 6)

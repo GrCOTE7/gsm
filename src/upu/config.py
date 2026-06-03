@@ -21,7 +21,7 @@ load_dotenv()
 
 _CHECK_TIME_FORMAT = "%Y-%m-%d %H:%M"
 APP_NAME = "Up You!"
-DEFAULT_ROUTE = "/tests"
+DEFAULT_ROUTE = "/tests2"
 # DEFAULT_ROUTE = "/archives"
 
 

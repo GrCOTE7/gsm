@@ -11,6 +11,13 @@ from upu.helpers.snackbar import show_snackbar
 from upu.views.partials import build_release_update_card
 from upu.views.page_template import named_view
 
+
+def ext_link(e, type):
+    if type == 1:
+        open_url(e, "https://example.com/1")
+    open_url(e, "https://example.com/1")
+
+
 # ------------------------------------------------------------
 #  CACHE
 # ------------------------------------------------------------
@@ -170,7 +177,13 @@ def build() -> ft.Control:
                                 ),
                             ),
                             filled_button(
-                                content="Fermer l'application",
+                                content="Archives",
+                                on_click=lambda e: e.page.run_task(
+                                    e.page.push_route, "/archives"
+                                ),
+                            ),
+                            filled_button(
+                                content="Fermer l'App",
                                 on_click=lambda e: close_app(e),
                             ),
                         ],
