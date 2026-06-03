@@ -3,6 +3,14 @@
 
 ### Bug Fixes
 
+* add color in .md ([7940d41](https://github.com/GrCOTE7/gsm/commit/7940d419014155323b95ffa2a653744b28ae7266))
+* add trame 40 bits exo ([c829fec](https://github.com/GrCOTE7/gsm/commit/c829fec87d7b51fb7c1db10191a0aeec56b4e4f5))
+
+## [1.0.12](https://github.com/GrCOTE7/gsm/compare/v1.0.11...v1.0.12) (2026-06-03)
+
+
+### Bug Fixes
+
 * add trame 40 bits exo ([c829fec](https://github.com/GrCOTE7/gsm/commit/c829fec87d7b51fb7c1db10191a0aeec56b4e4f5))
 
 ## [1.0.11](https://github.com/GrCOTE7/gsm/compare/v1.0.10...v1.0.11) (2026-05-31)
