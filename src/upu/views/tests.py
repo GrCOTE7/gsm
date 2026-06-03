@@ -14,6 +14,17 @@ def open_external(e):
 
 def build() -> ft.Control:
 
+    def sepa():
+        return ft.Column(
+            controls=[
+                ft.Divider(
+                    height=16,
+                    thickness=2,
+                    color=ft.Colors.LIGHT_GREEN_ACCENT_400,
+                ),
+            ],
+        )
+
     def ext_link(e, type):
         if type == 1:
             open_url(e, "https://example.com/1")
@@ -29,7 +40,15 @@ def build() -> ft.Control:
                 controls=[
                     filled_button(
                         content="Tests2",
-                        on_click=lambda e: e.page.go("/tests2"),
+                        on_click=lambda e: e.page.run_task(
+                            e.page.push_route, "/tests2"
+                        ),
+                    ),
+                    filled_button(
+                        content="Archives",
+                        on_click=lambda e: e.page.run_task(
+                            e.page.push_route, "/archives"
+                        ),
                     ),
                     filled_button(
                         content="Fermer l'application",
@@ -61,12 +80,6 @@ def build() -> ft.Control:
             ),
         )
 
-    def nom_thomas():
-        rep = "\n".join(
-            " ".join(str(i * j) for j in range(1, i + 1)) for i in range(1, 6)
-        )
-        return ft.Text('Nom & Thomas \'s script:\n'+rep, size=20, weight=ft.FontWeight.W_500)
-
     return named_view(
         ft.Row(
             controls=[
@@ -79,10 +92,13 @@ def build() -> ft.Control:
         extra_top_gap=0,
         extra=ft.Column(
             [
+                sepa(),
+                ft.Text('→ Ready for quick test!', size=14, weight=ft.FontWeight.W_400),
+                sepa(),
                 provisorySubMenu(),
                 extLinks(),
+                sepa(),
                 build_release_update_card(),
-                nom_thomas(),
             ]
         ),
     )

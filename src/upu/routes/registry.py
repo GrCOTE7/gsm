@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 import flet as ft
 
-from upu.views import home, icons, settings, sport, tests, tests2
+from upu.views import home, icons, settings, sport, tests, tests2, tests_archives
 
 ViewBuilder = Callable[[], ft.Control]
 
@@ -59,6 +59,13 @@ ROUTES: tuple[RouteDefinition, ...] = (
         icon=ft.Icons.OUTLINED_FLAG,
         selected_icon=ft.Icons.FLAG,
         builder=tests2.build,
+    ),
+    RouteDefinition(
+        route="/archives",
+        label="Archives",
+        icon=ft.Icons.OUTLINED_FLAG,
+        selected_icon=ft.Icons.FLAG,
+        builder=tests_archives.build,
     ),
 )
 

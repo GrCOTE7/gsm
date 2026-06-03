@@ -20,6 +20,9 @@ from upu.services.state_repository import (
 load_dotenv()
 
 _CHECK_TIME_FORMAT = "%Y-%m-%d %H:%M"
+APP_NAME = "Up You!"
+DEFAULT_ROUTE = "/tests"
+# DEFAULT_ROUTE = "/archives"
 
 
 def _required_str(payload: dict, key: str) -> str:
@@ -119,8 +122,6 @@ def _env_int(name: str, default: int = 0) -> int:
         return default
 
 
-APP_NAME = "Up You!"
-DEFAULT_ROUTE = "/tests"
 WINDOW_LEFT = _env_int(name="UPU_WINDOW_LEFT", default=1526)  # 1526 - 1912
 DEBUG_RELEASE_JSON = _env_int("UPU_DEBUG_RELEASE_JSON", 0) == 1
 GITHUB_OWNER = "GrCOTE7"

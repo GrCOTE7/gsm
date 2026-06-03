@@ -1,16 +1,19 @@
 from upu.routes.registry import get_view_builder, has_route
 from upu.ui.navigation import AppBar, Drawer
 import flet as ft
-from upu.config import APP_NAME
+from upu.config import APP_NAME, DEFAULT_ROUTE
 
 
 class NavigationController:
     def __init__(self, page):
         self.page = page
 
+    def _fallback_route(self) -> str:
+        return DEFAULT_ROUTE if has_route(DEFAULT_ROUTE) else "/home"
+
     def route_change(self, e: ft.RouteChangeEvent) -> None:
         print("Route change:", e.route)
-        self.render_route(e.route or "/")
+        self.render_route(e.route or self._fallback_route())
 
     def build_view(self, route: str) -> ft.View:
         builder = get_view_builder(route)
@@ -26,7 +29,8 @@ class NavigationController:
     def render_route(self, raw_route: str) -> None:
         self.page.views.clear()
         route = raw_route.split("?")[0]
-        route = route if has_route(route) else "/"
+        route = route if has_route(route) else self._fallback_route()
+        self.page.route = route
         self.page.views.append(self.build_view(route))
         self.page.update()
 

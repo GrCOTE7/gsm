@@ -165,7 +165,9 @@ def build() -> ft.Control:
                         controls=[
                             filled_button(
                                 content="Tests",
-                                on_click=lambda e: e.page.go("/tests"),
+                                on_click=lambda e: e.page.run_task(
+                                    e.page.push_route, "/tests"
+                                ),
                             ),
                             filled_button(
                                 content="Fermer l'application",
