@@ -66,7 +66,11 @@ git pull
 
 ### → 💡Note que tu peux aussi appliquer ces commandes sur la branche main...
 
-À l'issue, tu auras ce genre de réponse de la commande 😊 (Le nom de ta branche pouvant bien évidement varier selon ton dev... ;-) 😉 ):
+D'ailleurs, dans l'idéale, comme tu es censé ne jamais travailler dans la *main*, tu ne dois donc logiquement en conséquences n'y faire que ces commandes... 😉
+
+Cela te permet d'avoir la *main*, toute proche conforme au dépôt GH source (Comme [tu l'avais peut-être synchronisé directement sur GH, juste avant ton clone](./0102_GIT_CLONE.md))
+
+→ À l'issue, tu auras ce genre de réponse de la commande 😊 (Le nom de ta branche pouvant bien évidement varier selon ton dev... ;-) 😉) :
 
 ### 2. Tout est à jour... (Tu es ***Up to date***) ☹️
 
