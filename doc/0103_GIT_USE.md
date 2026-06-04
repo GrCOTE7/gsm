@@ -110,7 +110,7 @@ On est jamais à l'abri de devoir un jour re-initialiser un projet, même GSM (e
 
 *Tip*: Rien ne t'empêche d'y stocker, aussi dans ce 'private dépôt', vraiment tout ce que tu veux : De docs admins, factures, etc... Pas besoin forcément du code d'un quelconque langage, mais pas contre, une bonne artborescence bien réfléchie pour y retrouver facilement et rapidement tout doc au besoin... SSL, hautement sécurisé, décentralisé, gratos... Bref, tous tes trucs clés dans un unique support, dispo 24/24, indépendant de tout ton matos perso... Mais n'oublie pas, donc, d'y mettre aussi la copie de ton .env de ton projet GSM ! 😉 !
 
-### 💡 Pour plus de simplicité pour la suite dans un 1er temps, remets bien le fichier tel qu'il était au départ. Pour t'aider si besoin, look 'en avance sur ton temps', [les commandes avancées](./imgs/104_git_diff.png) nécessaires pour savoir où tu en es dans tes modifs..
+### 💡 Pour plus de simplicité pour la suite dans un 1er temps, remets bien le fichier tel qu'il était au départ. Pour t'aider si besoin, look 'en avance sur ton temps', [les commandes avancées](./imgs/104_git_diff.png) nécessaires pour savoir où tu en es dans tes modifs
 
 ---
 

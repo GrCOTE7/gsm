@@ -74,8 +74,8 @@ git pull
 
 ```bash
 gsm> git status
-On branch demo/mon_dev
-Your branch is up to date with 'origin/demo/mon_dev'.
+On branch upgrade/01_git-dev
+Your branch is up to date with 'origin/upgrade/01_git-dev'.
 
 nothing to commit, working tree clean
 ```
@@ -86,8 +86,8 @@ Du coup, pas besoin de faire évoluer votre GH... 😭
 
 ```bash
 gsm> git status
-On branch main
-Your branch is up to date with 'origin/main'.
+On branch upgrade/01_git-dev
+Your branch is up to date with 'origin/upgrade/01_git-dev'.
 
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
@@ -100,7 +100,7 @@ gsm>
 
 Bravo, tu as déjà codé, et il te faut donc simplementfaire un ***commit* + *push*** sur ton dépôt GH... On va voir cela maintenat 👍 :
 
-(Dans notre exemple ci-dessus, de la saisie dans cettge page)
+(Dans notre exemple ci-dessus, de la saisie dans cette page)
 
 ---
 

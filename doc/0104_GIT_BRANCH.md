@@ -29,7 +29,7 @@ En réalité, Git garde 'simplement' un **historique d’instantanés** (*snapsh
 
 C’est pour cela qu’on peut **multiplier les branches** sans “gonfler” le dépôt car très léger, mais aussi et surtout, ce traitement est complètement transparent pour nous : Alors, ne pas hésiter à en abuser !
 
-### 🛠️ Donc, étape 1 — Crééer une branche de travail
+### 🛠️ Donc, étape 1 — Crééer une branche de travail - ***git switch -c dev/branch-name***
 
 Tu peux nommer ta branche comme tu veux, mais voici la [norme idéalement](https://codeheroes.fr/blog/git-comment-nommer-ses-branches-et-ses-commits) :
 
@@ -95,6 +95,22 @@ git checkout HEAD -- fichier.txt
     # + moderne :
 git restore fichier.txt
 ```
+
+---
+
+### Voir les modifs d'un fichier
+
+```bash
+git diff filename
+```
+
+<div align="center">
+  <a href="./imgs/104_git_diff.png" target="_blank">
+    <img src="./imgs/104_git_diff.png" width="500">
+  </a>
+</div>
+
+→ Rassure-toi ! Des outils graphiques simplifient énormément ces commandes et leurs rendus...
 
 ---
 

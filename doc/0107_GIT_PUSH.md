@@ -27,44 +27,7 @@ Et du coup, voyons ce que 'raconte' *git status*... :
 ```bash
 gsm> git status
 On branch main
-Your branch is ahead of 'origin/main' by 1 commit.
-  (use "git push" to publish your local commits)
-
-nothing to commit, working tree clean
-gsm>
-```
-
-→ Git te dit :
-
-“Tu as 1 commit local que GitHub n’a pas encore.”
-
-Donc ton dépôt local = en avance (*ahead*)
-Ton dépôt GitHub = en retard (Par réciprocité)
-
-Maintenant, afin que ce que vous avez fait codé compte vraiment, il faut, comme le suuggère la CLI, '***push***' vos *commits* !
-
-C'est l'étape **la plus importante**, celle qui rend 'votre travail enregistrée dans le marbre' !
-
-
-## 🚀 L’action correcte : Pousser vers le remote
-
-La commande git est :
-
-```bash
-git push
-```
-
-Aujourd’hui
-## Synchronisation de ton projet en local (tes fichiers) et de ton dépôt distant (Sur GH)
-
-Alors, comme ça... **Vous avez agît**...? Codé, fait des commits... **B R A V O S !**
-
-Et du coup, voyons ce que 'raconte' *git status*... :
-
-```bash
-gsm> git status
-On branch main
-Your branch is ahead of 'origin/main' by 1 commit.
+Your branch is ahead of 'upgrade/01_git-dev' by 1 commit.
   (use "git push" to publish your local commits)
 
 nothing to commit, working tree clean
