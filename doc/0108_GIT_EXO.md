@@ -5,7 +5,7 @@
 <h3 align="center">
   <a href="./0107_GIT_PUSH.md">← 0107_GIT_PUSH</a>
                      
-  <a href="./0201_VSC_INSTALL.md">0201_VSC_INSTALL →</a>
+  <a href="./0109_GIT_SYNC.md">0109_GIT_SYNC →</a>
 </h3>
 
 ---
