@@ -1,8 +1,18 @@
 <h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
 
-## 6. GIT COMMIT ↑
+<h1><div align='center'>GIT COMMIT ↓</div></h1>
 
-On va reprendre ce qu'on avait comme réponse de la CLI avec 'git status', car il est primordial d'en comprendre chaque terme. Reprenons sa réponse dans laquelle il faut y déceler 3 zônes importantes
+<h3 align="center">
+  <a href="./0105_GIT_STATUS.md">← 0105_GIT_STATUS</a>
+                     
+  <a href="./0107_GIT_PUSH.md">0107_GIT_PUSH →</a>
+</h3>
+
+---
+
+On va reprendre ce qu’on avait obtenu avec la commande ***git status***, car il est **primordial** d’en comprendre chaque terme.
+
+Dans cette sortie, il faut identifier **3 zônes importantes**
 
 <div align="center">
   <a href="./imgs/106_commit.png" target="_blank">
@@ -10,20 +20,95 @@ On va reprendre ce qu'on avait comme réponse de la CLI avec 'git status', car i
   </a>
 </div>
 
-<span style="color:#00FF00">1. Globalement, tes dépôts 'local' et 'distant' sont pareil, en ne considérant que les fichiers bien enregistrés ( = poussé ) dans le git</span>
+<br>
+<span style="color:#00FF00">1. Globalement, tes dépôts 'le local' et 'le distant' sont identiques, si l'on ne considére que les fichiers déjà enregistrés (donc déjà <b><i>push</i></b>).</span><br><br>
 
-# ❌ To be continued... 🚧
+```bash
+gsm> git status
+On branch main
+Your branch is up to date with 'origin/main'
+...
+gsm>
+```
+
+<br>
+<div style="color:yellow">2. Par contre, il existe une modification (dans notre exemple, mais il peut y en avoir plusieurs) qui n’a pas encore été ajoutée pour être validée dans Git.</div>
+<br>
+On peut soit l'ajouter avec :
+
+<br>***git add***
+
+ou au contraire, considérer que cette midification ne doit pas être conservée :
+
+***git restore***
+
+```bash
+gsm> git status
+...
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   doc/0105_GIT_STATUS.md
+...
+gsm>
+```
+
+<br>
+<span style="color:orange">3. On décide de valider notre modification</span>
+
+```bash
+gsm> git status
+...
+no changes added to commit (use "git add" and/or "git commit -a")
+gsm>
+```
+
+### 3.1 La validation (***add***)
+
+2 façons de faire :
+
+- **En nommant le ou les fichiers** (Dans ce cas, on met les noms des autres fichiers à la suite, simplement séparés par un espace)
+
+```bash
+git add doc/0105_GIT_STATUS.md doc/0106_GIT_LOG.md
+```
+
+- **En utilisant un joker** (On valide tous les fichiers correspondant à un motif)
+
+```bash
+git add doc/010*.md # Tous les doc/010... au format .md
+git add .           # ← Tous les fichiers
+```
+
+### 3.2 L'enregistrement (***commit***)
+
+Une fois les fichiers ajoutés (***staged***), on peut enregistrer la modification dans l’historique :
+
+```bash
+git commit -m "Explication du commit et mise à jour de la doc"
+
+```
+
+### 3.3 Le raccourci puissant : ***git commit -a***
+
+Il existe une commande qui combine ces deux étapes en une seule :
+
+***git commit -a 'commit message'***
+
+Elle permet de :
+
+- Détecter automatiquement tous les fichiers déjà suivis par Git (tracked)
+
+- Les ajouter (comme si tu avais fait git add)
+
+- Puis faire le commit
+
+**En une seule commande** :
+
+```bash
+git commit -a -m "Explication du commit et mise à jour de la doc"
+```
 
 ---
 
-## 2. Synchronisation de ton projet en local (tes fichiers) et de ton dépôt distant (Sur GH)
-
-Alors, comme ça... **Vous avez agît**...? **B R A V O S !**
-
-Maintenant, afin que ce que vous avez fait compte vraiment, il faut le '*commit*' !
-
-# ❌ To be continued... 🚧
-
-→ Commandes commit
-
-### 👉 *Même si vous découvrirez bientôt des outils qui rendent intuitives et ludiques ces commandes car applicables 'à coups de souris', il est toujours bon et parfois salvateur de connaître les commandes de base en console.*
+## → 7. [GIT PUSH](./0107_GIT_PUSH.md)
