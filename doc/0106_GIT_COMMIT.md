@@ -21,7 +21,8 @@ Dans cette sortie, il faut identifier **3 zônes importantes**
 </div>
 
 <br>
-<span style="color:#00FF00">1. Globalement, tes dépôts 'le local' et 'le distant' sont identiques, si l'on ne considére que les fichiers déjà enregistrés (donc déjà <b><i>push</i></b>).</span><br><br>
+
+### 1. 🟩 Globalement, tes dépôts 'le local' et 'le distant' sont identiques, si l'on ne considére que les fichiers déjà enregistrés (donc déjà ***push***).
 
 ```bash
 gsm> git status
@@ -31,12 +32,11 @@ Your branch is up to date with 'origin/main'
 gsm>
 ```
 
-<br>
-<div style="color:yellow">2. Par contre, il existe une modification (dans notre exemple, mais il peut y en avoir plusieurs) qui n’a pas encore été ajoutée pour être validée dans Git.</div>
-<br>
+### 2. 🟨 Par contre, il existe une modification (dans notre exemple, mais il peut y en avoir plusieurs) qui n’a pas encore été ajoutée pour être validée dans Git.
+
 On peut soit l'ajouter avec :
 
-<br>***git add***
+***git add***
 
 ou au contraire, considérer que cette midification ne doit pas être conservée :
 
@@ -54,7 +54,8 @@ gsm>
 ```
 
 <br>
-<span style="color:orange">3. On décide de valider notre modification</span>
+
+### 3. 🟧 On décide de valider notre modification
 
 ```bash
 gsm> git status
@@ -63,7 +64,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 gsm>
 ```
 
-### 3.1 La validation (***add***)
+#### 3.1 La validation (***add***)
 
 2 façons de faire :
 
@@ -80,7 +81,7 @@ git add doc/010*.md # Tous les doc/010... au format .md
 git add .           # ← Tous les fichiers
 ```
 
-### 3.2 L'enregistrement (***commit***)
+#### 3.2 L'enregistrement (***commit***)
 
 Une fois les fichiers ajoutés (***staged***), on peut enregistrer la modification dans l’historique :
 
@@ -89,7 +90,7 @@ git commit -m "Explication du commit et mise à jour de la doc"
 
 ```
 
-### 3.3 Le raccourci puissant : ***git commit -a***
+#### 3.3 Le raccourci puissant : ***git commit -a***
 
 Il existe une commande qui combine ces deux étapes en une seule :
 
@@ -111,4 +112,4 @@ git commit -a -m "Explication du commit et mise à jour de la doc"
 
 ---
 
-## → 7. [GIT PUSH](./0107_GIT_PUSH.md)
+❌ ## → 7. [GIT PUSH](./0107_GIT_PUSH.md)

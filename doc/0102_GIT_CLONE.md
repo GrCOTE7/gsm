@@ -82,4 +82,4 @@ Puis dans les étapes suivantes, nous verrons aussi comment interagir avec ces 3
 
 ---
 
-## → 3. [Installe les dépendances si nécessaire et lance l'app](./0103_GIT_USE.md)
+❌ ## → 3. [Installe les dépendances si nécessaire et lance l'app](./0103_GIT_USE.md)
