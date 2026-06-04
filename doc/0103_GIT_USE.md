@@ -75,7 +75,7 @@ Donc, si tout va bien, à ce stade, l'app 'tourne', et tu dois voir que la fenê
 "Page pour tests rapides.",
 ```
 
-#### en :
+#### en
 
 ```python
 "Page de MP21170 pour tests rapides.",
@@ -104,6 +104,8 @@ Alors, **bonne nouvelle, c'est juste une valeur à indiquer dans un fichier** :
 On est jamais à l'abri de devoir un jour re-initialiser un projet, même GSM (et peut-être, si on est aussi actifs qu'on l'espère, surtout, GSM !)... Et donc, toutes les valeurs qui sont strictement tiennes dans ce ***.env*** risquent d'être perdues à jamais (Sauf si tu es absolument sûr de penser à le mettre de côté si un jour cette situation de reset extrême arrive... Et crois-moi que ce jour là, 9/10 chances que tu comprennes que le Père Noël , c'est que pour les tous petits... De nombreuses sociétés ont disparus à cause des conséquences fiancières dramatiques de ce seul risque non couvert !)
 
 *Tip*: Rien ne t'empêche d'y stocker, aussi dans ce 'private dépôt', vraiment tout ce que tu veux : De docs admins, factures, etc... Pas besoin forcément du code d'un quelconque langage, mais pas contre, une bonne artborescence bien réfléchie pour y retrouver facilement et rapidement tout doc au besoin... SSL, hautement sécurisé, décentralisé, gratos... Bref, tous tes trucs clés dans un unique support, dispo 24/24, indépendant de tout ton matos perso... Mais n'oublie pas, donc, d'y mettre aussi la copie de ton .env de ton projet GSM ! 😉 !
+
+#### → Pour plus de simplicité pour la suite dans un 1er temps, remets bien le fichier tel qu'il était au départ.
 
 ---
 
