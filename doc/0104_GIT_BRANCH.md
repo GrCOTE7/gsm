@@ -54,9 +54,9 @@ git switch -c upgrade/01_git-dev
 Switched to a new branch 'upgrade/01_git-dev'
 ```
 
-( ⚠️ Si tu nez vois pas cela, et par contre, le mot '***Aborting***' (Annulé), ça veut dire que quelque chose empêche la commande d'être exécutée... Là, c'est peut-être pas ce que tu as zapé un peu vite le conseil, tout en bas du [doc précédent (0103)](./0103_GIT_USE.md)... Il faut un dépôt 'propre')
+( ⚠️ Si tu nez vois pas cela, et par contre, le mot '***Aborting***' (Annulé), ça veut dire que quelque chose empêche la commande d'être exécutée... Là, c'est peut-être pas ce que tu as zapé un peu vite le conseil, tout en bas du [doc précédent (0103)](./0103_GIT_USE.md)... Il faut en effet un dépôt 'propre' pour '***switcher***' (basculer).)
 
-Si besoin, pour faire le point et avoir la liste des branches existantes :
+Pour faire le point et avoir la liste des branches existantes :
 
 ```bash
 git branch
@@ -87,7 +87,7 @@ git branch -m ancien-nom nouveau-nom     # renomme la branche
     # + moderne :
 git branch --move ancien-nom nouveau-nom
 
-git branch -a                        # voir les branches distantes (- a = all)
+git branch -a                            # voir les branches distantes (- a = all)
     # OU :
 git branch --all
 
