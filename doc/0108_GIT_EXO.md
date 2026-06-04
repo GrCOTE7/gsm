@@ -1,26 +1,27 @@
 <h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
 
-# ❌ To be continued... 🚧
+<h1><div align='center'>🚧 7. GIT EXO - T.P. - Exercice 🏗️</div></h1>
 
-## 7. 🚧 T.P. - Exercice 🏗️
+<h3 align="center">
+  <a href="./0107_GIT_PUSH.md">← 0107_GIT_PUSH</a>
+                     
+  <a href="./0201_VSC_INSTALL.md">0201_VSC_INSTALL →</a>
+</h3>
+
+---
 
 Pour comprendre l'importance et la magie du Git, voyons un exemple exagéré à l'extrême :
 
 Imaginons que fatigué, tu effaces par erreur tout un dossier important...
 Sans le git, cela serait assurément catastrophique, on ne sauvegarde pas toutes les 2 minutes !!!
 
-Donc, on passe sur une nouvelle branche spécifique, bien nommée :
+Donc, agissons en PRO, et travaillons sur une nouvelle branche spécifique bien nommée que nous créons pour l'occasion :
 
 ```bash
-git checkout -b action_folle
+git checkout -b exo/action_folle
 ```
 
-Voyons tout de suite un autre commande souvent utile
-
-```bash
-git status
-```
-
+# ❌ To be continued... 🚧
 
 git restore chemin/du/dossier
 

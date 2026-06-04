@@ -8,15 +8,16 @@
   <a href="./0108_GIT_EXO.md">0108_GIT_EXO →</a>
 </h3>
 
----
-
-La dernière étape du cycle des itérations locales (Souvenez-vous...)
-
 <div align="center">
   <a href="./imgs/301_GIT.png" target="_blank">
     <img src="./imgs/301_GIT.png" width="700">
   </a>
 </div>
+
+---
+
+La dernière étape du cycle des itérations locales (Souvenez-vous...)
+
 
 ---
 
@@ -26,8 +27,20 @@ Alors, comme ça... **Vous avez agît**...? Codé, fait des commits... **B R A V
 
 Maintenant, afin que ce que vous avez fait compte vraiment, il faut le '*commit*' !
 
-### 👉 *Même si vous découvrirez bientôt des outils qui rendent intuitives et ludiques ces commandes car applicables 'à coups de souris', il est toujours bon et parfois salvateur de connaître les commandes de base en console.*
+C'est l'étape **la plus importante**, celle qui rend 'votre travail enregistrée dans le marbre' !
 
 → Commandes commit
 
-# ❌ To be continued... 🚧
+```bash
+git push
+```
+
+### 👉 *Même si vous découvrirez bientôt des outils qui simplifient complètement, rendent rapides, intuitives et ludiques ces commandes car applicables 'à coups de souris', il est toujours bon et parfois salvateur de connaître les commandes de base en console.*
+
+---
+
+<h3 align="center">
+  <a href="./0106_GIT_COMMIT.md">← 0106_GIT_COMMIT</a>
+                     
+  <a href="./0108_GIT_EXO.md">0108_GIT_EXO →</a>
+</h3>
