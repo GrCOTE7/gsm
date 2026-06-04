@@ -107,4 +107,8 @@ On est jamais à l'abri de devoir un jour re-initialiser un projet, même GSM (e
 
 ---
 
-#❌  # → 4. [On attaque **le dev** 👌 ? Existons, faisons une BRANCHE !](./0104_GIT_BRANCH.md)
+<h3 align="center">
+  <a href="./0102_GIT_CLONE.md">← 0102_GIT_CLONE</a>
+                     
+  <a href="./0104_GIT_BRANCH.md">0104_GIT_BRANCH →</a>
+</h3>

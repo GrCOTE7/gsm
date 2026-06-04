@@ -82,4 +82,8 @@ Puis dans les étapes suivantes, nous verrons aussi comment interagir avec ces 3
 
 ---
 
-❌ ## → 3. [Installe les dépendances si nécessaire et lance l'app](./0103_GIT_USE.md)
+<h3 align="center">
+  <a href="./0101_GIT_FORK.md">← 0101_GIT_FORK</a>
+                     
+  <a href="./0103_GIT_USE.md">0103_GIT_USE →</a>
+</h3>

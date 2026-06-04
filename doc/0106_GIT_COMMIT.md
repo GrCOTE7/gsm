@@ -53,8 +53,6 @@ Changes not staged for commit:
 gsm>
 ```
 
-<br>
-
 ### 3. 🟧 On décide de valider notre modification
 
 ```bash
@@ -99,9 +97,7 @@ Il existe une commande qui combine ces deux étapes en une seule :
 Elle permet de :
 
 - Détecter automatiquement tous les fichiers déjà suivis par Git (tracked)
-
 - Les ajouter (comme si tu avais fait git add)
-
 - Puis faire le commit
 
 **En une seule commande** :
@@ -112,4 +108,8 @@ git commit -a -m "Explication du commit et mise à jour de la doc"
 
 ---
 
-❌ ## → 7. [GIT PUSH](./0107_GIT_PUSH.md)
+<h3 align="center">
+  <a href="./0105_GIT_STATUS.md">← 0105_GIT_STATUS</a>
+                     
+  <a href="./0107_GIT_PUSH.md">0107_GIT_PUSH →</a>
+</h3>

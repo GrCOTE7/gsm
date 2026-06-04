@@ -102,4 +102,8 @@ Bravo, tu as déjà codé, et il te faut donc simplementfaire un ***commit* + *p
 
 ---
 
-❌ ## → 6. [GIT COMMIT](./0106_GIT_COMMIT.md)
+<h3 align="center">
+  <a href="./0104_GIT_BRANCH.md">← 0104_GIT_BRANCH</a>
+                     
+  <a href="./0106_GIT_COMMIT.md">0106_GIT_COMMIT →</a>
+</h3>
