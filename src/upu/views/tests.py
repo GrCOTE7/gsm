@@ -1,12 +1,11 @@
 import flet as ft
 
 from gc7_tools.helpers import sepa, sepa_outlined
-from upu.views.page_template import named_view
+from upu.views.page_template import named_view, ready
 from upu.guests.mlm_913 import tests_views
 
-
-def ready():
-    return ft.Text("→ Ready for quick test21!", size=14, weight=ft.FontWeight.W_400)
+# def ready():
+#     return ft.Text("→ Ready for quick test21!", size=14, weight=ft.FontWeight.W_400)
 
 
 def _tests_header() -> ft.Row:
@@ -27,9 +26,15 @@ def build() -> ft.Control:
         extra_top_gap=0,
         # extra=sepa_outlined('ORANGE_400'),
         extra=ft.Column(
+            expand=True,
             controls=[
-                tests_views(),
+                ft.Container(
+                    expand=True,
+                    content=tests_views(),
+                ),
                 sepa_outlined(),
-            ]
+                ready(),
+            ],
         ),
     )
+

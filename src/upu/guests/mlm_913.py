@@ -70,7 +70,6 @@ def trame_validation_text(
     )
 
 
-
 trames = [
     "0010101011001000010010001100011000101101",  # valid
     "0010101011001000010010001100011000101100",  # unvalid
@@ -81,17 +80,17 @@ def show_trame(id_trame=0):
 
 def tests_views():
     return ft.Column(
-            [
-                sepa("CYAN_400"),
-                show_trame(),
-                sepa(),
-                trame_validation_text("mln", trames[0], is_valid_mln),
-                trame_validation_text("thomas", trames[0], is_valid_thomas),
-                sepa_outlined("YELLOW_400"),
-                show_trame(1),
-                sepa("RED_400"),
-                trame_validation_text("mln", trames[1], is_valid_mln),
-                trame_validation_text("thomas", trames[1], is_valid_thomas),
-                sepa("CYAN_400")
-            ]
-        )
+        [
+            sepa_outlined("CYAN_400"),
+            show_trame(),
+            sepa(),
+            trame_validation_text("mln", trames[0], is_valid_mln),
+            trame_validation_text("thomas", trames[0], is_valid_thomas),
+            sepa_outlined("YELLOW_400"),
+            show_trame(1),
+            sepa("RED_400"),
+            trame_validation_text("mln", trames[1], is_valid_mln),
+            trame_validation_text("thomas", trames[1], is_valid_thomas),
+            sepa_outlined("CYAN_400"),
+        ]
+    )
