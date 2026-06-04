@@ -8,20 +8,17 @@
   <a href="./0108_GIT_EXO.md">0108_GIT_EXO →</a>
 </h3>
 
+---
+
+La dernière étape du cycle des itérations locales (Souvenez-vous...)
+
 <div align="center">
   <a href="./imgs/301_GIT.png" target="_blank">
     <img src="./imgs/301_GIT.png" width="700">
   </a>
 </div>
 
----
-
-La dernière étape du cycle des itérations locales (Souvenez-vous...)
-
-
----
-
-## 2. Synchronisation de ton projet en local (tes fichiers) et de ton dépôt distant (Sur GH)
+## Synchronisation de ton projet en local (tes fichiers) et de ton dépôt distant (Sur GH)
 
 Alors, comme ça... **Vous avez agît**...? Codé, fait des commits... **B R A V O S !**
 
