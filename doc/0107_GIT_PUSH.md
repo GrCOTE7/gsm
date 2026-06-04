@@ -22,17 +22,74 @@ La dernière étape du cycle des itérations locales (Souvenez-vous...)
 
 Alors, comme ça... **Vous avez agît**...? Codé, fait des commits... **B R A V O S !**
 
-Maintenant, afin que ce que vous avez fait compte vraiment, il faut le '*commit*' !
+Et du coup, voyons ce que 'raconte' *git status*... :
+
+```bash
+gsm> git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+gsm>
+```
+
+→ Git te dit :
+
+“Tu as 1 commit local que GitHub n’a pas encore.”
+
+Donc ton dépôt local = en avance (*ahead*)
+Ton dépôt GitHub = en retard (Par réciprocité)
+
+Maintenant, afin que ce que vous avez fait codé compte vraiment, il faut, comme le suuggère la CLI, '***push***' vos *commits* !
 
 C'est l'étape **la plus importante**, celle qui rend 'votre travail enregistrée dans le marbre' !
 
-→ Commandes commit
+
+## 🚀 L’action correcte : Pousser vers le remote
+
+La commande git est :
 
 ```bash
 git push
 ```
 
-### 👉 *Même si vous découvrirez bientôt des outils qui simplifient complètement, rendent rapides, intuitives et ludiques ces commandes car applicables 'à coups de souris', il est toujours bon et parfois salvateur de connaître les commandes de base en console.*
+Aujourd’hui
+## Synchronisation de ton projet en local (tes fichiers) et de ton dépôt distant (Sur GH)
+
+Alors, comme ça... **Vous avez agît**...? Codé, fait des commits... **B R A V O S !**
+
+Et du coup, voyons ce que 'raconte' *git status*... :
+
+```bash
+gsm> git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+gsm>
+```
+
+Maintenant, afin que ce que tu as fait codé compte vraiment, il faut, comme le suggère la CLI, '***push***' tes *commits*.
+
+C'est l'étape **la plus importante**, celle qui rend 'ton travail enregistré dans le marbre' !
+
+## 🚀 L’action correcte : pousser vers le remote
+
+La commande :
+
+```bash
+git push
+```
+
+est correcte **à condition** que :
+
+- Ta branche locale main soit bien liée à ***origin/main***,
+- ton remote origin pointe bien vers ton dépôt GitHub,
+- tu aies les droits d’écriture (ce qui est le cas ici, vu que tu es dans ton *fork*).
+
+### 👉 *Même si tu découvriras bientôt des outils qui simplifient complètement, rendent rapides, intuitives et ludiques ces commandes car applicables 'à simples coups de souris', il est toujours bon et parfois salvateur de connaître les commandes de base en console.*
 
 ---
 
