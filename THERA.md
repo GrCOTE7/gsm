@@ -162,4 +162,4 @@ Avance. Souris. Et laisse-toi surprendre par ce qui t’attend...
 
 ## 📄 [Attaque la doc](./doc/0101_GIT_FORK.md), ici et maintenant !
 
-### Nous seront bientôt tous très fiers de toi. 😀 
+### Nous seront bientôt tous très fiers de toi 😀 !
