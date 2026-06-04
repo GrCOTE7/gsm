@@ -58,6 +58,11 @@ uv run flet run
 ./go
 ```
 
+💡 Quand un process tourne dans la CLI, et qu'on doit taper une commande:
+
+- Soit on ouvre une nouvelle CLI,
+- soit on fait CTRL + C pour arrêter le process et récupérer l'invite.
+
 ### Avant d'aller + loin, teste que l'app marche au moins pour TOI, là, en local (Et sinon: CHAT, [ISSUE](https://github.com/GrCOTE7/gsm/issues/new/choose) bref, plan [ORSEC](https://fr.wikipedia.org/wiki/Dispositif_ORSEC)!!! Heu... Simplement **[page d'aide](./0000_HELPME.md)** plutôt !)
 
 | <img src="imgs/movie_time.png" width="250"> | En principe, l'app doit se lancer, donc, et tu dois en [voir la page d'accueil](https://www.youtube.com/watch?v=UFc07Os-qTo), telle qu'elle est, au moment de la rédaction de ces lignes, et même interagir avec elle, comme ce que tu vois dans [la vidéo (3'18)](https://www.youtube.com/watch?v=UFc07Os-qTo), après exécution de la commande **./go** ! |
@@ -105,7 +110,7 @@ On est jamais à l'abri de devoir un jour re-initialiser un projet, même GSM (e
 
 *Tip*: Rien ne t'empêche d'y stocker, aussi dans ce 'private dépôt', vraiment tout ce que tu veux : De docs admins, factures, etc... Pas besoin forcément du code d'un quelconque langage, mais pas contre, une bonne artborescence bien réfléchie pour y retrouver facilement et rapidement tout doc au besoin... SSL, hautement sécurisé, décentralisé, gratos... Bref, tous tes trucs clés dans un unique support, dispo 24/24, indépendant de tout ton matos perso... Mais n'oublie pas, donc, d'y mettre aussi la copie de ton .env de ton projet GSM ! 😉 !
 
-#### → Pour plus de simplicité pour la suite dans un 1er temps, remets bien le fichier tel qu'il était au départ.
+### 💡 Pour plus de simplicité pour la suite dans un 1er temps, remets bien le fichier tel qu'il était au départ. Pour t'aider si besoin, look 'en avance sur ton temps', [les commandes avancées](./imgs/104_git_diff.png) nécessaires pour savoir où tu en es dans tes modifs..
 
 ---
 

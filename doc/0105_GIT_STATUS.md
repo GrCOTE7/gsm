@@ -51,8 +51,8 @@ Ou encore, plus tard, il suffit que toi ou un collègue push depuis un autre com
 Dans tous ces cas, tu verras quelque chose comme :
 
 ```bash
-On branch main
-Your branch is behind 'origin/main' by 1 commits, and can be fast-forwarded.
+On branch upgrade/01_git-dev
+Your branch is behind 'upgrade/01_git-dev' by 1 commits, and can be fast-forwarded.
   (use "git pull" to update your local branch)
 
 nothing to commit, working tree clean
@@ -64,7 +64,9 @@ Alors, **il suffit de faire ce que recommande la CLI** :
 git pull
 ```
 
-À l'issue, tu auras ce genre de réponse de la commande 😊 (Le nom de ta branche pouvant bien écidement varier selon ton dev... ;-) 😉 ):
+### → 💡Note que tu peux aussi appliquer ces commandes sur la branche main...
+
+À l'issue, tu auras ce genre de réponse de la commande 😊 (Le nom de ta branche pouvant bien évidement varier selon ton dev... ;-) 😉 ):
 
 ### 2. Tout est à jour... (Tu es ***Up to date***) ☹️
 
