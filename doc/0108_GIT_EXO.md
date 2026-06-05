@@ -45,13 +45,13 @@ rm -rf src/upu
 
 ## Et qu'en plus, on ne le voit pas tout de suite, donc on valide notre dev
 
-On valide la catastrophe locale 😭 :
+On valide la catastrophe locale 😭 - On l'aurait jamais fait si on avait fait un simple :
 
 ```bash
 git status
 ```
 
-Puis on simule l'erreur complète du quotidien :
+Et on simule l'enregistrement Git de l'erreur complète :
 
 ```bash
 git add .
@@ -62,38 +62,39 @@ git commit -m "feat: grosse refacto - nettoyage du code" # snif
 
 Si l'erreur est détectée juste après ton commit local (pas encore poussé), tu peux revenir proprement en arrière.
 
-Option A : Tu veux garder les changements dans les fichiers pour les corriger
+Option A : Tu veux garder les changements dans les fichiers pour les corriger (ça annule le commit, mais pas le add)
 
 ```bash
 git reset --soft HEAD~1
 ```
 
-Option B : Tu veux annuler le commit mais garder les changements non indexés
+Option B : Tu veux annuler le commit mais garder les changements non indexés (Soit, annuler le commit, ET le add - Mais le dossier reste effacé)
 
 ```bash
 git reset --mixed HEAD~1
 ```
 
-Ensuite, restaure uniquement le dossier supprimé par erreur:
+Ensuite, si les fichiers concernés ne sont plus indexés, on peut restaurer alors uniquement le dossier supprimé par erreur, tout en gardant d'autres changement qu'on aurait pû faire par ailleurs :
 
 ```bash
-git restore src/upu
+git reset --mixed HEAD~1
 ```
 
-Puis " re *commit* " proprement :
+Puis " re *commit* " proprement si d'autres changements avaient été faits :
 
 ```bash
 git add .
 git commit -m "fix: restauration du dossier supprimé par erreur"
 ```
 
-## 2e cas : on s'en aperçoit après le push sur le dépôt distant
+## 2e cas : On s'en aperçoit après le push sur le dépôt distant
 
 Si le commit est déjà poussé, évite de réécrire l'historique partagé.
 Le plus simple et le plus propre est de faire un commit de correction.
 
 ```bash
-git restore src/upu
+# Restaurer le dossier depuis le commit précédent
+git restore --source=HEAD~1 src/upu
 git add src/upu
 git commit -m "fix: restauration du dossier supprimé par erreur"
 git push
