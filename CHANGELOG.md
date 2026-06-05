@@ -1,3 +1,10 @@
+## [1.0.13](https://github.com/GrCOTE7/gsm/compare/v1.0.12...v1.0.13) (2026-06-05)
+
+
+### Bug Fixes
+
+* set git exo ([aa57420](https://github.com/GrCOTE7/gsm/commit/aa57420389b2df3606667a46ecd5c48e77a327b0))
+
 ## [1.0.12](https://github.com/GrCOTE7/gsm/compare/v1.0.11...v1.0.12) (2026-06-03)
 
 
