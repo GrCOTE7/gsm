@@ -15,9 +15,9 @@ Pour comprendre l'importance et la magie du Git, voyons un exemple exagéré à 
 Imaginons que fatigué, tu effaces par erreur tout un dossier important...
 Sans le git, cela serait assurément catastrophique, on ne sauvegarde pas toutes les 2 minutes !!!
 
-Donc, agissons en PRO, et travaillons sur une nouvelle branche spécifique bien nommée que nous créons pour l'occasion :
+Donc, révisons l'ensemble de ce que nous avons vu, et agissons en PRO; Travaillons sur une nouvelle branche spécifique bien nommée que nous créons pour l'occasion :
 
-## On attaque le dev → Création de la branche spécifique
+## On attaque le dev → Création d'une branche spécifique
 
 ```bash
 git checkout -b exo/action_folle
@@ -29,23 +29,23 @@ git switch -c exo/action_folle
 
 Mais pour l'exemple, on va volontairement créer un problème pour s'entraîner.
 
-Imaginons un cas gravissime : on efface un dossier clé de l'app, `src/upu`. (Il n'y a pas plus critique, c'est tout le cœur de l'app.)
+Imaginons un cas gravissime : on efface un dossier clé de l'app, `src/upu`. (Il n'y a pas plus critique, c'est tout le cœur de l'app !!!)
 
-Windows (PowerShell):
+<img src="./imgs/win_logo.png" width='18'> Windows (PowerShell):
 
 ```bash
 Remove-Item -Recurse -Force .\src\upu
 ```
 
-Linux / macOS:
+<img src="./imgs/linux_logo.png" width='18'> Linux / macOS:
 
 ```bash
 rm -rf src/upu
 ```
 
-## Et en plus, on ne le voit pas tout de suite, donc on valide notre dev
+## Et qu'en plus, on ne le voit pas tout de suite, donc on valide notre dev
 
-On valide la catastrophe locale:
+On valide la catastrophe locale 😭 :
 
 ```bash
 git status
@@ -55,20 +55,20 @@ Puis on simule l'erreur complète du quotidien :
 
 ```bash
 git add .
-git commit -m "feat: grosse refacto - nettoyage du code"
+git commit -m "feat: grosse refacto - nettoyage du code" # snif
 ```
 
 ## 1er cas : on s'en aperçoit juste après le add et le commit
 
 Si l'erreur est détectée juste après ton commit local (pas encore poussé), tu peux revenir proprement en arrière.
 
-Option A : tu veux garder les changements dans les fichiers pour les corriger
+Option A : Tu veux garder les changements dans les fichiers pour les corriger
 
 ```bash
 git reset --soft HEAD~1
 ```
 
-Option B : tu veux annuler le commit mais garder les changements non indexés
+Option B : Tu veux annuler le commit mais garder les changements non indexés
 
 ```bash
 git reset --mixed HEAD~1
@@ -80,7 +80,7 @@ Ensuite, restaure uniquement le dossier supprimé par erreur:
 git restore src/upu
 ```
 
-Puis recommite proprement :
+Puis " re *commit* " proprement :
 
 ```bash
 git add .
@@ -99,7 +99,7 @@ git commit -m "fix: restauration du dossier supprimé par erreur"
 git push
 ```
 
-Alternative (quand on veut annuler exactement un commit précis):
+Alternative (quand on veut complè-tement annuler exactement un commit précis - ne sera plus dans l'historique):
 
 ```bash
 git log --oneline
@@ -109,13 +109,13 @@ git push
 
 `git revert` crée un nouveau commit qui annule proprement le commit cible, sans casser l'historique distant.
 
-## 3e cas : on est complètement perdu
+## 3e cas : On est complètement perdu
 
-On ne sait plus du tout où on en est.
+On ne sait plus du tout où on en est 🫨...
 
 Heureusement, on a dev sur une autre branche que `main`...
 
-Objectif : se remettre dans un état propre, puis reprendre calmement.
+Objectif : Se remettre dans un état propre, puis reprendre calmement.
 
 1. Vérifie la situation
 
@@ -125,7 +125,7 @@ git branch
 git log --oneline --decorate -n 10
 ```
 
-2. Sauvegarde ce qui traîne (au cas où)
+2. Sauvegarde de ce qui traîne (au cas où)
 
 ```bash
 git stash push -u -m "sauvegarde avant nettoyage exo/action_folle"

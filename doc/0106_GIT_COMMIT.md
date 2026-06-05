@@ -31,13 +31,13 @@ Your branch is up to date with 'origin/upgrade/01_git-dev'.
 gsm>
 ```
 
-### 2. 🟨 Par contre, il existe une modification (dans notre exemple, mais il peut y en avoir plusieurs) qui n’a pas encore été ajoutée pour être validée dans Git
+### 2. 🟨 Par contre, il existe au moins une modification (dans notre exemple, dans un fichier, mais il peut y en avoir plusieurs) qui n’a pas encore été ajoutée pour être validée dans Git
 
 On peut soit l'ajouter avec :
 
 ***git add***
 
-ou au contraire, considérer que cette midification ne doit pas être conservée :
+ou au contraire, considérer que cette modification ne doit pas être conservée :
 
 ***git restore***
 
@@ -86,11 +86,11 @@ Une fois les fichiers ajoutés (***staged***), on peut enregistrer la modificati
 git commit -m "Explication du commit et mise à jour de la doc"
 ```
 
-#### 3.3 Le raccourci puissant : ***git commit -a***
+#### 3.3 Le raccourci puissant : ***git commit -a -m "..."***
 
 Il existe une commande qui combine ces deux étapes en une seule :
 
-***git commit -a 'commit message'***
+***git commit -a -m 'commit message'***
 
 Elle permet de :
 

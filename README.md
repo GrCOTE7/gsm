@@ -16,7 +16,7 @@
 ![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)
 ![Android](https://img.shields.io/badge/Android-3ddc84?logo=android&logoColor=white)
 <a href="https://codespaces.new/GrCOTE7/gsm" title="Open YOUR CodeSpace Now... Click HERE!">
-    <img src="https://img.shields.io/badge/Github%20Codespace%20Ready-green.svg" alt="CodeSpace link" />
+    <img src="https://img.shields.io/badge/GSM%20Github%20Codespace%20Ready-green.svg" alt="CodeSpace link" />
   </a>
 
 ---

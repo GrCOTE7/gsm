@@ -20,7 +20,7 @@ La dernière étape du cycle des itérations locales (Souvenez-vous...)
 
 ## Synchronisation de ton projet en local (tes fichiers) et de ton dépôt distant (Sur GH)
 
-Alors, comme ça... **Vous avez agît**...? Codé, fait des commits... **B R A V O S !**
+Alors, comme ça... **Tu as agît**...? Codé, fait des commits... **B R A V O S !**
 
 Et du coup, voyons ce que 'raconte' *git status*... :
 
@@ -34,25 +34,23 @@ nothing to commit, working tree clean
 gsm>
 ```
 
-Maintenant, afin que ce que tu as fait codé compte vraiment, il faut, comme le suggère la CLI, '***push***' tes *commits*.
+Maintenant, afin que ce que tu as fait et codé compte vraiment, il faut, comme le suggère la CLI, '***push***' tes *commits*.
 
 C'est l'étape **la plus importante**, celle qui rend 'ton travail enregistré dans le marbre' !
 
-## 🚀 L’action correcte : pousser vers le remote
-
-La commande :
+## 🚀 La commande pour pousser vers ton fork
 
 ```bash
 git push
 ```
 
-est correcte **à condition** que :
+Elle est correcte **à condition** que :
 
 - Ta branche locale main soit bien liée à ***origin/main***,
 - ton remote origin pointe bien vers ton dépôt GitHub,
 - tu aies les droits d’écriture (ce qui est le cas ici, vu que tu es dans ton *fork*).
 
-### 👉 *Même si tu découvriras bientôt des outils qui simplifient complètement, rendent rapides, intuitives et ludiques ces commandes car applicables 'à simples coups de souris', il est toujours bon et parfois salvateur de connaître les commandes de base en console.*
+### 👉 *Même si tu découvriras bientôt des outils qui simplifient complètement, rendent rapides, intuitives et ludiques ces commandes car applicables 'à simples coups de souris', il est toujours bon et parfois même salvateur de connaître les commandes de base en console.*
 
 ---
 

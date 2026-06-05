@@ -14,7 +14,7 @@
 
 ## 1. Position de ton projet en local (tes fichiers) VS ton dépôt distant (Sur GH)
 
-Voyons tout de suite une commande souvent utile ouisqu'elle permet de faire le point :
+Voyons tout de suite une commande souvent utile puisqu'elle permet de faire le point :
 
 ```bash
 git status
@@ -30,23 +30,23 @@ Mais en fait, cela peut quand même probablement t'arriver... Mais ce ne serait 
 
 En effet, il peut t'arriver de rapidement vouloir mettre à jour un détail (ou +) depuis un codespace de ton fork...
 
-**Dans ce code source** ci-dessous, tu connais la musique maintenant, **remplace MP21170 par ton UserName GH** pour y avoir TON badge et clique dessus ! 
+**Dans l'URL de ce badge, ou son code source** ci-dessous, tu connais la musique maintenant, **remplace MP21170 par ton UserName GH** pour y avoir TON badge et clique dessus ! 
 
 <br>
 <div align='center'>
   <a href="https://codespaces.new/MP21170/gsm" title="Open YOUR CodeSpace Now... Click HERE!">
-      <img src="https://img.shields.io/badge/Github%20Codespace%20Ready-green.svg" alt="CodeSpace link" />
+      <img src="https://img.shields.io/badge/Github%20MP21170%20Codespace%20Ready-green.svg" alt="CodeSpace link" />
   </a>
 </div>
 <br>
 
 Comme tu l'auras lu dans le README, tu peux y voir ton code 'comme à la maison', dans ton éditeur, et même y lancer le script !!!
 
-Mais tu verras que tu peux mettre y faire commits, et push !!!
+Mais tu verras que tu peux même y faire des commits, et autre push !!!
 
 Donc, ce sera en gros le moyen de mettre de suite à jour ton GH, avant même ton dépôt local ! @ retenir !
 
-Ou encore, plus tard, il suffit que toi ou un collègue push depuis un autre compte GH à qui tu auras accordé les droits d'accès, codespace ou pas !...
+Ou encore, plus tard, il suffit que toi ou un collègue push depuis un autre compte GH à qui tu auras accordé les droits d'accès, codespace ou pas ...
 
 Dans tous ces cas, tu verras quelque chose comme :
 
@@ -66,13 +66,13 @@ git pull
 
 ### → 💡Note que tu peux aussi appliquer ces commandes sur la branche main...
 
-D'ailleurs, dans l'idéale, comme tu es censé ne jamais travailler dans la *main*, tu ne dois donc logiquement en conséquences n'y faire que ces commandes... 😉
+D'ailleurs, dans l'idéal, comme tu es justement censé ne jamais travailler dans la *main*, tu ne dois donc logiquement en conséquences devoir n'y faire que ces commandes... 😉
 
 → À l'issue, tu auras ce genre de réponse de la commande 😊 (Le nom de ta branche pouvant bien évidement varier selon ton dev... ;-) 😉) :
 
 ### 2. Tout est à jour... (Tu es ***Up to date***) ☹️
 
-Ça paraît bien, mais ☹️, car ça veut aussi dire que vous n'avez sans doute pas encore changé ne serait-ce une virgule...
+Ça paraît bien, mais que si tu sors du *git pull*, car sinon, ça veut aussi dire que tu n'as sans doute pas encore changé ne serait-ce une virgule nulle part ☹️ ...
 
 ```bash
 gsm> git status
@@ -82,7 +82,7 @@ Your branch is up to date with 'origin/upgrade/01_git-dev'.
 nothing to commit, working tree clean
 ```
 
-Du coup, pas besoin de faire évoluer votre GH... 😭
+Du coup, pas besoin de faire évoluer ton GH... 😭
 
 ### 3. Tu as déjà agît (Tu es ***Before*** - En avance sur ton dépôt GH) 😁
 
@@ -100,9 +100,8 @@ no changes added to commit (use "git add" and/or "git commit -a")
 gsm>
 ```
 
-Bravo, tu as déjà codé, et il te faut donc simplementfaire un ***commit* + *push*** sur ton dépôt GH... On va voir cela maintenat 👍 :
-
-(Dans notre exemple ci-dessus, de la saisie dans cette page)
+Bravo, tu as déjà codé, et il te faut donc simplement valider et enregistrer dans le Git tes changements, bref, faire un ***commit* + *push*** sur ton dépôt GH... 
+On va voir cela maintenant 👍 :
 
 ---
 
