@@ -5,7 +5,7 @@
 <h3 align="center">
   <a href="./0108_GIT_EXO.md">← 0108_GIT_EXO</a>
                      
-  <a href="./0109_GIT_SYNC.md">0109_GIT_SYNC →</a>
+  <a href="./0110_GIT_PR.md">0110_GIT_PR →</a>
 </h3>
 
 ---
@@ -151,5 +151,5 @@ Cela te permet d'avoir la *main*, toute proche conforme au dépôt GH source (Co
 <h3 align="center">
   <a href="./0108_GIT_EXO.md">← 0108_GIT_EXO</a>
                      
-  <a href="./0109_GIT_SYNC.md">0109_GIT_SYNC →</a>
+  <a href="./0110_GIT_PR.md">0110_GIT_PR →</a>
 </h3>
