@@ -1,6 +1,6 @@
 <h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
 
-<h1><div align='center'>GIT PUSH ↑</div></h1>
+<h1><div align='center'>7/9. GIT PUSH ↑</div></h1>
 
 <h3 align="center">
   <a href="./0106_GIT_COMMIT.md">← 0106_GIT_COMMIT</a>
@@ -9,7 +9,7 @@
 </h3>
 
 ---
-
+  
 La dernière étape du cycle des itérations locales (Souvenez-vous...)
 
 <div align="center">

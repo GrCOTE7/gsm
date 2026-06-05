@@ -105,8 +105,8 @@ py:12, mais le pop-up “au lancement” vient bien du contrôleur d’app ci-de
 
 ## Fichiers impliqués (résumé)
 
-- src/main.py
-- src/upu/controllers/app_controller.py
-- src/upu/config.py
-- src/upu/services/release_service.py
-- src/upu/app_data/update_flow.log
+* src/main.py
+* src/upu/controllers/app_controller.py
+* src/upu/config.py
+* src/upu/services/release_service.py
+* src/upu/app_data/update_flow.log
