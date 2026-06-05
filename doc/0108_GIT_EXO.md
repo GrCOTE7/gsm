@@ -1,6 +1,6 @@
 <h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
 
-<h1><div align='center'>🚧 8/9. GIT EXO - T.P. - Exercice 🏗️</div></h1>
+<h1><div align='center'>🚧 8/10. GIT EXO - T.P. - Exercice 🏗️</div></h1>
 
 <h3 align="center">
   <a href="./0107_GIT_PUSH.md">← 0107_GIT_PUSH</a>
