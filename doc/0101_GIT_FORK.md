@@ -45,14 +45,16 @@ Les cours magistraux sont du passé ! Apprenons-le Git pas l'action !
 
 ## 1. Fork du projet GSM
 
-Le dépôt principal est sacré : c’est **LA** source de vérité.
+Le dépôt source principal est sacré : c’est **LA** source de vérité.
 
-Pour travailler dessus, chacun crée sa copie personnelle.
+On l'appelle ***upstream*** (Dépôt source original, celui que suit ton *fork*)
+
+Pour travailler dessus, chacun en crée sa propre copie personnelle.
 
 Et comme 1 dessin > 1000 mots... :
 
 ---
-→ The origin :
+→ The ***upstream*** :
 
 <div align="center">
   <a href="./imgs/101_fork.png" target="_blank">
