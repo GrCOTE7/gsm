@@ -17,112 +17,159 @@ Sans le git, cela serait assurément catastrophique, on ne sauvegarde pas toutes
 
 Donc, agissons en PRO, et travaillons sur une nouvelle branche spécifique bien nommée que nous créons pour l'occasion :
 
+## On attaque le dev → Création de la branche spécifique
+
 ```bash
 git checkout -b exo/action_folle
+OU, + moderne :
+git switch -c exo/action_folle
 ```
 
-# ❌ To be continued... 🚧
+## On code, mais là... mal
 
-git restore chemin/du/dossier
+Mais pour l'exemple, on va volontairement créer un problème pour s'entraîner.
 
-# * [ ] To be continued... 🚧
+Imaginons un cas gravissime : on efface un dossier clé de l'app, `src/upu`. (Il n'y a pas plus critique, c'est tout le cœur de l'app.)
 
-Test push depuis codespace
+Windows (PowerShell):
 
-    Exemples:
-    
-        feature/ma-nouvelle-fonctionnalite
-
-        fix/bug-du-bouton
-
-        doc/amelioration-readme
-
-    → Cela permet de garder l’historique propre et compréhensible.
-    
-    ```bash
-git branch amelioration-01_git
+```bash
+Remove-Item -Recurse -Force .\src\upu
 ```
 
-    Mais du coup, là, t'es 'chez toi', c'est hyper cool ! tu y dev ce que tu veux, cela ne peut jamais rien casser d'important, et tu te plantes ? Bravo, c'est que tu as poussé tes limites :-) ! Et si tu les as trop dépassées... Pas grave: Revient sur la branche main ! Rien n'est jamais perdu ! Rien qagné sur ce coup, mais rien de perdu ! En renouvellant X fois ce genre d'expériences, tu ne peux à termes et statistiquement qu'y gagner, et grandir :-) !
+Linux / macOS:
 
-1. Commiter proprement
+```bash
+rm -rf src/upu
+```
 
-    Des fois, tu vas réussir ton dev :-) : Tout roule comme tu veux :-) Et tu te dis qu'il te faut impérativement en faire profiter tout le monde, c'est normal, c'est instinctif chez les Hommes de bonnes volontrés... ;-)
-    
-    Alors, tu vas commit et proposer ton dev: Et un bon commit, c’est :
+## Et en plus, on ne le voit pas tout de suite, donc on valide notre dev
 
-        Petit
-        Clair
-        Utile
-        Avec un message explicite
+On valide la catastrophe locale:
 
-      Exemples :
+```bash
+git status
+```
 
-        feat: ajout du module d'analyse
-        fix: correction du calcul de score
-        docs: ajout section contribution
+Puis on simule l'erreur complète du quotidien :
 
-2. Faire une Pull Request (PR)
+```bash
+git add .
+git commit -m "feat: grosse refacto - nettoyage du code"
+```
 
-    La PR est le cœur de la collaboration. (Là, ça rigole plus car c'est maintenat que ton dev peut devenir 'officiel' :-))
+## 1er cas : on s'en aperçoit juste après le add et le commit
 
-    Avant de voir le détail de cette étape, juste, prenons du recul...:
+Si l'erreur est détectée juste après ton commit local (pas encore poussé), tu peux revenir proprement en arrière.
 
-    * T'as t'on demandé un diploume ?
+Option A : tu veux garder les changements dans les fichiers pour les corriger
 
-    * Demandé pour qui tu te prends ? De quel droit tu te permets d'émettre un avis ?
+```bash
+git reset --soft HEAD~1
+```
 
-    * Vérifier que t'es le fils à tel Papa, ou autre privilègié ?
+Option B : tu veux annuler le commit mais garder les changements non indexés
 
-    * À quelle dininité tu crois ?
+```bash
+git reset --mixed HEAD~1
+```
 
-    * Au fait, t'es plutôt caucasien, jaune, gris, brown...? vert ?:?
+Ensuite, restaure uniquement le dossier supprimé par erreur:
 
-    → Non : **Ici, là et maintenant, TU ES TOI ! Et enfin, là, ici et maintenant, enfin au bon endroit !!! Seulement TOI, et TOI SEUL**, peut comprendre et accepter l'idée que **TON RÔLE est CAPITAL**, pas indispensable, juste CAPITAL **et IMPORTANT !**
+```bash
+git restore src/upu
+```
 
-    Concrètement, pour faire valoir ton dev, tu dois :
+Puis recommite proprement :
 
-        Expliquer ce qui a été fait
+```bash
+git add .
+git commit -m "fix: restauration du dossier supprimé par erreur"
+```
 
-        Expliquer pourquoi
+## 2e cas : on s'en aperçoit après le push sur le dépôt distant
 
-        Mentionner les issues liées
+Si le commit est déjà poussé, évite de réécrire l'historique partagé.
+Le plus simple et le plus propre est de faire un commit de correction.
 
-        Être ouverte au dialogue
+```bash
+git restore src/upu
+git add src/upu
+git commit -m "fix: restauration du dossier supprimé par erreur"
+git push
+```
 
-    Une PR n’est pas un examen.
-    C’est une discussion technique entre humains bienveillants, et la scenette qui s'ajoute et fait qu'on aura ensemble un super film au final !
+Alternative (quand on veut annuler exactement un commit précis):
 
-3. Participer aux revues de code
+```bash
+git log --oneline
+git revert <sha_du_commit_fautif>
+git push
+```
 
-    Grâce à ton fork, puis clone, un simple Fetch et tu as le dernier apport le + top, et le + récent, d'un collaborateur, et ce, 24/24 - 7/7 et à volonté...
+`git revert` crée un nouveau commit qui annule proprement le commit cible, sans casser l'historique distant.
 
-    Et relire le code des autres, c’est :
+## 3e cas : on est complètement perdu
 
-    * Apprendre
+On ne sait plus du tout où on en est.
 
-    * Aider facilement
+Heureusement, on a dev sur une autre branche que `main`...
 
-    * Améliorer la qualité globale
+Objectif : se remettre dans un état propre, puis reprendre calmement.
 
-    * Renforcer l’esprit d’équipe
+1. Vérifie la situation
 
-    Les commentaires doivent être :
+```bash
+git status
+git branch
+git log --oneline --decorate -n 10
+```
 
-    * Constructifs
+2. Sauvegarde ce qui traîne (au cas où)
 
-    * Respectueux
-  
-    Argumentés
-  
-    * Jamais condescendants
+```bash
+git stash push -u -m "sauvegarde avant nettoyage exo/action_folle"
+```
 
-    * Raisonables
+3. Reviens sur la branche principale
 
-→ 💡 Tiens! Deal ! C'est sûrement pas les fautes qui manquent dans toutes ces pages de docs, et ne serait-ce dans cette seule page... Fixe toi un tout ch'ti premier objectif: Y corriger ne serait-ce une virgule mal placée ! De grands auteurs ont souvent commencés ainsi... ;-)... Alors Deal, on attend de voir passer ta **PR** ;-) !
+```bash
+git switch main
+git pull
+```
 
-Proposer une idée
+4. Supprime la branche d'exercice locale
 
-    Tester l’app
-    Poser une question
-    Chaque geste compte.
+```bash
+git branch -D exo/action_folle
+```
+
+5. (Optionnel) Supprime aussi la branche distante
+
+```bash
+git push origin --delete exo/action_folle
+```
+
+6. Repars proprement
+
+```bash
+git switch -c exo/bonne_action
+```
+
+## Fin de l'exercice
+
+Tu viens de voir les 3 réflexes qui sauvent en pratique. Fais-les réellement :
+
+- Erreur locale après commit : `git reset` puis `git restore`
+- Erreur déjà poussée : commit de correction ou `git revert`
+- Panique totale : `git stash`, retour sur `main`, nettoyage de branche, puis nouveau départ
+
+**Le vrai super-pouvoir de Git, ce n'est pas de ne jamais se tromper. C'est de pouvoir se tromper sans tout perdre.**
+
+---
+
+<h3 align="center">
+  <a href="./0107_GIT_PUSH.md">← 0107_GIT_PUSH</a>
+                     
+  <a href="./0109_GIT_SYNC.md">0109_GIT_SYNC →</a>
+</h3>
