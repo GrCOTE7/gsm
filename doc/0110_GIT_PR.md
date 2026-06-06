@@ -63,7 +63,7 @@ sequenceDiagram
 ℹ️ * : Mc = machine
 
 NB : Dans un codespace, le [PR ne se fait simplement via le site GH](./0111_GIT_PR_GH.md)
-(En CLI, c'est possible, mais faut [ajouter gh-cli](./110_pr_cli_codespace.png), [définir le repo default, et après, on peut PR](/110_pr_cli_codespace2.png)...)
+(En CLI, c'est possible, mais faut [ajouter gh-cli](./imgs/110_pr_cli_codespace.png), [définir le repo default, et après, on peut PR](./imgs/110_pr_cli_codespace2.png)...)
 
 ---
 
