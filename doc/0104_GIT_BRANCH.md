@@ -54,7 +54,7 @@ git switch -c upgrade/01_git-dev
 Switched to a new branch 'upgrade/01_git-dev'
 ```
 
-( ⚠️ Si tu nez vois pas cela, et par contre, le mot '***Aborting***' (Annulé), ça veut dire que quelque chose empêche la commande d'être exécutée... Là, c'est peut-être pas ce que tu as zapé un peu vite le conseil, tout en bas du [doc précédent (0103)](./0103_GIT_USE.md)... Il faut en effet un dépôt 'propre' pour '***switcher***' (basculer) d'une branche à une autre.)
+( ⚠️ Si tu ne vois pas cela et par contre, le mot '***Aborting***' (Annulé), ça veut dire que quelque chose empêche la commande d'être exécutée... Là, c'est peut-être pas ce que tu as zapé un peu vite le conseil, tout en bas du [doc précédent (0103)](./0103_GIT_USE.md)... Il faut en effet un dépôt 'propre' pour '***switcher***' (basculer) d'une branche à une autre.)
 
 Pour faire le point et avoir la liste des branches existantes :
 
@@ -62,7 +62,7 @@ Pour faire le point et avoir la liste des branches existantes :
 git branch
 ```
 
-→ Affiche les branches locales, avec * sur celle où tu es.
+→ Affiche les branches locales, avec ' * ' devant le nom de celle où tu es.
 
 (Si dans ta CLI, tu as " : " au lieu de ton invite habituelle, c'est que tu es en mode édition. Tape 'ESC', 'x' ou ':q' pour *e**X**it* ou ***Q**uit* (Pour sortir de cet éditeur [**vi** ou **vim**](https://blog.stephane-robert.info/_astro/vi_demo.9jUPpoF3_Z27rg4g.webp)) )
 

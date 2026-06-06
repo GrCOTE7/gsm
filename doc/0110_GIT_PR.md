@@ -14,19 +14,20 @@
 
 ---
 
-Tu vas voir qu'une PR, ce n'est pas "un truc de senior" : c'est juste une méthode propre pour proposer une amélioration.
+### **La dernière étape et la + importante : Celle qui te permet d'officialiser ton dev !**!
+
 
 ```mermaid
 flowchart LR
-    subgraph LOCAL
+    subgraph LOCAL - PC
         A[Branche locale]
     end
 
-    subgraph FORK
-        B[origin/nom-de-ta-branche]
+    subgraph FORK - MP21170/gsm
+        B[origin/feat/doc-pr]
     end
 
-    subgraph UPSTREAM
+    subgraph UPSTREAM - GrCOTE7/gsm
         D[upstream/main]
     end
 
@@ -62,7 +63,7 @@ sequenceDiagram
 
 ℹ️ * : Mc = machine
 
-NB : Dans un codespace, le [PR ne se fait simplement que via le site GH](./0111_GIT_PR_GH.md)
+NB : Dans un codespace, le [PR ne se fait simplement que sur le site GH](./0111_GIT_PR_GH.md)
 (En CLI, c'est possible, mais faut [ajouter gh-cli](./imgs/110_pr_cli_codespace.png), [définir le repo default, et après, on peut PR](./imgs/110_pr_cli_codespace2.png)...)
 
 ---
@@ -87,7 +88,7 @@ Pour réussir ta PR, tu dois idéalement avoir :
 Si ta branche n'est pas encore sur GH :
 
 ```bash
-git push -u origin nom-de-ta-branche
+git push -u origin dev/up_doc
 ```
 
 Le `-u` crée le lien local <-> distant. Ensuite, un simple `git push` suffit.
@@ -127,7 +128,7 @@ gh pr list
 gh pr view --web
 ```
 
-XXX: Capture du retour CLI de `gh pr create` avec URL de la PR.
+[Exemple dy cycle complet d'une PR](./imgs/110_complete_pr.png)
 
 ---
 
@@ -169,11 +170,7 @@ gh pr create --base main --head TonUserName:doc/ma-premiere-pr --title "doc: ma 
 
 > 🎯 Objectif atteint quand ta PR est ouverte, lisible, et facile à relire.
 
----
-
-Pour la méthode via l'interface web GitHub (+ facile), passe au chapitre suivant :
-
-## 👉 [0111_GIT_PR_GH](./0111_GIT_PR_GH.md)
+### Voyons une autre méthode, beaucoup + simple : [**PR** directement **sur GH**](./0111_GIT_PR_GH.md)
 
 ---
 
