@@ -74,7 +74,7 @@ Allez, la philo, c'est sympa, mais ça fait pas chauffer tant que ça les proces
 
 ##### Technique
 
-1. Le **[Git](https://fr.wikipedia.org/wiki/Git)** — Savoir (ou apprendre) : Fork, Clone, Branch, Commit, Push, Pull, PR… Bref, les bases (Et ça suffit large, pour démarrer et Être)
+1. Le **[Git](https://fr.wikipedia.org/wiki/Git)** — Savoir (ou apprendre) : Fork, Clone, Branch, Commit, Push, Pull, PR… Bref, les bases (Et ça suffit large, pour démarrer et **Être**)
 
 2. Avoir **1 éditeur privilégié** ([VSCode hautement préconisé](https://code.visualstudio.com/) - Gratos, et de très nombreuses extensions existent, dont beaucoup pour le Git... Comme par hasard... Et qui rende son usage (celui du Git) aussi ludique qu'[une partie de Tétris](https://fr.wikipedia.org/wiki/Tetris) !)
 
@@ -160,6 +160,6 @@ On veut des gens qui :
 
 Avance. Souris. Et laisse-toi surprendre par ce qui t’attend...
 
-## 📄 [Attaque la doc](./doc/0101_GIT_FORK.md), ici et maintenant !
+## 📄 [Attaque la doc](./doc/0101_GIT_FORK.md), ici et maintenant et réussis au + vite ta 1ère ***PR*** 💪 !
 
 ### Nous seront bientôt tous très fiers de toi 😀 !

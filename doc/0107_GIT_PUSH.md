@@ -38,7 +38,7 @@ Maintenant, afin que ce que tu as fait et codé compte vraiment, il faut, comme 
 
 C'est l'étape **la plus importante**, celle qui rend 'ton travail enregistré dans le marbre' !
 
-## 🚀 La commande pour pousser vers ton fork
+## 🚀 La commande clé pour pousser vers ton fork
 
 ```bash
 git push

@@ -25,6 +25,7 @@ Dans cette sortie, il faut identifier **3 zônes importantes**
 ### 1. 🟩 Globalement, tes dépôts 'le local' et 'le distant' sont identiques, si l'on ne considére que les fichiers déjà enregistrés (donc déjà ***push***).
 
 ```bash
+gsm> git status
 On branch upgrade/01_git-dev
 Your branch is up to date with 'origin/upgrade/01_git-dev'.
 ...
@@ -52,7 +53,7 @@ Changes not staged for commit:
 gsm>
 ```
 
-### 3. 🟧 → On décide de valider notre modification
+### 3. 🟧 → On décide de valider notre modification (Cas normal)
 
 ```bash
 gsm> git status
@@ -61,7 +62,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 gsm>
 ```
 
-#### 3.1 La validation (***add***)
+#### 3.1 La **validation** (***add***)
 
 2 façons de faire :
 
@@ -78,7 +79,7 @@ git add doc/010*.md # Tous les doc/010... au format .md
 git add .           # ← Tous les fichiers
 ```
 
-#### 3.2 L'enregistrement (***commit***)
+#### 3.2 L'**enregistrement** (***commit***)
 
 Une fois les fichiers ajoutés (***staged***), on peut enregistrer la modification dans l’historique :
 
@@ -86,7 +87,7 @@ Une fois les fichiers ajoutés (***staged***), on peut enregistrer la modificati
 git commit -m "Explication du commit et mise à jour de la doc"
 ```
 
-#### 3.3 Le raccourci puissant : ***git commit -a -m "..."***
+#### 3.3 Le **raccourci** puissant : ***git commit -a -m "..."***
 
 Il existe une commande qui combine ces deux étapes en une seule :
 

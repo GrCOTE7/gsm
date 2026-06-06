@@ -29,7 +29,7 @@ git switch -c exo/action_folle
 
 Mais pour l'exemple, on va volontairement créer un problème pour s'entraîner.
 
-Imaginons un cas gravissime : on efface un dossier clé de l'app, `src/upu`. (Il n'y a pas plus critique, c'est tout le cœur de l'app !!!)
+Imaginons un cas gravissime : On efface un dossier clé de l'app, `src/upu`. (Il n'y a pas plus critique, c'est tout le cœur de l'app !!!)
 
 <img src="./imgs/win_logo.png" width='18'> Windows (PowerShell):
 
@@ -43,7 +43,7 @@ Remove-Item -Recurse -Force .\src\upu
 rm -rf src/upu
 ```
 
-## Et qu'en plus, on ne le voit pas tout de suite, donc on valide notre dev
+## En plus, on ne le voit pas tout de suite, et donc on valide notre dev
 
 On valide la catastrophe locale 😭 - On l'aurait jamais fait si on avait fait un simple :
 
@@ -55,10 +55,10 @@ Et on simule l'enregistrement Git de l'erreur complète :
 
 ```bash
 git add .
-git commit -m "feat: grosse refacto - nettoyage du code" # snif
+git commit -m "feat: grosse refacto - nettoyage du code" # Tu parles ! Snif 😥 ...
 ```
 
-## 1er cas : on s'en aperçoit juste après le add et le commit
+## 1er cas : On s'en aperçoit juste après le commit
 
 Si l'erreur est détectée juste après ton commit local (pas encore poussé), tu peux revenir proprement en arrière.
 
@@ -68,19 +68,19 @@ Option A : Tu veux garder les changements dans les fichiers pour les corriger (�
 git reset --soft HEAD~1
 ```
 
-Option B : Tu veux annuler le commit mais garder les changements non indexés (Soit, annuler le commit, ET le add - Mais le dossier reste effacé)
+Option B : Tu veux annuler le commit mais garder les changements non indexés (on annule le commit et l'indexation, mais le dossier reste effacé)
 
 ```bash
 git reset --mixed HEAD~1
 ```
 
-Ensuite, si les fichiers concernés ne sont plus indexés, on peut restaurer alors uniquement le dossier supprimé par erreur, tout en gardant d'autres changement qu'on aurait pû faire par ailleurs :
+Ensuite, si les fichiers concernés ne sont plus indexés, on peut restaurer uniquement le dossier supprimé par erreur, tout en gardant d'autres changements faits par ailleurs :
 
 ```bash
-git reset --mixed HEAD~1
+git restore --source=HEAD~1 src/upu
 ```
 
-Puis " re *commit* " proprement si d'autres changements avaient été faits :
+Puis recommit proprement si d'autres changements avaient été faits :
 
 ```bash
 git add .
@@ -90,7 +90,7 @@ git commit -m "fix: restauration du dossier supprimé par erreur"
 ## 2e cas : On s'en aperçoit après le push sur le dépôt distant
 
 Si le commit est déjà poussé, évite de réécrire l'historique partagé.
-Le plus simple et le plus propre est de faire un commit de correction.
+Le plus simple et le plus propre est de faire un commit de correction, puis de pousser.
 
 ```bash
 # Restaurer le dossier depuis le commit précédent
@@ -100,7 +100,7 @@ git commit -m "fix: restauration du dossier supprimé par erreur"
 git push
 ```
 
-Alternative (quand on veut complè-tement annuler exactement un commit précis - ne sera plus dans l'historique):
+Alternative (quand on veut annuler exactement un commit précis sans réécrire l'historique):
 
 ```bash
 git log --oneline
@@ -108,7 +108,7 @@ git revert <sha_du_commit_fautif>
 git push
 ```
 
-`git revert` crée un nouveau commit qui annule proprement le commit cible, sans casser l'historique distant.
+`git revert` crée un nouveau commit qui annule proprement le commit cible, sans casser l'historique distant (le commit fautif reste visible, mais neutralisé).
 
 ## 3e cas : On est complètement perdu
 

@@ -22,15 +22,15 @@ git status
 
 Elle vous donnera quelque chose comme :
 
-### 1. " Quelqu'un d'autre " a déjà agît... Tu es ***Behind*** - En retard sur ton dépôt GH 😁
+### 1. " Quelqu'un " a déjà agît sur le code... Tu es ***Behind*** - En retard sur ton dépôt GH 😁
 
 Cela peut te surprendre, vu qu'on parle là, de ton dépôt distant, sur GH, et qu'à priori, pour l'instant, tu n'as sans doute encore pas trop partager le lien de ton repository...
 
 Mais en fait, cela peut quand même probablement t'arriver... Mais ce ne serait pas forcément quelqu'un d'autre... Que toi !
 
-En effet, il peut t'arriver de rapidement vouloir mettre à jour un détail (ou +) depuis un codespace de ton fork...
+En effet, il peut t'arriver de rapidement vouloir mettre à jour un détail (ou +) depuis un codespace de ton fork, c'est tellement simple et rapide...
 
-**Dans l'URL de ce badge, ou son code source** ci-dessous, tu connais la musique maintenant, **remplace MP21170 par ton UserName GH** pour y avoir TON badge et clique dessus ! 
+**Dans l'URL de ce badge, ou son code source** ci-dessous, tu connais la musique maintenant, **remplace MP21170 par ton UserName GH** pour y avoir TON badge et clique dessus pour entrer dans ton codespace ! 
 
 <br>
 <div align='center'>
@@ -40,9 +40,9 @@ En effet, il peut t'arriver de rapidement vouloir mettre à jour un détail (ou 
 </div>
 <br>
 
-Comme tu l'auras lu dans le README, tu peux y voir ton code 'comme à la maison', dans ton éditeur, et même y lancer le script !!!
+Comme tu l'auras peut-être lu dans le *README*, tu peux y voir ton code 'comme à la maison', dans ton éditeur, et même y lancer le script !!!
 
-Mais tu verras que tu peux même y faire des commits, et autre push !!!
+Mais tu verras que tu peux même y faire des modification, puis des commits, et autre push !!!
 
 Donc, ce sera en gros le moyen de mettre de suite à jour ton GH, avant même ton dépôt local ! @ retenir !
 
@@ -66,7 +66,7 @@ git pull
 
 ### → 💡Note que tu peux aussi appliquer ces commandes sur la branche main...
 
-D'ailleurs, dans l'idéal, comme tu es justement censé ne jamais travailler dans la *main*, tu ne dois donc logiquement en conséquences devoir n'y faire que ces commandes... 😉
+D'ailleurs, dans l'idéal, comme tu es justement censé ne jamais travailler dans la *main*, tu ne dois donc logiquement en conséquences devoir n'y faire que ces commandes là... 😉
 
 → À l'issue, tu auras ce genre de réponse de la commande 😊 (Le nom de ta branche pouvant bien évidement varier selon ton dev... ;-) 😉) :
 
@@ -82,7 +82,7 @@ Your branch is up to date with 'origin/upgrade/01_git-dev'.
 nothing to commit, working tree clean
 ```
 
-Du coup, pas besoin de faire évoluer ton GH... 😭
+Du coup, pas besoin ( et surtout, ni possible) de faire évoluer ton GH... 😭
 
 ### 3. Tu as déjà agît (Tu es ***Before*** - En avance sur ton dépôt GH) 😁
 
@@ -101,7 +101,7 @@ gsm>
 ```
 
 Bravo, tu as déjà codé, et il te faut donc simplement valider et enregistrer dans le Git tes changements, bref, faire un ***commit* + *push*** sur ton dépôt GH... 
-On va voir cela maintenant 👍 :
+Et nous allonc va voir cela maintenant 👍 :
 
 ---
 
