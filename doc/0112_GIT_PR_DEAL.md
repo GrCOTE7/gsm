@@ -10,10 +10,6 @@
 
 ---
 
-### 👉 PRÉAMBULE : À la moindre difficulté, consulte la **[page d'aide](./0000_HELPME.md)**
-
----
-
 ## 🎯 Deal : ta PR réelle (pas un test)
 
 Objectif : proposer une vraie amélioration, meme minime.

@@ -1,16 +1,12 @@
 <h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
 
-<h1><div align='center'>11/12. GIT PR (SITE GH)</div></h1>
+<h1><div align='center'>11/12. GIT <b>PR</b> (SITE <b>GH</b>)</div></h1>
 
 <h3 align="center">
   <a href="./0110_GIT_PR.md">← 0110_GIT_PR</a>
                      
   <a href="./0112_GIT_PR_DEAL.md">0112_GIT_PR_DEAL →</a>
 </h3>
-
----
-
-### 👉 PRÉAMBULE : À la moindre difficulté, consulte la **[page d'aide](./0000_HELPME.md)**
 
 ---
 
