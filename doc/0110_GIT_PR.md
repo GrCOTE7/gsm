@@ -37,13 +37,15 @@ Dans ta branche de travail ( Pas `main` ), vérifie :
 ```bash
 git status
 git log --oneline -n 5
+git branch --show-current
+
 ```
 
-Tu dois idéalement avoir :
+Pour réussir ton PR, tu dois idéalement avoir :
 
 - un arbre propre (`working tree clean`),
 - des commits clairs,
-- une branche bien nommée (`fix/...`, `doc/...`, `feature/...`).
+- une branche autre que `main` bien nommée (`fix/...`, `doc/...`, `feature/...`).
 
 Si ta branche n'est pas encore sur GH :
 
@@ -51,36 +53,12 @@ Si ta branche n'est pas encore sur GH :
 git push -u origin nom-de-ta-branche
 ```
 
-Sinon, comme ta branche est deja reliee, cela suffit :
-
-```bash
-git push
-```
-
 Le `-u` crée le lien local <-> distant. Ensuite, un simple `git push` suffit.
 
----
-
-## Workflow CLI complet (sans passer par le site)
-
-Ici, on reste en ligne de commande du debut a la fin.
-
-### 1. Verifie ta branche active
-
-```bash
-git branch --show-current
-```
-
-### 2. Push ta branche
+Sinon, comme ta branche est déjà reliée (C'est le cas si tu es dans notre exemple du fork de GSM), cela suffit :
 
 ```bash
 git push
-```
-
-Si c'est la premiere fois sur cette branche :
-
-```bash
-git push -u origin nom-de-ta-branche
 ```
 
 ### 3. Cree la PR en CLI (GitHub CLI)
