@@ -14,10 +14,6 @@
 
 ---
 
-### → 💡 Deal : Ton premier objectif concret est simple
-
-Corrige ne serait-ce qu'une virgule dans la doc, et propose ta **première PR**.
-
 Tu vas voir qu'une PR, ce n'est pas "un truc de senior" : c'est juste une méthode propre pour proposer une amélioration.
 
 ---
@@ -238,6 +234,14 @@ git push -u origin doc/ma-premiere-pr
 > 🎯 Objectif atteint quand ta PR est ouverte, lisible, et facile a relire.
 
 Chaque petite PR propre fait avancer le projet, et te fait progresser tres vite.
+
+---
+
+### Mettre en pratique est une nécessité absolue
+
+### → 💡 Deal : Ton premier objectif concret est simple
+
+Corrige ne serait-ce qu'une virgule dans la doc, et propose ta **première PR**.
 
 ---
 
