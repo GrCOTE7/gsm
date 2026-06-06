@@ -1,6 +1,6 @@
 <h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
 
-<h1><div align='center'>9/10. GIT SYNC</div></h1>
+<h1><div align='center'>9/12. GIT SYNC</div></h1>
 
 <h3 align="center">
   <a href="./0108_GIT_EXO.md">← 0108_GIT_EXO</a>
