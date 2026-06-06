@@ -22,8 +22,6 @@ Quand tu te sens prêt, tu es content de ton dev, tu ouvres et gères toute la P
 
 ---
 
-## 1. Checklist rapide
-
 ## 1. Checklist rapide avant d'ouvrir la PR
 
 ✅ **Avant d'ouvrir ta PR, vérifie que :**
@@ -39,27 +37,28 @@ Quand tu te sens prêt, tu es content de ton dev, tu ouvres et gères toute la P
 
 ## 2. Ouvre la page de PR sur GitHub
 
-# ❌ To be continued... 🚧
+### 2.1 GitHub propose le bouton **Compare & pull request** juste après le push
 
-GitHub propose souvent le bouton **Compare & pull request** juste après le push.
+<div align="center">
+  <a href="./imgs/111_pr_gh1.png" target="_blank">
+    <img src="./imgs/111_pr_gh1.png" width='500' alt="capture PR">
+  </a>
+</div>
 
-CCC: Capture du bandeau GitHub avec le bouton "Compare & pull request".
+### 2.2 Vérifie et compare tes modifications
 
-Sinon, ouvre manuellement la comparaison entre :
+<div align="center">
+  <a href="./imgs/111_pr_gh2.png" target="_blank">
+    <img src="./imgs/111_pr_gh2.png" width='500' alt="capture PR">
+  </a>
+</div>
 
-- `base` = `GrCOTE7/gsm:main`
-- `head` = `TonUserName/nom-de-ton-fork:nom-de-ta-branche`
-
-CCC: Capture de l'ecran "Open a pull request" avec base/head visibles.
-
----
-
-## 3. Rédige une PR utile
+### 2.3 Rédige une PR utile (Différente de la capture pour autres idées)
 
 Titre conseillé (court et précis) :
 
 ```text
-doc: corrige fautes et clarifie 0109/0110
+doc: corrige fautes et clarifie 0110
 ```
 
 Description conseillée :
@@ -77,35 +76,49 @@ Corriger des erreurs de formulation dans la doc Git.
 - liens internes verifies
 ```
 
-CCC: Capture du formulaire PR rempli (titre + description + fichiers modifies).
+<div align="center">
+  <a href="./imgs/111_pr_gh3.png" target="_blank">
+    <img src="./imgs/111_pr_gh3.png" width='500' alt="capture PR">
+  </a>
+</div>
 
-Clique **Create pull request**.
+### Clique **Create pull request**
 
-CCC: Capture de la PR creee (numero, titre, etat Open).
+<div align="center">
+  <a href="./imgs/111_pr_gh4.png" target="_blank">
+    <img src="./imgs/111_pr_gh4.png" width='500' alt="capture PR">
+  </a>
+</div>
+
+### Les dépositaires voient
+
+<div align="center">
+  <a href="./imgs/111_pr_gh5.png" target="_blank">
+    <img src="./imgs/111_pr_gh5.png" width='500' alt="capture PR">
+  </a>
+</div>
+
+Ils peuvent d'un seul coup d'oeil, comprendre l'objet de ton dev, comparer ton code dans ses moindres détails comme tu as pu le faire ci-avant, et d'un clic, valider ta demande de fusion (PR) - Note: Ceci n'est pas une IA qui le fait, donc, pas forcément sur le moment... Mais au pire, sous 48-72 H
+
+### Ça y est, BRAVOs ! Tu rentres dans la Légende 🥳👏💪😁👍
 
 ---
 
-## 4. Après ouverture : comment mettre à jour
+→ Parfois, il est possible qu'il y ait une ou des raisons de ne pas pouvoir fusionner immédiatement ton dev...
 
-Si review demandée :
+Pas grave, une sorte de dialogue dans la page de ta PR se mets alors en place, dans lequel tout le monde peut intervenir 👍 💪 😊...
 
-1. Tu modifies ton code localement sur la meme branche
-2. Tu commit
-3. Tu push
+## Profitons de messages que tu es susceptible de recevoir, pour t'inviter cordialement à activer les notifications
 
-```bash
-git add .
-git commit -m "doc: applique retours review"
-git push
-```
+<div align="center">
+  <a href="./imgs/111_pr_gh6.png" target="_blank">
+    <img src="./imgs/111_pr_gh6.png" width='500' alt="capture PR">
+  </a>
+</div>
 
-La PR se met à jour automatiquement.
+### → Ainsi, tu auras toutes les dernières infos en priorité 👍
 
-CCC: Capture de l'onglet "Conversation" montrant un nouveau commit pousse sur la PR.
-
----
-
-## 5. Erreurs fréquentes
+## 3. Erreurs fréquentes
 
 ### "J'ai commit sur main"
 
@@ -126,8 +139,6 @@ git push --force-with-lease   # uniquement si rebase
 ```
 
 (*`--force-with-lease` est la version prudente du force push.*)
-
-CCC: Capture de l'ecran GitHub indiquant "This branch has conflicts".
 
 ---
 
