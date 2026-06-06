@@ -62,7 +62,7 @@ sequenceDiagram
 
 ℹ️ * : Mc = machine
 
-NB : Dans un codespace, le [PR ne se fait simplement via le site GH](./0111_GIT_PR_GH.md)
+NB : Dans un codespace, le [PR ne se fait simplement que via le site GH](./0111_GIT_PR_GH.md)
 (En CLI, c'est possible, mais faut [ajouter gh-cli](./imgs/110_pr_cli_codespace.png), [définir le repo default, et après, on peut PR](./imgs/110_pr_cli_codespace2.png)...)
 
 ---
@@ -111,14 +111,14 @@ Puis crée la PR :
 ```bash
 gh pr create \
   --base main \
-  --head TonUserName:nom-de-ta-branche \
-  --title "doc: corrige fautes et clarifie 0109/0110" \
+  --head MP2110:feat/modif_doc \
+  --title "doc: corrige fautes et clarifie 0110" \
   --body "Corrections de doc + clarifications mineures."
 ```
 
 ℹ️ --base main = branche main du dépôt upstream (gc7/gsm).
 
-ℹ️ TonUserName = **ton pseudo G**it**H**ub (celui visible dans l’URL de ton fork).
+ℹ️ MP21170 → **ton pseudo G**it**H**ub (celui visible dans l’URL de ton fork).
 
 Vérifier ensuite :
 
