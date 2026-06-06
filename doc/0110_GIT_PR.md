@@ -127,7 +127,7 @@ gh pr list
 gh pr view --web
 ```
 
-CCC: Capture du retour CLI de `gh pr create` avec URL de la PR.
+XXX: Capture du retour CLI de `gh pr create` avec URL de la PR.
 
 ---
 
