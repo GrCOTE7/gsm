@@ -60,7 +60,10 @@ sequenceDiagram
     O-->>L: git pull
 ```
 
-ℹ️ * : Mc = machine.
+ℹ️ * : Mc = machine
+
+NB : Dans un codespace, le [PR ne se fait simplement via le site GH](./0111_GIT_PR_GH.md)
+(En CLI, c'est possible, mais faut [ajouter gh-cli](./110_pr_cli_codespace.png), [définir le repo default, et après, on peut PR](/110_pr_cli_codespace2.png)...)
 
 ---
 
@@ -142,7 +145,7 @@ git commit -m "doc: applique retours review"
 git push
 ```
 
-La PR se met à jour automatiquement.
+La PR se met alors automatiquement à jour 👍.
 
 ## Résumé express CLI
 
