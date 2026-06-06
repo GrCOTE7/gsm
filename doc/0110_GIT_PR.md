@@ -111,7 +111,7 @@ Puis crée la PR :
 ```bash
 gh pr create \
   --base main \
-  --head MP2110:feat/modif_doc \
+  --head MP21170:feat/modif_doc \
   --title "doc: corrige fautes et clarifie 0110" \
   --body "Corrections de doc + clarifications mineures."
 ```
