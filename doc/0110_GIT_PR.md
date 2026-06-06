@@ -16,21 +16,55 @@
 
 Tu vas voir qu'une PR, ce n'est pas "un truc de senior" : c'est juste une méthode propre pour proposer une amélioration.
 
+```mermaid
+flowchart LR
+    subgraph LOCAL
+        A[Branche locale]
+    end
+
+    subgraph FORK
+        B[origin/nom-de-ta-branche]
+    end
+
+    subgraph UPSTREAM
+        D[upstream/main]
+    end
+
+    A --> B
+    B --> C[PR]
+    C --> D
+```
+
 ---
 
-## PR en CLI : objectif
+## PR en CLI : Objectif
 
 Une **PR** est une demande de fusion de ton code vers le dépôt cible.
 
-Dans notre contexte GSM :
+Dans notre contexte GSM, cela signifie :
 
 - Tu développes sur ton **fork**,
 - tu pushes ta branche de dev sur ton fork,
 - puis tu demandes à fusionner cette branche vers le dépôt **upstream**.
+- À la fin, tu récupères en local la version la plus à jour et validée.
+
+```mermaid
+sequenceDiagram
+    participant L as Local (Ta Mc*)
+    participant O as Origin (Ton fork GH)
+    participant U as Upstream (GSM GH)
+
+    L->>O: git push
+    O->>U: Pull Request
+    U-->>O: Review / Merge
+    O-->>L: git pull
+```
+
+ℹ️ * : Mc = machine.
 
 ---
 
-## Avant de créer la PR : Mini check
+## Avant de créer la PR : Mini-check
 
 Dans ta branche de travail ( Pas `main` ), vérifie :
 
@@ -41,7 +75,7 @@ git branch --show-current
 
 ```
 
-Pour réussir ton PR, tu dois idéalement avoir :
+Pour réussir ta PR, tu dois idéalement avoir :
 
 - un arbre propre (`working tree clean`),
 - des commits clairs,
@@ -61,15 +95,15 @@ Sinon, comme ta branche est déjà reliée (C'est le cas si tu es dans notre exe
 git push
 ```
 
-### 3. Cree la PR en CLI (GitHub CLI)
+### Crée la PR en CLI
 
-Verifie d'abord que `gh` est disponible :
+Vérifie d'abord que `gh` est disponible, si tu en doutes :
 
 ```bash
 gh --version
 ```
 
-Puis cree la PR :
+Puis crée la PR :
 
 ```bash
 gh pr create \
@@ -79,7 +113,11 @@ gh pr create \
   --body "Corrections de doc + clarifications mineures."
 ```
 
-Pour verifier ensuite :
+ℹ️ --base main = branche main du dépôt upstream (gc7/gsm).
+
+ℹ️ TonUserName = **ton pseudo G**it**H**ub (celui visible dans l’URL de ton fork).
+
+Vérifier ensuite :
 
 ```bash
 gh pr list
@@ -90,11 +128,11 @@ CCC: Capture du retour CLI de `gh pr create` avec URL de la PR.
 
 ---
 
-## Mettre a jour une PR deja ouverte (toujours en CLI)
+## Mettre à jour une PR déjà ouverte (toujours en CLI)
 
 Une PR n'est pas figée. Si on te demande des ajustements :
 
-1. Tu modifies ton code localement sur **la meme branche**
+1. Tu modifies ton code localement sur **la même branche**
 2. Tu commits
 3. Tu pushes
 
@@ -109,7 +147,7 @@ La PR se met à jour automatiquement.
 ## Résumé express CLI
 
 ```bash
-# 1) creer branche
+# 1) créer branche
 git switch -c doc/ma-premiere-pr
 
 # 2) coder
@@ -123,14 +161,14 @@ git commit -m "doc: ma premiere contribution"
 git push -u origin doc/ma-premiere-pr
 
 # 5) ouvrir PR en CLI
-gh pr create --base main --head TonUserName:doc/ma-premiere-pr --title "doc: ma premiere contribution" --body "Correction doc"
+gh pr create --base main --head TonUserName:doc/ma-premiere-pr --title "doc: ma première contribution" --body "Correction doc"
 ```
 
-> 🎯 Objectif atteint quand ta PR est ouverte, lisible, et facile a relire.
+> 🎯 Objectif atteint quand ta PR est ouverte, lisible, et facile à relire.
 
 ---
 
-Pour la methode via interface web GitHub, passe au chapitre suivant :
+Pour la méthode via l'interface web GitHub (+ facile), passe au chapitre suivant :
 
 ## 👉 [0111_GIT_PR_GH](./0111_GIT_PR_GH.md)
 
