@@ -10,23 +10,23 @@
 
 ---
 
-## PR via le site GitHub : objectif
-
-Tu fais ton dev en local comme d'habitude, puis tu ouvres et gères la PR dans l'interface GitHub.
+### **La dernière étape et la + importante : Celle qui te permet d'officialiser ton dev !**
 
 ---
 
-## 1. Prépare la branche en local
+## PR sur le site GitHub : La Puissance Ultime du Git et la Simplicité en + !
+
+Tu fais ton dev en local comme d'habitude, tu commit, tu push, etc...
+
+Quand tu te sens prêt, tu es content de ton dev, tu ouvres et gères toute la PR dans l'interface GitHub.
+
+---
+
+## 1. Checklist
 
 ```bash
 git branch --show-current
 git push
-```
-
-Si c'est la première fois sur cette branche :
-
-```bash
-git push -u origin nom-de-ta-branche
 ```
 
 ---

@@ -14,7 +14,7 @@
 
 ---
 
-### **La dernière étape et la + importante : Celle qui te permet d'officialiser ton dev !**!
+### **La dernière étape et la + importante : Celle qui te permet d'officialiser ton dev !**
 
 
 ```mermaid
