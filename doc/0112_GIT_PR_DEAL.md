@@ -69,6 +69,16 @@ Ce n'est pas la taille du changement qui compte, c'est sa qualité.
 
 ---
 
+Tips :
+
+* Erreur dans le message du commit
+git commit --amend
+
+Si déjà push: git push --force-with-lease
+
+
+---
+
 <h3 align="center">
   <a href="./0111_GIT_PR_GH.md">← 0111_GIT_PR_GH</a>
                      
