@@ -140,6 +140,10 @@ git merge --continue   # ou : git rebase --continue
 | Tout en un             | `git pull upstream main`        | Fetch + Merge en une commande              |
 | Mettre à jour son fork | `git push origin main`          | Synchronise ton fork sur GitHub            |
 
+<div align="center">
+  <img src="./imgs/fetch_pull_diff.jpg" width='500'>
+</div>
+
 ---
 
 > 🎉 Ton fork est maintenant **à jour** avec le projet original. Tu peux continuer à coder sans être en retard sur le projet !

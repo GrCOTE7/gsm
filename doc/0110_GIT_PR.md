@@ -30,9 +30,9 @@ Dans notre contexte GSM :
 
 ---
 
-## Avant de créer la PR : mini check
+## Avant de créer la PR : Mini check
 
-Dans ta branche de travail (pas `main`), vérifie :
+Dans ta branche de travail ( Pas `main` ), vérifie :
 
 ```bash
 git status
