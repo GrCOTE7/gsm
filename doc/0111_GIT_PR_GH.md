@@ -10,11 +10,11 @@
 
 ---
 
-### **La dernière étape et la + importante : Celle qui te permet d'officialiser ton dev !**
+### **La dernière étape et la + importante : Celle qui te permet d'officialiser ton dev :**
 
 ---
 
-## PR sur le site GitHub : La Puissance Ultime du Git et la Simplicité en + !
+## **→ PR sur le site GH : La Puissance Ultime du Git et la Simplicité en + !**
 
 Tu fais ton dev en local comme d'habitude, tu commit, tu push, etc...
 
@@ -22,16 +22,24 @@ Quand tu te sens prêt, tu es content de ton dev, tu ouvres et gères toute la P
 
 ---
 
-## 1. Checklist
+## 1. Checklist rapide
 
-```bash
-git branch --show-current
-git push
-```
+## 1. Checklist rapide avant d'ouvrir la PR
+
+✅ **Avant d'ouvrir ta PR, vérifie que :**
+
+- [ ] `git branch --show-current` → Tu es bien sur ta branche de dev (Et pas sur `main`) ?
+- [ ] `git status` ne montre aucun fichier modifié non commité ?
+- [ ] `git fetch upstream` et 
+`git log HEAD..upstream/main --oneline` # vide = tu es à jour avec `upstream/main` (pas de conflits) ?
+- [ ] `git push` → Ton push passe sans erreur ?
+- [ ] Tu as relu tes modifications une dernière fois sur GitHub (`/compare`) ?
 
 ---
 
 ## 2. Ouvre la page de PR sur GitHub
+
+# ❌ To be continued... 🚧
 
 GitHub propose souvent le bouton **Compare & pull request** juste après le push.
 
