@@ -2,6 +2,15 @@
 
 # ❌ To be continued... 🚧
 
+→ 💡 Tiens! Deal ! C'est sûrement pas les fautes qui manquent dans toutes ces pages de docs, et ne serait-ce dans cette seule page... Fixe toi un tout ch'ti premier objectif: Y corriger ne serait-ce une virgule mal placée ! De grands auteurs ont souvent commencés ainsi... ;-)... Alors Deal, on attend de voir passer ta **PR** ;-) !
+
+Proposer une idée
+
+    Tester l’app
+    Poser une question
+    Chaque geste compte.
+
+
 ## Éditeur VSC - Visual Studio Code
 
 Il existe des milliers d'éditeurs, + ou moins spécialisés pour une techno voire un language spécifique...
