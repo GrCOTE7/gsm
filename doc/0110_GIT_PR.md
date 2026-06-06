@@ -142,7 +142,7 @@ git commit -m "doc: applique retours review"
 git push
 ```
 
-La PR se met à jour automatiquement.
+La PR se met alors automatiquement à jour 👍.
 
 ## Résumé express CLI
 
