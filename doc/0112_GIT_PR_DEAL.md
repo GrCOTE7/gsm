@@ -10,11 +10,12 @@
 
 ---
 
+
+## 🎯 Deal : Ta PR réelle (Pas un test → Compte pour ton LV)
+
 # ❌ To be continued... 🚧
 
-## 🎯 Deal : ta PR réelle (pas un test)
-
-Objectif : proposer une vraie amélioration, meme minime.
+Objectif : Proposer une vraie amélioration, même minime.
 
 Exemples valides :
 
@@ -22,40 +23,29 @@ Exemples valides :
 - clarifier une consigne floue,
 - corriger un lien cassé,
 - améliorer un message utilisateur.
+- modifié du code (app, ou autour...).
 
 ---
 
 ## Plan d'action court
 
-1. Crée une branche dédiée
+  1. Crée une branche dédiée
 
 ```bash
-git switch -c doc/mon-premier-deal
+  git switch -c doc/mon-premier-deal
 ```
 
-2. Fais une petite amélioration utile
+ 1. Fais une petite amélioration utile
 
-3. Commit + push
+ 2. Commit + push
 
 ```bash
-git add .
-git commit -m "doc: premiere contribution utile"
-git push -u origin doc/mon-premier-deal
+  git add .
+  git commit -m "doc: premiere contribution utile"
+  git push -u origin doc/mon-premier-deal
 ```
 
-4. Ouvre ta PR (avec 0110 en CLI ou 0111 via site GH)
-
----
-
-## Check-list avant envoi
-
-- [ ] Le sujet de la PR est unique et clair
-- [ ] Le titre explique vraiment le changement
-- [ ] La description dit pourquoi + ce qui a changé
-- [ ] Les fichiers modifiés sont cohérents avec le sujet
-- [ ] Tu peux expliquer ta PR en 2 phrases
-
-CCC: Capture de ta PR finale prete a etre revue.
+ 3. Ouvre ta PR
 
 ---
 
@@ -65,6 +55,8 @@ Si ta PR est lisible, ciblée et utile, c'est gagné.
 
 Ce n'est pas la taille du changement qui compte, c'est sa qualité.
 
+→ Dès que tu as une PR validée : 7777_SUIVIS !
+
 ---
 
 Tips :
@@ -73,7 +65,6 @@ Tips :
 git commit --amend
 
 Si déjà push: git push --force-with-lease
-
 
 ---
 
