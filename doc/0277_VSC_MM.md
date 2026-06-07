@@ -1,42 +1,50 @@
+{% markmap 700px %}
+
 ---
 markmap:
-  duration: 2100
-  initialExpandLevel: -1
+
+duration: 2100
+initialExpandLevel: -1
+
 ---
 
-{% markmap %}
----
 markmap:
-  colorFreezeLevel: 2
+  colorFreezeLevel: 3
+
 ---
-# Markdown
-# Syntax
+
+# GSM
+
+## Projet Collaboratif
+
+
+## [Une Doc riche & évolutive](0001_TOC.md)
+
+### [GIT](0101_GIT_FORK?md)
+
+### VSC
+
+### PY
+
+### Flet
+
+### FletX
+
+### MoJo
+
+### PY-IA
+
+## Une App Réelle <!-- markmap: fold -->
+
+### Web
+
+### Win
+
+### Linux/MAcOS
+
+### Androïd
+
+### IOS
+
 {% endmarkmap %}
 
-
-{% markmap %}
-
-# Doc
-
-## Sites
-
-* [Réel](https://moncms.crea7.net)
-
-* [Admin Réel](https://moncms.crea7.net:8083)
-
-* [Local](https://127.0.0.1:8000)
-
-* [MailJet](https://app.mailjet.com)
-
-## Mails \<!-- markmap: fold -->
-
-* [WebMail](https://webmail.moncms.crea7.net/)
-  * aadminli@moncms.crea7.net / K7
-
-* [yahoo](https://mail.yahoo.com)
-
-  * lionelcote21@yahoo.com
-
-  * lio181@yahoo.fr
-
-{% endmarkmap %}
