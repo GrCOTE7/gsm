@@ -35,6 +35,11 @@ Tu connais déjà, en fait ! C'est ce genre de schéma que t'as vu lors de la le
 
 <div>Visualise tes docs markdown - Ma 2<sup>ème</sup> extension préférée...</div>
 
+❌ Test insert iframe
+
+<iframe src="uuu.html" width="100%" height="700"></iframe>
+
+
 #### 👉 [Regarde un exemple de ce qu'on peut faire avec](https://laravel.sillo.org/doc/laravel)
 
 https://marketplace.visualstudio.com/items?itemName=maxchang.vscode-markmap-universe
