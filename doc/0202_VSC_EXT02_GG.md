@@ -12,9 +12,7 @@
 
 ## 📋 Extensions VSCode recommandées pour le Git (Suite)
 
-**Git Graph - mhutchie**
-
-Je vous laisse la trouver dans le 'magasin'et l'installer en 1 clic...
+## [GG - **G**it **G**raph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
 
 C'est mon extension préférée - La grande soeur + PRO d'Ungit qui peut faillir sur de gros dépôts... Et surtout, on **peut même y gérer graphiquement les PR !!!**
 
@@ -79,6 +77,21 @@ Tu as compris qu'en un clic, tu peux installer une extension, et juste un autre 
 - [Git File History](https://marketplace.visualstudio.com/items?itemName=pomber.git-file-history)
 - [gitignore](https://marketplace.visualstudio.com/items?itemName=michelemelluso.gitignore)
 - [GitHub Repositories](https://marketplace.visualstudio.com/items?itemName=GitHub.remotehub)
+
+
+## Autres outils Git pouvant servir
+
+### 🐱 [GitHub Desktop](https://desktop.github.com/download)
+
+C’est l’outil officiel de GitHub pour gérer tes dépôts sans toucher au terminal. Il simplifie tout : commits, branches, merges, résolutions de conflits, push/pull… avec une interface claire et propre.
+
+Idéal pour visualiser l’historique, comparer les changements, et travailler vite quand tu veux éviter les commandes Git.
+
+### 🦊 [GitKraken](https://www.gitkraken.com)
+
+Client Git plus avancé, orienté productivité et ergonomie, il propose un graphe visuel ultra‑lisible, des outils de merge puissants, la gestion multi‑repos, des workspaces, et une UX très soignée.
+
+C’est un peu le “couteau suisse premium” pour ceux qui veulent une vue graphique complète de leurs workflows Git. Gratuit pour les projets publics (Comme GSM) uniquement.
 
 ---
 
