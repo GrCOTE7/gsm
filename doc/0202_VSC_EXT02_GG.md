@@ -5,7 +5,7 @@
 <h3 align="center">
   <a href="./0201_VSC_EXT01_UNGIT.md">← 0201_VSC_EXT01_UNGIT</a>
                      
-  <a href="./0203_VSC_EXT01_XXX.md">XXX →</a>
+  <a href="./0203_VSC_MAJEXT1.md">0203_VSC_MAJEXT1 →</a>
 </h3>
 
 ---
@@ -72,10 +72,18 @@ Si tu as bien suivi la partie précédent GIT (la série 01xx_GIT des docs), tu 
 
 Et enfin, look que le clic normal sur le commit te montre les fichiers modifiés, puis le clic sur un fichier, les modifications effectuées.
 
-### Et autres importantes
+### Et quelques autres importantes pour le Git
 
-* [ ] Git File History - Rodrigo Pombo
-* [ ] gitignore - michelemelluso - Add file to .gitignore
-* [ ] GitHub Repositories - GitHub - Remotely browse and edit any GitHub repository
+Tu as compris qu'en un clic, tu peux installer une extension, et juste un autre clic si tu veux la désinstaller... Alors n'hésite pas à fouiller *à donf* dans la bibliothèque de ces extensions ! Et peut-être un jour feras tu une PR pour en suggérer l'usage d'une d'entre elles 👍
 
-### Et autres importantes
+- [Git File History](https://marketplace.visualstudio.com/items?itemName=pomber.git-file-history)
+- [gitignore](https://marketplace.visualstudio.com/items?itemName=michelemelluso.gitignore)
+- [GitHub Repositories](https://marketplace.visualstudio.com/items?itemName=GitHub.remotehub)
+
+---
+
+<h3 align="center">
+  <a href="./0201_VSC_EXT01_UNGIT.md">← 0201_VSC_EXT01_UNGIT</a>
+                     
+  <a href="./0203_VSC_MAJEXT1.md">0203_VSC_MAJEXT1 →</a>
+</h3>
