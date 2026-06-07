@@ -2,7 +2,7 @@
 
 # ❌ To be continued... 🚧
 
-## 7777_Suivis
+## 7777_Suivis - Tableau d'Honneur
 
 ### LV
 

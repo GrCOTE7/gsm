@@ -38,7 +38,7 @@ flowchart LR
 
 ---
 
-## PR en CLI : Objectif
+## Une PR : Objectif
 
 Une **PR** est une demande de fusion de ton code vers le dépôt cible.
 
@@ -99,7 +99,7 @@ Sinon, comme ta branche est déjà reliée (C'est le cas si tu es dans notre exe
 git push
 ```
 
-### Crée la PR en CLI
+### Crée la PR, version ' en CLI '
 
 Vérifie d'abord que `gh` est disponible, si tu en doutes :
 

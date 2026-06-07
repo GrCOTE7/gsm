@@ -10,34 +10,50 @@
 
 ---
 
+## 🎯 DEAL : Ta première vraie PR
 
-## 🎯 Deal : Ta PR réelle (Pas un test → Compte pour ton LV)
+Objectif : Proposer une amélioration réelle, même minuscule, dans le dépôt GSM.
 
-# ❌ To be continued... 🚧
+Ce n’est pas un exercice :
 
-Objectif : Proposer une vraie amélioration, même minime.
-
-Exemples valides :
-
-- corriger une faute dans un doc,
-- clarifier une consigne floue,
-- corriger un lien cassé,
-- améliorer un message utilisateur.
-- modifié du code (app, ou autour...).
+👉 Cette PR compte pour ton LV (LeVel - Niveau)
+👉 Elle valide officiellement ta formation Git
+👉 Elle te donne le droit d’ajouter ton nom dans [le tableau d’honneur](./7777_SUIVIS.md)
 
 ---
 
-## Plan d'action court
+💡 Quel type d’amélioration ?
 
-  1. Crée une branche dédiée
+→ Tu choisis toi‑même ton sujet. L’important n’est pas la taille, mais l’utilité.
+
+Quelques exemples parfaitement valides :
+
+- corriger une faute d'orthographe dans un doc,
+- clarifier une phrase ambiguë,
+- corriger un lien cassé,
+- améliorer un message utilisateur,
+- ajouter une précision utile dans une page,
+- dans le code, corriger un petit bug,
+- améliorer un nom de variable, un commentaire, un log, etc.
+
+Bref : une contribution réelle, utile, même minuscule.
+
+---
+
+## 🧭 Plan d’Action (court, efficace)
+
+### 1. Crée une branche dédiée
 
 ```bash
   git switch -c doc/mon-premier-deal
 ```
 
- 1. Fais une petite amélioration utile
+### 2. Fais une petite amélioration utile
 
- 2. Commit + push
+Relis une page, un script, un message…
+Trouve un détail à améliorer → modifie-le.
+
+### 3. Commit + push
 
 ```bash
   git add .
@@ -45,27 +61,43 @@ Exemples valides :
   git push -u origin doc/mon-premier-deal
 ```
 
- 3. Ouvre ta PR
+### 4. Ouvre ta PR
+
+Tu peux utiliser au choix l’interface GitHub ou la CLI (Comme ce que tu as vu dans les deux chapitres précédents).
 
 ---
 
-## 🥳 Bravo
-
-Si ta PR est lisible, ciblée et utile, c'est gagné.
-
-Ce n'est pas la taille du changement qui compte, c'est sa qualité.
-
-→ Dès que tu as une PR validée : 7777_SUIVIS !
-
----
-
-Tips :
+## 🧰 Tips - Rappels utiles  
 
 * Erreur dans le message du commit
+
+```bash
 git commit --amend
+```
 
-Si déjà push: git push --force-with-lease
+Si le commit est déjà push :
 
+```bash
+git push --force-with-lease
+```
+
+---
+
+## 🥳 Bravo, tu y es
+
+Si ta PR est sur une branche dédiée, lisible, ciblée et utile, c'est gagné.
+
+👉 **Tu as officiellement réussi ta formation Git.**
+
+---
+
+## 🎖️ Étape finale, ta récompense : **Ton pseudo dans le Tableau d'Honneur**
+
+→ Dès que ta PR est validée (Acceptée par la communauté, c'est à dire que ton code se voit dans le dépôt upstream), tu as le droit d'apposer ton pseudo  dans le [Tableau d'Honneur](./7777_SUIVIS.md) ✌️
+
+1. Ajoute ton nom dans le [Tableau d'Honneur](./7777_SUIVIS.md)
+2. Fais immédiatement ta 2ᵉ PR pour valider cette modification
+3. Tu rejoins officiellement les rangs des contributeurs du projet 🎉
 ---
 
 <h3 align="center">

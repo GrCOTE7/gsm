@@ -16,7 +16,7 @@
 
 ## **→ PR sur le site GH : La Puissance Ultime du Git et la Simplicité en + !**
 
-Tu fais ton dev en local comme d'habitude, tu commit, tu push, etc...
+Tu fais ton dev en local comme d'habitude, tu *commit*, tu *push*, etc...
 
 Quand tu te sens prêt, tu es content de ton dev, tu ouvres et gères toute la PR dans l'interface GitHub.
 
@@ -28,8 +28,7 @@ Quand tu te sens prêt, tu es content de ton dev, tu ouvres et gères toute la P
 
 - [ ] `git branch --show-current` → Tu es bien sur ta branche de dev (Et pas sur `main`) ?
 - [ ] `git status` ne montre aucun fichier modifié non commité ?
-- [ ] `git fetch upstream` et 
-`git log HEAD..upstream/main --oneline` # vide = tu es à jour avec `upstream/main` (pas de conflits) ?
+- [ ] `git fetch upstream` et `git log HEAD..upstream/main --oneline` # vide = tu es à jour avec `upstream/main` (pas de conflits) ?
 - [ ] `git push` → Ton push passe sans erreur ?
 - [ ] Tu as relu tes modifications une dernière fois sur GitHub (`/compare`) ?
 
