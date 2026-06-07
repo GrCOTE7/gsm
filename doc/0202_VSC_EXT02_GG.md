@@ -4,8 +4,8 @@
 
 <h3 align="center">
   <a href="./0201_VSC_EXT01_UNGIT.md">← 0201_VSC_EXT01_UNGIT</a>
-                     
-  <a href="./0203_VSC_MAJEXT1.md">0203_VSC_MAJEXT1 →</a>
+                  
+  <a href="./0203_VSC_EXT3.md">0203 VSC EXT MAJEURES →</a>
 </h3>
 
 ---
@@ -97,6 +97,6 @@ C’est un peu le “couteau suisse premium” pour ceux qui veulent une vue gra
 
 <h3 align="center">
   <a href="./0201_VSC_EXT01_UNGIT.md">← 0201_VSC_EXT01_UNGIT</a>
-                     
-  <a href="./0203_VSC_MAJEXT1.md">0203_VSC_MAJEXT1 →</a>
-</h3>
+                  
+  <a href="./0203_VSC_EXT3.md">0203 VSC EXT MAJEURES →</a>
+</h3
