@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+.markmap-dark {
+  background: #27272a;
+  color: white;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.12/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.12/dist/index.js"></script><script>(r => {
+              setTimeout(r);
+            })(function renderToolbar() {
+  const {
+    markmap,
+    mm
+  } = window;
+  const {
+    el
+  } = markmap.Toolbar.create(mm);
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+              if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                document.documentElement.classList.add("markmap-dark");
+              }
+            })(() => window.markmap,null,{"content":"","children":[{"content":"Markdown","children":[],"payload":{"tag":"h1","lines":"11,12"}},{"content":"Syntax","children":[],"payload":{"tag":"h1","lines":"12,13"}},{"content":"Doc","children":[{"content":"Sites","children":[{"content":"\n<p data-lines=\"22,23\"><a href=\"https://moncms.crea7.net\">R&#xe9;el</a></p>","children":[],"payload":{"tag":"li","lines":"22,24"}},{"content":"\n<p data-lines=\"24,25\"><a href=\"https://moncms.crea7.net:8083\">Admin R&#xe9;el</a></p>","children":[],"payload":{"tag":"li","lines":"24,26"}},{"content":"\n<p data-lines=\"26,27\"><a href=\"https://127.0.0.1:8000\">Local</a></p>","children":[],"payload":{"tag":"li","lines":"26,28"}},{"content":"\n<p data-lines=\"28,29\"><a href=\"https://app.mailjet.com\">MailJet</a></p>","children":[],"payload":{"tag":"li","lines":"28,30"}}],"payload":{"tag":"h2","lines":"20,21"}},{"content":"Mails &lt;!-- markmap: fold --&gt;","children":[{"content":"\n<p data-lines=\"32,33\"><a href=\"https://webmail.moncms.crea7.net/\">WebMail</a></p>","children":[{"content":"aadminli@moncms.crea7.net / K7","children":[],"payload":{"tag":"li","lines":"33,35"}}],"payload":{"tag":"li","lines":"32,35"}},{"content":"\n<p data-lines=\"35,36\"><a href=\"https://mail.yahoo.com\">yahoo</a></p>","children":[{"content":"\n<p data-lines=\"37,38\">lionelcote21@yahoo.com</p>","children":[],"payload":{"tag":"li","lines":"37,39"}},{"content":"\n<p data-lines=\"39,40\">lio181@yahoo.fr</p>","children":[],"payload":{"tag":"li","lines":"39,41"}}],"payload":{"tag":"li","lines":"35,41"}}],"payload":{"tag":"h2","lines":"30,31"}}],"payload":{"tag":"h1","lines":"18,19"}}]},{"duration":2100,"initialExpandLevel":-1})</script>
+</body>
+</html>

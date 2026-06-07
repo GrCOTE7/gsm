@@ -5,47 +5,57 @@
 <h3 align="center">
   <a href="./0202_VSC_EXT02_GG.md">← 0202_VSC_EXT02_GG</a>
                      
-  <a href="./0204_VSC_MAJEXT1.md">0204_VSC_MAJEXT1 →</a>
+  <a href="./0204_VSC_EXT04_TODO.md">0204_VSC_EXT04_TODO →</a>
 </h3>
 
 ---
 
-## VSC - Extensions Majeures
+## VSC - Extensions Majeures (Hors celles pour le Git déjà vues)
 
 Nous allons voir 2 sortes d'extensions :
 
 - Pas besoin particulièrement de paramètres
-- Nécessite des paramètres pour accomplir ce que l'on en attend
+- Ou nécessite des paramètres pour accomplir ce que l'on en attend
 
 Donc, pour les premières, nous nous contentons ici de citer leur nom (avec le ien pour les installer en 1 clic) - Juste éventuellement quelques mots
 
 Les secondes feront chacune l'objet d'une page dédiée à la suite de celle-ci.
 
-# ❌ To be continued... 🚧
+### - [Auto-Open Markdown Preview](https://marketplace.visualstudio.com/items?itemName=hnw.vscode-auto-open-markdown-preview)
 
-* [ ] Auto-Open Markdown Preview
+Ouvre automatiquement la prévisualisation d'un document Markdown (comme le présent fichier) à son ouverture.
 
-hnw
-651 217
-(34)
-Open Markdown preview automatically when opening a Markdown file
+---
 
-* [ ] Markdown Preview Mermaid Support
-Matt Bierner
-4 761 224
-(57)
-Adds Mermaid diagram and flowchart support to VS Code's builtin markdown preview
+### - [Mermaid](https://marketplace.visualstudio.com/items?itemName=MermaidChart.vscode-mermaid-chart) et [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
 
-* [ ] Markmap
-Gerald Liu
-248 987
-(30)
-Visualize your markdown in VSCode - Ma 2ème préférée...
+Tu connais déjà, en fait ! C'est ce genre de schéma que t'as vu lors de la leçon **[Git PR](./0110_GIT_PR.md)**
 
-* [ ] Mermaid
-* [ ] Markdown Emoji
-Matt Bierner
-Adds emoji syntax support to VS Code's built-in markdown preview and markdown cells in notebook - CTRL + MAJ+ E
-* [ ] Markdown+Math - goessner - 412 626 - LaTeX Math for Markdown ... with macros and more
+### - [MM - Markmap](https://marketplace.visualstudio.com/items?itemName=gera2ld.markmap-vscode)
 
-* [ ] Jupyter
+<div>Visualise tes docs markdown - Ma 2<sup>ème</sup> extension préférée...</div>
+
+#### 👉 [Regarde un exemple de ce qu'on peut faire avec](https://laravel.sillo.org/doc/laravel)
+
+https://marketplace.visualstudio.com/items?itemName=maxchang.vscode-markmap-universe
+
+### - [Markdown Emoji](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji)
+
+### - [Markdown+Math](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath)
+
+Pour avoir de belles formules scientifique ou mathématiques dans tes docs
+
+---
+
+### - [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
+
+Si tu fouilles, tu verras qu'il y a pas mal d'extensions qui upgrade encore celle-ci...
+Quoi qu'il en soit, nous nous en servirons dorénavant, dès le chapitre suivant, presque systématiquement, car adaptée à faaire du code Python exécutabe dans le doc !!!
+
+---
+
+<h3 align="center">
+  <a href="./0202_VSC_EXT02_GG.md">← 0202_VSC_EXT02_GG</a>
+                     
+  <a href="./0204_VSC_EXT04_TODO.md">0204_VSC_EXT04_TODO →</a>
+</h3>
