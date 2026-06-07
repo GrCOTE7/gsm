@@ -56,14 +56,14 @@ Plus qu'à push et 2 façons de faire :
 
 Pour finir, observe que le clic droit sur la branche et le commit offre des fonctionalités différentes 🧮 
 
-<div style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+<div align="center">
 
   <a href="./imgs/202_vsc_gg4.png" target="_blank">
-    <img src="./imgs/202_vsc_gg4.png" style="max-width:300px; width:100%;">
+    <img src="./imgs/202_vsc_gg4.png" width="300">
   </a>
-
+  &nbsp;&nbsp;&nbsp;
   <a href="./imgs/202_vsc_gg5.png" target="_blank">
-    <img src="./imgs/202_vsc_gg5.png" style="max-width:300px; width:100%;">
+    <img src="./imgs/202_vsc_gg5.png" width="300">
   </a>
 
 </div>
