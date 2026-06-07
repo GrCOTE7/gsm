@@ -30,8 +30,8 @@ La toute première est particulièrement adaptée pour les débutants en Git...
 En effet, très graphique, on va pouvoir y faire add, commit et push de façon très intuitive. Son nom est "**Ungit**".
 
 <div align="center">
-  <a href="./imgs/202_vsc3_ungit.png" target="_blank">
-    <img src="./imgs/202_vsc3_ungit.png" width="400">
+  <a href="./imgs/201_vsc_ungit1.png" target="_blank">
+    <img src="./imgs/201_vsc_ungit1.png" width="400">
   </a>
 </div>
 
@@ -48,16 +48,16 @@ S'ouvre dans un nouvel onglet - Un simple glissé-déplacé permet de le poser d
 Et pour y fait un "add + commit + push", ça se résume à une case à renseigner, et 2 clics !!!
 
 <div align="center">
-  <a href="./imgs/202_vsc4_ungit.png" target="_blank">
-    <img src="./imgs/202_vsc4_ungit.png" width="400">
+  <a href="./imgs/201_vsc_ungit2.png" target="_blank">
+    <img src="./imgs/201_vsc_ungit2.png" width="400">
   </a>
 </div>
 
 Et la conséquence est évidemment très graphique et parlante 😁 !
 
 <div align="center">
-  <a href="./imgs/202_vsc5_ungit.png" target="_blank">
-    <img src="./imgs/202_vsc5_ungit.png" width="400">
+  <a href="./imgs/201_vsc_ungit3.png" target="_blank">
+    <img src="./imgs/201_vsc_ungit3.png" width="400">
   </a>
 </div>
 
@@ -66,10 +66,14 @@ Et la conséquence est évidemment très graphique et parlante 😁 !
 Et également, chaque gros rond représente un commit... En cliquant dessus, tu vois les fichiers mofifiés lors de ce commit, et en cliquant sur le nom du fichier, les lignes modifiées !!! Plutôt pratique, non ?
 
 <div align="center">
-  <a href="./imgs/202_vsc6_ungit.png" target="_blank">
-    <img src="./imgs/202_vsc6_ungit.png" width="400">
+  <a href="./imgs/201_vsc_ungit4.png" target="_blank">
+    <img src="./imgs/201_vsc_ungit4.png" width="400">
   </a>
 </div>
+
+---
+
+💡Comme tu sais maintenant installer une extention, trouve et install la 'French' si tu veux avoir tout **l'éditeur en français.**
 
 ---
 

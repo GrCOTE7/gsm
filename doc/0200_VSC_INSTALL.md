@@ -60,16 +60,16 @@ La plupart des réglages se situent dans un fichier "settings.json".
 Pour l'éditer :
 
 <div align="center">
-  <a href="./imgs/201_vsc1.png" target="_blank">
-    <img src="./imgs/201_vsc1.png" width="400">
+  <a href="./imgs/200_vsc_params1.png" target="_blank">
+    <img src="./imgs/200_vsc_params1.png" width="400">
   </a>
 </div>
 
 → Une raccourci existe: CTRL + ' , '
 
 <div align="center">
-  <a href="./imgs/201_vsc2.png" target="_blank">
-    <img src="./imgs/201_vsc2.png" width="400">
+  <a href="./imgs/200_vsc_params2.png" target="_blank">
+    <img src="./imgs/200_vsc_params2.png" width="400">
   </a>
 </div>
 
