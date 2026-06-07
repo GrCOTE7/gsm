@@ -1,35 +1,39 @@
 <h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
 
-# ❌ To be continued... 🚧
+<h1><div align='center'>Éditeur <b>VSC</b> - <b>V</b>isual <b>S</b>tudio <b>C</b>ode</div></h1>
 
-→ 💡 Tiens! Deal ! C'est sûrement pas les fautes qui manquent dans toutes ces pages de docs, et ne serait-ce dans cette seule page... Fixe toi un tout ch'ti premier objectif: Y corriger ne serait-ce une virgule mal placée ! De grands auteurs ont souvent commencés ainsi... ;-)... Alors Deal, on attend de voir passer ta **PR** ;-) !
+<h3 align="center">
+  <a href="./0112_GIT_PR_DEAL.md">← 0112_GIT_PR_DEAL</a>
+                     
+  <a href="./0202_VSC_EXT.md">0202_VSC_EXT →</a>
+</h3>
 
-Proposer une idée
+---
 
-    Tester l’app
-    Poser une question
-    Chaque geste compte.
-
-
-## Éditeur VSC - Visual Studio Code
+## Pourquoi VSC ?
 
 Il existe des milliers d'éditeurs, + ou moins spécialisés pour une techno voire un language spécifique...
 
-Nous préconisons ici **[VSCode](https://code.visualstudio.com/) - Gratos, et de très nombreuses extensions existent, dont beaucoup pour le Git**... Comme par hasard...Et qui rende son usage (du Git) aussi ludique que de jouer à Tétris !
+Nous préconisons ici **[VSCode](https://code.visualstudio.com/)** , car :
 
-<div align="center">
-    <a href="https://vscode.dev/?vscode-lang=fr-fr" target="_blank">Voyez par vous même en LIVE !</a>
-</div>
+- Gratos,
+- et de très nombreuses extensions existent, dont beaucoup pour le Git**... Comme par hasard...Et qui rende son usage (du Git) aussi ludique que de jouer à Tétris !
 
-Mais libre à vous d'utiliser l'éditeur autre que vous voulez, quitte à en adapter vous-même les réglages...
+<br><div align="center">
+    <a href="https://vscode.dev/?vscode-lang=fr-fr" target="_blank"><b>👉 Voyez par vous même en LIVE !</b></a>
+</div><br>
 
-## Installation
+À noter que c'est aussi l'éditeur que l'on retrouve dans [nos codespaces](https://codespaces.new/MP21170/gsm) 😉
 
-* [ ] To be continued...
+Mais libre à vous d'utiliser l'éditeur autre que vous voulez, quitte à en adapter vous-même les réglages pour retrouver des fonctionalités avancées comme celles présentées dans les pages qui suivent...
 
-→ * [ ] LK VSC
+## 🏗️ Installation
 
-## Raccourcis usuels
+### 👉 [Installer VSC](https://code.visualstudio.com/download)
+
+Noter que ce site poopose aussi la documentation de l'éditeur (En anglais)
+
+## 🧰 Raccourcis usuels
 
 Liste non exhaustive :
 
@@ -45,6 +49,54 @@ CTRL + ALT + S : Surround
 CTRL + u + u : Min/MAJ switch (bascule)
 ```
 
+Et de nombreux raccourci habituels même à d'autre programmes, fonctionnent aussi :
+
+CTRl + S : Enregistrer (Encore que l'éditeur permet d'automatiser cela)
+CTRL + C / CTRL + V : **C**opier / **V**a !
+
+## 🛠️ Paramétrages
+
+La plupart des réglages se situent dans un fichier "settings.json".
+Pour l'éditer :
+
+<div align="center">
+  <a href="./imgs/201_vsc1.png" target="_blank">
+    <img src="./imgs/201_vsc1.png" width="400">
+  </a>
+</div>
+
+→ Une raccourci existe: CTRL + ' , '
+
+<div align="center">
+  <a href="./imgs/201_vsc2.png" target="_blank">
+    <img src="./imgs/201_vsc2.png" width="400">
+  </a>
+</div>
+
+→ Si tu connais un moyen + simple, + rapide... : PR ! 😊
+
+Voici quelques params recommandés :
+
+```json
+{
+"window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${activeEditorMedium}",
+"editor.fontSize": 13,
+"editor.tabSize": 2,
+"editor.rulers": [
+  80
+],
+"files.autoSave": "afterDelay",
+"editor.quickSuggestionsDelay": 50,
+"editor.formatOnSave": true,
+}
+```
+
+Dans ce .json, le nom des clé est suffisament évocateur poour que vous en compreniez d'emblée leur rôle... Et naturellement, libre à vous d'adapter leurs valeurs selon vos préférences.
+
 ---
 
-Update 7777 !
+<h3 align="center">
+  <a href="./0112_GIT_PR_DEAL.md">← 0112_GIT_PR_DEAL</a>
+                     
+  <a href="./0202_VSC_EXT.md">0202_VSC_EXT →</a>
+</h3>

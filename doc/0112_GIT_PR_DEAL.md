@@ -93,11 +93,11 @@ Si ta PR est sur une branche dédiée, lisible, ciblée et utile, c'est gagné.
 
 ## 🎖️ Étape finale, ta récompense : **Ton pseudo dans le Tableau d'Honneur**
 
-→ Dès que ta PR est validée (Acceptée par la communauté, c'est à dire que ton code se voit dans le dépôt upstream), tu as le droit d'apposer ton pseudo  dans le [Tableau d'Honneur](./7777_SUIVIS.md) ✌️
+→ **Dès que ta PR est validée** (Acceptée par la communauté, c'est à dire que ton code se voit dans le dépôt upstream), tu as le droit d'apposer ton pseudo  dans le **[Tableau d'Honneur](./7777_SUIVIS.md) ✌️**
 
 1. Ajoute ton nom dans le [Tableau d'Honneur](./7777_SUIVIS.md)
-2. Fais immédiatement ta 2ᵉ PR pour valider cette modification
-3. Tu rejoins officiellement les rangs des contributeurs du projet 🎉
+2. Fais immédiatement ta 2ᵉ PR pour valider aussi cette modification
+3. **BRAVOs !** Tu rejoins officiellement les rangs des contributeurs du projet 🎉
 ---
 
 <h3 align="center">
