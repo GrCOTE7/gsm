@@ -1,0 +1,80 @@
+<h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
+
+<h1><div align='center'>VSC - Extension Ungit</div></h1>
+
+<h3 align="center">
+  <a href="./0200_VSC_INSTALL.md">← 02001_VSC_INSTALL</a>
+                     
+  <a href="./0202_VSC_EXT02_GG.md">0202_VSC_EXT02_GG →</a>
+</h3>
+
+---
+
+## 📋 Extensions VSCode recommandées pour le Git
+
+Précédemment, nous disions au sujet des extensions de VSC : "de très nombreuses extensions existent"... Après 'enquête', et + précisément, il semble que le nombre évolue chaque jour (Plusieurs dizaines de nouvelles extensions par semaine), et qu'actuellement, des sources externes parlent généralement de “**plus de 50 000**” !!!
+
+Là encore, libre à vous de fouiller un peu dans cette très longue liste...
+
+Nous allons nous limiter ici à découvrir comment trouver, choisir, et installer une extension, puis à t'inviter à en utiliser certaines particulièrement intéressantes.
+
+### 🏗️ Installation d'une ext (Extension)
+
+Comme à notre habitude, apprenons par l'action !
+
+<div>Donc, installons ensemble notre 1<sup>ère</sup> extension et comme cedtte page de doc est celles des extensions VSC pour le Git... :</div>
+
+### 🔀 Extensions Spéciales Git
+
+La toute première est particulièrement adaptée pour les débutants en Git...
+En effet, très graphique, on va pouvoir y faire add, commit et push de façon très intuitive. Son nom est "**Ungit**".
+
+<div align="center">
+  <a href="./imgs/202_vsc3_ungit.png" target="_blank">
+    <img src="./imgs/202_vsc3_ungit.png" width="400">
+  </a>
+</div>
+
+Pour la lancer:
+
+CTRL + MAJ + P → " ung " → Open Ungit
+
+OU + simple :
+
+### **MAJ + ALT + U → ungit**
+
+S'ouvre dans un nouvel onglet - Un simple glissé-déplacé permet de le poser dans l'onglet principal pour profiter au max de l'écran.
+
+Et pour y fait un "add + commit + push", ça se résume à une case à renseigner, et 2 clics !!!
+
+<div align="center">
+  <a href="./imgs/202_vsc4_ungit.png" target="_blank">
+    <img src="./imgs/202_vsc4_ungit.png" width="400">
+  </a>
+</div>
+
+Et la conséquence est évidemment très graphique et parlante 😁 !
+
+<div align="center">
+  <a href="./imgs/202_vsc5_ungit.png" target="_blank">
+    <img src="./imgs/202_vsc5_ungit.png" width="400">
+  </a>
+</div>
+
+À noté: La présence d'un bouton " Fetch from origin "... Et de la possibilité d'y ajouter là, des remotes...
+
+Et également, chaque gros rond représente un commit... En cliquant dessus, tu vois les fichiers mofifiés lors de ce commit, et en cliquant sur le nom du fichier, les lignes modifiées !!! Plutôt pratique, non ?
+
+<div align="center">
+  <a href="./imgs/202_vsc6_ungit.png" target="_blank">
+    <img src="./imgs/202_vsc6_ungit.png" width="400">
+  </a>
+</div>
+
+---
+
+<h3 align="center">
+  <a href="./0200_VSC_INSTALL.md">← 02001_VSC_INSTALL</a>
+                     
+  <a href="./0202_VSC_EXT02_GG.md">0202_VSC_EXT02_GG →</a>
+</h3>

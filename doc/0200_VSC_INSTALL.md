@@ -5,7 +5,7 @@
 <h3 align="center">
   <a href="./0112_GIT_PR_DEAL.md">← 0112_GIT_PR_DEAL</a>
                      
-  <a href="./0202_VSC_EXT.md">0202_VSC_EXT →</a>
+  <a href="./0201_VSC_EXT01_UNGIT.md">0201_VSC_EXT01_UNGIT →</a>
 </h3>
 
 ---
@@ -75,7 +75,7 @@ Pour l'éditer :
 
 → Si tu connais un moyen + simple, + rapide... : PR ! 😊
 
-Voici quelques params recommandés :
+Voici quelques premiers params recommandés :
 
 ```json
 {
@@ -98,5 +98,5 @@ Dans ce .json, le nom des clé est suffisament évocateur poour que vous en comp
 <h3 align="center">
   <a href="./0112_GIT_PR_DEAL.md">← 0112_GIT_PR_DEAL</a>
                      
-  <a href="./0202_VSC_EXT.md">0202_VSC_EXT →</a>
+  <a href="./0201_VSC_EXT01_UNGIT.md">0201_VSC_EXT01_UNGIT →</a>
 </h3>

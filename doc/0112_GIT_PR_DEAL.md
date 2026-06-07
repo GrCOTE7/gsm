@@ -5,12 +5,12 @@
 <h3 align="center">
   <a href="./0111_GIT_PR_GH.md">← 0111_GIT_PR_GH</a>
                      
-  <a href="./0201_VSC_INSTALL.md">0201_VSC_INSTALL →</a>
+  <a href="./0200_VSC_INSTALL.md">0200_VSC_INSTALL →</a>
 </h3>
 
 ---
 
-## 🎯 DEAL : Ta première vraie PR
+## DEAL : 🎯 Ta première vraie PR
 
 Objectif : Proposer une amélioration réelle, même minuscule, dans le dépôt GSM.
 
@@ -103,5 +103,5 @@ Si ta PR est sur une branche dédiée, lisible, ciblée et utile, c'est gagné.
 <h3 align="center">
   <a href="./0111_GIT_PR_GH.md">← 0111_GIT_PR_GH</a>
                      
-  <a href="./0201_VSC_INSTALL.md">0201_VSC_INSTALL →</a>
+  <a href="./0200_VSC_INSTALL.md">0200_VSC_INSTALL →</a>
 </h3>
