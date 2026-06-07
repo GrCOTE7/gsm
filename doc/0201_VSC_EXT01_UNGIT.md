@@ -45,7 +45,7 @@ OU + simple :
 
 S'ouvre dans un nouvel onglet - Un simple glissé-déplacé permet de le poser dans l'onglet principal pour profiter au max de l'écran.
 
-Et pour y fait un "add + commit + push", ça se résume à une case à renseigner, et 2 clics !!!
+Et pour y faire un "add + commit + push", ça se résume à une case à renseigner, et 2 clics !!!
 
 <div align="center">
   <a href="./imgs/201_vsc_ungit2.png" target="_blank">
