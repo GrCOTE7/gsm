@@ -18,15 +18,13 @@ Là encore, libre à vous de fouiller un peu dans cette très longue liste...
 
 Nous allons nous limiter ici à découvrir comment trouver, choisir, et installer une extension, puis à t'inviter à en utiliser certaines particulièrement intéressantes.
 
-### 🏗️ Installation d'une ext (Extension)
-
 Comme à notre habitude, apprenons par l'action !
 
-<div>Donc, installons ensemble notre 1<sup>ère</sup> extension et comme cedtte page de doc est celles des extensions VSC pour le Git... :</div>
+<div>Donc, installons ensemble notre 1<sup>ère</sup> extension et comme cette page de doc est celle des extensions VSC pour le Git... :</div>
 
-### 🔀 Extensions Spéciales Git
+### 🏗️ Installation d'une Extension Spéciale pour le Git 🔀
 
-La toute première est particulièrement adaptée pour les débutants en Git...
+La toute première est particulièrement adaptée aux débutants en Git...
 En effet, très graphique, on va pouvoir y faire add, commit et push de façon très intuitive. Son nom est "**Ungit**".
 
 <div align="center">
@@ -41,7 +39,7 @@ CTRL + MAJ + P → " ung " → Open Ungit
 
 OU + simple :
 
-### **MAJ + ALT + U → ungit**
+### **MAJ + ALT + U**
 
 S'ouvre dans un nouvel onglet - Un simple glissé-déplacé permet de le poser dans l'onglet principal pour profiter au max de l'écran.
 
