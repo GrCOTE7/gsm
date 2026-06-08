@@ -19,7 +19,7 @@ du dernier contributeur,
 <div>N. B. : La 1<sup>ère</sup> PR, c'est nécessairement <b>0201</b>, normalement... 😉</div>
 
 
-Ne faites pas une PR exprès, votre qualification sera qualifiée lors de votre prochain apport au projet.
+Par la suite, ne faites pas une PR exprès, votre qualification sera qualifiée lors de votre prochain réel apport au projet.
 
 |  Pseudo                 |    LV   |
 |-------------------------|---------|
