@@ -23,3 +23,7 @@ séparation des responsabilités
 lisibilité métier
 absence de duplication dangereuse
 évolutivité
+
+---
+
+https://www.star-history.com/?repos=GrCOTE7%2Fgsm&type=timeline&legend=top-left

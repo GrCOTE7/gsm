@@ -53,7 +53,7 @@ Pour avoir de belles formules scientifique ou mathématiques dans tes docs
 ### - [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
 Si tu fouilles, tu verras qu'il y a pas mal d'extensions qui upgrade encore celle-ci...
-Quoi qu'il en soit, nous nous en servirons dorénavant, dès le chapitre suivant, presque systématiquement, car adaptée pour faire du code Python exécutable dans la doc !!!
+Quoi qu'il en soit, nous nous en servirons dorénavant, dès le chapitre suivant presque systématiquement, car adaptée pour faire du code Python exécutable dans la doc !!!
 
 ---
 
