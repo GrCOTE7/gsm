@@ -2,7 +2,7 @@
 
 With Tests + APK Build + Google Drive upload
 
-## 🎯 Tools Used
+## 🛠️ Tools Used
 
 * **Conventional Commits**
 * **commitlint**

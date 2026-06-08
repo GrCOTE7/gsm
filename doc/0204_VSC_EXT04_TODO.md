@@ -21,3 +21,5 @@
       * [ ] To do à réaliser
       * [/] To do en cours
       * [x] To do réalisé
+
+.XXX → GC7

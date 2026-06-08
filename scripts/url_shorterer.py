@@ -3,8 +3,7 @@ import pyshorteners  # pip install -e ".[tools]"
 
 shortener = pyshorteners.Shortener()
 
-# ❌ À finir url_shorter
-
+# * [ ] À finir url_shorter → opérationnel
 
 class ShortLinkRow(ft.Row):
     def __init__(self, shortened_link, link_source):

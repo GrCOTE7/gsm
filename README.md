@@ -41,9 +41,9 @@ Pour **contribuer** au dev de ce projet (Et **en connaître tous les rouages et 
 
 ### * En ligne - Sans rien n'installer !
 
-Dans le page du dépôt (Original, ou de votre fork), appuyer sir ' , ' et générer un workspace.
+Dans le page du dépôt (Original, ou de votre fork), appuyer sur ' , ' et générer un codespace.
 
-Dans le terminal qui apparaît :
+Et dans le terminal qui apparaît enfin :
 
 ```bash
 ./go
@@ -291,15 +291,15 @@ C:\Users\utilisateur\AppData\Local\Android\Sdk\build-tools\34.0.0\apksigner.bat 
 
 ---
 
-## ❌ Pour logs du mobile dans PC
+## Pour logs du mobile dans PC
 
-Debug / Iphone :
+### Debug / Iphone
 
 .\adb logcat | Select-String "com.mycompany.upu"
 
 .\adb logcat | Select-String "python" | Select-String "com.mycompany.upu"
 
-❌ debug android / PC → Android Studio ?
+### Debug android / PC → Android Studio
 
 | Action                                    | Rebuild APK ? |
 |-------------------------------------------|---------------|
@@ -315,7 +315,7 @@ Debug / Iphone :
 
 ---
 
-## 🎯 Actuels goals prioritaires
+## .🎯 Actuels goals prioritaires
 
 * [ ] Finir docs de base (Git, VSC, Py) + Add autres docs initiatiques
 * [ ] Mettre en place dans le WorkFlow, le build pour IPhone (→ $Thera...)
