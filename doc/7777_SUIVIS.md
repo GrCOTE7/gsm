@@ -24,5 +24,3 @@ Ne faites pas une PR exprès, votre qualification sera qualifiée lors de votre 
 |  Pseudo                 |    LV   |
 |-------------------------|---------|
 |  GrCOTE7 / MP21170      |   0201  |
-
-GitHub/GRCOTE7/gsm → Ça peut devenir VOTRE raison de vivre !
