@@ -30,6 +30,8 @@ Quand tu te sens prêt, tu es content de ton dev, tu ouvres et gères toute la P
 - [ ] `git status` ne montre aucun fichier modifié non commité ?
 - [ ] `git fetch upstream` et `git log HEAD..upstream/main --oneline` # vide = tu es à jour avec `upstream/main` (pas de conflits) ?
 - [ ] `git push` → Ton push passe sans erreur ?
+
+    (Si tu n'a rien à `push`, cette commande 'te dira' : *'*Everything up-to-date* - Tout est à jour 😁 )
 - [ ] Tu as relu tes modifications une dernière fois sur GitHub (`/compare`) ?
 
 ---
@@ -81,7 +83,7 @@ Corriger des erreurs de formulation dans la doc Git.
   </a>
 </div>
 
-### Clique **Create pull request**
+### Clique sur **Create pull request** et ta page GH montre maintenant
 
 <div align="center">
   <a href="./imgs/111_pr_gh4.png" target="_blank">
@@ -107,7 +109,7 @@ Ils peuvent d'un seul coup d'oeil, comprendre l'objet de ton dev, comparer ton c
 
 Pas grave, une sorte de dialogue dans la page de ta PR se mets alors en place, dans lequel tout le monde peut intervenir 👍 💪 😊...
 
-## Profitons de messages que tu es susceptible de recevoir, pour t'inviter cordialement à activer les notifications
+## Pour profiter de tous les messages que tu es susceptible de pouvoir recevoir, nous t'invitons cordialement à activer les notifications
 
 <div align="center">
   <a href="./imgs/111_pr_gh6.png" target="_blank">
@@ -115,7 +117,7 @@ Pas grave, une sorte de dialogue dans la page de ta PR se mets alors en place, d
   </a>
 </div>
 
-### → Ainsi, tu auras toutes les dernières infos en priorité 👍
+### → Ainsi, tu auras toujours toutes les dernières infos en priorité 👍
 
 ## 3. Erreurs fréquentes
 
