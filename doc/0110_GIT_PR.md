@@ -44,7 +44,7 @@ Une **PR** est une demande de fusion de ton code vers le dépôt cible.
 
 Dans notre contexte GSM, cela signifie :
 
-- Tu développes sur ton **fork**,
+- Tu développes en local, voire via codespaces,
 - tu pushes ta branche de dev sur ton fork,
 - puis tu demandes à fusionner cette branche vers le dépôt **upstream**.
 - À la fin, tu récupères en local la version la plus à jour et validée.
@@ -64,7 +64,7 @@ sequenceDiagram
 ℹ️ * : Mc = machine
 
 NB : Dans un codespace, le [PR ne se fait simplement que sur le site GH](./0111_GIT_PR_GH.md)
-(En CLI, c'est possible, mais faut [ajouter gh-cli](./imgs/110_pr_cli_codespace.png), [définir le repo default, et après, on peut PR](./imgs/110_pr_cli_codespace2.png)...)
+(En CLI, c'est possible, mais faut [ajouter gh-cli](./imgs/110_pr_cli_codespace.png), [définir le repo default, et après, on peut PR](./imgs/110_pr_cli_codespace2.png) en commande...)
 
 ---
 
@@ -91,9 +91,9 @@ Si ta branche n'est pas encore sur GH :
 git push -u origin dev/up_doc
 ```
 
-Le `-u` crée le lien local <-> distant. Ensuite, un simple `git push` suffit.
+Le `-u` crée le lien local <-> distant.
 
-Sinon, comme ta branche est déjà reliée (C'est le cas si tu es dans notre exemple du fork de GSM), cela suffit :
+Dans notre exemple du fork de GSM, ta brabranche est déjçà reliée, et donc suffit dorénavant :
 
 ```bash
 git push
@@ -119,7 +119,7 @@ gh pr create \
 
 ℹ️ --base main = branche main du dépôt upstream (gc7/gsm).
 
-ℹ️ MP21170 → **ton pseudo G**it**H**ub (celui visible dans l’URL de ton fork).
+ℹ️ *MP21170* → **ton pseudo G**it**H**ub (celui visible dans l’URL de ton fork).
 
 Vérifier ensuite :
 
@@ -128,7 +128,7 @@ gh pr list
 gh pr view --web
 ```
 
-[Exemple dy cycle complet d'une PR](./imgs/110_complete_pr.png)
+👉 Voir un [exemple du **cycle complet d'une PR**](./imgs/110_complete_pr.png)
 
 ---
 
@@ -146,7 +146,7 @@ git commit -m "doc: applique retours review"
 git push
 ```
 
-La PR se met alors automatiquement à jour 👍.
+→ **La PR se met alors automatiquement à jour** 👍.
 
 ## Résumé express CLI
 
@@ -154,7 +154,7 @@ La PR se met alors automatiquement à jour 👍.
 # 1) créer branche
 git switch -c doc/ma-premiere-pr
 
-# 2) coder
+# 2) coder dessus
 # ...
 
 # 3) commit

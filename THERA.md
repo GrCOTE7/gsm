@@ -100,14 +100,13 @@ Donc, attaquons les choses concrètement utiles (Et, + cool, dorénavant, car vu
 
 ### [Ça commence ICI, le début du programme complet et détaillé : ./doc/0101_GIT_FORK)](./doc/0101_GIT_FORK.md)
 
-
 Et observe juste 2-3 p'tites choses... :
 
-    - T'as t'on demandé ici, un *diploume* ?
-    - Demandé pour qui tu te prends ? De quel droit tu te permets d'émettre un avis ?
-    - Vérifier que t'es le fils à tel Papa, ou autre privilègié ?
-    - À quelle dininité tu crois ?
-    - Au fait, t'es plutôt caucasien, jaune, gris, brown...? vert ?:?
+- T'as t'on demandé ici, un *diploume* ?
+- Demandé pour qui tu te prends ? De quel droit tu te permets d'émettre un avis ?
+- Vérifier que t'es le fils à tel Papa, ou autre privilègié ?
+- À quelle dininité tu crois ?
+- Au fait, t'es plutôt caucasien, jaune, gris, brown...? vert ?:?
 
 → Non : Ici, là et maintenant, **TU ES TOI** ! Et enfin, là, ici et maintenant, **enfin au bon endroit au bon moment !!!** Et seulement TOI et TOI SEUL peut comprendre et doit accepter l'idée que **TON RÔLE est CAPITAL,** pas indispensable, juste CAPITAL **et IMPORTANT** et que **TU VAS** CEPENDANT, SOUS PEU, **AGIR** CONCRÈTEMENT **SUR LE PROJET OFFICIEL !** 
 

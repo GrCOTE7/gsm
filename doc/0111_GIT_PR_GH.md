@@ -12,9 +12,9 @@
 
 ### **La dernière étape et la + importante : Celle qui te permet d'officialiser ton dev :**
 
----
-
 ## **→ PR sur le site GH : La Puissance Ultime du Git et la Simplicité en + !**
+
+---
 
 Tu fais ton dev en local comme d'habitude, tu *commit*, tu *push*, etc...
 

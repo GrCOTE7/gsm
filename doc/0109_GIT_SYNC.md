@@ -18,11 +18,11 @@
   </a>
 </div>
 
-On a vu les inter-actions Fork - Local (Flèches orange et bleue)
+On a vu les flèches orange et bleue- Les interactions Fork & Local
 
-Maintenant, on va s'intéresser aux inter-actions avec le *upstream* (Flèches grise et jaune)
+Maintenant, on va s'intéresser aux flèches grise et jaune :
 
-## Les interactions avec l'upstream
+## Les interactions avec l'***Upstream***
 
 ### 🔄 Fetch upstream (flèche grise)
 
@@ -147,8 +147,6 @@ git merge --continue   # ou : git rebase --continue
 ---
 
 > 🎉 Ton fork est maintenant **à jour** avec le projet original. Tu peux continuer à coder sans être en retard sur le projet !
-
-Cela te permet d'avoir la *main*, toute proche conforme au dépôt GH source (Comme [tu l'avais peut-être synchronisé directement sur GH, juste avant ton clone](./0102_GIT_CLONE.md))
 
 ---
 
