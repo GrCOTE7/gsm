@@ -12,6 +12,9 @@
 
 ## Pourquoi VSC ?
 
+
+
+
 Il existe des milliers d'éditeurs, + ou moins spécialisés pour une techno voire un language spécifique...
 
 Nous préconisons ici **[VSCode](https://code.visualstudio.com/)** , car :
