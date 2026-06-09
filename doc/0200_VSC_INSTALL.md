@@ -33,7 +33,7 @@ Teste par exemple GG, **G**it **G**raph :
   </a>
 </div>
 
-Mais libre à vous d'utiliser l'éditeur autre que vous voulez, quitte à en adapter vous-même les réglages pour retrouver des fonctionalités avancées comme celles présentées dans les pages qui suivent...
+Mais libre à toi d'utiliser tout autre éditeur avec lequel tu es peut-être déjà à l'aise, quitte à en adapter toi-même les réglages pour retrouver des fonctionalités avancées comme celles présentées dans les pages qui suivent...
 
 ## 🏗️ Installation
 
