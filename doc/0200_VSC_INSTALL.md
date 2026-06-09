@@ -17,13 +17,21 @@ Il existe des milliers d'éditeurs, + ou moins spécialisés pour une techno voi
 Nous préconisons ici **[VSCode](https://code.visualstudio.com/)** , car :
 
 - Gratos,
-- et de très nombreuses extensions existent, dont beaucoup pour le Git**... Comme par hasard...Et qui rende son usage (du Git) aussi ludique que de jouer à Tétris !
+- et de très nombreuses extensions existent, dont beaucoup pour le **Git**... Comme par hasard...Et qui rende son usage (du Git) aussi ludique que de jouer à Tétris !
 
 <br><div align="center">
-    <a href="https://vscode.dev/?vscode-lang=fr-fr" target="_blank"><b>👉 Voyez par vous même en LIVE !</b></a>
+    <a href="https://vscode.dev/?vscode-lang=fr-fr" target="_blank"><b>👉 Démp de VSC en LIVE !</b></a>
 </div><br>
 
-À noter que c'est aussi l'éditeur que l'on retrouve dans [nos codespaces](https://codespaces.new/MP21170/gsm) 😉
+À noter que c'est aussi l'éditeur que l'on retrouve dans [nos codespaces](https://codespaces.new/MP21170/gsm) dans lesquels tu y as même certaines de nos extensions préférées 😉
+
+Teste par exemple GG, **G**it **G**raph :
+
+<div align="center">
+  <a href="./imgs/200_vsc_gg.png" target="_blank">
+    <img src="./imgs/200_vsc_gg.png" width="500" title ='Git Graph dans un codespace avec VSC' alt ='Capture de Git Graph dans un codespace avec VSC'>
+  </a>
+</div>
 
 Mais libre à vous d'utiliser l'éditeur autre que vous voulez, quitte à en adapter vous-même les réglages pour retrouver des fonctionalités avancées comme celles présentées dans les pages qui suivent...
 
