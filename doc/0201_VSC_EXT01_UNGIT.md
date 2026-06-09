@@ -1,9 +1,9 @@
 <h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
 
-<h1><div align='center'>VSC - Extension Ungit</div></h1>
+<h1><div align='center'>VSC - Extension Un<b>git</b></div></h1>
 
 <h3 align="center">
-  <a href="./0200_VSC_INSTALL.md">← 02001_VSC_INSTALL</a>
+  <a href="./0200_VSC_INSTALL.md">← 0201_VSC_INSTALL</a>
                      
   <a href="./0202_VSC_EXT02_GG.md">0202_VSC_EXT02_GG →</a>
 </h3>
@@ -16,15 +16,15 @@ Précédemment, nous disions au sujet des extensions de VSC : "de très nombreus
 
 Là encore, libre à vous de fouiller un peu dans cette très longue liste...
 
-Nous allons nous limiter ici à découvrir comment trouver, choisir, et installer une extension, puis à t'inviter à en utiliser certaines particulièrement intéressantes.
+Nous allons nous limiter ici à découvrir comment trouver, choisir, et installer une extension, puis à t'inviter à en utiliser certaines particulièrement intéressantesentre autre, pour notre parfaite collaboration tous ensemble.
 
 Comme à notre habitude, apprenons par l'action !
 
 <div>Donc, installons ensemble notre 1<sup>ère</sup> extension et comme cette page de doc est celle des extensions VSC pour le Git... :</div>
 
-### 🏗️ Installation d'une Extension Spéciale pour le Git 🔀
+### 🏗️ Installation d'une Extension Spécifique au Git 🔀
 
-La toute première est particulièrement adaptée aux débutants en Git...
+La toute première est particulièrement adaptée aux débutants en Git... Mais elle tellement sympa, agréable et parfois, marrante, que tu peux continuer à l'utilser ensuite...
 En effet, très graphique, on va pouvoir y faire add, commit et push de façon très intuitive. Son nom est "**Ungit**".
 
 <div align="center">
