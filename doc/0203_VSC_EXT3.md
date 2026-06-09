@@ -37,16 +37,38 @@ Ouvre automatiquement sur la droite, la prévisualisation d'un document Markdown
 
 Tu connais déjà, en fait ! C'est ce genre de schéma que t'as vu lors de la leçon **[Git PR](./0110_GIT_PR.md)**
 
-### - [Markmap Universe](https://marketplace.visualstudio.com/items?itemName=maxchang.vscode-markmap-universe)
-
 ### - [MM - Markmap](https://marketplace.visualstudio.com/items?itemName=gera2ld.markmap-vscode)
 
-<div>Visualise tes docs markdown - Ma 2<sup>ème</sup> extension préférée...</div>
+<div>Visualise tes docs markdown - C'est ma 2<sup>ème</sup> extension préférée...</div>
 
-#### 👉 [Regarde un exemple de ce qu'on peut faire avec](https://laravel.sillo.org/doc/laravel)
+### 👉 [Regarde un exemple de ce qu'on peut faire avec](https://laravel.sillo.org/doc/laravel) 👌
 
-Pour nous, [notre doc pourrait être ainsi présentée](0277_VSC) - Attention : Appréciable que dans VSC, pas GH...
+Pour nous, [notre doc pourrait être ainsi présentée](./0277_VSC_MM.md) - ⚠️ Attention : Appréciable que dans VSC, pas sur GH... Ou à terme, hébergée sur un serveur Web.
 
+<div align="center">
+  <a href="./imgs/203_vsc_mm1.png" target="_blank">
+    <img src="./imgs/203_vsc_mm1.png" width='400' title='MindMap' alt='MindMap Preview'>
+  </a>
+</div>
+<hr>
+<div align="center">
+  <a href="./imgs/203_vsc_mm2.png" target="_blank">
+    <img src="./imgs/203_vsc_mm2.png" width='400' title='MindMap' alt='MindMap Preview'>
+  </a>
+</div>
+<hr>
+<div align="center">
+  <a href="./videos/203_vsc_mm3.mp4" target="_blank" title="Voir la video en grand">
+    <video width="400" controls poster="./imgs/203_vsc_mm2.png">
+      <source src="./videos/203_vsc_mm3.mp4" type="video/mp4">
+      Ton navigateur/aperçu ne supporte pas la balise video.
+    </video>
+  </a>
+<br>
+
+### - [Markmap Universe](https://marketplace.visualstudio.com/items?itemName=maxchang.vscode-markmap-universe)
+
+Une extension aussi orientée représentation de Mind Maps, mais très récente et cependant for prometteuse. Par exemple, le **rendu** peut aussi être **visible dans des page GitHub page** (Comme celles du site [PyMox.fr](http://PyMox.fr) - Et d'ailleurs, comme il s'agît aussi d'un projet OpenSource, et que tu es maintenant en principe, rompu aux PR, n'hésite pas pourquoi pas à poser une petite MindMap sur une des pages... Et un PR ici pour améliorer alors le liens ci-avant...)
 
 ### - [Markdown Emoji](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji)
 

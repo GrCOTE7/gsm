@@ -52,7 +52,7 @@ Plus qu'à push et 2 façons de faire :
   </a>
 </div>
 
-Pour finir, observe que le clic droit sur la branche et le commit offre des fonctionalités différentes 🧮 
+Pour finir, observe que le clic droit sur la branche et le commit offre des fonctionalités différentes : 
 
 <div align="center">
 
