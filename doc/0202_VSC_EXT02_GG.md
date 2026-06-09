@@ -1,6 +1,6 @@
 <h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
 
-<h1><div align='center'>VSC - GG (GitGraph)</div></h1>
+<h1><div align='center'>VSC - GG (<b>G</b>it <b>G</b>raph)</div></h1>
 
 <h3 align="center">
   <a href="./0201_VSC_EXT01_UNGIT.md">← 0201_VSC_EXT01_UNGIT</a>
@@ -12,7 +12,7 @@
 
 ## 📋 Extensions VSCode recommandées pour le Git (Suite)
 
-## [GG - **G**it **G**raph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+## [**GG** - **G**it **G**raph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
 
 C'est mon extension préférée - La grande soeur + PRO d'Ungit qui peut faillir sur de gros dépôts... Et surtout, on **peut même y gérer graphiquement les PR !!!**
 
@@ -26,7 +26,7 @@ Clique sur "Git Graph", en bas dans la barre d'état de ton éditeur.
   </a>
 </div>
 
-Tu te souviens quand ton foek est en retard sur l'upstream...? Tu allais sur ton GH et SYNC
+Tu te souviens quand ton fork est en retard sur l'upstream...? Tu allais sur ton GH et SYNC... (Si pas: Revois [0102](./0102_GIT_CLONE.md) !)
 
 <div align="center">
   <a href="./imgs/202_vsc_gg1.png" target="_blank">
@@ -66,18 +66,19 @@ Pour finir, observe que le clic droit sur la branche et le commit offre des fonc
 
 </div>
 
-Si tu as bien suivi la partie précédent GIT (la série 01xx_GIT des docs), tu ne devrais pas avoir de difficulté à comprendre le rôle de ces fonctionalités.
+Si tu as bien suivi la partie précédente détaillant les commandes en CLI pour le GIT (la série 01xx_GIT des docs), tu ne devrais pas avoir de difficulté à comprendre le rôle de ces fonctionalités.
 
 Et enfin, look que le clic normal sur le commit te montre les fichiers modifiés, puis le clic sur un fichier, les modifications effectuées.
 
 ### Et quelques autres importantes pour le Git
 
-Tu as compris qu'en un clic, tu peux installer une extension, et juste un autre clic si tu veux la désinstaller... Alors n'hésite pas à fouiller *à donf* dans la bibliothèque de ces extensions ! Et peut-être un jour feras tu une PR pour en suggérer l'usage d'une d'entre elles 👍
+Tu as compris qu'en un clic, tu peux installer une extension, et juste un autre clic si tu veux la désinstaller... Alors n'hésite pas à fouiller *à donf* dans la bibliothèque de ces extensions ! Et peut-être un jour feras tu une PR dans notre projet pour en suggérer l'usage d'une d'entre elles 👍
+
+Dans cette attente, look :
 
 - [Git File History](https://marketplace.visualstudio.com/items?itemName=pomber.git-file-history)
 - [gitignore](https://marketplace.visualstudio.com/items?itemName=michelemelluso.gitignore)
 - [GitHub Repositories](https://marketplace.visualstudio.com/items?itemName=GitHub.remotehub)
-
 
 ## Autres outils Git pouvant servir
 

@@ -15,15 +15,21 @@
 Nous allons voir 2 sortes d'extensions :
 
 - Pas besoin particulièrement de paramètres
-- Ou nécessite des paramètres pour accomplir ce que l'on en attend
+- Ou nécessite des paramètres pour accomplir ce que l'on en attend.
 
-Donc, pour les premières, nous nous contentons ici de citer leur nom (avec le ien pour les installer en 1 clic) - Juste éventuellement quelques mots
+Donc, pour les premières, nous nous contentons ici de citer leur nom (avec le lien pour les installer en 1 clic) - Juste éventuellement quelques mots...
 
 Les secondes feront chacune l'objet d'une page dédiée à la suite de celle-ci.
 
 ### - [Auto-Open Markdown Preview](https://marketplace.visualstudio.com/items?itemName=hnw.vscode-auto-open-markdown-preview)
 
-Ouvre automatiquement la prévisualisation d'un document Markdown (comme le présent fichier) à son ouverture.
+Ouvre automatiquement sur la droite, la prévisualisation d'un document Markdown à son ouverture.
+
+<div align="center">
+  <a href="./imgs/203_vsc_md_preview.png" target="_blank">
+    <img src="./imgs/203_vsc_md_preview.png" width='400' title='MarkDown Preview' alt='MarkDown Preview'>
+  </a>
+</div>
 
 ---
 

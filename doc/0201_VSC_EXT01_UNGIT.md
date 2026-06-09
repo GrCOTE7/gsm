@@ -24,7 +24,7 @@ Comme à notre habitude, apprenons par l'action !
 
 ### 🏗️ Installation d'une Extension Spécifique au Git 🔀
 
-La toute première est particulièrement adaptée aux débutants en Git... Mais elle tellement sympa, agréable et parfois, marrante, que tu peux continuer à l'utilser ensuite...
+La toute première est particulièrement adaptée aux débutants en Git... Mais elle est tellement sympa, agréable et parfois, marrante, que tu peux bien-sûr continuer à l'utilser ensuite...
 En effet, très graphique, on va pouvoir y faire add, commit et push de façon très intuitive. Son nom est "**Ungit**".
 
 <div align="center">
@@ -59,9 +59,9 @@ Et la conséquence est évidemment très graphique et parlante 😁 !
   </a>
 </div>
 
-À noté: La présence d'un bouton " Fetch from origin "... Et de la possibilité d'y ajouter là, des remotes...
+À noter : La présence d'un bouton " Fetch from origin "... Et de la possibilité d'y ajouter là, des remotes...
 
-Et également, chaque gros rond représente un commit... En cliquant dessus, tu vois les fichiers mofifiés lors de ce commit, et en cliquant sur le nom du fichier, les lignes modifiées !!! Plutôt pratique, non ?
+Et également, chaque gros rond représente un commit... En cliquant dessus, tu vois les fichiers modifiés lors de ce commit, et en cliquant sur le nom du fichier, les lignes changées !!! Plutôt pratique, non ?
 
 <div align="center">
   <a href="./imgs/201_vsc_ungit4.png" target="_blank">
