@@ -33,13 +33,13 @@ Teste par exemple GG, **G**it **G**raph :
   </a>
 </div>
 
-Mais libre à toi d'utiliser tout autre éditeur avec lequel tu es peut-être déjà à l'aise, quitte à en adapter toi-même les réglages pour retrouver des fonctionalités avancées comme celles présentées dans les pages qui suivent...
+---
 
-## 🏗️ Installation
+Mais libre à toi d'utiliser tout autre éditeur avec lequel tu es peut-être déjà à l'aise, quitte à en adapter toi-même les réglages pour retrouver des fonctionalités avancées comme celles présentées dans les quelques pages qui suivent...
 
-### 👉 [Installer VSC](https://code.visualstudio.com/download)
+## 🏗️ 👉 [Installer VSC](https://code.visualstudio.com/download)
 
-Noter que ce site poopose aussi la documentation de l'éditeur (En anglais)
+Noter que ce site propose aussi la documentation de l'éditeur (En anglais), mais si besoin de nombreux tutoriels (y compris en français et sous forme de vidéos YT) existent.
 
 ## 🧰 Raccourcis usuels
 
@@ -57,10 +57,10 @@ CTRL + ALT + S : Surround
 CTRL + u + u : Min/MAJ switch (bascule)
 ```
 
-Et de nombreux raccourci habituels même à d'autre programmes, fonctionnent aussi :
+Et de nombreux raccourcis habituels même communs à d'autres programmes, fonctionnent aussi :
 
-CTRl + S : Enregistrer (Encore que l'éditeur permet d'automatiser cela)
-CTRL + C / CTRL + V : **C**opier / **V**a !
+- CTRl + S : Enregistrer (Encore que l'éditeur permet d'automatiser cela également)
+- CTRL + **C** / CTRL + **V** : **C**opier / **V**a - Le classique Copier/Coller !
 
 ## 🛠️ Paramétrages
 
@@ -81,7 +81,7 @@ Pour l'éditer :
   </a>
 </div>
 
-→ Si tu connais un moyen + simple, + rapide... : PR ! 😊
+→ 💡 Si tu connais un moyen + simple, + rapide... : PR ! 😊
 
 Voici quelques premiers params recommandés :
 
@@ -99,7 +99,7 @@ Voici quelques premiers params recommandés :
 }
 ```
 
-Dans ce .json, le nom des clé est suffisament évocateur poour que vous en compreniez d'emblée leur rôle... Et naturellement, libre à vous d'adapter leurs valeurs selon vos préférences.
+Dans ce .json, le nom des clé est suffisament évocateur pour que tu en comprenes d'emblée le rôle... Et naturellement, libre à toi d'adapter leurs valeurs selon tes gouts et préférences.
 
 ---
 
