@@ -64,23 +64,45 @@ Pour nous, [notre doc pourrait être ainsi présentée](./0277_VSC_MM.md) - ⚠�
       Ton navigateur/aperçu ne supporte pas la balise video.
     </video>
   </a>
-<br>
+</div>
 
 ### - [Markmap Universe](https://marketplace.visualstudio.com/items?itemName=maxchang.vscode-markmap-universe)
 
-Une extension aussi orientée représentation de Mind Maps, mais très récente et cependant for prometteuse. Par exemple, le **rendu** peut aussi être **visible dans des page GitHub page** (Comme celles du site [PyMox.fr](http://PyMox.fr) - Et d'ailleurs, comme il s'agît aussi d'un projet OpenSource, et que tu es maintenant en principe, rompu aux PR, n'hésite pas pourquoi pas à poser une petite MindMap sur une des pages... Et un PR ici pour améliorer alors le liens ci-avant...)
+Une extension aussi orientée représentation de Mind Maps, mais très récente et cependant for prometteuse. Par exemple, le **rendu** peut aussi être **visible dans des page GitHub page** (Comme celles du site [PyMox.fr](http://PyMox.fr) - Et d'ailleurs, comme il s'agît aussi d'un projet OpenSource et que tu es maintenant en principe rompu aux PR, n'hésite pas pourquoi pas à poser une petite MindMap sur une des pages... Et un PR ici pour améliorer alors le liens de la démo ci-avant...)
 
 ### - [Markdown Emoji](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji)
 
+CTRL + MAJ + E (Comme **E**xtension) pour en choisir un. Pour les + usités pour illustrer du texte, un [fichier TIPS dans notre doc/](./TIPS.md) permet d'en selectionner un rapidement 😉 (Vois la capture juste tout en haut de cette page...).
+
 ### - [Markdown+Math](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath)
 
-Pour avoir de belles formules scientifique ou mathématiques dans tes docs
+Pour avoir de belles formules scientifique ou mathématiques dans tes docs, comme celle que tu connais déjà et qui résume le quotidien d'un codeur (Au passage, elle a certainement + de sens pour toi maintenant...) :
+
+$$
+\textcolor{white}{\text{Dev du contributeur GSM} =}
+\underbrace{
+\Bigg(
+    \Big(
+      \underbrace{
+          \underbrace{
+            \textcolor{cyan}{(\text{Codage} + \text{Commit})}
+          }_{\textcolor{cyan}{\text{Unité de travail}}}
+          \textcolor{lime}{\times x}
+          + \textcolor{yellow}{\text{Push}}
+        \textcolor{lime}{\times y}
+      \Big)
+      }_{\textcolor{yellow}{\text{Itérations locales}}}
+      + \textcolor{orange}{\text{PR}}
+    }_{\textcolor{orange}{\text{Cycle complet}}}
+\Bigg)\textcolor{lime}{\times z}
+$$
 
 ---
 
 ### - [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
-Si tu fouilles, tu verras qu'il y a pas mal d'extensions qui upgrade encore celle-ci...
+Si tu fouilles la bibliothèque des extensions, tu verras qu'il y a pas mal d'extensions qui upgrade encore celle-ci...
+
 Quoi qu'il en soit, nous nous en servirons dorénavant, dès le chapitre suivant presque systématiquement, car adaptée pour faire du code Python exécutable dans la doc !!!
 
 ---
