@@ -12,9 +12,6 @@
 
 ## Pourquoi VSC ?
 
-
-
-
 Il existe des milliers d'éditeurs, + ou moins spécialisés pour une techno voire un language spécifique...
 
 Nous préconisons ici **[VSCode](https://code.visualstudio.com/)** , car :
@@ -23,10 +20,10 @@ Nous préconisons ici **[VSCode](https://code.visualstudio.com/)** , car :
 - et de très nombreuses extensions existent, dont beaucoup pour le **Git**... Comme par hasard...Et qui rende son usage (du Git) aussi ludique que de jouer à Tétris !
 
 <br><div align="center">
-    <a href="https://vscode.dev/?vscode-lang=fr-fr" target="_blank"><b>👉 Démp de VSC en LIVE !</b></a>
+    <a href="https://vscode.dev/?vscode-lang=fr-fr" target="_blank"><b>👉 Démo de VSC en LIVE !</b></a>
 </div><br>
 
-À noter que c'est aussi l'éditeur que l'on retrouve dans [nos codespaces](https://codespaces.new/MP21170/gsm) dans lesquels tu y as même certaines de nos extensions préférées 😉
+À noter que c'est aussi l'éditeur que l'on retrouve dans [nos codespaces](https://codespaces.new/MP21170/gsm) dans lesquels tu y as même certaines de nos extensions préférées 😉 (Rappel pour lancer l'appli: ./go en CLI)
 
 Teste par exemple GG, **G**it **G**raph :
 

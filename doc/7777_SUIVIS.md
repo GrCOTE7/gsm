@@ -21,6 +21,6 @@ du dernier contributeur,
 
 Par la suite, ne faites pas une PR exprès, votre qualification sera qualifiée lors de votre prochain réel apport au projet.
 
-|  Pseudo                 |    LV   |
+|  Pseudo                 |  **LV** |
 |-------------------------|---------|
-|  GrCOTE7 / MP21170      |   0201  |
+|  GrCOTE7 / MP21170      |   0200  |
