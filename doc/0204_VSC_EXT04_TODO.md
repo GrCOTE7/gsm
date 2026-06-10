@@ -20,12 +20,12 @@ En effet, quand on code, une bonne partie de notre temps consiste à toujours ap
 
 Mais du coup, ça peut éveiller en nous plusieurs choses :
 
-- Dans une doc, on tombe sur une notion qu'on aimerait bien appronfondir pour X raison,
-- Et dans notre réflexion, la pensée d'autre chose à absolument tester...
+- Dans une doc, on tombe sur une notion qu'on aimerait bien appronfondir pour X raisons,
+- Et dans notre réflexion, la pensée d'autres choses à absolument tester au + vite...
 
-Bref, sans parler de notifs, ou encarts qu'on voit par ci, par là... Autant de fortes raisons d'être vite diverti et d'en perdre le fil de notre objectif initial ! Car en +, si on ne creuse pas de suite, la peur de perdre une info, une ressource précieuse...
+Bref, sans parler de notifs, ou encarts qu'on voit par ci, par là... Autant de fortes raisons d'être vite divertis et d'en perdre complètement le fil de notre objectif initial ! Car en +, si on ne creuse pas de suite, on garde aussi la peur de perdre une info, peut-être cruciale, d'une ressource précieuse...
 
-Notre système ShortCut + Better Comment + ToDo est la solution optimale !
+Notre système ShortCut + Better Comment + ToDo est la **Solution Optimal**e !
 
 Et **la lecture de cette seule page et de la suivante va te l'offrir intégralement !**
 
