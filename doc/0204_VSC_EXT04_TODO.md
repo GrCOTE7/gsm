@@ -12,11 +12,11 @@
 
 ## Notre système : **ShortCuts + Better Comment + ToDo → Efficience GARANTIE !**
 
-Les "ToDo list", tu connais... Tu en a peut-être même codé le code, une appli dans le cadre de l'apprentissage d'un langage ou autre...
+Les "ToDo list", tu connais... Tu en a peut-être même "codé le code", une appli dans le cadre de l'apprentissage d'un langage ou autre...
 
 Mais pour nous, cette extension va nous permettre de gagner énormément en efficience !
 
-En effet, quand on code, une bonne partie de notre temps cnsiste à toujours apprendre... On en lis, des signatures, on en voit, des exemples, etc...
+En effet, quand on code, une bonne partie de notre temps consiste à toujours apprendre... On en lis, des signatures, on en voit, des exemples, etc...
 
 Mais du coup, ça peut éveiller en nous plusieurs choses :
 
@@ -29,7 +29,7 @@ Notre système ShortCut + Better Comment + ToDo est la solution optimale !
 
 Et **la lecture de cette seule page et de la suivante va te l'offrir intégralement !**
 
-→ *T'ennuyer plus jamais tu ne connaîtras !*
+→ *Et en +, t'ennuyer plus jamais tu ne connaîtras !*
 
 ## ShortCuts - Raccourcis
 
