@@ -1,4 +1,4 @@
-<h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
+<h3><div align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
 
 <h1><div align='center'>VSC - GG (<b>G</b>it <b>G</b>raph)</div></h1>
 
@@ -100,4 +100,4 @@ C’est un peu le “couteau suisse premium” pour ceux qui veulent une vue gra
   <a href="./0201_VSC_EXT01_UNGIT.md">← 0201_VSC_EXT01_UNGIT</a>
                   
   <a href="./0203_VSC_EXT3.md">0203 VSC EXT MAJEURES →</a>
-</h3
+</h3>

@@ -1,11 +1,11 @@
-<h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
+<h3><div align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
 
 <h1><div align='center'>VSC - SBCTD 3</div></h1>
 
 <h3 align="center">
-  <a href="./0203_VSC_XXX.md">← XXX</a>
+  <a href="./0205_VSC_SBCTD2.md">← 0205_VSC_SBCTD2</a>
                      
-  <a href="./0205_VSC_XXX.md">XXX →</a>
+  <a href="./0207_VSC_SBCTD4.md">0207_VSC_SBCTD4 →</a>
 </h3>
 
 ---
@@ -25,3 +25,11 @@
       * [x] To do réalisé
 
 # ❌ To be continued... 🚧
+
+---
+
+<h3 align="center">
+  <a href="./0205_VSC_SBCTD2.md">← 0205_VSC_SBCTD2</a>
+                     
+  <a href="./0207_VSC_SBCTD4.md">0207_VSC_SBCTD4 →</a>
+</h3>

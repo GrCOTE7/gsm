@@ -1,4 +1,4 @@
-<h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
+<h3><div align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
 
 <h1><div align='center'>11/12. GIT <b>PR</b> (SITE <b>GH</b>)</div></h1>
 

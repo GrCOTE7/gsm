@@ -3,14 +3,14 @@
 <h1><div align='center'>VSC - Extensions Organisationnelles - SBCTD 1</div></h1>
 
 <h3 align="center">
-  <a href="./0203_VSC_XXX.md">← XXX</a>
+  <a href="./0203_VSC_EXT3.md">← 0202_VSC_EXT02_GG</a>
                      
-  <a href="./0205_VSC_XXX.md">XXX →</a>
+  <a href="./0205_VSC_SBCTD2.md">0204_VSC_SBCTD1 →</a>
 </h3>
 
 ---
 
-## Notre système : SBCTD - **S**hortcuts + **B**etter **C**omment + **T**o**D**o → [Efficience](https://fr.wikipedia.org/wiki/Efficience) GARANTIE !**
+## Notre système : SBCTD - **S**hortcuts + **B**etter **C**omment + **T**o**D**o → **[Efficience](https://fr.wikipedia.org/wiki/Efficience) GARANTIE !**
 
 Les "ToDo list", tu connais... Tu en a peut-être même "codé le code", une appli dans le cadre de l'apprentissage d'un langage ou autre...
 
@@ -38,7 +38,7 @@ Là, il ne s'agît pas vraiment d'une extension ([Bien que si tu cliques là, su
 En effet, d'emblée, de nombreux raccourcis (claviers → *keybindings*) existent :
 
 <div align="center">
-  <a href="./imgs/204_vsc0_shortcuts.png" target="_blank">
+  <a href="./imgs/204_vsc1_shortcuts.png" target="_blank">
     <img src="./imgs/204_vsc1_shortcuts.png" width='400' title='Shortcuts' alt='Shortcuts Preview'>
   </a>
 </div>
@@ -71,6 +71,16 @@ Et voici comment en rajouter un : Exemple: **CTRL + ALT + x**
   </a>
 </div>
 
-### 👉 + simple : Édite ce fichier et remplace son contenu par celui du fichier : [gsm/doc/files/keybindings.json](./files/keybindings.json)
+### 👉 + simple : Édite ce fichier et ajoute à son contenu de celui du fichier : [gsm/doc/files/keybindings.json](./files/keybindings.json)
 
-# ❌ To be continued... 🚧
+Je ne sais plus trop quelles items (paires clé-valeur) sont d'origine, donc, elles sont dans l'ordre alphabétique, permettant un dédoublonage + aisé.
+
+💡 Et si toi, tu viens de poser ces settings dans un VSC 'tout neuf' (Pas comme moi, avec un système de dentralisation des settings qui me repose instantannément tous mes settings et extensions automatiquement à chaque nouvelle installation), hésite pas à dédoubler dans ce fichier, ces settings proposés en ajout de ceux originaux, puis, tu connais maintenant...: **PR** ✌️ !
+
+---
+
+<h3 align="center">
+  <a href="./0203_VSC_EXT3.md">← 0202_VSC_EXT02_GG</a>
+                     
+  <a href="./0205_VSC_SBCTD2.md">0204_VSC_SBCTD1 →</a>
+</h3>

@@ -1,11 +1,11 @@
-<h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
+<h3><div align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
 
 <h1><div align='center'>VSC - EXTENSIONS MAJEURES</div></h1>
 
 <h3 align="center">
   <a href="./0202_VSC_EXT02_GG.md">← 0202_VSC_EXT02_GG</a>
                      
-  <a href="./0204_VSC_EXT04_TODO.md">0204_VSC_EXT04_TODO →</a>
+  <a href="./0204_VSC_SBCTD1.md">0204_VSC_SBCTD1 →</a>
 </h3>
 
 ---
@@ -108,5 +108,5 @@ Quoi qu'il en soit, nous nous en servirons dorénavant, dès le chapitre suivant
 <h3 align="center">
   <a href="./0202_VSC_EXT02_GG.md">← 0202_VSC_EXT02_GG</a>
                      
-  <a href="./0204_VSC_EXT04_TODO.md">0204_VSC_EXT04_TODO →</a>
+  <a href="./0204_VSC_SBCTD1.md">0204_VSC_SBCTD1 →</a>
 </h3>

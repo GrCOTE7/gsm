@@ -1,11 +1,11 @@
-<h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
+<h3><div align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
 
 <h1><div align='center'>VSC - SBCTD 2</div></h1>
 
 <h3 align="center">
-  <a href="./0204_VSC_XXX.md">← XXX</a>
+  <a href="./0204_VSC_SBCTD1.md">← 0204_VSC_SBCTD1</a>
                      
-  <a href="./XXX.md">XXX →</a>
+  <a href="./0206_VSC_SBCTD3.md">0206_VSC_SBCTD3 →</a>
 </h3>
 
 ---
@@ -17,3 +17,11 @@
 Cela peut paraître anodin, comme extension... Mais vous allez vite en voir l'intérêt majeur, quand en +, elle sera couplée à celle que nous découvrirons juste dans la page suivante... (ToDo Tree)
 
 # ❌ To be continued... 🚧
+
+---
+
+<h3 align="center">
+  <a href="./0204_VSC_SBCTD1.md">← 0204_VSC_SBCTD1</a>
+                     
+  <a href="./0206_VSC_SBCTD3.md">0206_VSC_SBCTD3 →</a>
+</h3>

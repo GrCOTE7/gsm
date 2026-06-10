@@ -19,38 +19,55 @@
     "command": "extension.git-file-history"
   },
   {
-    "key": "ctrl+u",
-    "command": "-cursorUndo",
-    "when": "textInputFocus"
+    "key": "ctrl+alt+c",
+    "command": "type",
+    "args": {
+      "text": "❌ "
+    }
   },
   {
-    "key": "ctrl+u ctrl+u",
-    "command": "extension.toggleUpperCase",
-    "when": "editorTextFocus"
+    "key": "ctrl+alt+d",
+    "command": "type",
+    "args": {
+      "text": "* [x]"
+    }
   },
   {
-    "key": "ctrl+u",
-    "command": "-extension.toggleUpperCase",
-    "when": "editorTextFocus"
+    "key": "ctrl+alt+E",
+    "command": "type",
+    "args": {
+      "text": "↗️ "
+    }
   },
   {
-    "key": "shift+alt+f",
-    "command": "-notebook.formatCell",
-    "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
+    "key": "ctrl+alt+f",
+    "command": "type",
+    "args": {
+      "text": "✅ "
+    }
   },
   {
-    "key": "shift+alt+f",
-    "command": "-editor.action.formatDocument.none",
-    "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
+    "key": "ctrl+alt+G",
+    "command": "type",
+    "args": {
+      "text": "🎯 "
+    }
   },
   {
-    "key": "ctrl+x",
-    "command": "-filesExplorer.cut",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    "key": "ctrl+alt+i",
+    "command": "-workbench.action.chat.open",
+    "when": "chatPanelParticipantRegistered"
   },
   {
-    "key": "ctrl+shift+alt+s",
-    "command": "-slackVSCode.sendSelection"
+    "key": "ctrl+alt+i",
+    "command": "-tabnine.chat.toggle-focus"
+  },
+  {
+    "key": "ctrl+alt+L",
+    "command": "type",
+    "args": {
+      "text": "🦄 "
+    }
   },
   {
     "key": "ctrl+alt+s",
@@ -62,34 +79,53 @@
     "command": "extension.surroundWithTag"
   },
   {
+    "key": "ctrl+alt+t",
+    "command": "type",
+    "args": {
+      "text": "* [ ]"
+    }
+  },
+  {
+    "key": "ctrl+alt+v",
+    "command": "type",
+    "args": {
+      "text": "✔"
+    }
+  },
+  {
+    "key": "ctrl+alt+W",
+    "command": "type",
+    "args": {
+      "text": "⚠️ "
+    }
+  },
+  {
+    "key": "ctrl+alt+x",
+    "command": "type",
+    "args": {
+      "text": "☢️ "
+    }
+  },
+  {
+    "key": "ctrl+f4",
+    "command": "-workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+f4",
+    "command": "-workbench.action.terminal.killEditor",
+    "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated && resourceScheme == 'vscode-terminal' || terminalEditorFocus && terminalFocus && terminalProcessSupported && resourceScheme == 'vscode-terminal'"
+  },
+  {
     "key": "ctrl+i",
     "command": "-extension.surroundWithTag"
   },
   {
-    "key": "ctrl+f4",
-    "command": "-workbench.action.closeActiveEditor"
+    "key": "ctrl+shift+alt+s",
+    "command": "-slackVSCode.sendSelection"
   },
   {
-    "key": "ctrl+f4",
-    "command": "-workbench.action.terminal.killEditor",
-    "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated && resourceScheme == 'vscode-terminal' || terminalEditorFocus && terminalFocus && terminalProcessSupported && resourceScheme == 'vscode-terminal'"
-  },
-  {
-    "key": "ctrl+w",
-    "command": "workbench.action.closeActiveEditor"
-  },
-  {
-    "key": "ctrl+w",
-    "command": "-workbench.action.closeActiveEditor"
-  },
-  {
-    "key": "ctrl+w",
-    "command": "-workbench.action.terminal.killEditor",
-    "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated && resourceScheme == 'vscode-terminal' || terminalEditorFocus && terminalFocus && terminalProcessSupported && resourceScheme == 'vscode-terminal'"
-  },
-  {
-    "key": "ctrl+w",
-    "command": "-workbench.action.terminal.sendSequence"
+    "key": "ctrl+shift+e",
+    "command": "emoji.insertUnicode"
   },
   {
     "key": "ctrl+shift+v",
@@ -106,90 +142,45 @@
     "command": "multiclip.list"
   },
   {
-    "key": "ctrl+alt+i",
-    "command": "-workbench.action.chat.open",
-    "when": "chatPanelParticipantRegistered"
+    "key": "ctrl+u",
+    "command": "-cursorUndo",
+    "when": "textInputFocus"
   },
   {
-    "key": "ctrl+alt+i",
-    "command": "-tabnine.chat.toggle-focus"
+    "key": "ctrl+u ctrl+u",
+    "command": "extension.toggleUpperCase",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.terminal.killEditor",
+    "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated && resourceScheme == 'vscode-terminal' || terminalEditorFocus && terminalFocus && terminalProcessSupported && resourceScheme == 'vscode-terminal'"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.terminal.sendSequence"
+  },
+  {
+    "key": "ctrl+x",
+    "command": "-filesExplorer.cut",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
   {
     "key": "f9",
     "command": "python.execInTerminal-icon"
   },
   {
-    "key": "ctrl+alt+x",
-    "command": "type",
-    "args": {
-      "text": "☢️ "
-    }
+    "key": "shift+alt+f",
+    "command": "-notebook.formatCell",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
   },
   {
-    "key": "ctrl+alt+c",
-    "command": "type",
-    "args": {
-      "text": "❌ "
-    }
-  },
-  {
-    "key": "ctrl+alt+t",
-    "command": "type",
-    "args": {
-      "text": "* [ ]"
-    }
-  },
-  {
-    "key": "ctrl+alt+f",
-    "command": "type",
-    "args": {
-      "text": "✅ "
-    }
-  },
-  {
-    "key": "ctrl+alt+v",
-    "command": "type",
-    "args": {
-      "text": "✔"
-    }
-  },
-  {
-    "key": "ctrl+alt+d",
-    "command": "type",
-    "args": {
-      "text": "* [x]"
-    }
-  },
-  {
-    "key": "ctrl+alt+G",
-    "command": "type",
-    "args": {
-      "text": "🎯 "
-    }
-  },
-  {
-    "key": "ctrl+alt+E",
-    "command": "type",
-    "args": {
-      "text": "↗️ "
-    }
-  },
-  {
-    "key": "ctrl+alt+W",
-    "command": "type",
-    "args": {
-      "text": "⚠️ "
-    }
-  },
-  {
-    "key": "ctrl+alt+L",
-    "command": "type",
-    "args": {
-      "text": "🦄 "
-    }
-  },
-  {
-    "key": "ctrl+shift+e",
-    "command": "emoji.insertUnicode"
+    "key": "shift+alt+f",
+    "command": "-editor.action.formatDocument.none",
+    "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
   }
 ]

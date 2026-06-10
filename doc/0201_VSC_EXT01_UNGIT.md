@@ -1,4 +1,4 @@
-<h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
+<h3><div align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
 
 <h1><div align='center'>VSC - Extension Un<b>git</b></div></h1>
 
@@ -76,7 +76,7 @@ Et également, chaque gros rond représente un commit... En cliquant dessus, tu 
 ---
 
 <h3 align="center">
-  <a href="./0200_VSC_INSTALL.md">← 02001_VSC_INSTALL</a>
+  <a href="./0200_VSC_INSTALL.md">← 0201_VSC_INSTALL</a>
                      
   <a href="./0202_VSC_EXT02_GG.md">0202_VSC_EXT02_GG →</a>
 </h3>
