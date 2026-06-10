@@ -57,14 +57,17 @@ Pour nous, [notre doc pourrait être ainsi présentée](./0277_VSC_MM.md) - ⚠�
   </a>
 </div>
 <hr>
-<div align="center">
+<!-- <div align="center">
   <a href="./videos/203_vsc_mm3.mp4" target="_blank" title="Voir la video en grand">
     <video width="400" controls poster="./imgs/203_vsc_mm3.png">
       <source src="./videos/203_vsc_mm3.mp4" type="video/mp4">
       Ton navigateur/aperçu ne supporte pas la balise video.
     </video>
   </a>
-</div>
+</div> -->
+
+[![Voir la vidéo](./imgs/203_vsc_mm3.png)](./videos/203_vsc_mm3.mp4)
+
 
 ### - [Markmap Universe](https://marketplace.visualstudio.com/items?itemName=maxchang.vscode-markmap-universe)
 
