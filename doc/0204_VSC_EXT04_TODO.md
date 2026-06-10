@@ -1,6 +1,6 @@
 <h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
 
-<h1><div align='center'>VSC - Extension Better Comment</div></h1>
+<h1><div align='center'>VSC - Extensions Organisationnelles</div></h1>
 
 <h3 align="center">
   <a href="./0203_VSC_XXX.md">← XXX</a>
