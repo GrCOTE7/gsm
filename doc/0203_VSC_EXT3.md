@@ -1,6 +1,6 @@
-<h3><div align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
+<h3 align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md" title="Table Of Content">TOC</a></span></h3>
 
-<h1><div align='center'>VSC - EXTENSIONS MAJEURES</div></h1>
+<h1 align='center'>VSC - EXTENSIONS MAJEURES</h1>
 
 <h3 align="center">
   <a href="./0202_VSC_EXT02_GG.md">← 0202_VSC_EXT02_GG</a>

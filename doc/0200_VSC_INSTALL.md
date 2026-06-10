@@ -1,6 +1,6 @@
-<h3><div align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
+<h3 align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md" title="Table Of Content">TOC</a></span></h3>
 
-<h1><div align='center'>Éditeur <b>VSC</b> - <b>V</b>isual <b>S</b>tudio <b>C</b>ode</div></h1>
+<h1 align='center'>Éditeur <b>VSC</b> - <b>V</b>isual <b>S</b>tudio <b>C</b>ode</h1>
 
 <h3 align="center">
   <a href="./0112_GIT_PR_DEAL.md">← 0112_GIT_PR_DEAL</a>

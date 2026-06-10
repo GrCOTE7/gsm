@@ -1,6 +1,6 @@
-<h3><div align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
+<h3 align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md" title="Table Of Content">TOC</a></span></h3>
 
-<h1><div align='center'>5/12. GIT STATUS</div></h1>
+<h1 align='center'>5/12. GIT STATUS</h1>
 
 <h3 align="center">
   <a href="./0104_GIT_BRANCH.md">← 0104_GIT_BRANCH</a>

@@ -1,6 +1,6 @@
-<h3><div align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
+<h3 align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md" title="Table Of Content">TOC</a></span></h3>
 
-<h1><div align='center'>10/12. GIT PR (CLI)</div></h1>
+<h1 align='center'>10/12. GIT PR (CLI)</h1>
 
 <h3 align="center">
   <a href="./0109_GIT_SYNC.md">← 0109_GIT_SYNC</a>

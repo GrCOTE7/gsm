@@ -1,6 +1,6 @@
-<h3><div align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
+<h3 align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md" title="Table Of Content">TOC</a></span></h3>
 
-<h1><div align='center'>12/12. GIT PR - MISE EN APPLICATION (DEAL 🤝)</div></h1>
+<h1 align='center'>12/12. GIT PR - MISE EN APPLICATION (DEAL 🤝)</h1>
 
 <h3 align="center">
   <a href="./0111_GIT_PR_GH.md">← 0111_GIT_PR_GH</a>

@@ -1,6 +1,6 @@
-<h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
+<h3 align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md" title="Table Of Content">TOC</a></span></h3>
 
-<h1><div align='center'>1/12. GIT FORK</div></h1>
+<h1 align='center'>1/12. GIT FORK</h1>
 
 <h3 align="center">
   <a href="./0000_HELPME.md">← 0001_HELPME</a>
