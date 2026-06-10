@@ -33,7 +33,7 @@ Et **la lecture de cette seule page et de la suivante va te l'offrir intégralem
 
 ## ShortCuts - Raccourcis
 
-Là, il ne s'agît pas vraiment d'une extension ([Bien que celle-ci qui apporte des raccourcis pour les docs MarkDown puisse être installée](https://marketplace.visualstudio.com/items?itemName=mdickin.markdown-shortcuts)), car nous parlons là d'une fonctionalité native de VSC.
+Là, il ne s'agît pas vraiment d'une extension ([Bien que si tu cliques là, sur 'ces mots bleus', celle-ci t'apporte des raccourcis spécifiques pour les docs rédigées en MarkDown](https://marketplace.visualstudio.com/items?itemName=mdickin.markdown-shortcuts)), car nous parlons là d'une fonctionalité native de VSC.
 
 En effet, d'emblée, de nombreux raccourcis (claviers → *keybindings*) existent :
 
