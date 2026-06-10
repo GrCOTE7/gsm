@@ -1,0 +1,19 @@
+<h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
+
+<h1><div align='center'>VSC - SBCTD 2</div></h1>
+
+<h3 align="center">
+  <a href="./0204_VSC_XXX.md">← XXX</a>
+                     
+  <a href="./XXX.md">XXX →</a>
+</h3>
+
+---
+
+## Notre système : SBCTD - **S**hortcuts + **B**etter **C**omment + **T**o**D**o
+
+## [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
+
+Cela peut paraître anodin, comme extension... Mais vous allez vite en voir l'intérêt majeur, quand en +, elle sera couplée à celle que nous découvrirons juste dans la page suivante... (ToDo Tree)
+
+# ❌ To be continued... 🚧
