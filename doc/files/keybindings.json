@@ -1,0 +1,195 @@
+// Placer vos combinaisons de touches dans ce fichier pour remplacer les valeurs par défaut auto[]
+[
+  {
+    "key": "alt+h",
+    "command": "-testing.toggleTestingPeekHistory",
+    "when": "testing.isPeekVisible"
+  },
+  {
+    "key": "alt+h",
+    "command": "-gitlens.showQuickFileHistory",
+    "when": "!gitlens:disabled && config.gitlens.keymap == 'alternate'"
+  },
+  {
+    "key": "alt+h",
+    "command": "-git.viewFileHistory"
+  },
+  {
+    "key": "alt+h",
+    "command": "extension.git-file-history"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "-cursorUndo",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+u ctrl+u",
+    "command": "extension.toggleUpperCase",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "-extension.toggleUpperCase",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "-notebook.formatCell",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "-editor.action.formatDocument.none",
+    "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
+  },
+  {
+    "key": "ctrl+x",
+    "command": "-filesExplorer.cut",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+s",
+    "command": "-slackVSCode.sendSelection"
+  },
+  {
+    "key": "ctrl+alt+s",
+    "command": "-namespaceResolver.sort",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+s",
+    "command": "extension.surroundWithTag"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-extension.surroundWithTag"
+  },
+  {
+    "key": "ctrl+f4",
+    "command": "-workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+f4",
+    "command": "-workbench.action.terminal.killEditor",
+    "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated && resourceScheme == 'vscode-terminal' || terminalEditorFocus && terminalFocus && terminalProcessSupported && resourceScheme == 'vscode-terminal'"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.terminal.killEditor",
+    "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated && resourceScheme == 'vscode-terminal' || terminalEditorFocus && terminalFocus && terminalProcessSupported && resourceScheme == 'vscode-terminal'"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.terminal.sendSequence"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "-quicktype.pasteJSONAsTypesAndSerialization",
+    "when": "editorTextFocus && editorLangId != 'markdown'"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "-multiclip.paste",
+    "when": "editorTextFocus && editorLangId != 'markdown'"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "multiclip.list"
+  },
+  {
+    "key": "ctrl+alt+i",
+    "command": "-workbench.action.chat.open",
+    "when": "chatPanelParticipantRegistered"
+  },
+  {
+    "key": "ctrl+alt+i",
+    "command": "-tabnine.chat.toggle-focus"
+  },
+  {
+    "key": "f9",
+    "command": "python.execInTerminal-icon"
+  },
+  {
+    "key": "ctrl+alt+x",
+    "command": "type",
+    "args": {
+      "text": "☢️ "
+    }
+  },
+  {
+    "key": "ctrl+alt+c",
+    "command": "type",
+    "args": {
+      "text": "❌ "
+    }
+  },
+  {
+    "key": "ctrl+alt+t",
+    "command": "type",
+    "args": {
+      "text": "* [ ]"
+    }
+  },
+  {
+    "key": "ctrl+alt+f",
+    "command": "type",
+    "args": {
+      "text": "✅ "
+    }
+  },
+  {
+    "key": "ctrl+alt+v",
+    "command": "type",
+    "args": {
+      "text": "✔"
+    }
+  },
+  {
+    "key": "ctrl+alt+d",
+    "command": "type",
+    "args": {
+      "text": "* [x]"
+    }
+  },
+  {
+    "key": "ctrl+alt+G",
+    "command": "type",
+    "args": {
+      "text": "🎯 "
+    }
+  },
+  {
+    "key": "ctrl+alt+E",
+    "command": "type",
+    "args": {
+      "text": "↗️ "
+    }
+  },
+  {
+    "key": "ctrl+alt+W",
+    "command": "type",
+    "args": {
+      "text": "⚠️ "
+    }
+  },
+  {
+    "key": "ctrl+alt+L",
+    "command": "type",
+    "args": {
+      "text": "🦄 "
+    }
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "emoji.insertUnicode"
+  }
+]

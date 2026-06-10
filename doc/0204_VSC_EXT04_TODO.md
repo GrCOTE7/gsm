@@ -29,23 +29,54 @@ Notre système ShortCut + Better Comment + ToDo est la solution optimale !
 
 Et **la lecture de cette seule page et de la suivante va te l'offrir intégralement !**
 
+→ *T'ennuyer plus jamais tu ne connaîtras !*
 
+## ShortCuts - Raccourcis
 
-## ShortCuts
+Là, il ne s'agît pas vraiment d'une extension ([Bien que celle-ci qui apporte des raccourcis pour les docs MarkDown puisse être installée](https://marketplace.visualstudio.com/items?itemName=mdickin.markdown-shortcuts)), car nous parlons là d'une fonctionalité native de VSC.
+
+En effet, d'emblée, de nombreux raccourcis (claviers → *keybindings*) existent :
+
+<div align="center">
+  <a href="./imgs/204_vsc0_shortcuts.png" target="_blank">
+    <img src="./imgs/204_vsc1_shortcuts.png" width='400' title='Shortcuts' alt='Shortcuts Preview'>
+  </a>
+</div>
+
+Tu peux en trouver un précis, soit en tapant son nom, soit sa combinaison de touches :
+
+<div align="center">
+  <a href="./imgs/204_vsc2_shortcuts.png" target="_blank">
+    <img src="./imgs/204_vsc2_shortcuts.png" width='400' title='Shortcuts' alt='Shortcuts Preview'>
+  </a>
+</div>
+
+Donc, tu dois voir que ce tableau est plutôt très long... (Il faut préciser que sont référencées là aussi les raccourcis des extensions installées...)
+
+Et pourtant, les raccourcis qui nous interessent aujourd'hui, ne sont même pas dans ce tableau !!! En effet, il y a une autre liste de raccourcis 'customs' (personels) mais cette fois, sous forme de fichier json :
+
+### 👉 Pour éditer ce fichier: **CTRL +MAJ + P** et saisir quelques lettres
+
+<div align="center">
+  <a href="./imgs/204_vsc3_shortcuts.png" target="_blank">
+    <img src="./imgs/204_vsc3_shortcuts.png" width='400' title='Shortcuts' alt='Shortcuts Preview'>
+  </a>
+</div>
+
+Et voici comment en rajouter un : Exemple: **CTRL + ALT + x**
+
+<div align="center">
+  <a href="./imgs/204_vsc4_shortcuts.png" target="_blank">
+    <img src="./imgs/204_vsc4_shortcuts.png" width='400' title='Shortcuts' alt='Shortcuts Preview'>
+  </a>
+</div>
+
+### 👉 Édite ce fichier et remplace son contenu par celui du fichier [gsm\doc\files\keybindings.json](..\doc\files\keybindings.json)
+
+🦄 Démo finale ?
 
 ## [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
 
 Cela peut paraître anodin... Mais vous allez vite en voir l'intérêt majeur, quand en +, elle sera couplé à celle que nous décourirons ensuite (ToDo)
 
-
 # ❌ To be continued... 🚧
-
-* [ ] ToDO avec settings comments + ToDo *[ ], ⚠️ , ✅ , ✔* [x] ↗️ , etc....
-      pour affichage, comptage, et linting des todos
-      
-      Note:
-      * [ ] To do à réaliser
-      * [/] To do en cours
-      * [x] To do réalisé
-
-.XXX → GC7

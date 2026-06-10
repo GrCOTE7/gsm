@@ -80,18 +80,18 @@ $$
 \textcolor{white}{\text{Dev du contributeur GSM} =}
 \underbrace{
 \Bigg(
-    \Big(
+  \Big(
+    \underbrace{
       \underbrace{
-          \underbrace{
-            \textcolor{cyan}{(\text{Codage} + \text{Commit})}
-          }_{\textcolor{cyan}{\text{Unité de travail}}}
-          \textcolor{lime}{\times x}
-          + \textcolor{yellow}{\text{Push}}
-        \textcolor{lime}{\times y}
-      \Big)
-      }_{\textcolor{yellow}{\text{Itérations locales}}}
-      + \textcolor{orange}{\text{PR}}
-    }_{\textcolor{orange}{\text{Cycle complet}}}
+        \textcolor{cyan}{(\text{Codage} + \text{Commit})}
+      }_{\textcolor{cyan}{\text{Unité de travail}}}
+      \textcolor{lime}{\times x}
+        + \textcolor{yellow}{\text{Push}}
+      \textcolor{lime}{\times y}
+    \Big)
+    }_{\textcolor{yellow}{\text{Itérations locales}}}
+    + \textcolor{orange}{\text{PR}}
+  }_{\textcolor{orange}{\text{Cycle complet}}}
 \Bigg)\textcolor{lime}{\times z}
 $$
 
