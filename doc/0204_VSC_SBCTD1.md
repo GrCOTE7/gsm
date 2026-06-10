@@ -3,9 +3,9 @@
 <h1 align='center'>VSC - Extensions Organisationnelles - SBCTD 1</h1>
 
 <h3 align="center">
-  <a href="./0203_VSC_EXT3.md">← 0202_VSC_EXT02_GG</a>
+  <a href="./0203_VSC_EXT3.md">← 0203_VSC_EXT3</a>
                      
-  <a href="./0205_VSC_SBCTD2.md">0204_VSC_SBCTD1 →</a>
+  <a href="./0205_VSC_SBCTD2.md">0205_VSC_SBCTD2 →</a>
 </h3>
 
 ---
@@ -80,7 +80,7 @@ Je ne sais plus trop quelles items (paires clé-valeur) sont d'origine, donc, el
 ---
 
 <h3 align="center">
-  <a href="./0203_VSC_EXT3.md">← 0202_VSC_EXT02_GG</a>
+  <a href="./0203_VSC_EXT3.md">← 0203_VSC_EXT3</a>
                      
-  <a href="./0205_VSC_SBCTD2.md">0204_VSC_SBCTD1 →</a>
+  <a href="./0205_VSC_SBCTD2.md">0205_VSC_SBCTD2 →</a>
 </h3>
