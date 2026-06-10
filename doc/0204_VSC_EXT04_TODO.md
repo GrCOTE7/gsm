@@ -10,11 +10,11 @@
 
 ---
 
-## Notre système : **ShortCut + Better Comment + ToDo**
+## Notre système : **ShortCuts + Better Comment + ToDo → Efficience GARANTIE !**
 
 Les "ToDo list", tu connais... Tu en a peut-être même codé le code, une appli dans le cadre de l'apprentissage d'un langage ou autre...
 
-Mais pour nous, cette extension va nous permettre de gagner énormément en efficacience !
+Mais pour nous, cette extension va nous permettre de gagner énormément en efficience !
 
 En effet, quand on code, une bonne partie de notre temps cnsiste à toujours apprendre... On en lis, des signatures, on en voit, des exemples, etc...
 
@@ -73,7 +73,7 @@ Et voici comment en rajouter un : Exemple: **CTRL + ALT + x**
 
 ### 👉 Édite ce fichier et remplace son contenu par celui du fichier [gsm\doc\files\keybindings.json](..\doc\files\keybindings.json)
 
-🦄 Démo finale ?
+🦄 Démo usage finale ?
 
 ## [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
 
