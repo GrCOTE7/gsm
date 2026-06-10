@@ -52,6 +52,8 @@ Elle est correcte **à condition** que :
 
 ### 👉 *Même si tu découvriras bientôt des outils qui simplifient complètement, rendent rapides, intuitives et ludiques ces commandes car applicables 'à simples coups de souris', il est toujours bon et parfois même salvateur de connaître les commandes de base en console.*
 
+* [ ] Cf. si besoin de précisions pour la clé SSH
+
 ---
 
 <h3 align="center">
