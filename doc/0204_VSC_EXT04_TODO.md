@@ -77,6 +77,6 @@ Et voici comment en rajouter un : Exemple: **CTRL + ALT + x**
 
 ## [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
 
-Cela peut paraître anodin... Mais vous allez vite en voir l'intérêt majeur, quand en +, elle sera couplé à celle que nous décourirons ensuite (ToDo)
+Cela peut paraître anodin... Mais vous allez vite en voir l'intérêt majeur, quand en +, elle sera couplée à celle que nous décourirons ensuite (ToDo)
 
 # ❌ To be continued... 🚧
