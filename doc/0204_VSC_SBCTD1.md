@@ -33,7 +33,7 @@ Et **la lecture de cette page et des trois suivantes va te l'offrir intégraleme
 
 ## Élément 1 : ShortCuts - Raccourcis (Json)
 
-Là, il ne s'agit pas vraiment d'une extension ([Bien que si tu cliques là, sur 'ces mots bleus', celle-ci t'apporte des raccourcis spécifiques pour les docs rédigées en MarkDown](https://marketplace.visualstudio.com/items?itemName=mdickin.markdown-shortcuts)), car nous parlons là d'une fonctionnalité native de VSC.
+Là, il ne s'agit pas vraiment d'une extension ([Bien que si tu cliques là, sur 'ces mots bleus', celle-ci t'apporte des raccourcis spécifiques pour les docs rédigées en MarkDown](https://marketplace.visualstudio.com/items?itemName=mdickin.markdown-shortcuts)), car nous parlons là davantage d'une fonctionnalité native de VSC.
 
 En effet, d'emblée, de nombreux raccourcis (claviers → *keybindings*) existent :
 
@@ -71,11 +71,28 @@ Et voici comment en ajouter un : Exemple : **CTRL + ALT + x**
   </a>
 </div>
 
-### 👉 + simple : Édite ce fichier et ajoute à son contenu celui du fichier : [gsm/doc/files/keybindings.json](./files/keybindings.json)
+### 👉 Pour avoir + simplement tous ceux qui nous intéressent : Édite ce fichier et ajoute à son contenu celui du fichier : [gsm/doc/files/keybindings.json](./files/keybindings.json)
 
 Je ne sais plus trop quels items (paires clé-valeur) sont d'origine, donc ils sont dans l'ordre alphabétique, permettant un dédoublonnage + aisé.
 
-💡 Et si toi, tu viens de poser ces settings dans un VSC 'tout neuf' (pas comme moi, avec un système de centralisation des settings qui me repose instantanément tous mes settings et extensions automatiquement à chaque nouvelle installation), n'hésite pas à dédoublonner dans ce fichier ces settings proposés en ajout de ceux originaux, puis, tu connais maintenant... : **PR** ✌️ !
+💡 Et si toi, tu viens de poser ces settings dans un VSC 'tout neuf' (pas comme moi, qui depuis 2016 profite d'un système de centralisation des settings qui me repose instantanément tous mes réglages et extensions automatiquement à chaque nouvelle installation), n'hésite pas à dédoublonner dans ce fichier ces settings proposés en ajout de ceux originaux, puis, tu connais maintenant... : **PR** ✌️ !
+
+---
+
+Tableau montrant, parmis les nouveaux raccourcis, ceux permettant d'avoir un émoji sémantique rapidement (Tu découvriras qu'ils ont un réel rôle dans notre système et ne sont pas là *que pour faire joli*...)
+
+|      Raccourci     | Symbole |     Mnémonique     |
+|:------------------:|:-------:|:-------------------|
+| CTRL + ALT + **c** |    ❌   | Croix              |
+| CTRL + ALT + **d** |  * [x]  | **D**one (fait)    |
+| CTRL + ALT + **e** |    ↗️   | **E**xterne (Lien) |
+| CTRL + ALT + **f** |    ✅   | **F**ait           |
+| CTRL + ALT + **g** |    🎯   | **G**oal           |
+| CTRL + ALT + **l** |    🦄   | **L**ionel (GC7)   |
+| CTRL + ALT + **t** |  * [ ]  | **T**oDo           |
+| CTRL + ALT + **v** |     ✔   | **V**alidé         |
+| CTRL + ALT + **w** |    ⚠️   | **W**arning        |
+| CTRL + ALT + **x** |    ☢️   | Rayons **X**       |
 
 ---
 

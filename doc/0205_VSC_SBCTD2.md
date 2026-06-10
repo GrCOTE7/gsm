@@ -18,6 +18,21 @@ Cela peut paraître anodin, comme extension... Mais vous allez vite en voir l'in
 
 # ❌ To be continued... 🚧
 
+# ❌ Une modif à faire si possible assez vite
+
+* [ ] | **T**oDo
+* [x] | Fait
+
+
+* 
+CTRL + ALT + **e** | ↗️ | **E**xterne (Lien)
+CTRL + ALT + **f** | ✅ | **F**ait
+CTRL + ALT + **g** | 🎯 | **G**oal
+CTRL + ALT + **l** | 🦄 | **L**ionel (GC7)
+CTRL + ALT + **v** | ✔ | **V**alidé
+CTRL + ALT + **w** | ⚠️ | **W**arning
+CTRL + ALT + **x** | ☢️ | Rayons **X**
+:py: ggdfdf
 ---
 
 <h3 align="center">
