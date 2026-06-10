@@ -31,7 +31,7 @@ Et **la lecture de cette seule page et de la suivante va te l'offrir intégralem
 
 → *Et en +, t'ennuyer plus jamais tu ne connaîtras !*
 
-## ShortCuts - Raccourcis
+## ShortCuts - Raccourcis (Json)
 
 Là, il ne s'agît pas vraiment d'une extension ([Bien que si tu cliques là, sur 'ces mots bleus', celle-ci t'apporte des raccourcis spécifiques pour les docs rédigées en MarkDown](https://marketplace.visualstudio.com/items?itemName=mdickin.markdown-shortcuts)), car nous parlons là d'une fonctionalité native de VSC.
 
@@ -51,9 +51,9 @@ Tu peux en trouver un précis, soit en tapant son nom, soit sa combinaison de to
   </a>
 </div>
 
-Donc, tu dois voir que ce tableau est plutôt très long... (Il faut préciser que sont référencées là aussi les raccourcis des extensions installées...)
+Donc, tu dois voir que ce tableau est plutôt très long... (Il faut préciser que sont référencées là aussi tous les raccourcis des extensions installées...)
 
-Et pourtant, les raccourcis qui nous interessent aujourd'hui, ne sont même pas dans ce tableau !!! En effet, il y a une autre liste de raccourcis 'customs' (personels) mais cette fois, sous forme de fichier json :
+Et pourtant, les raccourcis qui nous interessent aujourd'hui, ne sont même pas dans ce tableau !!! En effet, il y a une autre liste de raccourcis 'customs' (personels) mais cette fois, sous forme d'un fichier `.json` :
 
 ### 👉 Pour éditer ce fichier: **CTRL +MAJ + P** et saisir quelques lettres
 
