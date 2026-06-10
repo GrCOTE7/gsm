@@ -14,14 +14,33 @@
 
 ## [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
 
-Cela peut paraître anodin, comme extension... Mais vous allez vite en voir l'intérêt majeur, quand en +, elle sera couplée à celle que nous découvrirons juste dans la page suivante... (ToDo Tree)
+Le rôle premier de cette extension est de mettre en évidence avec des couleurs tranchantes certains commentaires... Et ce dans du code, quel que soit le language, ou fichier doc (.txt, .md, .jupyter, etc...)
 
+XXX → fichier json XXX
+
+  // si d'autres lignes précèdent ou suivent, mettre une ' , ' après le ' ] '
+
+Vois plutôt !
+(Comme on est en .md, on peut mettre )
 # ❌ To be continued... 🚧
 
-# ❌ Une modif à faire si possible assez vite
+# @! cxwcwxc
+
+<!-- @! ok ? -->
+
+// @! non ?
 
 * [ ] | **T**oDo
 * [x] | Fait
+  // ...
+
+Cela peut paraître anodin, comme extension... Mais vous allez vite en voir l'intérêt majeur, quand elle sera couplée à celle que nous découvrirons (ToDo Tree) juste après, dans les 2 pages suivantes...
+
+
+
+
+# ❌ Une modif à faire si possible assez vite
+
 
 
 * 

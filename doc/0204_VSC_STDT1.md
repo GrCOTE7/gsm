@@ -1,20 +1,20 @@
 <h3 align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md" title="Table Of Content">TOC</a></span></h3>
 
-<h1 align='center'>VSC - Extensions Organisationnelles - SBCTD 1</h1>
+<h1 align='center'>VSC - Extensions Organisationnelles - STDT 1</h1>
 
 <h3 align="center">
   <a href="./0203_VSC_EXT3.md">← 0203_VSC_EXT3</a>
                      
-  <a href="./0205_VSC_SBCTD2.md">0205_VSC_SBCTD2 →</a>
+  <a href="./0205_VSC_STDT2.md">0205_VSC_STDT2 →</a>
 </h3>
 
 ---
 
-## Notre système : SBCTD - **S**hortcuts + **B**etter **C**omment + **T**o**D**o → **[Efficience](https://fr.wikipedia.org/wiki/Efficience) GARANTIE !**
+## Notre système : **STDT** - **S**hortcuts + **T**o**D**o **T**ree → **[Efficience](https://fr.wikipedia.org/wiki/Efficience) GARANTIE !**
 
 Les "ToDo list", tu connais... Tu en as peut-être même "codé le code", une appli dans le cadre de l'apprentissage d'un langage ou autre...
 
-Mais pour nous, cette extension (Complétée d'une autre, *ToDO Tree* et de réglages) va nous permettre de gagner énormément en efficience !
+Mais pour nous, cette extension complétée de réglages va nous permettre de gagner énormément en efficience !
 
 En effet, quand on code, une bonne partie de notre temps consiste à toujours apprendre... On en lit, des signatures, on en voit, des exemples, etc...
 
@@ -25,11 +25,11 @@ Mais du coup, ça peut éveiller en nous plusieurs choses :
 
 Bref, sans parler de notifs, ou encarts qu'on voit par ci, par là... Autant de fortes raisons d'être vite divertis et d'en perdre complètement le fil de notre objectif initial ! Car en +, si on ne creuse pas de suite, on garde aussi la peur de perdre une info, peut-être cruciale, d'une ressource précieuse...
 
-Notre système **S**hortcut + **B**etter **C**omment + **T**o**D**o est la **Solution Optimale** !
+Notre système **S**hortcut + **T**o**D**o **T**ree est la **Solution Optimale** !
 
-Et **la lecture de cette page et des trois suivantes va te l'offrir intégralement !**
+Et **la lecture de cette page et des deux suivantes va te l'offrir intégralement !**
 
-→ *Et en +, t'ennuyer plus jamais tu ne connaîtras !*
+→ [Yoda](https://fr.wikipedia.org/wiki/Yoda) te dirait : *Et en +, t'ennuyer plus jamais tu ne connaîtras !*
 
 ## Élément 1 : ShortCuts - Raccourcis (Json)
 
@@ -79,11 +79,11 @@ Je ne sais plus trop quels items (paires clé-valeur) sont d'origine, donc ils s
 
 ---
 
-Tableau montrant, parmis les nouveaux raccourcis, ceux permettant d'avoir un émoji sémantique rapidement (Tu découvriras qu'ils ont un réel rôle dans notre système et ne sont pas là *que pour faire joli*...)
+Tableau montrant, parmis les nouveaux raccourcis, ceux permettant d'avoir un émoji sémantique rapidement (Sémantique, parce que tu découvriras qu'ils ont un réel rôle dans notre système et ne sont pas là *que pour faire joli*...)
 
 |      Raccourci     | Symbole |     Mnémonique     |
 |:------------------:|:-------:|:-------------------|
-| CTRL + ALT + **c** |    ❌   | Croix              |
+| CTRL + ALT + **c** |    ❌   | **C**roix          |
 | CTRL + ALT + **d** |  * [x]  | **D**one (fait)    |
 | CTRL + ALT + **e** |    ↗️   | **E**xterne (Lien) |
 | CTRL + ALT + **f** |    ✅   | **F**ait           |
@@ -99,5 +99,5 @@ Tableau montrant, parmis les nouveaux raccourcis, ceux permettant d'avoir un ém
 <h3 align="center">
   <a href="./0203_VSC_EXT3.md">← 0203_VSC_EXT3</a>
                      
-  <a href="./0205_VSC_SBCTD2.md">0205_VSC_SBCTD2 →</a>
+  <a href="./0205_VSC_STDT2.md">0205_VSC_STDT2 →</a>
 </h3>
