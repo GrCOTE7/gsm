@@ -71,7 +71,7 @@ Et voici comment en rajouter un : Exemple: **CTRL + ALT + x**
   </a>
 </div>
 
-### 👉 Édite ce fichier et remplace son contenu par celui du fichier [gsm\doc\files\keybindings.json](..\doc\files\keybindings.json)
+### 👉 Édite ce fichier et remplace son contenu par celui du fichier [gsm/doc/files/keybindings.json](./files/keybindings.json)
 
 🦄 Démo usage finale ?
 
