@@ -10,7 +10,7 @@
 
 ---
 
-## Notre système : **ShortCuts + Better Comment + ToDo → Efficience GARANTIE !**
+## Notre système : **ShortCuts + Better Comment + ToDo → [Efficience](https://fr.wikipedia.org/wiki/Efficience) GARANTIE !**
 
 Les "ToDo list", tu connais... Tu en a peut-être même "codé le code", une appli dans le cadre de l'apprentissage d'un langage ou autre...
 
