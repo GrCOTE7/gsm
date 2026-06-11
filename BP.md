@@ -85,7 +85,7 @@ Just the essentials to validate the idea.
 
 ### Preparation
 
-* [/] BP_version - Set App # 0.0.2 src/ in new structure (Entry point = ./main)
+* [-] BP_version - Set App # 0.0.2 src/ in new structure (Entry point = ./main)
 * [ ] App : New version ? Yes : App → Install !
 * [ ] Git: Push Main → Auto New Version → Push on Ggle Drive - https://rclone.org
 * [ ] 1 Register the habit (H) Sport in Database (migration during development)

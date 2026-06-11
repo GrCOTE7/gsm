@@ -5,15 +5,23 @@
 <h3 align="center">
   <a href="./0205_VSC_STDT2.md">← 0205_VSC_STDT2</a>
                      
-  <a href="./0301_XXX.md">XXX →</a>
+  <a href="./0300_GIT_DEEP.md">0300_GIT_DEEP →</a>
 </h3>
 
 ---
 
-# ❌ To be continued... 🚧
-
-# 🦄 Démo usage finale ? Vidéo ?
+* [ ] Démo usage finale de STDT ? Vidéo ?
 
 ---
 
-→ 777 02 + :-)
+### 👉 Tu mérites pleinement d'avoir ton Niveau 🎖️ mis à jour dans le **[Tableau d'Honneur](./7777_SUIVIS.md) ✌️**
+
+→ (Bien que tu avais le droit de PR tes niveaux intermédiaires après le 0200) tu peux y mettre maintenant le niveau **0300** 🎉 - Fais bien- sûr la PR pour que cela soit officiel 💪
+
+---
+
+<h3 align="center">
+  <a href="./0205_VSC_STDT2.md">← 0205_VSC_STDT2</a>
+                     
+  <a href="./0300_GIT_DEEP.md">0300_GIT_DEEP →</a>
+</h3>

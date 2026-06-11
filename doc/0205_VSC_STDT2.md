@@ -1,23 +1,21 @@
 <h3 align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md" title="Table Of Content">TOC</a></span></h3>
 
-<h1 align='center'>VSC - STDT - <b>T</b>o<b>D</b>o <b>T</b>ree</h1>
+<h1 align='center'>VSC - <b>STDT</b> - <b>T</b>o<b>D</b>o <b>T</b>ree</h1>
 
 <h3 align="center">
-  <a href="./0205_VSC_SBCTD2.md">← 0205_VSC_SBCTD2</a>
+  <a href="./0204_VSC_STDT1.md">← 0204_VSC_STDT1</a>
                      
-  <a href="./0207_VSC_SBCTD4.md">0207_VSC_SBCTD4 →</a>
+  <a href="./0206_VSC_STDT3.md">0206_VSC_STDT3 →</a>
+ →</a>
 </h3>
 
 ---
 
+## Élément 2 : [ToDo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
 
-## Notre système : STDT - **S**hortcuts + **T**o**D**o **T**ree
+### 👉 Pour avoir immédiatement les settings qui nous intéressent : Édite ce fichier : [gsm/doc/files/td_settings.json](./files/td_settings.json) et ajoute son contenu à celui du fichier `settings.json` (Rappelles-toi des paramétrages dans VSC : [CTRL + ' , '](./0200_VSC_INSTALL.md))
 
-## [ToDo Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
-
-XXX → fichier json XXX
-
-    Ce fichier n'est au final, qu'un bloc que tu ajoutes aux settings déjà présents (Rappelles-toi : CTL + u ...), mais pour une syntaxe correcte, il faut IMPÉRATIVEMENT que chaque bloc soit séparé par une ' , '...
+⚠️ Ce fichier n'est au final, qu'un bloc que tu ajoutes aux settings déjà présents mais pour une syntaxe correcte, il faut IMPÉRATIVEMENT que chaque bloc soit séparé par une ' , '...
 
 Vois plutôt ce qu'apporte ces réglages :
 
@@ -51,21 +49,49 @@ Si du texte précède le tag, ici, la mention 2fix → Pas de coloration ! Il fa
 
 (Note aussi que STDT prend la priorité des # pour faire les H1, H2, etc.... des docs .md)
 
-## Liste des tags actuels - Couleur & signification
+## Liste des tags actuels - Couleur & Signification
 
 Là, encore cela ne peut être ici qu'une capture, pour ne pas impacter notre comptabilité réelle des ToDo réels.
+
 <div align="center">
-  <a href="./imgs/205_vsc_tdt2.png" target="_blank">
-    <img src="./imgs/205_vsc_tdt2.png" width='400' title='ToDo Tree' alt='ToDo Tree Preview'>
+  <a href="./imgs/205_vsc_tdt3.png" target="_blank">
+    <img src="./imgs/205_vsc_tdt3.png" width='400' title='ToDo Tree' alt='ToDo Tree Preview'>
   </a>
 </div>
 
-# ❌ To be continued... 🚧
+
+<div align="center">
+  <a href="./imgs/205_vsc_tdt4.png" target="_blank">
+    <img src="./imgs/205_vsc_tdt4.png" width='400' title='ToDo Tree' alt='ToDo Tree Preview'>
+  </a>
+</div>
+
+Pour résumer :
+
+Tous les raccourcis du tableau sont comptabilisés (et on peut en voir le nombre en bas, dans la basre d'état), sauf :
+
+⚠️ - CTRL + ALT + w - Warning
+
+On observe d'ailleurs qu'il n'a pas non plus de coloration particulière.
+
+Et une autre exception !
+
+' * [-] ' : En Cours.... Tâche ouverte (Colorée en beige) - Un contributeur est dessus...
+
+### 👉 Maintenant, pour donner raison à Yoda (Voire en haut de la page précédente....), si tu n'as pas d'emblée, une idée de dev, ou ne vois pas grand chose à modifier pour corriger, améliorer ou compléter, regardes l'arbre des Todo en place...
+Choisis-en une, et baptise ta branche selon la portée... Et go jusqu'à la PR ! 💪
+
+<div align="center">
+  <a href="./imgs/205_vsc_tdt5.png" target="_blank">
+    <img src="./imgs/205_vsc_tdt5.png" width='400' title='ToDo Tree' alt='ToDo Tree Preview'>
+  </a>
+</div>
 
 ---
 
 <h3 align="center">
-  <a href="./0205_VSC_SBCTD2.md">← 0205_VSC_SBCTD2</a>
+  <a href="./0204_VSC_STDT1.md">← 0204_VSC_STDT1</a>
                      
-  <a href="./0207_VSC_SBCTD4.md">0207_VSC_SBCTD4 →</a>
+  <a href="./0206_VSC_STDT3.md">0206_VSC_STDT3 →</a>
+ →</a>
 </h3>

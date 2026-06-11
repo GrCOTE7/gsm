@@ -4,7 +4,7 @@
     "☢️",
     "2dbug",
     "2ar",
-    "* [/]",
+    "* [-]",
     "* [ ]",
     "2do",
     "🎯",
@@ -44,7 +44,7 @@
       "foreground": "#f0f",
       "iconColour": "#f0f"
     },
-    "* [/]": {
+    "* [-]": {
       "icon": "check",
       "type": "line",
       "foreground": "#fff0a5",
