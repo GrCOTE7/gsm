@@ -12,13 +12,13 @@
 
 ## Objectif
 
-Savoir quand rester en GUI et quand passer en CLI sans perdre de temps.
+Savoir quand rester en GUI (GG) et quand passer en CLI sans perdre de temps.
 
 ---
 
 ## Git Graph excelle pour
 
-- visualiser l'historique,
+- Visualiser l'historique,
 - inspecter commits et diffs,
 - actions courantes (checkout, merge, cherry-pick, tag selon cas).
 
@@ -34,8 +34,8 @@ Savoir quand rester en GUI et quand passer en CLI sans perdre de temps.
 ## Règle pratique
 
 - Si opération simple + visuelle : Git Graph
-- Si diagnostic profond + répétition : CLI
-- Si doute : fais d'abord une lecture dans Git Graph, puis exécute en CLI
+- Si diagnostic profond + répétition : GG + CLI + GG
+- Si doute : Fais d'abord une lecture dans Git Graph, puis exécute en CLI
 
 ---
 

@@ -43,7 +43,7 @@ git push --tags
 
 ## Bonnes pratiques
 
-- Utiliser SemVer (`MAJOR.MINOR.PATCH`)
+- Utiliser SemVer ou Semantic-release (`MAJOR.MINOR.PATCH`)
 - Taguer seulement des commits vérifiés
 - Garder une note de version claire
 

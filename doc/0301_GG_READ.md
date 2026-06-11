@@ -1,6 +1,6 @@
 <h3 align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md" title="Table Of Content">TOC</a></span></h3>
 
-<h1 align='center'>01/12. GG - Lire le Graphe</h1>
+<h1 align='center'>01/12. GIT DEEP - GG - Lire le Graphe</h1>
 
 <h3 align="center">
   <a href="./0300_GIT_DEEP.md">← 0300_GIT_DEEP</a>
@@ -46,7 +46,7 @@ Si ta branche locale est derrière `upstream/main`, tu verras la pointe `upstrea
 git status
 git branch -vv
 git log --oneline --decorate --graph --all -n 25
-git pull
+git fetch
 ```
 
 Lecture rapide :
