@@ -33,7 +33,7 @@ Et **la lecture de cette page et des deux suivantes va te l'offrir intégralemen
 
 ## Élément 1 : ShortCuts - Raccourcis (Json)
 
-Là, il ne s'agit pas vraiment d'une extension ([Bien que si tu cliques là, sur 'ces mots bleus', celle-ci t'apporte des raccourcis spécifiques pour les docs rédigées en MarkDown](https://marketplace.visualstudio.com/items?itemName=mdickin.markdown-shortcuts)), car nous parlons là davantage d'une fonctionnalité native de VSC.
+Là, il ne s'agit pas vraiment d'une extension ([Bien que si tu cliques là, sur 'ces mots bleus', celle de la page qui s'ouvrira t'apporte des raccourcis spécifiques pour les docs rédigées en MarkDown](https://marketplace.visualstudio.com/items?itemName=mdickin.markdown-shortcuts)), car nous parlons là davantage d'une fonctionnalité native de VSC.
 
 En effet, d'emblée, de nombreux raccourcis (claviers → *keybindings*) existent :
 
@@ -51,7 +51,7 @@ Tu peux en trouver un précis, soit en tapant son nom, soit sa combinaison de to
   </a>
 </div>
 
-Donc, tu dois voir que ce tableau est plutôt long, très long... (Il faut préciser qu'y sont aussi référencés tous les raccourcis des extensions installées...)
+Donc, tu dois voir que ce tableau est plutôt long, très long... (Il faut préciser qu'y sont aussi référencés tous les raccourcis des extensions déjà installées...)
 
 Et pourtant, les raccourcis qui nous intéressent aujourd'hui ne sont même pas dans ce tableau !!! En effet, il y a une autre liste de raccourcis 'customs' (personnels), mais cette fois sous forme d'un fichier `.json` :
 
@@ -62,8 +62,9 @@ Et pourtant, les raccourcis qui nous intéressent aujourd'hui ne sont même pas 
     <img src="./imgs/204_vsc3_shortcuts.png" width='400' title='Shortcuts' alt='Shortcuts Preview'>
   </a>
 </div>
+<br>
 
-Et voici comment en ajouter un : Exemple : **CTRL + ALT + x**
+Et voici comment en ajouter un : Exemple : **CTRL + ALT + x** → ' ☢️ '
 
 <div align="center">
   <a href="./imgs/204_vsc4_shortcuts.png" target="_blank">
@@ -75,11 +76,11 @@ Et voici comment en ajouter un : Exemple : **CTRL + ALT + x**
 
 Je ne sais plus trop quels items (paires clé-valeur) sont d'origine, donc ils sont dans l'ordre alphabétique, permettant un dédoublonnage + aisé.
 
-💡 Et si toi, tu viens de poser ces settings dans un VSC 'tout neuf' (pas comme moi, qui depuis 2016 profite d'un système de centralisation des settings qui me repose instantanément tous mes réglages et extensions automatiquement à chaque nouvelle installation), n'hésite pas à dédoublonner dans ce fichier ces settings proposés en ajout de ceux originaux, puis, tu connais maintenant... : **PR** ✌️ !
+💡 Et si toi, tu viens de poser ces settings dans un VSC 'tout neuf' (pas comme moi, qui depuis 2016 profite d'un système de centralisation des settings qui me repose instantanément tous mes réglages et extensions automatiquement à chaque nouvelle installation sur n'importe quelle machine), n'hésite pas à dédoublonner dans ce fichier ces settings proposés en ajout de ceux originaux, puis, tu connais maintenant... : **PR** ✌️ !
 
 ---
 
-Tableau montrant, parmis les nouveaux raccourcis, ceux permettant d'avoir un émoji sémantique rapidement (Sémantique, parce que tu découvriras qu'ils ont un réel rôle dans notre système et ne sont pas là *que pour faire joli*...)
+Tableau montrant, parmis les nouveaux raccourcis, ceux permettant d'avoir un émoji sémantique rapidement (Sémantique, parce que tu découvriras qu'ils ont un rôle réel dans notre système et ne sont pas là *que pour faire joli*...)
 
 |      Raccourci     | Symbole |     Mnémonique     |
 |:------------------:|:-------:|:-------------------|
@@ -88,7 +89,7 @@ Tableau montrant, parmis les nouveaux raccourcis, ceux permettant d'avoir un ém
 | CTRL + ALT + **e** |    ↗️   | **E**xterne (Lien) |
 | CTRL + ALT + **f** |    ✅   | **F**ait           |
 | CTRL + ALT + **g** |    🎯   | **G**oal           |
-| CTRL + ALT + **l** |    🦄   | **L**ionel (GC7)   |
+| CTRL + ALT + **l** |    🦄   | **L**corne         |
 | CTRL + ALT + **t** |  * [ ]  | **T**oDo           |
 | CTRL + ALT + **v** |     ✔   | **V**alidé         |
 | CTRL + ALT + **w** |    ⚠️   | **W**arning        |
