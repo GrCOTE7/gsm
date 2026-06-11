@@ -97,11 +97,20 @@ $$
 
 ---
 
+### - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+
+
+---
+
+### - [Python Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack)
+
+Ou, bien que nous recommandons vivement ce pack, si tu ne le veux pas, installe à minima parce qu'on va l'utiliser par la suite :
+
 ### - [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
 Si tu fouilles la bibliothèque des extensions, tu verras qu'il y a pas mal d'extensions qui upgrade encore celle-ci...
 
-Quoi qu'il en soit, nous nous en servirons dorénavant, dès le chapitre suivant presque systématiquement, car adaptée pour faire du code Python exécutable dans la doc !!!
+Quoi qu'il en soit, nous nous en servirons beaucoup, dès le chapitre de programmation, car adaptée pour faire du code Python exécutable dans la doc !!!
 
 ---
 

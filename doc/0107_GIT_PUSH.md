@@ -13,8 +13,8 @@
 La dernière étape du cycle des itérations locales (Souvenez-vous...)
 
 <div align="center">
-  <a href="./imgs/301_GIT.png" target="_blank">
-    <img src="./imgs/301_GIT.png" width="700">
+  <a href="./imgs/300_GIT.png" target="_blank">
+    <img src="./imgs/300_GIT.png" width="700">
   </a>
 </div>
 

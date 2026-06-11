@@ -12,6 +12,8 @@
 
 ### 👉 PRÉAMBULE: À la moindre difficulté, consulte la **[page d'aide](./0000_HELPME.md)**
 
+* [ ] Dans toutes les pages de doc et tous les tags img src, vérifier présence alt et title correspondant bien à l'image
+
 ---
 
 Outre le fait que Git ait été créé en 2005 par **[Linus Torvalds](https://fr.wikipedia.org/wiki/Linus_Torvalds)**, les grands noms du développement ont rapidement compris qu’il s’agissait d’un outil essentiel. L’une des phrases les plus marquantes est attribuée à **Chris Lattner**, ingénieur d’Apple (créateur du langage Swift et contributeur majeur à LLVM) :
@@ -32,8 +34,8 @@ Et ce n’est pas qu’une formule : Dans le monde professionnel, **MAÎTRISER
 Et ici, ça veut dire :
 
 <div align="center">
-  <a href="./imgs/301_GIT.png" target="_blank">
-    <img src="./imgs/301_GIT.png" width="700">
+  <a href="./imgs/300_GIT.png" target="_blank">
+    <img src="./imgs/300_GIT.png" width="700">
   </a>
 </div>
 

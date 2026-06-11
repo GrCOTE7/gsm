@@ -24,3 +24,5 @@ Par la suite, ne faites pas une PR exprès, votre qualification sera qualifiée 
 |  Pseudo                 |  **LV** |
 |-------------------------|---------|
 |  GrCOTE7 / MP21170      |   0301  |
+
+* [ ] Vérifier que dans toutes les pages de doc et tous les tags img src, sont présents alt et title correspondant bien à l'image
