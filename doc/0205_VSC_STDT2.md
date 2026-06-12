@@ -49,9 +49,11 @@ Si du texte précède le tag, ici, la mention 2fix → Pas de coloration ! Il fa
 
 (Note aussi que STDT prend la priorité des # pour faire les H1, H2, etc.... des docs .md)
 
+Et l'effet Kisso Cool...? Ouvre l'arbre des Todo, et clic sur une d'elle ! Ça t'emène directement dans le fichier à la ligne du tag 👌 !
+
 ## Liste des tags actuels - Couleur & Signification
 
-Là, encore cela ne peut être ici qu'une capture, pour ne pas impacter notre comptabilité réelle des ToDo réels.
+Là, encore cela ne peut être ici qu'une capture, pour ne pas impacter notre comptabilité réelle des ToDo réels (Dont le nombre est visible dans notre barre d'état, en bas du VSC).
 
 <div align="center">
   <a href="./imgs/205_vsc_tdt3.png" target="_blank">
@@ -59,6 +61,7 @@ Là, encore cela ne peut être ici qu'une capture, pour ne pas impacter notre co
   </a>
 </div>
 
+Mais globalement, tu verras ce genre de lignes très colorées our êtres très distinctes, que tu soies dans du doc, du jupyter, du php, du py, du... Enfin, partout !
 
 <div align="center">
   <a href="./imgs/205_vsc_tdt4.png" target="_blank">
