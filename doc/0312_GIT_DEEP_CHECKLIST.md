@@ -34,6 +34,8 @@
 
 Si tu valides cette checklist sans aide, tu es prêt à contribuer sereinement.
 
+### 💡 Tous linuxien et MacOxien sont invités à compléter les docs pour adapter ces helpers sur ces Mc et bien-sûr, générer les **PR** qui s'imposent alors...
+
 ---
 
 <h3 align="center">
