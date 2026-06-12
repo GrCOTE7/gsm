@@ -14,7 +14,7 @@
 
 ---
 
-### 👉 Tu mérites pleinement d'avoir ton Niveau 🎖️ mis à jour dans le **[Tableau d'Honneur](./7777_SUIVIS.md) ✌️**
+### 👉 Tu mérites pleinement d'avoir ton Niveau 🎖️ mis à jour dans le **[Tableau d'Honneur](./7777_HONOR.md) ✌️**
 
 → (Bien que tu avais le droit de PR tes niveaux intermédiaires après le 0200) tu peux y mettre maintenant le niveau **0300** 🎉 - Fais bien-sûr la PR pour que cela soit officiel. 💪
 

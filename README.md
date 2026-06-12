@@ -317,7 +317,7 @@ C:\Users\utilisateur\AppData\Local\Android\Sdk\build-tools\34.0.0\apksigner.bat 
 
 ## .🎯 Actuels goals prioritaires
 
-* [ ] Finir docs de base (Git, VSC, Py) + Add autres docs initiatiques
+* [-] Finir docs de base (✅ Git, ✅ VSC, Py) + Add autres docs initiatiques
 * [ ] Mettre en place dans le WorkFlow, le build pour IPhone (→ $Thera...)
 * [ ] Problème de fin du process d'upgrade
 * [x] Dernier reset complet du n° de V

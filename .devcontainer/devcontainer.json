@@ -13,7 +13,10 @@
         "gruntfuggly.todo-tree"
       ],
       "settings": {
-        "todo-tree.ripgrep.ripgrep": "/usr/bin/vscode-ripgrep"
+        "todo-tree.ripgrep.ripgrep": "/usr/bin/vscode-ripgrep",
+        "workbench.startupEditor": "readme",
+        "workbench.editorRestoreMode": "all",
+        "explorer.openEditors.visible": 7
       }
     }
   },

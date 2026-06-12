@@ -1,9 +1,7 @@
 <h3 align='right'><span style="text-decoration:none;"><a href="./0001_TOC.md" title="Table Of Content">TOC</a></span></h3>
 
 
-## 7777_Suivis - Tableau d'Honneur
-
-# ❌ To be continued... 🚧
+## 7777_HONOR - Tableau d'Honneur
 
 ### LV - **L**e**V**el - Niveau
 
@@ -23,6 +21,8 @@ Par la suite, ne faites pas une PR exprès, votre qualification sera qualifiée 
 
 |  Pseudo                 |  **LV** |
 |-------------------------|---------|
-|  GrCOTE7 / MP21170      |   0301  |
+|  GrCOTE7 / MP21170      |   0401  |
 
-* [ ] Vérifier que dans toutes les pages de doc et tous les tags img src, sont présents alt et title correspondant bien à l'image
+---
+
+* [ ] À la fin de la rédaction initiale des pages de la doc, vérifier que dans toutes les pages de doc et tous les tags img src, sont présents alt et title correspondant bien à l'image
