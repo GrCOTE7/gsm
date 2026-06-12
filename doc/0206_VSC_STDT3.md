@@ -22,7 +22,7 @@ Si t'es largué à un moment, look dans la description ! Et sinon... [Plan ORSEC
 
 ---
 
-### 👉 Tu saurais reproduite tout ce que tu as vu dans la Vidéo ci-dessus...? Alors, tu mérites pleinement d'avoir ton Niveau 🎖️ mis à jour dans le **[Tableau d'Honneur](./7777_HONOR.md) ✌️**
+### 👉 Tu saurais reproduire tout ce que tu as vu dans la Vidéo ci-dessus...? Alors, tu mérites pleinement d'avoir ton Niveau 🎖️ mis à jour dans le **[Tableau d'Honneur](./7777_HONOR.md) ✌️**
 
 ### → Bien que tu avais le droit de PR tes niveaux intermédiaires après le 0200, tu peux y mettre maintenant le niveau **0300** 🎉 en face de ton pseudo/nom - Fais bien-sûr la PR pour que cela soit complètement officiel... Et dans la Légende 💪 !
 
