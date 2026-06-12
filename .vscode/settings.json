@@ -1,5 +1,5 @@
 {
-  "todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
+  // "todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
   "todo-tree.general.tags": [
     "2fix",
     "☢️",
