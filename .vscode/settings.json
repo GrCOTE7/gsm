@@ -106,6 +106,14 @@
   "todo-tree.general.statusBarClickBehaviour": "cycle",
   "todo-tree.general.debug": true,
   "todo-tree.general.rootFolder": "${workspaceFolder}",
+  "todo-tree.filtering.excludeGlobs": [
+    "**/scan_todos/**",
+    "**/.env/**",
+    "**/site/**",
+    "**/node_modules/**",
+    "**/__pycache__/**",
+    "**/.git/**"
+  ],
   "todo-tree.tree.scanMode": "workspace",
   "todo-tree.tree.scanAtStartup": true,
   // "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^[ \\t]*(-|\\d+\\.))\\s*)?($TAGS)",
