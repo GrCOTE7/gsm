@@ -8,9 +8,10 @@
   <a href="./0300_GIT_DEEP.md">0300_GIT_DEEP →</a>
 </h3>
 
+
 ---
 
-* [ ] Démo usage finale de STDT ? Vidéo ?
+* [ ] ICI lien de la vidéo YT
 
 ---
 
