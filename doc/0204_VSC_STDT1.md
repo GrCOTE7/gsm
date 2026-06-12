@@ -89,7 +89,7 @@ Tableau montrant, parmis les nouveaux raccourcis, ceux permettant d'avoir un ém
 | CTRL + ALT + **e** |    ↗️   | **E**xterne (Lien) |
 | CTRL + ALT + **f** |    ✅   | **F**ait           |
 | CTRL + ALT + **g** |    🎯   | **G**oal           |
-| CTRL + ALT + **l** |    🦄   | **L**corne         |
+| CTRL + ALT + **l** |    🦄   | **L**icorne         |
 | CTRL + ALT + **t** |  * [ ]  | **T**oDo           |
 | CTRL + ALT + **v** |     ✔   | **V**alidé         |
 | CTRL + ALT + **w** |    ⚠️   | **W**arning        |
