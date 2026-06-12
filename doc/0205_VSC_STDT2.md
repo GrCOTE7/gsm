@@ -61,7 +61,7 @@ Là, encore cela ne peut être ici qu'une capture, pour ne pas impacter notre co
   </a>
 </div>
 
-Mais globalement, tu verras ce genre de lignes très colorées our êtres très distinctes, que tu soies dans du doc, du jupyter, du php, du py, du... Enfin, partout !
+Mais globalement, tu verras ce genre de lignes très colorées pour êtres très distinctes, que tu soies dans du doc, du jupyter, du php, du py, du... Enfin, partout !
 
 <div align="center">
   <a href="./imgs/205_vsc_tdt4.png" target="_blank">
@@ -73,9 +73,7 @@ Pour résumer :
 
 Tous les raccourcis du tableau sont comptabilisés (et on peut en voir le nombre en bas, dans la basre d'état), sauf :
 
-⚠️ - CTRL + ALT + w - Warning
-
-On observe d'ailleurs qu'il n'a pas non plus de coloration particulière.
+⚠️ - CTRL + ALT + w - Warning → On observe d'ailleurs qu'il n'a pas non plus de coloration particulière.
 
 Et une autre exception !
 
@@ -89,6 +87,8 @@ Choisis-en une, et baptise ta branche selon la portée... Et go jusqu'à la PR !
     <img src="./imgs/205_vsc_tdt5.png" width='400' title='ToDo Tree' alt='ToDo Tree Preview'>
   </a>
 </div>
+
+Creuse cette idée en regardant la vidéo de la page suivant...
 
 ---
 
