@@ -105,5 +105,9 @@
   "todo-tree.general.debug": true,
   "todo-tree.general.rootFolder": "${workspaceFolder}",
   "todo-tree.tree.scanMode": "workspace",
+  "todo-tree.tree.expanded": true,
+  "todo-tree.tree.flat": false,
+  "todo-tree.tree.grouped": false,
+  "todo-tree.tree.tagsOnly": false,
   "todo-tree.tree.labelFormat": "${after}"
 }

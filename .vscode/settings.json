@@ -116,6 +116,10 @@
   ],
   "todo-tree.tree.scanMode": "workspace",
   "todo-tree.tree.scanAtStartup": true,
+  "todo-tree.tree.expanded": true,
+  "todo-tree.tree.flat": false,
+  "todo-tree.tree.grouped": false,
+  "todo-tree.tree.tagsOnly": false,
   // "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^[ \\t]*(-|\\d+\\.))\\s*)?($TAGS)",
   "todo-tree.tree.labelFormat": "${after}"
 }
