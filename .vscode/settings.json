@@ -108,6 +108,6 @@
   "todo-tree.general.rootFolder": "${workspaceFolder}",
   "todo-tree.tree.scanMode": "workspace",
   "todo-tree.tree.scanAtStartup": true,
-  "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^[ \\t]*(-|\\d+\\.))\\s*)?($TAGS)",
+  // "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^[ \\t]*(-|\\d+\\.))\\s*)?($TAGS)",
   "todo-tree.tree.labelFormat": "${after}"
 }
