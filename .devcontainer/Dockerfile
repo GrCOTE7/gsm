@@ -3,10 +3,12 @@ FROM mcr.microsoft.com/devcontainers/python:3.11
 # Install curl first (if not already present)
 RUN apt-get update && apt-get install -y \
     curl \
+    ripgrep \
     libsecret-1-0 \
     libgtk-3-0 \
     libwebkit2gtk-4.1-0 \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && ln -sf /usr/bin/rg /usr/bin/vscode-ripgrep
 
 # Install uv (official installer)
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh

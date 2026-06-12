@@ -9,8 +9,12 @@
         "ms-python.python",
         "ms-python.vscode-pylance",
         "mhutchie.git-graph",
-        "hnw.vscode-auto-open-markdown-preview"
-      ]
+        "hnw.vscode-auto-open-markdown-preview",
+        "gruntfuggly.todo-tree"
+      ],
+      "settings": {
+        "todo-tree.ripgrep.ripgrep": "/usr/bin/vscode-ripgrep"
+      }
     }
   },
   "postCreateCommand": "./.devcontainer/postCreateCommand.sh"

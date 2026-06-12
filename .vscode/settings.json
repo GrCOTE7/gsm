@@ -1,3 +1,113 @@
 {
-  "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+  "todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
+  "todo-tree.general.tags": [
+    "2fix",
+    "☢️",
+    "2dbug",
+    "2ar",
+    "* [-]",
+    "* [ ]",
+    "2do",
+    "🎯",
+    "❌",
+    "2see",
+    "2let",
+    "🦄",
+    "XXX"
+  ],
+  "todo-tree.highlights.enabled": true,
+  "todo-tree.highlights.highlightDelay": 1500,
+  "todo-tree.highlights.defaultHighlight": {
+    "foreground": "#0F0",
+    "type": "none"
+  },
+  "todo-tree.highlights.customHighlight": {
+    "2fix": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#FF0",
+      "iconColour": "#FF0"
+    },
+    "☢️": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#8a7c00",
+      "iconColour": "#8a7c00"
+    },
+    "2dbug": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#c07700",
+      "iconColour": "#c07700"
+    },
+    "2ar": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#f0f",
+      "iconColour": "#f0f"
+    },
+    "* [-]": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#fff0a5",
+      "iconColour": "#fff0a5"
+    },
+    "* [ ]": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#ff0",
+      "iconColour": "#ff0"
+    },
+    "2do": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#f00",
+      "iconColour": "#f00"
+    },
+    "🎯": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#f00",
+      "iconColour": "#f00"
+    },
+    "❌": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#f00",
+      "iconColour": "#f00"
+    },
+    "2see": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#0FF",
+      "iconColour": "#0FF"
+    },
+    "2let": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#0F0",
+      "iconColour": "#0F0"
+    },
+    "🦄": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#f0f",
+      "iconColour": "#f0f"
+    },
+    "XXX": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#f0f",
+      "iconColour": "#f0f"
+    }
+  },
+  "todo-tree.general.statusBar": "tags",
+  "todo-tree.tree.showCountsInTree": true,
+  "todo-tree.general.statusBarClickBehaviour": "cycle",
+  "todo-tree.general.debug": true,
+  "todo-tree.general.rootFolder": "${workspaceFolder}",
+  "todo-tree.tree.scanMode": "workspace",
+  "todo-tree.tree.scanAtStartup": true,
+  "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^[ \\t]*(-|\\d+\\.))\\s*)?($TAGS)",
+  "todo-tree.tree.labelFormat": "${after}"
 }
