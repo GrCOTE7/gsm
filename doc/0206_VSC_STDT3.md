@@ -14,7 +14,7 @@
 
 → Situation / Cas de figure :
 
-Tu n'es même pas chez toi, donc pas sur ton Matos chéri habituel, et tu as quand-même un PC (ou autre) connecté sous le coude, et quelques minutes de dispo... Et surtout, en plus, fondamentalement, un souhait absolu de te rendre utile pour la Communauté...
+Tu n'es même pas chez toi, donc pas sur ton Matos chéri habituel, et tu as quand-même un PC (ou autre) connecté sous le coude, et quelques minutes de dispo... Et surtout, en plus, fondamentalement, un souhait absolu d'exister, de te rendre utile pour la Communauté...
 
 ... Alors, regarde cette vidéo (Rappel: ***MP21170*** n'est qu'un *fake user*, juste pour nous et nos démos dans la doc, toi partout à la place, ça doit afficher ton pseudo GH)
 
