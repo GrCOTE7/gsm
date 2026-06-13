@@ -58,6 +58,21 @@ if [ -x "/usr/bin/rg" ] && [ ! -e "/usr/bin/vscode-ripgrep" ]; then
     fi
 fi
 
+# Synchroniser les raccourcis clavier personnalisés du repo vers le profil utilisateur VS Code du Codespace
+WORKSPACE_DIR="${GITHUB_WORKSPACE:-$PWD}"
+KEYBINDINGS_SOURCE="$WORKSPACE_DIR/doc/files/keybindings.json"
+
+if [ -f "$KEYBINDINGS_SOURCE" ]; then
+    for VSCODE_USER_DIR in "$HOME/.vscode-remote/data/User" "$HOME/.vscode-server/data/User"; do
+        mkdir -p "$VSCODE_USER_DIR"
+        TARGET_KEYBINDINGS="$VSCODE_USER_DIR/keybindings.json"
+        cp "$KEYBINDINGS_SOURCE" "$TARGET_KEYBINDINGS"
+        echo "✅ keybindings forcés depuis $KEYBINDINGS_SOURCE vers $TARGET_KEYBINDINGS"
+    done
+else
+    echo "⚠️ keybindings source introuvable: $KEYBINDINGS_SOURCE"
+fi
+
 # # Télécharger flet-desktop-light dans le codespace
 # echo "📦 Téléchargement de flet-desktop-light..."
 # curl -LO https://github.com/flet-dev/flet/releases/latest/download/flet-desktop-light.zip
