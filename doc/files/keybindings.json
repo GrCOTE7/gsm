@@ -20,16 +20,9 @@
   },
   {
     "key": "ctrl+alt+c",
-    "command": "type",
+    "command": "editor.action.insertSnippet",
     "args": {
-      "text": "❌ "
-    }
-  },
-  {
-    "key": "ctrl+shift+alt+c",
-    "command": "type",
-    "args": {
-      "text": "❌ "
+      "snippet": "❌ "
     }
   },
   {

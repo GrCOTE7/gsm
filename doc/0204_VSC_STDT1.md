@@ -118,3 +118,4 @@ Tableau montrant, parmis les nouveaux raccourcis, ceux permettant d'avoir un ém
                      
   <a href="./0205_VSC_STDT2.md">0205_VSC_STDT2 →</a>
 </h3>
+
