@@ -42,6 +42,13 @@
     }
   },
   {
+    "key": "ctrl+alt+p",
+    "command": "type",
+    "args": {
+      "text": "* [-]"
+    }
+  },
+  {
     "key": "ctrl+alt+t",
     "command": "type",
     "args": {
