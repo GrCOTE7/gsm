@@ -6,6 +6,13 @@
         ],
         "description": "Insère ❌ avec un espace"
     },
+    "Insert Cross": {
+        "prefix": ["interdit"],
+        "body": [
+            "⛔ "
+        ],
+        "description": "Insère ⛔ avec un espace"
+    },
     "Insert Done Checkbox": {
         "prefix": ["done", "dx"],
         "body": [
@@ -21,11 +28,25 @@
         "description": "Insère ↗️ avec un espace"
     },
     "Insert Check Mark": {
-        "prefix": ["fait", "ok"],
+        "prefix": ["ok", "oui", "yes"],
         "body": [
             "✅ "
         ],
         "description": "Insère ✅ avec un espace"
+    },
+    "Insert Red Mark": {
+        "prefix": ["nok", "non", "no"],
+        "body": [
+            "🟥 "
+        ],
+        "description": "Insère 🟥 avec un espace"
+    },
+    "Insert Pin": {
+        "prefix": ["pin", "note", "retient"],
+        "body": [
+            "📌 "
+        ],
+        "description": "Insère 📌 avec un espace"
     },
     "Insert Goal": {
         "prefix": ["goal", "obj"],
@@ -49,7 +70,7 @@
         "description": "Insère * [ ]"
     },
     "Insert Valid": {
-        "prefix": ["tdec"],
+        "prefix": ["tdec", "tec", "ec"],
         "body": [
             "* [-] "
         ],
