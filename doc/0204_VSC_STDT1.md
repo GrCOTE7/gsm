@@ -72,28 +72,45 @@ Et voici comment en ajouter un : Exemple : **CTRL + ALT + x** → ' ☢️ '
   </a>
 </div>
 
-### 👉 Pour avoir + simplement tous ceux qui nous intéressent : Édite ce fichier et ajoute à son contenu celui du fichier : [gsm/doc/files/keybindings.json](./files/keybindings.json)
+### 👉 Pour avoir + simplement tous ceux qui nous intéressent
 
-Je ne sais plus trop quels items (paires clé-valeur) sont d'origine, donc ils sont dans l'ordre alphabétique, permettant un dédoublonnage + aisé.
+Dans GSM, on laisse de côté les raccourcis personnalisés pour Codespaces : ici, on se base désormais sur les snippets définis dans [../.vscode/gsm.code-snippets](../.vscode/gsm.code-snippets).
 
-💡 Et si toi, tu viens de poser ces settings dans un VSC 'tout neuf' (pas comme moi, qui depuis 2016 profite d'un système de centralisation des settings qui me repose instantanément tous mes réglages et extensions automatiquement à chaque nouvelle installation sur n'importe quelle machine), n'hésite pas à dédoublonner dans ce fichier ces settings proposés en ajout de ceux originaux, puis, tu connais maintenant... : **PR** ✌️ !
+Donc, si tu veux ajouter ou corriger une insertion utile à la communauté :
+
+1. Modifie [../.vscode/gsm.code-snippets](../.vscode/gsm.code-snippets).
+2. Teste le snippet dans VS Code.
+3. Ouvre une PR courte avec le changement et son intérêt.
 
 ---
 
-Tableau montrant, parmis les nouveaux raccourcis, ceux permettant d'avoir un émoji sémantique rapidement (Sémantique, parce que tu découvriras qu'ils ont un rôle réel dans notre système et ne sont pas là *que pour faire joli*...)
+⚠️ : Pour le code du snippet, faire **TAB** après le code.
 
-|      Raccourci     | Symbole |     Mnémonique     |
-|:------------------:|:-------:|:-------------------|
-| CTRL + ALT + **c** |    ❌   | **C**roix          |
-| CTRL + ALT + **d** |  * [x]  | **D**one (fait)    |
-| CTRL + ALT + **e** |    ↗️   | **E**xterne (Lien) |
-| CTRL + ALT + **f** |    ✅   | **F**ait           |
-| CTRL + ALT + **g** |    🎯   | **G**oal           |
-| CTRL + ALT + **l** |    🦄   | **L**icorne         |
-| CTRL + ALT + **t** |  * [ ]  | **T**oDo           |
-| CTRL + ALT + **v** |     ✔   | **V**alidé         |
-| CTRL + ALT + **w** |    ⚠️   | **W**arning        |
-| CTRL + ALT + **x** |    ☢️   | Rayons **X**       |
+| Raccourci<br>(Local) | Snippet<br>(Codespace) | Symbole | STDT |
+|:---------------------:|:-----------------------|:--------:|:----:|
+| CTRL + ALT + **x** | **cx** | ❌ | ✔ |
+| CTRL + ALT + **x** | **xray** ou **rad** | ☢️ | ✔ |
+| - | **2fix** | 2fix | ✔ |
+| - | **2dbug** | 2dbug | ✔ |
+| - | **xxx** | XXX | ✔ |
+| - | **2ar** | 2ar | ✔ |
+| - | **2see** | 2see | ✔ |
+| - | **2let** | 2let | ✔ |
+| - | **2do** | 2do | ✔ |
+| CTRL + ALT + **t** | **todo** ou **td** | \* [ ] | ✔ |
+| CTRL + ALT + **p** | **tdec**, **tec**, **ec** | \* [-] | ✔ |
+| CTRL + ALT + **d** | **done** ou **dx** | \* [x] |  |
+| CTRL + ALT + **l** | **gc7** ou **licorne** | 🦄 | ✔ |
+| CTRL + ALT + **g** | **goal** ou **obj** | 🎯 | ✔ |
+| CTRL + ALT + **e** | **ext** ou **elk** | ↗️ |  |
+| CTRL + ALT + **f** | **ok**, **oui**, **yes** | ✅ |  |
+| CTRL + ALT + **v** | **valid** ou **val** | ✔ |  |
+| CTRL + ALT + **w** | **warn** ou **warning** | ⚠️ |  |
+| - | **interdit** | ⛔ |  |
+| - | **nok**, **non**, **no** | 🟥 |  |
+| - | **pin**, **note**, **retient** | 📌 |  |
+
+En STDT, un ✔ veut juste dire : Ce tag est comptabilisé par ToDo Tree.
 
 ---
 
@@ -102,3 +119,4 @@ Tableau montrant, parmis les nouveaux raccourcis, ceux permettant d'avoir un ém
                      
   <a href="./0205_VSC_STDT2.md">0205_VSC_STDT2 →</a>
 </h3>
+

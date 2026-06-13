@@ -5,7 +5,7 @@
 <h3 align="center">
   <a href="./0202_VSC_EXT02_GG.md">← 0202_VSC_EXT02_GG</a>
                      
-  <a href="./0204_VSC_SBCTD1.md">0204_VSC_SBCTD1 →</a>
+  <a href="./0204_VSC_STDT1.md">0204_VSC_STDT1 →</a>
 </h3>
 
 ---
@@ -117,5 +117,5 @@ Quoi qu'il en soit, nous nous en servirons beaucoup, dès le chapitre de program
 <h3 align="center">
   <a href="./0202_VSC_EXT02_GG.md">← 0202_VSC_EXT02_GG</a>
                      
-  <a href="./0204_VSC_SBCTD1.md">0204_VSC_SBCTD1 →</a>
+  <a href="./0204_VSC_STDT1.md">0204_VSC_STDT1 →</a>
 </h3>

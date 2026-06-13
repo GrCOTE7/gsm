@@ -1,0 +1,149 @@
+{
+    "Insert Cross": {
+        "prefix": ["cx"],
+        "body": [
+            "❌ "
+        ],
+        "description": "Insère ❌ avec un espace"
+    },
+    "Insert Cross": {
+        "prefix": ["interdit"],
+        "body": [
+            "⛔ "
+        ],
+        "description": "Insère ⛔ avec un espace"
+    },
+    "Insert Done Checkbox": {
+        "prefix": ["done", "dx"],
+        "body": [
+            "* [x]"
+        ],
+        "description": "Insère * [x]"
+    },
+    "Insert External Arrow": {
+        "prefix": ["ext", "elk"],
+        "body": [
+            "↗️ "
+        ],
+        "description": "Insère ↗️ avec un espace"
+    },
+    "Insert Check Mark": {
+        "prefix": ["ok", "oui", "yes"],
+        "body": [
+            "✅ "
+        ],
+        "description": "Insère ✅ avec un espace"
+    },
+    "Insert Red Mark": {
+        "prefix": ["nok", "non", "no"],
+        "body": [
+            "🟥 "
+        ],
+        "description": "Insère 🟥 avec un espace"
+    },
+    "Insert Pin": {
+        "prefix": ["pin", "note", "retient"],
+        "body": [
+            "📌 "
+        ],
+        "description": "Insère 📌 avec un espace"
+    },
+    "Insert Goal": {
+        "prefix": ["goal", "obj"],
+        "body": [
+            "🎯 "
+        ],
+        "description": "Insère 🎯 avec un espace"
+    },
+    "Insert Unicorn": {
+        "prefix": ["gc7", "licorne"],
+        "body": [
+            "🦄 "
+        ],
+        "description": "Insère 🦄 avec un espace"
+    },
+    "Insert Todo Checkbox": {
+        "prefix": ["todo", "td"],
+        "body": [
+            "* [ ] "
+        ],
+        "description": "Insère * [ ]"
+    },
+    "Insert Valid": {
+        "prefix": ["tdec", "tec", "ec"],
+        "body": [
+            "* [-] "
+        ],
+        "description": "Insère * [-] avec un espace"
+    },
+    "Insert Valid": {
+        "prefix": ["valid", "val"],
+        "body": [
+            "✔ "
+        ],
+        "description": "Insère ✔ avec un espace"
+    },
+    "Insert Warning": {
+        "prefix": ["warn", "warning"],
+        "body": [
+            "⚠️ "
+        ],
+        "description": "Insère ⚠️ avec un espace"
+    },
+    "Insert X Ray": {
+        "prefix": ["xray", "rad"],
+        "body": [
+            "☢️ "
+        ],
+        "description": "Insère ☢️ avec un espace"
+    },
+    "Insert 2AR Tag": {
+        "prefix": ["2ar"],
+        "body": [
+            "2ar "
+        ],
+        "description": "Insère le tag TodoTree 2ar avec un espace"
+    },
+    "Insert 2FIX Tag": {
+        "prefix": ["2fix"],
+        "body": [
+            "2fix "
+        ],
+        "description": "Insère le tag TodoTree 2fix avec un espace"
+    },
+    "Insert 2DBUG Tag": {
+        "prefix": ["2dbug"],
+        "body": [
+            "2dbug "
+        ],
+        "description": "Insère le tag TodoTree 2dbug avec un espace"
+    },
+    "Insert 2DO Tag": {
+        "prefix": ["2do"],
+        "body": [
+            "2do "
+        ],
+        "description": "Insère le tag TodoTree 2do avec un espace"
+    },
+    "Insert 2SEE Tag": {
+        "prefix": ["2see"],
+        "body": [
+            "2see "
+        ],
+        "description": "Insère le tag TodoTree 2see avec un espace"
+    },
+    "Insert 2LET Tag": {
+        "prefix": ["2let"],
+        "body": [
+            "2let "
+        ],
+        "description": "Insère le tag TodoTree 2let avec un espace"
+    },
+    "Insert XXX Tag": {
+        "prefix": ["xxx"],
+        "body": [
+            "XXX "
+        ],
+        "description": "Insère le tag TodoTree XXX avec un espace"
+    }
+}

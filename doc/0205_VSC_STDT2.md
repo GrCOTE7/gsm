@@ -69,15 +69,16 @@ Mais globalement, tu verras ce genre de lignes très colorées pour êtres très
   </a>
 </div>
 
-Pour résumer :
+Pour résumer (cohérent avec le tableau de la page 0204) :
 
-Tous les raccourcis du tableau sont comptabilisés (et on peut en voir le nombre en bas, dans la basre d'état), sauf :
+Les lignes marquées d'un ✔ dans la colonne STDT sont comptabilisées dans ToDo Tree (et leur nombre est visible en bas, dans la barre d'état).
 
-⚠️ - CTRL + ALT + w - Warning → On observe d'ailleurs qu'il n'a pas non plus de coloration particulière.
+Les lignes sans ✔ ne sont pas comptabilisées, même si elles restent utiles pour écrire plus vite.
 
-Et une autre exception !
+Exemple :
 
-' * [-] ' : En Cours.... Tâche ouverte (Colorée en beige) - Un contributeur est dessus...
+- ⚠️ `warn` / `warning` n'est pas comptabilisé.
+- `* [-]` (en cours / pending) est bien comptabilisé.
 
 ### 👉 Maintenant, pour donner raison à Yoda (Voire en haut de la page précédente....), si tu n'as pas d'emblée, une idée de dev, ou ne vois pas grand chose à modifier pour corriger, améliorer ou compléter, regardes l'arbre des Todo en place...
 Choisis-en une, et baptise ta branche selon la portée... Et go jusqu'à la PR ! 💪
