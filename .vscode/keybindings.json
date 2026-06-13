@@ -1,0 +1,72 @@
+[
+  {
+    "key": "ctrl+alt+c",
+    "command": "type",
+    "args": {
+      "text": "❌ "
+    }
+  },
+  {
+    "key": "ctrl+alt+d",
+    "command": "type",
+    "args": {
+      "text": "* [x]"
+    }
+  },
+  {
+    "key": "ctrl+alt+e",
+    "command": "type",
+    "args": {
+      "text": "↗️ "
+    }
+  },
+  {
+    "key": "ctrl+alt+f",
+    "command": "type",
+    "args": {
+      "text": "✅ "
+    }
+  },
+  {
+    "key": "ctrl+alt+g",
+    "command": "type",
+    "args": {
+      "text": "🎯 "
+    }
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "type",
+    "args": {
+      "text": "🦄 "
+    }
+  },
+  {
+    "key": "ctrl+alt+t",
+    "command": "type",
+    "args": {
+      "text": "* [ ]"
+    }
+  },
+  {
+    "key": "ctrl+alt+v",
+    "command": "type",
+    "args": {
+      "text": "✔ "
+    }
+  },
+  {
+    "key": "ctrl+alt+w",
+    "command": "type",
+    "args": {
+      "text": "⚠️ "
+    }
+  },
+  {
+    "key": "ctrl+alt+x",
+    "command": "type",
+    "args": {
+      "text": "☢️ "
+    }
+  }
+]

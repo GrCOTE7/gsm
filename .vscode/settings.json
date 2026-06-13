@@ -120,6 +120,8 @@
   "todo-tree.tree.flat": false,
   "todo-tree.tree.grouped": false,
   "todo-tree.tree.tagsOnly": false,
+  "editor.tabCompletion": "on",
+  "editor.snippetSuggestions": "top",
   // "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^[ \\t]*(-|\\d+\\.))\\s*)?($TAGS)",
   "todo-tree.tree.labelFormat": "${after}"
 }

@@ -1,0 +1,79 @@
+{
+    "Insert Cross": {
+        "prefix": ["cx"],
+        "body": [
+            "❌ "
+        ],
+        "description": "Insère ❌ avec un espace"
+    },
+    "Insert Done Checkbox": {
+        "prefix": ["done", "dx"],
+        "body": [
+            "* [x]"
+        ],
+        "description": "Insère * [x]"
+    },
+    "Insert External Arrow": {
+        "prefix": ["ext", "elk"],
+        "body": [
+            "↗️ "
+        ],
+        "description": "Insère ↗️ avec un espace"
+    },
+    "Insert Check Mark": {
+        "prefix": ["fait", "ok"],
+        "body": [
+            "✅ "
+        ],
+        "description": "Insère ✅ avec un espace"
+    },
+    "Insert Goal": {
+        "prefix": ["goal", "obj"],
+        "body": [
+            "🎯 "
+        ],
+        "description": "Insère 🎯 avec un espace"
+    },
+    "Insert Unicorn": {
+        "prefix": ["gc7", "licorne"],
+        "body": [
+            "🦄 "
+        ],
+        "description": "Insère 🦄 avec un espace"
+    },
+    "Insert Todo Checkbox": {
+        "prefix": ["todo", "td"],
+        "body": [
+            "* [ ] "
+        ],
+        "description": "Insère * [ ]"
+    },
+    "Insert Valid": {
+        "prefix": ["tdec"],
+        "body": [
+            "* [-] "
+        ],
+        "description": "Insère * [-] avec un espace"
+    },
+    "Insert Valid": {
+        "prefix": ["valid", "val"],
+        "body": [
+            "✔ "
+        ],
+        "description": "Insère ✔ avec un espace"
+    },
+    "Insert Warning": {
+        "prefix": ["warn", "warning"],
+        "body": [
+            "⚠️ "
+        ],
+        "description": "Insère ⚠️ avec un espace"
+    },
+    "Insert X Ray": {
+        "prefix": ["xray", "rad"],
+        "body": [
+            "☢️ "
+        ],
+        "description": "Insère ☢️ avec un espace"
+    }
+}
