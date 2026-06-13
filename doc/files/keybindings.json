@@ -26,6 +26,13 @@
     }
   },
   {
+    "key": "ctrl+shift+alt+c",
+    "command": "type",
+    "args": {
+      "text": "❌ "
+    }
+  },
+  {
     "key": "ctrl+alt+d",
     "command": "type",
     "args": {

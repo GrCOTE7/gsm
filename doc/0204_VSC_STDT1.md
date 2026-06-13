@@ -100,10 +100,10 @@ Tableau montrant, parmis les nouveaux raccourcis, ceux permettant d'avoir un ém
 
 |     Raccourci      | Symbole | Mnémonique         |
 |:------------------:|:-------:|:-------------------|
-| CTRL + ALT + **c** |    ❌    | **C**roix          |
+| CTRL + ALT + **c** |   ❌    | **C**roix          |
 | CTRL + ALT + **d** |  * [x]  | **D**one (fait)    |
 | CTRL + ALT + **e** |   ↗️    | **E**xterne (Lien) |
-| CTRL + ALT + **f** |    ✅    | **F**ait           |
+| CTRL + ALT + **f** |   ✅    | **F**ait           |
 | CTRL + ALT + **g** |   🎯    | **G**oal           |
 | CTRL + ALT + **l** |   🦄    | **L**icorne        |
 | CTRL + ALT + **t** |  * [ ]  | **T**oDo           |
