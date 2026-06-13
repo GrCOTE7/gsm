@@ -63,9 +63,12 @@ WORKSPACE_DIR="${GITHUB_WORKSPACE:-$PWD}"
 KEYBINDINGS_SOURCE="$WORKSPACE_DIR/doc/files/keybindings.json"
 
 if [ -f "$KEYBINDINGS_SOURCE" ]; then
-    for VSCODE_USER_DIR in "$HOME/.vscode-remote/data/User" "$HOME/.vscode-server/data/User"; do
-        mkdir -p "$VSCODE_USER_DIR"
-        TARGET_KEYBINDINGS="$VSCODE_USER_DIR/keybindings.json"
+    for TARGET_KEYBINDINGS in \
+    "$HOME/.vscode-remote/data/User/keybindings.json" \
+    "$HOME/.vscode-server/data/User/keybindings.json" \
+    "$HOME/.vscode-remote/data/Machine/keybindings.json" \
+    "$HOME/.vscode-server/data/Machine/keybindings.json"; do
+        mkdir -p "$(dirname "$TARGET_KEYBINDINGS")"
         cp "$KEYBINDINGS_SOURCE" "$TARGET_KEYBINDINGS"
         echo "✅ keybindings forcés depuis $KEYBINDINGS_SOURCE vers $TARGET_KEYBINDINGS"
     done
