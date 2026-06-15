@@ -33,6 +33,10 @@ Et **la lecture de cette page et des deux suivantes va te l'offrir intégralemen
 
 ## Élément 1 : ShortCuts - Raccourcis (Json)
 
+### ⚠️ ATTENTION: Uniquement pour VSC sur Win
+
+### Pour Codespaces, utiliser les snippets (voir tableau ci-dessous)
+
 Là, il ne s'agit pas vraiment d'une extension ([Bien que si tu cliques là, sur 'ces mots bleus', celle de la page qui s'ouvrira t'apporte des raccourcis spécifiques pour les docs rédigées en MarkDown](https://marketplace.visualstudio.com/items?itemName=mdickin.markdown-shortcuts)), car nous parlons là davantage d'une fonctionnalité native de VSC.
 
 En effet, d'emblée, de nombreux raccourcis (claviers → *keybindings*) existent :
@@ -74,52 +78,62 @@ Et voici comment en ajouter un : Exemple : **CTRL + ALT + x** → ' ☢️ '
 
 ### 👉 Pour avoir + simplement tous ceux qui nous intéressent
 
-Dans GSM, on laisse de côté les raccourcis personnalisés pour Codespaces : ici, on se base désormais sur les snippets définis dans [../.vscode/gsm.code-snippets](../.vscode/gsm.code-snippets).
+Dans GSM, on personalise les raccourcis personnalisés (le fichier json) pour notre VSC local, et des code-snippets pour celui dans Codespaces :
+
+Notre VSC se base sur les 2 fichiers correcpondants situés dans ./vscode/
+
+- Raccourcis dans [../.vscode/keybindings.json](../.vscode/gsm.code-snippets)
+
+  → Copier le contenu dans votre fichier json comme vu dans la capture précédente.
+
+- snippets dans [../.vscode/gsm.code-snippets](../.vscode/gsm.code-snippets)
+
+  Là, rien à faire, notre installateur de codespace viendra les chercher ci 😉 !
 
 Donc, si tu veux ajouter ou corriger une insertion utile à la communauté :
 
-1. Modifie [../.vscode/gsm.code-snippets](../.vscode/gsm.code-snippets).
-2. Teste le snippet dans VS Code.
-3. Ouvre une PR courte avec le changement et son intérêt.
+1. Modifie Le fichier correspondant,
+2. teste le raccourci dans ton VSCode local, ou le snippet dans COdeSpace,
+3. Et ouvre alors une PR courte avec le changement et décrit son intérêt.
 
 ---
+
+## Tablau récapitulatif des raccourcis
 
 ⚠️ : Pour le code du snippet, faire **TAB** après le code.
 
-| Raccourci<br>(Local) | Snippet<br>(Codespace)   | Commentaire | Coloré | Symbole   | STDT                              |
-|:--------------------:|:------------------------:|:-----------:|:------:|:---------:|:---------------------------------:|
-| CTRL + ALT + **c**-- | **redcrosscx** ou **rc** | -           | ✔      | ❌        | **C**roix Rouge- Urgence          |
-| CTRL + ALT + **x**   | **xray** ou **rad**      | -           | ✔      | ☢️        | **X** Ray → Dangereux             |
-| -                    | -                        | **2fix**    | ✔      | -         | To fix → À règler                 |
-| -                    | -                        | **2dbug**   | ✔      | -         | To debug → À corriger             |
-| -                    | -                        | **XXX**     | ✔      | -         | Posé provisoirement               |
-| -                    | -                        | **XXX**     | ✔      | -         | To Remove→ À remove - À enlever   |
-| -                    | -                        | **2see**    | ✔      | -         | À voir                            |
-| -                    | -                        | **2let**    | ✔      | -         | À laisser                         |
-| -                    | -                        | **2do**     | ✔      | -         | To do → À faire                   |
-| CTRL + ALT + **t**   | **todo** ou **td**       | -           | ✔      | \* [ ]    | **T**oDo → À faire - En liste     |
-| CTRL + ALT + **p**   | **tdec**, **ec**         | -           | ✔      | \* [-]    | ToDo **P**ending → En Cours       |
-| CTRL + ALT + **d**   | **done** ou **dx**       | -           |        | \* [x]    | ToDo **D**one → faite             |
-| CTRL + ALT + **l**   | **gc7** ou **licorne**   |             | ✔      | 🦄        | **L**icorne - ToDo réservé        |
-| CTRL + ALT + **g**   | **goal** ou **obj**      |             | ✔      | 🎯        | **G**oal → But                    |
-| CTRL + ALT + **e**   | **ext** ou **elk**       |             | ✔      | ↗️        | **E**xtérieur - Lien              |
-| CTRL + ALT + **v**   | **valid** ou **val**     |             | ✔      | ✔         | **V**alide                        |
-| CTRL + ALT + **p**   | **pin**, **note**        |             | ✔      | 📌        | **P**in → Attache                 |
-| CTRL + ALT + **y**   | **ok**, **oui**, **yes** |             | ✔      | ✅        | **Y**es → Oui                     |
-| CTRL + ALT + **n**   | **nok**, **non**, **no** |             | ✔      | 🟥        | **N**o → Non                      |
-| CTRL + ALT + **w**   | **warn** ou **warning**  |             | ✔      | ⚠️        | **W**arning → Attention !         |
-| CTRL + ALT + **b**   | **bad** ou **interdit**  |             | ✔      | ⛔        | **B**ad - Interdit                |
+| Raccourci<br>(Local) | Snippet<br>(Codespace)   | Commentaire | Coloré | Symbole   | Signification                     | STDT  |
+|:--------------------:|:------------------------:|:-----------:|:------:|:---------:|:---------------------------------:|:-----:|
+| CTRL + ALT + **c**-- | **redcross** ou **rc**   | -           | ✔      | ❌        | **C**roix Rouge- Urgence          |   ✔   |
+| CTRL + ALT + **x**   | **xray** ou **rad**      | -           | ✔      | ☢️        | **X** Ray → Dangereux             |   ✔   |
+| -                    | -                        | **2fix**    | ✔      | -         | To fix → À règler                 |   ✔   |
+| -                    | -                        | **2dbug**   | ✔      | -         | To debug → À corriger             |   ✔   |
+| -                    | -                        | **XXX**     | ✔      | -         | Posé provisoirement               |   ✔   |
+| -                    | -                        | **2ar**     | ✔      | -         | To Remove→ À remove - À enlever   |   ✔   |
+| -                    | -                        | **2see**    | ✔      | -         | To see → À voir                   |   ✔   |
+| -                    | -                        | **2let**    | ✔      | -         | To let → À laisser                |   ✔   |
+| -                    | -                        | **2do**     | ✔      | -         | To do → À faire                   |   ✔   |
+| CTRL + ALT + **t**   | **todo** ou **td**       | -           | ✔      | \* [ ]    | **T**oDo → À faire - En liste     |   ✔   |
+| CTRL + ALT + **a**   | **actuel**, **ec**       | -           | ✔      | \* [-]    | ToDo **A**ctuelle → En Cours      |   ✔   |
+| CTRL + ALT + **d**   | **done** ou **dx**       | -           |        | \* [x]    | ToDo **D**one → **f**aite         |   -   |
+| CTRL + ALT + **l**   | **gc7** ou **licorne**   |             | ✔      | 🦄        | **L**icorne - ToDo réservé        |   ✔   |
+| CTRL + ALT + **g**   | **goal** ou **obj**      |             | ✔      | 🎯        | **G**oal → But                    |   ✔   |
+| CTRL + ALT + **e**   | **ext** ou **elk**       |             | ✔      | ↗️        | **E**xtérieur - Lien              |   -   |
+| CTRL + ALT + **v**   | **valid** ou **val**     |             | ✔      | ✔         | **V**alide                        |   -   |
+| CTRL + ALT + **p**   | **pin**, **note**        |             | ✔      | 📌        | **P**in → Attache                 |   -   |
+| CTRL + ALT + **y**   | **ok**, **oui**, **yes** |             | ✔      | ✅        | **Y**es → Oui                     |   -   |
+| CTRL + ALT + **n**   | **nok**, **non**, **no** |             | ✔      | 🟥        | **N**o → Non                      |   -   |
+| CTRL + ALT + **w**   | **warn** ou **warning**  |             | ✔      | ⚠️        | **W**arning → Attention !         |   -   |
+| CTRL + ALT + **b**   | **bad** ou **interdit**  |             | ✔      | ⛔        | **B**ad - Interdit                |   -   |
 
 En commentaire, cela colore la ligne pour la mettre bien en évidence.
-En STDT, un ✔ veut juste dire : Ce tag est comptabilisé par ToDo Tree.
+
+En STDT (Notre système Shortcuts - ToDo Tree), un ✔ veut juste dire le tag est comptabilisé par ToDo Tree (Visible en bas, dans la barre d'état).
 
 ❌ vérif tous snippets
-
----
 
 <h3 align="center">
   <a href="./0203_VSC_EXT3.md">← 0203_VSC_EXT3</a>
                      
   <a href="./0205_VSC_STDT2.md">0205_VSC_STDT2 →</a>
 </h3>
-
