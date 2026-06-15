@@ -86,31 +86,34 @@ Donc, si tu veux ajouter ou corriger une insertion utile à la communauté :
 
 ⚠️ : Pour le code du snippet, faire **TAB** après le code.
 
-| Raccourci<br>(Local) | Snippet<br>(Codespace) | Symbole | STDT |
-|:---------------------:|:-----------------------|:--------:|:----:|
-| CTRL + ALT + **x** | **cx** | ❌ | ✔ |
-| CTRL + ALT + **x** | **xray** ou **rad** | ☢️ | ✔ |
-| - | **2fix** | 2fix | ✔ |
-| - | **2dbug** | 2dbug | ✔ |
-| - | **xxx** | XXX | ✔ |
-| - | **2ar** | 2ar | ✔ |
-| - | **2see** | 2see | ✔ |
-| - | **2let** | 2let | ✔ |
-| - | **2do** | 2do | ✔ |
-| CTRL + ALT + **t** | **todo** ou **td** | \* [ ] | ✔ |
-| CTRL + ALT + **p** | **tdec**, **tec**, **ec** | \* [-] | ✔ |
-| CTRL + ALT + **d** | **done** ou **dx** | \* [x] |  |
-| CTRL + ALT + **l** | **gc7** ou **licorne** | 🦄 | ✔ |
-| CTRL + ALT + **g** | **goal** ou **obj** | 🎯 | ✔ |
-| CTRL + ALT + **e** | **ext** ou **elk** | ↗️ |  |
-| CTRL + ALT + **f** | **ok**, **oui**, **yes** | ✅ |  |
-| CTRL + ALT + **v** | **valid** ou **val** | ✔ |  |
-| CTRL + ALT + **w** | **warn** ou **warning** | ⚠️ |  |
-| - | **interdit** | ⛔ |  |
-| - | **nok**, **non**, **no** | 🟥 |  |
-| - | **pin**, **note**, **retient** | 📌 |  |
+| Raccourci<br>(Local) | Snippet<br>(Codespace)   | Commentaire | Coloré | Symbole   | STDT                              |
+|:--------------------:|:------------------------:|:-----------:|:------:|:---------:|:---------------------------------:|
+| CTRL + ALT + **c**-- | **redcrosscx** ou **rc** | -           | ✔      | ❌        | **C**roix Rouge- Urgence          |
+| CTRL + ALT + **x**   | **xray** ou **rad**      | -           | ✔      | ☢️        | **X** Ray → Dangereux             |
+| -                    | -                        | **2fix**    | ✔      | -         | To fix → À règler                 |
+| -                    | -                        | **2dbug**   | ✔      | -         | To debug → À corriger             |
+| -                    | -                        | **XXX**     | ✔      | -         | Posé provisoirement               |
+| -                    | -                        | **XXX**     | ✔      | -         | To Remove→ À remove - À enlever   |
+| -                    | -                        | **2see**    | ✔      | -         | À voir                            |
+| -                    | -                        | **2let**    | ✔      | -         | À laisser                         |
+| -                    | -                        | **2do**     | ✔      | -         | To do → À faire                   |
+| CTRL + ALT + **t**   | **todo** ou **td**       | -           | ✔      | \* [ ]    | **T**oDo → À faire - En liste     |
+| CTRL + ALT + **p**   | **tdec**, **ec**         | -           | ✔      | \* [-]    | ToDo **P**ending → En Cours       |
+| CTRL + ALT + **d**   | **done** ou **dx**       | -           |        | \* [x]    | ToDo **D**one → faite             |
+| CTRL + ALT + **l**   | **gc7** ou **licorne**   |             | ✔      | 🦄        | **L**icorne - ToDo réservé        |
+| CTRL + ALT + **g**   | **goal** ou **obj**      |             | ✔      | 🎯        | **G**oal → But                    |
+| CTRL + ALT + **e**   | **ext** ou **elk**       |             | ✔      | ↗️        | **E**xtérieur - Lien              |
+| CTRL + ALT + **v**   | **valid** ou **val**     |             | ✔      | ✔         | **V**alide                        |
+| CTRL + ALT + **p**   | **pin**, **note**        |             | ✔      | 📌        | **P**in → Attache                 |
+| CTRL + ALT + **y**   | **ok**, **oui**, **yes** |             | ✔      | ✅        | **Y**es → Oui                     |
+| CTRL + ALT + **n**   | **nok**, **non**, **no** |             | ✔      | 🟥        | **N**o → Non                      |
+| CTRL + ALT + **w**   | **warn** ou **warning**  |             | ✔      | ⚠️        | **W**arning → Attention !         |
+| CTRL + ALT + **b**   | **bad** ou **interdit**  |             | ✔      | ⛔        | **B**ad - Interdit                |
 
+En commentaire, cela colore la ligne pour la mettre bien en évidence.
 En STDT, un ✔ veut juste dire : Ce tag est comptabilisé par ToDo Tree.
+
+❌ vérif tous snippets
 
 ---
 

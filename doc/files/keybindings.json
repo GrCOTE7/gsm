@@ -47,7 +47,7 @@
     }
   },
   {
-    "key": "ctrl+alt+G",
+    "key": "ctrl+alt+g",
     "command": "type",
     "args": {
       "text": "🎯 "
@@ -63,7 +63,7 @@
     "command": "-tabnine.chat.toggle-focus"
   },
   {
-    "key": "ctrl+alt+L",
+    "key": "ctrl+alt+l",
     "command": "type",
     "args": {
       "text": "🦄 "
