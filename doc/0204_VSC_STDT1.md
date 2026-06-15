@@ -100,7 +100,7 @@ Donc, si tu veux ajouter ou corriger une insertion utile à la communauté :
 
 ## Tablau récapitulatif des raccourcis
 
-⚠️ : Pour le code du snippet, faire **TAB** après le code.
+⚠️ : Pour le code du snippet, faire **TAB** après le code (Ou **CTRL + SPACE**).
 
 | Raccourci<br>(Local) | Snippet<br>(Codespace)   | Commentaire | Coloré | Symbole   | Signification                     | STDT  |
 |:--------------------:|:------------------------:|:-----------:|:------:|:---------:|:---------------------------------:|:-----:|
@@ -115,7 +115,7 @@ Donc, si tu veux ajouter ou corriger une insertion utile à la communauté :
 | -                    | -                        | **2do**     | ✔      | -         | To do → À faire                   |   ✔   |
 | CTRL + ALT + **t**   | **todo** ou **td**       | -           | ✔      | \* [ ]    | **T**oDo → À faire - En liste     |   ✔   |
 | CTRL + ALT + **a**   | **actuel**, **ec**       | -           | ✔      | \* [-]    | ToDo **A**ctuelle → En Cours      |   ✔   |
-| CTRL + ALT + **d**   | **done** ou **dx**       | -           |        | \* [x]    | ToDo **D**one → **f**aite         |   -   |
+| CTRL + ALT + **d**   | **done** ou **dx**       | -           |        | \* [x]    | **D**one → **f**aite - Tracée     |   -   |
 | CTRL + ALT + **l**   | **gc7** ou **licorne**   |             | ✔      | 🦄        | **L**icorne - ToDo réservé        |   ✔   |
 | CTRL + ALT + **g**   | **goal** ou **obj**      |             | ✔      | 🎯        | **G**oal → But                    |   ✔   |
 | CTRL + ALT + **e**   | **ext** ou **elk**       |             | ✔      | ↗️        | **E**xtérieur - Lien              |   -   |
