@@ -6,7 +6,7 @@
         ],
         "description": "Insère ❌ avec un espace"
     },
-    "Insert Cross": {
+    "Insert NoIssue": {
         "prefix": ["interdit"],
         "body": [
             "⛔ "
@@ -27,14 +27,14 @@
         ],
         "description": "Insère ↗️ avec un espace"
     },
-    "Insert Check Mark": {
+    "Insert Yes": {
         "prefix": ["ok", "oui", "yes"],
         "body": [
             "✅ "
         ],
         "description": "Insère ✅ avec un espace"
     },
-    "Insert Red Mark": {
+    "Insert No": {
         "prefix": ["nok", "non", "no"],
         "body": [
             "🟥 "
@@ -76,7 +76,7 @@
         ],
         "description": "Insère * [-] avec un espace"
     },
-    "Insert Valid": {
+    "Insert Check Mark": {
         "prefix": ["valid", "val"],
         "body": [
             "✔ "

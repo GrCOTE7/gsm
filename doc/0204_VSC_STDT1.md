@@ -104,7 +104,7 @@ Donc, si tu veux ajouter ou corriger une insertion utile à la communauté :
 
 | Raccourci<br>(Local) | Snippet<br>(Codespace)   | Commentaire | Coloré | Symbole   | Signification                     | STDT  |
 |:--------------------:|:------------------------:|:-----------:|:------:|:---------:|:---------------------------------:|:-----:|
-| CTRL + ALT + **c**-- | **redcross** ou **rc**   | -           | ✔      | ❌        | **C**roix Rouge- Urgence          |   ✔   |
+| CTRL + ALT + **c**   | **redcross** ou **rc**   | -           | ✔      | ❌        | **C**roix Rouge- Urgence          |   ✔   |
 | CTRL + ALT + **x**   | **xray** ou **rad**      | -           | ✔      | ☢️        | **X** Ray → Dangereux             |   ✔   |
 | -                    | -                        | **2fix**    | ✔      | -         | To fix → À règler                 |   ✔   |
 | -                    | -                        | **2dbug**   | ✔      | -         | To debug → À corriger             |   ✔   |
