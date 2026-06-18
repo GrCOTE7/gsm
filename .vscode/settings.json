@@ -123,5 +123,10 @@
   "editor.tabCompletion": "on",
   "editor.snippetSuggestions": "top",
   // "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^[ \\t]*(-|\\d+\\.))\\s*)?($TAGS)",
-  "todo-tree.tree.labelFormat": "${after}"
+  "todo-tree.tree.labelFormat": "${after}",
+    "python-envs.defaultEnvManager": "ms-python.python:venv",
+  // "python.defaultInterpreterPath": "d:/Py/.venv313/Scripts/python.exe",
+  "git.ignoreLimitWarning": true,
+    "python.analysis.useLibraryCodeForTypes": true,
+    "python.analysis.typeCheckingMode": "basic"
 }
