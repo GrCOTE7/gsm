@@ -36,6 +36,8 @@ Si ça renvoie une version → OK.
 
 ```bash
 iwr https://astral.sh/uv/install.ps1 -useb | iex
+
+$env:Path = "C:\Users\utilisateur\.local\bin;$env:Path"
 ```
 
 <img src="./imgs/linux_logo.png" width='18'> LINUX / MacOS

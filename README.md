@@ -59,6 +59,8 @@ NB : Dans un codespace, seule la version Flet Web fonctionne (Avec l'option --we
 ./go
 ```
 
+## 🏗️ Construire une app pour votre mobile GSM
+
 Lancer le build APK pour construire l'app pour ton mobile ou tablette **Androïd** :
 
 ```bash
@@ -67,6 +69,40 @@ Lancer le build APK pour construire l'app pour ton mobile ou tablette **Androïd
 
 (Sinon, ouvre cette page avec ton appareil mobile et télech directement :
   **https://github.com/GrCOTE7/gsm/releases** - La der version, le lien **Upu.apk**)
+
+## 🐍 Lancer un script Python avec HOT-RELOAD
+
+Depuis la racine :
+
+Exemple: \scripts\Nom_Thomas.py
+
+### 1 - Local (Win)
+
+```bash
+uv --version
+# Si échoue (Et sûr qu'uv est installé) :
+
+$env:Path = "C:\Users\utilisateur\.local\bin;$env:Path"
+
+uv run flet run scripts/Nom_Thomas.py
+```
+
+### 2 - Distant, sans installation (CodeSpace)
+
+```bash
+# Vérifier si uv est disponible
+uv --version
+
+# Si uv n'est pas trouvé :
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Ajouter uv au PATH pour la session courante
+export PATH="$HOME/.local/bin:$PATH"
+
+# Lancer ton script Flet
+uv run flet run scripts/Nom_Thomas.py
+
+```
 
 ### uv - Alternative à pip + env + flet run
 

@@ -1,5 +1,12 @@
 {
-  // "todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
+  "windows": {
+    "todo-tree.ripgrep.ripgrep": "C:\\Tools\\ripgrep\\rg.exe"
+  },
+
+  "linux": {
+    "todo-tree.ripgrep.ripgrep": "/usr/bin/rg"
+  },
+
   "todo-tree.general.tags": [
     "2fix",
     "☢️",
@@ -124,9 +131,36 @@
   "editor.snippetSuggestions": "top",
   // "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^[ \\t]*(-|\\d+\\.))\\s*)?($TAGS)",
   "todo-tree.tree.labelFormat": "${after}",
-    "python-envs.defaultEnvManager": "ms-python.python:venv",
+  "python-envs.defaultEnvManager": "ms-python.python:venv",
   // "python.defaultInterpreterPath": "d:/Py/.venv313/Scripts/python.exe",
   "git.ignoreLimitWarning": true,
-    "python.analysis.useLibraryCodeForTypes": true,
-    "python.analysis.typeCheckingMode": "basic"
+  "python.analysis.useLibraryCodeForTypes": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "cSpell.words": [
+    "ajoute",
+    "ajouté",
+    "ajouter",
+    "chrono",
+    "contient",
+    "début",
+    "fichiers",
+    "flet",
+    "insère",
+    "ipynb",
+    "kevindegila",
+    "machinelearnia",
+    "mais",
+    "Modifié",
+    "Parcours",
+    "première",
+    "préparées",
+    "présent",
+    "récursif",
+    "sauvegarde",
+    "SAUVEGARDE",
+    "sauvegardées",
+    "selon",
+    "tous",
+    "tutos"
+  ]
 }
