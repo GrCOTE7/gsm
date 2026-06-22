@@ -10,9 +10,12 @@
         "ms-python.vscode-pylance",
         "mhutchie.git-graph",
         "hnw.vscode-auto-open-markdown-preview",
-        "gruntfuggly.todo-tree"
+        "gruntfuggly.todo-tree",
+        "ms-toolsai.jupyter",
+        "natqe.reload"
       ],
       "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python3.13",
         "todo-tree.ripgrep.ripgrep": "/usr/bin/vscode-ripgrep",
         "workbench.startupEditor": "readme",
         "workbench.editorRestoreMode": "all",
