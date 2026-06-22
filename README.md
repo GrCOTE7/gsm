@@ -83,8 +83,14 @@ uv --version
 # Si échoue (Et sûr qu'uv est installé) :
 
 $env:Path = "C:\Users\utilisateur\.local\bin;$env:Path"
-
 uv run flet run scripts/Nom_Thomas.py
+
+# OU (Si votre script est dans l'app ( src/ ) et python s'appelle py) :
+uvx watchfiles "flet run quick_test.py" . 2>nul
+
+# OU sans flet, simple script
+uvx watchfiles "py quick_test.py" . 2>nul
+
 ```
 
 ### 2 - Distant, sans aucune installation

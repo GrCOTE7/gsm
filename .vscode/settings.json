@@ -17,10 +17,11 @@
     "2do",
     "🎯",
     "❌",
-    "2see",
+    "1fo",
     "2let",
     "🦄",
-    "XXX"
+    "XXX",
+    "2see"
   ],
   "todo-tree.highlights.enabled": true,
   "todo-tree.highlights.highlightDelay": 1500,
@@ -88,6 +89,12 @@
       "type": "line",
       "foreground": "#0FF",
       "iconColour": "#0FF"
+    },
+    "1fo": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#ff00d4",
+      "iconColour": "#ff00d4"
     },
     "2let": {
       "icon": "check",
