@@ -87,7 +87,18 @@ $env:Path = "C:\Users\utilisateur\.local\bin;$env:Path"
 uv run flet run scripts/Nom_Thomas.py
 ```
 
-### 2 - Distant, sans installation (CodeSpace)
+### 2 - Distant, sans aucune installation
+
+Juste on démarre un CodeSpace (Sur la page GH de votre fork : ' , ' (Virgule) + Create new codespace + 
+
+Et dans la CLI (Console - Terminal) qui apparaît :
+
+```bash
+uv run flet run scripts/Nom_Thomas.py
+
+```
+
+Si **uv** bug :
 
 ```bash
 # Vérifier si uv est disponible
@@ -95,13 +106,8 @@ uv --version
 
 # Si uv n'est pas trouvé :
 curl -LsSf https://astral.sh/uv/install.sh | sh
-
 # Ajouter uv au PATH pour la session courante
 export PATH="$HOME/.local/bin:$PATH"
-
-# Lancer ton script Flet
-uv run flet run scripts/Nom_Thomas.py
-
 ```
 
 ### uv - Alternative à pip + env + flet run

@@ -20,5 +20,8 @@
       }
     }
   },
+  
+  "updateContentCommand": "git lfs install && git lfs pull",
+   
   "postCreateCommand": "./.devcontainer/postCreateCommand.sh"
 }
