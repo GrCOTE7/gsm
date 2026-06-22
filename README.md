@@ -95,14 +95,19 @@ uvx watchfiles "py quick_test.py" . 2>nul
 
 ### 2 - Distant, sans aucune installation
 
-Juste on démarre un CodeSpace (Sur la page GH de ton fork : ' , ' (Virgule) + Create new codespace + ❌ 
+Juste on démarre un CodeSpace (Sur la page GH de ton fork : ' , ' (Virgule) + Create new codespace + F9
+
+### ❌ Ouverture du fichier ./quick-test.py automatiue (et seule)
+
+### ❌ Faire marcher F9 dans un codespace pour la commande ci-dessous
 
 Et dans la CLI (Console - Terminal) qui apparaît :
 
 ```bash
-uv run flet run scripts/Nom_Thomas.py
-
+uvx watchfiles "python3 quick_test.py" . 2>nul
 ```
+
+NB: CTRL + C dans la CLI pour arrêter le process
 
 Si **uv** bug :
 
