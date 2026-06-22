@@ -89,7 +89,7 @@ uv run flet run scripts/Nom_Thomas.py
 
 ### 2 - Distant, sans aucune installation
 
-Juste on démarre un CodeSpace (Sur la page GH de votre fork : ' , ' (Virgule) + Create new codespace + 
+Juste on démarre un CodeSpace (Sur la page GH de ton fork : ' , ' (Virgule) + Create new codespace + ❌ 
 
 Et dans la CLI (Console - Terminal) qui apparaît :
 

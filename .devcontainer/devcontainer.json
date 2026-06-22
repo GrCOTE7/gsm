@@ -20,8 +20,5 @@
       }
     }
   },
-  
-  "updateContentCommand": "git lfs install && git lfs pull",
-   
   "postCreateCommand": "chmod +x .devcontainer/postCreateCommand.sh && ./.devcontainer/postCreateCommand.sh"
 }
