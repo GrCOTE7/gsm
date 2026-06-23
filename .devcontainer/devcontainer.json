@@ -24,15 +24,15 @@
       },
       "keybindings": [
         {
-          "key": "F9",
-          "command": "python.execInTerminal"
-        },
-        {
           "key": "F8",
           "command": "workbench.action.terminal.sendSequence",
           "args": {
             "text": "uvx watchfiles python3 quick_test.py . 2>/dev/null\u000D"
           }
+        },
+        {
+          "key": "F9",
+          "command": "python.execInTerminal"
         }
       ]
     }
