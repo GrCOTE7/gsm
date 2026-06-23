@@ -1,6 +1,6 @@
 {
     "Insert Cross": {
-        "prefix": ["cx"],
+        "prefix": ["cr", "cx"],
         "body": [
             "❌ "
         ],

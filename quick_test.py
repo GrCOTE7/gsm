@@ -1,4 +1,3 @@
-
 from scripts.essays.salutation import hi
 
 hi()
@@ -7,42 +6,26 @@ print("\n".join(" ".join(str(i*j) for j in range(1, i+1)) for i in range(1, 4)))
 
 print ('\nReady pour la suite...\n')
 
-# ❌ @! sdffdfs
-# @! sdffdfs
+# @! Tatati
 
-# ❌ bug tatati
-# bug tatati
+# @bug Tatati
 
-# ❌ @n sdffsfds
-# @n sdffsfds
+# @n Tatati
 
-# ❌ @i sdffsfds
-# @i sdffsfds
+# @i Tatati
 
-# ❌ *** dffsdfds
-# *** dffsdfds
+# *** Tatati
 
-# ❌ @? dsfsdfsdf
-# @? dsfsdfsdf
+# @? Tatati
 
-# 2ar dfsdfs
+# 2ar Tatati
 
-# ❌ @2q sdggsf
-# @2q sdggsf
+# @q Tatati
 
-# ❌ @s sdgdgdfgd
-# @s sdgdgdfgd
+# @s Tatati
 
-# ❌ @dl jsqfsd
-# @dl jsqfsd
+# @dl Tatati
 
-# 2see jsqfsd
+# 2see Tatati
 
-# ❌ * fdgdfg
-# * fdgdfg
-
-# ❌ ? fdgdfg
-# ? fdgdfg
-
-# ❌ todo fdgdfg
-# todo fdgdfg 
+# ❌ Del all BC ↑
