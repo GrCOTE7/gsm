@@ -1,4 +1,6 @@
 {
+"window.title": "${dirty}${activeEditorShort}${separator}${activeRepositoryBranchName}${separator}${rootName}${separator}${activeEditorMedium}",
+
   "windows": {
     "todo-tree.ripgrep.ripgrep": "C:\\Tools\\ripgrep\\rg.exe"
   },
@@ -17,7 +19,6 @@
     "2do",
     "🎯",
     "❌",
-    "1fo",
     "2let",
     "🦄",
     "XXX",
@@ -89,12 +90,6 @@
       "type": "line",
       "foreground": "#0FF",
       "iconColour": "#0FF"
-    },
-    "1fo": {
-      "icon": "check",
-      "type": "line",
-      "foreground": "#ff00d4",
-      "iconColour": "#ff00d4"
     },
     "2let": {
       "icon": "check",
@@ -169,5 +164,81 @@
     "selon",
     "tous",
     "tutos"
-  ]
+  ],
+  "advancedNewFile.convenienceOptions": [
+    
+    "last",
+    "current",
+    "root"
+  ],
+  //
+  "better-comments.highlightPlainText": true,
+  "better-comments.tags": [
+    {
+      "tag": "@!",
+      "color": "#ffffff",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+    },
+    {
+      "tag": "@bug",
+      "color": "#FF4901",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+    },
+    {
+      "tag": "@n",
+      "color": "#ffcf39",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+    },
+    {
+      "tag": "@i",
+      "color": "#0ff",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+    },
+    {
+      "tag": "***",
+      "color": "#5eff00",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+    },
+    {
+      "tag": "@?",
+      "color": "#0000FF",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+    },
+    {
+      "tag": "2ar",
+      "color": "#f0f",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+    },
+    {
+      "tag": "@q",
+      "color": "#ff0",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+    },
+    {
+      "tag": "@s",
+      "color": "#fff",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+    },
+    {
+      "tag": "@dl",
+      "color": "#7ff",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+    },
+    {
+      "tag": "2see",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "backgroundColor": "transparent",
+    },
+  ],
 }

@@ -20,8 +20,23 @@
         "workbench.startupEditor": "readme",
         "workbench.editorRestoreMode": "all",
         "explorer.openEditors.visible": 7
-      }
+      },
+      "keybindings": [
+        {
+          "key": "F9",
+          "command": "python.execInTerminal"
+        },
+        {
+          "key": "F10",
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "uvx watchfiles python3 quick_test.py . 2>/dev/null\u000D"
+          }
+        }
+      ]
     }
   },
-  "postCreateCommand": "chmod +x .devcontainer/postCreateCommand.sh && ./.devcontainer/postCreateCommand.sh"
+  "postCreateCommand": "chmod +x .devcontainer/postCreateCommand.sh && ./.devcontainer/postCreateCommand.sh",
+
+  "postStartCommand": "code README.md && code quick_test.py"
 }

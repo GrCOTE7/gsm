@@ -60,7 +60,7 @@ fi
 
 # Synchroniser les raccourcis clavier personnalisés du repo vers le profil utilisateur VS Code du Codespace
 WORKSPACE_DIR="${GITHUB_WORKSPACE:-$PWD}"
-KEYBINDINGS_SOURCE="$WORKSPACE_DIR/doc/files/keybindings.json"
+KEYBINDINGS_SOURCE="$WORKSPACE_DIR/.vscode/keybindings.json"
 
 if [ -f "$KEYBINDINGS_SOURCE" ]; then
     for TARGET_KEYBINDINGS in \
