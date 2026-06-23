@@ -179,3 +179,5 @@ src/upu/app_data/app_state.json
 flet-desktop-light.zip
 
 /src/upu/services/storage/__pycache__/
+
+/nul
