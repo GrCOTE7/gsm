@@ -1,28 +1,25 @@
 {
 "window.title": "${dirty}${activeEditorShort}${separator}${activeRepositoryBranchName}${separator}${rootName}${separator}${activeEditorMedium}",
-
-  "windows": {
-    "todo-tree.ripgrep.ripgrep": "C:\\Tools\\ripgrep\\rg.exe"
-  },
-
-  "linux": {
-    "todo-tree.ripgrep.ripgrep": "/usr/bin/rg"
-  },
-
-  "todo-tree.general.tags": [
-    "2fix",
-    "☢️",
-    "2dbug",
-    "2ar",
-    "* [-]",
-    "* [ ]",
-    "2do",
-    "🎯",
-    "❌",
-    "2let",
-    "🦄",
-    "XXX",
-    "2see"
+//
+"editor.lineHeight": 20,
+//
+"files.autoSave": "afterDelay",
+"files.autoSaveDelay": 2100,
+//
+"todo-tree.general.tags": [
+  "2fix",
+  "☢️",
+  "2dbug",
+  "2ar",
+  "* [-]",
+  "* [ ]",
+  "2do",
+  "🎯",
+  "❌",
+  "2let",
+  "🦄",
+  "XXX",
+  "2see"
   ],
   "todo-tree.highlights.enabled": true,
   "todo-tree.highlights.highlightDelay": 1500,
@@ -165,12 +162,6 @@
     "tous",
     "tutos"
   ],
-  "advancedNewFile.convenienceOptions": [
-    
-    "last",
-    "current",
-    "root"
-  ],
   //
   "better-comments.highlightPlainText": true,
   "better-comments.tags": [
@@ -241,4 +232,5 @@
       "backgroundColor": "transparent",
     },
   ],
+  "auto-close-tag.disableOnLanguage": [],
 }
