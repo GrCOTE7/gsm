@@ -27,7 +27,7 @@
           "key": "F8",
           "command": "workbench.action.terminal.sendSequence",
           "args": {
-            "text": "uvx watchfiles python quick_test.py . 2>/dev/null\u000D"
+            "text": "uvx watchfiles quick_test.py . 2>/dev/null\u000D"
           }
         },
         {
@@ -39,5 +39,5 @@
   },
   "postCreateCommand": "chmod +x .devcontainer/postCreateCommand.sh && ./.devcontainer/postCreateCommand.sh",
 
-  "postAttachCommand": "code quick_test.py && code scripts/essays/salutation.py"
+  "postAttachCommand": "uvx watchfiles \"python quick_test.py\" ."
 }
