@@ -15,13 +15,16 @@ def hi():
 def cls():
     return "\033c"
 
-print(
-    cls() +
-    "\n".join(
-        [" ".join(str(i*j) for j in range(1, i+1)) for i in range(1, 4)]
-        + ["", "Ready pour la suite.", "", hi()]
+while True:
+    print(
+        cls() +
+        "\n".join(
+            [" ".join(str(i*j) for j in range(1, i+1)) for i in range(1, 4)]
+            + ["", "Ready pour la suite.", "", hi()]
+        )
     )
-)
+
+
 
 # @! Tatati
 
@@ -35,14 +38,45 @@ print(
 
 # @? Tatati
 
-# 2ar Tatati
 
 # @q Tatati
 
+# @2q Tatati
+
+# @Q Tatati
+
+# @2Q Tatati
+
+
 # @s Tatati
+
+
+# dl Tatati
+
+# DL Tatati
 
 # @dl Tatati
 
-# 2see Tatati
+# @DL Tatati
+
+
+# see Tatati 🟥
+
+# 2see Tatati ✅
+
+# @2see Tatati 🟥 
+
+# @2SEE Tatati 🟥 
+
+# @see Tatati 🟥 
+
+
+# 2dbug Tatati
 
 # ❌ Del all BC ↑
+
+# @xxx dfsdfsdf
+
+# 🦄 Tatati
+
+# XXX dfsdfsdf

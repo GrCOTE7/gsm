@@ -2,6 +2,66 @@
 
 <h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
 
+---
+
+
+# ! Tatati
+
+# @bug Tatati
+
+# @n Tatati
+
+# @i Tatati
+
+# *** Tatati
+
+* @? Tatati
+
+# 2ar Tatati
+
+# 2LET Tatati
+
+# 2let Tatati
+
+<!-- @xxx oki -->
+
+# @xxx oki
+
+* @q Tatati
+
+* @2q Tatati
+
+* @Q Tatati
+
+* @2Q Tatati
+
+
+
+* @s Tatati
+
+* dl Tatati
+
+* DL Tatati
+
+# @dl Tatati
+
+# @DL Tatati
+
+
+
+# 2see Tatati
+
+# 2dbug Tatati
+
+# ❌ Del all BC ↑
+
+# @xxx dfsdfsdf
+
+# 🦄 Tatati
+
+# XXX dfsdfsdf
+
+---
 
 <!-- [![CI](https://github.com/grcote7/gsm/workflows/CI/badge.svg)](https://github.com/grcote7/gsm//actions/workflows/ci.yml)
 [![Documentation](https://github.com/grcote7/gsm/workflows/Deploy%20Documentation/badge.svg)](https://github.com/grcote7/gsm/actions/workflows/docs.yml) -->

@@ -27,8 +27,15 @@
     "foreground": "#0F0",
     "type": "none"
   },
+  "todo-tree.regex.regex":
+    "((//|#|<!--|;|/\\*|^[ \\t]*(-|\\d+\\.))\\s*)?(@xxx|@dl|@q|@2q|@Q|@2Q)",
   "todo-tree.highlights.customHighlight": {
-    "2fix": {
+  "@dl": { "foreground": "#7ff", "type": "line" },
+  "@q": { "foreground": "#ff0", "type": "line" },
+  "@2q": { "foreground": "#ff0", "type": "line" },
+  "@Q": { "foreground": "#ff0", "type": "line" },
+  "@2Q": { "foreground": "#ff0", "type": "line" },
+  "2fix": {
       "icon": "check",
       "type": "line",
       "foreground": "#FF0",
@@ -82,12 +89,32 @@
       "foreground": "#f00",
       "iconColour": "#f00"
     },
+    
+    "see": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#0FF",
+      "iconColour": "#0FF"
+    },
     "2see": {
       "icon": "check",
       "type": "line",
       "foreground": "#0FF",
       "iconColour": "#0FF"
     },
+    "2SEE": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#FF8C00",
+      "iconColour": "#FF8C00"
+    },
+    "@2SEE": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#FF8C00",
+      "iconColour": "#FF8C00"
+    },
+
     "2let": {
       "icon": "check",
       "type": "line",
@@ -95,6 +122,12 @@
       "iconColour": "#0F0"
     },
     "🦄": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#f0f",
+      "iconColour": "#f0f"
+    },
+    "@xxx": {
       "icon": "check",
       "type": "line",
       "foreground": "#f0f",
@@ -130,113 +163,10 @@
   "editor.snippetSuggestions": "top",
   // "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^[ \\t]*(-|\\d+\\.))\\s*)?($TAGS)",
   "todo-tree.tree.labelFormat": "${after}",
+  //
   "python-envs.defaultEnvManager": "ms-python.python:venv",
   // "python.defaultInterpreterPath": "d:/Py/.venv313/Scripts/python.exe",
   "git.ignoreLimitWarning": true,
   "python.analysis.useLibraryCodeForTypes": true,
   "python.analysis.typeCheckingMode": "basic",
-  "cSpell.words": [
-    "ajoute",
-    "ajouté",
-    "ajouter",
-    "cette",
-    "chaîne",
-    "chrono",
-    "contient",
-    "Corrige",
-    "dans",
-    "début",
-    "fichiers",
-    "flet",
-    "insère",
-    "ipynb",
-    "juste",
-    "kevindegila",
-    "machinelearnia",
-    "mais",
-    "Modifié",
-    "Parcours",
-    "première",
-    "préparées",
-    "présent",
-    "récursif",
-    "sauvegarde",
-    "SAUVEGARDE",
-    "sauvegardées",
-    "selon",
-    "suivante",
-    "tous",
-    "tutos"
-  ],
-  //
-  "better-comments.highlightPlainText": true,
-  "better-comments.tags": [
-    {
-      "tag": "@!",
-      "color": "#ffffff",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-    {
-      "tag": "@bug",
-      "color": "#FF4901",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-    {
-      "tag": "@n",
-      "color": "#ffcf39",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-    {
-      "tag": "@i",
-      "color": "#0ff",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-    {
-      "tag": "***",
-      "color": "#5eff00",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-    {
-      "tag": "@?",
-      "color": "#0000FF",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-    {
-      "tag": "2ar",
-      "color": "#f0f",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-    {
-      "tag": "@2q",
-      "color": "#ff0",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-    {
-      "tag": "@s",
-      "color": "#fff",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-    {
-      "tag": "@dl",
-      "color": "#7ff",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-    {
-      "tag": "2see",
-      "color": "#FF8C00",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-  ],
-  "auto-close-tag.disableOnLanguage": [],
 }
