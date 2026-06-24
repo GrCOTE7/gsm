@@ -11,15 +11,16 @@ et commenter
 ],
 ```
 
-
 2fix 2fix ?
 2do 2do
 ☢️ ☢️radio actif
 2dbug 2dbug
 2ar 2ar
+
 * [ ] [ ] 2do
 * [-] [-] En cours
 * [x] [x] fait
+
 🎯 🎯 CIBLE GOAL
 ❌ ❌ dsd
 1fo 1fo
