@@ -1,4 +1,19 @@
-from scripts.essays.salutation import cls, hi
+# from scripts.essays.salutation import cls, hi
+
+# Script juste pour tester le HotReload en CodeSpace
+
+# uvx watchfiles "python quick_test.py" .
+
+# @n Le message affiché est défini dans MESSAGE_TEST
+# @n Change un caractère dans MESSAGE_TEST pour tester le reload !
+
+CHAINE = "Look bien la CLI, et change un caractère dans la variable CHAINE !"
+
+def hi():
+    return CHAINE
+
+def cls():
+    return "\033c"
 
 print(
     cls() +

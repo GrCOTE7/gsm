@@ -13,7 +13,8 @@
         "gruntfuggly.todo-tree",
         "ms-toolsai.jupyter",
         "aaron-bond.better-comments",
-        "natqe.reload"
+        "natqe.reload",
+        "eprincev-egor.toggle-upper-case"
       ],
       "settings": {
         "python.defaultInterpreterPath": "/usr/local/bin/python3.13",
