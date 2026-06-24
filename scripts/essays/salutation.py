@@ -22,7 +22,7 @@ def show():
     cls() +
     "\n".join(
         [" ".join(str(i*j) for j in range(1, i+1)) for i in range(1, nombre_de_lignes+1)]
-        + ["", "Ready pour la suite.", "", hi()]
+        + ["", "1Ready pour la suite.", "", hi()]
         )
     )
 
