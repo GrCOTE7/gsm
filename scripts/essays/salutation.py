@@ -1,7 +1,7 @@
 # Script juste pour tester le HotReload en CodeSpace
 
-# @n Le message affiché est défini dans MESSAGE_TEST
-# @n Change un caractère dans MESSAGE_TEST pour tester le reload !
+# 1fo Le message affiché est défini dans MESSAGE_TEST
+# 1fo Change un caractère dans MESSAGE_TEST pour tester le reload !
 
 MESSAGE_TEST = "Look bien la CLI, et change un caractère dans la variable chaîne !"
 
