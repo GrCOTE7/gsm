@@ -1,33 +1,8 @@
-from scripts.essays.salutation import cls, hi
+from scripts.essays.salutation import show
 
-print(
-    cls() +
-    "\n".join(
-        [" ".join(str(i*j) for j in range(1, i+1)) for i in range(1, 4)]
-        + ["", "Ready pour la suite.", "", hi()]
-    )
-)
+# uvx watchfiles "python quick_test.py" .
 
-# @! Tatati
+if __name__ == "__main__":
 
-# @bug Tatati
-
-# @n Tatati
-
-# @i Tatati
-
-# *** Tatati
-
-# @? Tatati
-
-# 2ar Tatati
-
-# @q Tatati
-
-# @s Tatati
-
-# @dl Tatati
-
-# 2see Tatati
-
-# ❌ Del all BC ↑
+    show()
+    print('\nFin de ./essays/salutation.py.')

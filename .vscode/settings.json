@@ -19,7 +19,8 @@
   "2let",
   "🦄",
   "XXX",
-  "2see"
+  "2see",
+  "1fo"
   ],
   "todo-tree.highlights.enabled": true,
   "todo-tree.highlights.highlightDelay": 1500,
@@ -31,80 +32,77 @@
     "2fix": {
       "icon": "check",
       "type": "line",
-      "foreground": "#FF0",
-      "iconColour": "#FF0"
+      "foreground": "#FFFF00",
     },
     "☢️": {
       "icon": "check",
       "type": "line",
-      "foreground": "#8a7c00",
-      "iconColour": "#8a7c00"
+      "foreground": "#e785ff",
+      "iconColour": "#f00"
     },
     "2dbug": {
       "icon": "check",
       "type": "line",
       "foreground": "#c07700",
-      "iconColour": "#c07700"
+      "iconColour": "#f00"
     },
     "2ar": {
       "icon": "check",
       "type": "line",
       "foreground": "#f0f",
-      "iconColour": "#f0f"
     },
     "* [-]": {
       "icon": "check",
       "type": "line",
       "foreground": "#fff0a5",
-      "iconColour": "#fff0a5"
     },
     "* [ ]": {
       "icon": "check",
       "type": "line",
-      "foreground": "#ff0",
-      "iconColour": "#ff0"
+      "foreground": "#FAB31A",
     },
     "2do": {
       "icon": "check",
       "type": "line",
-      "foreground": "#f00",
-      "iconColour": "#f00"
+      "foreground": "#FAB31A",
     },
     "🎯": {
       "icon": "check",
       "type": "line",
-      "foreground": "#f00",
-      "iconColour": "#f00"
+      "foreground": "#a1c2ff",
+      "iconColour": "#a1c2ff"
     },
     "❌": {
       "icon": "check",
       "type": "line",
-      "foreground": "#f00",
-      "iconColour": "#f00"
+      "foreground": "#ff6060",
+      "iconColour": "#ff6060"
     },
     "2see": {
       "icon": "check",
       "type": "line",
       "foreground": "#0FF",
-      "iconColour": "#0FF"
     },
     "2let": {
       "icon": "check",
       "type": "line",
       "foreground": "#0F0",
-      "iconColour": "#0F0"
+    },
+    "1fo": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#0F0",
     },
     "🦄": {
       "icon": "check",
       "type": "line",
-      "foreground": "#f0f",
-      "iconColour": "#f0f"
+      "foreground": "#f0f"
     },
     "XXX": {
       "icon": "check",
       "type": "line",
-      "foreground": "#f0f",
-      "iconColour": "#f0f"
+      "foreground": "#a0a0a0",
+      "iconColour": "#F00"
     }
   },
   "todo-tree.general.statusBar": "tags",
@@ -112,14 +110,6 @@
   "todo-tree.general.statusBarClickBehaviour": "cycle",
   "todo-tree.general.debug": true,
   "todo-tree.general.rootFolder": "${workspaceFolder}",
-  "todo-tree.filtering.excludeGlobs": [
-    "**/scan_todos/**",
-    "**/.env/**",
-    "**/site/**",
-    "**/node_modules/**",
-    "**/__pycache__/**",
-    "**/.git/**"
-  ],
   "todo-tree.tree.scanMode": "workspace",
   "todo-tree.tree.scanAtStartup": true,
   "todo-tree.tree.expanded": true,
@@ -127,116 +117,27 @@
   "todo-tree.tree.grouped": false,
   "todo-tree.tree.tagsOnly": false,
   "editor.tabCompletion": "on",
-  "editor.snippetSuggestions": "top",
+  // "todo-tree.regex.regex": "(@n|@v|@!|@\\?)",
   // "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^[ \\t]*(-|\\d+\\.))\\s*)?($TAGS)",
-  "todo-tree.tree.labelFormat": "${after}",
+  // "todo-tree.tree.labelFormat": "${after}",
+  // "todo-tree.regex.regex": "(2fix|2do|2dbug|2ar|2see|XXX|🎯|❌|🦄|\\* \ \[ \\] |\\* \ \[-\\] |@n|@v|@!|@\\?)",
+  // "todo-tree.regex.regex": "(1fo)",
+  "todo-tree.filtering.excludeGlobs": [
+    "**/scan_todos/**",
+    "**/.env/**",
+    "**/.vscode/**",
+    "**/site/**", 
+    "**/node_modules/**",
+    "**/__pycache__/**",
+    "**/.git/**",
+    "**/scripts/todo_tags.md"
+  ],
+  //
+  "editor.snippetSuggestions": "top",
   "python-envs.defaultEnvManager": "ms-python.python:venv",
-  // "python.defaultInterpreterPath": "d:/Py/.venv313/Scripts/python.exe",
   "git.ignoreLimitWarning": true,
   "python.analysis.useLibraryCodeForTypes": true,
   "python.analysis.typeCheckingMode": "basic",
-  "cSpell.words": [
-    "ajoute",
-    "ajouté",
-    "ajouter",
-    "cette",
-    "chaîne",
-    "chrono",
-    "contient",
-    "Corrige",
-    "dans",
-    "début",
-    "fichiers",
-    "flet",
-    "insère",
-    "ipynb",
-    "juste",
-    "kevindegila",
-    "machinelearnia",
-    "mais",
-    "Modifié",
-    "Parcours",
-    "première",
-    "préparées",
-    "présent",
-    "récursif",
-    "sauvegarde",
-    "SAUVEGARDE",
-    "sauvegardées",
-    "selon",
-    "suivante",
-    "tous",
-    "tutos"
-  ],
-  //
-  "better-comments.highlightPlainText": true,
-  "better-comments.tags": [
-    {
-      "tag": "@!",
-      "color": "#ffffff",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-    {
-      "tag": "@bug",
-      "color": "#FF4901",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-    {
-      "tag": "@n",
-      "color": "#ffcf39",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-    {
-      "tag": "@i",
-      "color": "#0ff",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-    {
-      "tag": "***",
-      "color": "#5eff00",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-    {
-      "tag": "@?",
-      "color": "#0000FF",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-    {
-      "tag": "2ar",
-      "color": "#f0f",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-    {
-      "tag": "@2q",
-      "color": "#ff0",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-    {
-      "tag": "@s",
-      "color": "#fff",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-    {
-      "tag": "@dl",
-      "color": "#7ff",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-    {
-      "tag": "2see",
-      "color": "#FF8C00",
-      "strikethrough": false,
-      "backgroundColor": "transparent",
-    },
-  ],
   "auto-close-tag.disableOnLanguage": [],
+  // "python.defaultInterpreterPath": "d:/Py/.venv313/Scripts/python.exe",
 }

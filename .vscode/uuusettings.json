@@ -1,0 +1,90 @@
+
+  "todo-tree.regex.regex":
+    "((//|#|<!--|;|/\\*|^[ \\t]*(-|\\d+\\.))\\s*)?(@xxx|@dl|@q|@2q|@Q|@2Q)",
+  "todo-tree.highlights.customHighlight": {
+  "@dl": { "foreground": "#7ff", "type": "line" },
+  "@q": { "foreground": "#ff0", "type": "line" },
+  "@2q": { "foreground": "#ff0", "type": "line" },
+  "@Q": { "foreground": "#ff0", "type": "line" },
+  "@2Q": { "foreground": "#ff0", "type": "line" },
+    
+    "see": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#0FF",
+      "iconColour": "#0FF"
+    },
+    "2see": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#0FF",
+      "iconColour": "#0FF"
+    },
+    "2SEE": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#FF8C00",
+      "iconColour": "#FF8C00"
+    },
+    "@2SEE": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#FF8C00",
+      "iconColour": "#FF8C00"
+    },
+
+    "2let": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#0F0",
+      "iconColour": "#0F0"
+    },
+    "🦄": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#f0f",
+      "iconColour": "#f0f"
+    },
+    "@xxx": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#f0f",
+      "iconColour": "#f0f"
+    },
+    "XXX": {
+      "icon": "check",
+      "type": "line",
+      "foreground": "#f0f",
+      "iconColour": "#f0f"
+    }
+  },
+  "todo-tree.general.statusBar": "tags",
+  "todo-tree.tree.showCountsInTree": true,
+  "todo-tree.general.statusBarClickBehaviour": "cycle",
+  "todo-tree.general.debug": true,
+  "todo-tree.general.rootFolder": "${workspaceFolder}",
+  "todo-tree.filtering.excludeGlobs": [
+    "**/scan_todos/**",
+    "**/.env/**",
+    "**/site/**",
+    "**/node_modules/**",
+    "**/__pycache__/**",
+    "**/.git/**"
+  ],
+  "todo-tree.tree.scanMode": "workspace",
+  "todo-tree.tree.scanAtStartup": true,
+  "todo-tree.tree.expanded": true,
+  "todo-tree.tree.flat": false,
+  "todo-tree.tree.grouped": false,
+  "todo-tree.tree.tagsOnly": false,
+  "editor.tabCompletion": "on",
+  "editor.snippetSuggestions": "top",
+  // "todo-tree.regex.regex": "((//|#|<!--|;|/\\*|^[ \\t]*(-|\\d+\\.))\\s*)?($TAGS)",
+  "todo-tree.tree.labelFormat": "${after}",
+  //
+  "python-envs.defaultEnvManager": "ms-python.python:venv",
+  // "python.defaultInterpreterPath": "d:/Py/.venv313/Scripts/python.exe",
+  "git.ignoreLimitWarning": true,
+  "python.analysis.useLibraryCodeForTypes": true,
+  "python.analysis.typeCheckingMode": "basic",
+}

@@ -103,5 +103,10 @@
     "args": {
       "text": "✅ "
     }
+  },
+  {
+  "key": "F8",
+  "command": "workbench.action.tasks.runTask",
+  "args": "Run active file with hotreload"
   }
 ]
