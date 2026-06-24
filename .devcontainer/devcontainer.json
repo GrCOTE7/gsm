@@ -40,5 +40,5 @@
   },
   "postCreateCommand": "chmod +x .devcontainer/postCreateCommand.sh && ./.devcontainer/postCreateCommand.sh",
 
-  "postAttachCommand": "uvx watchfiles \"python quick_test.py\" ."
+  "postAttachCommand": "code quick_test.py && uvx watchfiles \"python quick_test.py\" ."
 }
