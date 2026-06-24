@@ -8,6 +8,7 @@ nombre_de_lignes = 3 # 2do ← 2. Change ici aussi !
 
 # 1fo  3. Ferme le hotreload avec CTRL + MAJ + C
 # 2see 4. Essaie ./go dans le CLI ...
+# 2see 5. Teste sur un script actif, les modes: F9 : RUN - F5 : Debug - F8 : hotreload
 
 def cls():
     return "\033c"
