@@ -5,7 +5,15 @@
       "label": "Run active file with hotreload",
       "type": "shell",
       "command": "uvx watchfiles \"python ${file}\" .",
-      "problemMatcher": []
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
     }
   ]
 }
