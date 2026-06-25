@@ -1,5 +1,5 @@
 {
-  "workbench.startupEditor": "none",
-  "workbench.editor.restoreViewState": false,
-  "workbench.editor.enablePreview": false
+  // "workbench.startupEditor": "quick_test.py",
+  // "workbench.editor.restoreViewState": false,
+  // "workbench.editor.enablePreview": false
 }

@@ -19,8 +19,8 @@
       "settings": {
         "python.defaultInterpreterPath": "/usr/local/bin/python3.13",
         "todo-tree.ripgrep.ripgrep": "/usr/bin/vscode-ripgrep",
-        "workbench.editorRestoreMode": "none",
-        "workbench.startupEditor": "none",
+        "workbench.editorRestoreMode": "all",
+        "workbench.startupEditor": "readme",
         "explorer.openEditors.visible": 7
       },
       "keybindings": [
