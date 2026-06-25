@@ -12,6 +12,7 @@
       },
       "presentation": {
         "reveal": "always",
+        "focus": true,
         "panel": "dedicated",
         "showReuseMessage": false
       },
