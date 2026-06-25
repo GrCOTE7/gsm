@@ -49,12 +49,11 @@
 
   // ❌ 2test postStartCommand": "nohup uvx watchfiles --command 'uv run python quick_test.py' . >/tmp/quick_test.log 2>&1 &"
   
-  "postStartCommand": "uvx watchfiles --command 'uv run python quick_test.py' ."
+  "postStartCommand": "uvx watchfiles 'uv run python quick_test.py' ."
 
 // L'ordre est :
 // postCreateCommand → exécuté une seule fois lors de la création initiale du conteneur/Codespace.
 // postStartCommand → exécuté à chaque démarrage du conteneur.
 // postAttachCommand → exécuté à chaque fois qu'un client VS Code s'attache au conteneur.
-
 
 }
