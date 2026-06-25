@@ -19,8 +19,8 @@
       "settings": {
         "python.defaultInterpreterPath": "/usr/local/bin/python3.13",
         "todo-tree.ripgrep.ripgrep": "/usr/bin/vscode-ripgrep",
-        "workbench.startupEditor": "none",
-        "workbench.editorRestoreMode": "all",
+        "workbench.startupEditor": "readme",
+        "workbench.editorRestoreMode": "none",
         "explorer.openEditors.visible": 7
       },
       "keybindings": [
@@ -41,5 +41,6 @@
   },
   "postCreateCommand": "chmod +x .devcontainer/postCreateCommand.sh && ./.devcontainer/postCreateCommand.sh",
 
-  "postAttachCommand": "code quick_test.py && code scripts/essays/salutation.py && uvx watchfiles \"uv run python quick_test.py\" ."
+  // Le watcher doit être lancé depuis la tâche VS Code, pas via postAttachCommand.
+  // "postAttachCommand": "nohup sh -c 'uvx watchfiles \"uv run python quick_test.py\" .' >/tmp/uvx_quick_test.log 2>&1 &"
 }
