@@ -10,7 +10,7 @@ def disclamer():
     texte = "Attention, mesdames et messieurs, dans un instant, ça va commencer... Heu, non ! Vous avez déjà la main !\n"
 
     print(
-        cls(False) + 
+        cls(False) +
         "\n[bold red]Disclaimer[/bold red] :\n"
         "Ce script est un exemple de test pour le hotreload en CodeSpace.\n"
         "Il n'a pas de fonctionnalité particulière et peut être modifié à volonté.\n"
