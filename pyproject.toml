@@ -16,7 +16,7 @@ dependencies = [
     "google-auth-httplib2>=0.4.0",
     "google-auth-oauthlib>=1.4.0",
     "pymox_kit",
-    "rich>=15.0.0"    
+    "rich>=15.0.0",
 ]
 
 [project.optional-dependencies]
