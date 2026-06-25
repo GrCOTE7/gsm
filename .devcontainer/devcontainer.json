@@ -46,4 +46,6 @@
 
   // Le watcher doit être lancé depuis la tâche VS Code, pas via postAttachCommand.
   // "postAttachCommand": "nohup sh -c 'uvx watchfiles \"uv run python quick_test.py\" .' >/tmp/uvx_quick_test.log 2>&1 &"
+
+  // ❌ 2test postStartCommand": "nohup uvx watchfiles --command 'uv run python quick_test.py' . >/tmp/quick_test.log 2>&1 &"
 }

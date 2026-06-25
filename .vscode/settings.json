@@ -132,6 +132,8 @@
     "**/.git/**",
     "**/scripts/todo_tags.md"
   ],
+  // CodeSpaces
+  "task.allowAutomaticTasks": "on",
   //
   "editor.snippetSuggestions": "top",
   "python-envs.defaultEnvManager": "ms-python.python:venv",

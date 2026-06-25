@@ -17,9 +17,9 @@
         "showReuseMessage": false
       },
       "problemMatcher": [],
-      "runOptions": {
-        "runOn": "folderOpen"
-      }
+      // "runOptions": {
+      //   "runOn": "folderOpen"
+      // }
     }
   ]
 }
