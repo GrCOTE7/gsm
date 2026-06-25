@@ -1,5 +1,20 @@
 [
   {
+    "key": "f4",
+    "command": "editor.debug.action.toggleBreakpoint",
+    "when": "debuggersAvailable && disassemblyViewFocus || debuggersAvailable && editorTextFocus"
+  },
+  {
+    "key": "f8",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Run quick_test.py with hotreload"
+  },
+  {
+    "key": "f9",
+    "command": "editor.debug.action.toggleBreakpoint",
+    "when": "debuggersAvailable && disassemblyViewFocus || debuggersAvailable && editorTextFocus"
+  },
+  {
     "key": "ctrl+alt+a",
     "command": "type",
     "args": {
@@ -103,10 +118,5 @@
     "args": {
       "text": "✅ "
     }
-  },
-  {
-  "key": "F8",
-  "command": "workbench.action.tasks.runTask",
-  "args": "Run quick_test.py with hotreload"
-  }
+  }  
 ]

@@ -16,10 +16,7 @@
         "panel": "dedicated",
         "showReuseMessage": false
       },
-      "problemMatcher": [],
-      // "runOptions": {
-      //   "runOn": "folderOpen"
-      // }
+      "problemMatcher": []
     }
   ]
 }
