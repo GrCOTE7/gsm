@@ -4,7 +4,7 @@
     {
       "label": "Run quick_test.py with hotreload",
       "type": "shell",
-      "command": "uvx watchfiles \"uv run python quick_test.py\" .",
+      "command": "uvx watchfiles \"uv run python scripts/essays/salutation.py\" .",
       "isBackground": true,
       "group": {
         "kind": "build",

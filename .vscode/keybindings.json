@@ -1,8 +1,12 @@
-[
+[  
   {
-    "key": "ctrl+alt+c",
+    "key": "f8",
+    "command": "python.execInTerminal-icon",
+    "when":  "editorFocus"
+  },
+  {
+    "key": "B B",
     "command": "editor.action.insertSnippet",
-    "args": {"snippet": "❌ "
-    }
+    "args": {"snippet": "❌ "}
   }
 ]
