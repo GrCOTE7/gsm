@@ -1,0 +1,7 @@
+{
+  "Insert Cross Mark": {
+    "prefix": "xmark",
+    "body": ["❌ "],
+    "description": "Insère ❌ avec un espace"
+  }
+}

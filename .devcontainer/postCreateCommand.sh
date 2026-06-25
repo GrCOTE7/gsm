@@ -1,8 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-# Installer uv
-curl -LsSf https://astral.sh/uv/install.sh | sh
+# # Installer uv
+# curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Recharger le PATH
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"

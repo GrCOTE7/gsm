@@ -27,7 +27,6 @@ if __name__ == "__main__":
 
     cls()
 
-
     disclamer()
 
     show()
@@ -36,6 +35,6 @@ if __name__ == "__main__":
 
     print('\n( [italic]Dans la CLI, [bold blue]CTRL + Clic[/bold blue] pour ouvrir un fichier écrit en magenta.[/italic] :wink: )')
     
-    # print(locals()) # ← CTRL + / pour switch commentaireaa
+    # print(locals()) # ← CTRL + / pour switch commentaire
 
 # python.execInTerminal-icon     
