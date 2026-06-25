@@ -42,10 +42,19 @@
   "postCreateCommand": "chmod +x .devcontainer/postCreateCommand.sh && ./.devcontainer/postCreateCommand.sh",
 
   // "postAttachCommand": "code quick_test.py && code scripts/essays/salutation.py && uvx watchfiles \"uv run python quick_test.py\" ."
-  "postAttachCommand": "code quick_test.py && code scripts/essays/salutation.py"
+  // "postAttachCommand": "code quick_test.py && code scripts/essays/salutation.py"
 
   // Le watcher doit être lancé depuis la tâche VS Code, pas via postAttachCommand.
   // "postAttachCommand": "nohup sh -c 'uvx watchfiles \"uv run python quick_test.py\" .' >/tmp/uvx_quick_test.log 2>&1 &"
 
   // ❌ 2test postStartCommand": "nohup uvx watchfiles --command 'uv run python quick_test.py' . >/tmp/quick_test.log 2>&1 &"
+  
+  "postStartCommand": "uvx watchfiles --command 'uv run python quick_test.py' ."
+
+// L'ordre est :
+// postCreateCommand → exécuté une seule fois lors de la création initiale du conteneur/Codespace.
+// postStartCommand → exécuté à chaque démarrage du conteneur.
+// postAttachCommand → exécuté à chaque fois qu'un client VS Code s'attache au conteneur.
+
+
 }
