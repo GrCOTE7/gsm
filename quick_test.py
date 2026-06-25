@@ -7,7 +7,7 @@ import sys
 
 def disclamer():
 
-    texte = "Attention, mesdames et messieurs, dans un instant, ça va commencer... Heu, non ! Vous avez déjà la main !"
+    texte = "Attention, mesdames et messieurs, dans un instant, ça va commencer... Heu, non ! Vous avez déjà la main !\n"
 
     print(
         cls(False) + 
@@ -20,7 +20,7 @@ def disclamer():
     for lettre in texte:
         print(lettre, end="", flush=True)
         time.sleep(0.05)
-    time.sleep(3)
+    time.sleep(1)
     # cls()
 
 if __name__ == "__main__":
@@ -36,4 +36,6 @@ if __name__ == "__main__":
 
     print('\n( [italic]Dans la CLI, [bold blue]CTRL + Clic[/bold blue] pour ouvrir un fichier écrit en magenta.[/italic] :wink: )')
     
-    # print(locals()) # ← CTRL + / pour switch commentaire
+    # print(locals()) # ← CTRL + / pour switch commentaireaa
+
+# python.execInTerminal-icon     
