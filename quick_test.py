@@ -5,4 +5,4 @@ from scripts.essays.salutation import show
 if __name__ == "__main__":
 
     show()
-    print('\nFin de ./quick_test.py.')
+    print('\nFin de ./quick_test.py. ❌ tester link here')
