@@ -1,6 +1,6 @@
 import flet as ft
 
-from upu.views.page_template import named_view
+from upu.views.templates.default import named_view
 from upu.views.partials import build_release_update_card
 
 

@@ -37,17 +37,3 @@ def named_view(
             controls=controls,
         ),
     )
-
-def ready():
-    return ft.Row(
-        height=28,
-        vertical_alignment=ft.CrossAxisAlignment.CENTER,
-        controls=[
-            ft.VerticalDivider(
-                width=16,
-                thickness=3,
-                color=ft.Colors.LIGHT_GREEN_ACCENT_400,
-            ),
-            ft.Text("Ready for more...", size=14),
-        ],
-    )

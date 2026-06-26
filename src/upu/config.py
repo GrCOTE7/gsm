@@ -21,9 +21,13 @@ load_dotenv()
 
 _CHECK_TIME_FORMAT = "%Y-%m-%d %H:%M"
 APP_NAME = "Up You!"
-DEFAULT_ROUTE = "/tests"
-# DEFAULT_ROUTE = "/archives"
 
+#################################################
+# DEFAULT_ROUTE = "/home"
+
+DEFAULT_ROUTE = "/tests" # ❌ ready - empty
+# DEFAULT_ROUTE = "/archives" # ❌ réc mlm thomas
+#################################################
 
 def _required_str(payload: dict, key: str) -> str:
     value = str(payload.get(key) or "").strip()
@@ -110,7 +114,7 @@ def _env_int(name: str, default: int = 0) -> int:
     if not raw:
         return default
 
-    # Tolere les valeurs de type "1526 # commentaire" dans .env.
+    # Tolère les valeurs de type "1526 # commentaire" dans .env.
     raw = raw.split("#", 1)[0].strip()
     match = re.search(r"[-+]?\d+", raw)
     if not match:

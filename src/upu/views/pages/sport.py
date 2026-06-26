@@ -2,7 +2,7 @@ import flet as ft
 
 from upu.helpers.app_actions import open_url
 from upu.helpers.buttons import filled_button
-from upu.views.page_template import named_view
+from upu.views.templates.default import named_view
 
 
 def build() -> ft.Control:

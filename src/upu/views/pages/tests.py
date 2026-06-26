@@ -1,12 +1,9 @@
 import flet as ft
 
-from gc7_tools.helpers import sepa, sepa_outlined
-from upu.views.page_template import named_view, ready
+from upu.views.templates.default import named_view
+from upu.views.footers.ready_more import ready_more
+
 from upu.guests.mlm_913 import tests_views
-
-# def ready():
-#     return ft.Text("→ Ready for quick test21!", size=14, weight=ft.FontWeight.W_400)
-
 
 def _tests_header() -> ft.Row:
 
@@ -20,7 +17,7 @@ def _tests_header() -> ft.Row:
                     tooltip="Aller à la page Archives",
                 ),
                 margin=ft.Margin(0, 0, 0, 0),
-                on_tap=lambda e: print("Go Archives !"), # ❌ reroute!
+                on_tap=lambda e: print("SIMU Go Archives !"), # ❌ reroute!
                 mouse_cursor=ft.MouseCursor.CLICK,
             ),
             ft.Container(
@@ -69,8 +66,7 @@ def build() -> ft.Control:
                     expand=True,
                     content=tests_views(),
                 ),
-                sepa_outlined(),
-                ready(),
+                ready_more(),
             ],
         ),
     )
