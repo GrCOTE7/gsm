@@ -9,23 +9,6 @@ from upu.guests.mlm_913 import tests_views
 
 
 def _tests_header() -> ft.Row:
-    # ❌ lk close app à droite de cette ligne
-    # return ft.Row(
-    #         ft.Container(
-    #             expand=True,
-    #             content=ft.Row(
-    #                 controls = [
-    #                     ft.Icon(ft.Icons.SCIENCE, size=28),
-    #                     ft.Text(
-    #                     "Tests",
-    #                     size=28,
-    #                     weight=ft.FontWeight.W_600,
-    #                     text_align=ft.TextAlign.CENTER,
-    #                 ),
-    #                 ]
-    #             ),
-    #         ),
-    # )
 
     return ft.Row(
         controls=[
@@ -37,7 +20,7 @@ def _tests_header() -> ft.Row:
                     tooltip="Aller à la page Archives",
                 ),
                 margin=ft.Margin(0, 0, 0, 0),
-                on_tap=lambda e: print("Go archive !"),
+                on_tap=lambda e: print("Go Archives !"), # ❌ reroute!
                 mouse_cursor=ft.MouseCursor.CLICK,
             ),
             ft.Container(
@@ -65,7 +48,7 @@ def _tests_header() -> ft.Row:
                 ),
                 mouse_cursor=ft.MouseCursor.CLICK,
                 on_tap=lambda e: print("Really want to close ? Then double tap !"),
-                on_double_tap=lambda e: print("close !"),
+                on_double_tap=lambda e: print("close !"), # ❌ real close!
             ),
         ],
         vertical_alignment=ft.CrossAxisAlignment.CENTER,
