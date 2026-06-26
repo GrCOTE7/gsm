@@ -1,0 +1,4 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+
+uvx watchfiles --target-type command "uv run python quick_test.py" .
