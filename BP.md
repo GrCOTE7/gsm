@@ -68,9 +68,9 @@ The objective: **validate interest, usage and retention** before investing in ad
 
 ### .🎯 MVP Objective
 
-Allow a user to:
+Allow a user to (Check List):
 
-* [ ] Create **simple habits**
+* [-] Create **simple habits**
 * [ ] Manage one of them with the App
 * [ ] **Track them daily**
 * [ ] See their **progress**
@@ -85,8 +85,8 @@ Just the essentials to validate the idea.
 
 ### Preparation
 
-* [-] BP_version - Set App # 0.0.2 src/ in new structure (Entry point = ./main)
-* [ ] App : New version ? Yes : App → Install !
+* [x] BP_version - Set App # 0.0.2 src/ in new structure (Entry point = ./main)
+* [-] App : New version ? Yes : App → Install !
 * [ ] Git: Push Main → Auto New Version → Push on Ggle Drive - https://rclone.org
 * [ ] 1 Register the habit (H) Sport in Database (migration during development)
 * [ ] Home page is the habit, but 1 link to manage the habits

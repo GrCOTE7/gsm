@@ -10,4 +10,10 @@ uv sync
 # uv run --active flet run -r audio_04.py
 # Utilise pyproject.toml path pour trouver le projet et les dépendances
 # uv run --active python -m flet.cli run -r src/main.py
-uv run --active python -m flet.cli run -r
+
+
+echo "Lancement de l'application Flet - MODE NORMAL"
+uv run --active python -m flet.cli run -r # BON & NORMAL
+
+# echo "Lancement de l'application Flet - MODE WEB"
+# uv run --active python -m flet.cli run -r --web # Pour zoomer si détails

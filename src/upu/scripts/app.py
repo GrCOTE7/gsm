@@ -2,7 +2,6 @@ import flet as ft
 import asyncio
 from datetime import datetime
 
-
 class App:
     def __init__(self, page: ft.Page, sport_version: str) -> None:
         self.page = page

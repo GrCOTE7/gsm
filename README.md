@@ -343,6 +343,14 @@ C:\Users\utilisateur\AppData\Local\Android\Sdk\build-tools\34.0.0\apksigner.bat 
 
 ---
 
+## Version utilisée
+
+```bash
+uv run python -c "import flet; print(flet.__version__)"
+```
+
+---
+
 ## Pour logs du mobile dans PC
 
 ### Debug / Iphone
