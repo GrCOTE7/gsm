@@ -38,11 +38,11 @@ Tu ❤️ Python...? Rejoins le chat en LIVE !
 
 Pour **contribuer** au dev de ce projet (Et **en connaître tous les rouages et secrets**) :
 
-<h2 align='center'><span style="text-decoration:none;">👉 <a href="./THERA.md" title="The Doc de base"><bold>  Lire THERADOC</bold></a></span></h2><br>
+<h2 align='center'><span style="text-decoration:none;">👉 <a href="./THERA.md" title="The Doc de base"><bold>  Lire THERADOC</bold></a></span></h2><br><br>
 
 ## 🚀 Run the app
 
-### * En ligne - Sans rien n'installer !
+### * En ligne - Sans rien installer
 
 Dans le page du dépôt (Original, ou de votre fork), appuyer sur ' , ' et générer un codespace.
 
