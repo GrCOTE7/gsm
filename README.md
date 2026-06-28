@@ -38,9 +38,7 @@ Tu ❤️ Python...? Rejoins le chat en LIVE !
 
 Pour **contribuer** au dev de ce projet (Et **en connaître tous les rouages et secrets**) :
 
-## 👉  **Lire [THERADOC](https://github.com/GrCOTE7/gsm/blob/main/THERA.md)**
-
-<h2 align='center'><span style="text-decoration:none;">👉 <a href="./THERA.md" title="The Doc de base"><bold>  Lire THERADOC</bold></a></span></h2>
+<h2 align='center'><span style="text-decoration:none;">👉 <a href="./THERA.md" title="The Doc de base"><bold>  Lire THERADOC</bold></a></span></h2><br>
 
 ## 🚀 Run the app
 
