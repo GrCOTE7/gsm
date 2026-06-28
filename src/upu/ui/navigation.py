@@ -95,12 +95,17 @@ def AppBar(page: ft.Page, title: str) -> ft.AppBar:
         page.run_task(open_drawer_safe)
 
     def go_default(_e) -> None:
+        # DEFAULT_ROUTE[1:].capitalize()
         if page.route != DEFAULT_ROUTE:
             page.run_task(page.push_route, DEFAULT_ROUTE)
 
     def go_home_icon(_e) -> None:
         if page.route != "/home":
             page.run_task(page.push_route, "/home")
+
+    def go_tests(_e) -> None:
+        if page.route != "/tests":
+            page.run_task(page.push_route, "/tests")
 
     def page_is(route_name) -> bool:
         return page.route[1:] == route_name
@@ -109,6 +114,12 @@ def AppBar(page: ft.Page, title: str) -> ft.AppBar:
 
     arr = range(3)
     print(*arr[1:])
+
+    tooltip=''
+    mouse_cursor=ft.MouseCursor.CELL
+    if not page_is('tests'):
+        mouse_cursor = ft.MouseCursor.CLICK
+        tooltip = 'Aller à la page Tests'
 
     return ft.AppBar(
         leading=ft.IconButton(icon=ft.Icons.MENU, on_click=open_drawer),
@@ -125,19 +136,13 @@ def AppBar(page: ft.Page, title: str) -> ft.AppBar:
                     on_tap=go_home_icon,
                     tooltip=None if page_is("home") else "Aller à l'accueil",
                 ),
+                # ❌ Change to Tests
+                
                 ft.GestureDetector(
                     content=ft.Text(value=title),
-                    mouse_cursor=(
-                        ft.MouseCursor.CELL
-                        if not page_is("home")
-                        else ft.MouseCursor.CLICK
-                    ),
-                    on_tap=go_default,
-                    tooltip=(
-                        None
-                        if not page_is("home")
-                        else "Aller à la page " + DEFAULT_ROUTE[1:].capitalize()
-                    ),
+                    mouse_cursor=mouse_cursor,
+                    on_tap=go_tests,
+                    tooltip=tooltip
                 ),
             ],
         ),

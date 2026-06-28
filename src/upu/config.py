@@ -23,11 +23,12 @@ _CHECK_TIME_FORMAT = "%Y-%m-%d %H:%M"
 APP_NAME = "Up You!"
 
 #################################################
-# DEFAULT_ROUTE = "/home"
-
-DEFAULT_ROUTE = "/tests" # ❌ ready - empty
-# DEFAULT_ROUTE = "/archives" # ❌ réc mlm thomas
+DEFAULT_ROUTE = "/home"
+DEFAULT_ROUTE = "/tests2"  # ❌ ready - empty
+DEFAULT_ROUTE = "/tests"  # ❌ ready - empty
+DEFAULT_ROUTE = "/archives"  # ❌ réc mlm thomas
 #################################################
+
 
 def _required_str(payload: dict, key: str) -> str:
     value = str(payload.get(key) or "").strip()

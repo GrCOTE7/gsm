@@ -27,6 +27,7 @@ def build() -> ft.Control:
         extra=ft.Column(
             [
                 ft.Column(
+                    expand=True,
                     controls=[
                         ft.Divider(
                             height=16,
@@ -37,6 +38,7 @@ def build() -> ft.Control:
                 ),
                 nom_thomas(),
                 ft.Column(
+                    expand=True,
                     controls=[
                         ft.Divider(
                             height=16,
@@ -45,7 +47,7 @@ def build() -> ft.Control:
                         ),
                     ],
                 ),
-                ready_more(), # ❌ fix footer en bas
+                ready_more(),  # ❌ fix footer en bas
             ]
         ),
     )

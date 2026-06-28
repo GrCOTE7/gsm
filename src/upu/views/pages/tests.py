@@ -2,9 +2,11 @@ import flet as ft
 
 from upu.views.templates.default import named_view
 from upu.views.footers.ready_more import ready_more
+from upu.helpers.app_actions import close_app, open_url
 
 from upu.guests.mlm_913 import tests_views
 
+# print(dir(page))
 def _tests_header() -> ft.Row:
 
     return ft.Row(
@@ -14,10 +16,10 @@ def _tests_header() -> ft.Row:
                     ft.Icons.ARCHIVE_OUTLINED,
                     size=18,
                     color=ft.Colors.CYAN_400,
-                    tooltip="Aller à la page Archives",
+                    tooltip="Aller aux Archives",
                 ),
                 margin=ft.Margin(0, 0, 0, 0),
-                on_tap=lambda e: print("SIMU Go Archives !"), # ❌ reroute!
+                on_tap=lambda e: e.page.run_task(e.page.push_route, "/archives"), #type: ignore
                 mouse_cursor=ft.MouseCursor.CLICK,
             ),
             ft.Container(
@@ -45,7 +47,7 @@ def _tests_header() -> ft.Row:
                 ),
                 mouse_cursor=ft.MouseCursor.CLICK,
                 on_tap=lambda e: print("Really want to close ? Then double tap !"),
-                on_double_tap=lambda e: print("close !"), # ❌ real close!
+                on_double_tap=lambda e: close_app(e),
             ),
         ],
         vertical_alignment=ft.CrossAxisAlignment.CENTER,
