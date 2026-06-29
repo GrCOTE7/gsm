@@ -19,7 +19,7 @@ def build() -> ft.Control:
         controls.append(s())
         controls.append(sepa_outlined())
     
-    print("REGISTRY =", REGISTRY)
+    # print("REGISTRY =", REGISTRY)
     
     return named_view(
         ft.Row(
@@ -36,7 +36,7 @@ def build() -> ft.Control:
             controls=[
                 ft.Container(
                     expand=True,
-                    content=ft.Column(controls=controls)
+                    content=ft.Column(controls=controls, scroll=ft.ScrollMode.AUTO)
                 ),
                 ready_more(True)
             ],

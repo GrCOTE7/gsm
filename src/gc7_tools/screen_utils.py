@@ -152,13 +152,19 @@ def gc7_rules(
     mode: str = "DARK",
     name: str = "Ready",
     left: int = 1912,
-    # left: int = 1520,  # 1912 - 392
+    # left: int = 1520,  # 1912 - 392 # video 
     # width: int = 392, ou 400
     width: int = 400,  # Note : 2 * 8 de marge → page.windows_width = 384 // 392 - 373 Galaxy A5
     height: int = 1040,  # Note : 1088 - 24 (padding top) - 20 (padding bottom) = 1044 → page.window_height = 1044 - 742 Galaxy A5
     defaultColors: bool = True,
 ) -> None:
-    height = 1088 if left == 1912 else 1040
+    height = 1088 if left == 1912 else 1040 # Pour adapter écran #2 sans la barre windows
+    
+    # VIDÉO :
+    left=960
+    width=400
+    height=808
+    
     configure_window(page, left=left, top=0, width=width, height=height)
     page.theme_mode = ft.ThemeMode.LIGHT if mode == "LIGHT" else ft.ThemeMode.DARK
     page.title = f"GC7 - {name}"
