@@ -2,6 +2,8 @@ import flet as ft
 from typing import Callable
 from gc7_tools.helpers import sepa, sepa_outlined
 
+from upu.guests import register
+
 date = "26-05-30"
 guest = "nom"
 source = "Discord"
@@ -21,3 +23,6 @@ def subject():
             ft.Text(rep, size=20)
         ]
     )
+
+
+register(subject)

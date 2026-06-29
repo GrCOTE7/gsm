@@ -4,9 +4,10 @@ from upu.views.templates.default import named_view
 from upu.views.footers.ready_more import ready_more
 from upu.helpers.app_actions import close_app, open_url
 
-from upu.guests.g260602_mln_913 import mln01_test_view
+from upu.guests.g260602_mln_913 import subject
 
 from upu.views.partials.test_guests_src import guest_source
+from gc7_tools.helpers import sepa, sepa_outlined
 
     
 # print(dir(page))
@@ -71,7 +72,14 @@ def build() -> ft.Control:
             controls=[
                 ft.Container(
                     expand=True,
-                    content=mln01_test_view(),
+                    content=ft.Column(
+                        controls=[
+                            sepa_outlined("CYAN_400"),
+                            # subject(),
+                            ft.Text('Ready où ? Ici sera le prochain test !'),
+                            sepa_outlined("CYAN_400"),
+                        ]
+                    )
                 ),
                 ready_more(),
             ],

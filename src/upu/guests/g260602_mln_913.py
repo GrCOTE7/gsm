@@ -2,6 +2,8 @@ import flet as ft
 from typing import Callable
 from gc7_tools.helpers import sepa, sepa_outlined
 
+from upu.guests import register
+
 # ❌ "26-05-30 nom → Thomas - Discord", https://discord.com/channels/1056923339546968127/1075041467690664070/1510251280176517230
 
 date='26-06-02'
@@ -95,10 +97,9 @@ def show_trame(id_trame=0):
     return ft.Text(trames[id_trame])
 
 
-def mln01_test_view():
+def subject():
     return ft.Column(
         [
-            sepa_outlined("CYAN_400"),
             guest_source(date=date, guest=guest, response=response, source=source, url=url),
             
             show_trame(),
@@ -110,6 +111,7 @@ def mln01_test_view():
             sepa("RED_400"),
             trame_validation_text("mln", trames[1], is_valid_mln),
             trame_validation_text("Thomas", trames[1], is_valid_thomas),
-            sepa_outlined("CYAN_400"),
         ]
     )
+
+register(subject)
