@@ -18,6 +18,6 @@ def ready_more() -> ft.Column:
                     ),
                     ft.Text("Ready for more...", size=14),
                 ],
-            ),
+            )
         ]
     )

@@ -23,3 +23,11 @@ def sepa_outlined(color="LIGHT_GREEN_ACCENT_400"):
             )
         ]
     )
+
+
+def sepa_major():
+    return ft.Divider(
+        height=16,
+        thickness=2,
+        color=ft.Colors.LIGHT_GREEN_ACCENT_400,
+    )

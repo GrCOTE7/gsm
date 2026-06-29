@@ -6,6 +6,8 @@ from gc7_tools.helpers import sepa, sepa_outlined
 trame = "0010101011001000010010001100011000101100"  # unvalid
 # Réf.: https://glassus.github.io/terminale_nsi/T6_6_Epreuve_pratique/data2026/26_BCG_NSI_23/sujet.pdf)
 
+from upu.views.partials.test_guests_src import guest_source
+
 def is_valid_mln(trame: str) -> bool:
     compteur1 = 0
     compteur2 = 0
@@ -58,6 +60,7 @@ def is_valid_thomas(trame: str) -> bool:
             return False
     return True
 
+
 def trame_validation_text(
     algo_name: str,
     trame: str,
@@ -75,13 +78,17 @@ trames = [
     "0010101011001000010010001100011000101100",  # unvalid
 ]
 
+
 def show_trame(id_trame=0):
     return ft.Text(trames[id_trame])
 
-def tests_views():
+
+def mln01_test_view():
     return ft.Column(
         [
             sepa_outlined("CYAN_400"),
+            guest_source(),
+            
             show_trame(),
             sepa(),
             trame_validation_text("mln", trames[0], is_valid_mln),

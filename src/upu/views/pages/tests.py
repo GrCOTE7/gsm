@@ -4,8 +4,11 @@ from upu.views.templates.default import named_view
 from upu.views.footers.ready_more import ready_more
 from upu.helpers.app_actions import close_app, open_url
 
-from upu.guests.mlm_913 import tests_views
+from upu.guests.mln_913_01 import mln01_test_view
 
+from upu.views.partials.test_guests_src import guest_source
+
+    
 # print(dir(page))
 def _tests_header() -> ft.Row:
 
@@ -19,7 +22,7 @@ def _tests_header() -> ft.Row:
                     tooltip="Aller aux Archives",
                 ),
                 margin=ft.Margin(0, 0, 0, 0),
-                on_tap=lambda e: e.page.run_task(e.page.push_route, "/archives"), #type: ignore
+                on_tap=lambda e: e.page.run_task(e.page.push_route, "/archives"),  # type: ignore
                 mouse_cursor=ft.MouseCursor.CLICK,
             ),
             ft.Container(
@@ -47,15 +50,16 @@ def _tests_header() -> ft.Row:
                 ),
                 mouse_cursor=ft.MouseCursor.CLICK,
                 # ☢️ add notif dans app
-                on_tap=lambda e: print("Really want to close ? Then double tap !"), 
+                on_tap=lambda e: print("Really want to close ? Then double tap !"),
                 on_double_tap=lambda e: close_app(e),
             ),
         ],
-        vertical_alignment=ft.CrossAxisAlignment.CENTER,
     )
 
 
 def build() -> ft.Control:
+    
+    # guest_source = guest_source()
 
     return named_view(
         _tests_header(),
@@ -67,7 +71,7 @@ def build() -> ft.Control:
             controls=[
                 ft.Container(
                     expand=True,
-                    content=tests_views(),
+                    content=mln01_test_view(),
                 ),
                 ready_more(),
             ],

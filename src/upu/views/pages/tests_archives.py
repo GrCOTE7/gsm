@@ -2,6 +2,7 @@ import flet as ft
 
 from upu.views.templates.default import named_view
 from upu.views.footers.ready_more import ready_more
+from gc7_tools.helpers import sepa_major, sepa_outlined
 
 
 def build() -> ft.Control:
@@ -25,29 +26,15 @@ def build() -> ft.Control:
         "Page archives des tests rapides.",
         extra_top_gap=0,
         extra=ft.Column(
-            [
-                ft.Column(
+            expand=True,
+            controls=[
+                ft.Container(
                     expand=True,
-                    controls=[
-                        ft.Divider(
-                            height=16,
-                            thickness=2,
-                            color=ft.Colors.LIGHT_GREEN_ACCENT_400,
-                        ),
-                    ],
-                ),
-                nom_thomas(),
-                ft.Column(
-                    expand=True,
-                    controls=[
-                        ft.Divider(
-                            height=16,
-                            thickness=2,
-                            color=ft.Colors.LIGHT_GREEN_ACCENT_400,
-                        ),
-                    ],
+                    content=ft.Column(
+                        controls=[sepa_major(), nom_thomas(), sepa_major()]
+                    ),
                 ),
                 ready_more(),  # ☢️ fix footer en bas
-            ]
+            ],
         ),
     )
