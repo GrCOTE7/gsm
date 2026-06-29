@@ -4,16 +4,10 @@ from upu.views.templates.default import named_view
 from upu.views.footers.ready_more import ready_more
 from gc7_tools.helpers import sepa_major, sepa_outlined
 
+from upu.guests.g260530_nom import subject
+
 
 def build() -> ft.Control:
-
-    def nom_thomas():
-        rep = "\n".join(
-            " ".join(str(i * j) for j in range(1, i + 1)) for i in range(1, 6)
-        )
-        return ft.Text(
-            "Nom & Thomas 's script:\n" + rep, size=20, weight=ft.FontWeight.W_500
-        )
 
     return named_view(
         ft.Row(
@@ -31,7 +25,7 @@ def build() -> ft.Control:
                 ft.Container(
                     expand=True,
                     content=ft.Column(
-                        controls=[sepa_major(), nom_thomas(), sepa_major()]
+                        controls=[sepa_major(),subject(), sepa_major()]
                     ),
                 ),
                 ready_more(True),  # ☢️ fix footer en bas

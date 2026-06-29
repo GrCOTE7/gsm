@@ -8,6 +8,7 @@ date='26-06-02'
 guest='mlm.913'
 source='Discord'
 response = 'Thomas'
+url='https://discord.com/channels/1056923339546968127/1075041467690664070/1511445891062698014'
 
 response = response if 'response' in globals() else "En cours" # type: ignore
 
@@ -98,7 +99,7 @@ def mln01_test_view():
     return ft.Column(
         [
             sepa_outlined("CYAN_400"),
-            guest_source(date=date, guest=guest, response=response, source=source),
+            guest_source(date=date, guest=guest, response=response, source=source, url=url),
             
             show_trame(),
             sepa(),
