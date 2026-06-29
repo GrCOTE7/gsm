@@ -142,7 +142,5 @@ def main() -> int:
     print("Done.")
     return 0
 
-# ❌ Après le Done. le script ne sort pas ?!?
-
 if __name__ == "__main__":
     raise SystemExit(main())

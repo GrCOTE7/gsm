@@ -100,7 +100,7 @@ uvx watchfiles "py quick_test.py" . 2>nul
 
 Juste on démarre un CodeSpace (Sur la page GH de ton fork : ' , ' (Virgule) + Create new codespace + F9
 
-### ❌ Faire marcher F9 dans un codespace pour la commande ci-dessous
+### ❌vérif si F9 OK dans un codespace pour la commande ci-dessous
 
 Et dans la CLI (Console - Terminal) qui apparaît :
 

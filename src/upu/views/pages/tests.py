@@ -46,7 +46,8 @@ def _tests_header() -> ft.Row:
                     tooltip="Fermer l'App",
                 ),
                 mouse_cursor=ft.MouseCursor.CLICK,
-                on_tap=lambda e: print("Really want to close ? Then double tap !"), # ❌ ☢️ add notif
+                # ☢️ add notif dans app
+                on_tap=lambda e: print("Really want to close ? Then double tap !"), 
                 on_double_tap=lambda e: close_app(e),
             ),
         ],

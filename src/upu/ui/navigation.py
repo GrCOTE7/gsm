@@ -136,7 +136,6 @@ def AppBar(page: ft.Page, title: str) -> ft.AppBar:
                     on_tap=go_home_icon,
                     tooltip=None if page_is("home") else "Aller à l'accueil",
                 ),
-                # ❌ Change to Tests
                 
                 ft.GestureDetector(
                     content=ft.Text(value=title),

@@ -24,9 +24,9 @@ APP_NAME = "Up You!"
 
 #################################################
 DEFAULT_ROUTE = "/home"
-DEFAULT_ROUTE = "/tests2"  # ❌ ready - empty
-DEFAULT_ROUTE = "/tests"  # ❌ ready - empty
-DEFAULT_ROUTE = "/archives"  # ❌ réc mlm thomas
+DEFAULT_ROUTE = "/tests2"  # 2ar ready - empty
+DEFAULT_ROUTE = "/tests"  # 2ar ready - empty
+DEFAULT_ROUTE = "/archives"  # 2ar réc mlm thomas
 #################################################
 
 

@@ -130,8 +130,6 @@ En commentaire, cela colore la ligne pour la mettre bien en évidence.
 
 En STDT (Notre système Shortcuts - ToDo Tree), un ✔ veut juste dire le tag est comptabilisé par ToDo Tree (Visible en bas, dans la barre d'état).
 
-❌ vérif tous snippets
-
 <h3 align="center">
   <a href="./0203_VSC_EXT3.md">← 0203_VSC_EXT3</a>
                      

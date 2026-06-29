@@ -42,14 +42,14 @@
   "postCreateCommand": "chmod +x .devcontainer/postCreateCommand.sh && ./.devcontainer/postCreateCommand.sh",
 
   // "postAttachCommand": "code quick_test.py && code scripts/essays/salutation.py && uvx watchfiles \"uv run python quick_test.py\" ."
-  // XXX 
+  // XXX Reprendre mise au point codespace start automatically watchfiles
   "postAttachCommand": "code quick_test.py && code scripts/essays/salutation.py"
 
   // Le watcher doit être lancé depuis la tâche VS Code, pas via postAttachCommand.
   // "postAttachCommand": "nohup sh -c 'uvx watchfiles \"uv run python quick_test.py\" .' >/tmp/uvx_quick_test.log 2>&1 &"
 
-  // ❌ 2test postStartCommand": "nohup uvx watchfiles --command 'uv run python quick_test.py' . >/tmp/quick_test.log 2>&1 &"
-  // ❌ 2test postStartCommand": "nohup uvx watchfiles uv run python quick_test.py' . >/tmp/quick_test.log 2>&1 &"
+  // * [ ] 2test postStartCommand": "nohup uvx watchfiles --command 'uv run python quick_test.py' . >/tmp/quick_test.log 2>&1 &"
+  // * [ ] 2test postStartCommand": "nohup uvx watchfiles uv run python quick_test.py' . >/tmp/quick_test.log 2>&1 &"
   
   // "postStartCommand": "uvx watchfiles 'uv run python quick_test.py' ."
 

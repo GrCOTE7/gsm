@@ -47,7 +47,7 @@ def build() -> ft.Control:
                         ),
                     ],
                 ),
-                ready_more(),  # ❌ fix footer en bas
+                ready_more(),  # ☢️ fix footer en bas
             ]
         ),
     )
