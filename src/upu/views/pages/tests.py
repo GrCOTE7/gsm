@@ -4,7 +4,7 @@ from upu.views.templates.default import named_view
 from upu.views.footers.ready_more import ready_more
 from upu.helpers.app_actions import close_app, open_url
 
-from upu.guests.mln_913_01 import mln01_test_view
+from upu.guests.g260602_mln_913 import mln01_test_view
 
 from upu.views.partials.test_guests_src import guest_source
 

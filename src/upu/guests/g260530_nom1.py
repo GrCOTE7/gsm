@@ -2,6 +2,17 @@ import flet as ft
 from typing import Callable
 from gc7_tools.helpers import sepa, sepa_outlined
 
+# ❌ "26-05-30 nom → Thomas - Discord", https://discord.com/channels/1056923339546968127/1075041467690664070/1510251280176517230
+
+date='26-06-02'
+guest='mlm.913'
+source='Discord'
+response = 'Thomas'
+
+response = response if 'response' in globals() else "En cours" # type: ignore
+
+# response=globals().get('response[0]'), 'En cours'),
+
 # trame = "0010101011001000010010001100011000101101" # valid
 trame = "0010101011001000010010001100011000101100"  # unvalid
 # Réf.: https://glassus.github.io/terminale_nsi/T6_6_Epreuve_pratique/data2026/26_BCG_NSI_23/sujet.pdf)
@@ -87,17 +98,17 @@ def mln01_test_view():
     return ft.Column(
         [
             sepa_outlined("CYAN_400"),
-            guest_source(),
+            guest_source(date=date, guest=guest, response=response, source=source),
             
             show_trame(),
             sepa(),
             trame_validation_text("mln", trames[0], is_valid_mln),
-            trame_validation_text("thomas", trames[0], is_valid_thomas),
+            trame_validation_text("Thomas", trames[0], is_valid_thomas),
             sepa_outlined("YELLOW_400"),
             show_trame(1),
             sepa("RED_400"),
             trame_validation_text("mln", trames[1], is_valid_mln),
-            trame_validation_text("thomas", trames[1], is_valid_thomas),
+            trame_validation_text("Thomas", trames[1], is_valid_thomas),
             sepa_outlined("CYAN_400"),
         ]
     )

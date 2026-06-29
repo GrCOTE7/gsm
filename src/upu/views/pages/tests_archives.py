@@ -34,7 +34,7 @@ def build() -> ft.Control:
                         controls=[sepa_major(), nom_thomas(), sepa_major()]
                     ),
                 ),
-                ready_more(),  # ☢️ fix footer en bas
+                ready_more(True),  # ☢️ fix footer en bas
             ],
         ),
     )
