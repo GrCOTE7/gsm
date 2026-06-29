@@ -161,9 +161,9 @@ def gc7_rules(
     height = 1088 if left == 1912 else 1040 # Pour adapter écran #2 sans la barre windows
     
     # VIDÉO :
-    left=960
-    width=400
-    height=808
+    # left=960
+    # width=400
+    # height=808
     
     configure_window(page, left=left, top=0, width=width, height=height)
     page.theme_mode = ft.ThemeMode.LIGHT if mode == "LIGHT" else ft.ThemeMode.DARK
