@@ -17,8 +17,8 @@ from upu.views.partials.test_guests_src import guest_source
 S: str = 'abc'
 
 def jeu_abc_bac_v1():
-    res = S[1::-1] + S[2]
-    return f"{S = }\nS[1::-1] + S[2] => {res}"
+    res = S[1::-1] + S[-1]
+    return f"→ {S = }\nS[1::-1] + S[-1] => {res}"
 
 
 def jeu_abc_2_bac():
