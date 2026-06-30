@@ -33,7 +33,9 @@ Et là, tu vas constater 2-3 choses:
 
 ### ❤️ Après, si tu sais faire, s'impose une **PR** (***P**ull **R**equest*) qui pourra sûrement aider quelqu'un d'autre à ne même pas rencontrer ce problème, si grâce à TOI, la doc (ou le code) du projet devient mieux élaboré, + adapté ❤️
 
-### Et sinon, apprends vite pour savoir faire une **PR** ! **👉 Pour cela, lis au moins rapidement la doc GIT d'ici** 🧠 (*la série des fichiers ./doc/01XX_GIT_NNN.md*) 👌
+### Et sinon, apprends vite pour savoir faire une **PR** !
+
+## 👉 Pour cela, lis au moins rapidement la [**doc GIT d'ici** 🧠 (*la série des fichiers ./doc/01XX_GIT_NNN.md*)](https://github.com/GrCOTE7/gsm/blob/main/doc/0001_TOC.md#-git-basis) 👌
 
 ## 2. Selon l'heure, tu peux dial directement avec un 'collègue' dans notre [Chat LIVE](https://discord.com/channels/1056923339546968127/1507316257580519445) ( [![Discord](https://img.shields.io/discord/1056923339546968127)](https://discord.com/channels/1056923339546968127/1507316257580519445) )
 
