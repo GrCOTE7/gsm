@@ -4,12 +4,11 @@ from upu.views.templates.default import named_view
 from upu.views.footers.ready_more import ready_more
 from upu.helpers.app_actions import close_app, open_url
 
-from upu.guests.g260602_mln_913 import subject
-
-from upu.views.partials.test_guests_src import guest_source
 from gc7_tools.helpers import sepa, sepa_outlined
 
-    
+from upu.guests import g260799_ as guest
+
+
 # print(dir(page))
 def _tests_header() -> ft.Row:
 
@@ -59,8 +58,6 @@ def _tests_header() -> ft.Row:
 
 
 def build() -> ft.Control:
-    
-    # guest_source = guest_source()
 
     return named_view(
         _tests_header(),
@@ -75,11 +72,12 @@ def build() -> ft.Control:
                     content=ft.Column(
                         controls=[
                             sepa_outlined("CYAN_400"),
-                            # subject(),
-                            ft.Text('Ready où ? Ici sera le prochain test !'),
-                            sepa_outlined("CYAN_400"),
+                            guest.subject(),
+                            # sepa_outlined("CYAN_400"),
+                            # ft.Text("→ Ready où ? Ici sera le prochain test !"),
+                            # sepa_outlined("CYAN_400"),
                         ]
-                    )
+                    ),
                 ),
                 ready_more(),
             ],

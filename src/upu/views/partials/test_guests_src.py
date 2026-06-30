@@ -1,21 +1,29 @@
 import flet as ft
+import rich
 
-def guest_source(date='Date inconnue', guest='Auteur inconnu', response='Pas encore', source='Source inconnue', url=''):
-    
-    response_aff = f'→ {response}'
+def guest_source(
+    date="Date inconnue",
+    guest="Auteur inconnu",
+    response="Pas encore",
+    source="Source inconnue",
+    url="",
+):
+
+    response_aff = f" → {response}" if response else ""
+
+    # Construction du TextSpan avec url seulement si non vide
+    span_kwargs = {
+        "text": f"{date} | {guest}{response_aff} - {source}",
+        "style": ft.TextStyle(
+            size=16,
+            color=ft.Colors.BLUE,
+        ),
+    }
+
+    if url:
+        span_kwargs["url"] = url
+
     return ft.Text(
-            spans=[
-                ft.TextSpan(
-                    # "26-05-30 nom → Thomas - Discord", https://discord.com/channels/1056923339546968127/1075041467690664070/1510251280176517230
-                    # "26-06-02 mlm.913 → Thomas - Discord",
-                    f"{date} | {guest} {response_aff} - {source}",
-                    url=url,
-                    style=ft.TextStyle(
-                        size=16,
-                        color=ft.Colors.BLUE,
-                        # decoration=ft.TextDecoration.UNDERLINE,
-                    ),
-                ),
-            ],
-            tooltip='Voir le msg source originel'
-        )
+        spans=[ft.TextSpan(**span_kwargs)],
+        tooltip="Voir le msg source originel" if url else None
+    )

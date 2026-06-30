@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  flet:
+    container_name: gsm_app
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    environment:
+      FLET_DOCKER: "1"
+      # Si ton app Flet utilise des variables, tu peux les mettre ici
+      # APP_ENV: "production"
+      # API_URL: "https://api.mondomaine.fr"
+    volumes:
+      - .:/app
+      - /app/.venv

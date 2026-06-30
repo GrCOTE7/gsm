@@ -1,0 +1,25 @@
+FROM python:3.11-slim
+
+# Dossier de travail
+WORKDIR /app
+
+# Installer curl + dépendances de build minimales
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
+# Installer uv (version stable)
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Ajouter uv au PATH (installation standard)
+ENV PATH="/root/.local/bin:/usr/local/bin:${PATH}"
+
+# Copier le projet
+COPY . .
+
+# Installer les dépendances
+RUN uv sync --frozen
+
+# Exposer le port Flet Web
+EXPOSE 8000
+
+# Lancer l'application
+CMD ["uv", "run", "src/main.py"]

@@ -11,7 +11,7 @@ import qrcode
 import flet as ft
 
 def main(page: ft.Page):
-    img = qrcode.make("http://cote7.com/gsm")
+    img = qrcode.make("https://github.com/GrCOTE7/gsm/releases/download/v1.0.15/UpU.apk")
     img.save("qr.png")
 
     page.add(
