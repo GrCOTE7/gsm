@@ -8,8 +8,6 @@ authors = [{ name = "GrCOTE7", email = "GrCOTE7@gmail.com" }]
 dependencies = [
     "flet==0.85.*",
     "flet-audio",
-    "flet-cli",
-    "flet-desktop",
     "certifi",
     "google-api-python-client>=2.196.0",
     "google-auth>=2.51.0",
