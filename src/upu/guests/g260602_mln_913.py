@@ -106,7 +106,7 @@ def subject():
             sepa(),
             trame_validation_text("mln", trames[0], is_valid_mln),
             trame_validation_text("Thomas", trames[0], is_valid_thomas),
-            sepa_outlined("YELLOW_400"),
+            sepa("YELLOW"),
             show_trame(1),
             sepa("RED_400"),
             trame_validation_text("mln", trames[1], is_valid_mln),

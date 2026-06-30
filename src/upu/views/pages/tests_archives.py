@@ -11,9 +11,10 @@ def build() -> ft.Control:
 
     controls.append(sepa_outlined())
 
-    for s in reversed(REGISTRY):
+    for i, s in enumerate(reversed(REGISTRY)):
         controls.append(s())
-        controls.append(sepa_outlined())
+        if i < len(REGISTRY) - 1:
+            controls.append(sepa_outlined())
     
     # print("REGISTRY =", REGISTRY)
     

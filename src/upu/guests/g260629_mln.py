@@ -34,6 +34,7 @@ def subject():
         controls=[
             guest_source(date, guest, response, source, url),
             ft.Text(jeu_abc_bac_v1(), size=20),
+            sepa('CYAN'),
             ft.Text(jeu_abc_2_bac(), size=20),
         ]
     )
