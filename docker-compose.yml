@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   flet:
     container_name: gsm_app
@@ -14,6 +12,6 @@ services:
       # Si ton app Flet utilise des variables, tu peux les mettre ici
       # APP_ENV: "production"
       # API_URL: "https://api.mondomaine.fr"
-    volumes:
-      - .:/app
-      - /app/.venv
+    # volumes:
+    #   - .:/app
+    #   - /app/.venv
