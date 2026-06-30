@@ -1,3 +1,10 @@
+## [1.0.16](https://github.com/GrCOTE7/gsm/compare/v1.0.15...v1.0.16) (2026-06-30)
+
+
+### Bug Fixes
+
+* notif for close app ([c37b5ef](https://github.com/GrCOTE7/gsm/commit/c37b5efcad8378750d8f0a02f455e86c796dd95a))
+
 ## [1.0.15](https://github.com/GrCOTE7/gsm/compare/v1.0.14...v1.0.15) (2026-06-30)
 
 
