@@ -60,8 +60,8 @@ Allez, la philo, c'est sympa, mais ça fait pas chauffer tant que ça les proces
 ##### Mental
 
 <div align="center">
-  <a href="./doc/imgs/tee.jpg" target="_blank">
-    <img src="./doc/imgs/tps-espace-nrj.jpg" width="200">
+  <a href="./doc/imgs/tps-espace-nrj.jpg" target="_blank">
+    <img src="./doc/imgs/tps-espace-nrj.jpg" width="200" title='Représentation Temps - Espace et NRJ' alt='image pour représenter Temps - Espace et NRJ'>
   </a>
 </div>
 
@@ -76,7 +76,7 @@ Allez, la philo, c'est sympa, mais ça fait pas chauffer tant que ça les proces
 
 1. Le **[Git](https://fr.wikipedia.org/wiki/Git)** — Savoir (ou apprendre) : Fork, Clone, Branch, Commit, Push, Pull, PR… Bref, les bases (Et ça suffit large, pour démarrer et **Être**)
 
-2. Avoir **1 éditeur privilégié** ([VSCode hautement préconisé](https://code.visualstudio.com/) - Gratos, et de très nombreuses extensions existent, dont beaucoup pour le Git... Comme par hasard... Et qui rende son usage (celui du Git) aussi ludique qu'[une partie de Tétris](https://fr.wikipedia.org/wiki/Tetris) !)
+2. Avoir **1 éditeur privilégié** ([VSCode hautement préconisé](https://code.visualstudio.com/) - Gratos, et de très nombreuses extensions existent, dont beaucoup pour le Git... Comme par hasard... Et qui rendent son usage (celui du Git) aussi ludique qu'[une partie de Tétris](https://fr.wikipedia.org/wiki/Tetris) !)
 
 3. Algorithmie — Pas besoin d’être un '[Knuth](https://fr.wikipedia.org/wiki/Donald_Knuth)', mais comprendre ce qu’est une variable, une boucle, une condition, une fonction, c’est mieux. Note: Si vous avez juste commencé un jour un tuto de n'importe quel langage, ceci est assurément atteint et fait ! 😊
 
@@ -92,7 +92,7 @@ Et au final, surtout, c'est **VOTRE Vie**, et **donc** logiquement, selon **VOTR
 
 ## 🚀 Comment contribuer ?
 
-## Wahooo 👏 ✌️ 👍 🤝 🥰 🥳 💪 !
+## Wahooo 👏 ✌️ 👍 🤝 🥰 🥳 💪 ! :-)
 
 En effet, si vous lisez encore, là, maintenant, ces mots, alors arrêtez-de vous mentir ! C'est que vous avez déjà décidé ! Car sinon, c'est tellement si facile de zapper, de basculer et de passer à autre chose... Alors vraiment, et du fond du coeur: Bravos, et Merci 😊 !
 
@@ -102,15 +102,17 @@ Donc, attaquons les choses concrètement utiles (Et, + cool, dorénavant, car vu
 
 Et observe juste 2-3 p'tites choses... :
 
-- T'as t'on demandé ici, un *diploume* ?
-- Demandé pour qui tu te prends ? De quel droit tu te permets d'émettre un avis ?
-- Vérifier que t'es le fils à tel Papa, ou autre privilègié ?
-- À quelle dininité tu crois ?
-- Au fait, t'es plutôt caucasien, jaune, gris, brown...? vert ?:?
+* T'as t'on demandé ici, un *diploume* ?
+* Demandé pour qui tu te prends ? De quel droit tu te permets d'émettre un avis ?
+* Vérifier que t'es le fils à tel Papa, ou autre privilègié ?
+* À quelle dininité tu crois ?
+* Au fait, t'es plutôt caucasien, jaune, gris, brown...? vert ?:?
 
-→ Non : Ici, là et maintenant, **TU ES TOI** ! Et enfin, là, ici et maintenant, **enfin au bon endroit au bon moment !!!** Et seulement TOI et TOI SEUL peut comprendre et doit accepter l'idée que **TON RÔLE est CAPITAL,** pas indispensable, juste CAPITAL **et IMPORTANT** et que **TU VAS** CEPENDANT, SOUS PEU, **AGIR** CONCRÈTEMENT **SUR LE PROJET OFFICIEL !** 
+→ Non : Ici, là et maintenant, **TU ES TOI** ! Et enfin, là, ici et maintenant, **enfin au bon endroit au bon moment !!!** Et seulement TOI et TOI SEUL peut comprendre et doit accepter l'idée que **TON RÔLE est CAPITAL,** pas indispensable, juste CAPITAL **et IMPORTANT** et que **TU VAS** CEPENDANT, SOUS PEU, **AGIR** CONCRÈTEMENT **SUR LE PROJET OFFICIEL !**
 
-Rappel de bases de communication quelque soit l'endroit, et le support :
+### Ne compte plus ce que tu as ou pas, mais qui TU ES et ce que TU FAIS avec cela ! ;-)
+
+Rappel de bases de communication quelque soit l'endroit, et le support pour rester digne de la philo du groupe de la Team GSM :
 
     Toujours poser des questions quand quelque chose n’est pas clair.
     Toujours remercier quand quelqu’un aide.
@@ -129,7 +131,7 @@ Rappel de bases de communication quelque soit l'endroit, et le support :
     Si tu veux essayer quelque chose → propose‑le.
     
 
-Vraiment, tu es le bienvenu.
+### Si tout cela est **OK pout TOI ? Alors, tu es vraiment le bienvenu**.
 
 Même si tu penses “je suis trop débutant”, “je vais ralentir les autres”, “je ne suis pas légitime”.
 
