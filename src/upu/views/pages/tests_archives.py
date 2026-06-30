@@ -4,11 +4,7 @@ from upu.views.templates.default import named_view
 from upu.views.footers.ready_more import ready_more
 from gc7_tools.helpers import sepa_major, sepa_outlined
 
-# from upu.guests.g260530_nom import subject as s1
-# from upu.guests.g260602_mln_913 import subject as s2
-
 from upu.guests import REGISTRY
-
 
 def build() -> ft.Control:
     controls = []
