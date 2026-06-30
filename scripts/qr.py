@@ -10,13 +10,14 @@
 import qrcode
 import flet as ft
 
+
 def main(page: ft.Page):
-    img = qrcode.make("https://github.com/GrCOTE7/gsm/releases/download/v1.0.15/UpU.apk")
+    img = qrcode.make(
+        "https://github.com/GrCOTE7/gsm/releases/download/v1.0.16/UpU.apk"
+    )
     img.save("qr.png")
 
-    page.add(
-        ft.Image(src="qr.png", width=300, height=300)
-    )
+    page.add(ft.Image(src="qr.png", width=300, height=300))
+
 
 ft.run(main)
-
