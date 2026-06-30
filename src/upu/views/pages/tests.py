@@ -56,7 +56,6 @@ def _tests_header() -> ft.Row:
                     tooltip="Fermer l'App",
                 ),
                 mouse_cursor=ft.MouseCursor.CLICK,
-                # ☢️ add notif dans app
                 on_tap=simple_tap,
                 on_double_tap=lambda e: close_app(e),
             ),
