@@ -132,7 +132,7 @@ async def check_latest(page: ft.Page, result_text: ft.Text, button: ft.Control):
         "ERROR": "Erreur — aucune donnée disponible",
     }
 
-    show_snackbar(page, messages[source], 5000)
+    show_snackbar(page, messages[source], 7000)
     print("[check_latest] end, source =", source)
 
 

@@ -4,9 +4,10 @@ import flet as ft
 
 
 def show_snackbar(
-    page: ft.Page,
+    page: ft.Page | ft.BasePage,
     message: str,
-    duration: int = 3000,
+    bgcolor=ft.Colors.CYAN_100,
+    duration: int = 7000,
     *,
     floating: bool = True,
     show_close_icon: bool = True,
@@ -31,6 +32,7 @@ def show_snackbar(
     snackbar = ft.SnackBar(
         content=ft.Text(message),
         duration=duration,
+        bgcolor=bgcolor,
         behavior=(ft.SnackBarBehavior.FLOATING if floating else None),
         show_close_icon=show_close_icon,
     )

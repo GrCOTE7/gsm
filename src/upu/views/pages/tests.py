@@ -7,10 +7,17 @@ from upu.helpers.app_actions import close_app, open_url
 from gc7_tools.helpers import sepa, sepa_outlined
 
 from upu.guests import g260799_ as guest
-
+from typing import cast
+from upu.helpers.snackbar import show_snackbar
 
 # print(dir(page))
 def _tests_header() -> ft.Row:
+
+    def simple_tap(e: ft.TapEvent):
+        disclaimer = "🔔 Really want to close ? Then double tap ! (Or CTRL + C in CLI)"
+        page = e.page
+        print(disclaimer)
+        show_snackbar(page, disclaimer, bgcolor=ft.Colors.ORANGE_200)
 
     return ft.Row(
         controls=[
@@ -50,7 +57,7 @@ def _tests_header() -> ft.Row:
                 ),
                 mouse_cursor=ft.MouseCursor.CLICK,
                 # ☢️ add notif dans app
-                on_tap=lambda e: print("Really want to close ? Then double tap !"),
+                on_tap=simple_tap,
                 on_double_tap=lambda e: close_app(e),
             ),
         ],
