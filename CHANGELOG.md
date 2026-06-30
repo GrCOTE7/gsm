@@ -1,3 +1,10 @@
+## [1.0.14](https://github.com/GrCOTE7/gsm/compare/v1.0.13...v1.0.14) (2026-06-30)
+
+
+### Bug Fixes
+
+* setts for android ([402a1f5](https://github.com/GrCOTE7/gsm/commit/402a1f56ddd7fe61ce774dc89283dc5168c1c4d2))
+
 ## [1.0.13](https://github.com/GrCOTE7/gsm/compare/v1.0.12...v1.0.13) (2026-06-05)
 
 
