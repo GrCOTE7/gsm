@@ -1,3 +1,10 @@
+## [1.0.15](https://github.com/GrCOTE7/gsm/compare/v1.0.14...v1.0.15) (2026-06-30)
+
+
+### Bug Fixes
+
+* registry android compatibility ([4c324ff](https://github.com/GrCOTE7/gsm/commit/4c324ffd6a31fde47ca325c4072150b01b34c425))
+
 ## [1.0.14](https://github.com/GrCOTE7/gsm/compare/v1.0.13...v1.0.14) (2026-06-30)
 
 
