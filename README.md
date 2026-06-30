@@ -134,26 +134,30 @@ uv run flet run
 
 Run as a web app:
 
+Option 2 — Application Flet sur le téléphone (rendu natif identique à l'APK) ★
+( Installez l'application Flet depuis le Play Store. Puis lancez en local )
+
 ```bash
 uv run flet run --web -r
 OU MIEUX si App flet installée dans Phone :
 uv run flet run src/main.py --android
 ```
 
+Avantages: rendu 100% fidèle à l'APK, hot reload, aucun build
+Limite: l'app Flet doit être installée une fois sur le téléphone
+
 Option -r => Phone: http://<IP-de-votre-PC>:8550
 (Voir avec ipconfig → Carte réseau sans fil Wi-Fi : IPv4)
 
 ---
 
-Option 2 — Application Flet sur le téléphone (rendu natif identique à l'APK) ★
-
-Installez l'application Flet depuis le Play Store. Puis lancez en local:
-
+```bash
 uv run flet run --web --host 0.0.0.0 --port 8550 -r
-uv run flet run --web --host 192.168.80.205 --port 8550 -r
+# ipconfig → IPv4 :
+uv run flet run --web --host 172.21.0.1 --port 8550 -r
+```
 
-Avantages: rendu 100% fidèle à l'APK, hot reload, aucun build
-Limite: l'app Flet doit être installée une fois sur le téléphone
+---
 
 Construire apk
 
