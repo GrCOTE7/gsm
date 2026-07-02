@@ -1,26 +1,28 @@
 {
-"window.title": "${dirty}${activeEditorShort}${separator}${activeRepositoryBranchName}${separator}${rootName}${separator}${activeEditorMedium}",
-//
-"editor.lineHeight": 20,
-//
-"files.autoSave": "afterDelay",
-"files.autoSaveDelay": 2100,
-//
-"todo-tree.general.tags": [
-  "2fix",
-  "☢️",
-  "2dbug",
-  "2ar",
-  "* [-]",
-  "* [ ]",
-  "2do",
-  "🎯",
-  "❌",
-  "2let",
-  "🦄",
-  "XXX",
-  "2see",
-  "1fo"
+  "window.title": "${dirty}${activeEditorShort}${separator}${activeRepositoryBranchName}${separator}${rootName}${separator}${activeEditorMedium}",
+  //
+  "editor.lineHeight": 20,
+  //
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 2100,
+  "python.envFile": "${workspaceFolder}/.env",
+  "python.terminal.useEnvFile": true,
+  //
+  "todo-tree.general.tags": [
+    "2fix",
+    "☢️",
+    "2dbug",
+    "2ar",
+    "* [-]",
+    "* [ ]",
+    "2do",
+    "🎯",
+    "❌",
+    "2let",
+    "🦄",
+    "XXX",
+    "2see",
+    "1fo"
   ],
   "todo-tree.highlights.enabled": true,
   "todo-tree.highlights.highlightDelay": 1500,
@@ -32,7 +34,7 @@
     "2fix": {
       "icon": "check",
       "type": "line",
-      "foreground": "#FFFF00",
+      "foreground": "#FFFF00"
     },
     "☢️": {
       "icon": "check",
@@ -49,22 +51,22 @@
     "2ar": {
       "icon": "check",
       "type": "line",
-      "foreground": "#f0f",
+      "foreground": "#f0f"
     },
     "* [-]": {
       "icon": "check",
       "type": "line",
-      "foreground": "#fff0a5",
+      "foreground": "#fff0a5"
     },
     "* [ ]": {
       "icon": "check",
       "type": "line",
-      "foreground": "#FAB31A",
+      "foreground": "#FAB31A"
     },
     "2do": {
       "icon": "check",
       "type": "line",
-      "foreground": "#FAB31A",
+      "foreground": "#FAB31A"
     },
     "🎯": {
       "icon": "check",
@@ -81,17 +83,17 @@
     "2see": {
       "icon": "check",
       "type": "line",
-      "foreground": "#0FF",
+      "foreground": "#0FF"
     },
     "2let": {
       "icon": "check",
       "type": "line",
-      "foreground": "#0F0",
+      "foreground": "#0F0"
     },
     "1fo": {
       "icon": "check",
       "type": "line",
-      "foreground": "#0F0",
+      "foreground": "#0F0"
     },
     "🦄": {
       "icon": "check",
@@ -126,7 +128,7 @@
     "**/scan_todos/**",
     "**/.env/**",
     "**/.vscode/**",
-    "**/site/**", 
+    "**/site/**",
     "**/node_modules/**",
     "**/__pycache__/**",
     "**/.git/**",
@@ -457,6 +459,6 @@
     "watchfiles",
     "zoomable",
     "zoomer"
-  ],
+  ]
   // "python.defaultInterpreterPath": "d:/Py/.venv313/Scripts/python.exe",
 }

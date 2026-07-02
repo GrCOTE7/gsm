@@ -127,7 +127,7 @@ def _env_int(name: str, default: int = 0) -> int:
         return default
 
 
-WINDOW_LEFT = _env_int(name="UPU_WINDOW_LEFT", default=1526)  # 1526 - 1912
+WINDOW_LEFT = _env_int(name="UPU_WINDOW_LEFT", default=1412)  # 1526 - 1912
 DEBUG_RELEASE_JSON = _env_int("UPU_DEBUG_RELEASE_JSON", 0) == 1
 GITHUB_OWNER = "GrCOTE7"
 GITHUB_REPO = "gsm"
