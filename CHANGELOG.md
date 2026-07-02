@@ -1,3 +1,10 @@
+## [1.0.17](https://github.com/GrCOTE7/gsm/compare/v1.0.16...v1.0.17) (2026-07-02)
+
+
+### Bug Fixes
+
+* better app window width (516) ([633070f](https://github.com/GrCOTE7/gsm/commit/633070f02689227551ef132bbac1517859624580))
+
 ## [1.0.16](https://github.com/GrCOTE7/gsm/compare/v1.0.15...v1.0.16) (2026-06-30)
 
 
