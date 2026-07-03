@@ -32,6 +32,8 @@ Tu ❤️ Python...? Rejoins le chat en LIVE !
 </a>
 </div>
 
+❌ App in docker
+
 ---
 
 ## 🤝 Collaboration et particulièrement **adapté aux débutants**
