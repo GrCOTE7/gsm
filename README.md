@@ -32,7 +32,52 @@ Tu ❤️ Python...? Rejoins le chat en LIVE !
 </a>
 </div>
 
-❌ App in docker
+## 🐳 App in Docker (local)
+
+Le dossier `.devcontainer/` reste dédié à Codespaces/devcontainer.
+Pour lancer l'app localement avec Docker Compose :
+
+```bash
+docker compose up -d --build
+```
+
+Puis ouvrir :
+
+```text
+http://localhost:8000
+```
+
+Suivre les logs :
+
+```bash
+docker compose logs -f
+```
+
+Arrêter :
+
+```bash
+docker compose down
+```
+
+### Healthcheck
+
+Vérifier l'état global du service :
+
+```bash
+docker compose ps
+```
+
+Lire le statut de santé exact du conteneur :
+
+```bash
+docker inspect gsm_app --format "health={{.State.Health.Status}}"
+```
+
+Voir le détail des derniers checks (code retour, message, date) :
+
+```bash
+docker inspect gsm_app --format "{{json .State.Health}}"
+```
 
 ---
 

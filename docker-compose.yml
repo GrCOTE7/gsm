@@ -7,6 +7,18 @@ services:
     ports:
       - "8000:8000"
     restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import socket; s=socket.create_connection(('127.0.0.1', 8000), 2); s.close()",
+        ]
+      interval: 20s
+      timeout: 3s
+      retries: 5
+      start_period: 20s
     environment:
       FLET_DOCKER: "1"
       # Si ton app Flet utilise des variables, tu peux les mettre ici
