@@ -41,6 +41,10 @@ Pour lancer l'app localement avec Docker Compose :
 docker compose up -d --build
 ```
 
+Le mode auto-reload est actif en local Docker (watchfiles sur `src/`).
+Quand tu modifies une vue Python, le process redémarre automatiquement.
+Si le navigateur ne se reconnecte pas tout de suite, fais un refresh de la page.
+
 Puis ouvrir :
 
 ```text
