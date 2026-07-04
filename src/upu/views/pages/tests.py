@@ -17,7 +17,8 @@ def _tests_header() -> ft.Row:
         disclaimer = "🔔 Really want to close ? Then double tap ! (Or CTRL + C in CLI)"
         page = e.page
         print(disclaimer)
-        show_snackbar(page, disclaimer, bgcolor=ft.Colors.ORANGE_200)
+        # show_snackbar(page, disclaimer, bgcolor=ft.Colors.ORANGE_400)
+        show_snackbar(page, disclaimer, color=ft.Colors.ORANGE_200, bgcolor=ft.Colors.TRANSPARENT, duration=7000, floating=True, show_close_icon=True)
 
     return ft.Row(
         controls=[

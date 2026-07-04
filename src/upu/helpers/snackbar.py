@@ -6,7 +6,9 @@ import flet as ft
 def show_snackbar(
     page: ft.Page | ft.BasePage,
     message: str,
-    bgcolor=ft.Colors.CYAN_100,
+    # color=ft.Colors.GREY_400,
+    color=ft.Colors.BLACK,
+    bgcolor=ft.Colors.CYAN_400,
     duration: int = 7000,
     *,
     floating: bool = True,
@@ -30,9 +32,9 @@ def show_snackbar(
             pass
 
     snackbar = ft.SnackBar(
-        content=ft.Text(message),
+        content=ft.Text(message, color=color),
         duration=duration,
-        bgcolor=bgcolor,
+        bgcolor=ft.Colors.with_opacity(0.77, bgcolor),
         behavior=(ft.SnackBarBehavior.FLOATING if floating else None),
         show_close_icon=show_close_icon,
     )
