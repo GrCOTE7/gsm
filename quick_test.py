@@ -1,8 +1,13 @@
 from scripts.essays.salutation import cls, disclaimer, show
-from rich import print
+
+try:
+    from rich import print
+except ModuleNotFoundError:
+    # Fallback pour garder le script exécutable sans dépendance optionnelle.
+    from builtins import print
 
 
-# uvx watchfiles "python quick_test.py" .
+# uvx watchfiles "uv run python quick_test.py" .
 
 
 if __name__ == "__main__":

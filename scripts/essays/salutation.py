@@ -1,4 +1,8 @@
-from rich import print
+try:
+    from rich import print
+except ModuleNotFoundError:
+    # Fallback pour exécuter le script même si rich n'est pas installé.
+    from builtins import print
 
 import time
 import sys
@@ -9,7 +13,7 @@ import sys
 # 1fo  1. Le message affiché dans la console est défini dans la variable chaine
 
 chaine = "Look bien la CLI, et change un caractère (ou +) dans la variable chaine\n(File ./scripts/essays/salutation.py)!"
-nombre_de_lignes = 3  # 2do ← 2. Change ici aussi !zzzz
+nombre_de_lignes = 3  # 2do ← 2. Change ici aussi !
 
 # 1fo  3. Ferme le hotreload avec CTRL + MAJ + C
 # 2see 4. Essaie ./go dans le CLI ...aa
