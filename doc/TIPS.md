@@ -76,4 +76,10 @@ Représente l'opération logique de disjonction, qui est vraie si au moins un de
 // math: Div entière - dial: Par rapport à
 O//o IMPORTANT
 
+Afficher un tree propre et sans les __pycache__/ et leurs contenus :
+
+Get-ChildItem -Recurse -Force -Directory |
+    Where-Object { $_.FullName -notmatch "__pycache__" } |
+    Tree
+
 -->
