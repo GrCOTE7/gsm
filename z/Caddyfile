@@ -1,0 +1,58 @@
+(security_headers) {
+  header {
+    X-Content-Type-Options nosniff
+    X-Frame-Options DENY
+    Referrer-Policy no-referrer-when-downgrade
+    Permissions-Policy "geolocation=()"
+  }
+}
+
+cryptosgeeks.com {
+  import security_headers
+  handle {
+    reverse_proxy cryptogeeks_frontend:80
+  }
+}
+
+www.cryptosgeeks.com {
+  import security_headers
+  handle {
+    reverse_proxy cryptogeeks_frontend:80
+  }
+}
+
+cote7.com {
+  import security_headers
+  handle /api* {
+    reverse_proxy fastapi_backend:8000
+  }
+  handle /admin* {
+    reverse_proxy django_backend:8001
+  }
+  handle /static* {
+    reverse_proxy django_backend:8001
+  }
+  handle {
+    reverse_proxy react_frontend:80
+  }
+}
+
+www.cote7.com {
+  import security_headers
+  handle /api* {
+    reverse_proxy fastapi_backend:8000
+  }
+  handle /admin* {
+    reverse_proxy django_backend:8001
+  }
+  handle /static* {
+    reverse_proxy django_backend:8001
+  }
+  handle {
+    reverse_proxy react_frontend:80
+  }
+}
+
+gsm.cote7.com {
+    reverse_proxy gsm_app:8000
+}

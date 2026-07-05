@@ -1,0 +1,5 @@
+:7777 {
+    handle {
+        reverse_proxy gsm_app:8000
+    }
+}

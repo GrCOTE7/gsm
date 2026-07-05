@@ -1,3 +1,4 @@
+
 services:
   gsm_app:
     container_name: gsm_app
@@ -25,13 +26,26 @@ services:
     volumes:
       - .:/app
       - /app/.venv
+    networks:
+      - proxy
+      - gsm_default
 
   gsm_caddy:
     image: caddy:2
     container_name: gsm_caddy
     ports:
-      - "7777:7777"
+      - "7777:8000"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
     depends_on:
       - gsm_app
+    networks:
+      - proxy
+      - gsm_default
+
+
+networks:
+  proxy:
+    external: true
+  gsm_default:
+    name: gsm_default
