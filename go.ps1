@@ -4,7 +4,7 @@ Set-Location -Path "$PSScriptRoot"
 # Vérifie silencieusement l'alignement des versions; message orange uniquement en cas d'écart.
 & "$PSScriptRoot\scripts\check_version_sync.ps1"
 
-uv sync
+uv sync --extra desktop
 
 # Lancer explicitement l'app racine
 # uv run --active flet run -r audio_04.py
