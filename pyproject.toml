@@ -16,13 +16,13 @@ dependencies = [
     "pymox_kit",
     "rich>=15.0.0",
     "qrcode[pil]>=8.2",
+    "pytest>=8.0.0"
 ]
 
 [project.optional-dependencies]
 desktop = [
     "flet-cli",
     "flet-desktop",
-    "pytest>=8.0.0",
     "pyshorteners>=1.0.1"
 ]
 
