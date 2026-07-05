@@ -5,6 +5,13 @@
 
 * set docker prod for GSM project ([63114cb](https://github.com/GrCOTE7/gsm/commit/63114cb58eab80d11a5ef3375eede1d8a19e170c))
 
+## [1.0.18](https://github.com/GrCOTE7/gsm/compare/v1.0.17...v1.0.18) (2026-07-05)
+
+
+### Bug Fixes
+
+* set docker prod for GSM project ([63114cb](https://github.com/GrCOTE7/gsm/commit/63114cb58eab80d11a5ef3375eede1d8a19e170c))
+
 ## [1.0.17](https://github.com/GrCOTE7/gsm/compare/v1.0.16...v1.0.17) (2026-07-02)
 
 
