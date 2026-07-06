@@ -1,0 +1,58 @@
+name: Rsync Test
+
+on:
+  push:
+    branches: ["dev"]
+
+jobs:
+  deploy-rsync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Prepare SSH key
+        env:
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_UPU }}
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.ssh
+          echo "$VPS_SSH_KEY" > ~/.ssh/id_ed25519_upu
+          chmod 600 ~/.ssh/id_ed25519_upu
+
+      - name: Rsync to VPS
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+        run: |
+          set -euo pipefail
+
+          remote="$VPS_USER@$VPS_HOST:/opt/gsm"
+
+          items=(
+            "src"
+            "docker-compose.prod.yml"
+            "Dockerfile.prod"
+            "Caddyfile"
+            "pyproject.toml"
+            ".env"
+            "uv.lock"
+          )
+
+          echo "Starting rsync deployment to $remote"
+
+          for item in "${items[@]}"; do
+            echo "Syncing: $item"
+            rsync -avz \
+              --delete \
+              --exclude "__pycache__/" \
+              --exclude ".venv/" \
+              --exclude ".git/" \
+              -e "ssh -i ~/.ssh/id_ed25519_upu -o StrictHostKeyChecking=no" \
+              "$item" "$remote"
+          done
+
+          echo "Rsync test complete."
