@@ -429,9 +429,13 @@ jobs:
         run: |
           set -euo pipefail
 
+          : "${VPS_HOST:?VPS_HOST secret is required}"
+          : "${VPS_USER:?VPS_USER secret is required}"
+          : "${VPS_SSH_KEY:?VPS_SSH_KEY_UPU secret is required}"
+
           echo "Preparing SSH key..."
           mkdir -p ~/.ssh
-          echo "$VPS_SSH_KEY_UPU" > ~/.ssh/id_ed25519_upu
+          echo "$VPS_SSH_KEY" > ~/.ssh/id_ed25519_upu
           chmod 600 ~/.ssh/id_ed25519_upu
 
           remote="$VPS_USER@$VPS_HOST:/opt/gsm"
