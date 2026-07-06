@@ -1,3 +1,10 @@
+## [1.0.19](https://github.com/GrCOTE7/gsm/compare/v1.0.18...v1.0.19) (2026-07-06)
+
+
+### Bug Fixes
+
+* set Server CI ([df66406](https://github.com/GrCOTE7/gsm/commit/df664060f55e630367a5a02451546e4d651ddf3f))
+
 ## [1.0.18](https://github.com/GrCOTE7/gsm/compare/v1.0.17...v1.0.18) (2026-07-05)
 
 
