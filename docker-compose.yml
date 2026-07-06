@@ -1,11 +1,11 @@
 services:
-  gsm_app:
+  flet:
     container_name: gsm_app
     build:
       context: .
       dockerfile: Dockerfile.prod
-    expose:
-      - "8000"
+    ports:
+      - "8000:8000"
     command: ["sh", "-lc", "uvx watchfiles \"uv run src/main.py\" src"]
     restart: unless-stopped
     healthcheck:
@@ -22,16 +22,9 @@ services:
       start_period: 20s
     environment:
       FLET_DOCKER: "1"
+      # Si ton app Flet utilise des variables, tu peux les mettre ici
+      # APP_ENV: "production"
+      # API_URL: "https://api.mondomaine.fr"
     volumes:
       - .:/app
       - /app/.venv
-
-  gsm_caddy:
-    image: caddy:2
-    container_name: gsm_caddy
-    ports:
-      - "7777:7777"
-    volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
-    depends_on:
-      - gsm_app
