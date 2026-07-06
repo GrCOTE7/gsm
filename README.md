@@ -32,6 +32,18 @@ Tu ❤️ Python...? Rejoins le chat en LIVE !
 </a>
 </div>
 
+## 🐳 A rapid look
+
+### 👉 Sur un Appareil Androïd (Phone ou tablette)
+
+<div align="center">
+  <a href="./doc/imgs/qr_latest.png" target="_blank">
+    <img src="./doc/imgs/qr_latest.png" width='100'>
+  </a>
+</div>
+
+### 👉 Et sinon, direct en ligne : [gsm.COTE7.com](http://gsm.Cote7.com)
+
 ## 🐳 App in Docker (local)
 
 Le dossier `.devcontainer/` reste dédié à Codespaces/devcontainer.

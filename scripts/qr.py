@@ -13,7 +13,7 @@ import flet as ft
 
 def main(page: ft.Page):
     img = qrcode.make(
-        "https://github.com/GrCOTE7/gsm/releases/download/v1.0.16/UpU.apk"
+        "https://github.com/GrCOTE7/gsm/releases/latest/download/UpU.apk"
     )
     img.save("qr.png")
 
