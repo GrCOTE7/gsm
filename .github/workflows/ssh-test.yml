@@ -13,15 +13,16 @@ jobs:
         env:
           VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_UPU }}
         run: |
+          set -euo pipefail
           mkdir -p ~/.ssh
           echo "$VPS_SSH_KEY" > ~/.ssh/id_ed25519_upu
           chmod 600 ~/.ssh/id_ed25519_upu
 
-      - name: Debug secret length
-        env:
-          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_UPU }}
+      - name: Debug SSH key
         run: |
-          echo "Secret length: ${#VPS_SSH_KEY}"
+          ls -l ~/.ssh
+          ls -l ~/.ssh/id_ed25519_upu || echo "clé absente"
+          head -n 20 ~/.ssh/id_ed25519_upu || echo "clé vide"
 
       - name: Test SSH
         env:
