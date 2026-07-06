@@ -13,7 +13,7 @@ uv sync --extra desktop
 
 
 echo "Lancement de l'application Flet - MODE NORMAL"
-# uv run --active python -m flet.cli run -r # BON & NORMAL
+uv run --active python -m flet.cli run -r # BON & NORMAL
 
 # echo "Lancement de l'application Flet - MODE WEB"
-uv run --active python -m flet.cli run -r --web # Pour zoomer si détails
+# uv run --active python -m flet.cli run -r --web # Pour zoomer si détails
