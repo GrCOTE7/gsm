@@ -1,3 +1,10 @@
+## [1.0.26](https://github.com/GrCOTE7/gsm/compare/v1.0.25...v1.0.26) (2026-07-06)
+
+
+### Bug Fixes
+
+* set good footer settings ([598a285](https://github.com/GrCOTE7/gsm/commit/598a285ca055e11389aa9c72537d695085a641c9))
+
 ## [1.0.25](https://github.com/GrCOTE7/gsm/compare/v1.0.24...v1.0.25) (2026-07-06)
 
 
