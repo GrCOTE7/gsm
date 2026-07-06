@@ -6,6 +6,7 @@ from gc7_tools.helpers import sepa_major, sepa_outlined
 
 from upu.guests import REGISTRY
 
+
 def build() -> ft.Control:
     controls = []
 
@@ -15,9 +16,9 @@ def build() -> ft.Control:
         controls.append(s())
         if i < len(REGISTRY) - 1:
             controls.append(sepa_outlined())
-    
+
     # print("REGISTRY =", REGISTRY)
-    
+
     return named_view(
         ft.Row(
             controls=[
@@ -28,14 +29,14 @@ def build() -> ft.Control:
         ),
         "Page archives des tests rapides.",
         extra_top_gap=0,
+        bottom=ready_more(True),
         extra=ft.Column(
             expand=True,
             controls=[
                 ft.Container(
                     expand=True,
-                    content=ft.Column(controls=controls, scroll=ft.ScrollMode.AUTO)
+                    content=ft.Column(controls=controls, scroll=ft.ScrollMode.AUTO),
                 ),
-                ready_more(True)
             ],
         ),
     )

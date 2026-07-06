@@ -20,5 +20,5 @@ def build() -> ft.Control:
         "lacinia, nisl at fermentum posuere, mauris sapien vulputate lorem, "
         "eu feugiat risus leo vitae arcu. Integer aliquet, sem id convallis "
         "blandit, justo erat tincidunt nibh, at efficitur mi velit in nisl of Home 1.0.10+.",
-        extra=build_release_update_card()
+        extra=build_release_update_card(),
     )

@@ -79,6 +79,7 @@ def build() -> ft.Control:
         _tests_header(),
         "Just for Discord community → 1.0.25.\nUn prefix est nécessaire pour enclencher une upgrade automatique de la version !",
         extra_top_gap=0,
+        bottom=ready_more(),
         # extra=sepa_outlined('ORANGE_400'),
         extra=ft.Column(
             expand=True,
@@ -95,7 +96,6 @@ def build() -> ft.Control:
                         ]
                     ),
                 ),
-                ready_more(),
             ],
         ),
     )

@@ -11,6 +11,7 @@ from upu.helpers.snackbar import show_snackbar
 from upu.views.partials import build_release_update_card
 from upu.views.templates.default import named_view
 
+
 def extLinks():
     return ft.Container(
         padding=ft.Padding.only(bottom=20),
