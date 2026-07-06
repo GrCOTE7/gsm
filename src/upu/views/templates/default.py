@@ -35,5 +35,6 @@ def named_view(
             expand=True,
             horizontal_alignment=ft.CrossAxisAlignment.CENTER,
             controls=controls,
+            scroll=ft.Scrollbar(True),
         ),
     )
