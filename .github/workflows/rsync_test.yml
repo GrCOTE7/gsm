@@ -13,6 +13,12 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Debug SSH key
+        run: |
+          set -euo pipefail
+          ls -l ~/.ssh/id_ed25519_upu
+          head -n 20 ~/.ssh/id_ed25519_upu
+          ssh -i ~/.ssh/id_ed25519_upu -o IdentitiesOnly=yes -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "echo OK"
 
       - name: Prepare SSH key
         env:
