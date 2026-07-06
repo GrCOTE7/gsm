@@ -1,3 +1,10 @@
+## [1.0.25](https://github.com/GrCOTE7/gsm/compare/v1.0.24...v1.0.25) (2026-07-06)
+
+
+### Bug Fixes
+
+* demo semantric release auto ([5dc559b](https://github.com/GrCOTE7/gsm/commit/5dc559bfee4564897648b954bb29a644c8cdcb7b))
+
 ## [1.0.24](https://github.com/GrCOTE7/gsm/compare/v1.0.23...v1.0.24) (2026-07-06)
 
 
