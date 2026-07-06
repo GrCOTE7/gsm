@@ -77,7 +77,7 @@ def build() -> ft.Control:
 
     return named_view(
         _tests_header(),
-        "Just for Discord community → 1.0.25.",
+        "Just for Discord community → 1.0.25.\nUn prefix est nécessaire pour enclencher une upgrade automatique de la version !",
         extra_top_gap=0,
         # extra=sepa_outlined('ORANGE_400'),
         extra=ft.Column(
