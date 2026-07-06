@@ -13,16 +13,12 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Debug SSH key
-        run: |
-          set -euo pipefail
-          ls -l ~/.ssh/id_ed25519_upu
-          head -n 20 ~/.ssh/id_ed25519_upu
-          ssh -i ~/.ssh/id_ed25519_upu -o IdentitiesOnly=yes -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "echo OK"
       - name: Debug secret length
         env:
           VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_UPU }}
         run: |
+          set -euo pipefail
+          : "${VPS_SSH_KEY:?VPS_SSH_KEY_UPU secret is required}"
           echo "Secret length: ${#VPS_SSH_KEY}"
 
       - name: Prepare SSH key
@@ -33,6 +29,18 @@ jobs:
           mkdir -p ~/.ssh
           echo "$VPS_SSH_KEY" > ~/.ssh/id_ed25519_upu
           chmod 600 ~/.ssh/id_ed25519_upu
+
+      - name: Debug SSH key
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+        run: |
+          set -euo pipefail
+          : "${VPS_HOST:?VPS_HOST secret is required}"
+          : "${VPS_USER:?VPS_USER secret is required}"
+          ls -l ~/.ssh/id_ed25519_upu
+          test -s ~/.ssh/id_ed25519_upu
+          ssh -i ~/.ssh/id_ed25519_upu -o IdentitiesOnly=yes -o StrictHostKeyChecking=no "$VPS_USER@$VPS_HOST" "echo OK"
 
       - name: Rsync to VPS
         env:
