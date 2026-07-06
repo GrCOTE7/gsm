@@ -1,3 +1,10 @@
+## [1.0.21](https://github.com/GrCOTE7/gsm/compare/v1.0.20...v1.0.21) (2026-07-06)
+
+
+### Bug Fixes
+
+* new upu SSH key ([29ca914](https://github.com/GrCOTE7/gsm/commit/29ca91471b8ca597eae388878f625e49211a688a))
+
 ## [1.0.20](https://github.com/GrCOTE7/gsm/compare/v1.0.19...v1.0.20) (2026-07-06)
 
 
