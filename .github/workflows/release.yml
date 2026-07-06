@@ -465,5 +465,5 @@ jobs:
               "$item" "$remote"
           done
 
-          echo "Deployment complete."
+          echo "Deployment complete OK."
 
