@@ -1,3 +1,10 @@
+## [1.0.23](https://github.com/GrCOTE7/gsm/compare/v1.0.22...v1.0.23) (2026-07-06)
+
+
+### Bug Fixes
+
+* good SSH key ([84caffb](https://github.com/GrCOTE7/gsm/commit/84caffbc5d0ada35349556f14ebe3571924cafc0))
+
 ## [1.0.22](https://github.com/GrCOTE7/gsm/compare/v1.0.21...v1.0.22) (2026-07-06)
 
 
