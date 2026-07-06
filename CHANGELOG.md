@@ -1,3 +1,10 @@
+## [1.0.22](https://github.com/GrCOTE7/gsm/compare/v1.0.21...v1.0.22) (2026-07-06)
+
+
+### Bug Fixes
+
+* corr param SSH_UPU ([352bd2d](https://github.com/GrCOTE7/gsm/commit/352bd2d6c899f3d2d22e9b972c71e22fb111e5ff))
+
 ## [1.0.21](https://github.com/GrCOTE7/gsm/compare/v1.0.20...v1.0.21) (2026-07-06)
 
 
