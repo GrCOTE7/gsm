@@ -10,6 +10,7 @@ from upu.guests import g260799_ as guest
 from typing import cast
 from upu.helpers.snackbar import show_snackbar
 
+
 # print(dir(page))
 def _tests_header() -> ft.Row:
 
@@ -18,7 +19,15 @@ def _tests_header() -> ft.Row:
         page = e.page
         print(disclaimer)
         # show_snackbar(page, disclaimer, bgcolor=ft.Colors.ORANGE_400)
-        show_snackbar(page, disclaimer, color=ft.Colors.ORANGE_200, bgcolor=ft.Colors.TRANSPARENT, duration=7000, floating=True, show_close_icon=True)
+        show_snackbar(
+            page,
+            disclaimer,
+            color=ft.Colors.ORANGE_200,
+            bgcolor=ft.Colors.TRANSPARENT,
+            duration=7000,
+            floating=True,
+            show_close_icon=True,
+        )
 
     return ft.Row(
         controls=[
@@ -49,7 +58,7 @@ def _tests_header() -> ft.Row:
                     spacing=8,
                 ),
             ),
-            ft.GestureDetector( # Ne marche que sur Phone et Win App)
+            ft.GestureDetector(  # Ne marche que sur Phone et Win App)
                 content=ft.Icon(
                     ft.CupertinoIcons.CLEAR_CIRCLED,
                     size=18,
@@ -68,7 +77,7 @@ def build() -> ft.Control:
 
     return named_view(
         _tests_header(),
-        "Page pour tests rapides.",
+        "Page pour tests rapides → 1.0.20.",
         extra_top_gap=0,
         # extra=sepa_outlined('ORANGE_400'),
         extra=ft.Column(
