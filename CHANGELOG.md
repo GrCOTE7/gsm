@@ -1,3 +1,10 @@
+## [1.0.20](https://github.com/GrCOTE7/gsm/compare/v1.0.19...v1.0.20) (2026-07-06)
+
+
+### Bug Fixes
+
+* 20 ([6db0037](https://github.com/GrCOTE7/gsm/commit/6db003769d5fda6b39444f5360c9057fc6dab995))
+
 ## [1.0.19](https://github.com/GrCOTE7/gsm/compare/v1.0.18...v1.0.19) (2026-07-06)
 
 
