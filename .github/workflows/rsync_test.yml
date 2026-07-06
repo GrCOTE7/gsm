@@ -20,8 +20,11 @@ jobs:
           head -n 20 ~/.ssh/id_ed25519_upu
           ssh -i ~/.ssh/id_ed25519_upu -o IdentitiesOnly=yes -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "echo OK"
       - name: Debug secret length
+        env:
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_UPU }}
         run: |
-          echo "len=${#VPS_SSH_KEY}"
+          echo "Secret length: ${#VPS_SSH_KEY}"
+
       - name: Prepare SSH key
         env:
           VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_UPU }}
