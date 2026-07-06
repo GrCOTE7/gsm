@@ -49,6 +49,9 @@ jobs:
         run: |
           set -euo pipefail
 
+          : "${VPS_HOST:?VPS_HOST secret is required}"
+          : "${VPS_USER:?VPS_USER secret is required}"
+
           remote="$VPS_USER@$VPS_HOST:/opt/gsm"
 
           items=(
@@ -64,6 +67,11 @@ jobs:
           echo "Starting rsync deployment to $remote"
 
           for item in "${items[@]}"; do
+            if [ ! -e "$item" ]; then
+              echo "Skipping missing optional item: $item"
+              continue
+            fi
+
             echo "Syncing: $item"
             rsync -avz \
               --delete \

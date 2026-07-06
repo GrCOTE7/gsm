@@ -454,6 +454,11 @@ jobs:
           echo "Starting rsync deployment to $remote"
 
           for item in "${items[@]}"; do
+            if [ ! -e "$item" ]; then
+              echo "Skipping missing optional item: $item"
+              continue
+            fi
+
             echo "Syncing: $item"
 
             rsync -avz \
