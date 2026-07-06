@@ -77,7 +77,7 @@ def build() -> ft.Control:
 
     return named_view(
         _tests_header(),
-        "Page pour tests rapides → 1.0.20.",
+        "Page pour tests rapides → 1.0.21.",
         extra_top_gap=0,
         # extra=sepa_outlined('ORANGE_400'),
         extra=ft.Column(
