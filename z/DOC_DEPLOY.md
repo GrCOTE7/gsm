@@ -72,6 +72,12 @@ cd /opt/gsm
 docker compose -f docker-compose.prod.yml up -d --build
 ```
 
+Pour arrêter
+
+```bash
+docker compose -f docker-compose.prod.yml down 
+```
+
 docker inspect vps_caddy | grep Source
 
 ls -l /opt/pyproject_template/deploy/proxy

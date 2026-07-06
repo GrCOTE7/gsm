@@ -6,7 +6,7 @@ from upu.guests import register
 
 date = "26-07-99"
 guest = "Sujet XXX"
-source = "Discord"
+source = "NNN Discord"
 response = ""
 url = ""
 

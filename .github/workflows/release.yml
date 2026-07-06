@@ -418,3 +418,48 @@ jobs:
           git commit -m "chore: sync versions to ${{ steps.release_tag.outputs.release_tag }} [skip ci]"
           git pull --rebase origin "$branch"
           git push origin "HEAD:refs/heads/$branch"
+
+      - name: Deploy GSM project to VPS (rsync)
+        if: steps.release_tag.outputs.release_created == 'true'
+        shell: bash
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+        run: |
+          set -euo pipefail
+
+          echo "Preparing SSH key..."
+          mkdir -p ~/.ssh
+          echo "$VPS_SSH_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+          remote="$VPS_USER@$VPS_HOST:/opt/gsm"
+
+          # Items to sync
+          items=(
+            "src"
+            "docker-compose.prod.yml"
+            "Dockerfile.prod"
+            "Caddyfile"
+            "pyproject.toml"
+            ".env"
+            "uv.lock"
+          )
+
+          echo "Starting rsync deployment to $remote"
+
+          for item in "${items[@]}"; do
+            echo "Syncing: $item"
+
+            rsync -avz \
+              --delete \
+              --exclude "__pycache__/" \
+              --exclude ".venv/" \
+              --exclude ".git/" \
+              -e "ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no" \
+              "$item" "$remote"
+          done
+
+          echo "Deployment complete."
+

@@ -8,7 +8,7 @@ from upu.guests import register
 
 date='26-06-02'
 guest='mlm.913'
-source='Discord'
+source = "PyPro Discord"
 response = 'Thomas'
 url='https://discord.com/channels/1056923339546968127/1075041467690664070/1511445891062698014'
 

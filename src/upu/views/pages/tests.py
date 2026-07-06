@@ -49,7 +49,7 @@ def _tests_header() -> ft.Row:
                     spacing=8,
                 ),
             ),
-            ft.GestureDetector(
+            ft.GestureDetector( # Ne marche que sur Phone et Win App)
                 content=ft.Icon(
                     ft.CupertinoIcons.CLEAR_CIRCLED,
                     size=18,

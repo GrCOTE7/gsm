@@ -6,7 +6,7 @@ from upu.guests import register
 
 date = "26-05-30"
 guest = "nom"
-source = "Discord"
+source = "PyPro Discord"
 response = "Thomas"
 url = "https://discord.com/channels/1056923339546968127/1075041467690664070/1510251280176517230"
 

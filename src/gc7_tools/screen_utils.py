@@ -155,9 +155,9 @@ def gc7_rules(
     page: ft.Page,
     mode: str = "DARK",
     name: str = "Ready",
-    # left: int = 1912,
-    left: int = 1420,
-    # left: int = 1520,  # 1912 - 392 # video
+    left: int = 1912,
+    # left: int = 1420,
+    # left: int = 1420,  # 1912 - 392 # video
     # width: int = 392, ou 400
     width: int = 516,  # Note : 2 * 8 de marge → page.windows_width = 384 // 392 - 373 Galaxy A5
     height: int = 1040,  # Note : 1088 - 24 (padding top) - 20 (padding bottom) = 1044 → page.window_height = 1044 - 742 Galaxy A5
