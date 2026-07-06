@@ -1,3 +1,10 @@
+## [1.0.27](https://github.com/GrCOTE7/gsm/compare/v1.0.26...v1.0.27) (2026-07-06)
+
+
+### Bug Fixes
+
+* reset test page ([fa754d5](https://github.com/GrCOTE7/gsm/commit/fa754d5753c63e8e7f8693ce1c23dabeb2b7b131))
+
 ## [1.0.26](https://github.com/GrCOTE7/gsm/compare/v1.0.25...v1.0.26) (2026-07-06)
 
 
