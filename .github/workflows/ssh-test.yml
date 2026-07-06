@@ -1,0 +1,34 @@
+name: SSH Test
+
+on:
+  push:
+    branches: ["dev"]
+
+jobs:
+  ssh-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Prepare SSH key
+        env:
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_UPU }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$VPS_SSH_KEY" > ~/.ssh/id_ed25519_upu
+          chmod 600 ~/.ssh/id_ed25519_upu
+
+      - name: Debug secret length
+        env:
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_UPU }}
+        run: |
+          echo "Secret length: ${#VPS_SSH_KEY}"
+
+      - name: Test SSH
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+        run: |
+          ssh -i ~/.ssh/id_ed25519_upu \
+              -o IdentitiesOnly=yes \
+              -o StrictHostKeyChecking=no \
+              $VPS_USER@$VPS_HOST "echo OK"
