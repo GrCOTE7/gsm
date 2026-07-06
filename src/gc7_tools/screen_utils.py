@@ -170,9 +170,10 @@ def gc7_rules(
     print(width)
 
     # VIDÉO :
-    # left=960
-    # width=400
-    # height=808
+    left=840
+    width=520
+    height=808
+    height=420
 
     configure_window(page, left=left, top=0, width=width, height=height)
     page.theme_mode = ft.ThemeMode.LIGHT if mode == "LIGHT" else ft.ThemeMode.DARK
