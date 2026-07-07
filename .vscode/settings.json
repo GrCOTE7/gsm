@@ -103,7 +103,7 @@
     "XXX": {
       "icon": "check",
       "type": "line",
-      "foreground": "#a0a0a0",
+      "foreground": "#F00",
       "iconColour": "#F00"
     }
   },

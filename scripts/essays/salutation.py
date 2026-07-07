@@ -7,6 +7,8 @@ except ModuleNotFoundError:
 import time
 import sys
 
+# 1fo Dans un codeSpace, faire : ' ./go w ' en CLI pour ouvrir l'App Web
+
 # Script juste pour tester le HotReload en CodeSpace
 
 # 1fo Change un caractère dans chaine pour tester le reload !
