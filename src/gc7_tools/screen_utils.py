@@ -102,7 +102,7 @@ class ZoomController:
             content=self.target,
             on_scale_start=self.on_scale_start,
             on_scale_update=self.on_scale_update,
-            on_double_tap=self.on_double_tap,
+            on_double_tap=self.on_double_tap #type: ignore
         )
 
     def on_scale_start(self, e: ft.ScaleStartEvent) -> None:
