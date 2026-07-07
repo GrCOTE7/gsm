@@ -8,6 +8,7 @@ import webbrowser
 import flet as ft
 
 from upu.services.android_bridge import launch_url_intent
+from upu.helpers.snackbar import show_snackbar
 
 
 def _as_page(target: object) -> ft.Page | None:
@@ -32,6 +33,14 @@ def _is_mobile(page: ft.Page | None) -> bool:
         if callable(platform_is_mobile):
             return bool(platform_is_mobile())
     return _get_platform_name(page) in {"android", "ios"}
+
+
+def _is_web(page: ft.Page | None) -> bool:
+    if page is None:
+        return False
+    if bool(getattr(page, "web", False)):
+        return True
+    return _get_platform_name(page) == "web"
 
 
 def open_url(e: object, url: str) -> None:
@@ -66,11 +75,30 @@ def open_url(e: object, url: str) -> None:
 
 
 def close_page(page: ft.Page | None, code: int = 0) -> None:
-    """Ferme l'application: Android -> os._exit, sinon fermeture fenetre."""
+    """Ferme l'application si possible selon le runtime.
+
+    Android: fermeture process; app desktop/mobile: fermeture fenetre;
+    Web: impossible de fermer l'onglet de facon fiable, on affiche un message.
+    """
     if _get_platform_name(page) == "android":
         os._exit(code)
 
-    if page is None or not hasattr(page, "window"):
+    if page is None:
+        return
+
+    if _is_web(page):
+        show_snackbar(
+            page,
+            "T'es en mode Web ! La fermeture automatique est donc bloquée par le navigateur...\n→ Ferme l'onglet comme d'hab ! La croix le + en haut à droite !",
+            color=ft.Colors.RED_400,
+            bgcolor=ft.Colors.TRANSPARENT,
+            duration=7000,
+            floating=True,
+            show_close_icon=True,
+        )
+        return
+
+    if not hasattr(page, "window"):
         return
 
     async def _close_window() -> None:

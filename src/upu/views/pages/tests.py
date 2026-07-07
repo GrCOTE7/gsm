@@ -15,8 +15,18 @@ from upu.helpers.snackbar import show_snackbar
 def _tests_header() -> ft.Row:
 
     def simple_tap(e: ft.TapEvent):
-        disclaimer = "🔔 Really want to close ? Then double tap ! (Or CTRL + C in CLI)"
         page = e.page
+        
+        platform = getattr(page, "platform", None)
+        platform_name = (
+            str(getattr(platform, "name", str(platform))).lower()
+            if platform is not None
+            else ""
+        )
+        is_web_mode = bool(getattr(page, "web", False)) or platform_name == "web"
+        runtime_mode_app = 'Web' if is_web_mode else 'App'
+
+        disclaimer = f"🔔 Really want to close ? Then double tap ! (Or CTRL + C in CLI) - Mode {runtime_mode_app}"
         print(disclaimer)
         # show_snackbar(page, disclaimer, bgcolor=ft.Colors.ORANGE_400)
         show_snackbar(

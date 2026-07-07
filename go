@@ -2,5 +2,13 @@
 cd "$(dirname "$0")"
 
 uv sync --extra desktop
-uv run src/main.py
-# --web --host 0.0.0.0 --port 8550
+
+mode="${1:-}"
+
+if [ "$mode" = "w" ]; then
+    echo "Lancement de l'application Flet - MODE WEB"
+    uv run --active python -m flet.cli run -r --web
+else
+    echo "Lancement de l'application Flet - MODE APP"
+    uv run --active python -m flet.cli run -r
+fi
