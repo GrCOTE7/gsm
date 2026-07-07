@@ -64,7 +64,13 @@ def configure_window(
             height=height,
             reapply_after_startup=False,
         )
-        page.update()
+        
+        try:
+            if page.session is not None:
+                page.update()
+        except RuntimeError:
+            # La session est détruite → ignorer
+            pass
 
     try:
         page.run_task(_reapply)
