@@ -64,12 +64,11 @@ def configure_window(
             height=height,
             reapply_after_startup=False,
         )
-        
+
+        await asyncio.sleep(0.1)  # Laisse la session se stabiliser
         try:
-            if page.session is not None:
-                page.update()
+            page.update()
         except RuntimeError:
-            # La session est détruite → ignorer
             pass
 
     try:
@@ -102,7 +101,7 @@ class ZoomController:
             content=self.target,
             on_scale_start=self.on_scale_start,
             on_scale_update=self.on_scale_update,
-            on_double_tap=self.on_double_tap #type: ignore
+            on_double_tap=self.on_double_tap,  # type: ignore
         )
 
     def on_scale_start(self, e: ft.ScaleStartEvent) -> None:
