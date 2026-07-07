@@ -1,3 +1,10 @@
+## [1.0.28](https://github.com/GrCOTE7/gsm/compare/v1.0.27...v1.0.28) (2026-07-07)
+
+
+### Bug Fixes
+
+* trouble page.update() when page not yet ready ([2050fb5](https://github.com/GrCOTE7/gsm/commit/2050fb59c9e613ca4267da76f3611de66033763f))
+
 ## [1.0.27](https://github.com/GrCOTE7/gsm/compare/v1.0.26...v1.0.27) (2026-07-06)
 
 
