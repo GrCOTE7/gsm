@@ -1,3 +1,10 @@
+## [1.0.29](https://github.com/GrCOTE7/gsm/compare/v1.0.28...v1.0.29) (2026-07-07)
+
+
+### Bug Fixes
+
+* close App windows in Web mode ([9743a0f](https://github.com/GrCOTE7/gsm/commit/9743a0fafb132adab126f1352b081b53729f85a5))
+
 ## [1.0.28](https://github.com/GrCOTE7/gsm/compare/v1.0.27...v1.0.28) (2026-07-07)
 
 
