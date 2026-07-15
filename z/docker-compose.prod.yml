@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile.prod
     ports:
-      - "8000:8000"
+      - "7777:8000"
     command: ["sh", "-lc", "uvx watchfiles \"uv run src/main.py\" src"]
     restart: unless-stopped
     healthcheck:
