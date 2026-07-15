@@ -22,4 +22,4 @@ RUN uv sync --frozen
 EXPOSE 8000
 
 # Lancer l'application
-CMD ["uv", "run", "--no-watch", "src/main.py"]
+CMD ["uv", "run", "src/main.py"]

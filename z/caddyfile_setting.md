@@ -6,16 +6,23 @@ Le flux est donc :
 
 Internet
     ↓
+```bash
 vps_caddy (:443)
     ↓ reverse_proxy localhost:7777
 gsm_caddy (:7777)
     ↓ reverse_proxy gsm_app:8000
 gsm_app
+```
 
 ---->
+  
+1 - nano /opt/pyproject_template/deploy/proxy/Caddyfile :
 
-  1 - nano /opt/pyproject_template/deploy/proxy/Caddyfile :
+```bash
+  nano /opt/pyproject_template/deploy/proxy/Caddyfile
+```
  
+```bash
  (security_headers) {
   header {
     X-Content-Type-Options nosniff
@@ -72,15 +79,17 @@ www.cote7.com {
 }
 
 gsm.cote7.com {
-    reverse_proxy gsm_app:8000
+    # import security_headers
+    reverse_proxy gsm_caddy:7777
 }
-
-
+```
 
 2 - Et dans ls Caddyfile du projet GSM :
 
+```bash
 :7777 {
     handle {
         reverse_proxy gsm_app:8000
     }
 }
+```

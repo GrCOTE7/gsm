@@ -55,14 +55,8 @@ Y ajouter le bloc :
 
 ```bash
 gsm.cote7.com {
-    reverse_proxy localhost:8000
+    reverse_proxy gsm_caddy:7777
 }
-```
-
-Vérification "locale" :
-
-```bash
-curl http://localhost:7777
 ```
 
 ### Lancer le container Docker
@@ -82,5 +76,13 @@ docker inspect vps_caddy | grep Source
 
 ls -l /opt/pyproject_template/deploy/proxy
 
+```bash
+docker restart vps_caddy
+```
 
- docker restart vps_caddy
+
+docker compose -f docker-compose.prod.yml logs --tail=100 gsm_app
+
+docker compose -f docker-compose.prod.yml logs --tail=100 vps_caddy
+
+docker logs --tail=100 gsm_caddy

@@ -32,7 +32,7 @@ def make_theme_change_handler(
 def configure_window(
     page: ft.Page,
     *,
-    left: int = 1920,
+    left: int = 1412,
     top: int = 0,
     width: int = 500,
     height: int = 1088,
@@ -160,8 +160,8 @@ def gc7_rules(
     page: ft.Page,
     mode: str = "DARK",
     name: str = "Ready",
-    left: int = 1912,
-    # left: int = 1420,
+    left: int = 1412,
+    # left: int = 1423,
     # left: int = 1420,  # 1912 - 392 # video
     # width: int = 392, ou 400
     width: int = 516,  # Note : 2 * 8 de marge → page.windows_width = 384 // 392 - 373 Galaxy A5
