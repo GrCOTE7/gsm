@@ -1,10 +1,17 @@
-FROM python:3.11-slim
+FROM python:3.13-slim
 
 WORKDIR /app
 
+# Installer uv (pour uvx)
+RUN apt-get update && apt-get install -y curl \
+    && curl -LsSf https://astral.sh/uv/install.sh | sh \
+    && apt-get clean
+
 COPY . /app
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN if [ -f requirements.txt ]; then \
+        pip install --no-cache-dir --root-user-action=ignore -r requirements.txt; \
+    fi
 
 EXPOSE 8777
 
