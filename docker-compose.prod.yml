@@ -34,7 +34,7 @@ services:
     image: caddy:2
     container_name: gsm_caddy
     ports:
-      - "7777:8000"
+      - "7777:7777"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
     depends_on:
