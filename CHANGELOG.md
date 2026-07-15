@@ -1,3 +1,10 @@
+## [1.0.31](https://github.com/GrCOTE7/gsm/compare/v1.0.30...v1.0.31) (2026-07-15)
+
+
+### Bug Fixes
+
+* caddyfiles settings ([3cdc13b](https://github.com/GrCOTE7/gsm/commit/3cdc13be41fb94641c0ef6d9e3812dec40553f12))
+
 ## [1.0.30](https://github.com/GrCOTE7/gsm/compare/v1.0.29...v1.0.30) (2026-07-15)
 
 
