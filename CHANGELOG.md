@@ -1,3 +1,10 @@
+## [1.0.30](https://github.com/GrCOTE7/gsm/compare/v1.0.29...v1.0.30) (2026-07-15)
+
+
+### Bug Fixes
+
+* reset ports docker caddy ([958674f](https://github.com/GrCOTE7/gsm/commit/958674fbeef5f1b2ad8349ed78afe0421f06ac8f))
+
 ## [1.0.29](https://github.com/GrCOTE7/gsm/compare/v1.0.28...v1.0.29) (2026-07-07)
 
 
