@@ -3,7 +3,16 @@ from dataclasses import dataclass
 
 import flet as ft
 
-from upu.views.pages import tests, home, icons, settings, sport, tests2, tests_archives
+from upu.views.pages import (
+    home,
+    icons,
+    react,
+    settings,
+    sport,
+    tests,
+    tests2,
+    tests_archives,
+)
 
 ViewBuilder = Callable[[], ft.Control]
 
@@ -31,6 +40,13 @@ ROUTES: tuple[RouteDefinition, ...] = (
         icon=ft.Icons.DIRECTIONS_RUN_OUTLINED,
         selected_icon=ft.Icons.DIRECTIONS_RUN,
         builder=sport.build,
+    ),
+    RouteDefinition(
+        route="/react",
+        label="React",
+        icon=ft.Icons.DATA_OBJECT_OUTLINED,
+        selected_icon=ft.Icons.DATA_OBJECT,
+        builder=react.build,
     ),
     RouteDefinition(
         route="/icons",
