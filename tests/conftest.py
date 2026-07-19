@@ -14,6 +14,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from upu.views.pages.registry import get_view_builder, has_route
 
 # uv run pytest -q # -q + silencieux | -dd encore + silencieux | -v + verbeux
+# uv run pytest -s -o log_cli=true -o log_cli_level=DEBUG
 
 def _iter_controls(control: ft.Control):
     stack = [control]
