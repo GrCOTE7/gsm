@@ -154,7 +154,7 @@ def build() -> ft.Control:
             ],
             alignment=ft.MainAxisAlignment.CENTER,
         ),
-        "Vue cote.com embarquee dans Flet.",
+        "Vue cote7.com embarquée dans Flet.",
         extra=ft.Column(
             width=340,
             controls=[
