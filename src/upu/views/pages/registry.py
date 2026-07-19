@@ -4,6 +4,7 @@ from dataclasses import dataclass
 import flet as ft
 
 from upu.views.pages import (
+    counter,
     home,
     icons,
     react,
@@ -75,6 +76,13 @@ ROUTES: tuple[RouteDefinition, ...] = (
         icon=ft.Icons.OUTLINED_FLAG,
         selected_icon=ft.Icons.FLAG,
         builder=tests2.build,
+    ),
+    RouteDefinition(
+        route="/counter",
+        label="Counter",
+        icon=ft.Icons.ADD_CIRCLE_OUTLINE,
+        selected_icon=ft.Icons.ADD_CIRCLE,
+        builder=counter.build,
     ),
     RouteDefinition(
         route="/archives",
