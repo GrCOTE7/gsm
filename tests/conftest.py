@@ -4,14 +4,16 @@ from dataclasses import dataclass
 from pathlib import Path
 from types import SimpleNamespace
 import sys
+from typing import Callable
 
 import flet as ft
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from upu.views.pages.registry import get_view_builder
+from upu.views.pages.registry import get_view_builder, has_route
 
+# uv run pytest -q # -q + silencieux | -dd encore + silencieux | -v + verbeux
 
 def _iter_controls(control: ft.Control):
     stack = [control]
@@ -55,6 +57,13 @@ class _Tester:
                 matches.append(ctrl)
         return _Finder(matches=matches)
 
+    def find_by_text_containing(self, text: str) -> _Finder:
+        matches: list[ft.Control] = []
+        for ctrl in _iter_controls(self._root):
+            if isinstance(ctrl, ft.Text) and text in str(ctrl.value):
+                matches.append(ctrl)
+        return _Finder(matches=matches)
+
     def find_by_key(self, key: str) -> _Finder:
         matches: list[ft.Control] = []
         for ctrl in _iter_controls(self._root):
@@ -81,6 +90,20 @@ class _Tester:
 
 
 @pytest.fixture
-def flet_app():
-    counter_root = get_view_builder("/counter")()
-    return SimpleNamespace(tester=_Tester(counter_root))
+def flet_app_factory() -> Callable[[str], SimpleNamespace]:
+    def _build(route: str = "/counter") -> SimpleNamespace:
+        if not has_route(route):
+            raise AssertionError(f"Unknown app route for test: {route}")
+
+        root = get_view_builder(route)()
+        return SimpleNamespace(route=route, tester=_Tester(root))
+
+    return _build
+
+
+@pytest.fixture
+def flet_app(request: pytest.FixtureRequest, flet_app_factory: Callable[[str], SimpleNamespace]):
+    route = getattr(request, "param", "/counter")
+    if not isinstance(route, str):
+        raise AssertionError("Fixture 'flet_app' expects a string route, e.g. '/counter'")
+    return flet_app_factory(route)

@@ -1,6 +1,8 @@
 from typing import Any
+import pytest
 
 
+@pytest.mark.parametrize("flet_app", ["/counter"], indirect=True)
 def test_increment(flet_app: Any):
     tester = flet_app.tester
 

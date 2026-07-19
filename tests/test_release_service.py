@@ -218,7 +218,7 @@ def test_open_release_url_desktop_uses_page_launch_url(
 
     page = _Page()
     assert release_service.open_release_url(
-        page,
+        page, #type: ignore
         "https://github.com/GrCOTE7/gsm/releases/tag/v1.2.3",
         force=True,
     )
