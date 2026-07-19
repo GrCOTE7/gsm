@@ -29,6 +29,7 @@ DEFAULT_ROUTE = "/react"  # 2ar ready - empty
 DEFAULT_ROUTE = "/counter"  # 2ar ready - empty
 DEFAULT_ROUTE = "/home"
 DEFAULT_ROUTE = "/tests"  # 2ar ready - empty
+DEFAULT_ROUTE = "/calculator"
 #################################################
 
 

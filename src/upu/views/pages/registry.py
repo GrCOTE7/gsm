@@ -4,6 +4,7 @@ from dataclasses import dataclass
 import flet as ft
 
 from upu.views.pages import (
+    calculator,
     counter,
     home,
     icons,
@@ -83,6 +84,13 @@ ROUTES: tuple[RouteDefinition, ...] = (
         icon=ft.Icons.ADD_CIRCLE_OUTLINE,
         selected_icon=ft.Icons.ADD_CIRCLE,
         builder=counter.build,
+    ),
+    RouteDefinition(
+        route="/calculator",
+        label="Calculator",
+        icon=ft.Icons.CALCULATE_OUTLINED,
+        selected_icon=ft.Icons.CALCULATE,
+        builder=calculator.build,
     ),
     RouteDefinition(
         route="/archives",
