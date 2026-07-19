@@ -1,6 +1,7 @@
 from dataclasses import field
 from upu.views.templates.default import named_view
-
+from upu.helpers.app_actions import open_url
+from upu.helpers.buttons import extLink
 import flet as ft
 
 
@@ -274,7 +275,8 @@ def build():
             alignment=ft.MainAxisAlignment.CENTER,
         ),
         "\n"
-        "Un simple script de calculatrice",
+        "Script de calculatrice en Python avec Flet",
+        bottom=extLink(txt='Source: Tuto doc Flet', url='https://flet.dev/docs/tutorials/calculator'),
         extra=keyboard_calc,
     )
 

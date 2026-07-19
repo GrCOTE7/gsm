@@ -6,32 +6,10 @@ import flet as ft
 
 from upu.config import CACHE_DELAY, get_latest_release_info
 from upu.helpers.app_actions import close_app, open_url
-from upu.helpers.buttons import filled_button
+from upu.helpers.buttons import filled_button, extLink
 from upu.helpers.snackbar import show_snackbar
 from upu.views.partials import build_release_update_card
 from upu.views.templates.default import named_view
-
-
-def extLinks():
-    return ft.Container(
-        padding=ft.Padding.only(bottom=20),
-        content=ft.Row(
-            controls=[
-                filled_button(
-                    content=ft.Row(
-                        controls=[
-                            ft.Icon(ft.Icons.OPEN_IN_NEW, size=16),
-                            ft.Text("open_url()"),
-                        ],
-                        spacing=8,
-                        alignment=ft.MainAxisAlignment.CENTER,
-                    ),
-                    on_click=lambda e: open_url(e, "https://example.com"),
-                ),
-            ],
-            alignment=ft.MainAxisAlignment.CENTER,
-        ),
-    )
 
 
 # ------------------------------------------------------------
@@ -215,7 +193,7 @@ def build() -> ft.Control:
                     alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                 ),
                 build_release_update_card(),
-                extLinks(),
+                extLink(),
             ]
         ),
     )
