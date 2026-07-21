@@ -1,3 +1,10 @@
+## [1.0.34](https://github.com/GrCOTE7/gsm/compare/v1.0.33...v1.0.34) (2026-07-21)
+
+
+### Bug Fixes
+
+* better size and padding ([95fee4e](https://github.com/GrCOTE7/gsm/commit/95fee4e2d6d4465708efaf4757cc681fd5666e6f))
+
 ## [1.0.33](https://github.com/GrCOTE7/gsm/compare/v1.0.32...v1.0.33) (2026-07-21)
 
 
