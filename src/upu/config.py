@@ -23,10 +23,13 @@ _CHECK_TIME_FORMAT = "%Y-%m-%d %H:%M"
 APP_NAME = "Up You!"
 
 #################################################
-DEFAULT_ROUTE = "/tests2"  # 2ar ready - empty
-DEFAULT_ROUTE = "/home"
 DEFAULT_ROUTE = "/archives"  # 2ar réc mlm thomas
+DEFAULT_ROUTE = "/react"  # 2ar ready - empty
+DEFAULT_ROUTE = "/counter"  # 2ar ready - empty
+DEFAULT_ROUTE = "/home"
+DEFAULT_ROUTE = "/tests2"  # 2ar ready - empty
 DEFAULT_ROUTE = "/tests"  # 2ar ready - empty
+DEFAULT_ROUTE = "/calculator"
 #################################################
 
 

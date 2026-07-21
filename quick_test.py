@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     show()
 
-    print(f"\nFin de ./quick_test.py :Ambassadorship:")
+    print(f"\nFin de ./quick_test.py 😁")
 
     print(
         "\n( [italic]Dans la CLI, [bold blue]CTRL + Clic[/bold blue] pour ouvrir un fichier écrit en magenta.[/italic] :wink: )"

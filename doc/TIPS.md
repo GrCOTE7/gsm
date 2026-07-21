@@ -4,6 +4,8 @@
 
 ## Ressources diverses
 
+### [https://flet.app/gallery/run/apps/icons_browser](https://flet.app/gallery/run/apps/icons_browser)
+
 ### [Emojis](https://emojipedia.org/fr/smileys)
 
 Alternative : Extension VSC Markdown Emoji - Matt Bierner → CTRL + MAJ + E
