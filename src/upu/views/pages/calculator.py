@@ -269,7 +269,7 @@ def build():
         ft.Row(
             controls=[
                 ft.Icon(ft.Icons.CALCULATE, size=32),
-                ft.Text("Calculatrice", size=28, weight=ft.FontWeight.W_600),
+                ft.Text("Calculatrice 2.0", size=28, weight=ft.FontWeight.W_600),
             ],
             # vertical_alignment=ft.CrossAxisAlignment.CENTER,
             alignment=ft.MainAxisAlignment.CENTER,
