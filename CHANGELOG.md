@@ -1,3 +1,10 @@
+## [1.0.35](https://github.com/GrCOTE7/gsm/compare/v1.0.34...v1.0.35) (2026-07-21)
+
+
+### Bug Fixes
+
+* better conf for Galaxy A5 ([133abfe](https://github.com/GrCOTE7/gsm/commit/133abfe3babd036afe75998ba482338f110ed992))
+
 ## [1.0.34](https://github.com/GrCOTE7/gsm/compare/v1.0.33...v1.0.34) (2026-07-21)
 
 
