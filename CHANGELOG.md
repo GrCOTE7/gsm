@@ -1,3 +1,10 @@
+## [1.0.36](https://github.com/GrCOTE7/gsm/compare/v1.0.35...v1.0.36) (2026-07-21)
+
+
+### Bug Fixes
+
+* sub title center (optional) ([9e0b897](https://github.com/GrCOTE7/gsm/commit/9e0b89782b6e6227ff85b5e3e68b5488687e131c))
+
 ## [1.0.35](https://github.com/GrCOTE7/gsm/compare/v1.0.34...v1.0.35) (2026-07-21)
 
 
