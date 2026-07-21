@@ -1,3 +1,10 @@
+## [1.0.33](https://github.com/GrCOTE7/gsm/compare/v1.0.32...v1.0.33) (2026-07-21)
+
+
+### Bug Fixes
+
+* complete wkflw ([e450f44](https://github.com/GrCOTE7/gsm/commit/e450f44d276d5e083968303290ada45c380a2d79))
+
 ## [1.0.32](https://github.com/GrCOTE7/gsm/compare/v1.0.31...v1.0.32) (2026-07-21)
 
 
