@@ -1,3 +1,11 @@
+## [1.0.32](https://github.com/GrCOTE7/gsm/compare/v1.0.31...v1.0.32) (2026-07-21)
+
+
+### Bug Fixes
+
+* add calculator ([8d81ca1](https://github.com/GrCOTE7/gsm/commit/8d81ca1b395160863d695fac5933fca441456ecd))
+* add calculator ([6f71f6e](https://github.com/GrCOTE7/gsm/commit/6f71f6e19b85584ace8ac868d8c18cdff87d7d44))
+
 ## [1.0.31](https://github.com/GrCOTE7/gsm/compare/v1.0.30...v1.0.31) (2026-07-15)
 
 
