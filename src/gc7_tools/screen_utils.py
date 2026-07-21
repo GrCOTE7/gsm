@@ -164,13 +164,11 @@ def gc7_rules(
     # left: int = 1423,
     # left: int = 1420,  # 1912 - 392 # video
     # width: int = 392, ou 400
-    width: int = 516,  # Note : 2 * 8 de marge → page.windows_width = 384 // 392 - 373 Galaxy A5
-    height: int = 1040,  # Note : 1088 - 24 (padding top) - 20 (padding bottom) = 1044 → page.window_height = 1044 - 742 Galaxy A5
+    width: int = 373,  # 516 - Note : 500 + 2 * 8 de marge → page.windows_width = 384 // 392 - 373 Galaxy A5
     defaultColors: bool = True,
+    # height = (1088 if left >= 1912 else 1040)  # Pour adapter écran #2 sans la barre windows
+    height: int = 742,  # Note : 1040 - 24 (padding top) - 20 (padding bottom) = 1044 → page.window_height = 1044 - 742 Galaxy A5
 ) -> None:
-    height = (
-        1088 if left >= 1912 else 1040
-    )  # Pour adapter écran #2 sans la barre windows
 
     print(width)
 

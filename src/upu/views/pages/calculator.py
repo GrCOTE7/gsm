@@ -40,7 +40,7 @@ class CalculatorApp(ft.Container):
         self.bgcolor = ft.Colors.BLACK
         self.border_radius = ft.BorderRadius.all(20)
         self.padding = 20
-        self.result = ft.Text(value="0", color=ft.Colors.WHITE, size=20)
+        self.result = ft.Text(value="0", color=ft.Colors.WHITE, size=30)
         self.content = ft.Column(
             controls=[
                 ft.Row(
@@ -49,8 +49,14 @@ class CalculatorApp(ft.Container):
                 ),
                 ft.Row(
                     controls=[
-                        ExtraActionButton(content="AC", on_click=self.button_clicked),
-                        ExtraActionButton(content="+/-", on_click=self.button_clicked),
+                        ExtraActionButton(content="AC", on_click=self.button_clicked, style=ft.ButtonStyle(
+                            padding=ft.Padding(0),
+                            text_style=ft.TextStyle(size=15)),
+                        ),
+                        ExtraActionButton(content="+/-", on_click=self.button_clicked,style=ft.ButtonStyle(
+                            padding=ft.Padding(0,0,0,10),
+                            text_style=ft.TextStyle(size=15))
+                        ),
                         ExtraActionButton(content="%", on_click=self.button_clicked),
                         ActionButton(content="/", on_click=self.button_clicked),
                     ]
