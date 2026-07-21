@@ -77,6 +77,14 @@ docker compose down
 
 ### Healthcheck
 
+#### Fixer la page d'accueil
+
+```bash
+C:\gsm\src\upu\config.py
+# DEFAULT_ROUTE = ...
+```
+
+
 Vérifier l'état global du service :
 
 ```bash
