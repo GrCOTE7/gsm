@@ -280,10 +280,9 @@ def build():
             # vertical_alignment=ft.CrossAxisAlignment.CENTER,
             alignment=ft.MainAxisAlignment.CENTER,
         ),
-        "\n"
         "Script de calculatrice en Python avec Flet",
-        bottom=extLink(txt='Source: Tuto doc Flet', url='https://flet.dev/docs/tutorials/calculator'),
         extra=keyboard_calc,
+        bottom=extLink(txt='Source: Tuto doc Flet', url='https://flet.dev/docs/tutorials/calculator'),
     )
 
 if __name__ == "__main__":

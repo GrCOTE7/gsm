@@ -17,10 +17,10 @@ def named_view(
         title_control,
         ft.Container(height=16),
         ft.Container(
-            width=340,
+            width=3640,
             content=ft.Text(
                 body,
-                size=18,
+                size=16,
                 text_align=ft.TextAlign.JUSTIFY,
             ),
         ),
