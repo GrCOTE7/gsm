@@ -1,6 +1,6 @@
 [project]
 name = "UpU"
-version = "1.0.33"
+version = "1.0.34"
 description = "Up U!"
 readme = "README.md"
 requires-python = ">=3.13"
