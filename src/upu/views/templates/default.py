@@ -7,6 +7,7 @@ def named_view(
     extra: ft.Control | None = None,
     bottom: ft.Control | None = None,
     extra_top_gap: int = 16,
+    body_text_align: ft.TextAlign = ft.TextAlign.JUSTIFY,
 ) -> ft.Control:
     title_control = (
         ft.Text(title, size=28, weight=ft.FontWeight.W_600)
@@ -21,7 +22,7 @@ def named_view(
             content=ft.Text(
                 body,
                 size=16,
-                text_align=ft.TextAlign.JUSTIFY,
+                text_align=body_text_align,
             ),
         ),
     ]

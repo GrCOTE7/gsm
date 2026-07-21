@@ -281,6 +281,7 @@ def build():
             alignment=ft.MainAxisAlignment.CENTER,
         ),
         "Script de calculatrice en Python avec Flet",
+        body_text_align=ft.TextAlign.CENTER,
         extra=keyboard_calc,
         bottom=extLink(txt='Source: Tuto doc Flet', url='https://flet.dev/docs/tutorials/calculator'),
     )
