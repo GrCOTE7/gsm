@@ -25,12 +25,12 @@ APP_NAME = "Up You!"
 #################################################
 DEFAULT_ROUTE = "/archives"  # 2ar unused
 DEFAULT_ROUTE = "/react"
-DEFAULT_ROUTE = "/counter"
 DEFAULT_ROUTE = "/home"
 DEFAULT_ROUTE = "/tests2"
 DEFAULT_ROUTE = "/tests"
 DEFAULT_ROUTE = "/icons"
 DEFAULT_ROUTE = "/calculator"
+DEFAULT_ROUTE = "/counter"
 #################################################
 
 

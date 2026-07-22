@@ -6,11 +6,6 @@ def build() -> ft.Control:
 
     def increment(_e: ft.ControlEvent) -> None:
         counter_value.value = str(int(counter_value.value) + 1)
-        try:
-            counter_value.update()
-        except RuntimeError:
-            # Hors page montee (tests unitaires), la valeur est deja mise a jour.
-            pass
 
     return ft.Container(
         padding=20,
