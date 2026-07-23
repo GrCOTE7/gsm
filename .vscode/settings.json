@@ -140,9 +140,7 @@
   "editor.snippetSuggestions": "top",
   "python-envs.defaultEnvManager": "ms-python.python:venv",
   "git.ignoreLimitWarning": true,
-  "python.analysis.extraPaths": [
-    "./src"
-  ],
+  "python.analysis.extraPaths": ["./src"],
   "python.analysis.useLibraryCodeForTypes": true,
   "python.analysis.typeCheckingMode": "basic",
   "auto-close-tag.disableOnLanguage": [],
@@ -208,6 +206,7 @@
     "compgen",
     "complet",
     "compteur",
+    "Compteurs",
     "connaître",
     "consectetur",
     "construire",
