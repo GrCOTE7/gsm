@@ -6,7 +6,7 @@ from typing import cast
 import flet as ft
 import gc7_tools.screen_utils as screen_utils
 
-from upu.config import APP_NAME, VERSION, WINDOW_LEFT, DEFAULT_ROUTE
+from upu.config import APP_NAME, VERSION, WINDOW_LEFT, WINDOW_CLI, DEFAULT_ROUTE
 from upu.controllers.settings_controller import SettingsController
 from upu.controllers.update_controller import UpdateController
 from upu.controllers.navigation_controller import NavigationController
@@ -22,7 +22,8 @@ class AppController:
         self._setup()
 
     def _setup(self) -> None:
-        screen_utils.gc7_rules(self.page, left=WINDOW_LEFT)
+        print(f"{WINDOW_CLI=}")
+        screen_utils.gc7_rules(self.page, left=WINDOW_LEFT, height=788 if WINDOW_CLI else None)
         self.page.title = f"{APP_NAME} - v{VERSION}"
         self.page.on_app_lifecycle_state_change = (
             lambda e: self.settings_controller.on_lifecycle_change(

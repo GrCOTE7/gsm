@@ -179,6 +179,8 @@ def gc7_rules(
         height = 808  # Pour adapter fenêtre pour vidéos
     # print(width)
 
+    import dotenv
+
     # VIDÉO :
     # left=840
     # width=520
