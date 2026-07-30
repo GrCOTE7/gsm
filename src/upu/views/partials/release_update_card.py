@@ -23,7 +23,7 @@ def build_release_update_card(width: int = 360) -> ft.Control:
     status_text = (
         "Nouvelle version disponible" if update_available else "Application a jour"
     )
-    status_color = ft.Colors.ORANGE_500 if update_available else ft.Colors.GREEN_500
+    status_color = ft.Colors.ORANGE_500 if update_available else ft.Colors.LIGHT_GREEN_ACCENT_400
 
     return ft.Container(
         width=width,
