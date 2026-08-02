@@ -1,3 +1,94 @@
+function Move-WindowsTerminalWindow {
+    param(
+        [int]$Left,
+        [int]$Top,
+        [int]$Width,
+        [int]$Height
+    )
+
+    Add-Type @"
+using System;
+using System.Runtime.InteropServices;
+
+public class WindowHelper
+{
+    public delegate bool EnumWindowsProc(IntPtr hWnd, IntPtr lParam);
+
+    [DllImport("user32.dll")]
+    public static extern bool EnumWindows(EnumWindowsProc enumProc, IntPtr lParam);
+
+    [DllImport("user32.dll")]
+    public static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint processId);
+
+    [DllImport("user32.dll")]
+    public static extern bool IsWindowVisible(IntPtr hWnd);
+
+    [DllImport("user32.dll")]
+    public static extern bool MoveWindow(
+        IntPtr hWnd,
+        int X,
+        int Y,
+        int nWidth,
+        int nHeight,
+        bool bRepaint);
+
+    public static IntPtr FindWindowFromProcessId(uint pid)
+    {
+        IntPtr result = IntPtr.Zero;
+
+        EnumWindows((hWnd, lParam) =>
+        {
+            uint windowPid;
+            GetWindowThreadProcessId(hWnd, out windowPid);
+
+            if (windowPid == pid && IsWindowVisible(hWnd))
+            {
+                result = hWnd;
+                return false;
+            }
+
+            return true;
+        }, IntPtr.Zero);
+
+        return result;
+    }
+}
+"@
+
+    # Récupère WindowsTerminal.exe parent de pwsh
+    $parent = Get-CimInstance Win32_Process -Filter "ProcessId=$PID"
+
+    $terminal = Get-Process -Id $parent.ParentProcessId
+
+    $hwnd = [WindowHelper]::FindWindowFromProcessId($terminal.Id)
+
+    if ($hwnd -ne [IntPtr]::Zero) {
+        [WindowHelper]::MoveWindow(
+            $hwnd,
+            $Left,
+            $Top,
+            $Width,
+            $Height,
+            $true
+        ) | Out-Null
+    }
+    else {
+        Write-Warning "Fenêtre Windows Terminal introuvable"
+    }
+}
+
+Move-WindowsTerminalWindow -Left 2460 -Top 779 -Width 540 -Height 300
+
+Set-Location -Path "$PSScriptRoot"
+
+& "$PSScriptRoot\scripts\check_version_sync.ps1"
+
+uv sync --extra desktop
+
+...
+
+##################################################################
+
 # Se placer dans la racine du projet
 Set-Location -Path "$PSScriptRoot"
 
