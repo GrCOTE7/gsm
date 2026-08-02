@@ -22,8 +22,8 @@ class AppController:
         self._setup()
 
     def _setup(self) -> None:
-        print(f"{WINDOW_CLI=}")
-        screen_utils.gc7_rules(self.page, left=WINDOW_LEFT, height=788 if WINDOW_CLI else None)
+        print(f"{WINDOW_CLI = }")
+        screen_utils.gc7_rules(self.page, left=WINDOW_LEFT, height=779 if WINDOW_CLI else None)
         self.page.title = f"{APP_NAME} - v{VERSION}"
         self.page.on_app_lifecycle_state_change = (
             lambda e: self.settings_controller.on_lifecycle_change(

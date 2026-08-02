@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 authors = [{ name = "GrCOTE7", email = "GrCOTE7@gmail.com" }]
 dependencies = [
-    "flet==0.85.*",
+    "flet==0.86.*",
     "flet-audio",
     "certifi",
     "google-api-python-client>=2.196.0",

@@ -34,7 +34,7 @@ def configure_window(
     *,
     left: int = 1412,
     top: int = 0,
-    width: int = 500,
+    width: int = 540,
     height: int = 1088,
     reapply_after_startup: bool = True,
 ) -> None:
@@ -166,7 +166,7 @@ def gc7_rules(
     # width: int = 392, ou 400
     height: int | None = None,
     defaultColors: bool = True,
-    width: int = 516,  # 516 - Note : 500 + 2 * 8 de marge → page.windows_width = 384 // 392 - 373 Galaxy A5
+    width: int = 540,  # 540 - Note : 5247 + 2 * 8 de marge → page.windows_width = 384 // 392 - 373 Galaxy A5
 ) -> None:
 
     # height: int = 742  # Note : 24 (padding top) - 20 (padding bottom) = 1044 → page.window_height = 1044 - 742 Galaxy A5
