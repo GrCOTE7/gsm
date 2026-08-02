@@ -1,3 +1,29 @@
+function Read-DotEnv {
+    param([string]$Path)
+
+    if (!(Test-Path $Path)) {
+        return
+    }
+
+    Get-Content $Path | ForEach-Object {
+        $line = $_.Trim()
+
+        # Ignore commentaires et lignes vides
+        if ($line -and !$line.StartsWith("#")) {
+            $key, $value = $line -split "=", 2
+
+            if ($key -and $value) {
+                # Retire les espaces et commentaires éventuels
+                $value = ($value -split "#")[0].Trim()
+
+                Set-Item "Env:$($key.Trim())" $value
+            }
+        }
+    }
+}
+
+Read-DotEnv "$PSScriptRoot\.env"
+
 function Move-WindowsTerminalWindow {
     param(
         [int]$Left,
@@ -77,15 +103,28 @@ public class WindowHelper
     }
 }
 
-Move-WindowsTerminalWindow -Left 2460 -Top 779 -Width 540 -Height 300
+
+$mode = if ($args.Count -gt 0) { "$($args[0])".ToLowerInvariant() } else { "" }
+
+# if ($mode -eq "p") {
+#     Move-WindowsTerminalWindow -Left 2460 -Top 779 -Width 540 -Height 300
+# }
+
+if ([int]$env:UPU_WINDOW_CLI -eq 1) {
+    Move-WindowsTerminalWindow `
+        -Left 2460 `
+        -Top 779 `
+        -Width 540 `
+        -Height 300
+}
+
+# Move-WindowsTerminalWindow -Left 2460 -Top 779 -Width 540 -Height 300
 
 Set-Location -Path "$PSScriptRoot"
 
 & "$PSScriptRoot\scripts\check_version_sync.ps1"
 
 uv sync --extra desktop
-
-...
 
 ##################################################################
 
