@@ -52,17 +52,25 @@ Tu ❤️ Python...? Rejoins le chat en LIVE !
 
 ### 👉 En local (macOS/Linux/Windows) après le *[fork](doc/0101_GIT_FORK.md)*
 
-#### C'est aussi le mode idéal pour coder avec le projet (Hotreload et positionnement de l'App AUTO)
-
-### 👉 Et encore + simple et sans rien installer : Codespace → <a href="https://codespaces.new/GrCOTE7/gsm" title="Open YOUR CodeSpace Now... CTRL + Click HERE!"><img src="https://img.shields.io/badge/Dev%20GSM%20directement%20en%20ligne%20sur%20Github%20!-blue.svg" alt="CodeSpace link" /></a>
-
-## 👉👉 Dans ces 2 derniers cas, en *CLI* (***C***ommand ***L***ine ***I***nterface = Console)
-
-Dans le dossier du projet :
+Dans la *CLI* (***C***ommand ***L***ine ***I***nterface = Console), dans le dossier du projet :
 
 ```bash
 ./go
 ```
+
+#### → C'est aussi le mode idéal pour coder avec le projet (HotReload et positionnement AUTOs de l'App)
+
+### 👉 Et encore + simple et sans rien installer : Codespace → <a href="https://codespaces.new/GrCOTE7/gsm" title="Open YOUR CodeSpace Now... CTRL + Click HERE!"><img src="https://img.shields.io/badge/Dev%20GSM%20directement%20en%20ligne%20sur%20Github%20!-blue.svg" alt="CodeSpace link" /></a>
+
+( Le clic sur ce bouton = Dans le page du dépôt ***GH*** (***G***it***H***ub) original, ou celle de votre fork, appuyer sur ' , ' et générer ainsi un codespace)
+
+Dans le terminal qui apparaîtra enfin, faire 'quasi' comme en local 😉
+
+```bash
+./go w
+```
+
+NB : Dans un codespaces, seule la version Flet **W**eb fonctionne (D'où **l'option 'w'**), et attention, pas de refresh, hotreload, etc... Bref, ne sert qu'à rapidement partager un rendu 'frais', récent, voire éditer du code, ou éventuellement coder / modifier un script très simple...
 
 ## 🐳 App in Docker (local)
 
@@ -142,7 +150,7 @@ Et dans le terminal qui apparaît enfin, faire comme en local 😉
 ### * Local - Desktop
 
 ```bash
-./go
+./go w
 ```
 
 NB : Dans un codespace, seule la version Flet Web fonctionne (Avec l'option 'w'), et attention, pas de refresh, hotreload, etc... Bref, ne sert qu'à partager un rendu, voire éditer du code, ou éventuellement coder / modifier un script très simple...
