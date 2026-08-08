@@ -11,7 +11,7 @@ class HomePage:
     @staticmethod
     @ft.component
     def view() -> ft.Control:
-        print(year_day())
+        print(f"Home Page - Day #{year_day()}")
         return ft.Column(
             controls=[
                 ft.Text("Accueil", size=28, weight=ft.FontWeight.BOLD),
