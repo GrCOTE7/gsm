@@ -463,7 +463,9 @@ uv run python -c "import flet; print(flet.__version__)"
 
 ## .🎯 Actuels goals prioritaires
 
-* [-] Finir docs de base (✅ Git, ✅ VSC, Py) + Add autres docs initiatiques
+* [ ] Transformer tout le projet en mode reactif (Flutter & React-like)
+* [ ] Finir docs de base (✅ Git, ✅ VSC, Py, LIbs, IA) + Add autres docs initiatiques
 * [ ] Mettre en place dans le WorkFlow, le build pour IPhone (→ $Thera...)
-* [ ] Problème de fin du process d'upgrade
+* [ ] Problème de fin du process d'upgrade / mobile
+* [ ] Écrire tout le projet en Anglais (Doc & commentaires)
 * [x] Dernier reset complet du n° de V
