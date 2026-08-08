@@ -29,8 +29,16 @@
 Tu ❤️ Python...? Rejoins le chat en LIVE !
 
 [![Discord](https://img.shields.io/discord/1056923339546968127)](https://discord.com/channels/1056923339546968127/1507316257580519445)
-</a>
+    </a>
 </div>
+
+---
+
+## 🤝 Collaboration et particulièrement **adapté aux débutants**
+
+Pour **contribuer** au dev de ce projet (Et **en connaître tous les rouages et secrets**) :
+
+<h2 align='center'><span style="text-decoration:none;">👉 <a href="./THERA.md" title="The Doc de base"><bold>  Lire THERADOC</bold></a></span></h2>
 
 ## 🐳 → A rapid look
 
@@ -48,7 +56,7 @@ Tu ❤️ Python...? Rejoins le chat en LIVE !
 
 ---
 
-## 🐳 → A rapid dev env
+## 🚀 → A rapid dev env
 
 ### 👉 En local (macOS/Linux/Windows) après le *[fork](doc/0101_GIT_FORK.md)*
 
@@ -62,20 +70,21 @@ Dans la *CLI* (***C***ommand ***L***ine ***I***nterface = Console), dans le doss
 
 ### 👉 Et encore + simple et sans rien installer : Codespace → <a href="https://codespaces.new/GrCOTE7/gsm" title="Open YOUR CodeSpace Now... CTRL + Click HERE!"><img src="https://img.shields.io/badge/Dev%20GSM%20directement%20en%20ligne%20sur%20Github%20!-blue.svg" alt="CodeSpace link" /></a>
 
-( Le clic sur ce bouton = Dans le page du dépôt ***GH*** (***G***it***H***ub) original, ou celle de votre fork, appuyer sur ' , ' et générer ainsi un codespace)
+( Le clic sur ce bouton = Dans le page du dépôt ***GH*** (***G***it***H***ub) original, ou celle de votre fork, appuyer sur ' , ' - Touche virgule - pour générer ainsi un codespace) → Confirmer
 
-Dans le terminal qui apparaîtra enfin, faire 'quasi' comme en local 😉
+Dans le terminal qui apparaîtra puis se stabilisera enfin à un moment , faire 'quasi' comme en local 😉 (Juste un 'w' en +)
 
 ```bash
 ./go w
 ```
 
-NB : Dans un codespaces, seule la version Flet **W**eb fonctionne (D'où **l'option 'w'**), et attention, pas de refresh, hotreload, etc... Bref, ne sert qu'à rapidement partager un rendu 'frais', récent, voire éditer du code, ou éventuellement coder / modifier un script très simple...
+NB : Dans un codespaces, seule la version Flet **W**eb fonctionne (D'où **cette option 'w'**), mais vous y avez tout de même non seulement hotreload opérationnel, mais aussi toutes les extensions VSCode recommandées dans GSM (Git Graph, ToDo Tree customisé, etc...)
+
+Bref, vous pouvez ainsi simplement et "rapidement", depuis la branche de votre choix, partager son rendu 'frais' (Le + optimal et récent), y éditer du code, éventuellement coder / modifier quelque chose dedans...  Et surtout, même y faire une [P.R.](doc/0110_GIT_PR.md) !!! 😁
 
 ## 🐳 App in Docker (local)
 
-Le dossier `.devcontainer/` reste dédié à Codespaces/devcontainer.
-Pour lancer l'app localement avec Docker Compose :
+Si Docker Desktop est installé, lancer l'app localement avec :
 
 ```bash
 docker compose up -d --build
@@ -132,36 +141,6 @@ docker inspect gsm_app --format "{{json .State.Health}}"
 ```
 
 ---
-
-## 🤝 Collaboration et particulièrement **adapté aux débutants**
-
-Pour **contribuer** au dev de ce projet (Et **en connaître tous les rouages et secrets**) :
-
-<h2 align='center'><span style="text-decoration:none;">👉 <a href="./THERA.md" title="The Doc de base"><bold>  Lire THERADOC</bold></a></span></h2>
-
-## 🚀 Run the app
-
-### * En ligne - Sans rien installer
-
-Dans le page du dépôt ***GH*** (***G***it***H***ub) original, ou celle de votre fork, appuyer sur ' , ' et générer ainsi un codespace.
-
-Et dans le terminal qui apparaît enfin, faire comme en local 😉
-
-### * Local - Desktop
-
-```bash
-./go w
-```
-
-NB : Dans un codespace, seule la version Flet Web fonctionne (Avec l'option 'w'), et attention, pas de refresh, hotreload, etc... Bref, ne sert qu'à partager un rendu, voire éditer du code, ou éventuellement coder / modifier un script très simple...
-
-### * Local - Web OS
-
-Éxécuter :
-
-```bash
-./go w
-```
 
 ## 🏗️ Construire une app pour votre mobile GSM
 
