@@ -68,6 +68,8 @@ Dans la *CLI* (***C***ommand ***L***ine ***I***nterface = Console), dans le doss
 
 #### → C'est aussi le mode idéal pour coder avec le projet (HotReload et positionnement AUTOs de l'App)
 
+---
+
 ### 👉 Et encore + simple et sans rien installer : Codespace → <a href="https://codespaces.new/GrCOTE7/gsm" title="Open YOUR CodeSpace Now... CTRL + Click HERE!"><img src="https://img.shields.io/badge/Dev%20GSM%20directement%20en%20ligne%20sur%20Github%20!-blue.svg" alt="CodeSpace link" /></a>
 
 ( Le clic sur ce bouton = Dans le page du dépôt ***GH*** (***G***it***H***ub) original, ou celle de votre fork, appuyer sur ' , ' - Touche virgule - pour générer ainsi un codespace) → Confirmer
