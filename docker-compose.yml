@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
-    command: ["sh", "-lc", "uvx watchfiles \"uv run src/main.py\" src"]
+    command: ["sh", "-lc", "uvx watchfiles --filter python \"uv run src/main.py\" src"]
     restart: unless-stopped
     healthcheck:
       test:
@@ -22,6 +22,7 @@ services:
       start_period: 20s
     environment:
       FLET_DOCKER: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
       # Si ton app Flet utilise des variables, tu peux les mettre ici
       # APP_ENV: "production"
       # API_URL: "https://api.mondomaine.fr"
