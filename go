@@ -1,7 +1,7 @@
 #!/bin/bash
 cd "$(dirname "$0")"
 
-export UV_PROJECT_ENVIRONMENT=".uv-venv"
+# export UV_PROJECT_ENVIRONMENT=".uv-venv"
 
 mode="${1:-}"
 
