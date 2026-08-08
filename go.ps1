@@ -142,12 +142,18 @@ if ($mode -eq "_upu_child") {
 Move-CliIfNeeded -EnvVarName "GSM_WINDOW_CLI" -Left 1913 -Top 779
 
 Set-Location -Path "$PSScriptRoot"
+$env:UV_PROJECT_ENVIRONMENT = ".uv-venv"
 
 # Vérifie silencieusement l'alignement des versions; message orange uniquement en cas d'écart.
 & "$PSScriptRoot\scripts\check_version_sync.ps1"
 
-uv sync --extra desktop
-uv run flet -V
+if ($mode -eq "w") {
+    uv sync --extra desktop --extra web
+}
+else {
+    uv sync --extra desktop
+}
+uv run python -m flet.cli -V
 
 if ($mode -eq "u") {
     # Ouvre un second terminal Windows Terminal, qui se relance lui-même
@@ -164,9 +170,9 @@ if ($mode -eq "u") {
 
 if ($mode -eq "w") {
     Write-Host "Lancement de l'application Flet - MODE WEB"
-    uv run --active python -m flet.cli run ./main_gsm.py -r --web
+    uv run python -m flet.cli run ./src/main_gsm.py -r --web
 }
 else {
     Write-Host "Lancement de l'application Flet - MODE APP"
-    uv run --active python -m flet.cli run ./main_gsm.py -r
+    uv run python -m flet.cli run ./src/main_gsm.py -r
 }

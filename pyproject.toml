@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.14"
 authors = [{ name = "GrCOTE7", email = "GrCOTE7@gmail.com" }]
 dependencies = [
-    "flet==0.86.*",
+    "flet==0.85.3",
     "flet-audio",
     "certifi",
     "google-api-python-client>=2.196.0",
@@ -18,15 +18,12 @@ dependencies = [
     "qrcode[pil]>=8.2",
     "pytest>=8.0.0",
     "flet-webview>=0.85.3",
-    "typing-extensions>=4.16.0"
+    "typing-extensions>=4.16.0",
 ]
 
 [project.optional-dependencies]
-desktop = [
-    "flet-cli",
-    "flet-desktop",
-    "pyshorteners>=1.0.1"
-]
+desktop = ["flet-cli", "flet-desktop", "pyshorteners>=1.0.1"]
+web = ["flet-web==0.85.3"]
 
 [tool.flet]
 org = "com.mycompany"
