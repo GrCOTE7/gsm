@@ -277,17 +277,35 @@ $mode = if ($args.Count -gt 0) { "$($args[0])".ToLowerInvariant() } else { "" }
 $gsmWindowLeft = Get-EnvInt -Name "GSM_WINDOW_LEFT" -Default 1913
 $upuWindowLeft = Get-EnvInt -Name "UPU_WINDOW_LEFT" -Default 2445
 
-# En mode "u", force la CLI GSM sous la fenêtre, même si .env vaut 0.
-if ($mode -eq "u") {
-    Set-DotEnvValue -Path "$PSScriptRoot\.env" -Key "GSM_WINDOW_CLI" -Value "1"
-    Set-Item "Env:GSM_WINDOW_CLI" "1"
-}
-
 # --- Mode interne : ce process EST le second terminal, dédié à upu ------
 # Déclenché uniquement quand ce script se relance lui-même (voir mode "u"
 # plus bas) — pas un mode que tu tapes toi-même en ligne de commande.
 if ($mode -eq "_upu_child") {
-    Move-CliIfNeeded -EnvVarName "UPU_WINDOW_CLI" -Left $upuWindowLeft -Top 779
+    # Optionnel: permet au parent de forcer la position/CLI pour le mode "u"
+    # sans modifier durablement le .env.
+    $childUpuLeft = $upuWindowLeft
+    $forceUpuCli = $false
+
+    if ($args.Count -gt 1) {
+        $parsedLeft = 0
+        if ([int]::TryParse("$($args[1])", [ref]$parsedLeft)) {
+            $childUpuLeft = $parsedLeft
+        }
+    }
+
+    if ($args.Count -gt 2 -and "$($args[2])".ToLowerInvariant() -eq "forcecli") {
+        $forceUpuCli = $true
+    }
+
+    # Alimente la conf UPU lue par l'app (process enfant uniquement).
+    Set-Item "Env:UPU_WINDOW_LEFT" "$childUpuLeft"
+
+    if ($forceUpuCli) {
+        Move-WindowsTerminalWindow -Left $childUpuLeft -Top 779 -Width 540 -Height 300 | Out-Null
+    }
+    else {
+        Move-CliIfNeeded -EnvVarName "UPU_WINDOW_CLI" -Left $childUpuLeft -Top 779 | Out-Null
+    }
 
     Set-Location -Path "$PSScriptRoot"
     uv run --active python -m flet.cli run ./main_upu.py -r
@@ -318,15 +336,15 @@ Set-Location -Path "$PSScriptRoot"
 # Vérifie silencieusement l'alignement des versions; message orange uniquement en cas d'écart.
 & "$PSScriptRoot\scripts\check_version_sync.ps1"
 
-if ($mode -eq "w") {
-    uv sync --extra desktop --extra web
-}
-else {
-    uv sync --extra desktop
-}
-uv run python -m flet.cli -V
+# if ($mode -eq "w") {
+#     uv sync --extra desktop --extra web
+# }
+# else {
+#     uv sync --extra desktop
+# }
+# uv run python -m flet.cli -V
 
-if ($mode -eq "u") {
+if ($mode -eq "gu") {
     $needGsmCli = (Get-EnvInt -Name "GSM_WINDOW_CLI" -Default 0) -eq 1
     $runGsmInChild = $needGsmCli -and (-not $gsmCliMoved)
 
@@ -350,13 +368,24 @@ if ($mode -eq "u") {
     if ($runGsmInChild) {
         return
     }
-}
 
-if ($mode -eq "w") {
-    Write-Host "Lancement de l'application Flet - MODE WEB"
+    # Si GSM n'a pas été délégué à un child, on le lance ici pour garantir
+    # qu'en mode "gu" les deux apps (GSM + UPU) démarrent.
+    Write-Host "Lancement de l'application Flet GSM - MODE APP"
+    uv run python -m flet.cli run ./src/main_gsm.py -r
+}
+elseif ($mode -eq "u") {
+    Write-Host "Lancement de l'application Flet UPU - MODE APP"
+    # En mode "u", on reste dans la CLI courante pour éviter un second terminal.
+    Set-Item "Env:UPU_WINDOW_LEFT" "$gsmWindowLeft"
+    Move-WindowsTerminalWindow -Left $gsmWindowLeft -Top 779 -Width 540 -Height 300 | Out-Null
+    uv run --active python -m flet.cli run ./main_upu.py -r
+}
+elseif ($mode -eq "w") {
+    Write-Host "Lancement de l'application Flet GSM - MODE WEB"
     uv run python -m flet.cli run ./src/main_gsm.py -r --web
 }
 else {
-    Write-Host "Lancement de l'application Flet - MODE APP"
+    Write-Host "Lancement de l'application Flet GSM - MODE APP"
     uv run python -m flet.cli run ./src/main_gsm.py -r
 }
