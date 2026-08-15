@@ -1,0 +1,33 @@
+
+Le vieux go.ps1 a été renommé .ps1
+
+j'ai fait les lanceurs et C:\gsm\scripts\app_window\main.py
+
+ce script affiche 'oki' en CLI et ça marche :-) !
+Ne considérons pour l'heure que ./go.ps1 qui continent juste :
+
+python "$PSScriptRoot/scripts/app_window/main.py" @args
+
+Allons-y, mais avant, pensons algorithme.
+
+1. En effet, nous avons .env qui précise :
+
+GSM_WINDOW_LEFT = 1913 # Default 1386 (1 écran) - 810 pour vidéo (Capture 2,3,1342,800)- 1913 pour sur 2ème écran
+GSM_WINDOW_CLI  =    1 # 0 ('défaut) pas de CLI sous la fenêtre - 1 300 px de place dessous pour la CLI
+
+UPU_WINDOW_LEFT = 2445
+UPU_WINDOW_CLI  =    1
+
+soit, les positions des fenetres des apps, et selon _CLI, la volonté d'y adjoindre une CLI dédiée.
+
+2. Si c'est un 1er lancement, on part toujours de la fenêtre CLI intégrée à VSC. On aura une CLI dédiée qui se positionnera si pour l'app demandée, le param _CLI est 1 sous kla fenetre de l'app (300 px de haut)
+
+Donc, on veut:
+./go qui lance GSM en mode APP
+./go w en mode WEB
+./go u qui lance UPU
+./go gu qui lance les 2, toujours meme façon de gérer la CLI dédiée selon _CLI
+
+Fixons nous pour objectif de faire que ./go pour l'instant, mais bien structuré et modularisé dans scripts/app_window/
+
+En connaissance de toute cela, dessine moi un organigramme qui explose comment faire cela
