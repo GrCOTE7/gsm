@@ -318,11 +318,12 @@ function Initialize-UvEnvironment {
 $gsmWindowLeft = Get-EnvInt -Name "GSM_WINDOW_LEFT" -Default 1913
 $upuWindowLeft = Get-EnvInt -Name "UPU_WINDOW_LEFT" -Default 2445
 
+# --- MODIFICATION : détection du mode ---
+$mode = if ($args.Count -gt 0) { "$($args[0])".ToLowerInvariant() } else { "" }
+
 # ----------------------------------------------------------------------
 #  MODES SPÉCIAUX (commentés pour l'instant)
 # ----------------------------------------------------------------------
-# $mode = if ($args.Count -gt 0) { "$($args[0])".ToLowerInvariant() } else { "" }
-#
 # # En mode "u", force la CLI GSM sous la fenêtre, même si .env vaut 0.
 # if ($mode -eq "u") {
 #     Set-DotEnvValue -Path "$PSScriptRoot\.env" -Key "GSM_WINDOW_CLI" -Value "1"
@@ -354,20 +355,29 @@ if ($args.Count -gt 0 -and "$($args[0])".ToLowerInvariant() -eq "_gsm_child") {
 }
 
 # ----------------------------------------------------------------------
-#  MODE INTERNE : _upu_child (commenté – réservé pour plus tard)
+#  MODE INTERNE : _upu_child
+#  Utilisé comme fallback lorsque la console courante ne peut pas être
+#  déplacée. Le script se relance dans une nouvelle fenêtre Windows Terminal
+#  qui se positionnera sous l'application UPU.
 # ----------------------------------------------------------------------
-# if ($args.Count -gt 0 -and "$($args[0])".ToLowerInvariant() -eq "_upu_child") {
-#     if (-not (Initialize-UvEnvironment)) { return }
-#     Move-CliIfNeeded -EnvVarName "UPU_WINDOW_CLI" -Left $upuWindowLeft -Top 779
-#
-#     Set-Location -Path "$PSScriptRoot"
-#     uv run --active python -m flet.cli run ./main_upu.py -r
-#     return
-# }
+if ($args.Count -gt 0 -and "$($args[0])".ToLowerInvariant() -eq "_upu_child") {
+    # --- MODIFICATION : on initialise uv avant tout ---
+    if (-not (Initialize-UvEnvironment)) {
+        return
+    }
+
+    Move-CliIfNeeded -EnvVarName "UPU_WINDOW_CLI" -Left $upuWindowLeft -Top 779
+
+    Set-Location -Path "$PSScriptRoot"
+    # Note : pas de synchronisation ni de vérification de version pour UPU
+    # dans la version actuelle, conformément à l'original.
+    uv run --active python -m flet.cli run ./main_upu.py -r
+    return
+}
 
 # ----------------------------------------------------------------------
-#  MODE NORMAL (aucun argument)
-#  Lance uniquement l'application GSM.
+#  MODE NORMAL (argument vide ou non reconnu)
+#  Gère le lancement de l'application GSM.
 # ----------------------------------------------------------------------
 # Si GSM_WINDOW_CLI=1, tente de déplacer la console courante.
 # Si échec (ex: terminal intégré VS Code), lance une nouvelle console
