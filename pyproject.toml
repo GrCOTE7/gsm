@@ -19,6 +19,7 @@ dependencies = [
     "pytest>=8.0.0",
     "flet-webview>=0.85.3",
     "typing-extensions>=4.16.0",
+    "pywin32; sys_platform == 'win32'",
 ]
 
 [project.optional-dependencies]

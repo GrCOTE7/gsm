@@ -12,6 +12,18 @@ def resolve_mode(mode: str) -> dict:
 
     mode = mode.lower().strip()
 
+    # Modes internes (fenêtres CLI dédiées lancées par cli_spawner) :
+    # format "_<app>_child[_<mode>]" (ex: _gsm_child, _gsm_child_web).
+    # Le processus enfant relaie l'application demandée, MAIS ne doit pas
+    # rouvrir une nouvelle CLI (sinon récursion infinie de fenêtres).
+    if mode.startswith("_"):
+        parts = mode[1:].split("_")
+        app_name = parts[0] if parts and parts[0] in ("gsm", "upu") else "gsm"
+        child_mode = (
+            parts[2] if len(parts) > 2 and parts[2] in ("app", "web") else "app"
+        )
+        return {"apps": [app_name], "mode": child_mode, "internal_child": True}
+
     # ./go → GSM en mode APP
     if mode == "":
         return {"apps": ["gsm"], "mode": "app"}

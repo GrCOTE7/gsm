@@ -1,5 +1,5 @@
 
-Le vieux go.ps1 a été renommé .ps1
+Le vieux go.ps1 a été renommé go_ori.ps1 ! Il marche bien, mais est trop confus.
 
 j'ai fait les lanceurs et C:\gsm\scripts\app_window\main.py
 

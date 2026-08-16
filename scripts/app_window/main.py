@@ -6,7 +6,15 @@ from app_launcher import launch_app
 
 # Lancer avec : uv run flet run scripts/app_window/main.py -r
 
-sys.argv.append("u")  # Simulation ""./go essai"
+# Les consoles Windows (cp1252) peuvent faire planter les print contenant des
+# caractères non-ASCII (→, …) : on force UTF-8 avec remplacement sûr.
+for stream in (sys.stdout, sys.stderr):
+    try:
+        stream.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
+# sys.argv.append("u")  # Simulation ""./go essai"
 
 
 def get_mode():
