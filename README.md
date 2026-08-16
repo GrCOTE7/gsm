@@ -86,7 +86,7 @@ Bref, vous pouvez ainsi simplement et "rapidement", depuis la branche de votre c
 
 ## 🐳 App in Docker (local)
 
-Si Docker Desktop est installé, lancer l'app localement avec :
+Si vous avez déjà **Docker Desktop** installé et lancé, pour démarrer l'App localement :
 
 ```bash
 docker compose up -d --build
@@ -94,9 +94,9 @@ docker compose up -d --build
 
 Le mode auto-reload est aussi actif en local Docker (watchfiles sur `src/`).
 Quand tu modifies une vue Python, le process redémarre automatiquement.
-Si le navigateur ne se reconnecte pas tout de suite, fais un refresh de la page.
+Au lancement, si le navigateur ne se reconnecte pas tout de suite, fais un refresh de la page.
 
-Puis ouvrir :
+Rendu :
 
 ```text
 http://localhost:8000
