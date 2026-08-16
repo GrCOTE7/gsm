@@ -31,13 +31,15 @@ def debug_dump(action, env):
 
     print("[FLET] Commandes qui seraient exécutées :")
     for app in action["apps"]:
-        print(f"    - python -m flet.cli run main_{app}.py -r")
+        print(f"    - uv run --active python -m flet.cli run main_{app}.py -r")
     print()
 
     print("=== FIN DEBUG ===")
 
 
-def place_cli_window(left: int, top: int = 779, width: int = 540, height: int = 300) -> bool:
+def place_cli_window(
+    left: int, top: int = 779, width: int = 540, height: int = 300
+) -> bool:
     """Place la fenêtre du terminal courant aux pixels exacts (sous l'app).
 
     Reproduit `Move-WindowsTerminalWindow` de go_ori.ps1. Sous Windows
@@ -88,9 +90,15 @@ def place_cli_window(left: int, top: int = 779, width: int = 540, height: int = 
     kernel32.CreateToolhelp32Snapshot.restype = wintypes.HANDLE
     kernel32.CreateToolhelp32Snapshot.argtypes = [wintypes.DWORD, wintypes.DWORD]
     kernel32.Process32FirstW.restype = wintypes.BOOL
-    kernel32.Process32FirstW.argtypes = [wintypes.HANDLE, ctypes.POINTER(PROCESSENTRY32W)]
+    kernel32.Process32FirstW.argtypes = [
+        wintypes.HANDLE,
+        ctypes.POINTER(PROCESSENTRY32W),
+    ]
     kernel32.Process32NextW.restype = wintypes.BOOL
-    kernel32.Process32NextW.argtypes = [wintypes.HANDLE, ctypes.POINTER(PROCESSENTRY32W)]
+    kernel32.Process32NextW.argtypes = [
+        wintypes.HANDLE,
+        ctypes.POINTER(PROCESSENTRY32W),
+    ]
     kernel32.CloseHandle.argtypes = [wintypes.HANDLE]
 
     snapshot = kernel32.CreateToolhelp32Snapshot(0x00000002, 0)  # TH32CS_SNAPPROCESS
@@ -104,7 +112,10 @@ def place_cli_window(left: int, top: int = 779, width: int = 540, height: int = 
         entry.dwSize = ctypes.sizeof(PROCESSENTRY32W)
         if kernel32.Process32FirstW(snapshot, ctypes.byref(entry)):
             while True:
-                procs[entry.th32ProcessID] = (entry.th32ParentProcessID, entry.szExeFile)
+                procs[entry.th32ProcessID] = (
+                    entry.th32ParentProcessID,
+                    entry.szExeFile,
+                )
                 if not kernel32.Process32NextW(snapshot, ctypes.byref(entry)):
                     break
     finally:
