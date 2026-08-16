@@ -35,7 +35,7 @@ def configure_window(
     left: int = 1412,
     top: int = 0,
     width: int = 540,
-    height: int = 1088,
+    height: int = 1080,
     reapply_after_startup: bool = True,
 ) -> None:
     # Desktop-only: browser sessions don't expose a native window to position/resize.
@@ -172,7 +172,7 @@ def gc7_rules(
     # height: int = 742  # Note : 24 (padding top) - 20 (padding bottom) = 1044 → page.window_height = 1044 - 742 Galaxy A5
     if height is None:
         height = (
-            1088 if left >= 1912 else 1040
+            1080 if left >= 1912 else 1040
         )  # Pour adapter écran #2 sans la barre windows
 
     if left == 840:

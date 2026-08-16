@@ -38,3 +38,19 @@ flowchart TD
     style E fill:#fff3bf,stroke:#e6b800
     style K fill:#d3f9d8,stroke:#37b24d
 ```
+
+## Cycle de vie (depuis le fix "l'app ne survit plus à sa CLI")
+
+`run_flet()` (flet_runner.py) est **bloquant** : le launcher reste vivant tant que
+l'app Flet tourne, et **la fermeture de la CLI ferme l'app** :
+
+- **CTRL+C** → `KeyboardInterrupt` → `finally` → `taskkill /PID <flet> /T /F`
+  (toute l'arborescence `uv → python → flet → app` est tuée).
+- **Croix / logoff / shutdown** (Windows) → handler de console
+  (`_watchdog_console_close`) qui tue l'arborescence avant la terminaison.
+- **Linux** → SIGINT / SIGHUP atteignent naturellement tout le groupe de process.
+
+Conséquence : en mode multi-apps **sans CLI dédiée** (`./go gu`, `_CLI=0`), chaque
+app est lancée dans son **propre process** (`_spawn_app_detached`, mode interne
+`_gsm_nocli`), sinon un `run_flet` bloquant empêcherait le lancement des suivantes.
+

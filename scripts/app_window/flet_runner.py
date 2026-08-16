@@ -11,6 +11,13 @@ def run_flet(app: str, env: dict, mode: str):
     Lance Flet pour l'application GSM ou UPU.
     - app: "gsm" ou "upu"
     - mode: "web" ou "app"
+
+    IMPORTANT — cycle de vie :
+    Ce launcher reste BLOQUÉ tant que l'application Flet tourne. Fermer la
+    console CLI (CTRL+C, croix, exit...) doit fermer aussi l'application :
+    - CTRL+C → KeyboardInterrupt → on tue l'arborescence Flet (taskkill /T /F).
+    - Croix / logoff / shutdown → handler de console (Windows) qui tue l'app.
+    - Linux → SIGINT/SIGHUP atteignent naturellement tout le groupe de process.
     """
 
     main_file = _resolve_main_file(app)
@@ -25,16 +32,82 @@ def run_flet(app: str, env: dict, mode: str):
 
     print(f"[FLET] Commande : {' '.join(cmd)}")
 
+    proc = None
     try:
-        subprocess.Popen(cmd)
-        print("[FLET] Process lancé.")
+        # cwd explicite : `uv run` (sans --active) doit trouver le projet
+        # (pyproject.toml / uv.lock) pour resynchroniser l'environnement.
+        proc = subprocess.Popen(cmd, cwd=str(main_file.parent.parent))
+        print(
+            "[FLET] Process lancé — l'application restera liée à cette CLI "
+            "(la fermer fermera l'app)."
+        )
+
+        if platform.system() == "Windows":
+            _watchdog_console_close(proc)
+
+        proc.wait()
+        print("[FLET] Process terminé.")
+    except KeyboardInterrupt:
+        # L'utilisateur ferme la CLI (CTRL+C) : le `finally` ci-dessous tue
+        # l'arborescence Flet encore vivante.
+        print()
+        print("[FLET] Interruption reçue — fermeture de l'application.")
     except Exception as e:
         print(f"[FLET][ERROR] Impossible de lancer Flet : {e}")
+    finally:
+        # Garantie : l'app ne survit JAMAIS à sa CLI. Si le process tourne
+        # encore à ce stade (interruption, erreur), on tue toute l'arborescence.
+        if proc is not None and proc.poll() is None:
+            _terminate_process_tree(proc.pid)
 
 
 # ---------------------------------------------------------------------------
 # HELPERS
 # ---------------------------------------------------------------------------
+
+
+def _watchdog_console_close(proc):
+    """Ferme l'app quand la console CLI est fermée (croix, logoff, shutdown...).
+
+    Le CTRL+C, lui, est déjà géré par Python (KeyboardInterrupt → `finally`
+    de run_flet). Ici on couvre les événements de console qui tueraient ce
+    launcher SANS exécuter `finally` : on tue alors explicitement
+    l'arborescence Flet (taskkill /T /F) avant de laisser le comportement
+    par défaut se produire.
+    """
+    try:
+        import win32api
+        import win32con
+
+        close_events = (
+            win32con.CTRL_CLOSE_EVENT,
+            win32con.CTRL_LOGOFF_EVENT,
+            win32con.CTRL_SHUTDOWN_EVENT,
+            win32con.CTRL_BREAK_EVENT,
+        )
+
+        def _handler(ctrl_type):
+            if ctrl_type in close_events:
+                _terminate_process_tree(proc.pid)
+            # False : on laisse le gestionnaire par défaut terminer ce launcher.
+            return False
+
+        win32api.SetConsoleCtrlHandler(_handler, True)
+    except Exception as e:
+        print(f"[FLET][WARN] Watchdog console indisponible : {e}")
+
+
+def _terminate_process_tree(pid: int):
+    """Tue toute l'arborescence du process (taskkill /T /F). Best-effort."""
+    try:
+        subprocess.run(
+            ["taskkill", "/PID", str(pid), "/T", "/F"],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            creationflags=subprocess.CREATE_NO_WINDOW,
+        )
+    except Exception:
+        pass
 
 
 def _resolve_main_file(app: str) -> Path:
@@ -52,10 +125,18 @@ def _build_flet_command(main_file: Path, mode: str):
 
     uv_exe = _find_uv_executable()
     if uv_exe:
-        cmd = [
-            uv_exe,
-            "run",
-            "--active",
+        # Sans `--active` : `uv run` resynchronise l'environnement (pyproject +
+        # uv.lock) avant d'exécuter. Indispensable en mode WEB : le paquet
+        # `flet-web` doit être installé, et le fallback d'auto-installation du
+        # CLI Flet échoue car les venv gérés par uv n'embarquent pas `pip`.
+        extras = ["desktop"]
+        if mode == "web":
+            extras.append("web")
+
+        cmd = [uv_exe, "run"]
+        for extra in extras:
+            cmd += ["--extra", extra]
+        cmd += [
             "python",
             "-m",
             "flet.cli",

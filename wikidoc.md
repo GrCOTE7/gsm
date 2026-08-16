@@ -93,10 +93,12 @@ Option recommandee sous Windows (wrapper repo):
 ./go
 ```
 
-Equivalent commande explicite:
+Equivalent commande explicite (sans `--active` : `uv run` resynchronise
+l'environnement — c'est ce qui garantit que `flet-web` est présent en WEB) :
 
 ```powershell
-uv run --active python -m flet.cli run -r
+uv run --extra desktop python -m flet.cli run -r            # mode APP
+uv run --extra desktop --extra web python -m flet.cli run -r --web   # mode WEB
 ```
 
 ## Build APK

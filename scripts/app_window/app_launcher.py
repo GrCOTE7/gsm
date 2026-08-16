@@ -31,7 +31,10 @@ def debug_dump(action, env):
 
     print("[FLET] Commandes qui seraient exécutées :")
     for app in action["apps"]:
-        print(f"    - uv run --active python -m flet.cli run main_{app}.py -r")
+        extras = "--extra desktop"
+        if action["mode"] == "web":
+            extras += " --extra web"
+        print(f"    - uv run {extras} python -m flet.cli run main_{app}.py -r")
     print()
 
     print("=== FIN DEBUG ===")
@@ -141,7 +144,15 @@ def place_cli_window(
             break
         pid = info[0]
 
-    def _find_window(target_pid):
+    def _find_window(target_pid, prefer_left, prefer_top):
+        """Fenêtre visible du process donné, la plus proche de la position cible.
+
+        En mode multi-app (./go gu), les deux CLI dédiées (GSM + UPU) sont
+        hébergées par le MÊME process WindowsTerminal : prendre la « première
+        fenêtre trouvée » déplacerait la console de l'autre app. On choisit donc,
+        parmi toutes les fenêtres visibles du process, celle dont le cadre est
+        le plus proche de la position attendue pour CETTE CLI.
+        """
         found = []
 
         def _cb(hwnd_, _):
@@ -154,7 +165,14 @@ def place_cli_window(
             return True
 
         win32gui.EnumWindows(_cb, None)
-        return found[0] if found else None
+        if not found:
+            return None
+
+        def _score(hwnd_):
+            l, t, _, _ = win32gui.GetWindowRect(hwnd_)
+            return abs(l - prefer_left) + abs(t - prefer_top)
+
+        return min(found, key=_score)
 
     # Attend que la fenêtre du terminal soit créée (jusqu'à ~5 s).
     deadline = time.time() + 5.0
@@ -163,7 +181,7 @@ def place_cli_window(
             for pid_ in chain:
                 info = procs.get(pid_)
                 if info and info[1].lower() in group:
-                    hwnd = _find_window(pid_)
+                    hwnd = _find_window(pid_, left, top)
                     if hwnd:
                         return _move(hwnd)
         time.sleep(0.1)
@@ -172,12 +190,60 @@ def place_cli_window(
     return False
 
 
+def _spawn_app_detached(app: str, env: dict, mode: str):
+    """Lance une app dans son PROPRE process (mode multi-apps sans CLI dédiée).
+
+    `run_flet` est bloquant (l'app reste liée au cycle de vie de la CLI) : il
+    ne peut donc y avoir qu'UN run_flet par process. On relance ce pipeline en
+    mode interne "_<app>_nocli" : l'enfant hérite de la console courante (logs
+    visibles) et sa fermeture (CTRL+C / croix) fermera l'app via run_flet.
+    """
+    import subprocess
+    import sys
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[2]
+    main_py = root / "scripts" / "app_window" / "main.py"
+    child_arg = f"_{app.lower()}_nocli"
+    if mode and mode != "app":
+        child_arg += f"_{mode}"
+    subprocess.Popen([sys.executable, str(main_py), child_arg])
+
+
+def _apply_upu_alone(env: dict) -> None:
+    """./go u (UPU SEULE) : UPU prend la place de GSM.
+
+    En mode normal (./go gu), UPU s'ouvre à UPU_WINDOW_LEFT (à côté de GSM).
+    Quand UPU est seule, il n'y a pas de GSM à côté : inutile de laisser vide
+    la place de GSM — UPU s'ouvre donc à GSM_WINDOW_LEFT (ex: 1913), avec ou
+    sans CLI dédiée.
+
+    Implémentation : on pose UPU_ALONE=1 (hérité par la CLI dédiée et l'app),
+    puis on force UPU_WINDOW_LEFT := GSM_WINDOW_LEFT dans env + os.environ.
+    L'enfant CLI relit le .env (UPU_WINDOW_LEFT=2445) dans son propre
+    launch_app : le flag hérité réapplique alors le même forçage (idempotent).
+    """
+    if env.get("_upu_alone_requested") or os.environ.get("UPU_ALONE") == "1":
+        gsm_left = int(
+            env.get("GSM_WINDOW_LEFT", os.environ.get("GSM_WINDOW_LEFT", "1913"))
+        )
+        env["UPU_WINDOW_LEFT"] = gsm_left
+        os.environ["UPU_WINDOW_LEFT"] = str(gsm_left)
+        os.environ["UPU_ALONE"] = "1"
+
+
 def launch_app(action: dict):
     env = load_env()
 
     if action["mode"] == "debug":
         debug_dump(action, env)
         return
+
+    # UPU seule (./go u) : flag posé par le parent, puis appliqué partout
+    # (parent, enfant CLI, app) de façon idempotente.
+    if action["apps"] == ["upu"] and not action.get("internal_child"):
+        env["_upu_alone_requested"] = True
+    _apply_upu_alone(env)
 
     for app in action["apps"]:
         cli_key = f"{app.upper()}_WINDOW_CLI"
@@ -189,12 +255,20 @@ def launch_app(action: dict):
             # mode interne (_gsm_child) et lance Flet.
             spawn_cli_if_needed(app, env, action["mode"])
         elif action.get("internal_child"):
-            # Enfant de la CLI : repositionne la fenêtre du terminal sous l'app
-            # (pixels exacts, comme go_ori.ps1), puis lance Flet.
-            left = int(env.get(f"{app.upper()}_WINDOW_LEFT", 0))
-            place_cli_window(left=left, top=779, width=540, height=300)
+            # Enfant : repositionne la fenêtre du terminal sous l'app (pixels
+            # exacts, comme go_ori.ps1) SAUF si c'est un enfant détaché sans
+            # CLI dédiée (_gsm_nocli), puis lance Flet (bloquant).
+            if not action.get("skip_cli_placement"):
+                left = int(env.get(f"{app.upper()}_WINDOW_LEFT", 0))
+                place_cli_window(left=left, top=779, width=540, height=300)
             run_flet(app, env, action["mode"])
         else:
             # Mode sans CLI : Flet se lance et se positionne tout seul
-            # (window_config de l'app).
-            run_flet(app, env, action["mode"])
+            # (window_config de l'app). run_flet est bloquant (lié à la CLI) :
+            # en mode multi-apps, chaque app doit donc tourner dans son PROPRE
+            # process, sinon la 1ère bloquerait et les suivantes ne seraient
+            # jamais lancées.
+            if len(action["apps"]) > 1:
+                _spawn_app_detached(app, env, action["mode"])
+            else:
+                run_flet(app, env, action["mode"])

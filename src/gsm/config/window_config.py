@@ -12,8 +12,8 @@ class WindowConfig:
     """Position de la fenêtre de l'application sur l'écran, ainsi que sa taille et son comportement.
     1 - 1386 x 1038 (D)
     2 - 810 x 1412 pour vidéo - Capture: ←2 ↑3 ↔1386 ↕800
-    3 - 1913 x 1086 (Écran 2 - Pos 1)
-    3 - 2475 x 1086 (  "     - Pos 2)
+    3 - 1913 x 1080 (Écran 2 - Pos 1)  ← aligné sur UPU (2ᵉ écran sans barre des tâches)
+    3 - 2475 x 1080 (  "     - Pos 2)
     """
 
     top: int = 0
@@ -34,7 +34,9 @@ class WindowConfig:
 
     def __post_init__(self):
         if self.left > 1912:
-            self.height = 1086
+            # 1080 = hauteur exacte du 2ᵉ écran (1920×1080, pas de barre des
+            # tâches) → alignée sur la fenêtre UPU (gc7_rules).
+            self.height = 1080
 
     def apply(self, page: ft.Page):
         if self.left < 1373:
@@ -46,7 +48,10 @@ class WindowConfig:
 
         page.window.width = self.width
 
-        self.height = self.height - 307 if self.need_cli_below else self.height
+        # -301 : hauteur CLI dédiée = 1080 - 301 = 779 px (identique à l'ancien
+        # 1086 - 307), pour que la CLI (posée à top=779 par place_cli_window)
+        # reste exactement collée sous l'app.
+        self.height = self.height - 301 if self.need_cli_below else self.height
         # page.window.height = h
 
         page.window.top = self.top

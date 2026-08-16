@@ -10,7 +10,11 @@ from app_launcher import launch_app
 # caractères non-ASCII (→, …) : on force UTF-8 avec remplacement sûr.
 for stream in (sys.stdout, sys.stderr):
     try:
-        stream.reconfigure(encoding="utf-8", errors="replace")
+        # `reconfigure` n'existe que sur io.TextIOWrapper (pas sur TextIO,
+        # d'où le getattr pour rester compatible et satisfaire Pylance).
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure is not None:
+            reconfigure(encoding="utf-8", errors="replace")
     except Exception:
         pass
 
@@ -26,9 +30,17 @@ def get_mode():
 def main():
     mode = get_mode()
     action = resolve_mode(mode)
-    launch_app(action)
+    try:
+        launch_app(action)
+    except KeyboardInterrupt:
+        # CTRL+C tombant après la fermeture de l'app : sortie propre, sans traceback.
+        print()
+        print("[GSM] Fermeture demandée.")
+        return 1
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    rc = main()
     print(f"{datetime.now().strftime('%H:%M:%S')} > ", end="")
+    sys.exit(rc)

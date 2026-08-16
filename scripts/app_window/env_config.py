@@ -41,4 +41,13 @@ def load_env() -> dict:
                 except:
                     env[key] = value
 
+    # EXPORT : les valeurs du .env doivent aussi être visibles des process
+    # enfants (CLI dédiée, process Flet...). Les apps (window_config.py,
+    # upu/config.py) lisent en effet leur géométrie via os.getenv().
+    # Sans cet export, un shell parent contenant une valeur OBSOLÈTE (ex:
+    # UPU_WINDOW_CLI=0 héritée d'un ancien go_ori.ps1) l'emporterait sur le
+    # .env — l'app UPU s'ouvrirait alors en pleine hauteur malgré la CLI.
+    for key, value in env.items():
+        os.environ[key] = str(value)
+
     return env
