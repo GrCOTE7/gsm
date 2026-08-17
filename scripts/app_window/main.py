@@ -1,10 +1,7 @@
 import sys
-from datetime import datetime
 
 from mode_resolver import resolve_mode
 from app_launcher import launch_app
-
-# Lancer avec : uv run flet run scripts/app_window/main.py -r
 
 # Les consoles Windows (cp1252) peuvent faire planter les print contenant des
 # caractères non-ASCII (→, …) : on force UTF-8 avec remplacement sûr.
@@ -18,11 +15,9 @@ for stream in (sys.stdout, sys.stderr):
     except Exception:
         pass
 
-# sys.argv.append("u")  # Simulation ""./go essai"
-
 
 def get_mode():
-    """Retourne le mode demandé : '', 'w', 'u', 'gu'."""
+    """Retourne le mode demandé : '', 'w', 'u', 'gu', 'debug'."""
     args = sys.argv[1:]
     return args[0].lower() if args else ""
 
@@ -41,6 +36,4 @@ def main():
 
 
 if __name__ == "__main__":
-    rc = main()
-    print(f"{datetime.now().strftime('%H:%M:%S')} > ", end="")
-    sys.exit(rc)
+    sys.exit(main())

@@ -12,8 +12,9 @@ binaires `GSM_WINDOW_CLI` / `UPU_WINDOW_CLI` — soit **10 combinaisons distinct
 | Lanceur PowerShell (choix de l'interpréteur) | `go.ps1` (racine) |
 | Lecture des args + dispatch | `scripts/app_window/main.py` |
 | Résolution du mode (public + interne `_child` / `_nocli`) | `scripts/app_window/mode_resolver.py` |
-| Orchestration (`launch_app`, `place_cli_window`, UPU seule, multi-apps détaché) | `scripts/app_window/app_launcher.py` |
-| Ouverture CLI wt + chemins pwsh/wt | `scripts/app_window/cli_spawner.py` |
+| Orchestration (`launch_app`, UPU seule, multi-apps détaché) | `scripts/app_window/app_launcher.py` |
+| Fenêtres CLI dédiées (`spawn_cli_if_needed`, `place_cli_window`) | `scripts/app_window/cli_spawner.py` |
+| Constantes & helpers partagés (`ROOT`, géométrie CLI, `child_arg`) | `scripts/app_window/common.py` |
 | Lancement Flet **bloquant** + cycle de vie (CTRL+C / croix / watchdog) | `scripts/app_window/flet_runner.py` |
 | Lecture + **export** du `.env` vers les process enfants | `scripts/app_window/env_config.py` |
 | Géométrie fenêtre GSM | `src/gsm/config/window_config.py` |
@@ -54,7 +55,7 @@ flowchart TD
     F -- "1 : CLI dédiée" --> K["spawn_cli_if_needed() -> _spawn_cli_windows()<br/>[scripts/app_window/cli_spawner.py]"]
     K --> L["wt.exe -w new --pos left,top-300 --size 60,12 -d C:/gsm<br/>pwsh -NoExit -File go.ps1 _app_child[_web]<br/>[go.ps1]"]
     L --> M["[ENFANT] main.py _app_child<br/>resolve_mode -> {internal_child, skip_cli_placement}<br/>[main.py + mode_resolver.py]"]
-    M --> N["place_cli_window(left, 779, 540, 300)<br/>sauf skip_cli_placement<br/>[scripts/app_window/app_launcher.py]"]
+    M --> N["place_cli_window(left, 779, 540, 300)<br/>sauf skip_cli_placement<br/>[scripts/app_window/cli_spawner.py]"]
     N --> H
 
     H --> I["uv run --extra desktop python -m flet.cli run src/main_app.py -r<br/>[scripts/app_window/flet_runner.py]"]

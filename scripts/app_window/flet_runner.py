@@ -5,6 +5,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+from common import ROOT
+
 
 def run_flet(app: str, env: dict, mode: str):
     """
@@ -34,9 +36,9 @@ def run_flet(app: str, env: dict, mode: str):
 
     proc = None
     try:
-        # cwd explicite : `uv run` (sans --active) doit trouver le projet
-        # (pyproject.toml / uv.lock) pour resynchroniser l'environnement.
-        proc = subprocess.Popen(cmd, cwd=str(main_file.parent.parent))
+        # cwd = racine du dépôt : `uv run` (sans --active) doit y trouver le
+        # projet (pyproject.toml / uv.lock) pour resynchroniser l'environnement.
+        proc = subprocess.Popen(cmd, cwd=str(ROOT))
         print(
             "[FLET] Process lancé — l'application restera liée à cette CLI "
             "(la fermer fermera l'app)."
@@ -112,8 +114,7 @@ def _terminate_process_tree(pid: int):
 
 def _resolve_main_file(app: str) -> Path:
     """Retourne le fichier main_gsm.py ou main_upu.py."""
-    base = Path(__file__).resolve().parents[2]
-    return base / "src" / f"main_{app.lower()}.py"
+    return ROOT / "src" / f"main_{app.lower()}.py"
 
 
 def _build_flet_command(main_file: Path, mode: str):
@@ -142,7 +143,7 @@ def _build_flet_command(main_file: Path, mode: str):
             "flet.cli",
             "run",
             str(main_file),
-            "-r",  # release mode
+            "-r",  # --recursive : hot reload (mode "release" de la doc flet)
         ]
     else:
         print(
@@ -154,7 +155,7 @@ def _build_flet_command(main_file: Path, mode: str):
             "flet.cli",
             "run",
             str(main_file),
-            "-r",  # release mode
+            "-r",  # --recursive : hot reload
         ]
 
     if mode == "web":
