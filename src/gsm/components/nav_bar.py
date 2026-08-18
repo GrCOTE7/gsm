@@ -6,35 +6,115 @@ from gsm.routing.routes_registry import PAGES
 
 
 class NavBar:
-    """
-    Barre de navigation, générée depuis le registre `PAGES` — les pages
-    sans `label` (ex. une page volontairement masquée) sont simplement
-    ignorées ici, sans rien à modifier dans le registre lui-même.
 
-    `ft.is_route_active()` et `ft.context.page.navigate()` exigent d'être
-    appelés depuis un composant rendu à l'intérieur de l'arbre du Router
-    — c'est le cas ici, NavBar n'étant utilisé que depuis MainLayout, qui
-    est lui-même une route.
-    """
+    # ========================================================
+    # APP BAR
+    # ========================================================
 
     @staticmethod
     @ft.component
-    def view() -> ft.Control:
-        return ft.Row(
+    def app_bar(
+        title: str,
+        on_menu_click: ft.ControlEventHandler[ft.IconButton] | None,
+    ) -> ft.AppBar:
+
+        appbar = ft.AppBar()
+        appbar.leading = ft.IconButton(
+            icon=ft.Icons.MENU,
+            tooltip="Menu",
+            on_click=on_menu_click,
+        )
+        appbar.leading_width = 48
+        appbar.title = ft.Row(
+            spacing=12,
             controls=[
-                NavBar._link(page.label, page.path)
-                for page in PAGES
-                if page.label is not None
+                ft.Text(
+                    "GSM",
+                    size=20,
+                    weight=ft.FontWeight.BOLD,
+                ),
+                ft.Text(
+                    title,
+                    size=18,
+                ),
             ],
         )
 
+        return appbar
+
+    # ========================================================
+    # DRAWER
+    # ========================================================
+
     @staticmethod
-    def _link(label: str, path: str) -> ft.Control:
-        active = ft.is_route_active(path, exact=(path == "/"))
-        return ft.TextButton(
-            label,
-            style=ft.ButtonStyle(
-                color=ft.Colors.PRIMARY if active else ft.Colors.ON_SURFACE,
-            ),
-            on_click=lambda _: ft.context.page.navigate(path),
+    @ft.component
+    def drawer(
+        on_change: ft.ControlEventHandler[ft.NavigationDrawer] | None,
+    ) -> ft.NavigationDrawer:
+
+        return ft.NavigationDrawer(
+            controls=[
+                ft.Container(
+                    padding=ft.Padding.only(
+                        left=20,
+                        top=20,
+                        bottom=20,
+                    ),
+                    content=ft.Text(
+                        "GSM",
+                        size=24,
+                        weight=ft.FontWeight.BOLD,
+                    ),
+                ),
+                *[
+                    NavBar._destination(page)
+                    for page in PAGES
+                    if page.label is not None
+                ],
+            ],
+            on_change=on_change,
         )
+
+    # ========================================================
+    # DESTINATION
+    # ========================================================
+
+    @staticmethod
+    def _destination(page) -> ft.NavigationDrawerDestination:
+
+        return ft.NavigationDrawerDestination(
+            label=page.label,
+            icon=NavBar._icon_for(page.path),
+        )
+
+    # ========================================================
+    # ICONES
+    # ========================================================
+
+    @staticmethod
+    def _icon_for(path: str):
+
+        icons = {
+            "/": ft.Icons.HOME_OUTLINED,
+            "/about": ft.Icons.INFO_OUTLINED,
+            "/counter": ft.Icons.EXPOSURE_PLUS_1,
+            "/test": ft.Icons.BUG_REPORT_OUTLINED,
+        }
+
+        return icons.get(
+            path,
+            ft.Icons.CIRCLE_OUTLINED,
+        )
+
+    @staticmethod
+    def path_for_selected_index(selected_index: int | None) -> str | None:
+
+        destinations = [page for page in PAGES if page.label is not None]
+
+        if selected_index is None:
+            return None
+
+        if selected_index < 0 or selected_index >= len(destinations):
+            return None
+
+        return destinations[selected_index].path

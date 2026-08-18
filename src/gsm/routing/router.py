@@ -1,9 +1,11 @@
 # src/gsm/routing/router.py
 import flet as ft
+
 # from gsm.config.app_config import config
 from gsm.layouts.main_layout import MainLayout
 from gsm.routing.routes_registry import PAGES
 from gsm.views.pages.not_found import NotFoundPage
+
 
 class AppRouter:
     """
@@ -41,7 +43,15 @@ class AppRouter:
     @staticmethod
     @ft.component
     def view() -> ft.Control:
-        return ft.SafeArea(ft.Router(routes=AppRouter.routes()))
+        return ft.SafeArea(
+            expand=True,
+            content=ft.Container(
+                expand=True,
+                content=ft.Router(
+                    routes=AppRouter.routes(),
+                ),
+            ),
+        )
 
 
 # ---------------------------------------------
