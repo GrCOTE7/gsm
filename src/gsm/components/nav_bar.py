@@ -1,3 +1,5 @@
+# src/gsm/components/nav_bar.py
+
 import flet as ft
 
 from gsm.routing.routes_registry import PAGES

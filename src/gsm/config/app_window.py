@@ -1,3 +1,5 @@
+# src/gsm/config/app_windows.py
+
 from ..helpers.env import is_dev_env
 
 
@@ -12,4 +14,3 @@ class AppWindow:
         prefix = cls.dev_prefix if is_dev_env() else ""
         base_title = f"{prefix}{cls.app_name}"
         return f"{base_title} | {page_label}" if page_label else base_title
-        

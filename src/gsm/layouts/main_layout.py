@@ -1,4 +1,5 @@
 # src/gsm/layouts/main_layout.py
+
 import flet as ft
 from gsm.components.nav_bar import NavBar
 from gsm.config.app_window import AppWindow

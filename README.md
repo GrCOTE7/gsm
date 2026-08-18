@@ -334,6 +334,8 @@ For more details on building Windows package, refer to the [Windows Packaging Gu
 
 ## Structure
 
+### Dossiers / Fichiers
+
 ```bash
 c:\gsm/
 ├── src/           ← Application active (refactorisée)
@@ -345,6 +347,24 @@ c:\gsm/
 ├── README.md
 ├── apk.ps1        ← Build APK
 └── go.ps1         ← Lanceur
+```
+
+### Fonctionnelle
+
+```bash
+App (./src/)
+└── AppRouter
+    └── MainLayout
+        ├── AppBar / NavBar
+        │   ├── Menu ☰
+        │   ├── Logo GSM
+        │   └── titre / navigation
+        │
+        ├── Sidebar / Drawer
+        │   └── navigation issue de PAGES
+        │
+        └── RouteOutlet
+            └── Page courante
 ```
 
 ---
