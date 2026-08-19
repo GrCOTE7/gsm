@@ -126,13 +126,19 @@ def _launch_single_app(app: str, action: LaunchAction, env: dict) -> None:
 
 
 def _launch_cli_parent(app: str, action: LaunchAction, env: dict) -> None:
-    """Process parent demandant une CLI dédiée pour `app`."""
+    """Process parent demandant une CLI dédiée pour `app`.
+
+    Si l'ouverture de la CLI dédiée échoue, on lance l'app sans CLI dédiée au
+    lieu d'abandonner complètement le démarrage.
+    """
     if _reuse_current_cli(app, action):
         _launch_in_current_cli(app, action, env)
     elif _should_close_stale_cli(app):
         _with_replacing_flag(lambda: _replace_stale_cli(app, env, action.mode))
     else:
-        spawn_cli_if_needed(app, env, action.mode)
+        if not spawn_cli_if_needed(app, env, action.mode):
+            print(f"[CLI] Échec de la CLI dédiée pour {app} : lancement de l'app sans console.")
+            _launch_plain(app, action, env)
 
 
 def _launch_in_current_cli(app: str, action: LaunchAction, env: dict) -> None:

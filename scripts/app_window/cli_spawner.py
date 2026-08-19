@@ -22,20 +22,20 @@ TERMINAL_HOSTS = (
 )
 
 
-def spawn_cli_if_needed(app: str, env: dict, mode: str) -> None:
-    """Ouvre une console dédiée sous la fenêtre Flet (no-op si *_WINDOW_CLI=0).
+def spawn_cli_if_needed(app: str, env: dict, mode: str) -> bool:
+    """Ouvre une console dédiée sous la fenêtre Flet.
 
+    Retourne True si une CLI dédiée a bien été lancée, False sinon.
     - Windows → Windows Terminal (wt.exe) ;
     - Linux → gnome-terminal / xterm.
     """
     if not wants_cli(app, env):
         print(f"[CLI] Pas de console dédiée pour {app}.")
-        return
+        return False
 
     if platform.system() == "Windows":
-        _spawn_cli_windows(app, env, mode)
-    else:
-        _spawn_cli_linux(app)
+        return _spawn_cli_windows(app, env, mode)
+    return _spawn_cli_linux(app)
 
 
 def place_cli_window(
@@ -341,7 +341,7 @@ def _monitor_height_at(x: int) -> int:
     return 1080
 
 
-def _spawn_cli_windows(app: str, env: dict, mode: str) -> None:
+def _spawn_cli_windows(app: str, env: dict, mode: str) -> bool:
     print(f"[CLI] Ouverture d'une console PowerShell pour {app}...")
 
     left = window_left(app, env)
@@ -373,14 +373,19 @@ def _spawn_cli_windows(app: str, env: dict, mode: str) -> None:
     # chemin ABSOLU : la CLI dédiée a un PATH minimal (sans 'powershell') et
     # CreateProcess échouerait sinon (WinError 2).
     ps_exe = _find_powershell_exe()
-    subprocess.Popen(
-        [
-            ps_exe,
-            "-NoProfile",
-            "-Command",
-            f"Start-Process -FilePath \"{wt_exe}\" -ArgumentList '{wt_cmd}'",
-        ]
-    )
+    try:
+        subprocess.Popen(
+            [
+                ps_exe,
+                "-NoProfile",
+                "-Command",
+                f"Start-Process -FilePath \"{wt_exe}\" -ArgumentList '{wt_cmd}'",
+            ]
+        )
+        return True
+    except OSError:
+        print(f"[CLI][ERROR] Impossible d'ouvrir la console Windows pour {app}.")
+        return False
 
 
 # ---------------------------------------------------------------------------
@@ -388,19 +393,30 @@ def _spawn_cli_windows(app: str, env: dict, mode: str) -> None:
 # ---------------------------------------------------------------------------
 
 
-def _spawn_cli_linux(app: str) -> None:
-    """Ouvre une console Linux sous la fenêtre Flet (gnome-terminal puis xterm)."""
+def _spawn_cli_linux(app: str) -> bool:
+    """Ouvre une console Linux sous la fenêtre Flet (gnome-terminal puis xterm).
+
+    Retourne True si une console a pu être démarrée, False sinon.
+    On contourne les PATH entries qui existent mais ne sont pas exécutable
+    (PermissionError / OSError) : ce cas est fréquent sur certains systèmes
+    Linux où un binaire résolu dans le PATH n'a pas les bons droits.
+    """
     print(f"[CLI] Ouverture d'une console Linux pour {app}...")
 
     for terminal in ("gnome-terminal", "xterm"):
+        terminal_path = shutil.which(terminal)
+        if not terminal_path or not os.access(terminal_path, os.X_OK):
+            continue
+
         try:
-            subprocess.Popen([terminal])
+            subprocess.Popen([terminal_path])
             print(f"[CLI] {terminal} lancé.")
-            return
-        except FileNotFoundError:
+            return True
+        except (FileNotFoundError, PermissionError, OSError):
             continue
 
     print("[CLI][ERROR] Aucun terminal disponible (gnome-terminal, xterm).")
+    return False
 
 
 

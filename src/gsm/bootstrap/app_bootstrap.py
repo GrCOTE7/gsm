@@ -20,11 +20,12 @@ class AppBootstrap:
     def __init__(self, page: ft.Page) -> None:
         # Configuration impérative de la fenêtre (titre L_ si local, etc.)
         config.window.apply(page)
+        page.theme_mode = config.get_theme_mode()
         self.page = page
-        
+
         # 🎯 FORCE LA REDIRECTION INITIALE et À CHAQUE REFRESH VERS VOTRE ACCUEIL DE CONFIG
         # page.go(config.home_path or '/')
-            
+
         # Rendu déclaratif de l'arbre de composants. `App.view` est passé
         # par référence. Flet se charge de l'invoquer à chaque changement d'état.
         page.render(App.view)

@@ -7,8 +7,11 @@
 # * chemins personnalisés
 # * règles internes
 
-import flet as ft
+import os
 from dataclasses import dataclass, field
+
+import flet as ft
+
 from gsm.config.window_config import WindowConfig
 
 
@@ -24,6 +27,18 @@ class AppConfig:
     home_path: str = "/counter"
     home_path: str = "/about"
     # ----------------------------------------
+
+    # Thème global de l'app. Par défaut on force un thème stable pour éviter que
+    # Flet hérite du thème système de la machine (Windows sombre, Linux clair).
+    theme_mode: ft.ThemeMode = ft.ThemeMode.DARK
+
+    def get_theme_mode(self) -> ft.ThemeMode:
+        raw = os.getenv("GSM_THEME_MODE", "").strip().upper()
+        if raw == "LIGHT":
+            return ft.ThemeMode.LIGHT
+        if raw == "DARK":
+            return ft.ThemeMode.DARK
+        return self.theme_mode
 
     # Vos futurs paramètres ici (theme, etc...)
 
