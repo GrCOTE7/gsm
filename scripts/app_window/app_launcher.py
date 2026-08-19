@@ -3,7 +3,7 @@ import time
 from pathlib import Path
 
 from env_config import load_env
-from cli_spawner import spawn_cli_if_needed, place_cli_window, _close_stale_cli
+from cli_spawner import spawn_cli_if_needed, place_cli_window, _close_stale_cli, get_ancestor_pids
 from flet_runner import run_flet, _build_flet_command, _resolve_main_file
 from common import MAIN_PY, CLI_TOP, CLI_WIDTH, CLI_HEIGHT, child_arg
 
@@ -61,31 +61,30 @@ def _spawn_app_detached(app: str, env: dict, mode: str, suffix: str = "nocli"):
 def _reuse_current_cli(app: str, action: dict) -> bool:
     """Vrai si la CLI dédiée COURANTE doit être réutilisée pour `app`.
 
-    Marqueur posé par cli_spawner (GSM_DEDICATED_CLI) quand il ouvre une CLI
-    dédiée : on est alors dans la console de cette CLI (relance de ./go).
     - mono-app → la CLI courante est toujours réutilisée ;
-    - multi-app (./go gu) → seule l'app que la CLI courante héberge déjà
-      (GSM_DEDICATED_CLI_APP) est réutilisée — l'autre est spawnée.
+    - multi-app (./go gu) → seule l'app que la CLI courante héberge déjà est
+      réutilisée — l'autre est spawnée.
     """
-    if os.environ.get("GSM_DEDICATED_CLI") != "1":
+    current = _current_cli_app()
+    if current is None:
         return False
     if len(action["apps"]) == 1:
         return True
-    return os.environ.get("GSM_DEDICATED_CLI_APP", "") == app
+    return current == app
 
 
 def _should_close_stale_cli(app: str) -> bool:
     """Vrai s'il faut remplacer une ancienne CLI dédiée de `app` avant d'en ouvrir
     une nouvelle.
 
-    On est dans une CLI dédiée (relance de ./go depuis cette console) et l'app
-    cible n'est pas la CLI courante. L'existence réelle d'une CLI de `app` est
-    vérifiée par _close_stale_cli (filtre Get-CimInstance sur 'go.ps1 _<app>_child') :
-    inutile de dépendre de marqueurs hérités (absents sur les CLI créées avant).
+    On est dans une CLI dédiée et l'app cible n'est pas la CLI courante.
+    L'existence réelle de la CLI de `app` est vérifiée par _close_stale_cli
+    (filtre Get-CimInstance sur 'go.ps1 _<app>_child').
     """
-    if os.environ.get("GSM_DEDICATED_CLI") != "1":
+    current = _current_cli_app()
+    if current is None:
         return False
-    return os.environ.get("GSM_DEDICATED_CLI_APP", "") != app
+    return current != app
 
 
 # ---------------------------------------------------------------------------
@@ -127,6 +126,23 @@ def _wait_for_new_cli_pid(app: str, old_pid: int | None, timeout: float = 12.0) 
         if cur is not None and cur != old_pid:
             return
         time.sleep(0.3)
+
+
+def _current_cli_app() -> str | None:
+    """App de la CLI dédiée courante ('gsm'/'upu'), ou None hors CLI dédiée.
+
+    go.ps1 écrit le PID de la console dans %TEMP%\\gsm_cli_<app>.pid en mode
+    _<app>_child : on compare la chaîne des ancêtres du process courant (le
+    pwsh de la console, éventuellement via uv) à ces fichiers. Fiable même si
+    l'environnement n'est pas hérité (wt.exe relaie au serveur Windows Terminal,
+    dont l'environnement est figé).
+    """
+    ancestors = get_ancestor_pids(os.getpid())
+    for app in ("gsm", "upu"):
+        pid = _read_pid(app)
+        if pid is not None and pid in ancestors:
+            return app
+    return None
 
 
 def _apply_upu_alone(env: dict) -> None:
@@ -187,12 +203,15 @@ def launch_app(action: dict):
                     if _should_close_stale_cli(app):
                         _set_replacing_flag(True)
                         try:
-                            current = os.environ.get("GSM_DEDICATED_CLI_APP", "")
+                            current = _current_cli_app()
                             if current:
-                                # Supprime le .pid de la CLI courante : son
-                                # watcher de liaison sort (il verrait la mort
-                                # de l'ancienne CLI comme une fermeture).
+                                old_pid = _read_pid(current)
+                                # Casse le lien du watcher de la CLI courante
+                                # (elle change d'app) et réécrit le .pid sous
+                                # la nouvelle app pour la détection future.
                                 _cli_pid_file(current).unlink(missing_ok=True)
+                                if old_pid is not None:
+                                    _cli_pid_file(app).write_text(str(old_pid), encoding="ascii")
                             _close_stale_cli(app)
                             # Laisse le watcher constater la rupture de lien.
                             time.sleep(2.5)

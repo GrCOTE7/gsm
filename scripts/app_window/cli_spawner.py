@@ -275,6 +275,72 @@ def _close_stale_cli(app: str) -> None:
     print(f"[CLI] Ancienne CLI dédiée de {app} remplacée.")
 
 
+def get_ancestor_pids(pid: int, limit: int = 10) -> list[int]:
+    """Retourne la chaîne des PID ancêtres de `pid` (sans `pid`), du plus proche
+    au plus lointain (ex: parent, grand-parent, ...). Windows only ; [] ailleurs.
+
+    Utilisé par app_launcher pour identifier la CLI dédiée courante : go.ps1
+    écrit le PID de la console dans %TEMP%\\gsm_cli_<app>.pid, on compare donc
+    les ancêtres du process courant (le pwsh de la console, éventuellement via
+    uv) à ces fichiers — fiable même si l'environnement n'est pas hérité par le
+    serveur Windows Terminal (wt.exe relaie à un serveur dont l'env est figé).
+    """
+    if platform.system() != "Windows":
+        return []
+
+    import ctypes
+    from ctypes import wintypes
+
+    kernel32 = ctypes.windll.kernel32
+
+    class PROCESSENTRY32W(ctypes.Structure):
+        _fields_ = [
+            ("dwSize", wintypes.DWORD),
+            ("cntUsage", wintypes.DWORD),
+            ("th32ProcessID", wintypes.DWORD),
+            ("th32DefaultHeapID", ctypes.POINTER(wintypes.ULONG)),
+            ("th32ModuleID", wintypes.DWORD),
+            ("cntThreads", wintypes.DWORD),
+            ("th32ParentProcessID", wintypes.DWORD),
+            ("pcPriClassBase", ctypes.c_long),
+            ("dwFlags", wintypes.DWORD),
+            ("szExeFile", ctypes.c_wchar * 260),
+        ]
+
+    kernel32.CreateToolhelp32Snapshot.restype = wintypes.HANDLE
+    kernel32.CreateToolhelp32Snapshot.argtypes = [wintypes.DWORD, wintypes.DWORD]
+    kernel32.Process32FirstW.restype = wintypes.BOOL
+    kernel32.Process32FirstW.argtypes = [wintypes.HANDLE, ctypes.POINTER(PROCESSENTRY32W)]
+    kernel32.Process32NextW.restype = wintypes.BOOL
+    kernel32.Process32NextW.argtypes = [wintypes.HANDLE, ctypes.POINTER(PROCESSENTRY32W)]
+    kernel32.CloseHandle.argtypes = [wintypes.HANDLE]
+
+    parent_of = {}
+    snapshot = kernel32.CreateToolhelp32Snapshot(0x00000002, 0)  # TH32CS_SNAPPROCESS
+    if snapshot == wintypes.HANDLE(-1).value:
+        return []
+    try:
+        entry = PROCESSENTRY32W()
+        entry.dwSize = ctypes.sizeof(PROCESSENTRY32W)
+        if kernel32.Process32FirstW(snapshot, ctypes.byref(entry)):
+            while True:
+                parent_of[entry.th32ProcessID] = entry.th32ParentProcessID
+                if not kernel32.Process32NextW(snapshot, ctypes.byref(entry)):
+                    break
+    finally:
+        kernel32.CloseHandle(snapshot)
+
+    ancestors = []
+    cur = pid
+    for _ in range(limit):
+        parent = parent_of.get(cur)
+        if not parent or parent == cur or parent == 0:
+            break
+        ancestors.append(parent)
+        cur = parent
+    return ancestors
+
+
 def _monitor_height_at(x: int) -> int:
     """Hauteur en pixels de l'écran contenant la coordonnée x."""
     import win32api
@@ -318,12 +384,6 @@ def _spawn_cli_windows(app: str, env: dict, mode: str):
     # chemin ABSOLU : la CLI dédiée a un PATH minimal (sans 'powershell') et
     # CreateProcess échouerait sinon (WinError 2).
     ps_exe = _find_powershell_exe()
-    # Marqueurs hérités par la CLI dédiée qui va s'ouvrir (wt -> pwsh -> python) :
-    # si ./go est relancé DEPUIS cette console, app_launcher réutilisera la
-    # console courante au lieu d'en ouvrir une autre — en mono-app, ou en
-    # multi-app pour l'app qu'elle héberge déjà (GSM_DEDICATED_CLI_APP).
-    os.environ["GSM_DEDICATED_CLI"] = "1"
-    os.environ["GSM_DEDICATED_CLI_APP"] = app
     subprocess.Popen(
         [
             ps_exe,

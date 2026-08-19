@@ -170,6 +170,8 @@ cython_debug/
 # !src/gsm/services/storage/
 # !src/gsm/services/storage/**
 
+.tmp/
+
 credentials.json
 sync.ffs_lock
 
