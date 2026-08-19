@@ -230,6 +230,51 @@ def _find_pwsh_exe() -> str:
     return "pwsh"
 
 
+def _find_powershell_exe() -> str:
+    """Chemin absolu d'un PowerShell utilisable pour lancer wt.exe.
+
+    IMPORTANT : la CLI dédiée démarre avec un PATH minimal (sans 'powershell'
+    ni 'pwsh') : CreateProcess échoue (WinError 2) sur un simple nom. On force
+    donc un chemin absolu — pwsh (PowerShell 7, déjà résolu en absolu par
+    _find_pwsh_exe) d'abord, puis Windows PowerShell 5.1, toujours présent
+    sous %SystemRoot%\\System32\\WindowsPowerShell\\v1.0.
+    """
+    pwsh = _find_pwsh_exe()
+    if os.path.basename(pwsh).lower() == "pwsh.exe":
+        return pwsh
+    system_root = os.environ.get("SystemRoot", r"C:\Windows")
+    powershell_51 = os.path.join(
+        system_root, "System32", "WindowsPowerShell", "v1.0", "powershell.exe"
+    )
+    if os.path.exists(powershell_51):
+        return powershell_51
+    return pwsh  # dernier recours : "powershell.exe" (PATH normal)
+
+
+def _close_stale_cli(app: str) -> None:
+    """Ferme l'ancienne CLI dédiée de `app` (best-effort, Windows).
+
+    La CLI dédiée de `app` est un pwsh -NoExit au prompt, dont la ligne de
+    commande contient 'go.ps1 _<app>_child' : on tue toute son arborescence
+    (la fenêtre wt se ferme). À appeler avant de spawner une nouvelle CLI
+    (relance de ./go gu depuis une CLI dédiée) pour ne jamais avoir de CLI
+    dédiée en double.
+    """
+    ps = _find_powershell_exe()
+    script = (
+        "Get-CimInstance Win32_Process "
+        '-Filter "Name=\'pwsh.exe\' OR Name=\'powershell.exe\'" | '
+        f"Where-Object {{ $_.ProcessId -ne $PID -and $_.CommandLine -like '*go.ps1*_{app}_child*' }} | "
+        "ForEach-Object { taskkill /PID $_.ProcessId /T /F 2>$null | Out-Null }"
+    )
+    subprocess.run(
+        [ps, "-NoProfile", "-NonInteractive", "-Command", script],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+    print(f"[CLI] Ancienne CLI dédiée de {app} remplacée.")
+
+
 def _monitor_height_at(x: int) -> int:
     """Hauteur en pixels de l'écran contenant la coordonnée x."""
     import win32api
@@ -269,10 +314,19 @@ def _spawn_cli_windows(app: str, env: dict, mode: str):
         f'"{pwsh_exe}" -NoExit -File "{GO_PS1}" {child_arg_}'
     )
 
-    # On demande à PowerShell de lancer wt.exe via ShellExecute
+    # On demande à PowerShell de lancer wt.exe via ShellExecute. Toujours un
+    # chemin ABSOLU : la CLI dédiée a un PATH minimal (sans 'powershell') et
+    # CreateProcess échouerait sinon (WinError 2).
+    ps_exe = _find_powershell_exe()
+    # Marqueurs hérités par la CLI dédiée qui va s'ouvrir (wt -> pwsh -> python) :
+    # si ./go est relancé DEPUIS cette console, app_launcher réutilisera la
+    # console courante au lieu d'en ouvrir une autre — en mono-app, ou en
+    # multi-app pour l'app qu'elle héberge déjà (GSM_DEDICATED_CLI_APP).
+    os.environ["GSM_DEDICATED_CLI"] = "1"
+    os.environ["GSM_DEDICATED_CLI_APP"] = app
     subprocess.Popen(
         [
-            "powershell",
+            ps_exe,
             "-NoProfile",
             "-Command",
             f"Start-Process -FilePath \"{wt_exe}\" -ArgumentList '{wt_cmd}'",

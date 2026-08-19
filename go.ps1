@@ -27,6 +27,23 @@ else {
 }
 
 $mainPy = Join-Path $PSScriptRoot "scripts\app_window\main.py"
+
+# CLI dédiée (mode interne _<app>_child[_mode]) : on enregistre le PID de la
+# console (%TEMP%\gsm_cli_<app>.pid) et on lance le watcher de liaison — fermer
+# l'une des deux CLI (mode gu) ferme aussi l'autre. Le watcher est idempotent
+# (un seul par CLI via son fichier lock).
+if ($args.Count -gt 0 -and $args[0] -match '^_(gsm|upu)_child') {
+    $cliApp = $Matches[1]
+    Set-Content -Path (Join-Path $env:TEMP "gsm_cli_$cliApp.pid") -Value $PID -Encoding ascii
+    $watcherPwsh = Join-Path $PSHOME "pwsh.exe"
+    if (-not (Test-Path $watcherPwsh)) { $watcherPwsh = "pwsh" }
+    Start-Process -WindowStyle Hidden -FilePath $watcherPwsh -ArgumentList @(
+        "-NoProfile", "-NonInteractive", "-WindowStyle", "Hidden",
+        "-File", (Join-Path $PSScriptRoot "scripts\app_window\cli_watcher.ps1"),
+        "-App", $cliApp
+    ) | Out-Null
+}
+
 if ($python -eq "uv") {
     & $python run python $mainPy @args
 }

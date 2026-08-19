@@ -23,6 +23,8 @@ import tempfile
 import time
 from pathlib import Path
 
+from cli_spawner import _find_powershell_exe
+
 ROOT = Path(__file__).resolve().parents[2]
 ENV_PATH = ROOT / ".env"
 MAIN_PY = ROOT / "scripts" / "app_window" / "main.py"
@@ -71,7 +73,7 @@ PWSH_CLI_PATTERNS = ("*go.ps1 _gsm_child*", "*go.ps1 _upu_child*")
 
 def _ps(script: str) -> None:
     subprocess.run(
-        ["powershell", "-NoProfile", "-NonInteractive", "-Command", script],
+        [_find_powershell_exe(), "-NoProfile", "-NonInteractive", "-Command", script],
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
     )
@@ -94,7 +96,7 @@ def _count_app_processes() -> int:
         f"Where-Object {{ {cond} }} | Measure-Object).Count"
     )
     out = subprocess.run(
-        ["powershell", "-NoProfile", "-NonInteractive", "-Command", script],
+        [_find_powershell_exe(), "-NoProfile", "-NonInteractive", "-Command", script],
         capture_output=True, text=True,
     ).stdout.strip()
     return int(out) if out.isdigit() else 0
