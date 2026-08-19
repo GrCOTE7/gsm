@@ -352,19 +352,24 @@ c:\gsm/
 ### Fonctionnelle
 
 ```bash
-App (./src/)
-└── AppRouter
-    └── MainLayout
-        ├── AppBar / NavBar
-        │   ├── Menu ☰
-        │   ├── Logo GSM
-        │   └── titre / navigation
-        │
-        ├── Sidebar / Drawer
-        │   └── navigation issue de PAGES
-        │
-        └── RouteOutlet
-            └── Page courante
+                 App (./src/)
+                     │
+                  Router
+                     │
+              Layout Route
+                     │
+                MainLayout
+                     │
+                 Pagelet
+             ┌───────┴───────┐
+             │               │
+          AppBar           Drawer
+             │               │
+             └───────┬───────┘
+                     │
+                   Outlet
+                     │
+                 Page GSM
 ```
 
 ---
