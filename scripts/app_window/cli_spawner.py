@@ -1,3 +1,5 @@
+"""Ouverture et positionnement des fenêtres CLI dédiées (sous chaque app)."""
+
 import os
 import platform
 import shutil
@@ -5,25 +7,28 @@ import subprocess
 import time
 from pathlib import Path
 
-from common import ROOT, GO_PS1, CLI_WIDTH, CLI_HEIGHT, CLI_TOP, child_arg
+from common import ROOT, GO_PS1, CLI_WIDTH, CLI_HEIGHT, CLI_TOP, SUFFIX_CLI, child_arg
+from env_config import window_left, wants_cli
 
 if platform.system() == "Windows":
     import win32gui
     import win32process
 
+# Hôtes de terminal Windows, par ordre de préférence : le CADRE visible
+# (WindowsTerminal.exe) d'abord, puis le miroir OpenConsole (conhost.exe).
+TERMINAL_HOSTS = (
+    ("windowsterminal.exe", "wt.exe"),
+    ("openconsole.exe", "conhost.exe"),
+)
 
-def spawn_cli_if_needed(app: str, env: dict, mode: str):
+
+def spawn_cli_if_needed(app: str, env: dict, mode: str) -> None:
+    """Ouvre une console dédiée sous la fenêtre Flet (no-op si *_WINDOW_CLI=0).
+
+    - Windows → Windows Terminal (wt.exe) ;
+    - Linux → gnome-terminal / xterm.
     """
-    Ouvre une console dédiée sous la fenêtre Flet.
-    - Si *_WINDOW_CLI = 0 → no-op
-    - Windows → spawn Windows Terminal (wt.exe)
-    - Linux → spawn gnome-terminal / xterm
-    """
-
-    cli_key = f"{app.upper()}_WINDOW_CLI"
-    cli_flag = int(env.get(cli_key, 0))
-
-    if cli_flag == 0:
+    if not wants_cli(app, env):
         print(f"[CLI] Pas de console dédiée pour {app}.")
         return
 
@@ -47,7 +52,6 @@ def place_cli_window(
         return False
 
     import ctypes
-    from ctypes import wintypes
 
     kernel32 = ctypes.windll.kernel32
 
@@ -66,6 +70,43 @@ def place_cli_window(
 
     # 2) Windows Terminal : retrouver le CADRE visible (WindowsTerminal.exe)
     #    via la chaîne des processus parents.
+    procs = _snapshot_processes()
+    chain = _process_chain(procs, os.getpid())
+
+    # Attend que la fenêtre du terminal soit créée (jusqu'à ~5 s).
+    deadline = time.time() + 5.0
+    while time.time() < deadline:
+        for group in TERMINAL_HOSTS:
+            for pid in chain:
+                info = procs.get(pid)
+                if info and info[1].lower() in group:
+                    hwnd = _nearest_window(pid, left, top)
+                    if hwnd:
+                        return _move(hwnd)
+        time.sleep(0.1)
+
+    print("[CLI][ERROR] Fenêtre du terminal introuvable pour repositionnement.")
+    return False
+
+
+# ---------------------------------------------------------------------------
+# Snapshot des processus Windows (partagé : repositionnement + ancêtres)
+# ---------------------------------------------------------------------------
+
+
+def _snapshot_processes() -> dict[int, tuple[int, str]]:
+    """Instantané des processus : PID -> (PID parent, nom de l'exécutable).
+
+    Windows uniquement ; {} ailleurs.
+    """
+    if platform.system() != "Windows":
+        return {}
+
+    import ctypes
+    from ctypes import wintypes
+
+    kernel32 = ctypes.windll.kernel32
+
     class PROCESSENTRY32W(ctypes.Structure):
         _fields_ = [
             ("dwSize", wintypes.DWORD),
@@ -97,9 +138,9 @@ def place_cli_window(
     snapshot = kernel32.CreateToolhelp32Snapshot(0x00000002, 0)  # TH32CS_SNAPPROCESS
     if snapshot == wintypes.HANDLE(-1).value:
         print("[CLI][ERROR] Impossible d'énumérer les processus.")
-        return False
+        return {}
 
-    procs = {}
+    procs: dict[int, tuple[int, str]] = {}
     try:
         entry = PROCESSENTRY32W()
         entry.dwSize = ctypes.sizeof(PROCESSENTRY32W)
@@ -114,17 +155,16 @@ def place_cli_window(
     finally:
         kernel32.CloseHandle(snapshot)
 
-    # Ordre de préférence : le cadre WindowsTerminal d'abord, puis OpenConsole.
-    host_groups = [
-        ("windowsterminal.exe", "wt.exe"),
-        ("openconsole.exe", "conhost.exe"),
-    ]
+    return procs
 
-    # Chaîne de processus : [nous, parent, grand-parent, ...]
+
+def _process_chain(
+    procs: dict[int, tuple[int, str]], pid: int, limit: int = 32
+) -> list[int]:
+    """Chaîne des processus ancêtres de `pid` : [nous, parent, grand-parent...]."""
     chain = []
-    pid = os.getpid()
     seen = set()
-    for _ in range(32):
+    for _ in range(limit):
         if not pid or pid in seen:
             break
         seen.add(pid)
@@ -133,51 +173,66 @@ def place_cli_window(
         if not info:
             break
         pid = info[0]
+    return chain
 
-    def _find_window(target_pid, prefer_left, prefer_top):
-        """Fenêtre visible du process donné, la plus proche de la position cible.
 
-        En mode multi-app (./go gu), les deux CLI dédiées (GSM + UPU) sont
-        hébergées par le MÊME process WindowsTerminal : prendre la « première
-        fenêtre trouvée » déplacerait la console de l'autre app. On choisit donc,
-        parmi toutes les fenêtres visibles du process, celle dont le cadre est
-        le plus proche de la position attendue pour CETTE CLI.
-        """
-        found = []
+def _nearest_window(target_pid: int, prefer_left: int, prefer_top: int):
+    """Fenêtre visible du process donnée, la plus proche de la position cible.
 
-        def _cb(hwnd_, _):
-            # Toujours renvoyer True : arrêter tôt (False) fait lever
-            # pywintypes.error(18) par win32gui.EnumWindows.
-            if win32gui.IsWindowVisible(hwnd_):
-                _, wpid = win32process.GetWindowThreadProcessId(hwnd_)
-                if wpid == target_pid:
-                    found.append(hwnd_)
-            return True
+    En mode multi-app (./go gu), les deux CLI dédiées (GSM + UPU) sont
+    hébergées par le MÊME process WindowsTerminal : prendre la « première
+    fenêtre trouvée » déplacerait la console de l'autre app. On choisit donc,
+    parmi toutes les fenêtres visibles du process, celle dont le cadre est le
+    plus proche de la position attendue pour CETTE CLI.
+    """
+    found = []
 
-        win32gui.EnumWindows(_cb, None)
-        if not found:
-            return None
+    def _cb(hwnd, _):
+        # Toujours renvoyer True : arrêter tôt (False) fait lever
+        # pywintypes.error(18) par win32gui.EnumWindows.
+        if win32gui.IsWindowVisible(hwnd):
+            _, wpid = win32process.GetWindowThreadProcessId(hwnd)
+            if wpid == target_pid:
+                found.append(hwnd)
+        return True
 
-        def _score(hwnd_):
-            l, t, _, _ = win32gui.GetWindowRect(hwnd_)
-            return abs(l - prefer_left) + abs(t - prefer_top)
+    win32gui.EnumWindows(_cb, None)
+    if not found:
+        return None
 
-        return min(found, key=_score)
+    def _distance(hwnd) -> int:
+        left, top, _, _ = win32gui.GetWindowRect(hwnd)
+        return abs(left - prefer_left) + abs(top - prefer_top)
 
-    # Attend que la fenêtre du terminal soit créée (jusqu'à ~5 s).
-    deadline = time.time() + 5.0
-    while time.time() < deadline:
-        for group in host_groups:
-            for pid_ in chain:
-                info = procs.get(pid_)
-                if info and info[1].lower() in group:
-                    hwnd = _find_window(pid_, left, top)
-                    if hwnd:
-                        return _move(hwnd)
-        time.sleep(0.1)
+    return min(found, key=_distance)
 
-    print("[CLI][ERROR] Fenêtre du terminal introuvable pour repositionnement.")
-    return False
+
+def get_ancestor_pids(pid: int, limit: int = 10) -> list[int]:
+    r"""Retourne la chaîne des PID ancêtres de `pid` (sans `pid`), du plus
+    proche au plus lointain (ex: parent, grand-parent, ...). Windows only ;
+    [] ailleurs.
+
+    Utilisé par app_launcher pour identifier la CLI dédiée courante : go.ps1
+    écrit le PID de la console dans %TEMP%\gsm_cli_<app>.pid, on compare donc
+    les ancêtres du process courant (le pwsh de la console, éventuellement via
+    uv) à ces fichiers — fiable même si l'environnement n'est pas hérité par le
+    serveur Windows Terminal (wt.exe relaie à un serveur dont l'env est figé).
+    """
+    if platform.system() != "Windows":
+        return []
+
+    parent_of = {pid_: parent for pid_, (parent, _) in _snapshot_processes().items()}
+
+    ancestors = []
+    current = pid
+    for _ in range(limit):
+        parent = parent_of.get(current)
+        if not parent or parent == current or parent == 0:
+            break
+        ancestors.append(parent)
+        current = parent
+    return ancestors
+
 
 # ---------------------------------------------------------------------------
 # WINDOWS IMPLEMENTATION
@@ -224,20 +279,20 @@ def _find_pwsh_exe() -> str:
         ),
         "powershell.exe",  # dernier recours : Windows PowerShell 5.1
     ]
-    for c in candidates:
-        if os.path.exists(c):
-            return c
+    for candidate in candidates:
+        if os.path.exists(candidate):
+            return candidate
     return "pwsh"
 
 
 def _find_powershell_exe() -> str:
-    """Chemin absolu d'un PowerShell utilisable pour lancer wt.exe.
+    r"""Chemin absolu d'un PowerShell utilisable pour lancer wt.exe.
 
     IMPORTANT : la CLI dédiée démarre avec un PATH minimal (sans 'powershell'
     ni 'pwsh') : CreateProcess échoue (WinError 2) sur un simple nom. On force
     donc un chemin absolu — pwsh (PowerShell 7, déjà résolu en absolu par
     _find_pwsh_exe) d'abord, puis Windows PowerShell 5.1, toujours présent
-    sous %SystemRoot%\\System32\\WindowsPowerShell\\v1.0.
+    sous %SystemRoot%\System32\WindowsPowerShell\v1.0.
     """
     pwsh = _find_pwsh_exe()
     if os.path.basename(pwsh).lower() == "pwsh.exe":
@@ -275,72 +330,6 @@ def _close_stale_cli(app: str) -> None:
     print(f"[CLI] Ancienne CLI dédiée de {app} remplacée.")
 
 
-def get_ancestor_pids(pid: int, limit: int = 10) -> list[int]:
-    """Retourne la chaîne des PID ancêtres de `pid` (sans `pid`), du plus proche
-    au plus lointain (ex: parent, grand-parent, ...). Windows only ; [] ailleurs.
-
-    Utilisé par app_launcher pour identifier la CLI dédiée courante : go.ps1
-    écrit le PID de la console dans %TEMP%\\gsm_cli_<app>.pid, on compare donc
-    les ancêtres du process courant (le pwsh de la console, éventuellement via
-    uv) à ces fichiers — fiable même si l'environnement n'est pas hérité par le
-    serveur Windows Terminal (wt.exe relaie à un serveur dont l'env est figé).
-    """
-    if platform.system() != "Windows":
-        return []
-
-    import ctypes
-    from ctypes import wintypes
-
-    kernel32 = ctypes.windll.kernel32
-
-    class PROCESSENTRY32W(ctypes.Structure):
-        _fields_ = [
-            ("dwSize", wintypes.DWORD),
-            ("cntUsage", wintypes.DWORD),
-            ("th32ProcessID", wintypes.DWORD),
-            ("th32DefaultHeapID", ctypes.POINTER(wintypes.ULONG)),
-            ("th32ModuleID", wintypes.DWORD),
-            ("cntThreads", wintypes.DWORD),
-            ("th32ParentProcessID", wintypes.DWORD),
-            ("pcPriClassBase", ctypes.c_long),
-            ("dwFlags", wintypes.DWORD),
-            ("szExeFile", ctypes.c_wchar * 260),
-        ]
-
-    kernel32.CreateToolhelp32Snapshot.restype = wintypes.HANDLE
-    kernel32.CreateToolhelp32Snapshot.argtypes = [wintypes.DWORD, wintypes.DWORD]
-    kernel32.Process32FirstW.restype = wintypes.BOOL
-    kernel32.Process32FirstW.argtypes = [wintypes.HANDLE, ctypes.POINTER(PROCESSENTRY32W)]
-    kernel32.Process32NextW.restype = wintypes.BOOL
-    kernel32.Process32NextW.argtypes = [wintypes.HANDLE, ctypes.POINTER(PROCESSENTRY32W)]
-    kernel32.CloseHandle.argtypes = [wintypes.HANDLE]
-
-    parent_of = {}
-    snapshot = kernel32.CreateToolhelp32Snapshot(0x00000002, 0)  # TH32CS_SNAPPROCESS
-    if snapshot == wintypes.HANDLE(-1).value:
-        return []
-    try:
-        entry = PROCESSENTRY32W()
-        entry.dwSize = ctypes.sizeof(PROCESSENTRY32W)
-        if kernel32.Process32FirstW(snapshot, ctypes.byref(entry)):
-            while True:
-                parent_of[entry.th32ProcessID] = entry.th32ParentProcessID
-                if not kernel32.Process32NextW(snapshot, ctypes.byref(entry)):
-                    break
-    finally:
-        kernel32.CloseHandle(snapshot)
-
-    ancestors = []
-    cur = pid
-    for _ in range(limit):
-        parent = parent_of.get(cur)
-        if not parent or parent == cur or parent == 0:
-            break
-        ancestors.append(parent)
-        cur = parent
-    return ancestors
-
-
 def _monitor_height_at(x: int) -> int:
     """Hauteur en pixels de l'écran contenant la coordonnée x."""
     import win32api
@@ -352,10 +341,10 @@ def _monitor_height_at(x: int) -> int:
     return 1080
 
 
-def _spawn_cli_windows(app: str, env: dict, mode: str):
+def _spawn_cli_windows(app: str, env: dict, mode: str) -> None:
     print(f"[CLI] Ouverture d'une console PowerShell pour {app}...")
 
-    left = int(env.get(f"{app.upper()}_WINDOW_LEFT", 0))
+    left = window_left(app, env)
 
     # La console est créée DIRECTEMENT à la bonne position (pixels) : sous la
     # fenêtre de l'app, qui réserve ~CLI_HEIGHT px en bas de l'écran cible.
@@ -368,7 +357,7 @@ def _spawn_cli_windows(app: str, env: dict, mode: str):
     # go.ps1 est relancé en mode interne "_<app>_child[_<mode>]" : ce mode est
     # géré par mode_resolver/app_launcher pour relancer Flet SANS rouvrir une
     # nouvelle CLI (évite la récursion) ; la console reste ouverte (-NoExit).
-    child_arg_ = child_arg(app, mode, "child")
+    child_arg_ = child_arg(app, mode, SUFFIX_CLI)
     # Taille volontairement modeste : wt.exe ne dimensionne qu'en caractères
     # (--size c,r) ; 60 colonnes ≈ CLI_WIDTH px et 12 lignes tiennent dans la
     # bande de ~CLI_HEIGHT px réservée sous la fenêtre de l'app.
@@ -399,29 +388,19 @@ def _spawn_cli_windows(app: str, env: dict, mode: str):
 # ---------------------------------------------------------------------------
 
 
-def _spawn_cli_linux(app: str):
-    """
-    Ouvre une console Linux sous la fenêtre Flet.
-    - gnome-terminal si disponible
-    - sinon xterm
-    """
-
+def _spawn_cli_linux(app: str) -> None:
+    """Ouvre une console Linux sous la fenêtre Flet (gnome-terminal puis xterm)."""
     print(f"[CLI] Ouverture d'une console Linux pour {app}...")
 
-    # Essayer gnome-terminal
-    try:
-        subprocess.Popen(["gnome-terminal"])
-        print("[CLI] gnome-terminal lancé.")
-        return
-    except FileNotFoundError:
-        pass
-
-    # Essayer xterm
-    try:
-        subprocess.Popen(["xterm"])
-        print("[CLI] xterm lancé.")
-        return
-    except FileNotFoundError:
-        pass
+    for terminal in ("gnome-terminal", "xterm"):
+        try:
+            subprocess.Popen([terminal])
+            print(f"[CLI] {terminal} lancé.")
+            return
+        except FileNotFoundError:
+            continue
 
     print("[CLI][ERROR] Aucun terminal disponible (gnome-terminal, xterm).")
+
+
+

@@ -1,9 +1,10 @@
 """Constantes et helpers partagés du launcher (scripts/app_window).
 
-Regroupe ce qui était dupliqué entre cli_spawner.py, app_launcher.py,
-flet_runner.py et env_config.py : chemins du dépôt, géométrie de la CLI
-dédiée et construction de l'argument interne enfant.
+Regroupe ce qui est partagé entre cli_spawner.py, app_launcher.py,
+flet_runner.py, env_config.py et demo_configs.py : chemins du dépôt,
+géométrie de la CLI dédiée et construction de l'argument interne enfant.
 """
+
 from pathlib import Path
 
 # Racine du dépôt (app_window -> scripts -> gsm).
@@ -17,8 +18,9 @@ CLI_WIDTH = 540
 CLI_HEIGHT = 300
 CLI_TOP = 779
 
-# Largeur commune des fenêtres d'app GSM / UPU (miroir de la CLI en dessous).
-APP_WIDTH = 540
+# Suffixes des modes internes enfant (voir mode_resolver._resolve_internal).
+SUFFIX_CLI = "child"
+SUFFIX_DETACHED = "nocli"
 
 
 def child_arg(app: str, mode: str, suffix: str) -> str:

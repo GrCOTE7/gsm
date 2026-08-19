@@ -138,7 +138,7 @@
   "task.allowAutomaticTasks": "on",
   //
   "editor.snippetSuggestions": "top",
-  "python-envs.defaultEnvManager": "ms-python.python:system",
+  "python-envs.defaultEnvManager": "ms-python.python:venv",
   "git.ignoreLimitWarning": true,
   "python.analysis.extraPaths": ["./src"],
   "python.analysis.useLibraryCodeForTypes": true,

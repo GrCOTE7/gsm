@@ -7,11 +7,12 @@
     Mécanique :
     - go.ps1 écrit le PID de la console dans %TEMP%\gsm_cli_<app>.pid ;
     - chaque watcher surveille le .pid de l'AUTRE app : s'il meurt sans qu'un
-      remplacement planifié soit en cours (flag %TEMP%\gsm_cli_replacing posé par
-      app_launcher pendant un respawn), la CLI courante est fermée (taskkill de
-      son pwsh → la fenêtre wt se ferme) ;
+      remplacement planifié soit en cours (flag %TEMP%\gsm_cli_replacing posé
+      par app_launcher pendant un respawn), la CLI courante est fermée
+      (taskkill de son pwsh → la fenêtre wt se ferme) ;
     - si la CLI courante est fermée, le watcher (enfant du pwsh) meurt avec elle.
 #>
+[CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)][string]$App
 )
@@ -22,7 +23,7 @@ $tempDir = $env:TEMP
 $myPidFile = Join-Path $tempDir "gsm_cli_$App.pid"
 $other = if ($App -eq 'gsm') { 'upu' } else { 'gsm' }
 $otherPidFile = Join-Path $tempDir "gsm_cli_$other.pid"
-$replacingFlag = Join-Path $tempDir "gsm_cli_replacing"
+$replacingFlagPath = Join-Path $tempDir "gsm_cli_replacing"
 
 # Garde-fou : un seul watcher par CLI (fichier lock avec le PID du watcher).
 $lockFile = Join-Path $tempDir "gsm_cli_$App.watcher.pid"
@@ -71,7 +72,7 @@ while ($true) {
     # L'autre CLI existait et n'est plus là : attendre la fin d'un éventuel
     # remplacement planifié (flag posé par le launcher pendant un respawn gu).
     $waited = 0
-    while ((Test-Path $replacingFlag) -and $waited -lt 40) {
+    while ((Test-Path $replacingFlagPath) -and $waited -lt 40) {
         Start-Sleep -Milliseconds 500
         $waited += 1
     }

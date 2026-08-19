@@ -1,5 +1,7 @@
-import platform
+"""Lancement Flet (bloquant) + cycle de vie lié à la CLI courante."""
+
 import os
+import platform
 import shutil
 import subprocess
 import sys
@@ -8,30 +10,22 @@ from pathlib import Path
 from common import ROOT
 
 
-def run_flet(app: str, env: dict, mode: str):
-    """
-    Lance Flet pour l'application GSM ou UPU.
-    - app: "gsm" ou "upu"
-    - mode: "web" ou "app"
+def run_flet(app: str, env: dict, mode: str) -> None:
+    """Lance Flet pour l'application GSM ou UPU, puis reste bloqué.
 
-    IMPORTANT — cycle de vie :
-    Ce launcher reste BLOQUÉ tant que l'application Flet tourne. Fermer la
+    Le launcher reste BLOQUÉ tant que l'application Flet tourne. Fermer la
     console CLI (CTRL+C, croix, exit...) doit fermer aussi l'application :
-    - CTRL+C → KeyboardInterrupt → on tue l'arborescence Flet (taskkill /T /F).
-    - Croix / logoff / shutdown → handler de console (Windows) qui tue l'app.
+    - CTRL+C → KeyboardInterrupt → on tue l'arborescence Flet (taskkill /T /F) ;
+    - Croix / logoff / shutdown → handler de console (Windows) qui tue l'app ;
     - Linux → SIGINT/SIGHUP atteignent naturellement tout le groupe de process.
     """
-
     main_file = _resolve_main_file(app)
     if not main_file.exists():
         print(f"[FLET][ERROR] Fichier introuvable : {main_file}")
         return
 
     print(f"[FLET] Lancement de {app.upper()} -> {mode.upper()}")
-
-    # Commande Flet
     cmd = _build_flet_command(main_file, mode)
-
     print(f"[FLET] Commande : {' '.join(cmd)}")
 
     proc = None
@@ -54,8 +48,8 @@ def run_flet(app: str, env: dict, mode: str):
         # l'arborescence Flet encore vivante.
         print()
         print("[FLET] Interruption reçue — fermeture de l'application.")
-    except Exception as e:
-        print(f"[FLET][ERROR] Impossible de lancer Flet : {e}")
+    except Exception as exc:
+        print(f"[FLET][ERROR] Impossible de lancer Flet : {exc}")
     finally:
         # Garantie : l'app ne survit JAMAIS à sa CLI. Si le process tourne
         # encore à ce stade (interruption, erreur), on tue toute l'arborescence.
@@ -68,14 +62,10 @@ def run_flet(app: str, env: dict, mode: str):
 # ---------------------------------------------------------------------------
 
 
-def _watchdog_console_close(proc):
+def _watchdog_console_close(proc: subprocess.Popen) -> None:
     """Ferme l'app quand la console CLI est fermée (croix, logoff, shutdown...).
 
-    Le CTRL+C, lui, est déjà géré par Python (KeyboardInterrupt → `finally`
-    de run_flet). Ici on couvre les événements de console qui tueraient ce
-    launcher SANS exécuter `finally` : on tue alors explicitement
-    l'arborescence Flet (taskkill /T /F) avant de laisser le comportement
-    par défaut se produire.
+    Le CTRL+C, lui, est déjà géré par Python (KeyboardInterrupt → `finally` de run_flet). Ici on couvre les événements de console qui tueraient ce launcher SANS exécuter `finally` : on tue alors explicitement l'arborescence Flet (taskkill /T /F) avant de laisser le comportement par défaut se produire.
     """
     try:
         import win32api
@@ -95,11 +85,11 @@ def _watchdog_console_close(proc):
             return False
 
         win32api.SetConsoleCtrlHandler(_handler, True)
-    except Exception as e:
-        print(f"[FLET][WARN] Watchdog console indisponible : {e}")
+    except Exception as exc:
+        print(f"[FLET][WARN] Watchdog console indisponible : {exc}")
 
 
-def _terminate_process_tree(pid: int):
+def _terminate_process_tree(pid: int) -> None:
     """Tue toute l'arborescence du process (taskkill /T /F). Best-effort."""
     try:
         subprocess.run(
@@ -117,25 +107,16 @@ def _resolve_main_file(app: str) -> Path:
     return ROOT / "src" / f"main_{app.lower()}.py"
 
 
-def _build_flet_command(main_file: Path, mode: str):
-    """
-    Construit la commande Flet selon le mode.
-    - Mode APP → desktop
-    - Mode WEB → web
-    """
-
+def _build_flet_command(main_file: Path, mode: str) -> list[str]:
+    """Construit la commande Flet selon le mode (APP → desktop, WEB → web)."""
     uv_exe = _find_uv_executable()
     if uv_exe:
         # Sans `--active` : `uv run` resynchronise l'environnement (pyproject +
         # uv.lock) avant d'exécuter. Indispensable en mode WEB : le paquet
         # `flet-web` doit être installé, et le fallback d'auto-installation du
         # CLI Flet échoue car les venv gérés par uv n'embarquent pas `pip`.
-        extras = ["desktop"]
-        if mode == "web":
-            extras.append("web")
-
         cmd = [uv_exe, "run"]
-        for extra in extras:
+        for extra in _required_extras(mode):
             cmd += ["--extra", extra]
         cmd += [
             "python",
@@ -164,6 +145,14 @@ def _build_flet_command(main_file: Path, mode: str):
     return cmd
 
 
+def _required_extras(mode: str) -> list[str]:
+    """Extras uv à resynchroniser : toujours desktop, plus web en mode WEB."""
+    extras = ["desktop"]
+    if mode == "web":
+        extras.append("web")
+    return extras
+
+
 def _find_uv_executable() -> str | None:
     """Retourne le chemin de uv, même si le PATH est limité (wt.exe)."""
     # 1) PATH courant
@@ -185,3 +174,4 @@ def _find_uv_executable() -> str | None:
                 return path
 
     return None
+

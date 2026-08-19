@@ -4,57 +4,70 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts" / "app_window"))
 
-import mode_resolver
+from mode_resolver import resolve_mode
 
 
 def test_default_gsm_app():
-    assert mode_resolver.resolve_mode("") == {"apps": ["gsm"], "mode": "app"}
+    action = resolve_mode("")
+    assert action.apps == ["gsm"]
+    assert action.mode == "app"
+    assert not action.internal_child
 
 
 def test_w_gsm_web():
-    assert mode_resolver.resolve_mode("w") == {"apps": ["gsm"], "mode": "web"}
+    action = resolve_mode("w")
+    assert action.apps == ["gsm"]
+    assert action.mode == "web"
 
 
 def test_u_upu_app():
-    assert mode_resolver.resolve_mode("u") == {"apps": ["upu"], "mode": "app"}
+    action = resolve_mode("u")
+    assert action.apps == ["upu"]
+    assert action.mode == "app"
 
 
 def test_gu_both_apps():
-    assert mode_resolver.resolve_mode("gu") == {"apps": ["gsm", "upu"], "mode": "app"}
+    action = resolve_mode("gu")
+    assert action.apps == ["gsm", "upu"]
+    assert action.mode == "app"
 
 
 def test_debug():
-    assert mode_resolver.resolve_mode("debug")["mode"] == "debug"
+    action = resolve_mode("debug")
+    assert action.apps == ["gsm"]
+    assert action.mode == "debug"
 
 
 def test_case_insensitive():
-    assert mode_resolver.resolve_mode("GU")["apps"] == ["gsm", "upu"]
+    assert resolve_mode("GU").apps == ["gsm", "upu"]
 
 
 def test_internal_child():
-    action = mode_resolver.resolve_mode("_gsm_child")
-    assert action["apps"] == ["gsm"]
-    assert action["mode"] == "app"
-    assert action["internal_child"] is True
-    assert action["skip_cli_placement"] is False
+    action = resolve_mode("_gsm_child")
+    assert action.apps == ["gsm"]
+    assert action.mode == "app"
+    assert action.internal_child is True
+    assert action.skip_cli_placement is False
 
 
 def test_internal_child_web():
-    assert mode_resolver.resolve_mode("_gsm_child_web")["mode"] == "web"
+    assert resolve_mode("_gsm_child_web").mode == "web"
 
 
 def test_internal_nocli():
-    action = mode_resolver.resolve_mode("_gsm_nocli")
-    assert action["internal_child"] is True
-    assert action["skip_cli_placement"] is True
+    action = resolve_mode("_gsm_nocli")
+    assert action.internal_child is True
+    assert action.skip_cli_placement is True
 
 
 def test_internal_upu_nocli_web():
-    action = mode_resolver.resolve_mode("_upu_nocli_web")
-    assert action["apps"] == ["upu"]
-    assert action["mode"] == "web"
-    assert action["skip_cli_placement"] is True
+    action = resolve_mode("_upu_nocli_web")
+    assert action.apps == ["upu"]
+    assert action.mode == "web"
+    assert action.skip_cli_placement is True
 
 
 def test_unknown_mode_fallback():
-    assert mode_resolver.resolve_mode("zzz")["apps"] == ["gsm"]
+    action = resolve_mode("zzz")
+    assert action.apps == ["gsm"]
+    assert action.mode == "app"

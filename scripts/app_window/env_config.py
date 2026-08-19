@@ -1,3 +1,5 @@
+"""Lecture + export du .env pour le launcher (scripts/app_window)."""
+
 import os
 
 from dotenv import dotenv_values
@@ -5,7 +7,10 @@ from dotenv import dotenv_values
 from common import ENV_PATH
 
 # Seules ces clés du .env intéressent le launcher (fenêtres / CLI / debug).
-LAUNCHER_KEYS = {
+# Elles sont relues par les apps (window_config.py, upu/config.py, ...) dans
+# les process enfants : l'export vers os.environ garantit que la valeur du
+# .env prime sur une valeur obsolète héritée d'un shell parent.
+LAUNCHER_KEYS: dict[str, type] = {
     "GSM_WINDOW_LEFT": int,
     "GSM_WINDOW_CLI": int,
     "UPU_WINDOW_LEFT": int,
@@ -37,7 +42,7 @@ def load_env() -> dict:
             continue
         try:
             env[key] = caster(values[key])
-        except Exception:
+        except (TypeError, ValueError):
             env[key] = values[key]
 
     for key, value in env.items():
@@ -45,3 +50,12 @@ def load_env() -> dict:
 
     return env
 
+
+def window_left(app: str, env: dict) -> int:
+    """Position horizontale (px) de la fenêtre d'app (et donc de sa CLI)."""
+    return int(env.get(f"{app.upper()}_WINDOW_LEFT", 0))
+
+
+def wants_cli(app: str, env: dict) -> bool:
+    """Vrai si une CLI dédiée doit accompagner l'app (flag *_WINDOW_CLI)."""
+    return int(env.get(f"{app.upper()}_WINDOW_CLI", 0)) == 1

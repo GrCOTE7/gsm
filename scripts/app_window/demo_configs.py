@@ -1,11 +1,11 @@
 """Démo interactive : les 10 combinaisons distinctes de lancement (./go).
 
 Pour chaque combinaison :
-  1. ajuste temporairement GSM_WINDOW_CLI / UPU_WINDOW_CLI dans le .env
-  2. lance l'app (ou les apps) via scripts/app_window/main.py
-  3. affiche la config en CLI
-  4. attend qu'une touche soit pressée avant la config suivante
-  5. nettoie les process de l'app ET ferme les CLI dédiées (fenêtres wt)
+  1. ajuste temporairement GSM_WINDOW_CLI / UPU_WINDOW_CLI dans le .env ;
+  2. lance l'app (ou les apps) via scripts/app_window/main.py ;
+  3. affiche la config en CLI ;
+  4. attend qu'une touche soit pressée avant la config suivante ;
+  5. nettoie les process de l'app ET ferme les CLI dédiées (fenêtres wt).
 
 Le focus est systématiquement ramené sur la console de la démo avant chaque
 prompt (les fenêtres des apps volent le focus à l'ouverture).
@@ -31,13 +31,13 @@ MAIN_PY = ROOT / "scripts" / "app_window" / "main.py"
 PYTHON = sys.executable
 
 # Les 10 combinaisons réellement distinctes : (mode, gsm_cli, upu_cli, description)
-CONFIGS = [
-    ("",   0, 0, "GSM app — sans CLI dédiée"),
-    ("",   1, 0, "GSM app — CLI dédiée"),
-    ("w",  0, 0, "GSM web — sans CLI dédiée"),
-    ("w",  1, 0, "GSM web — CLI dédiée"),
-    ("u",  0, 0, "UPU app — sans CLI dédiée"),
-    ("u",  0, 1, "UPU app — CLI dédiée"),
+CONFIGS: list[tuple[str, int, int, str]] = [
+    ("", 0, 0, "GSM app — sans CLI dédiée"),
+    ("", 1, 0, "GSM app — CLI dédiée"),
+    ("w", 0, 0, "GSM web — sans CLI dédiée"),
+    ("w", 1, 0, "GSM web — CLI dédiée"),
+    ("u", 0, 0, "UPU app — sans CLI dédiée"),
+    ("u", 0, 1, "UPU app — CLI dédiée"),
     ("gu", 0, 0, "GSM + UPU app — sans CLI"),
     ("gu", 0, 1, "GSM + UPU app — CLI UPU seule"),
     ("gu", 1, 0, "GSM + UPU app — CLI GSM seule"),
@@ -48,14 +48,20 @@ CONFIGS = [
 # dédiées créées PENDANT la démo (pas les terminaux de l'utilisateur).
 _BASELINE_HWNDS: set = set()
 
+# Motifs de lignes de commande des process à nettoyer (Python / uv / pwsh).
+PYTHON_APP_PATTERNS = ("*main_gsm*", "*main_upu*", "*flet.cli*", "*app_window\\main.py*")
+UV_APP_PATTERNS = ("*main_gsm*", "*main_upu*")
+PWSH_CLI_PATTERNS = ("*go.ps1 _gsm_child*", "*go.ps1 _upu_child*")
+
 
 # ---------------------------------------------------------------------------
 # .env
 # ---------------------------------------------------------------------------
 
+
 def _set_cli_values(gsm_cli: int, upu_cli: int) -> None:
-    """Remplace les valeurs de GSM_WINDOW_CLI / UPU_WINDOW_CLI dans le .env,
-    en conservant les commentaires et la mise en forme."""
+    """Remplace GSM_WINDOW_CLI / UPU_WINDOW_CLI dans le .env, en conservant
+    les commentaires et la mise en forme."""
     text = ENV_PATH.read_text(encoding="utf-8")
     text = re.sub(r"^(GSM_WINDOW_CLI\s*=\s*)\d+", rf"\g<1>{gsm_cli}", text, flags=re.M)
     text = re.sub(r"^(UPU_WINDOW_CLI\s*=\s*)\d+", rf"\g<1>{upu_cli}", text, flags=re.M)
@@ -66,12 +72,9 @@ def _set_cli_values(gsm_cli: int, upu_cli: int) -> None:
 # Process & fenêtres (Windows)
 # ---------------------------------------------------------------------------
 
-PYTHON_APP_PATTERNS = ("*main_gsm*", "*main_upu*", "*flet.cli*", "*app_window\\main.py*")
-UV_APP_PATTERNS = ("*main_gsm*", "*main_upu*")
-PWSH_CLI_PATTERNS = ("*go.ps1 _gsm_child*", "*go.ps1 _upu_child*")
-
 
 def _ps(script: str) -> None:
+    """Exécute un script PowerShell en arrière-plan (sortie silencieuse)."""
     subprocess.run(
         [_find_powershell_exe(), "-NoProfile", "-NonInteractive", "-Command", script],
         stdout=subprocess.DEVNULL,
@@ -79,7 +82,8 @@ def _ps(script: str) -> None:
     )
 
 
-def _kill_matching(image: str, patterns) -> None:
+def _kill_matching(image: str, patterns: tuple[str, ...]) -> None:
+    """Tue les process nommés `image` dont la ligne de commande matche un motif."""
     cond = " -or ".join(f"$_.CommandLine -like '{p}'" for p in patterns)
     script = (
         f"Get-CimInstance Win32_Process -Filter \"Name='{image}'\" | "
@@ -90,14 +94,17 @@ def _kill_matching(image: str, patterns) -> None:
 
 
 def _count_app_processes() -> int:
-    cond = " -or ".join(f"$_.CommandLine -like '{p}'" for p in ("*main_gsm*", "*main_upu*"))
+    """Nombre de process d'app (main_gsm / main_upu) en cours."""
+    patterns = ("*main_gsm*", "*main_upu*")
+    cond = " -or ".join(f"$_.CommandLine -like '{p}'" for p in patterns)
     script = (
         f"(Get-CimInstance Win32_Process -Filter \"Name='python.exe'\" | "
         f"Where-Object {{ {cond} }} | Measure-Object).Count"
     )
     out = subprocess.run(
         [_find_powershell_exe(), "-NoProfile", "-NonInteractive", "-Command", script],
-        capture_output=True, text=True,
+        capture_output=True,
+        text=True,
     ).stdout.strip()
     return int(out) if out.isdigit() else 0
 
@@ -156,8 +163,7 @@ def _close_dedicated_cli_windows() -> None:
 
 
 def _focus_cli() -> None:
-    """Ramène le focus sur la console de la démo (les apps volent le focus à
-    l'ouverture — on le récupère avant chaque prompt)."""
+    """Ramène le focus sur la console de la démo (les apps le volent à l'ouverture)."""
     if os.name != "nt":
         return
     try:
@@ -190,8 +196,11 @@ def _focus_cli() -> None:
 def cleanup_config() -> None:
     """Ferme les CLI dédiées + tue les process de la config courante."""
     if os.name != "nt":
-        subprocess.run(["pkill", "-f", "main_gsm|main_upu|flet.cli|flet run"],
-                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.run(
+            ["pkill", "-f", "main_gsm|main_upu|flet.cli|flet run"],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
         return
     _close_dedicated_cli_windows()
     _kill_matching("python.exe", PYTHON_APP_PATTERNS)
@@ -214,6 +223,7 @@ def wait_for_apps(timeout: float = 30.0) -> None:
 # ---------------------------------------------------------------------------
 # Boucle principale
 # ---------------------------------------------------------------------------
+
 
 def main() -> int:
     if not ENV_PATH.exists():
@@ -286,3 +296,5 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
+
