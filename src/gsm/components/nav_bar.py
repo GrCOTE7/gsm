@@ -50,6 +50,7 @@ class NavBar:
     @ft.component
     def drawer(
         on_change: ft.ControlEventHandler[ft.NavigationDrawer] | None,
+        selected_index: int = 0,
     ) -> ft.NavigationDrawer:
 
         return ft.NavigationDrawer(
@@ -72,6 +73,7 @@ class NavBar:
                     if page.label is not None
                 ],
             ],
+            selected_index=selected_index,
             on_change=on_change,
         )
 
@@ -84,27 +86,35 @@ class NavBar:
 
         return ft.NavigationDrawerDestination(
             label=page.label,
-            icon=NavBar._icon_for(page.path),
+            icon=page.icon or ft.Icons.CIRCLE_OUTLINED,
+            selected_icon=page.selected_icon or page.icon or ft.Icons.CIRCLE_OUTLINED,
         )
 
     # ========================================================
-    # ICONES
+    # INDEX
     # ========================================================
 
     @staticmethod
-    def _icon_for(path: str):
+    def index_for_path(path: str | None) -> int:
+        """
+        Index du destination NavBar correspondant à la route courante.
 
-        icons = {
-            "/": ft.Icons.HOME_OUTLINED,
-            "/about": ft.Icons.INFO_OUTLINED,
-            "/counter": ft.Icons.EXPOSURE_PLUS_1,
-            "/test": ft.Icons.BUG_REPORT_OUTLINED,
-        }
+        - Retourne `-1` pour une route hors registre (ex. 404) : dans ce cas
+          aucune destination n'est sélectionnée (comportement Flet).
+        """
 
-        return icons.get(
-            path,
-            ft.Icons.CIRCLE_OUTLINED,
-        )
+        destinations = [page for page in PAGES if page.label is not None]
+
+        if not destinations:
+            return -1
+
+        route = (path or "/").split("?", 1)[0].split("#", 1)[0]
+
+        for index, page in enumerate(destinations):
+            if page.path == route:
+                return index
+
+        return -1
 
     @staticmethod
     def path_for_selected_index(selected_index: int | None) -> str | None:

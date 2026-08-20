@@ -69,7 +69,10 @@ class MainLayout:
             ref=pagelet_ref,
             expand=True,
             appbar=NavBar.app_bar(page_label, on_menu_click=handle_menu_click),
-            drawer=NavBar.drawer(on_change=handle_drawer_change),
+            drawer=NavBar.drawer(
+                on_change=handle_drawer_change,
+                selected_index=NavBar.index_for_path(ft.context.page.route),
+            ),
             content=ft.Container(
                 content=outlet,
                 expand=True,

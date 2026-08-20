@@ -32,6 +32,8 @@ class PageRoute:
     component: Callable[[], ft.Control]
     path: str  # chemin absolu, ex. "/" ou "/about"
     label: str | None = None  # None => n'apparaît pas dans la NavBar
+    icon: ft.IconData | None = None  # icône NavBar (état non sélectionné)
+    selected_icon: ft.IconData | None = None  # icône "pleine" quand la page est active
 
     @property
     def is_index(self) -> bool:
@@ -47,8 +49,31 @@ class PageRoute:
 # (Le 404 n'est volontairement pas ici : ce n'est pas une page
 # "navigable", elle est câblée à part comme route catch-all.)
 PAGES: list[PageRoute] = [
-    PageRoute(component=HomePage.view, path="/", label="Accueil"),
-    PageRoute(component=AboutPage.view, path="/about", label="About"),
-    PageRoute(component=CounterPage.view, path="/counter", label="Compteur"),
-    PageRoute(component=TestPage.view, path="/test", label="Test"),
+    PageRoute(
+        component=HomePage.view,
+        path="/",
+        label="Accueil",
+        icon=ft.Icons.HOME_OUTLINED,
+        selected_icon=ft.Icons.HOME,
+    ),
+    PageRoute(
+        component=AboutPage.view,
+        path="/about",
+        label="About",
+        icon=ft.Icons.INFO_OUTLINED,
+        selected_icon=ft.Icons.INFO,
+    ),
+    PageRoute(
+        component=CounterPage.view,
+        path="/counter",
+        label="Compteur",
+        icon=ft.Icons.EXPOSURE_PLUS_1,
+    ),
+    PageRoute(
+        component=TestPage.view,
+        path="/test",
+        label="Test",
+        icon=ft.Icons.BUG_REPORT_OUTLINED,
+        selected_icon=ft.Icons.BUG_REPORT,
+    ),
 ]
