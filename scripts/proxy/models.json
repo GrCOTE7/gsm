@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "defaultModelId": "deepseek-v4-flash",
+  "baseUrl": "http://localhost:3000/v1",
+  "contextWindow": 128000,
+  "maxInputTokens": 128000,
+  "owned_by": "deepseek",
+  "created": 1700000000,
+  "models": {
+    "deepseek-v4-flash": {
+      "id": "deepseek-v4-flash",
+      "object": "model",
+      "name": "deepseek-v4-flash",
+      "owned_by": "deepseek",
+      "created": 1700000000,
+      "capabilities": ["streaming", "tools", "images"],
+      "pricing": {
+        "prompt": 0.14,
+        "completion": 0.28,
+        "cache_hit": 0.0028
+      }
+    },
+    "deepseek-v4-pro": {
+      "id": "deepseek-v4-pro",
+      "object": "model",
+      "name": "deepseek-v4-pro",
+      "owned_by": "deepseek",
+      "created": 1700000000,
+      "capabilities": ["streaming", "tools", "images"],
+      "pricing": {
+        "prompt": 0.435,
+        "completion": 0.87,
+        "cache_hit": 0.003625
+      }
+    }
+  }
+}
