@@ -1,8 +1,29 @@
+<!-- markdownlint-disable MD022 MD028 MD041 -->
 <h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
+<!-- markdownlint-enable MD041 -->
 
 # Tips
 
 ## Ressources diverses
+
+> [!NOTE] pour information
+
+> [!TIP] pour conseil
+
+> [!WARNING] pour risque
+
+✅ pour confirmations
+
+⚠️ pour alertes courtes
+
+> [!NOTE]
+> Astuce utile : ce bloc est mis en avant.
+
+> [!TIP]
+> Tu peux faire cela beaucoup plus simplement.
+
+> [!WARNING]
+> Attention, cette commande modifie le comportement du système.
 
 ### [https://flet.app/gallery/run/apps/icons_browser](https://flet.app/gallery/run/apps/icons_browser)
 
@@ -37,8 +58,7 @@ Git
 
 # 🧰  (toolbox)
 # 🛠️  (tools)
-#🧱  (building blocks)
-
+# 🧱  (building blocks)
 
 🟦💻 VS Code
 🧩🟦 VSC Ext
@@ -85,3 +105,11 @@ Get-ChildItem -Recurse -Force -Directory |
     Tree
 
 -->
+Dans settings.json :
+
+```json
+ "markdownlint.config": {
+    "MD028": false
+  }
+```
+<!-- markdownlint-enable MD022 MD028 -->
