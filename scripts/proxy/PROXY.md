@@ -108,3 +108,12 @@ nativement avec le provider natif « DeepSeek ».
 { "model": "deepseek-v4-flash", "thinking": { "type": "disabled" } }
 // ou
 { "model": "deepseek-v4-flash", "reasoning_effort": "none" }
+
+
+PS C:\ai\dsh> 
+
+node --no-warnings -e "const{DatabaseSync}=require('node:sqlite'); const p='C:\\node\\pnpm-store\\sqlitetest.sqlite'; try{ const db=new DatabaseSync(p); db.exec('CREATE TABLE IF NOT EXISTS t(x)'); db.prepare('INSERT INTO t VALUES (1)').run(); db.close(); console.log('node:sqlite sur C: OK'); }catch(e){ console.log('node:sqlite sur C: ECHEC'); console.log(e.code, e.message); }"
+
+node:sqlite sur E: ECHEC
+ERR_SQLITE_ERROR disk I/O error
+PS D:\ai\dsh> ERROR FAT 32

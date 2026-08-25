@@ -32,7 +32,7 @@ app.get('/v1/models/:model', (req, res) => {
 app.post('/v1/chat/completions', async (req, res) => {
   // Copie de travail du payload pour ne pas muter req.body
   const payload = { ...req.body };
-  payload.thinking = { type: "disabled" };
+  // payload.thinking = { type: "disabled" };
 
   if (payload.stream === true) {
     payload.stream_options = { include_usage: true };
@@ -107,3 +107,8 @@ app.listen(3000, () => {
   console.log('   Métadonnées de prix disponibles sur /v1/models');
   console.log('   http://localhost:3000');
 });
+
+// Starter dans WIN + R  → shell:startup en proxy.bat
+// @echo off
+// rem Démarre le proxy DeepSeek (Cline / Insomnia) au login - fenêtre minimisée.
+// start "" /min node "C:\gsm\proxy.js"
