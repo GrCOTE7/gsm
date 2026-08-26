@@ -1,4 +1,12 @@
-# <img src="src/assets/icon.png" alt="Aegis Stack" width="25"> GSM
+<div style="height: 10vh; display: flex; align-items: center; justify-content: center">
+  <h1 style="font-size: 48px; margin: 0; text-decoration: none; border: none;">
+    <img src="src/assets/icon.png" alt="GSM Repository" width="100" style="vertical-align: middle;" />GSM
+  </h1>
+</div>
+
+<br />
+
+<hr />
 
 <h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
 
@@ -60,7 +68,7 @@
 
 Tu ❤️ Python...? Rejoins le chat en LIVE !
 
-[![Discord](https://img.shields.io/discord/1056923339546968127)](https://discord.com/channels/1056923339546968127/1507316257580519445)
+[![Discord](https://img.shields.io/discord/1056923339546968127?label=Chat)](https://discord.com/channels/1056923339546968127/1507316257580519445)
     </a>
 </div>
 
