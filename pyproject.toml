@@ -28,6 +28,7 @@ dependencies = [
 [project.optional-dependencies]
 desktop = ["flet-cli", "flet-desktop", "pyshorteners>=1.0.1"]
 web = ["flet-web==0.85.3"]
+dev = ["pytest>=8.0.0"]
 
 [tool.flet]
 org = "com.mycompany"

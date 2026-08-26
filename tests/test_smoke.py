@@ -1,5 +1,6 @@
 import importlib.util
 import sys
+import pytest
 from pathlib import Path
 
 
@@ -22,7 +23,7 @@ def _load_cli_spawner_module():
 def _load_app_launcher_module():
     return _load_module("app_launcher_test_mod", "app_launcher.py")
 
-
+@pytest.mark.skipif(sys.platform != "linux", reason="Test spécifique à Linux")
 def test_linux_cli_spawner_skips_non_executable_candidates(tmp_path, monkeypatch) -> None:
     cli_spawner = _load_cli_spawner_module()
 
