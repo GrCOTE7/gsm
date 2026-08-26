@@ -4,21 +4,53 @@
 
 ---
 
-<!-- [![CI](https://github.com/grcote7/gsm/workflows/CI/badge.svg)](https://github.com/grcote7/gsm//actions/workflows/ci.yml)
-[![Documentation](https://github.com/grcote7/gsm/workflows/Deploy%20Documentation/badge.svg)](https://github.com/grcote7/gsm/actions/workflows/docs.yml) -->
-[![GitHub Release](https://img.shields.io/github/v/release/GrCOTE7/gsm)](https://github.com/GrCOTE7/gsm)
-[![built with Python 3.13+](https://img.shields.io/badge/built%20with-python%203.13+-blue.svg)](https://www.python.org/downloads/)
-[![Built with Flet](https://img.shields.io/badge/Flet%200.85-00B0FF?style=flat-square)](https://flet.dev/)
-[![Commits per Month](https://img.shields.io/github/commit-activity/m/grcote7/gsm)](https://github.com/grcote7/gsm/commits)
-[![Total Commits](https://img.shields.io/github/commit-activity/t/grcote7/gsm)](https://github.com/grcote7/gsm/commits)
-[![Last Commit](https://img.shields.io/github/last-commit/grcote7/gsm)](https://github.com/grcote7/gsm/commits)
-
-![Windows](https://img.shields.io/badge/OS-Windows-0078D6?style=flat-square&logo=windows11&logoColor=white")
-![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)
-![Android](https://img.shields.io/badge/Android-3ddc84?logo=android&logoColor=white)
-<a href="https://codespaces.new/GrCOTE7/gsm" title="Open YOUR CodeSpace Now... Click HERE!">
-    <img src="https://img.shields.io/badge/GSM%20Github%20Codespace%20Ready-green.svg" alt="CodeSpace link" />
+<!-- ===== BLOC 2 : VERSIONS, STATS, OS & CODESPACE ===== -->
+<div align="center">
+  <!-- Release & versions -->
+  <a href="https://github.com/GrCOTE7/gsm">
+    <img src="https://img.shields.io/github/v/release/GrCOTE7/gsm?style=for-the-badge" alt="GitHub Release">
   </a>
+  <a href="https://www.python.org/downloads/">
+    <img src="https://img.shields.io/badge/built%20with-python%203.13+-blue.svg?style=for-the-badge" alt="built with Python 3.13+">
+  </a>
+  <a href="https://flet.dev/">
+    <img src="https://img.shields.io/badge/Flet%200.85-00B0FF?style=for-the-badge" alt="Built with Flet">
+  </a>
+
+  <!-- Statistiques de commits -->
+  <a href="https://github.com/grcote7/gsm/commits">
+    <img src="https://img.shields.io/github/commit-activity/m/grcote7/gsm?style=for-the-badge" alt="Commits per Month">
+  </a>
+  <a href="https://github.com/grcote7/gsm/commits">
+    <img src="https://img.shields.io/github/commit-activity/t/grcote7/gsm?style=for-the-badge" alt="Total Commits">
+  </a>
+  <a href="https://github.com/grcote7/gsm/commits">
+    <img src="https://img.shields.io/github/last-commit/grcote7/gsm?style=for-the-badge" alt="Last Commit">
+  </a>
+
+  <br/>
+
+  <a href="https://github.com/GrCOTE7/gsm/actions/workflows/release.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/GRCOTE7/gsm/release.yml?label=CI / CD&logo=github&color=success" alt="CI">
+  </a>
+  <a href="https://github.com/grcote7/gsm/actions/workflows/docs.yml">
+    <img src="https://github.com/GRCOTE7/gsm/actions/workflows/rsync_test.yml/badge.svg" alt="Documentation">
+  </a>
+  <a href="https://github.com/GrCOTE7/gsm/blob/main/THERA.md">
+    <img src="https://img.shields.io/github/actions/workflow/status/GRCOTE7/gsm/release.yml?label=Documentation&logo=github&color=success" alt="Documentation">
+  </a>
+  
+  <br/>
+  <!-- Systèmes d'exploitation -->
+  <img src="https://img.shields.io/badge/OS-Windows-0078D6?style=for-the-badge&logo=windows11&logoColor=white" alt="Windows">
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
+  <img src="https://img.shields.io/badge/Android-3ddc84?style=for-the-badge&logo=android&logoColor=white" alt="Android">
+
+  <!-- CodeSpace -->
+  <a href="https://codespaces.new/GrCOTE7/gsm" title="Open YOUR CodeSpace Now... Click HERE!">
+    <img src="https://img.shields.io/badge/GSM%20Github%20Codespace%20Ready-green?style=for-the-badge&logo=github&logoColor=white" alt="CodeSpace link">
+  </a>
+</div>
 
 ---
 
@@ -475,16 +507,16 @@ uv run python -c "import flet; print(flet.__version__)"
 ### Debug android / PC → Android Studio
 
 | Action                                    | Rebuild APK ? |
-|-------------------------------------------|---------------|
-| Modifier du Python                        | ❌ Non        |
-| Modifier du Flet                          | ❌ Non        |
-| Modifier la logique d’update              | ❌ Non        |
-| Modifier comment tu télécharges l’APK     | ❌ Non        |
-| Modifier comment tu lances l’installation | ❌ Non        |
-| Ajouter un appel Android natif            | ✔️ Oui        |
-| Modifier le manifest Android              | ✔️ Oui        |
-| Ajouter un service Android                | ✔️ Oui        |
-| Modifier le template Android de Flet      | ✔️ Oui        |
+| ----------------------------------------- | ------------- |
+| Modifier du Python                        | ❌ Non         |
+| Modifier du Flet                          | ❌ Non         |
+| Modifier la logique d’update              | ❌ Non         |
+| Modifier comment tu télécharges l’APK     | ❌ Non         |
+| Modifier comment tu lances l’installation | ❌ Non         |
+| Ajouter un appel Android natif            | ✔️ Oui         |
+| Modifier le manifest Android              | ✔️ Oui         |
+| Ajouter un service Android                | ✔️ Oui         |
+| Modifier le template Android de Flet      | ✔️ Oui         |
 
 ---
 
