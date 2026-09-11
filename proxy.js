@@ -108,7 +108,8 @@ app.listen(3000, () => {
   console.log('   http://localhost:3000');
 });
 
-// Starter dans WIN + R  → shell:startup en proxy.bat
+// Starter dans WIN + R  → shell:startup en PROXY.bat
+
 // @echo off
 // rem Démarre le proxy DeepSeek (Cline / Insomnia) au login - fenêtre minimisée.
 // start "" /min node "C:\gsm\proxy.js"

@@ -32,7 +32,7 @@ import requests
 BASE_URL = "http://127.0.0.1:3080"
 POLL_INTERVAL = 0.5   # secondes entre deux lectures de l'historique
 MAX_WAIT = 600.0      # délai maximum d'attente de la réponse (s)
-
+# deepseek-v4-flash
 
 def rpc(method, payload, timeout=60.0):
     """Appelle une méthode RPC du harness et renvoie le champ `value`."""

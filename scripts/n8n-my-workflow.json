@@ -1,0 +1,79 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a1b2c3d4-1111-4aaa-8aaa-000000000001",
+      "name": "Bouton (manuel)",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Remplace ce script par ton vrai script JS.\n// Important : le noeud suivant lit $json.url pour savoir\n// quelle page ouvrir dans le navigateur.\nreturn { url: 'https://laravel.sillo.org/' };"
+      },
+      "id": "a1b2c3d4-2222-4bbb-8bbb-000000000002",
+      "name": "Script JS",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [440, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "http://host.docker.internal:8123/open",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "url",
+              "value": "={{ $json.url }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "id": "a1b2c3d4-3333-4ccc-8ccc-000000000003",
+      "name": "Ouvrir dans le navigateur",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [640, 300]
+    }
+  ],
+  "connections": {
+    "Bouton (manuel)": {
+      "main": [
+        [
+          {
+            "node": "Script JS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Script JS": {
+      "main": [
+        [
+          {
+            "node": "Ouvrir dans le navigateur",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "meta": {}
+}
