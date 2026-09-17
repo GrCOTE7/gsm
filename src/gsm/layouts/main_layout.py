@@ -2,7 +2,7 @@
 
 import flet as ft
 
-from gsm.components.nav_bar import NavBar
+from gsm.views.partials.nav_bar import NavBar
 from gsm.config.app_window import AppWindow
 from gsm.routing.routes_registry import PAGES
 
