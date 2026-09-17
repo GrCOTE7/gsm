@@ -226,6 +226,7 @@ Just the essentials to validate the idea.
 ### 1) Developer Account Creation
 
 * [ ] Create a Google Play Developer account
+* [ ] Confirm Google Play Dev Account
 * [ ] Pay one-time fees
 * [ ] Configure legal information
 

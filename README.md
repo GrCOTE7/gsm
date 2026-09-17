@@ -136,11 +136,9 @@ Le mode auto-reload est aussi actif en local Docker (watchfiles sur `src/`).
 Quand tu modifies une vue Python, le process redémarre automatiquement.
 Au lancement, si le navigateur ne se reconnecte pas tout de suite, fais un refresh de la page.
 
-Rendu :
-
-```text
-http://localhost:8000
-```
+<div align='center'>
+  <h3><a href = "http://localhost:8000">RENDU (HotReload activé)</a></h3>
+</div>
 
 Suivre les logs :
 
@@ -222,7 +220,7 @@ uvx watchfiles "py quick_test.py" . 2>nul
 
 Juste on démarre un CodeSpace (Sur la page GH de ton fork : ' , ' (Virgule) + Create new codespace + F9
 
-### ❌vérif si F9 OK dans un codespace pour la commande ci-dessous
+### ❌ vérif si F9 OK dans un codespace pour la commande ci-dessous
 
 Et dans la CLI (Console - Terminal) qui apparaît :
 
