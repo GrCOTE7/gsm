@@ -500,6 +500,12 @@ C:\Users\utilisateur\AppData\Local\Android\Sdk\build-tools\34.0.0\apksigner.bat 
 uv run python -c "import flet; print(flet.__version__)"
 ```
 
+## Prévient si code déprécié
+
+```bash
+python -W error::DeprecationWarning src/main.py
+```
+
 ---
 
 ## Pour logs du mobile dans PC
