@@ -35,6 +35,8 @@ Alternative : Extension VSC Markdown Emoji - Matt Bierner → CTRL + MAJ + E
 
 ---
 
+# 🔗 lien
+
 # 🐍 → serpent (emoji universel pour Python)
 # 🔵🟡 → couleurs du logo Python
 # 🐍💻 → Python + code
@@ -48,8 +50,7 @@ Git
 # 🐙 GitHub
 # 🔀 Versioning / branches / merge
 # 🔀 (merge)
-# 🔁 (sync)
-# 🔂 (replay / rebase)
+# 🔁 (sync / replay / rebase)
 # 🌿 (branche)
 # 🧵 (threads / commits)
 # 🌳 Arbre de commits
@@ -113,3 +114,20 @@ Dans settings.json :
   }
 ```
 <!-- markdownlint-enable MD022 MD028 -->
+| Symbole | ALT + | Comment     |
+| :-----: | ----: | ----------- |
+|    ☻    |     2 |             |
+|    ♥    |     3 |             |
+|    •    |     7 |             |
+|    ○    |     9 |             |
+|    ☼    |    15 |             |
+|    …    |  0133 |             |
+|    —    |  0151 | Tiret-plein |
+|    –    |  0150 | Demi-tiret  |
+|    ™    |  0153 |             |
+|    œ    |  0156 |             |
+|    §    |  0167 |             |
+|    ©    |  0169 |             |
+|    ±    |  0177 |             |
+|    µ    |  0181 |             |
+|    │    |   179 |             |
