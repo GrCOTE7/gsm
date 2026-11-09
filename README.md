@@ -202,7 +202,7 @@ Exemple: \scripts\Nom_Thomas.py
 ### 1 - Local (Win)
 
 ```bash
-uv --version
+uv -V
 # Si échoue (Et sûr qu'uv est installé) :
 
 $env:Path = "C:\Users\utilisateur\.local\bin;$env:Path"
