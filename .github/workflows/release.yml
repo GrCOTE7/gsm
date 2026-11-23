@@ -114,13 +114,15 @@ jobs:
         env:
           VPS_HOST: ${{ secrets.VPS_HOST }}
           VPS_USER: ${{ secrets.VPS_USER }}
-          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_GSM }}
+          # VPS_SSH_KEY_GSM is optional: fall back to the keys that already deploy
+          # to the same host/target while no dedicated GSM key is configured.
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_GSM || secrets.VPS_SSH_KEY_UPU || secrets.VPS_SSH_KEY }}
         run: |
           set -euo pipefail
 
           : "${VPS_HOST:?VPS_HOST secret is required}"
           : "${VPS_USER:?VPS_USER secret is required}"
-          : "${VPS_SSH_KEY:?VPS_SSH_KEY_GSM secret is required}"
+          : "${VPS_SSH_KEY:?VPS_SSH_KEY_GSM / VPS_SSH_KEY_UPU / VPS_SSH_KEY secret is required}"
 
           echo "Preparing SSH key..."
           mkdir -p ~/.ssh
@@ -481,13 +483,15 @@ jobs:
         env:
           VPS_HOST: ${{ secrets.VPS_HOST }}
           VPS_USER: ${{ secrets.VPS_USER }}
-          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_GSM }}
+          # VPS_SSH_KEY_GSM is optional: fall back to the keys that already deploy
+          # to the same host/target while no dedicated GSM key is configured.
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_GSM || secrets.VPS_SSH_KEY_UPU || secrets.VPS_SSH_KEY }}
         run: |
           set -euo pipefail
 
           : "${VPS_HOST:?VPS_HOST secret is required}"
           : "${VPS_USER:?VPS_USER secret is required}"
-          : "${VPS_SSH_KEY:?VPS_SSH_KEY_GSM secret is required}"
+          : "${VPS_SSH_KEY:?VPS_SSH_KEY_GSM / VPS_SSH_KEY_UPU / VPS_SSH_KEY secret is required}"
 
           mkdir -p ~/.ssh
           echo "$VPS_SSH_KEY" > ~/.ssh/id_ed25519_gsm
