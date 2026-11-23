@@ -44,7 +44,7 @@ jobs:
           set -euo pipefail
           python -m pip install --upgrade pip
           # Keep CI deps aligned with pyproject/uv.lock and avoid encoding issues from legacy txt files.
-          python -m pip install -e ".[dev]"
+          python -m pip install -e ".[dev,desktop]"
 
       - name: Run tests
         run: pytest
