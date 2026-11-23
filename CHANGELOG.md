@@ -1,3 +1,10 @@
+## [1.0.41](https://github.com/grcote7/gsm/compare/v1.0.40...v1.0.41) (2026-11-23)
+
+
+### Bug Fixes
+
+* remove committed merge conflicts and Python 2 syntax blocking the APK build ([e117d8f](https://github.com/grcote7/gsm/commit/e117d8f3ac18f203f3de4c48369eb85691eece81))
+
 ## [1.0.40](https://github.com/grcote7/gsm/compare/v1.0.39...v1.0.40) (2026-11-23)
 
 
