@@ -10,10 +10,6 @@ on:
         description: "Python version bundled by serious_python"
         type: string
         default: "3.14"
-      jni_override:
-        description: "jni version forced in build/flutter/pubspec.yaml (empty = no patch)"
-        type: string
-        default: "^1.2.1"
 
 jobs:
   build:
@@ -48,58 +44,22 @@ jobs:
       - name: Accept Android licenses
         run: yes | flutter doctor --android-licenses
 
-      - name: Build APK (attempt 1)
+      - name: Build APK
         shell: bash
         run: |
           set -o pipefail
-          flet build apk -vv --yes \
+          flet build apk -v --yes \
             --python-version "${{ inputs.python_version }}" \
-            2>&1 | tee flet-build.log || echo "::warning::attempt 1 failed"
+            2>&1 | tee flet-build.log
 
-      - name: Inspect and patch generated pubspec
+      - name: Show effective jni override
+        if: always()
         shell: bash
         run: |
-          set -uo pipefail
-          pubspec=build/flutter/pubspec.yaml
           {
-            echo "===== generated pubspec.yaml ====="
-            cat "$pubspec" 2>/dev/null || echo "(missing $pubspec)"
+            echo "===== jni lines in generated pubspec ====="
+            grep -n -B2 -A2 "jni" build/flutter/pubspec.yaml 2>/dev/null || echo "(no pubspec)"
           } | tee -a flet-build.log
-
-          jni_version="${{ inputs.jni_override }}"
-          if [ -z "$jni_version" ] || [ ! -f "$pubspec" ]; then
-            echo "No jni patch requested/found."
-            exit 0
-          fi
-
-          python - "$pubspec" "$jni_version" <<'PY' | tee -a flet-build.log
-          import re
-          import sys
-          from pathlib import Path
-
-          path = Path(sys.argv[1])
-          version = sys.argv[2]
-          text = path.read_text(encoding="utf-8")
-          patched, count = re.subn(
-              r"(?m)^(\s*)jni:\s*.*$", lambda m: f"{m.group(1)}jni: {version}", text
-          )
-          if count == 0:
-              patched = text.rstrip() + "\n\ndependency_overrides:\n  jni: " + version + "\n"
-              print("jni not found: appended a dependency_overrides block")
-          else:
-              print(f"jni override patched to {version} ({count} occurrence(s))")
-          path.write_text(patched, encoding="utf-8")
-          PY
-
-          grep -n -B2 -A2 "jni" "$pubspec" | head -n 20 | tee -a flet-build.log
-
-      - name: Build APK (attempt 2)
-        shell: bash
-        run: |
-          set -o pipefail
-          flet build apk -vv --yes \
-            --python-version "${{ inputs.python_version }}" \
-            2>&1 | tee -a flet-build.log
 
       - name: Upload build log
         if: always()

@@ -48,6 +48,12 @@ target_sdk_version = 35
 [tool.flet.splash]
 android = false
 
+# flet 1.0.0's Flutter template pins jni 1.0.0, but the bundled jni_flutter 1.1.0
+# calls JReference.nonNullPointer, which that jni version does not expose:
+# `flet build apk` then fails with "The getter 'nonNullPointer' isn't defined".
+[tool.flet.flutter.pubspec.dependency_overrides]
+jni = "^1.2.1"
+
 [build-system]
 requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
