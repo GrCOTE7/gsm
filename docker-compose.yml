@@ -28,4 +28,7 @@ services:
       # API_URL: "https://api.mondomaine.fr"
     volumes:
       - .:/app
-      - /app/.venv
+      - gsm_venv:/app/.venv   # ← nommé au lieu d'anonyme
+
+volumes:
+  gsm_venv:
