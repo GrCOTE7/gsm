@@ -2,7 +2,7 @@ from pathlib import Path
 import sys
 
 if __package__ in {None, ""}:
-    # Allow direct execution: python src/upu/scripts/check_latest.py
+    # Allow direct execution: python src/gsm/scripts/check_latest.py
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from upu.config import get_latest_release_info

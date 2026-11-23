@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.13-slim
 
 # Dossier de travail
 WORKDIR /app
@@ -12,11 +12,14 @@ RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 # Ajouter uv au PATH (installation standard)
 ENV PATH="/root/.local/bin:/usr/local/bin:${PATH}"
 
+# Copier SEULEMENT les fichiers de deps
+COPY pyproject.toml uv.lock ./
+RUN uv sync --frozen --no-dev
 # Copier le projet
 COPY . .
 
 # Installer les dépendances
-RUN uv sync --frozen
+RUN uv sync --frozen --no-dev
 
 # Exposer le port Flet Web
 EXPOSE 8000

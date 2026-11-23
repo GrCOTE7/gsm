@@ -1,5 +1,21 @@
 # NewNRJ.com — MVP Habits & Energy App
 
+## Refactoring GSM project (not yet gsm) every where
+
+* [ ] .gh workflow (les 3)
+* [ ] doc/00000
+* [ ] doc/0103
+* [ ] 0108
+
+* [ ] scripts/
+* [ ] checkversion
+* [ ] qr
+* [ ] upload
+
+* [ ] src/
+
+* [ ] wikidoc → à la fin
+
 ## 📘 Mini Specifications — MVP NewNRJ
 
 ### .🎯 Mission
@@ -210,6 +226,7 @@ Just the essentials to validate the idea.
 ### 1) Developer Account Creation
 
 * [ ] Create a Google Play Developer account
+* [ ] Confirm Google Play Dev Account
 * [ ] Pay one-time fees
 * [ ] Configure legal information
 

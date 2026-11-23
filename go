@@ -1,14 +1,8 @@
-#!/bin/bash
-cd "$(dirname "$0")"
+#!/usr/bin/env bash
 
-uv sync --extra desktop
+# IMPORTANT : Sous Linux Ubuntu 26.04, exécutez au début, une fois ce script
+# d'installation des dépendances :
+#   sh scripts/install_flet_deps_ubuntu_26.04.sh
 
-mode="${1:-}"
-
-if [ "$mode" = "w" ]; then
-    echo "Lancement de l'application Flet - MODE WEB"
-    uv run --active python -m flet.cli run -r --web
-else
-    echo "Lancement de l'application Flet - MODE APP"
-    uv run --active python -m flet.cli run -r
-fi
+# Délègue tout au launcher Python (mêmes options que go.ps1 : '', w, u, gu, debug).
+uv run python "$(dirname "$0")/scripts/app_window/main.py" "$@"

@@ -34,8 +34,8 @@ def configure_window(
     *,
     left: int = 1412,
     top: int = 0,
-    width: int = 500,
-    height: int = 1088,
+    width: int = 540,
+    height: int = 1080,
     reapply_after_startup: bool = True,
 ) -> None:
     # Desktop-only: browser sessions don't expose a native window to position/resize.
@@ -166,18 +166,20 @@ def gc7_rules(
     # width: int = 392, ou 400
     height: int | None = None,
     defaultColors: bool = True,
-    width: int = 516,  # 516 - Note : 500 + 2 * 8 de marge → page.windows_width = 384 // 392 - 373 Galaxy A5
+    width: int = 540,  # 540 - Note : 5247 + 2 * 8 de marge → page.windows_width = 384 // 392 - 373 Galaxy A5
 ) -> None:
 
     # height: int = 742  # Note : 24 (padding top) - 20 (padding bottom) = 1044 → page.window_height = 1044 - 742 Galaxy A5
     if height is None:
         height = (
-            1088 if left >= 1912 else 1040
+            1080 if left >= 1912 else 1040
         )  # Pour adapter écran #2 sans la barre windows
 
     if left == 840:
         height = 808  # Pour adapter fenêtre pour vidéos
     # print(width)
+
+    import dotenv
 
     # VIDÉO :
     # left=840

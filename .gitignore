@@ -167,17 +167,20 @@ cython_debug/
 
 # Flet
 
-# !src/upu/services/storage/
-# !src/upu/services/storage/**
+# !src/gsm/services/storage/
+# !src/gsm/services/storage/**
+
+.tmp/
 
 credentials.json
 sync.ffs_lock
 
 # Runtime state (modifié à chaque lancement, ne pas tracker)
-src/upu/app_data/app_state.json
+src/gsm/app_data/app_state.json
 
 flet-desktop-light.zip
 
-/src/upu/services/storage/__pycache__/
+/src/gsm/services/storage/__pycache__/
 
 /nul
+app_state.json

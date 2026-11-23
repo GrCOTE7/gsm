@@ -1,8 +1,10 @@
 from dataclasses import field
 from upu.views.templates.default import named_view
 from upu.helpers.app_actions import open_url
-from upu.helpers.buttons import extLink
+from upu.helpers.buttons import extLink, extLinkBtn
 import flet as ft
+
+from gsm.helpers.separators import sepa, sepa_outlined, sepa_major
 
 
 @ft.control
@@ -49,13 +51,20 @@ class CalculatorApp(ft.Container):
                 ),
                 ft.Row(
                     controls=[
-                        ExtraActionButton(content="AC", on_click=self.button_clicked, style=ft.ButtonStyle(
-                            padding=ft.Padding(0),
-                            text_style=ft.TextStyle(size=15)),
+                        ExtraActionButton(
+                            content="AC",
+                            on_click=self.button_clicked,
+                            style=ft.ButtonStyle(
+                                padding=ft.Padding(0), text_style=ft.TextStyle(size=15)
+                            ),
                         ),
-                        ExtraActionButton(content="+/-", on_click=self.button_clicked,style=ft.ButtonStyle(
-                            padding=ft.Padding(0,0,0,10),
-                            text_style=ft.TextStyle(size=15))
+                        ExtraActionButton(
+                            content="+/-",
+                            on_click=self.button_clicked,
+                            style=ft.ButtonStyle(
+                                padding=ft.Padding(0, 0, 0, 10),
+                                text_style=ft.TextStyle(size=15),
+                            ),
                         ),
                         ExtraActionButton(content="%", on_click=self.button_clicked),
                         ActionButton(content="/", on_click=self.button_clicked),
@@ -214,7 +223,27 @@ class CalculatorApp(ft.Container):
                     key = "."
                 elif suffix in {"enter", "return"}:
                     key = "="
-        allowed = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "+", "-", "*", "/", "=", "%", "AC", "BACKSPACE"}
+        allowed = {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            ".",
+            "+",
+            "-",
+            "*",
+            "/",
+            "=",
+            "%",
+            "AC",
+            "BACKSPACE",
+        }
 
         if key in allowed:
             print(f"{self.name} → Key pressed = {raw_key} mapped to {key}")
@@ -260,7 +289,7 @@ def build():
     # return calc1, calc2
     # add application's root control to the page
     # page.add(calc1, calc2)
-    
+
     # calc1 = CalculatorApp()
     # return calc1
 
@@ -270,7 +299,12 @@ def build():
         on_key_down=calc.key_pressed,
         content=calc,
     )
-
+    # "start",
+    # "center",
+    # "end",
+    # "space_between",
+    # "space_around",
+    # "space_evenly",
     return named_view(
         ft.Row(
             controls=[
@@ -283,9 +317,31 @@ def build():
         "Script de calculatrice en Python avec Flet",
         body_text_align=ft.TextAlign.CENTER,
         extra=keyboard_calc,
-        bottom=extLink(txt='Source: Tuto doc Flet', url='https://flet.dev/docs/tutorials/calculator'),
+        bottom=[
+            extLink(
+                txt="Source: Tuto doc Flet",
+                url="https://flet.dev/docs/tutorials/calculator",
+                tooltip="Ouvrir la source du tutoriel Flet",
+                align="space_evenly",
+            ),
+            ft.Divider(),
+            ft.Text("sepa()"),
+            sepa(),
+            # ft.Divider(),
+            # sepa_outlined("CYAN_400"),
+            # ft.Divider(),
+            # sepa_major(),
+            # ft.Divider(),
+            extLinkBtn(
+                txt="Source: Tuto doc Flet",
+                url="https://flet.dev/docs/tutorials/calculator",
+                tooltip="Ouvrir la source du tutoriel Flet",
+                align="center",
+            ),
+        ],
     )
+
 
 if __name__ == "__main__":
 
-    ft.run(build) #type: ignore
+    ft.run(build)  # type: ignore

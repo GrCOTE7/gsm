@@ -5,7 +5,7 @@ def named_view(
     title: str | ft.Control,
     body: str,
     extra: ft.Control | None = None,
-    bottom: ft.Control | None = None,
+    bottom: ft.Control | list[ft.Control] | None = None,
     extra_top_gap: int = 16,
     body_text_align: ft.TextAlign = ft.TextAlign.JUSTIFY,
 ) -> ft.Control:
@@ -41,7 +41,15 @@ def named_view(
         ft.Container(expand=True, content=content_column),
     ]
     if bottom is not None:
-        page_controls.append(bottom)
+        if isinstance(bottom, list):
+            page_controls.append(
+                ft.Column(
+                    controls=bottom,
+                    horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+                )
+            )
+        else:
+            page_controls.append(bottom)
 
     return ft.SafeArea(
         expand=True,

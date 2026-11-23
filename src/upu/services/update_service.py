@@ -38,7 +38,7 @@ class UpdateService:
         self.storage.set(KEY_UPDATE_LAST_CHECK_AT, checked_at)
         self.storage.set(KEY_UPDATE_LATEST_VERSION, latest)
 
-        # Retrocompatibilite temporaire des anciennes cles.
+        # Rétrocompatibilité temporaire des anciennes clés.
         self.storage.set(LEGACY_KEY_LAST_CHECK, checked_at)
         self.storage.set(LEGACY_KEY_LATEST_VERSION, latest)
 

@@ -10,7 +10,7 @@ Ce document présente le processus de mise à jour en 2 blocs visuels:
 ```mermaid
 flowchart TD
     A["Démarrage de l'app"] --> B["src/main.py<br/>ft.run(create_app)"]
-    B --> C["src/upu/controllers/app_controller.py<br/>create_app -> AppController"]
+    B --> C["src/gsm/controllers/app_controller.py<br/>create_app -> AppController"]
     C --> D["_render_route<br/>lance _maybe_prompt_for_update (1 seule fois)"]
 
     D --> E{"is_update_available ?"}
@@ -24,7 +24,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A["Clic bouton Mettre à jour"] --> B["_install_update(release_url)<br/>src/upu/controllers/app_controller.py"]
+    A["Clic bouton Mettre à jour"] --> B["_install_update(release_url)<br/>src/gsm/controllers/app_controller.py"]
     B --> C["Ferme le popup"]
     C --> D["SnackBar: tentative d'ouverture"]
     D --> E["open_release_url(page, release_url, force=True)"]
@@ -33,18 +33,18 @@ flowchart TD
     F -- "Non" --> G["SnackBar d'échec"]
     F -- "Oui" --> H["SnackBar d'information (log)"]
 
-    E --> I["src/upu/services/release_service.py
+    E --> I["src/gsm/services/release_service.py
     launch_url -> page.open(ft.Url) -> webbrowser.open"]
-    I --> J["Log: src/upu/app_data/update_flow.log"]
+    I --> J["Log: src/gsm/app_data/update_flow.log"]
 ```
 
 ## Références fichiers
 
 - src/main.py
-- src/upu/controllers/app_controller.py
-- src/upu/config.py
-- src/upu/services/release_service.py
-- src/upu/app_data/update_flow.log
+- src/gsm/controllers/app_controller.py
+- src/gsm/config.py
+- src/gsm/services/release_service.py
+- src/gsm/app_data/update_flow.log
 
 ## Lecture rapide
 

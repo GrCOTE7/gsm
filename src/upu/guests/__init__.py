@@ -5,6 +5,7 @@ import importlib
 
 REGISTRY = []
 
+
 def register(subject_fn):
     REGISTRY.append(subject_fn)
 
@@ -16,7 +17,7 @@ def register(subject_fn):
 
 # for filename in os.listdir(base):
 #     if filename.startswith("g") and filename.endswith(".py"):
-#         module_name = f"upu.guests.{filename[:-3]}"
+#         module_name = f"gsm.guests.{filename[:-3]}"
 #         importlib.import_module(module_name)
 
 # Works on win, lx and apk

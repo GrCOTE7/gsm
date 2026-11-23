@@ -1,0 +1,11 @@
+# Consignes projet (Cline)
+
+## Gestion des commandes et processus
+Quand tu lances des commandes shell ou que tu démarres des processus (serveurs locaux, watchers, tâches longues) :
+
+1. Note toujours quel port / quel processus tu as lancé.
+2. Quand tu as terminé de tester, arrête proprement ce que tu as démarré (stop du serveur, kill du processus), pour ne rien laisser tourner en arrière-plan.
+3. Avant de terminer ta réponse, vérifie qu'il ne reste aucun processus résiduel ouvert par ton travail (contrôle des ports / processus si besoin).
+4. Répondre en français.
+5. Utiliser uv run pour les commandes Python/Flet.
+<!-- 6. Ne pas modifier les fichiers générés automatiquement. -->

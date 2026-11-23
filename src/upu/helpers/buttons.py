@@ -24,8 +24,78 @@ def filled_button(
 
     return ft.FilledButton(*args, style=final_style, **kwargs)
 
+_VALID_ALIGNS = {
+    "start",
+    "center",
+    "end",
+    "space_between",
+    "space_around",
+    "space_evenly",
+}
 
-def extLink(txt='open_url()', url='https://example.com'):
+_ALIGN_MAP = {
+    "start": ft.MainAxisAlignment.START,
+    "center": ft.MainAxisAlignment.CENTER,
+    "end": ft.MainAxisAlignment.END,
+    "space_between": ft.MainAxisAlignment.SPACE_BETWEEN,
+    "space_around": ft.MainAxisAlignment.SPACE_AROUND,
+    "space_evenly": ft.MainAxisAlignment.SPACE_EVENLY,
+}
+
+
+def _resolve_align(align: str | None) -> ft.MainAxisAlignment:
+    """Normalise align en ft.MainAxisAlignment ; retombe sur START si invalide."""
+    if align not in _VALID_ALIGNS:
+        align = "start"
+    return _ALIGN_MAP[align]
+
+
+def _link_row(
+    txt: str, *, color: str | None = None, spacing: int = 6, align: str | None = "start"
+) -> ft.Row:
+    """Contenu partagé (texte + icône) pour les liens externes."""
+    return ft.Row(
+        controls=[
+            ft.Text(txt, color=color),
+            ft.Icon(ft.Icons.OPEN_IN_NEW, size=16),
+        ],
+        spacing=spacing,
+        alignment=_resolve_align(align),
+    )
+
+
+def extLink(txt="open_url()", url="https://example.com", tooltip=None, align="start"):
+    """Lien texte simple, cliquable, sans fond de bouton."""
+    return ft.GestureDetector(
+        mouse_cursor=ft.MouseCursor.CLICK,
+        on_tap=lambda e: open_url(e, url),
+        content=ft.Container(
+            content=_link_row(txt, color=ft.Colors.CYAN_400, align=align),
+            tooltip=tooltip,
+            ink=True,
+        ),
+    )
+
+
+def extLinkBtn(
+    txt="open_url()", url="https://example.com", tooltip=None, align="start"
+):
+    """Variante en FilledButton du même lien."""
+    return ft.Container(
+        content=ft.Row(
+            controls=[
+                filled_button(
+                    content=_link_row(txt, spacing=8),
+                    tooltip=tooltip,
+                    on_click=lambda e: open_url(e, url),
+                ),
+            ],
+            alignment=_resolve_align(align),
+        ),
+    )
+
+
+def extLinkOri(txt="open_url()", url="https://example.com"):
     return ft.Container(
         padding=ft.Padding.only(bottom=10),
         content=ft.Row(
@@ -48,4 +118,3 @@ def extLink(txt='open_url()', url='https://example.com'):
             alignment=ft.MainAxisAlignment.CENTER,
         ),
     )
-

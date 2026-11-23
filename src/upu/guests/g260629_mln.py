@@ -14,7 +14,8 @@ response = response if "response" in globals() else "En cours"  # type: ignore
 
 from upu.views.partials.test_guests_src import guest_source
 
-S: str = 'abc'
+S: str = "abc"
+
 
 def jeu_abc_bac_v1():
     res = S[1::-1] + S[-1]
@@ -34,7 +35,7 @@ def subject():
         controls=[
             guest_source(date, guest, response, source, url),
             ft.Text(jeu_abc_bac_v1(), size=20),
-            sepa('CYAN'),
+            sepa("CYAN"),
             ft.Text(jeu_abc_2_bac(), size=20),
         ]
     )

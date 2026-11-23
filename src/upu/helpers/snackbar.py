@@ -17,7 +17,7 @@ def show_snackbar(
     if not str(message).strip():
         return
 
-    previous_snackbar = getattr(page, "_upu_last_snackbar", None)
+    previous_snackbar = getattr(page, "_gsm_last_snackbar", None)
     if previous_snackbar is not None:
         page_close = getattr(page, "close", None)
         if callable(page_close):
@@ -43,7 +43,7 @@ def show_snackbar(
     if callable(page_open):
         try:
             page_open(snackbar)
-            setattr(page, "_upu_last_snackbar", snackbar)
+            setattr(page, "_gsm_last_snackbar", snackbar)
             page.update()
             return
         except Exception:
@@ -56,12 +56,12 @@ def show_snackbar(
         if snackbar not in overlay:
             overlay.append(snackbar)
         snackbar.open = True
-        setattr(page, "_upu_last_snackbar", snackbar)
+        setattr(page, "_gsm_last_snackbar", snackbar)
         page.update()
         return
 
     setattr(page, "snack_bar", snackbar)
-    setattr(page, "_upu_last_snackbar", snackbar)
+    setattr(page, "_gsm_last_snackbar", snackbar)
     page_snackbar = getattr(page, "snack_bar", None)
     if page_snackbar is not None:
         page_snackbar.open = True

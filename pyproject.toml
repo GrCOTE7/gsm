@@ -1,12 +1,14 @@
 [project]
-name = "UpU"
+name = "GSM"
 version = "1.0.36"
 description = "Up U!"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.14"
 authors = [{ name = "GrCOTE7", email = "GrCOTE7@gmail.com" }]
 dependencies = [
-    "flet==0.85.*",
+    "flet==1.0.0",
+    "flet-cli==1.0.0",
+    "flet-desktop==1.0.0",
     "flet-audio",
     "certifi",
     "google-api-python-client>=2.196.0",
@@ -17,16 +19,16 @@ dependencies = [
     "rich>=15.0.0",
     "qrcode[pil]>=8.2",
     "pytest>=8.0.0",
-    "flet-webview>=0.85.3",
-    "typing-extensions>=4.16.0"
+    "flet-webview>=1.0.0",
+    "flet-web==1.0.0",
+    "typing-extensions>=4.16.0",
+    "pywin32; sys_platform == 'win32'",
 ]
 
 [project.optional-dependencies]
-desktop = [
-    "flet-cli",
-    "flet-desktop",
-    "pyshorteners>=1.0.1"
-]
+desktop = ["flet-cli", "flet-desktop", "pyshorteners>=1.0.1"]
+web = ["flet-web==1.0.0"]
+dev = ["pytest>=8.0.0"]
 
 [tool.flet]
 org = "com.mycompany"
@@ -48,6 +50,13 @@ target_sdk_version = 35
 
 [tool.flet.splash]
 android = false
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
 
 # [tool.flet.android.permission]
 # "android.permission.CAMERA" = true

@@ -1,6 +1,6 @@
 $projectRoot = Resolve-Path (Join-Path $PSScriptRoot "..")
 $pyprojectPath = Join-Path $projectRoot "pyproject.toml"
-$appBuildPath = Join-Path $projectRoot "src\upu\app_data\app_build.json"
+$appBuildPath = Join-Path $projectRoot "src\gsm\app_data\app_build.json"
 
 if (-not (Test-Path -Path $pyprojectPath) -or -not (Test-Path -Path $appBuildPath)) {
   return
@@ -44,5 +44,5 @@ if ([string]::IsNullOrWhiteSpace($pyprojectVersion) -or [string]::IsNullOrWhiteS
 }
 
 if ($pyprojectVersion -ne $appBuildVersion) {
-  Write-Host "[version-check] Version mismatch: pyproject.toml=$pyprojectVersion ; src/upu/app_data/app_build.json=$appBuildVersion" -ForegroundColor DarkYellow
+  Write-Host "[version-check] Version mismatch: pyproject.toml=$pyprojectVersion ; src/gsm/app_data/app_build.json=$appBuildVersion" -ForegroundColor DarkYellow
 }
