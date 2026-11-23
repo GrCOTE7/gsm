@@ -1,0 +1,76 @@
+name: APK debug
+
+# Temporary workflow used to diagnose `flet build apk` without creating a
+# release or deploying. Safe to delete once the APK build is green again.
+
+on:
+  workflow_dispatch:
+    inputs:
+      python_version:
+        description: "Python version bundled by serious_python"
+        type: string
+        default: "3.13"
+      extra_args:
+        description: "Extra arguments passed to flet build"
+        type: string
+        default: ""
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install Python dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.44.8"
+          channel: stable
+
+      - name: Accept Android licenses
+        run: yes | flutter doctor --android-licenses
+
+      - name: Build APK
+        shell: bash
+        run: |
+          set -o pipefail
+          echo "== python-version: ${{ inputs.python_version }} / extra: ${{ inputs.extra_args }}"
+          flet build apk -vv --yes \
+            --python-version "${{ inputs.python_version }}" \
+            ${{ inputs.extra_args }} 2>&1 | tee flet-build.log || {
+            echo "::error::flet build apk failed (see flet-build.log artifact)"
+            exit 1
+          }
+
+      - name: Upload build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: flet-build-log-debug
+          path: flet-build.log
+
+      - name: Upload APKs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: apk-debug
+          path: build/apk/*.apk
+          if-no-files-found: ignore
