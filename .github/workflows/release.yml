@@ -92,7 +92,7 @@ jobs:
           from pathlib import Path
 
           version = os.environ["APP_BUILD_VERSION"]
-          path = Path("src/upu/app_data/app_build.json")
+          path = Path("src/gsm/app_data/app_build.json")
 
           if not path.exists():
             raise SystemExit(f"Missing {path}")
@@ -106,7 +106,7 @@ jobs:
           print(f"app_build version synced to {version}")
           PY
 
-          cat src/upu/app_data/app_build.json
+          cat src/gsm/app_data/app_build.json
 
       - name: Deploy GSM project to VPS (rsync)
         if: steps.release_tag.outputs.release_created == 'true'
@@ -114,18 +114,18 @@ jobs:
         env:
           VPS_HOST: ${{ secrets.VPS_HOST }}
           VPS_USER: ${{ secrets.VPS_USER }}
-          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_UPU }}
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_GSM }}
         run: |
           set -euo pipefail
 
           : "${VPS_HOST:?VPS_HOST secret is required}"
           : "${VPS_USER:?VPS_USER secret is required}"
-          : "${VPS_SSH_KEY:?VPS_SSH_KEY_UPU secret is required}"
+          : "${VPS_SSH_KEY:?VPS_SSH_KEY_GSM secret is required}"
 
           echo "Preparing SSH key..."
           mkdir -p ~/.ssh
-          echo "$VPS_SSH_KEY" > ~/.ssh/id_ed25519_upu
-          chmod 600 ~/.ssh/id_ed25519_upu
+          echo "$VPS_SSH_KEY" > ~/.ssh/id_ed25519_gsm
+          chmod 600 ~/.ssh/id_ed25519_gsm
 
           remote="$VPS_USER@$VPS_HOST:/opt/gsm"
 
@@ -155,12 +155,12 @@ jobs:
               --exclude "__pycache__/" \
               --exclude ".venv/" \
               --exclude ".git/" \
-              -e "ssh -i ~/.ssh/id_ed25519_upu -o StrictHostKeyChecking=no" \
+              -e "ssh -i ~/.ssh/id_ed25519_gsm -o StrictHostKeyChecking=no" \
               "$item" "$remote"
           done
 
           echo "Restarting container gsm_app on VPS..."
-          ssh -i ~/.ssh/id_ed25519_upu -o StrictHostKeyChecking=no "$VPS_USER@$VPS_HOST" "docker restart gsm_app"
+          ssh -i ~/.ssh/id_ed25519_gsm -o StrictHostKeyChecking=no "$VPS_USER@$VPS_HOST" "docker restart gsm_app"
 
           echo "Deployment complete OK."
 
@@ -386,7 +386,7 @@ jobs:
           echo "=== build/apk/ contents ==="
           ls -lh build/apk/ || echo "(directory missing or empty)"
           shopt -s nullglob
-          project_name=$(python -c 'import re,tomllib,pathlib; p=pathlib.Path("pyproject.toml"); data=tomllib.loads(p.read_text(encoding="utf-8")) if p.exists() else {}; name=data.get("project",{}).get("name") or data.get("tool",{}).get("flet",{}).get("product") or "Upu"; print(re.sub(r"[^A-Za-z0-9]+","_",name).strip("_") or "Upu")')
+          project_name=$(python -c 'import re,tomllib,pathlib; p=pathlib.Path("pyproject.toml"); data=tomllib.loads(p.read_text(encoding="utf-8")) if p.exists() else {}; name=data.get("project",{}).get("name") or data.get("tool",{}).get("flet",{}).get("product") or "Gsm"; print(re.sub(r"[^A-Za-z0-9]+","_",name).strip("_") or "Gsm")')
           universal_apk="build/apk/${project_name}.apk"
           if [ -f "$universal_apk" ]; then
             source_apk="$universal_apk"
@@ -436,7 +436,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          app_build_version=$(python -c "import json,pathlib; payload=json.loads(pathlib.Path('src/upu/app_data/app_build.json').read_text(encoding='utf-8')); print(str(payload.get('version','')).strip())")
+          app_build_version=$(python -c "import json,pathlib; payload=json.loads(pathlib.Path('src/gsm/app_data/app_build.json').read_text(encoding='utf-8')); print(str(payload.get('version','')).strip())")
 
           # Keep packaging metadata aligned with embedded app version.
           if [ -z "$app_build_version" ]; then
@@ -457,7 +457,7 @@ jobs:
           fi
 
           if [ "$app_build_version" != "$pyproject_version" ]; then
-            echo "::error::Version mismatch between src/upu/app_data/app_build.json and pyproject.toml"
+            echo "::error::Version mismatch between src/gsm/app_data/app_build.json and pyproject.toml"
             exit 1
           fi
 
@@ -469,7 +469,7 @@ jobs:
           branch="${GITHUB_REF_NAME:-main}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/upu/app_data/app_build.json pyproject.toml
+          git add src/gsm/app_data/app_build.json pyproject.toml
           git diff --cached --quiet && echo "Nothing to commit." && exit 0
           git commit -m "chore: sync versions to ${{ steps.release_tag.outputs.release_tag }} [skip ci]"
           git pull --rebase origin "$branch"
@@ -481,17 +481,17 @@ jobs:
         env:
           VPS_HOST: ${{ secrets.VPS_HOST }}
           VPS_USER: ${{ secrets.VPS_USER }}
-          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_UPU }}
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_GSM }}
         run: |
           set -euo pipefail
 
           : "${VPS_HOST:?VPS_HOST secret is required}"
           : "${VPS_USER:?VPS_USER secret is required}"
-          : "${VPS_SSH_KEY:?VPS_SSH_KEY_UPU secret is required}"
+          : "${VPS_SSH_KEY:?VPS_SSH_KEY_GSM secret is required}"
 
           mkdir -p ~/.ssh
-          echo "$VPS_SSH_KEY" > ~/.ssh/id_ed25519_upu
-          chmod 600 ~/.ssh/id_ed25519_upu
+          echo "$VPS_SSH_KEY" > ~/.ssh/id_ed25519_gsm
+          chmod 600 ~/.ssh/id_ed25519_gsm
 
           remote="$VPS_USER@$VPS_HOST:/opt/gsm"
 
@@ -500,7 +500,7 @@ jobs:
             if [ -e "$item" ]; then
               echo "Quick sync: $item"
               rsync -avz \
-                -e "ssh -i ~/.ssh/id_ed25519_upu -o StrictHostKeyChecking=no" \
+                -e "ssh -i ~/.ssh/id_ed25519_gsm -o StrictHostKeyChecking=no" \
                 "$item" "$remote"
             else
               echo "Skipping missing optional item: $item"

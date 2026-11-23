@@ -22,7 +22,7 @@ def guest_source(
 
     if url:
         span_kwargs["url"] = url
-
+        
     return ft.Text(
         spans=[ft.TextSpan(**span_kwargs)],
         tooltip="Voir le msg source originel" if url else None

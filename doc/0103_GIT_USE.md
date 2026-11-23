@@ -76,7 +76,7 @@ uv run flet run
 
 Donc, si tout va bien, à ce stade, l'app 'tourne', et tu dois voir que la fenêtre de sortie de l'app s'actualise automatiquement dès un seul caractère du code modifié... Même si elle n'est pas forcément à un endroit optimal, selon ton matériel... Pour le moment, le cas échéant, fais la simplement glisser ailleurs afin qu'elle ne te gêne pas !
 
-#### 💡 Pour modifier la page d'accueil avec n'importe quel éditeur, et ainsi **voir IMMÉDIATEMENT que tout marche bien** dont le hot-reload : Ouvre ce fichier: ***gsm\src\upu\views\tests.py*** et modifie la ligne - elle se trouve plutôt sur la fin du script, dans le *return* de la fct *build()*...
+#### 💡 Pour modifier la page d'accueil avec n'importe quel éditeur, et ainsi **voir IMMÉDIATEMENT que tout marche bien** dont le hot-reload : Ouvre ce fichier: ***gsm\src\gsm\views\tests.py*** et modifie la ligne - elle se trouve plutôt sur la fin du script, dans le *return* de la fct *build()*...
 
 ```python
 "Page pour tests rapides.",
@@ -101,7 +101,7 @@ Perso, dans un tel cas (1 seul écran dispo), je consacre 2/3 à 4/5 de la surfa
 Alors, **bonne nouvelle, c'est juste une valeur à indiquer dans un fichier** :
 
 1. Copie .env_example à la racine en **.env**
-2. Pour l'heure, la seule valeur à y configurer est **UPU_WINDOW_LEFT** : Elle définit où se positionnera la fenêtre de l'App sur le système d'affichage d'écran par rapport au bord gauche de l'ensemble... **Trouve TA valeur idéale pour un positionnement aux petits oignons**... (*[Encore des Oignons ?!?](../THERA.md#Philosophie---Union-&-DRY)*)
+2. Pour l'heure, la seule valeur à y configurer est **GSM_WINDOW_LEFT** : Elle définit où se positionnera la fenêtre de l'App sur le système d'affichage d'écran par rapport au bord gauche de l'ensemble... **Trouve TA valeur idéale pour un positionnement aux petits oignons**... (*[Encore des Oignons ?!?](../THERA.md#Philosophie---Union-&-DRY)*)
       Nous verrons les autres paramètres en temps utile.
 
 📄 Pour info : Ce **fichier ./.env n'est jamais dans le Git** (Il est à toi, et rien qu'à toi, uniquement local, donc tu peux y mettre toutes infos sensibles sans inquiétude... Et tu verras que tu y poseras aussi des clés ou autres mots de passes parfois très sensibles... No soucis ! - *Prononcer 'No souçaïde'*)
@@ -112,7 +112,7 @@ On est jamais à l'abri de devoir un jour re-initialiser un projet, même GSM (e
 
 *Tip*: Rien ne t'empêche d'y stocker, dans ce 'private dépôt', vraiment tout ce que tu veux : De docs admins, factures, etc... Pas besoin forcément du code d'un quelconque langage, mais pas contre, une bonne arborescence bien réfléchie pour y retrouver facilement et rapidement tout doc au besoin... SSL, hautement sécurisé, décentralisé, gratos... Bref, tous tes trucs clés dans un unique support, dispo 24/24, indépendant de tout ton matos perso... Mais n'oublie pas, donc, d'y mettre aussi la copie de ton .env de ton projet GSM ! 😉 !
 
-### 💡 Pour plus de simplicité pour la suite dans un 1er temps, remets bien le fichier (*gsm\src\upu\views\tests.py*) tel qu'il était au départ. Pour t'aider si besoin, look 'en avance sur ton temps', [les commandes avancées](./imgs/104_git_diff.png) nécessaires pour savoir où tu en es dans tes modifs
+### 💡 Pour plus de simplicité pour la suite dans un 1er temps, remets bien le fichier (*gsm\src\gsm\views\tests.py*) tel qu'il était au départ. Pour t'aider si besoin, look 'en avance sur ton temps', [les commandes avancées](./imgs/104_git_diff.png) nécessaires pour savoir où tu en es dans tes modifs
 
 ---
 

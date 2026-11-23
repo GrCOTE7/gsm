@@ -15,20 +15,20 @@ jobs:
           fetch-depth: 0
       - name: Debug secret length
         env:
-          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_UPU }}
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_GSM }}
         run: |
           set -euo pipefail
-          : "${VPS_SSH_KEY:?VPS_SSH_KEY_UPU secret is required}"
+          : "${VPS_SSH_KEY:?VPS_SSH_KEY_GSM secret is required}"
           echo "Secret length: ${#VPS_SSH_KEY}"
 
       - name: Prepare SSH key
         env:
-          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_UPU }}
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_GSM }}
         run: |
           set -euo pipefail
           mkdir -p ~/.ssh
-          echo "$VPS_SSH_KEY" > ~/.ssh/id_ed25519_upu
-          chmod 600 ~/.ssh/id_ed25519_upu
+          echo "$VPS_SSH_KEY" > ~/.ssh/id_ed25519_gsm
+          chmod 600 ~/.ssh/id_ed25519_gsm
 
       - name: Debug SSH key
         env:
@@ -38,9 +38,9 @@ jobs:
           set -euo pipefail
           : "${VPS_HOST:?VPS_HOST secret is required}"
           : "${VPS_USER:?VPS_USER secret is required}"
-          ls -l ~/.ssh/id_ed25519_upu
-          test -s ~/.ssh/id_ed25519_upu
-          ssh -i ~/.ssh/id_ed25519_upu -o IdentitiesOnly=yes -o StrictHostKeyChecking=no "$VPS_USER@$VPS_HOST" "echo OK"
+          ls -l ~/.ssh/id_ed25519_gsm
+          test -s ~/.ssh/id_ed25519_gsm
+          ssh -i ~/.ssh/id_ed25519_gsm -o IdentitiesOnly=yes -o StrictHostKeyChecking=no "$VPS_USER@$VPS_HOST" "echo OK"
 
       - name: Rsync to VPS
         env:
@@ -78,7 +78,7 @@ jobs:
               --exclude "__pycache__/" \
               --exclude ".venv/" \
               --exclude ".git/" \
-              -e "ssh -i ~/.ssh/id_ed25519_upu -o StrictHostKeyChecking=no" \
+              -e "ssh -i ~/.ssh/id_ed25519_gsm -o StrictHostKeyChecking=no" \
               "$item" "$remote"
           done
 

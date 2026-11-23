@@ -59,7 +59,7 @@ def format_reset(reset_epoch: str) -> str:
         return "<none>"
     try:
         return datetime.fromtimestamp(int(reset_epoch)).strftime("%H:%M:%S")
-    except (ValueError, OSError):
+    except ValueError, OSError:
         return reset_epoch
 
 

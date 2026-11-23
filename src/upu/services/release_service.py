@@ -68,7 +68,7 @@ def _can_open_release_url(now: float | None = None) -> bool:
 
 
 def _is_mobile_platform(page: ft.Page | None) -> bool:
-    """Detecte si la plateforme est Android ou iOS."""
+    """Détecte si la plateforme est Android ou iOS."""
     if page is None:
         return False
 

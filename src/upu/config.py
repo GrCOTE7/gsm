@@ -25,12 +25,13 @@ APP_NAME = "Up You!"
 #################################################
 DEFAULT_ROUTE = "/archives"  # 2ar unused
 DEFAULT_ROUTE = "/react"
-DEFAULT_ROUTE = "/home"
-DEFAULT_ROUTE = "/tests2"
-DEFAULT_ROUTE = "/tests"
 DEFAULT_ROUTE = "/icons"
-DEFAULT_ROUTE = "/calculator"
 DEFAULT_ROUTE = "/counter"
+DEFAULT_ROUTE = "/home"
+DEFAULT_ROUTE = "/tests"
+DEFAULT_ROUTE = "/tests2"
+DEFAULT_ROUTE = "/archives"
+DEFAULT_ROUTE = "/calculator"
 #################################################
 
 
@@ -132,7 +133,8 @@ def _env_int(name: str, default: int = 0) -> int:
 
 
 WINDOW_LEFT = _env_int(name="UPU_WINDOW_LEFT", default=1412)  # 1526 - 1912
-DEBUG_RELEASE_JSON = _env_int("UPU_DEBUG_RELEASE_JSON", 0) == 1
+WINDOW_CLI = _env_int(name="UPU_WINDOW_CLI", default=0)  # 1 CLI - 0 Pas CLI
+DEBUG_RELEASE_JSON = _env_int("GSM_DEBUG_RELEASE_JSON", 0) == 1
 GITHUB_OWNER = "GrCOTE7"
 GITHUB_REPO = "gsm"
 GITHUB_LATEST_RELEASE_API = (
@@ -181,7 +183,7 @@ def get_latest_release_info(
         GITHUB_LATEST_RELEASE_API,
         headers={
             "Accept": "application/vnd.github+json",
-            "User-Agent": "upu-version-check",
+            "User-Agent": "gsm-version-check",
         },
     )
 

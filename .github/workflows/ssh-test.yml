@@ -11,25 +11,25 @@ jobs:
     steps:
       - name: Prepare SSH key
         env:
-          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_UPU }}
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY_GSM }}
         run: |
           set -euo pipefail
           mkdir -p ~/.ssh
-          echo "$VPS_SSH_KEY" > ~/.ssh/id_ed25519_upu
-          chmod 600 ~/.ssh/id_ed25519_upu
+          echo "$VPS_SSH_KEY" > ~/.ssh/id_ed25519_gsm
+          chmod 600 ~/.ssh/id_ed25519_gsm
 
       - name: Debug SSH key
         run: |
           ls -l ~/.ssh
-          ls -l ~/.ssh/id_ed25519_upu || echo "clé absente"
-          head -n 20 ~/.ssh/id_ed25519_upu || echo "clé vide"
+          ls -l ~/.ssh/id_ed25519_gsm || echo "clé absente"
+          head -n 20 ~/.ssh/id_ed25519_gsm || echo "clé vide"
 
       - name: Test SSH
         env:
           VPS_HOST: ${{ secrets.VPS_HOST }}
           VPS_USER: ${{ secrets.VPS_USER }}
         run: |
-          ssh -i ~/.ssh/id_ed25519_upu \
+          ssh -i ~/.ssh/id_ed25519_gsm \
               -o IdentitiesOnly=yes \
               -o StrictHostKeyChecking=no \
               $VPS_USER@$VPS_HOST "echo OK"

@@ -1,8 +1,29 @@
+<!-- markdownlint-disable MD022 MD028 MD041 -->
 <h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
+<!-- markdownlint-enable MD041 -->
 
 # Tips
 
 ## Ressources diverses
+
+> [!NOTE] pour information
+
+> [!TIP] pour conseil
+
+> [!WARNING] pour risque
+
+✅ pour confirmations
+
+⚠️ pour alertes courtes
+
+> [!NOTE]
+> Astuce utile : ce bloc est mis en avant.
+
+> [!TIP]
+> Tu peux faire cela beaucoup plus simplement.
+
+> [!WARNING]
+> Attention, cette commande modifie le comportement du système.
 
 ### [https://flet.app/gallery/run/apps/icons_browser](https://flet.app/gallery/run/apps/icons_browser)
 
@@ -13,6 +34,8 @@ Alternative : Extension VSC Markdown Emoji - Matt Bierner → CTRL + MAJ + E
 # 😀 😉 😊 😁 🥳 👍 👌 👏 🙁 🤝 💙 ⚠️ ⌨️ 💻 🔍 📦  📋 📄 📂 🛠️ 🧰 🧵 🧪 🏛️ ⚡👉 📞 🎨 🚀 ✅ 🎯 ❌ 💡 🧱 📫 🧸 🚧 🏗️ 🥖 👨‍🍳 🧠 🌍 🤞 💪 ❤️ 🌐 🌱 🔄 🚨 📚 🙃 🔔
 
 ---
+
+# 🔗 lien
 
 # 🐍 → serpent (emoji universel pour Python)
 # 🔵🟡 → couleurs du logo Python
@@ -27,8 +50,7 @@ Git
 # 🐙 GitHub
 # 🔀 Versioning / branches / merge
 # 🔀 (merge)
-# 🔁 (sync)
-# 🔂 (replay / rebase)
+# 🔁 (sync / replay / rebase)
 # 🌿 (branche)
 # 🧵 (threads / commits)
 # 🌳 Arbre de commits
@@ -37,8 +59,7 @@ Git
 
 # 🧰  (toolbox)
 # 🛠️  (tools)
-#🧱  (building blocks)
-
+# 🧱  (building blocks)
 
 🟦💻 VS Code
 🧩🟦 VSC Ext
@@ -85,3 +106,29 @@ Get-ChildItem -Recurse -Force -Directory |
     Tree
 
 -->
+Dans settings.json :
+
+```json
+ "markdownlint.config": {
+    "MD028": false
+  }
+```
+<!-- markdownlint-enable MD022 MD028 -->
+| Symbole | ALT + | Comment     |
+| :-----: | ----: | ----------- |
+|    ☻    |     2 |             |
+|    ♥    |     3 |             |
+|    •    |     7 |             |
+|    ○    |     9 |             |
+|    ☼    |    15 |             |
+|    …    |  0133 |             |
+|    –    |  0150 | Demi-tiret  |
+|    —    |  0151 | Tiret-plein |
+|    ™    |  0153 |             |
+|    œ    |  0156 |             |
+|    §    |  0167 |             |
+|    ©    |  0169 |             |
+|    ±    |  0177 |             |
+|    µ    |  0181 |             |
+|    │    |   179 |             |
+

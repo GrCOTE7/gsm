@@ -3,7 +3,7 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from upu.services import release_service
+from gsm.services import release_service
 
 
 def test_open_release_url_throttles_for_one_hour(monkeypatch, tmp_path: Path) -> None:
@@ -82,7 +82,7 @@ def test_open_release_url_throttles_across_restart(monkeypatch, tmp_path: Path) 
 def test_transform_url_to_android_install_intent() -> None:
     """Test que les URLs APK sont transformées en intent:// pour forcer PackageInstaller."""
     apk_url = (
-        "https://github.com/GrCOTE7/gsm/releases/download/v1.0.5/UpU-arm64-v8a.apk"
+        "https://github.com/GrCOTE7/gsm/releases/download/v1.0.5/GSM-arm64-v8a.apk"
     )
     transformed = release_service._transform_url_to_android_install_intent(apk_url)
 
@@ -94,7 +94,7 @@ def test_transform_url_to_android_install_intent() -> None:
     assert "type=application/vnd.android.package-archive" in transformed
     # Vérifier qu'on a bien l'URL sans le scheme
     assert (
-        "github.com/GrCOTE7/gsm/releases/download/v1.0.5/UpU-arm64-v8a.apk"
+        "github.com/GrCOTE7/gsm/releases/download/v1.0.5/GSM-arm64-v8a.apk"
         in transformed
     )
 
@@ -143,7 +143,7 @@ def test_open_release_url_force_bypasses_cooldown(monkeypatch, tmp_path: Path) -
 
 
 def test_normalize_desktop_release_url_download_to_tag() -> None:
-    url = "https://github.com/GrCOTE7/gsm/releases/download/v1.2.3/UpU.apk"
+    url = "https://github.com/GrCOTE7/gsm/releases/download/v1.2.3/GSM.apk"
     assert (
         release_service._normalize_desktop_release_url(url)
         == "https://github.com/GrCOTE7/gsm/releases/tag/v1.2.3"
@@ -170,7 +170,7 @@ def test_open_release_url_desktop_prefers_release_page(
 
     assert release_service.open_release_url(
         None,
-        "https://github.com/GrCOTE7/gsm/releases/download/v1.2.3/UpU.apk",
+        "https://github.com/GrCOTE7/gsm/releases/download/v1.2.3/GSM.apk",
         force=True,
     )
 

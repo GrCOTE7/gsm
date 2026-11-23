@@ -1,6 +1,6 @@
+import flet as ft
 from upu.views.pages.registry import get_view_builder, has_route
 from upu.ui.navigation import AppBar, Drawer
-import flet as ft
 from upu.config import APP_NAME, DEFAULT_ROUTE
 
 

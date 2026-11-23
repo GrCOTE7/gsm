@@ -1,7 +1,7 @@
+import flet as ft
 from collections.abc import Callable
 from dataclasses import dataclass
 
-import flet as ft
 
 from upu.views.pages import (
     calculator,

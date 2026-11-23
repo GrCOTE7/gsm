@@ -40,7 +40,7 @@ service = build("drive", "v3", credentials=creds)
 FILE_PATH = (
     sys.argv[1]
     if len(sys.argv) > 1
-    else os.getenv("GDRIVE_TEST_FILE", "C:/gsm/build/apk/UpU.apk")
+    else os.getenv("GDRIVE_TEST_FILE", "C:/gsm/build/apk/gsm.apk")
 )
 if not os.path.isfile(FILE_PATH):
     raise FileNotFoundError(f"APK not found: {FILE_PATH}")

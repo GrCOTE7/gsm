@@ -48,6 +48,9 @@ Noter que ce site propose aussi la documentation de l'éditeur (En anglais), mai
 ```dos
 ALT + 3 → 31 : ♥ ... ▼
 ALT + 24 à 27: ↑ ↓ → ←
+ALT + 18 : ↕
+ALT + 29 : ↔
+⇔⇕
 ALT + 144, 183 : É À
 MAJ + ALT + ↑ ou ↓ : COPIÉ/COLLÉ décalé d'une ligne
 ALT + ← : Retourner au précédent code édité (historique)

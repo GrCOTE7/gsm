@@ -1,7 +1,5 @@
 """Actions transverses (URL, fermeture app) selon la plateforme."""
 
-from __future__ import annotations
-
 import os
 import webbrowser
 

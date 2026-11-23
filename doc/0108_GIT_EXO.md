@@ -29,18 +29,18 @@ git switch -c exo/action_folle
 
 Mais pour l'exemple, on va volontairement créer un problème pour s'entraîner.
 
-Imaginons un cas gravissime : On efface un dossier clé de l'app, `src/upu`. (Il n'y a pas plus critique, c'est tout le cœur de l'app !!!)
+Imaginons un cas gravissime : On efface un dossier clé de l'app, `src/gsm`. (Il n'y a pas plus critique, c'est tout le cœur de l'app !!!)
 
 <img src="./imgs/win_logo.png" width='18'> Windows (PowerShell):
 
 ```bash
-Remove-Item -Recurse -Force .\src\upu
+Remove-Item -Recurse -Force .\src\gsm
 ```
 
 <img src="./imgs/linux_logo.png" width='18'> Linux / macOS:
 
 ```bash
-rm -rf src/upu
+rm -rf src/gsm
 ```
 
 ## En plus, on ne le voit pas tout de suite, et donc on valide notre dev
@@ -77,7 +77,7 @@ git reset --mixed HEAD~1
 Ensuite, si les fichiers concernés ne sont plus indexés, on peut restaurer uniquement le dossier supprimé par erreur, tout en gardant d'autres changements faits par ailleurs :
 
 ```bash
-git restore --source=HEAD~1 src/upu
+git restore --source=HEAD~1 src/gsm
 ```
 
 Puis recommit proprement si d'autres changements avaient été faits :
@@ -94,8 +94,8 @@ Le plus simple et le plus propre est de faire un commit de correction, puis de p
 
 ```bash
 # Restaurer le dossier depuis le commit précédent
-git restore --source=HEAD~1 src/upu
-git add src/upu
+git restore --source=HEAD~1 src/gsm
+git add src/gsm
 git commit -m "fix: restauration du dossier supprimé par erreur"
 git push
 ```

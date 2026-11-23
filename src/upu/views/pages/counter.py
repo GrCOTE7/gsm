@@ -9,7 +9,7 @@ def imperative_counter() -> ft.Control:
     def increment(_e: ft.ControlEvent) -> None:
         count.value = str(int(count.value) + 1)
 
-# * [ ] ici transitional btn
+    # * [ ] ici transitional btn
 
     return ft.Container(
         padding=20,

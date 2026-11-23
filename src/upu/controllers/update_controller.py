@@ -24,7 +24,7 @@ class UpdateController:
             return
 
         latest_release = await asyncio.to_thread(get_latest_release_info)
-        # Android/iOS peut encore etre en phase de rendu au tout premier tick.
+        # Android/iOS peut encore être en phase de rendu au tout premier tick.
         if self._is_mobile_platform():
             await asyncio.sleep(0.77)
         self.show_update_dialog(latest_release)
@@ -43,7 +43,7 @@ class UpdateController:
                     on_click=self.close_update_dialog,
                 ),
                 filled_button(
-                    content=ft.Text("Mettre a jour"),
+                    content=ft.Text("Mettre à jour"),
                     on_click=lambda e: self.install_update(release_url),
                 ),
             ],
@@ -59,7 +59,7 @@ class UpdateController:
                 ft.Text(f"Version actuelle: {self.version}"),
                 ft.Text(f"Version disponible: {latest_version}"),
                 ft.Text(
-                    "Une mise a jour est disponible. Voulez-vous telecharger la nouvelle APK maintenant ?"
+                    "Une mise à jour est disponible. Voulez-vous télécharger la nouvelle APK maintenant ?"
                 ),
             ],
         )
@@ -100,11 +100,11 @@ class UpdateController:
 
     def install_update(self, release_url: str) -> None:
         self.close_update_dialog()
-        show_snackbar(self.page, "Tentative d'ouverture de la mise a jour...", 7700)
+        show_snackbar(self.page, "Tentative d'ouverture de la mise à jour...", 7700)
         opened = open_release_url(self.page, release_url, force=True)
         if not opened:
             show_snackbar(
-                self.page, "Impossible d'ouvrir le lien de mise a jour.", 7700
+                self.page, "Impossible d'ouvrir le lien de mise à jour.", 7700
             )
             return
         show_snackbar(

@@ -10,9 +10,9 @@ RUN apt-get update && apt-get install -y curl \
 COPY . /app
 
 RUN if [ -f requirements.txt ]; then \
-        pip install --no-cache-dir --root-user-action=ignore -r requirements.txt; \
+    pip install --no-cache-dir --root-user-action=ignore -r requirements.txt; \
     fi
 
-EXPOSE 8777
+EXPOSE 8000
 
-CMD ["python", "-m", "src.upu.app"]
+CMD ["python", "-m", "src.gsm.app"]

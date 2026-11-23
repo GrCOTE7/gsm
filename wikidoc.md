@@ -1,16 +1,20 @@
-# Wikidoc - Projet GSM (UpU)
+# Wikidoc - Projet GSM (gsm)
+
+* [ ] Wikidoc à regénérer quand all project refactorisé
+
+---
 
 Disclaimer: Merci à Bruno Brown pour nous avoir permis de découvrir WikiDoc ([Version par Gemini](https://discord.com/channels/981374556059086931/1219578168093184050/1507379031463690256))
 
 ## Presentation
-GSM est le depot de l'application UpU, developpee en Python avec Flet.
+GSM est le depot de l'application Gsm, developpée en Python avec Flet.
 
-Le coeur applicatif vit sous src/upu avec une separation claire entre controllers, views, services et helpers.
+Le coeur applicatif vit sous src/gsm avec une separation claire entre controllers, views, services et helpers.
 
 ### Vue d'ensemble
 ```mermaid
 flowchart LR
-   subgraph App[Application UpU]
+   subgraph App[Application Gsm]
       Main[src/main.py]
       Controller[controllers/app_controller.py]
       Routes[routes/registry.py]
@@ -43,7 +47,7 @@ src/
 |- beep_engine.py
 |- countdown.py
 |- gc7_tools/
-`- upu/
+`- gsm/
    |- config.py
    |- app_data/
    |- controllers/
@@ -89,10 +93,12 @@ Option recommandee sous Windows (wrapper repo):
 ./go
 ```
 
-Equivalent commande explicite:
+Equivalent commande explicite (sans `--active` : `uv run` resynchronise
+l'environnement — c'est ce qui garantit que `flet-web` est présent en WEB) :
 
 ```powershell
-uv run --active python -m flet.cli run -r
+uv run --extra desktop python -m flet.cli run -r            # mode APP
+uv run --extra desktop --extra web python -m flet.cli run -r --web   # mode WEB
 ```
 
 ## Build APK
@@ -119,7 +125,7 @@ src/main.py:
 import flet as ft
 import flet_audio  # noqa: F401
 
-from upu.controllers.app_controller import create_app
+from gsm.controllers.app_controller import create_app
 
 ft.run(create_app)
 ```
@@ -145,7 +151,7 @@ sequenceDiagram
 ```
 
 ### Routing
-Le registre des routes est defini dans src/upu/routes/registry.py.
+Le registre des routes est defini dans src/gsm/routes/registry.py.
 
 Routes exposees actuellement:
 - /home

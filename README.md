@@ -1,24 +1,64 @@
-# <img src="src/assets/icon.png" alt="Aegis Stack" width="25"> GSM
+<div style="height: 10vh; display: flex; align-items: center; justify-content: center">
+  <h1 style="font-size: 48px; margin: 0; text-decoration: none; border: none;">
+    <img src="src/assets/icon.png" alt="GSM Repository" width="100" style="vertical-align: middle;" />GSM
+  </h1>
+</div>
+
+<br />
+
+<hr />
 
 <h3><div align='right'><span style="text-decoration:none;"><a href="./doc/0001_TOC.md" title="Table Of Content">TOC</a></span></div></h3>
 
 ---
 
-<!-- [![CI](https://github.com/grcote7/gsm/workflows/CI/badge.svg)](https://github.com/grcote7/gsm//actions/workflows/ci.yml)
-[![Documentation](https://github.com/grcote7/gsm/workflows/Deploy%20Documentation/badge.svg)](https://github.com/grcote7/gsm/actions/workflows/docs.yml) -->
-[![GitHub Release](https://img.shields.io/github/v/release/GrCOTE7/gsm)](https://github.com/GrCOTE7/gsm)
-[![built with Python 3.13+](https://img.shields.io/badge/built%20with-python%203.13+-blue.svg)](https://www.python.org/downloads/)
-[![Built with Flet](https://img.shields.io/badge/Flet%200.85-00B0FF?style=flat-square)](https://flet.dev/)
-[![Commits per Month](https://img.shields.io/github/commit-activity/m/grcote7/gsm)](https://github.com/grcote7/gsm/commits)
-[![Total Commits](https://img.shields.io/github/commit-activity/t/grcote7/gsm)](https://github.com/grcote7/gsm/commits)
-[![Last Commit](https://img.shields.io/github/last-commit/grcote7/gsm)](https://github.com/grcote7/gsm/commits)
-
-![Windows](https://img.shields.io/badge/OS-Windows-0078D6?style=flat-square&logo=windows11&logoColor=white")
-![Linux](https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black)
-![Android](https://img.shields.io/badge/Android-3ddc84?logo=android&logoColor=white)
-<a href="https://codespaces.new/GrCOTE7/gsm" title="Open YOUR CodeSpace Now... Click HERE!">
-    <img src="https://img.shields.io/badge/GSM%20Github%20Codespace%20Ready-green.svg" alt="CodeSpace link" />
+<!-- ===== BLOC 2 : VERSIONS, STATS, OS & CODESPACE ===== -->
+<div align="center">
+  <!-- Release & versions -->
+  <a href="https://github.com/GrCOTE7/gsm">
+    <img src="https://img.shields.io/github/v/release/GrCOTE7/gsm?style=for-the-badge" alt="GitHub Release">
   </a>
+  <a href="https://www.python.org/downloads/">
+    <img src="https://img.shields.io/badge/built%20with-python%203.13+-blue.svg?style=for-the-badge" alt="built with Python 3.13+">
+  </a>
+  <a href="https://flet.dev/">
+    <img src="https://img.shields.io/badge/Flet%200.85-00B0FF?style=for-the-badge" alt="Built with Flet">
+  </a>
+
+  <!-- Statistiques de commits -->
+  <a href="https://github.com/grcote7/gsm/commits">
+    <img src="https://img.shields.io/github/commit-activity/m/grcote7/gsm?style=for-the-badge" alt="Commits per Month">
+  </a>
+  <a href="https://github.com/grcote7/gsm/commits">
+    <img src="https://img.shields.io/github/commit-activity/t/grcote7/gsm?style=for-the-badge" alt="Total Commits">
+  </a>
+  <a href="https://github.com/grcote7/gsm/commits">
+    <img src="https://img.shields.io/github/last-commit/grcote7/gsm?style=for-the-badge" alt="Last Commit">
+  </a>
+
+  <br/>
+
+  <a href="https://github.com/GrCOTE7/gsm/actions/workflows/release.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/GRCOTE7/gsm/release.yml?label=CI / CD&logo=github&color=success" alt="CI">
+  </a>
+  <a href="https://github.com/grcote7/gsm/actions/workflows/docs.yml">
+    <img src="https://github.com/GRCOTE7/gsm/actions/workflows/rsync_test.yml/badge.svg" alt="Documentation">
+  </a>
+  <a href="https://github.com/GrCOTE7/gsm/blob/main/THERA.md">
+    <img src="https://img.shields.io/github/actions/workflow/status/GRCOTE7/gsm/release.yml?label=Documentation&logo=github&color=success" alt="Documentation">
+  </a>
+  
+  <br/>
+  <!-- Systèmes d'exploitation -->
+  <img src="https://img.shields.io/badge/OS-Windows-0078D6?style=for-the-badge&logo=windows11&logoColor=white" alt="Windows">
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux">
+  <img src="https://img.shields.io/badge/Android-3ddc84?style=for-the-badge&logo=android&logoColor=white" alt="Android">
+
+  <!-- CodeSpace -->
+  <a href="https://codespaces.new/GrCOTE7/gsm" title="Open YOUR CodeSpace Now... Click HERE!">
+    <img src="https://img.shields.io/badge/GSM%20Github%20Codespace%20Ready-green?style=for-the-badge&logo=github&logoColor=white" alt="CodeSpace link">
+  </a>
+</div>
 
 ---
 
@@ -28,11 +68,19 @@
 
 Tu ❤️ Python...? Rejoins le chat en LIVE !
 
-[![Discord](https://img.shields.io/discord/1056923339546968127)](https://discord.com/channels/1056923339546968127/1507316257580519445)
-</a>
+[![Discord](https://img.shields.io/discord/1056923339546968127?label=Chat)](https://discord.com/channels/1056923339546968127/1507316257580519445)
+    </a>
 </div>
 
-## 🐳 A rapid look
+---
+
+## 🤝 Collaboration et particulièrement **adapté aux débutants**
+
+Pour **contribuer** au dev de ce projet (Et **en connaître tous les rouages et secrets**) :
+
+<h2 align='center'><span style="text-decoration:none;">👉 <a href="./THERA.md" title="The Doc de base"><bold>  Lire THERADOC</bold></a></span></h2>
+
+## 🐳 → A rapid look
 
 ### 👉 Sur un Appareil Androïd (Phone ou tablette)
 
@@ -42,26 +90,55 @@ Tu ❤️ Python...? Rejoins le chat en LIVE !
   </a>
 </div>
 
-### 👉 Et sinon, direct en ligne : [gsm.COTE7.com](http://gsm.Cote7.com)
+### → [Cliquer ICI si vous êtes sur un appareil Android, mais ne pouvez pas 'flasher' ce QR Code](https://github.com/GrCOTE7/gsm/releases/download/v1.0.36/UpU.apk)
+
+### 👉 Direct en ligne : [http://GSM.COTE7.com](http://gsm.Cote7.com)
+
+---
+
+## 🚀 → A rapid dev env
+
+### 👉 En local (macOS/Linux/Windows) après le *[fork](doc/0101_GIT_FORK.md)*
+
+Dans la *CLI* (***C***ommand ***L***ine ***I***nterface = Console), dans le dossier du projet :
+
+```bash
+./go
+```
+
+#### → C'est aussi le mode idéal pour coder avec le projet (HotReload et positionnement AUTOs de l'App)
+
+---
+
+### 👉 Et encore + simple et sans rien installer : Codespace → <a href="https://codespaces.new/GrCOTE7/gsm" title="Open YOUR CodeSpace Now... CTRL + Click HERE!"><img src="https://img.shields.io/badge/Dev%20GSM%20directement%20en%20ligne%20sur%20Github%20!-blue.svg" alt="CodeSpace link" /></a>
+
+( Le clic sur ce bouton = Dans le page du dépôt ***GH*** (***G***it***H***ub) original, ou celle de votre fork, appuyer sur ' , ' - Touche virgule - pour générer ainsi un codespace) → Confirmer
+
+Dans le terminal qui apparaîtra puis se stabilisera enfin à un moment , faire 'quasi' comme en local 😉 (Juste un 'w' en +)
+
+```bash
+./go w
+```
+
+NB : Dans un codespaces, seule la version Flet **W**eb fonctionne (D'où **cette option 'w'**), mais vous y avez tout de même non seulement hotreload opérationnel, mais aussi toutes les extensions VSCode recommandées dans GSM (Git Graph, ToDo Tree customisé, etc...)
+
+Bref, vous pouvez ainsi simplement et "rapidement", depuis la branche de votre choix, partager son rendu 'frais' (Le + optimal et récent), y éditer du code, éventuellement coder / modifier quelque chose dedans...  Et surtout, même y faire une [P.R.](doc/0110_GIT_PR.md) !!! 😁
 
 ## 🐳 App in Docker (local)
 
-Le dossier `.devcontainer/` reste dédié à Codespaces/devcontainer.
-Pour lancer l'app localement avec Docker Compose :
+Si vous avez déjà **Docker Desktop** installé et lancé, pour démarrer l'App localement :
 
 ```bash
 docker compose up -d --build
 ```
 
-Le mode auto-reload est actif en local Docker (watchfiles sur `src/`).
+Le mode auto-reload est aussi actif en local Docker (watchfiles sur `src/`).
 Quand tu modifies une vue Python, le process redémarre automatiquement.
-Si le navigateur ne se reconnecte pas tout de suite, fais un refresh de la page.
+Au lancement, si le navigateur ne se reconnecte pas tout de suite, fais un refresh de la page.
 
-Puis ouvrir :
-
-```text
-http://localhost:8000
-```
+<div align='center'>
+  <h3><a href = "http://localhost:8000">RENDU (HotReload activé)</a></h3>
+</div>
 
 Suivre les logs :
 
@@ -80,7 +157,7 @@ docker compose down
 #### Fixer la page d'accueil
 
 ```bash
-C:\gsm\src\upu\config.py
+C:\gsm\src\gsm\config.py
 # DEFAULT_ROUTE = ...
 ```
 
@@ -105,34 +182,6 @@ docker inspect gsm_app --format "{{json .State.Health}}"
 
 ---
 
-## 🤝 Collaboration et particulièrement **adapté aux débutants**
-
-Pour **contribuer** au dev de ce projet (Et **en connaître tous les rouages et secrets**) :
-
-<h2 align='center'><span style="text-decoration:none;">👉 <a href="./THERA.md" title="The Doc de base"><bold>  Lire THERADOC</bold></a></span></h2>
-
-## 🚀 Run the app
-
-### * En ligne - Sans rien installer
-
-Dans le page du dépôt (Original, ou de votre fork), appuyer sur ' , ' et générer un codespace.
-
-Et dans le terminal qui apparaît enfin :
-
-```bash
-./go
-```
-
-NB : Dans un codespace, seule la version Flet Web fonctionne (Avec l'option --web), et attention, pas de refresh, hotreload, etc... Bref, ne sert qu'à partager un rendu, voire éditer du code, ou éventuellement coder / modifier un script très simple...
-
-### * Local - Win OS
-
-Éxécuter :
-
-```bash
-./go
-```
-
 ## 🏗️ Construire une app pour votre mobile GSM
 
 Lancer le build APK pour construire l'app pour ton mobile ou tablette **Androïd** :
@@ -142,7 +191,7 @@ Lancer le build APK pour construire l'app pour ton mobile ou tablette **Androïd
 ```
 
 (Sinon, ouvre cette page avec ton appareil mobile et télech directement :
-  **https://github.com/GrCOTE7/gsm/releases** - La der version, le lien **Upu.apk**)
+  **https://github.com/GrCOTE7/gsm/releases** - La der version, le lien **gsm.apk**)
 
 ## 🐍 Lancer un script Python avec HOT-RELOAD
 
@@ -153,7 +202,7 @@ Exemple: \scripts\Nom_Thomas.py
 ### 1 - Local (Win)
 
 ```bash
-uv --version
+uv -V
 # Si échoue (Et sûr qu'uv est installé) :
 
 $env:Path = "C:\Users\utilisateur\.local\bin;$env:Path"
@@ -171,7 +220,7 @@ uvx watchfiles "py quick_test.py" . 2>nul
 
 Juste on démarre un CodeSpace (Sur la page GH de ton fork : ' , ' (Virgule) + Create new codespace + F9
 
-### ❌vérif si F9 OK dans un codespace pour la commande ci-dessous
+### ❌ vérif si F9 OK dans un codespace pour la commande ci-dessous
 
 Et dans la CLI (Console - Terminal) qui apparaît :
 
@@ -323,6 +372,8 @@ For more details on building Windows package, refer to the [Windows Packaging Gu
 
 ## Structure
 
+### Dossiers / Fichiers
+
 ```bash
 c:\gsm/
 ├── src/           ← Application active (refactorisée)
@@ -334,6 +385,29 @@ c:\gsm/
 ├── README.md
 ├── apk.ps1        ← Build APK
 └── go.ps1         ← Lanceur
+```
+
+### Fonctionnelle
+
+```bash
+                 App (./src/)
+                     │
+                  Router
+                     │
+              Layout Route
+                     │
+                MainLayout
+                     │
+                 Pagelet
+             ┌───────┴───────┐
+             │               │
+          AppBar           Drawer
+             │               │
+             └───────┬───────┘
+                     │
+                   Outlet
+                     │
+                 Page GSM
 ```
 
 ---
@@ -355,22 +429,22 @@ entre les <> versions.
 * 1 Générer le keystore une seule fois (à faire localement, une seule fois) :
 
 ```bash
-& "C:\Program Files\Java\jdk-21\bin\keytool.exe" -genkeypair -v -keystore upu-release.keystore -alias upu-key -keyalg RSA -keysize 2048 -validity 10000
+& "C:\Program Files\Java\jdk-21\bin\keytool.exe" -genkeypair -v -keystore gsm-release.keystore -alias gsm-key -keyalg RSA -keysize 2048 -validity 10000
 
 ```
 
 ou
 
 ```bash
-keytool -genkey -v -keystore upu-release.keystore \ -alias upu-key -keyalg RSA -keysize 2048 -validity 10000
+keytool -genkey -v -keystore gsm-release.keystore \ -alias gsm-key -keyalg RSA -keysize 2048 -validity 10000
 ```
 
 ou
 
 ```bash
 keytool -genkeypair -v \
-  -keystore upu-release.keystore \
-  -alias upu \
+  -keystore gsm-release.keystore \
+  -alias gsm \
   -keyalg RSA -keysize 2048 -validity 10000
 ```
 
@@ -379,29 +453,29 @@ keytool -genkeypair -v \
 ## Linux / macOS
 
 ```bash
-base64 -w 0 upu-release.keystore
+base64 -w 0 gsm-release.keystore
 ```
 
 ## Windows PowerShell
 
 ```bash
-[Convert]::ToBase64String([IO.File]::ReadAllBytes("upu-release.keystore"))
+[Convert]::ToBase64String([IO.File]::ReadAllBytes("gsm-release.keystore"))
 ```
 
 Chemin complet car _ laisse croire à un scope
 
 ```bash
-[Convert]::ToBase64String([IO.File]::ReadAllBytes("D:\_gc\aGC7\Teck\upu-release.keystore")) > D:\_gc\aGC7\Teck\keystore.b64.txt
+[Convert]::ToBase64String([IO.File]::ReadAllBytes("D:\_gc\aGC7\Teck\gsm-release.keystore")) > D:\_gc\aGC7\Teck\keystore.b64.txt
 ```
 
 ```bash
-PS D:\_gc\aGC7\Teck> Get-ChildItem -Path D:\_gc -Filter upu-release.keystore -Recurse
+PS D:\_gc\aGC7\Teck> Get-ChildItem -Path D:\_gc -Filter gsm-release.keystore -Recurse
 
     Directory: D:\_gc\aGC7\Teck
 
 Mode                 LastWriteTime         Length Name
 ----                 -------------         ------ ----
--a---          13/05/2026    16:27           2730 upu-release.keystore
+-a---          13/05/2026    16:27           2730 gsm-release.keystore
 
 PS D:\_gc\aGC7\Teck> 
 ```
@@ -411,12 +485,12 @@ PS D:\_gc\aGC7\Teck>
 Secret                  Valeur
 ANDROID_KEYSTORE_B64    le base64 du .keystore
 ANDROID_STORE_PASSWORD  mot de passe du keystore
-ANDROID_KEY_ALIAS       ex. upu-key
+ANDROID_KEY_ALIAS       ex. gsm-key
 ANDROID_KEY_PASSWORD    mot de passe de la clé (Svt mme que STORE_PW)
 
 * [ ] Vérif la signature
 
-C:\Users\utilisateur\AppData\Local\Android\Sdk\build-tools\34.0.0\apksigner.bat verify --print-certs UpU.apk
+C:\Users\utilisateur\AppData\Local\Android\Sdk\build-tools\34.0.0\apksigner.bat verify --print-certs gsm.apk
 
 ---
 
@@ -426,35 +500,44 @@ C:\Users\utilisateur\AppData\Local\Android\Sdk\build-tools\34.0.0\apksigner.bat 
 uv run python -c "import flet; print(flet.__version__)"
 ```
 
+## Prévient si code déprécié
+
+```bash
+python -W error::DeprecationWarning src/main.py
+```
+
 ---
 
 ## Pour logs du mobile dans PC
 
 ### Debug / Iphone
 
-.\adb logcat | Select-String "com.mycompany.upu"
+.\adb logcat | Select-String "com.mycompany.gsm"
 
-.\adb logcat | Select-String "python" | Select-String "com.mycompany.upu"
+.\adb logcat | Select-String "python" | Select-String "com.mycompany.gsm"
 
 ### Debug android / PC → Android Studio
 
 | Action                                    | Rebuild APK ? |
-|-------------------------------------------|---------------|
-| Modifier du Python                        | ❌ Non        |
-| Modifier du Flet                          | ❌ Non        |
-| Modifier la logique d’update              | ❌ Non        |
-| Modifier comment tu télécharges l’APK     | ❌ Non        |
-| Modifier comment tu lances l’installation | ❌ Non        |
-| Ajouter un appel Android natif            | ✔️ Oui        |
-| Modifier le manifest Android              | ✔️ Oui        |
-| Ajouter un service Android                | ✔️ Oui        |
-| Modifier le template Android de Flet      | ✔️ Oui        |
+| ----------------------------------------- | ------------- |
+| Modifier du Python                        | ❌ Non         |
+| Modifier du Flet                          | ❌ Non         |
+| Modifier la logique d’update              | ❌ Non         |
+| Modifier comment tu télécharges l’APK     | ❌ Non         |
+| Modifier comment tu lances l’installation | ❌ Non         |
+| Ajouter un appel Android natif            | ✔️ Oui         |
+| Modifier le manifest Android              | ✔️ Oui         |
+| Ajouter un service Android                | ✔️ Oui         |
+| Modifier le template Android de Flet      | ✔️ Oui         |
 
 ---
 
 ## .🎯 Actuels goals prioritaires
 
-* [-] Finir docs de base (✅ Git, ✅ VSC, Py) + Add autres docs initiatiques
+* [ ] Transformer tout le projet en mode reactif (Flutter & React-like)
+* [ ] → Passage branche declarative / branche main
+* [ ] Finir docs de base (✅ Git, ✅ VSC, Py, Libs, IA) + Add autres docs initiatiques
 * [ ] Mettre en place dans le WorkFlow, le build pour IPhone (→ $Thera...)
-* [ ] Problème de fin du process d'upgrade
+* [ ] Problème de fin du process d'upgrade / mobile
+* [ ] Écrire tout le projet en Anglais (Doc & commentaires)
 * [x] Dernier reset complet du n° de V

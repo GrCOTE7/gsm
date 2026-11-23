@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "sessionId": "session-6f8748fe-28ec-4143-9996-f6f316d1921e",
+  "cwd": "C:\\gsm",
+  "updatedAt": 1788003720489,
+  "checkpoints": [
+    {
+      "turn": 1,
+      "commit": "4a33dac58bd1ba06a496522812fa551033730388",
+      "parent": "5679df0159ad0e6b07155a3bd5d0e2afd80de4be",
+      "time": 1788000400784,
+      "untracked": [
+        "scripts/n8n-bridge.ps1",
+        "scripts/n8n-my-workflow.json"
+      ],
+      "truncated": false
+    },
+    {
+      "turn": 2,
+      "commit": "4a33dac58bd1ba06a496522812fa551033730388",
+      "parent": "4a33dac58bd1ba06a496522812fa551033730388",
+      "time": 1788003719177,
+      "untracked": [
+        "scripts/n8n-bridge.ps1",
+        "scripts/n8n-my-workflow.json"
+      ],
+      "truncated": false
+    }
+  ],
+  "rolls": [],
+  "undos": []
+}
