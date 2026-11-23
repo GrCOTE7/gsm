@@ -1,3 +1,10 @@
+## [1.0.39](https://github.com/grcote7/gsm/compare/v1.0.38...v1.0.39) (2026-11-23)
+
+
+### Bug Fixes
+
+* **ci:** fall back to an existing VPS SSH key secret for deploy ([9944469](https://github.com/grcote7/gsm/commit/994446954589166ffc26aef7c4346f92a62b9182))
+
 ## [1.0.38](https://github.com/grcote7/gsm/compare/v1.0.37...v1.0.38) (2026-11-23)
 
 
