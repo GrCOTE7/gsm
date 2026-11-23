@@ -43,7 +43,7 @@ def _env_int(name: str, default: int = 0) -> int:
 
     try:
         return int(match.group(0))
-    except TypeError, ValueError:
+    except (TypeError, ValueError):
         return default
 
 
@@ -61,7 +61,7 @@ def nf(f, dec=2):
         s = f"{f:,.{dec}f}"
         # U+00A0 is better supported on Android fonts than U+202F.
         return s.replace(",", "\u00a0").replace(".", ",")
-    except TypeError, ValueError:
+    except (TypeError, ValueError):
         print(f"nf(): unsupported value type ({type(f).__name__}) -> {f}")
         return str(f)
 
