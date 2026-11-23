@@ -28,6 +28,7 @@ ANSI_GREEN = "\033[32m"
 # le besoin de token dans l’app,
 # les faux positifs pendant la fenêtre de build.
 
+
 def load_github_token() -> str:
     token = (os.getenv("GH_TOKEN") or os.getenv("GITHUB_TOKEN") or "").strip()
     if token:
@@ -141,6 +142,7 @@ def main() -> int:
 
     print("Done.")
     return 0
+
 
 if __name__ == "__main__":
     raise SystemExit(main())

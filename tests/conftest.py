@@ -16,6 +16,7 @@ from upu.views.pages.registry import get_view_builder, has_route
 # uv run pytest -q # -q + silencieux | -dd encore + silencieux | -v + verbeux
 # uv run pytest -s -o log_cli=true -o log_cli_level=DEBUG
 
+
 def _iter_controls(control: ft.Control):
     stack = [control]
     while stack:
@@ -103,8 +104,12 @@ def flet_app_factory() -> Callable[[str], SimpleNamespace]:
 
 
 @pytest.fixture
-def flet_app(request: pytest.FixtureRequest, flet_app_factory: Callable[[str], SimpleNamespace]):
+def flet_app(
+    request: pytest.FixtureRequest, flet_app_factory: Callable[[str], SimpleNamespace]
+):
     route = getattr(request, "param", "/counter")
     if not isinstance(route, str):
-        raise AssertionError("Fixture 'flet_app' expects a string route, e.g. '/counter'")
+        raise AssertionError(
+            "Fixture 'flet_app' expects a string route, e.g. '/counter'"
+        )
     return flet_app_factory(route)

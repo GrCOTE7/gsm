@@ -12,13 +12,16 @@ url = ""
 
 from upu.views.partials.test_guests_src import guest_source
 
-S: str = 'abc'
+S: str = "abc"
+
 
 def vif_du_sujet():
     return f"Le sujet..."
 
-def clicked_btn(msg='') -> ft.Text:
-    return ft.Text(f'Cliqued ? {msg}')
+
+def clicked_btn(msg="") -> ft.Text:
+    return ft.Text(f"Cliqued ? {msg}")
+
 
 def essai(target: ft.Text):
 
@@ -28,6 +31,7 @@ def essai(target: ft.Text):
 
     return ft.Button("Click me", on_click=button_click)
 
+
 def subject():
 
     clicked_status = clicked_btn()
@@ -35,9 +39,9 @@ def subject():
     return ft.Column(
         controls=[
             guest_source(date, guest, response, source, url),
-            sepa('CYAN'),
+            sepa("CYAN"),
             ft.Text(vif_du_sujet(), size=20),
-            sepa('CYAN'),
+            sepa("CYAN"),
             clicked_status,
             essai(clicked_status),
         ]

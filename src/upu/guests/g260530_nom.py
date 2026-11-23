@@ -20,7 +20,7 @@ def subject():
     return ft.Column(
         controls=[
             guest_source(date, guest, response, source, url),
-            ft.Text(rep, size=20)
+            ft.Text(rep, size=20),
         ]
     )
 

@@ -49,13 +49,20 @@ class CalculatorApp(ft.Container):
                 ),
                 ft.Row(
                     controls=[
-                        ExtraActionButton(content="AC", on_click=self.button_clicked, style=ft.ButtonStyle(
-                            padding=ft.Padding(0),
-                            text_style=ft.TextStyle(size=15)),
+                        ExtraActionButton(
+                            content="AC",
+                            on_click=self.button_clicked,
+                            style=ft.ButtonStyle(
+                                padding=ft.Padding(0), text_style=ft.TextStyle(size=15)
+                            ),
                         ),
-                        ExtraActionButton(content="+/-", on_click=self.button_clicked,style=ft.ButtonStyle(
-                            padding=ft.Padding(0,0,0,10),
-                            text_style=ft.TextStyle(size=15))
+                        ExtraActionButton(
+                            content="+/-",
+                            on_click=self.button_clicked,
+                            style=ft.ButtonStyle(
+                                padding=ft.Padding(0, 0, 0, 10),
+                                text_style=ft.TextStyle(size=15),
+                            ),
                         ),
                         ExtraActionButton(content="%", on_click=self.button_clicked),
                         ActionButton(content="/", on_click=self.button_clicked),
@@ -214,7 +221,27 @@ class CalculatorApp(ft.Container):
                     key = "."
                 elif suffix in {"enter", "return"}:
                     key = "="
-        allowed = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ".", "+", "-", "*", "/", "=", "%", "AC", "BACKSPACE"}
+        allowed = {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            ".",
+            "+",
+            "-",
+            "*",
+            "/",
+            "=",
+            "%",
+            "AC",
+            "BACKSPACE",
+        }
 
         if key in allowed:
             print(f"{self.name} → Key pressed = {raw_key} mapped to {key}")
@@ -260,7 +287,7 @@ def build():
     # return calc1, calc2
     # add application's root control to the page
     # page.add(calc1, calc2)
-    
+
     # calc1 = CalculatorApp()
     # return calc1
 
@@ -283,9 +310,13 @@ def build():
         "Script de calculatrice en Python avec Flet",
         body_text_align=ft.TextAlign.CENTER,
         extra=keyboard_calc,
-        bottom=extLink(txt='Source: Tuto doc Flet', url='https://flet.dev/docs/tutorials/calculator'),
+        bottom=extLink(
+            txt="Source: Tuto doc Flet",
+            url="https://flet.dev/docs/tutorials/calculator",
+        ),
     )
+
 
 if __name__ == "__main__":
 
-    ft.run(build) #type: ignore
+    ft.run(build)  # type: ignore

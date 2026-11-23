@@ -29,6 +29,7 @@ def imperative_counter() -> ft.Control:
         ),
     )
 
+
 @ft.component
 def declarative_counter_component() -> ft.Control:
     count, set_count = ft.use_state(0)
@@ -55,6 +56,7 @@ def declarative_counter_component() -> ft.Control:
             ],
         ),
     )
+
 
 def build() -> ft.Control:
 

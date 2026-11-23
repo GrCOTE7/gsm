@@ -60,7 +60,9 @@ def build() -> ft.Control:
                     alignment=ft.MainAxisAlignment.CENTER,
                     horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                     controls=[
-                        ft.Icon(ft.Icons.WARNING_AMBER_ROUNDED, color=ft.Colors.AMBER_300),
+                        ft.Icon(
+                            ft.Icons.WARNING_AMBER_ROUNDED, color=ft.Colors.AMBER_300
+                        ),
                         ft.Text(
                             "WebView indisponible: package flet-webview manquant.",
                             size=14,

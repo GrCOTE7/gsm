@@ -25,7 +25,7 @@ def filled_button(
     return ft.FilledButton(*args, style=final_style, **kwargs)
 
 
-def extLink(txt='open_url()', url='https://example.com'):
+def extLink(txt="open_url()", url="https://example.com"):
     return ft.Container(
         padding=ft.Padding.only(bottom=10),
         content=ft.Row(
@@ -48,4 +48,3 @@ def extLink(txt='open_url()', url='https://example.com'):
             alignment=ft.MainAxisAlignment.CENTER,
         ),
     )
-

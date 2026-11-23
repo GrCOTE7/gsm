@@ -16,7 +16,6 @@ dependencies = [
     "pymox_kit",
     "rich>=15.0.0",
     "qrcode[pil]>=8.2",
-    "pytest>=8.0.0",
     "flet-webview>=0.85.3",
     "typing-extensions>=4.16.0"
 ]
@@ -26,6 +25,9 @@ desktop = [
     "flet-cli",
     "flet-desktop",
     "pyshorteners>=1.0.1"
+]
+dev = [
+    "pytest>=8.0.0",
 ]
 
 [tool.flet]
