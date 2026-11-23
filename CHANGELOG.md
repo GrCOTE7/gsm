@@ -1,3 +1,10 @@
+## [1.0.38](https://github.com/grcote7/gsm/compare/v1.0.37...v1.0.38) (2026-11-23)
+
+
+### Bug Fixes
+
+* **release:** add missing src/gsm/app_data/app_build.json ([4f7a063](https://github.com/grcote7/gsm/commit/4f7a0636c90e930a492b87ae10f9bd30fee11808))
+
 ## [1.0.37](https://github.com/grcote7/gsm/compare/v1.0.36...v1.0.37) (2026-11-23)
 
 
