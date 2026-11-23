@@ -1,3 +1,14 @@
+## [1.0.42](https://github.com/grcote7/gsm/compare/v1.0.41...v1.0.42) (2026-11-23)
+
+
+### Bug Fixes
+
+* **build:** drop flet-web from runtime deps, install it via the web extra [skip ci] ([5a786fc](https://github.com/grcote7/gsm/commit/5a786fc26d8a058a0a6604adb5e31e8089d71216))
+* **build:** drop the temporary APK debug workflow and publish the flet 1.0 build ([0dc5dc4](https://github.com/grcote7/gsm/commit/0dc5dc4907ff14745b39079862020c1fa3241f60))
+* **build:** keep CLI/desktop tooling out of the mobile bundle [skip ci] ([f005e86](https://github.com/grcote7/gsm/commit/f005e861cad899ab79e61b999fd38bcb5ac775de))
+* **build:** pin jni 1.2 via tool.flet.flutter.pubspec [skip ci] ([1ad58a2](https://github.com/grcote7/gsm/commit/1ad58a26f694195fd25ceb78a8a2f1cbe462fe80))
+* **build:** ship the flet 1.0 Android build fixes in a release ([8d596dd](https://github.com/grcote7/gsm/commit/8d596dd52032b10a304aa94ea30b2fb72cf0e300))
+
 ## [1.0.41](https://github.com/grcote7/gsm/compare/v1.0.40...v1.0.41) (2026-11-23)
 
 
