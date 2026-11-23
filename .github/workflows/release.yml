@@ -468,6 +468,10 @@ jobs:
       - name: Commit build metadata sync
         if: steps.release_tag.outputs.release_created == 'true'
         shell: bash
+        env:
+          # Hooks are for humans: on the runner the husky pre-commit hook used
+          # to abort the bot commit with "set: Illegal option -".
+          HUSKY: "0"
         run: |
           set -euo pipefail
           branch="${GITHUB_REF_NAME:-main}"

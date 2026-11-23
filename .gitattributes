@@ -1,0 +1,6 @@
+# Husky hooks and shell scripts must keep LF endings: they are executed by
+# /bin/sh on the Linux runners, where a trailing CR makes `set -e` fail with
+# "set: Illegal option -" (this broke the release workflow's metadata commit).
+*.sh text eol=lf
+.husky/* text eol=lf
+.husky/** text eol=lf
