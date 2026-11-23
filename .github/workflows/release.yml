@@ -177,7 +177,9 @@ jobs:
         if: steps.release_tag.outputs.release_created == 'true'
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: "3.41.4"
+          # Must match flet.version.flutter_version of the pinned flet release,
+          # otherwise `flet build apk` asks to install another SDK and dies on EOF.
+          flutter-version: "3.44.8"
           channel: stable
 
       - name: Accept Android licenses
@@ -197,7 +199,7 @@ jobs:
           fallback_used=0
           manual_gradle_fallback=0
 
-          if ! flet build apk -v 2>&1 | tee flet-build.log; then
+          if ! flet build apk -v --yes 2>&1 | tee flet-build.log; then
             fallback_used=1
             echo "::warning::flet build apk failed; applying workarounds and retrying flet build."
 
@@ -243,7 +245,7 @@ jobs:
               exit 1
             fi
 
-            if ! flet build apk -v 2>&1 | tee -a flet-build.log; then
+            if ! flet build apk -v --yes 2>&1 | tee -a flet-build.log; then
               echo "::warning::Second flet build attempt failed; trying direct Gradle assembleRelease fallback."
               manual_gradle_fallback=1
               pushd build/flutter/android
