@@ -18,7 +18,6 @@ dependencies = [
     "qrcode[pil]>=8.2",
     "pytest>=8.0.0",
     "flet-webview>=1.0.0",
-    "flet-web==1.0.0",
     "typing-extensions>=4.16.0",
     "pywin32; sys_platform == 'win32'",
 ]

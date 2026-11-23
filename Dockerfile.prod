@@ -14,12 +14,12 @@ ENV PATH="/root/.local/bin:/usr/local/bin:${PATH}"
 
 # Copier SEULEMENT les fichiers de deps
 COPY pyproject.toml uv.lock ./
-RUN uv sync --frozen --no-dev
+RUN uv sync --frozen --no-dev --extra web
 # Copier le projet
 COPY . .
 
 # Installer les dépendances
-RUN uv sync --frozen --no-dev
+RUN uv sync --frozen --no-dev --extra web
 
 # Exposer le port Flet Web
 EXPOSE 8000
