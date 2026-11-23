@@ -106,7 +106,9 @@ ipython_config.py
 #   commonly ignored for libraries.
 #   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
 *.lock
-
+# uv.lock doit être versionné : Dockerfile.prod le copie et 'uv sync --frozen'
+# exige un lock à jour en CI.
+!uv.lock
 # pdm
 #   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
 #pdm.lock

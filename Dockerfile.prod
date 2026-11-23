@@ -14,7 +14,8 @@ ENV PATH="/root/.local/bin:/usr/local/bin:${PATH}"
 
 # Copier SEULEMENT les fichiers de deps
 COPY pyproject.toml uv.lock ./
-RUN uv sync --frozen --no-dev --extra web
+# --no-install-project : le paquet local a besoin de src/, copié plus bas.
+RUN uv sync --frozen --no-dev --extra web --no-install-project
 # Copier le projet
 COPY . .
 
@@ -24,5 +25,5 @@ RUN uv sync --frozen --no-dev --extra web
 # Exposer le port Flet Web
 EXPOSE 8000
 
-# Lancer l'application
-CMD ["uv", "run", "src/main.py"]
+# Lancer l'application (le serveur web a besoin de l'extra "web")
+CMD ["uv", "run", "--extra", "web", "src/main.py"]

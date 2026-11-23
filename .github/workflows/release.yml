@@ -161,8 +161,12 @@ jobs:
               "$item" "$remote"
           done
 
-          echo "Restarting container gsm_app on VPS..."
-          ssh -i ~/.ssh/id_ed25519_gsm -o StrictHostKeyChecking=no "$VPS_USER@$VPS_HOST" "docker restart gsm_app"
+          # Rebuild instead of a plain restart: the container image carries the
+          # Python environment, so a restart alone would keep running the code
+          # and dependencies baked into the previous image.
+          echo "Rebuilding and recreating container gsm_app on VPS..."
+          ssh -i ~/.ssh/id_ed25519_gsm -o StrictHostKeyChecking=no "$VPS_USER@$VPS_HOST" \
+            "cd /opt/gsm && docker compose -f docker-compose.prod.yml up -d --build"
 
           echo "Deployment complete OK."
 
