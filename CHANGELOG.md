@@ -1,3 +1,10 @@
+## [1.0.40](https://github.com/grcote7/gsm/compare/v1.0.39...v1.0.40) (2026-11-23)
+
+
+### Bug Fixes
+
+* **ci:** pin Flutter 3.44.8 required by flet 1.0.0 for the APK build ([10b1aac](https://github.com/grcote7/gsm/commit/10b1aace5cc73e311808be2baf49ea8621d13542))
+
 ## [1.0.39](https://github.com/grcote7/gsm/compare/v1.0.38...v1.0.39) (2026-11-23)
 
 
