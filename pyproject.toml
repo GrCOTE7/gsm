@@ -3,7 +3,7 @@ name = "GSM"
 version = "1.0.36"
 description = "Up U!"
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.13"
 authors = [{ name = "GrCOTE7", email = "GrCOTE7@gmail.com" }]
 dependencies = [
     "flet==1.0.0",
