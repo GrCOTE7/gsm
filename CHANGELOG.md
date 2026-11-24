@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/grcote7/gsm/compare/v1.1.0...v1.1.1) (2026-11-24)
+
+
+### Bug Fixes
+
+* **ci:** unblock the release metadata sync rebase ([3e2237f](https://github.com/grcote7/gsm/commit/3e2237f0c1d7030e9581afb828939a6d33e47979))
+
 # [1.1.0](https://github.com/grcote7/gsm/compare/v1.0.44...v1.1.0) (2026-11-24)
 
 
