@@ -4,6 +4,7 @@ import os
 import platform
 import shutil
 import subprocess
+import sys
 import time
 from pathlib import Path
 
@@ -420,26 +421,22 @@ def _monitor_height_at(x: int) -> int:
 def _spawn_cli_windows(app: str, env: dict, mode: str) -> bool:
     print(f"[CLI] Ouverture d'une console PowerShell pour {app}...")
 
-    left = window_left(app, env)
-    # Position/size imposées DÈS la création par Windows Terminal (wt.exe ne
-    # dimensionne qu'en caractères : 60x12 ≈ CLI_WIDTH x CLI_HEIGHT px). Le
-    # positionnement a posteriori reste fait par l'enfant, mais il ne peut pas
-    # corriger une fenêtre créée au hasard.
-    cli_top = max(0, _monitor_height_at(left) - CLI_HEIGHT)
-
-    wt_exe = _find_wt_exe()
     pwsh_exe = _find_pwsh_exe()
 
     # go.ps1 est relancé en mode interne "_<app>_child[_<mode>]" : ce mode est
     # géré par mode_resolver/app_launcher pour relancer Flet SANS rouvrir une
     # nouvelle CLI (évite la récursion) ; la console reste ouverte (-NoExit).
     child_arg_ = child_arg(app, mode, SUFFIX_CLI)
-    wt_cmd = (
-        "wt.exe -w new "
-        f"--pos {left},{cli_top} "
-        "--size 60,12 "
-        f'-d "{ROOT}" '
-        f'"{pwsh_exe}" -NoExit -File "{GO_PS1}" {child_arg_}'
+
+    # Lancement DIRECT de la console (Start-Process), sans passer par wt.exe :
+    # l'alias Windows Terminal échoue par intermittence sans le moindre
+    # message (d'où des ./go qui n'ouvraient rien), et il fallait ensuite
+    # repositionner une fenêtre créée au hasard. Ici l'enfant hérite de
+    # l'environnement courant, et place_cli_window impose position + taille
+    # exactes via le titre unique "GSM-CLI::<pid>".
+    ps_script = (
+        f"Start-Process -FilePath '{pwsh_exe}' -WorkingDirectory '{ROOT}' "
+        f"-ArgumentList @('-NoExit','-File','{GO_PS1}','{child_arg_}')"
     )
 
     ps_exe = _find_powershell_exe()
@@ -447,14 +444,7 @@ def _spawn_cli_windows(app: str, env: dict, mode: str) -> bool:
     # console soit bien détectée comme « différente » de l'ancienne.
     previous_pid = valid_cli_pid(app)
     try:
-        subprocess.Popen(
-            [
-                ps_exe,
-                "-NoProfile",
-                "-Command",
-                f"Start-Process -FilePath \"{wt_exe}\" -ArgumentList '{wt_cmd}'",
-            ]
-        )
+        subprocess.Popen([ps_exe, "-NoProfile", "-Command", ps_script])
     except OSError:
         print(f"[CLI][ERROR] Impossible d'ouvrir la console Windows pour {app}.")
         return False
@@ -511,7 +501,7 @@ def _live_child_cli_pids(app: str) -> set[int] | None:
         "Get-CimInstance Win32_Process "
         "-Filter \"Name='pwsh.exe' OR Name='powershell.exe'\" | "
         f"Where-Object {{ $_.CommandLine -like '*go.ps1*_{app}_child*' "
-        "-and $_.CommandLine -notlike '*Start-Process*' }} | "
+        "-and $_.CommandLine -notlike '*Start-Process*' } | "
         "ForEach-Object { $_.ProcessId }"
     )
     try:
@@ -561,14 +551,23 @@ def _wait_for_child_cli(app: str, previous: int | None, timeout: float = 30.0) -
     courante alors que la CLI finissait par s'ouvrir.
     """
     deadline = time.time() + timeout
+    start = time.time()
     live_interval = 3.0
-    next_live_check = time.time() + live_interval
-    announced = False
+    next_live_check = start + live_interval
     previous_set = {previous} if previous is not None else set()
+    spinner = "|/-\\"
+    tty = sys.stdout.isatty()
+    frame = 0
+    last_mark = -1
+
+    def _clear() -> None:
+        if tty:
+            print("\r" + " " * 58 + "\r", end="", flush=True)
 
     while time.time() < deadline:
         pid = _read_cli_pid(app)
         if pid is not None and pid != previous:
+            _clear()
             return True
 
         now = time.time()
@@ -576,16 +575,26 @@ def _wait_for_child_cli(app: str, previous: int | None, timeout: float = 30.0) -
             next_live_check = now + live_interval
             live = _live_child_cli_pids(app)
             if live and (live - previous_set):
+                _clear()
                 return True
 
-        if not announced and now > deadline - timeout + 6.0:
-            announced = True
+        elapsed = now - start
+        if tty:
+            # Compte à rebours animé sur une seule ligne (effacée à la fin).
             print(
-                "[CLI] Démarrage de la console (premier lancement : quelques secondes)..."
+                f"\r[CLI] Démarrage de la console {spinner[frame % len(spinner)]} "
+                f"{elapsed:4.1f}s",
+                end="",
+                flush=True,
             )
+            frame += 1
+        elif int(elapsed) % 5 == 0 and int(elapsed) != last_mark:
+            last_mark = int(elapsed)
+            print(f"[CLI] Démarrage de la console… {int(elapsed)}s", flush=True)
 
-        time.sleep(0.3)
+        time.sleep(0.25)
 
+    _clear()
     return False
 
 
