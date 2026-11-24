@@ -5,6 +5,8 @@ from datetime import datetime
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
+from pathlib import Path
+
 from dotenv import load_dotenv
 from gsm.services.state_repository import (
     APP_BUILD_PATH,
@@ -16,8 +18,10 @@ from gsm.services.state_repository import (
     save_last_check_at,
 )
 
-# Charger les variables d'environnement du fichier .env
-load_dotenv()
+# Charger les variables d'environnement du fichier .env (racine du dépôt).
+# Chemin explicite : `load_dotenv()` sans argument appelle find_dotenv(), qui
+# remonte la pile d'appels et lève AssertionError sur un build Android.
+load_dotenv(Path(__file__).resolve().parents[2] / ".env")
 
 _CHECK_TIME_FORMAT = "%Y-%m-%d %H:%M"
 APP_NAME = "Up You!"

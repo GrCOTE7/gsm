@@ -1,12 +1,20 @@
 import os, re, inspect
 from dotenv import load_dotenv
 from datetime import datetime as dt
+from pathlib import Path
 
-# Charger les variables d'environnement du fichier .env
-load_dotenv(override=True)
+# Charger les variables d'environnement du fichier .env (racine du dépôt :
+# src/gsm/helpers/env.py → parents[3]).
+# Le chemin est donné explicitement : sans argument, python-dotenv appelle
+# find_dotenv(), qui remonte la pile d'appels jusqu'à trouver un fichier
+# existant. Dans un build Android (Serious Python), les chemins de la pile
+# n'existent pas sur l'appareil (`/home/runner/...`, `<sp_script>`) : la boucle
+# épuise les frames et lève AssertionError au démarrage de l'app.
+# Un chemin absent ne lève rien : load_dotenv renvoie simplement False.
+load_dotenv(Path(__file__).resolve().parents[3] / ".env", override=True)
 
 _CHECK_TIME_FORMAT = "%Y-%m-%d %H:%M"
-APP_NAME = "Up You!"
+APP_NAME = "GSM"
 
 #################################################
 DEFAULT_ROUTE = "/archives"  # 2ar unused
