@@ -134,10 +134,19 @@ def _launch_cli_parent(app: str, action: LaunchAction, env: dict) -> None:
     if _reuse_current_cli(app, action):
         _launch_in_current_cli(app, action, env)
     elif _should_close_stale_cli(app):
-        _with_replacing_flag(lambda: _replace_stale_cli(app, env, action.mode))
+        spawned = _with_replacing_flag(
+            lambda: _replace_stale_cli(app, env, action.mode)
+        )
+        if not spawned:
+            print(
+                f"[CLI] Échec de la CLI dédiée pour {app} : lancement de l'app sans console."
+            )
+            _launch_plain(app, action, env)
     else:
         if not spawn_cli_if_needed(app, env, action.mode):
-            print(f"[CLI] Échec de la CLI dédiée pour {app} : lancement de l'app sans console.")
+            print(
+                f"[CLI] Échec de la CLI dédiée pour {app} : lancement de l'app sans console."
+            )
             _launch_plain(app, action, env)
 
 
@@ -216,20 +225,21 @@ def _spawn_app_detached(
     subprocess.Popen([sys.executable, str(MAIN_PY), child_arg(app, mode, suffix)])
 
 
-def _with_replacing_flag(step: Callable[[], None]) -> None:
+def _with_replacing_flag(step: Callable[[], object]) -> object:
     """Exécute `step` en posant le flag « remplacement planifié ».
 
     Le watcher de liaison (cli_watcher.ps1) ne doit PAS interpréter la mort
     d'une CLI pendant un remplacement planifié comme une fermeture de l'autre.
+    Retourne le résultat de `step` (ex : succès du spawn de la nouvelle CLI).
     """
     _set_replacing_flag(True)
     try:
-        step()
+        return step()
     finally:
         _set_replacing_flag(False)
 
 
-def _replace_stale_cli(app: str, env: dict, mode: str) -> None:
+def _replace_stale_cli(app: str, env: dict, mode: str) -> bool:
     """Remplace l'ancienne CLI dédiée de `app` par une neuve (process parent).
 
     L'app a peut-être encore une CLI dédiée ailleurs (relance de ./go gu
@@ -238,11 +248,15 @@ def _replace_stale_cli(app: str, env: dict, mode: str) -> None:
     relance ce pipeline en mode interne (_gsm_child) et lance Flet. On attend
     que la nouvelle CLI écrive son .pid, puis on relâche le flag (sinon le
     watcher croirait à une fermeture).
+
+    Retourne False si la nouvelle console n'a pas démarré : l'appelant lance
+    alors l'app dans la CLI courante au lieu de ne rien faire.
     """
     old_pid = _read_pid(app)
     _close_stale_cli(app)
-    spawn_cli_if_needed(app, env, mode)
+    spawned = spawn_cli_if_needed(app, env, mode)
     _wait_for_new_cli_pid(app, old_pid)
+    return spawned
 
 
 def _retarget_current_cli(app: str) -> None:
@@ -356,6 +370,3 @@ def _wait_for_new_cli_pid(app: str, old_pid: int | None, timeout: float = 12.0) 
         if current is not None and current != old_pid:
             return
         time.sleep(0.3)
-
-
-

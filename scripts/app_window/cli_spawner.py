@@ -318,7 +318,7 @@ def _close_stale_cli(app: str) -> None:
     ps = _find_powershell_exe()
     script = (
         "Get-CimInstance Win32_Process "
-        '-Filter "Name=\'pwsh.exe\' OR Name=\'powershell.exe\'" | '
+        "-Filter \"Name='pwsh.exe' OR Name='powershell.exe'\" | "
         f"Where-Object {{ $_.ProcessId -ne $PID -and $_.CommandLine -like '*go.ps1*_{app}_child*' }} | "
         "ForEach-Object { taskkill /PID $_.ProcessId /T /F 2>$null | Out-Null }"
     )
@@ -345,7 +345,6 @@ def _spawn_cli_windows(app: str, env: dict, mode: str) -> bool:
     print(f"[CLI] Ouverture d'une console PowerShell pour {app}...")
 
     left = window_left(app, env)
-
     # La console est créée DIRECTEMENT à la bonne position (pixels) : sous la
     # fenêtre de l'app, qui réserve ~CLI_HEIGHT px en bas de l'écran cible.
     # NB : wt.exe ne dimensionne qu'en caractères (--size c,r), pas en pixels.
@@ -373,6 +372,7 @@ def _spawn_cli_windows(app: str, env: dict, mode: str) -> bool:
     # chemin ABSOLU : la CLI dédiée a un PATH minimal (sans 'powershell') et
     # CreateProcess échouerait sinon (WinError 2).
     ps_exe = _find_powershell_exe()
+    previous_pid = _read_cli_pid(app)
     try:
         subprocess.Popen(
             [
@@ -382,10 +382,49 @@ def _spawn_cli_windows(app: str, env: dict, mode: str) -> bool:
                 f"Start-Process -FilePath \"{wt_exe}\" -ArgumentList '{wt_cmd}'",
             ]
         )
-        return True
     except OSError:
         print(f"[CLI][ERROR] Impossible d'ouvrir la console Windows pour {app}.")
         return False
+
+    # Popen ne prouve rien : Start-Process peut échouer silencieusement
+    # (Windows Terminal absent, alias Store cassé, --pos refusé...). La preuve
+    # de vie est le .pid que go.ps1 écrit dès le démarrage de l'enfant.
+    if not _wait_for_child_cli(app, previous_pid):
+        print(
+            f"[CLI][WARN] Windows Terminal n'a pas démarré pour {app} "
+            "(aucune CLI enfant détectée)."
+        )
+        return False
+    return True
+
+
+def _cli_pid_file(app: str) -> Path:
+    """Fichier .pid de la CLI dédiée, écrit par go.ps1 au démarrage enfant."""
+    temp = os.environ.get("TEMP", os.environ.get("TMP", ""))
+    return Path(temp) / f"gsm_cli_{app.lower()}.pid"
+
+
+def _read_cli_pid(app: str) -> int | None:
+    """PID enregistré pour la CLI dédiée de `app`, ou None."""
+    try:
+        return int(_cli_pid_file(app).read_text(encoding="ascii").strip())
+    except (OSError, ValueError):
+        return None
+
+
+def _wait_for_child_cli(app: str, previous: int | None, timeout: float = 10.0) -> bool:
+    """Attend que la CLI enfant écrive son .pid (différent de `previous`).
+
+    Seule preuve fiable que la console a réellement démarré : sans elle,
+    `./go` se terminerait en laissant l'utilisateur devant rien.
+    """
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        pid = _read_cli_pid(app)
+        if pid is not None and pid != previous:
+            return True
+        time.sleep(0.2)
+    return False
 
 
 # ---------------------------------------------------------------------------
@@ -417,6 +456,3 @@ def _spawn_cli_linux(app: str) -> bool:
 
     print("[CLI][ERROR] Aucun terminal disponible (gnome-terminal, xterm).")
     return False
-
-
-
