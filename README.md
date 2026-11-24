@@ -90,7 +90,7 @@ Pour **contribuer** au dev de ce projet (Et **en connaître tous les rouages et 
   </a>
 </div>
 
-### → [Cliquer ICI si vous êtes sur un appareil Android, mais ne pouvez pas 'flasher' ce QR Code](https://github.com/GrCOTE7/gsm/releases/download/v1.0.36/UpU.apk)
+### → [Cliquer ICI si vous êtes sur un appareil Android, mais ne pouvez pas 'flasher' ce QR Code](https://github.com/GrCOTE7/gsm/releases/latest/download/GSM.apk)
 
 ### 👉 Direct en ligne : [http://GSM.COTE7.com](http://gsm.Cote7.com)
 
