@@ -389,9 +389,14 @@ def _spawn_cli_windows(app: str, env: dict, mode: str) -> bool:
         return False
 
     # Popen ne prouve rien : Start-Process peut échouer silencieusement
-    # (Windows Terminal absent, alias Store cassé, --pos refusé...). La preuve
-    # de vie est le .pid que go.ps1 écrit dès le démarrage de l'enfant.
+    # (Windows Terminal absent, alias Store cassé, --pos refusé...). Les preuves
+    # de vie sont le .pid réécrit par go.ps1 et la présence du process enfant.
     if not _wait_for_child_cli(app, previous_pid):
+        # Dernier contrôle : une console qui a démarré juste après le délai ne
+        # doit pas provoquer un second lancement de l'app en double.
+        live = _live_child_cli_pids(app)
+        if live and (live - ({previous_pid} if previous_pid is not None else set())):
+            return True
         print(
             f"[CLI][WARN] Windows Terminal n'a pas démarré pour {app} "
             "(aucune CLI enfant détectée)."
@@ -470,18 +475,42 @@ def valid_cli_pid(app: str) -> int | None:
     return None
 
 
-def _wait_for_child_cli(app: str, previous: int | None, timeout: float = 10.0) -> bool:
-    """Attend que la CLI enfant écrive son .pid (différent de `previous`).
+def _wait_for_child_cli(app: str, previous: int | None, timeout: float = 30.0) -> bool:
+    """Attend que la CLI enfant soit réellement là (30 s par défaut).
 
-    Seule preuve fiable que la console a réellement démarré : sans elle,
-    `./go` se terminerait en laissant l'utilisateur devant rien.
+    Deux preuves acceptées : le .pid réécrit par go.ps1, ou un process
+    'go.ps1 _<app>_child' vivant autre que `previous`. Le délai est large à
+    dessein : au premier lancement après un démarrage de Windows, Terminal +
+    PowerShell 7 peuvent dépasser la dizaine de secondes — l'ancien délai de
+    10 s faisait alors conclure à l'échec, et `./go` basculait sur la console
+    courante alors que la CLI finissait par s'ouvrir.
     """
     deadline = time.time() + timeout
+    live_interval = 3.0
+    next_live_check = time.time() + live_interval
+    announced = False
+    previous_set = {previous} if previous is not None else set()
+
     while time.time() < deadline:
         pid = _read_cli_pid(app)
         if pid is not None and pid != previous:
             return True
-        time.sleep(0.2)
+
+        now = time.time()
+        if now >= next_live_check:
+            next_live_check = now + live_interval
+            live = _live_child_cli_pids(app)
+            if live and (live - previous_set):
+                return True
+
+        if not announced and now > deadline - timeout + 6.0:
+            announced = True
+            print(
+                "[CLI] Démarrage de la console (premier lancement : quelques secondes)..."
+            )
+
+        time.sleep(0.3)
+
     return False
 
 
