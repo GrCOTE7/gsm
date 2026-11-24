@@ -45,6 +45,9 @@ class MainLayout:
             else MainLayout._fallback_page_label(ft.context.page.route)
         )
 
+        # Marque "GSM" cliquable partout sauf sur l'accueil (où elle est inerte).
+        home_active = ft.is_route_active("/", exact=True)
+
         ft.context.page.title = AppWindow.build_title(page_label)
 
         outlet = ft.use_route_outlet()
@@ -68,7 +71,11 @@ class MainLayout:
         return ft.Pagelet(
             ref=pagelet_ref,
             expand=True,
-            appbar=NavBar.app_bar(page_label, on_menu_click=handle_menu_click),
+            appbar=NavBar.app_bar(
+                page_label,
+                on_menu_click=handle_menu_click,
+                brand_is_link=not home_active,
+            ),
             drawer=NavBar.drawer(
                 on_change=handle_drawer_change,
                 selected_index=NavBar.index_for_path(ft.context.page.route),

@@ -16,7 +16,15 @@ class NavBar:
     def app_bar(
         title: str,
         on_menu_click: ft.ControlEventHandler[ft.IconButton] | None,
+        brand_is_link: bool = False,
     ) -> ft.AppBar:
+        """AppBar de l'application.
+
+        `brand_is_link` vient de `MainLayout` (qui évalue déjà la route active) :
+        la marque ne doit jamais lire `ft.context.page` elle-même pendant le
+        rendu, sous peine de casser le re-rendu déclenché par la navigation
+        (les destinations du menu ne changeaient alors plus rien).
+        """
 
         appbar = ft.AppBar()
         appbar.leading = ft.IconButton(
@@ -28,7 +36,7 @@ class NavBar:
         appbar.title = ft.Row(
             spacing=12,
             controls=[
-                NavBar._brand_link(),
+                NavBar._brand(brand_is_link),
                 ft.Text(
                     title,
                     size=18,
@@ -43,12 +51,12 @@ class NavBar:
     # ========================================================
 
     @staticmethod
-    def _brand_link() -> ft.Control:
-        """Libellé "GSM" cliquable vers l'accueil — sauf sur l'accueil.
+    def _brand(is_link: bool) -> ft.Control:
+        """Libellé "GSM" : cliquable vers l'accueil, ou simple texte.
 
-        La route courante est lue dans `ft.context.page.route` ; sur "/" le
-        texte redevient inerte (aucun clic, aucun curseur main, aucune ondulation),
-        pour ne pas proposer un lien qui ne mènerait nulle part.
+        Aucun accès au contexte ici — c'est l'appelant qui décide, ce qui évite
+        toute lecture de `ft.context.page` au moment du rendu. Le handler, lui,
+        s'exécute dans un contexte d'événement où `ft.context.page` est valide.
         """
         brand = ft.Text(
             "GSM",
@@ -56,15 +64,12 @@ class NavBar:
             weight=ft.FontWeight.BOLD,
         )
 
-        page = ft.context.page
-        route = (page.route or "/").split("?", 1)[0].split("#", 1)[0]
-
-        if route == "/":
+        if not is_link:
             return brand
 
         return ft.Container(
             content=brand,
-            on_click=lambda _e: page.navigate("/"),
+            on_click=lambda _e: ft.context.page.navigate("/"),
             ink=True,
             tooltip="Aller à l'accueil",
             mouse_cursor=ft.MouseCursor.CLICK,
