@@ -47,6 +47,15 @@ $mainPy = Join-Path $PSScriptRoot "scripts\app_window\main.py"
 if ($args.Count -gt 0 -and $args[0] -match '^_(gsm|upu)_child') {
     $cliApp = $Matches[1]
     Set-Content -Path (Join-Path $env:TEMP "gsm_cli_$cliApp.pid") -Value $PID -Encoding ascii
+
+    # Titre unique de la console : il permet au launcher de retrouver SA
+    # fenêtre (et pas celle d'une CLI précédente restée ouverte) pour la
+    # positionner et la mettre au premier plan.
+    $cliTitle = "GSM-CLI::$PID"
+    try { $Host.UI.RawUI.WindowTitle = $cliTitle } catch { }
+    $env:GSM_CLI_WINDOW_TITLE = $cliTitle
+    Write-GoDebug "titre console=$cliTitle"
+
     $watcherPwsh = Join-Path $PSHOME "pwsh.exe"
     if (-not (Test-Path $watcherPwsh)) { $watcherPwsh = "pwsh" }
     Start-Process -WindowStyle Hidden -FilePath $watcherPwsh -ArgumentList @(

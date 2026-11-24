@@ -8,7 +8,7 @@ import time
 from pathlib import Path
 
 from common import ROOT, GO_PS1, CLI_WIDTH, CLI_HEIGHT, CLI_TOP, SUFFIX_CLI, child_arg
-from env_config import wants_cli
+from env_config import wants_cli, window_left
 
 if platform.system() == "Windows":
     import win32gui
@@ -70,6 +70,27 @@ def _visible_origin(
     return max(l, min(left, r - width)), max(t, min(top, b - height))
 
 
+def _window_by_title(marker: str) -> int | None:
+    """Fenêtre visible dont le titre contient `marker`, ou None."""
+    found: list[int] = []
+
+    def _cb(hwnd, _arg):
+        try:
+            if win32gui.IsWindowVisible(hwnd) and marker in win32gui.GetWindowText(
+                hwnd
+            ):
+                found.append(hwnd)
+        except Exception:
+            pass
+        return True
+
+    try:
+        win32gui.EnumWindows(_cb, None)
+    except Exception:
+        return None
+    return found[0] if found else None
+
+
 def place_cli_window(
     left: int, top: int = CLI_TOP, width: int = CLI_WIDTH, height: int = CLI_HEIGHT
 ) -> bool:
@@ -103,20 +124,29 @@ def place_cli_window(
         )
         return True
 
-    # 1) Console classique (hors Windows Terminal) : cible directe.
-    if not os.environ.get("WT_SESSION"):
-        hwnd = kernel32.GetConsoleWindow()
-        if hwnd and win32gui.IsWindowVisible(hwnd):
-            return _move(hwnd)
+    # 0) Notre propre fenêtre, identifiée par le titre unique posé par go.ps1
+    #    ("GSM-CLI::<pid>"). C'est la seule méthode fiable quand plusieurs CLI
+    #    cohabitent : sinon on déplaçait/redimensionnait la fenêtre d'une CLI
+    #    précédente, et la nouvelle restait à la taille par défaut.
+    marker = os.environ.get("GSM_CLI_WINDOW_TITLE", "")
+    if marker:
+        deadline = time.time() + 5.0
+        while time.time() < deadline:
+            hwnd = _window_by_title(marker)
+            if hwnd:
+                return _move(hwnd)
+            time.sleep(0.15)
 
-    # 2) Windows Terminal : retrouver le CADRE visible (WindowsTerminal.exe)
-    #    via la chaîne des processus parents.
-    procs = _snapshot_processes()
-    chain = _process_chain(procs, os.getpid())
-
-    # Attend que la fenêtre du terminal soit créée (jusqu'à ~5 s).
+    # 1) Fenêtre VISIBLE du terminal hôte (Windows Terminal ou conhost).
+    #    On passe par la chaîne des processus AVANT GetConsoleWindow() : sous
+    #    Windows Terminal (y compris via la redirection « terminal par défaut »
+    #    de Windows 11), GetConsoleWindow() renvoie le miroir OpenConsole, dont
+    #    le déplacement ne bouge pas la fenêtre visible — d'où une CLI qui
+    #    s'ouvrait à la mauvaise place et à la mauvaise taille.
     deadline = time.time() + 5.0
     while time.time() < deadline:
+        procs = _snapshot_processes()
+        chain = _process_chain(procs, os.getpid())
         for group in TERMINAL_HOSTS:
             for pid in chain:
                 info = procs.get(pid)
@@ -124,7 +154,12 @@ def place_cli_window(
                     hwnd = _nearest_window(pid, left, top)
                     if hwnd:
                         return _move(hwnd)
-        time.sleep(0.1)
+        # La fenêtre peut aussi être une console classique : on tente le
+        # handle direct à chaque tour avant de réessayer.
+        hwnd = kernel32.GetConsoleWindow()
+        if hwnd and win32gui.IsWindowVisible(hwnd):
+            return _move(hwnd)
+        time.sleep(0.15)
 
     print("[CLI][ERROR] Fenêtre du terminal introuvable pour repositionnement.")
     return False
@@ -385,25 +420,26 @@ def _monitor_height_at(x: int) -> int:
 def _spawn_cli_windows(app: str, env: dict, mode: str) -> bool:
     print(f"[CLI] Ouverture d'une console PowerShell pour {app}...")
 
-    # La console est positionnée après coup, en pixels, par l'enfant lui-même
-    # (place_cli_window) : sous la fenêtre de l'app.
+    left = window_left(app, env)
+    # Position/size imposées DÈS la création par Windows Terminal (wt.exe ne
+    # dimensionne qu'en caractères : 60x12 ≈ CLI_WIDTH x CLI_HEIGHT px). Le
+    # positionnement a posteriori reste fait par l'enfant, mais il ne peut pas
+    # corriger une fenêtre créée au hasard.
+    cli_top = max(0, _monitor_height_at(left) - CLI_HEIGHT)
 
+    wt_exe = _find_wt_exe()
     pwsh_exe = _find_pwsh_exe()
 
     # go.ps1 est relancé en mode interne "_<app>_child[_<mode>]" : ce mode est
     # géré par mode_resolver/app_launcher pour relancer Flet SANS rouvrir une
     # nouvelle CLI (évite la récursion) ; la console reste ouverte (-NoExit).
     child_arg_ = child_arg(app, mode, SUFFIX_CLI)
-
-    # Console classique (conhost) plutôt que Windows Terminal : le process
-    # enfant hérite alors de l'environnement COURANT (PATH du venv, uv, ...).
-    # Avec `wt.exe`, la fenêtre naît dans le serveur Terminal, dont
-    # l'environnement est figé au premier lancement — d'où des CLI qui
-    # s'ouvraient puis mouraient aussitôt, sans app, depuis VS Code.
-    ps_script = (
-        f"Start-Process -FilePath '{pwsh_exe}' "
-        f"-WorkingDirectory '{ROOT}' "
-        f"-ArgumentList @('-NoExit','-File','{GO_PS1}','{child_arg_}')"
+    wt_cmd = (
+        "wt.exe -w new "
+        f"--pos {left},{cli_top} "
+        "--size 60,12 "
+        f'-d "{ROOT}" '
+        f'"{pwsh_exe}" -NoExit -File "{GO_PS1}" {child_arg_}'
     )
 
     ps_exe = _find_powershell_exe()
@@ -411,7 +447,14 @@ def _spawn_cli_windows(app: str, env: dict, mode: str) -> bool:
     # console soit bien détectée comme « différente » de l'ancienne.
     previous_pid = valid_cli_pid(app)
     try:
-        subprocess.Popen([ps_exe, "-NoProfile", "-Command", ps_script])
+        subprocess.Popen(
+            [
+                ps_exe,
+                "-NoProfile",
+                "-Command",
+                f"Start-Process -FilePath \"{wt_exe}\" -ArgumentList '{wt_cmd}'",
+            ]
+        )
     except OSError:
         print(f"[CLI][ERROR] Impossible d'ouvrir la console Windows pour {app}.")
         return False
@@ -460,10 +503,15 @@ def _live_child_cli_pids(app: str) -> set[int] | None:
     process existe bel et bien avec la ligne de commande attendue.
     """
     ps = _find_powershell_exe()
+    # -notlike 'Start-Process' : le PowerShell INTERMÉDIAIRE qui lance wt.exe
+    # porte dans sa ligne de commande le texte complet (« ... -File go.ps1
+    # _gsm_child ») et serait compté comme une CLI vivante. La vraie CLI enfant
+    # est « pwsh -NoExit -File <go.ps1> _<app>_child », sans Start-Process.
     script = (
         "Get-CimInstance Win32_Process "
         "-Filter \"Name='pwsh.exe' OR Name='powershell.exe'\" | "
-        f"Where-Object {{ $_.CommandLine -like '*go.ps1*_{app}_child*' }} | "
+        f"Where-Object {{ $_.CommandLine -like '*go.ps1*_{app}_child*' "
+        "-and $_.CommandLine -notlike '*Start-Process*' }} | "
         "ForEach-Object { $_.ProcessId }"
     )
     try:
