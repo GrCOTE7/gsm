@@ -8,7 +8,7 @@ import time
 from pathlib import Path
 
 from common import ROOT, GO_PS1, CLI_WIDTH, CLI_HEIGHT, CLI_TOP, SUFFIX_CLI, child_arg
-from env_config import window_left, wants_cli
+from env_config import wants_cli
 
 if platform.system() == "Windows":
     import win32gui
@@ -38,6 +38,38 @@ def spawn_cli_if_needed(app: str, env: dict, mode: str) -> bool:
     return _spawn_cli_linux(app)
 
 
+def _visible_origin(
+    left: int, top: int, width: int = CLI_WIDTH, height: int = CLI_HEIGHT
+) -> tuple[int, int]:
+    """Ramène (left, top) dans un écran visible si la cible tombe hors bureau.
+
+    `.env` peut viser le 2e écran (GSM_WINDOW_LEFT=1913). Avec un seul écran
+    branché, la console naissait à 1913 px sur une dalle de 1920 : 7 px visibles,
+    et `./go` semblait ne rien faire.
+    """
+    try:
+        import win32api
+
+        monitors = [rect for _, _, rect in win32api.EnumDisplayMonitors()]
+    except Exception:
+        return left, top
+
+    if not monitors:
+        return left, top
+
+    # Fenêtre déjà majoritairement visible (même à cheval sur 2 écrans) : on ne
+    # touche à rien, c'est la disposition voulue dans .env.
+    visible = max(
+        (min(left + width, r) - max(left, l) for l, _t, r, _b in monitors),
+        default=0,
+    )
+    if visible >= width * 0.6:
+        return left, top
+
+    l, t, r, b = next((m for m in monitors if m[0] <= left < m[2]), monitors[0])
+    return max(l, min(left, r - width)), max(t, min(top, b - height))
+
+
 def place_cli_window(
     left: int, top: int = CLI_TOP, width: int = CLI_WIDTH, height: int = CLI_HEIGHT
 ) -> bool:
@@ -54,12 +86,21 @@ def place_cli_window(
     import ctypes
 
     kernel32 = ctypes.windll.kernel32
+    user32 = ctypes.windll.user32
+    clamp_left, clamp_top = _visible_origin(left, top)
 
     def _move(hwnd) -> bool:
         # pywin32 : MoveWindow ne renvoie rien (None) ; le déplacement est
         # vérifié par la fenêtre elle-même (GetWindowRect après coup).
-        win32gui.MoveWindow(hwnd, left, top, width, height, True)
-        print(f"[CLI] Terminal repositionné : ({left}, {top}) {width}x{height} px")
+        win32gui.MoveWindow(hwnd, clamp_left, clamp_top, width, height, True)
+        # Remonter la fenêtre : lancée depuis VS Code (ou avec l'app au
+        # premier plan), la CLI naissait derrière et semblait ne pas s'ouvrir.
+        user32.ShowWindow(hwnd, 9)  # SW_RESTORE
+        user32.BringWindowToTop(hwnd)
+        user32.SetForegroundWindow(hwnd)
+        print(
+            f"[CLI] Terminal repositionné : ({clamp_left}, {clamp_top}) {width}x{height} px"
+        )
         return True
 
     # 1) Console classique (hors Windows Terminal) : cible directe.
@@ -344,53 +385,39 @@ def _monitor_height_at(x: int) -> int:
 def _spawn_cli_windows(app: str, env: dict, mode: str) -> bool:
     print(f"[CLI] Ouverture d'une console PowerShell pour {app}...")
 
-    left = window_left(app, env)
-    # La console est créée DIRECTEMENT à la bonne position (pixels) : sous la
-    # fenêtre de l'app, qui réserve ~CLI_HEIGHT px en bas de l'écran cible.
-    # NB : wt.exe ne dimensionne qu'en caractères (--size c,r), pas en pixels.
-    cli_top = max(0, _monitor_height_at(left) - CLI_HEIGHT)
+    # La console est positionnée après coup, en pixels, par l'enfant lui-même
+    # (place_cli_window) : sous la fenêtre de l'app.
 
-    wt_exe = _find_wt_exe()
     pwsh_exe = _find_pwsh_exe()
 
     # go.ps1 est relancé en mode interne "_<app>_child[_<mode>]" : ce mode est
     # géré par mode_resolver/app_launcher pour relancer Flet SANS rouvrir une
     # nouvelle CLI (évite la récursion) ; la console reste ouverte (-NoExit).
     child_arg_ = child_arg(app, mode, SUFFIX_CLI)
-    # Taille volontairement modeste : wt.exe ne dimensionne qu'en caractères
-    # (--size c,r) ; 60 colonnes ≈ CLI_WIDTH px et 12 lignes tiennent dans la
-    # bande de ~CLI_HEIGHT px réservée sous la fenêtre de l'app.
-    wt_cmd = (
-        "wt.exe -w new "
-        f"--pos {left},{cli_top} "
-        "--size 60,12 "
-        f'-d "{ROOT}" '
-        f'"{pwsh_exe}" -NoExit -File "{GO_PS1}" {child_arg_}'
+
+    # Console classique (conhost) plutôt que Windows Terminal : le process
+    # enfant hérite alors de l'environnement COURANT (PATH du venv, uv, ...).
+    # Avec `wt.exe`, la fenêtre naît dans le serveur Terminal, dont
+    # l'environnement est figé au premier lancement — d'où des CLI qui
+    # s'ouvraient puis mouraient aussitôt, sans app, depuis VS Code.
+    ps_script = (
+        f"Start-Process -FilePath '{pwsh_exe}' "
+        f"-WorkingDirectory '{ROOT}' "
+        f"-ArgumentList @('-NoExit','-File','{GO_PS1}','{child_arg_}')"
     )
 
-    # On demande à PowerShell de lancer wt.exe via ShellExecute. Toujours un
-    # chemin ABSOLU : la CLI dédiée a un PATH minimal (sans 'powershell') et
-    # CreateProcess échouerait sinon (WinError 2).
     ps_exe = _find_powershell_exe()
     # valid_cli_pid purge un .pid périmé : nécessaire pour que la nouvelle
     # console soit bien détectée comme « différente » de l'ancienne.
     previous_pid = valid_cli_pid(app)
     try:
-        subprocess.Popen(
-            [
-                ps_exe,
-                "-NoProfile",
-                "-Command",
-                f"Start-Process -FilePath \"{wt_exe}\" -ArgumentList '{wt_cmd}'",
-            ]
-        )
+        subprocess.Popen([ps_exe, "-NoProfile", "-Command", ps_script])
     except OSError:
         print(f"[CLI][ERROR] Impossible d'ouvrir la console Windows pour {app}.")
         return False
 
-    # Popen ne prouve rien : Start-Process peut échouer silencieusement
-    # (Windows Terminal absent, alias Store cassé, --pos refusé...). Les preuves
-    # de vie sont le .pid réécrit par go.ps1 et la présence du process enfant.
+    # Popen ne prouve rien : Start-Process peut échouer silencieusement. Les
+    # preuves de vie sont le .pid réécrit par go.ps1 et le process enfant.
     if not _wait_for_child_cli(app, previous_pid):
         # Dernier contrôle : une console qui a démarré juste après le délai ne
         # doit pas provoquer un second lancement de l'app en double.
@@ -398,7 +425,7 @@ def _spawn_cli_windows(app: str, env: dict, mode: str) -> bool:
         if live and (live - ({previous_pid} if previous_pid is not None else set())):
             return True
         print(
-            f"[CLI][WARN] Windows Terminal n'a pas démarré pour {app} "
+            f"[CLI][WARN] La console dédiée pour {app} n'a pas démarré "
             "(aucune CLI enfant détectée)."
         )
         return False

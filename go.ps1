@@ -5,6 +5,25 @@
 # en priorité le venv du projet.
 Set-Location $PSScriptRoot
 
+# Journal de démarrage : indispensable pour diagnostiquer une console dédiée
+# qui « ne s'ouvre pas » — elle vit dans sa propre fenêtre, donc ses erreurs ne
+# remontent jamais dans le terminal qui a lancé ./go. Actif par défaut ; mettre
+# GSM_GO_DEBUG=0 pour le désactiver. Le fichier est réinitialisé par le parent.
+$goDebug = $env:GSM_GO_DEBUG -ne "0"
+$goLogPath = Join-Path $env:TEMP "gsm_go_debug.log"
+if ($goDebug -and $args.Count -eq 0) {
+    Set-Content -Path $goLogPath -Value "" -Encoding utf8
+}
+function Write-GoDebug([string]$Message) {
+    if (-not $goDebug) { return }
+    $line = "{0} [{1}] {2}" -f (Get-Date -Format "HH:mm:ss.fff"), $PID, $Message
+    Add-Content -Path $goLogPath -Value $line -Encoding utf8
+}
+Write-GoDebug "start args='$($args -join ' ')' PWD=$(Get-Location)"
+Write-GoDebug "PATH=$env:PATH"
+Write-GoDebug "VIRTUAL_ENV=$env:VIRTUAL_ENV UV_PROJECT_ENVIRONMENT=$env:UV_PROJECT_ENVIRONMENT"
+trap { Write-GoDebug "ERREUR: $_"; break }
+
 function Resolve-LauncherPython {
     <#
     Retourne l'interpréteur à utiliser pour lancer main.py :
@@ -40,8 +59,10 @@ if ($args.Count -gt 0 -and $args[0] -match '^_(gsm|upu)_child') {
 $python = Resolve-LauncherPython
 if (-not $python) {
     Write-Host "[ERROR] Python introuvable (venv manquant ?). Exécutez 'uv sync' puis relancez ./go."
+    Write-GoDebug "python introuvable"
     exit 1
 }
+Write-GoDebug "python=$python"
 
 if ($python -eq "uv") {
     & $python run python $mainPy @args
@@ -49,3 +70,4 @@ if ($python -eq "uv") {
 else {
     & $python $mainPy @args
 }
+Write-GoDebug "fin (exit=$LASTEXITCODE)"
