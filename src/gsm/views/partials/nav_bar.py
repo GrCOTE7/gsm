@@ -28,11 +28,7 @@ class NavBar:
         appbar.title = ft.Row(
             spacing=12,
             controls=[
-                ft.Text(
-                    "GSM",
-                    size=20,
-                    weight=ft.FontWeight.BOLD,
-                ),
+                NavBar._brand_link(),
                 ft.Text(
                     title,
                     size=18,
@@ -41,6 +37,40 @@ class NavBar:
         )
 
         return appbar
+
+    # ========================================================
+    # MARQUE "GSM"
+    # ========================================================
+
+    @staticmethod
+    def _brand_link() -> ft.Control:
+        """Libellé "GSM" cliquable vers l'accueil — sauf sur l'accueil.
+
+        La route courante est lue dans `ft.context.page.route` ; sur "/" le
+        texte redevient inerte (aucun clic, aucun curseur main, aucune ondulation),
+        pour ne pas proposer un lien qui ne mènerait nulle part.
+        """
+        brand = ft.Text(
+            "GSM",
+            size=20,
+            weight=ft.FontWeight.BOLD,
+        )
+
+        page = ft.context.page
+        route = (page.route or "/").split("?", 1)[0].split("#", 1)[0]
+
+        if route == "/":
+            return brand
+
+        return ft.Container(
+            content=brand,
+            on_click=lambda _e: page.navigate("/"),
+            ink=True,
+            tooltip="Aller à l'accueil",
+            mouse_cursor=ft.MouseCursor.CLICK,
+            padding=ft.Padding.symmetric(horizontal=6, vertical=2),
+            border_radius=6,
+        )
 
     # ========================================================
     # DRAWER
