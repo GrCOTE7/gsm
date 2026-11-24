@@ -10,6 +10,11 @@ from upu.helpers.buttons import filled_button
 from upu.helpers.snackbar import show_snackbar
 import subprocess
 
+# UPU est l'ancienne application, gardée pour mémoire : aucun écran ne doit
+# proposer de mise à jour (dialogue de démarrage comme carte dans les pages).
+# Passer à True réactiverait l'ancien comportement.
+_PROPOSE_UPDATES = False
+
 
 class UpdateController:
     def __init__(self, page):
@@ -18,6 +23,12 @@ class UpdateController:
         self._desktop_update_dialog = None
 
     async def maybe_prompt_for_update(self, version):
+        if not _PROPOSE_UPDATES:
+            # UPU est l'ancienne application, conservée pour mémoire : on ne
+            # propose jamais de mise à jour. Le retour est immédiat, donc aucun
+            # appel réseau et aucun dialogue « Nouvelle version disponible ».
+            return
+
         self.version = version
         update_available = await asyncio.to_thread(is_update_available, version)
         if not update_available:
