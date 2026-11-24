@@ -1,6 +1,6 @@
 [project]
 name = "GSM"
-version = "1.1.1"
+version = "1.1.2"
 description = "GSM"
 readme = "README.md"
 requires-python = ">=3.13"
@@ -35,7 +35,7 @@ copyright = "Copyright (C) 2026 by GrCOTE7"
 compile.app = true
 compile.packages = true
 cleanup.packages = false
-build_number = 1
+build_number = 1001002
 
 [tool.flet.app]
 path = "src"
