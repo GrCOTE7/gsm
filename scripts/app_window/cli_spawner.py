@@ -372,7 +372,9 @@ def _spawn_cli_windows(app: str, env: dict, mode: str) -> bool:
     # chemin ABSOLU : la CLI dédiée a un PATH minimal (sans 'powershell') et
     # CreateProcess échouerait sinon (WinError 2).
     ps_exe = _find_powershell_exe()
-    previous_pid = _read_cli_pid(app)
+    # valid_cli_pid purge un .pid périmé : nécessaire pour que la nouvelle
+    # console soit bien détectée comme « différente » de l'ancienne.
+    previous_pid = valid_cli_pid(app)
     try:
         subprocess.Popen(
             [
@@ -405,11 +407,67 @@ def _cli_pid_file(app: str) -> Path:
 
 
 def _read_cli_pid(app: str) -> int | None:
-    """PID enregistré pour la CLI dédiée de `app`, ou None."""
+    """PID enregistré dans le .pid de la CLI dédiée de `app`, ou None.
+
+    Lecture BRUTE du fichier : ne dit rien sur la vivacité du process (cf.
+    `valid_cli_pid`). Utilisée dans les boucles d'attente, où un appel WMI
+    toutes les 200 ms serait ruineux.
+    """
     try:
         return int(_cli_pid_file(app).read_text(encoding="ascii").strip())
     except (OSError, ValueError):
         return None
+
+
+def _live_child_cli_pids(app: str) -> set[int] | None:
+    """PID des CLI dédiées VIVANTES de `app`, ou None si la requête échoue.
+
+    Un .pid laissé par une CLI fermée devient un piège : Windows recycle les
+    PID, et le lanceur croit alors qu'une CLI dédiée existe encore (il réutilise
+    la console courante au lieu d'en ouvrir une). On vérifie donc que le
+    process existe bel et bien avec la ligne de commande attendue.
+    """
+    ps = _find_powershell_exe()
+    script = (
+        "Get-CimInstance Win32_Process "
+        "-Filter \"Name='pwsh.exe' OR Name='powershell.exe'\" | "
+        f"Where-Object {{ $_.CommandLine -like '*go.ps1*_{app}_child*' }} | "
+        "ForEach-Object { $_.ProcessId }"
+    )
+    try:
+        result = subprocess.run(
+            [ps, "-NoProfile", "-NonInteractive", "-Command", script],
+            capture_output=True,
+            text=True,
+            timeout=15,
+        )
+    except (OSError, subprocess.SubprocessError):
+        return None
+
+    pids: set[int] = set()
+    for line in result.stdout.splitlines():
+        line = line.strip()
+        if line.isdigit():
+            pids.add(int(line))
+    return pids
+
+
+def valid_cli_pid(app: str) -> int | None:
+    """PID de la CLI dédiée de `app` s'il est VIVANT, sinon nettoie et None."""
+    pid = _read_cli_pid(app)
+    if pid is None:
+        return None
+
+    live = _live_child_cli_pids(app)
+    if live is None:
+        # Requête impossible : on ne casse rien, on fait confiance au fichier.
+        return pid
+
+    if pid in live:
+        return pid
+
+    _cli_pid_file(app).unlink(missing_ok=True)
+    return None
 
 
 def _wait_for_child_cli(app: str, previous: int | None, timeout: float = 10.0) -> bool:

@@ -10,6 +10,7 @@ from pathlib import Path
 from cli_spawner import (
     spawn_cli_if_needed,
     place_cli_window,
+    valid_cli_pid,
     _close_stale_cli,
     get_ancestor_pids,
 )
@@ -331,7 +332,10 @@ def _current_cli_app() -> str | None:
     """
     ancestors = get_ancestor_pids(os.getpid())
     for app in ("gsm", "upu"):
-        pid = _read_pid(app)
+        # valid_cli_pid (et non _read_pid) : un .pid laissé par une CLI fermée
+        # peut désigner un PID recyclé, donc un ancêtre parfaitement innocent —
+        # on croirait alors qu'une CLI dédiée existe et on n'en ouvrirait pas.
+        pid = valid_cli_pid(app)
         if pid is not None and pid in ancestors:
             return app
     return None
