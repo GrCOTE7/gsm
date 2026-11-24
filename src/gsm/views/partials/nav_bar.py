@@ -67,20 +67,21 @@ class NavBar:
         if not is_link:
             return brand
 
-        link = ft.Container(
-            content=brand,
-            on_click=lambda _e: ft.context.page.navigate("/"),
-            ink=True,
-            tooltip="Aller à l'accueil",
-            padding=ft.Padding.symmetric(horizontal=6, vertical=2),
-            border_radius=6,
+        # `Container` n'expose PAS `mouse_cursor` dans cette version de Flet
+        # (ni au constructeur, ni comme champ sérialisé — une simple affectation
+        # d'attribut reste sans effet côté client). C'est `GestureDetector` qui
+        # porte le curseur : il enveloppe donc le libellé et gère le tap, le
+        # Container ne servant qu'à l'habillage (tooltip, marge, arrondi).
+        return ft.GestureDetector(
+            mouse_cursor=ft.MouseCursor.CLICK,
+            on_tap=lambda _e: ft.context.page.navigate("/"),
+            content=ft.Container(
+                content=brand,
+                tooltip="Aller à l'accueil",
+                padding=ft.Padding.symmetric(horizontal=6, vertical=2),
+                border_radius=6,
+            ),
         )
-        # Curseur « main » : indispensable pour que la zone cliquable se voie.
-        # Affecté APRÈS construction — `mouse_cursor` n'est pas acceptée par
-        # `Container.__init__` dans cette version de Flet (erreur de rendu qui
-        # gelait toute la navigation dès qu'on quittait l'accueil).
-        link.mouse_cursor = ft.MouseCursor.CLICK
-        return link
 
     # ========================================================
     # DRAWER
