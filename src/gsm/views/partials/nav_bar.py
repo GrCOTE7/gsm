@@ -67,7 +67,7 @@ class NavBar:
         if not is_link:
             return brand
 
-        return ft.Container(
+        link = ft.Container(
             content=brand,
             on_click=lambda _e: ft.context.page.navigate("/"),
             ink=True,
@@ -75,6 +75,12 @@ class NavBar:
             padding=ft.Padding.symmetric(horizontal=6, vertical=2),
             border_radius=6,
         )
+        # Curseur « main » : indispensable pour que la zone cliquable se voie.
+        # Affecté APRÈS construction — `mouse_cursor` n'est pas acceptée par
+        # `Container.__init__` dans cette version de Flet (erreur de rendu qui
+        # gelait toute la navigation dès qu'on quittait l'accueil).
+        link.mouse_cursor = ft.MouseCursor.CLICK
+        return link
 
     # ========================================================
     # DRAWER
