@@ -12,7 +12,7 @@ import flet as ft
 
 
 def main(page: ft.Page):
-    img = qrcode.make("https://github.com/GrCOTE7/gsm/releases/latest/download/gsm.apk")
+    img = qrcode.make("https://github.com/GrCOTE7/gsm/releases/latest/download/GSM.apk")
     img.save("qr.png")
 
     page.add(ft.Image(src="qr.png", width=300, height=300))

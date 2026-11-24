@@ -86,7 +86,7 @@ Pour **contribuer** au dev de ce projet (Et **en connaître tous les rouages et 
 
 <div align="center">
   <a href="./doc/imgs/qr_latest.png" target="_blank">
-    <img src="./doc/imgs/qr_latest.png" width='100'>
+    <img src="./doc/imgs/qr_latest.png" width='100' title="QR Code GSM">
   </a>
 </div>
 
