@@ -484,7 +484,9 @@ jobs:
           git add src/gsm/app_data/app_build.json pyproject.toml
           git diff --cached --quiet && echo "Nothing to commit." && exit 0
           git commit -m "chore: sync versions to ${{ steps.release_tag.outputs.release_tag }} [skip ci]"
-          git pull --rebase origin "$branch"
+          # --autostash : le build Flet/npm laisse des fichiers modifiés dans
+          # l'arbre de travail, ce qui faisait échouer le rebase (exit 128).
+          git pull --rebase --autostash origin "$branch"
           git push origin "HEAD:refs/heads/$branch"
 
       - name: Quick sync version metadata to VPS
