@@ -79,34 +79,73 @@ jobs:
             echo "No release tag at HEAD; skipping APK build/upload/publish steps."
           fi
 
-      - name: Sync app_build version from release tag
+      - name: Apply release version to packaging metadata
         if: steps.release_tag.outputs.release_created == 'true'
         shell: bash
+        env:
+          RELEASE_TAG: ${{ steps.release_tag.outputs.release_tag }}
         run: |
           set -euo pipefail
-          tag="${{ steps.release_tag.outputs.release_tag }}"
-          version="${tag#v}"
-          APP_BUILD_VERSION="$version" python - <<'PY'
+          # L'APK est construit à partir de pyproject.toml : versionName vient de
+          # [project].version et versionCode de [tool.flet].build_number. Il faut
+          # donc appliquer la version de la release AVANT `flet build apk`,
+          # sinon l'APK porte le numéro de la release précédente et garde
+          # versionCode=1 (Android ne peut alors pas le voir comme une mise à
+          # jour, et le numéro affiché dans l'app est faux).
+          python - <<'PY'
           import json
           import os
+          import re
           from pathlib import Path
 
-          version = os.environ["APP_BUILD_VERSION"]
-          path = Path("src/gsm/app_data/app_build.json")
+          tag = os.environ["RELEASE_TAG"]
+          version = tag[1:] if tag.startswith("v") else tag
+          parts = version.split(".")
+          if len(parts) != 3 or not all(part.isdigit() for part in parts):
+              raise SystemExit(f"Unexpected release tag: {tag}")
 
-          if not path.exists():
-            raise SystemExit(f"Missing {path}")
+          major, minor, patch = (int(part) for part in parts)
+          if minor > 999 or patch > 999:
+              raise SystemExit(f"Version too large for the versionCode mapping: {version}")
+          # versionCode Android : croissant et stable pour un meme tag.
+          version_code = major * 1_000_000 + minor * 1_000 + patch
 
-          payload = json.loads(path.read_text(encoding="utf-8"))
+          app_build_path = Path("src/gsm/app_data/app_build.json")
+          if not app_build_path.exists():
+              raise SystemExit(f"Missing {app_build_path}")
+          payload = json.loads(app_build_path.read_text(encoding="utf-8"))
           if not isinstance(payload, dict):
-            raise SystemExit(f"Invalid JSON object in {path}")
-
+              raise SystemExit(f"Invalid JSON object in {app_build_path}")
           payload["version"] = version
-          path.write_text(json.dumps(payload, ensure_ascii=True, indent=2) + "\n", encoding="utf-8")
-          print(f"app_build version synced to {version}")
+          app_build_path.write_text(json.dumps(payload, ensure_ascii=True, indent=2) + "\n", encoding="utf-8")
+
+          pyproject_path = Path("pyproject.toml")
+          text = pyproject_path.read_text(encoding="utf-8")
+          text, version_hits = re.subn(r'(?m)^version = "[^"]*"', f'version = "{version}"', text, count=1)
+          text, code_hits = re.subn(r"(?m)^build_number = \d+", f"build_number = {version_code}", text, count=1)
+          if (version_hits, code_hits) != (1, 1):
+              raise SystemExit(
+                  "Could not update pyproject.toml "
+                  f"(version matches={version_hits}, build_number matches={code_hits})"
+              )
+          pyproject_path.write_text(text, encoding="utf-8", newline="\n")
+
+          lock_path = Path("uv.lock")
+          lock_text = lock_path.read_text(encoding="utf-8")
+          lock_text, lock_hits = re.subn(
+              r'(?m)^(\[\[package\]\]\nname = "[^"]+"\nversion = ")[^"]*("\nsource = \{ editable = "\." \})',
+              lambda match: f"{match.group(1)}{version}{match.group(2)}",
+              lock_text,
+          )
+          if lock_hits != 1:
+              raise SystemExit(f"Expected exactly one editable project entry in {lock_path}, found {lock_hits}")
+          lock_path.write_text(lock_text, encoding="utf-8", newline="\n")
+
+          print(f"version={version} versionCode={version_code} applied to app_build.json, pyproject.toml, uv.lock")
           PY
 
           cat src/gsm/app_data/app_build.json
+          grep -E '^(version|build_number) = ' pyproject.toml
 
       - name: Deploy GSM project to VPS (rsync)
         if: steps.release_tag.outputs.release_created == 'true'
@@ -299,6 +338,42 @@ jobs:
             exit 1
           }
 
+      - name: Verify APK version metadata
+        if: steps.release_tag.outputs.release_created == 'true'
+        shell: bash
+        env:
+          RELEASE_TAG: ${{ steps.release_tag.outputs.release_tag }}
+        run: |
+          set -euo pipefail
+          # Flet prend versionName/versionCode dans pyproject.toml au moment du
+          # build : si la version n'a pas été appliquée avant `flet build apk`,
+          # l'APK repart silencieusement avec le numéro précédent (c'est ce qui
+          # est arrivé : release v1.1.1 livrée en versionName=1.0.44, versionCode=1).
+          # On refuse de publier un APK dont la version ne correspond pas au tag.
+          IFS=. read -r major minor patch <<< "${RELEASE_TAG#v}"
+          case "${major}${minor}${patch}" in
+            ''|*[!0-9]*)
+              echo "::error::Unexpected release tag: ${RELEASE_TAG}"
+              exit 1
+              ;;
+          esac
+          expected_code=$(( major * 1000000 + minor * 1000 + patch ))
+          expected_name="${RELEASE_TAG#v}"
+
+          aapt2=$(find "$ANDROID_SDK_ROOT/build-tools" -name 'aapt2*' -type f | sort -V | tail -1)
+          apk=$(ls build/apk/*.apk | head -n 1)
+          badging=$("$aapt2" dump badging "$apk")
+          echo "$badging" | head -n 1
+          echo "$badging" | grep -q "versionName='${expected_name}'" || {
+            echo "::error::APK versionName does not match ${expected_name}."
+            exit 1
+          }
+          echo "$badging" | grep -q "versionCode='${expected_code}'" || {
+            echo "::error::APK versionCode does not match ${expected_code}."
+            exit 1
+          }
+          echo "APK metadata OK: ${expected_name} (versionCode ${expected_code})"
+
       - name: Upload build log artifact
         if: always() && steps.release_tag.outputs.release_created == 'true'
         uses: actions/upload-artifact@v4
@@ -356,8 +431,13 @@ jobs:
             exit 1
           fi
           for apk in "${apks[@]}"; do
-            gh release upload "$RELEASE_TAG" "$apk" --clobber
+            # Join a checksum to the release: on a phone a 200+ MB download can
+            # be truncated silently, which Android reports as "problem parsing
+            # the package". `sha256sum -c GSM.apk.sha256` tells instantly.
+            ( cd "$(dirname "$apk")" && sha256sum "$(basename "$apk")" > "$(basename "$apk").sha256" )
+            gh release upload "$RELEASE_TAG" "$apk" "$apk.sha256" --clobber
           done
+          cat build/apk/*.apk.sha256
       # Les APKs seront désormais disponibles à deux endroits :
       # - GitHub Release (onglet Releases du repo) — attachés automatiquement à la release créée par semantic-release via gh release upload
       #  - Artefacts du workflow (onglet Actions → run → Artifacts) — téléchargeables 90 jours, nommés apk-<sha>
@@ -483,15 +563,24 @@ jobs:
 
           pyproject_version=$(python -c "import pathlib,tomllib; data=tomllib.loads(pathlib.Path('pyproject.toml').read_text(encoding='utf-8')); print(str(data.get('project',{}).get('version','')).strip())")
           uv_lock_version=$(python -c "import re,pathlib; text=pathlib.Path('uv.lock').read_text(encoding='utf-8'); m=re.search(r'(?ms)^\[\[package\]\]\nname = \"[^\"]+\"\nversion = \"([^\"]+)\"\nsource = \{ editable = \"\.\" \}', text); print(m.group(1) if m else '')")
+          version_code=$(python -c "import pathlib,tomllib; data=tomllib.loads(pathlib.Path('pyproject.toml').read_text(encoding='utf-8')); print(data.get('tool',{}).get('flet',{}).get('build_number',''))")
 
           echo "app_build version: ${app_build_version}"
           echo "pyproject version: ${pyproject_version}"
           echo "uv.lock version:   ${uv_lock_version}"
+          echo "APK versionCode:   ${version_code}"
 
           if [ -z "$app_build_version" ] || [ -z "$pyproject_version" ] || [ -z "$uv_lock_version" ]; then
             echo "::error::Empty version value detected during consistency check."
             exit 1
           fi
+
+          case "$version_code" in
+            ''|*[!0-9]*)
+              echo "::error::Invalid [tool.flet].build_number (versionCode) in pyproject.toml: '${version_code}'"
+              exit 1
+              ;;
+          esac
 
           if [ "$app_build_version" != "$pyproject_version" ] || [ "$app_build_version" != "$uv_lock_version" ]; then
             echo "::error::Version mismatch between src/gsm/app_data/app_build.json, pyproject.toml and uv.lock"

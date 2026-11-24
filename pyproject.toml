@@ -1,7 +1,7 @@
 [project]
 name = "GSM"
 version = "1.1.1"
-description = "Up U!"
+description = "GSM"
 readme = "README.md"
 requires-python = ">=3.13"
 authors = [{ name = "GrCOTE7", email = "GrCOTE7@gmail.com" }]
@@ -29,7 +29,7 @@ dev = ["pytest>=8.0.0"]
 
 [tool.flet]
 org = "com.mycompany"
-product = "Up You!"
+product = "GSM"
 company = "NewNRJ"
 copyright = "Copyright (C) 2026 by GrCOTE7"
 compile.app = true

@@ -492,6 +492,33 @@ ANDROID_KEY_PASSWORD    mot de passe de la clé (Svt mme que STORE_PW)
 
 C:\Users\utilisateur\AppData\Local\Android\Sdk\build-tools\34.0.0\apksigner.bat verify --print-certs gsm.apk
 
+### Installer l'APK d'une release
+
+Un APK compilé **en local** (`apk.ps1`) est signé avec la clé de debug d'Android,
+alors que l'APK d'une release est signé avec le keystore de release : les deux
+signatures sont incompatibles. Si une version locale est déjà installée,
+Android refuse la release avec :
+
+```
+INSTALL_FAILED_UPDATE_INCOMPATIBLE: Existing package com.mycompany.gsm
+signatures do not match newer version; ignoring!
+```
+
+Dans ce cas, désinstaller d'abord l'ancienne app (elle apparaît sous le nom
+`GSM` dans le tiroir d'applications) :
+
+```bash
+adb uninstall com.mycompany.gsm
+adb install GSM.apk
+```
+
+Vérifier aussi que le téléchargement n'est pas tronqué (APK > 200 Mo) grâce au
+`GSM.apk.sha256` joint à la release :
+
+```bash
+sha256sum -c GSM.apk.sha256
+```
+
 ---
 
 ## Version utilisée
