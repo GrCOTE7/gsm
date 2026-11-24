@@ -1,7 +1,7 @@
 import flet as ft
 
 from upu.views.templates.default import named_view
-from upu.views.partials import build_release_update_card
+from upu.views.partials import build_release_update_card_if_relevant
 
 
 def build() -> ft.Control:
@@ -20,5 +20,5 @@ def build() -> ft.Control:
         "lacinia, nisl at fermentum posuere, mauris sapien vulputate lorem, "
         "eu feugiat risus leo vitae arcu. Integer aliquet, sem id convallis "
         "blandit, justo erat tincidunt nibh, at efficitur mi velit in nisl of Home 1.0.10+.",
-        extra=build_release_update_card(),
+        extra=build_release_update_card_if_relevant(),
     )

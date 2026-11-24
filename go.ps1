@@ -21,7 +21,7 @@ function Write-GoDebug([string]$Message) {
 }
 Write-GoDebug "start args='$($args -join ' ')' PWD=$(Get-Location)"
 Write-GoDebug "PATH=$env:PATH"
-Write-GoDebug "VIRTUAL_ENV=$env:VIRTUAL_ENV UV_PROJECT_ENVIRONMENT=$env:UV_PROJECT_ENVIRONMENT"
+Write-GoDebug "VIRTUAL_ENV=$env:VIRTUAL_ENV UV_PROJECT_ENVIRONMENT=$env:UV_PROJECT_ENVIRONMENT UPU_ALONE=$env:UPU_ALONE"
 trap { Write-GoDebug "ERREUR: $_"; break }
 
 function Resolve-LauncherPython {
