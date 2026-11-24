@@ -108,7 +108,15 @@ def _resolve_main_file(app: str) -> Path:
 
 
 def _build_flet_command(main_file: Path, mode: str) -> list[str]:
-    """Construit la commande Flet selon le mode (APP → desktop, WEB → web)."""
+    """Construit la commande Flet selon le mode (APP → desktop, WEB → web).
+
+    Le hot reload (`-r`) est volontairement réservé au mode desktop : en web,
+    l'application écrit elle-même dans `src/` (`.flet/storage/temp/…`,
+    `src/gsm/app_data/app_state.json`), ce qui déclenche un redémarrage du
+    serveur à chaque écriture. Le navigateur n'affichait alors qu'une
+    « connexion réinitialisée », le serveur redémarrant en boucle.
+    """
+    hot_reload = [] if mode == "web" else ["-r"]
     uv_exe = _find_uv_executable()
     if uv_exe:
         # Sans `--active` : `uv run` resynchronise l'environnement (pyproject +
@@ -118,26 +126,12 @@ def _build_flet_command(main_file: Path, mode: str) -> list[str]:
         cmd = [uv_exe, "run"]
         for extra in _required_extras(mode):
             cmd += ["--extra", extra]
-        cmd += [
-            "python",
-            "-m",
-            "flet.cli",
-            "run",
-            str(main_file),
-            "-r",  # --recursive : hot reload (mode "release" de la doc flet)
-        ]
+        cmd += ["python", "-m", "flet.cli", "run", str(main_file), *hot_reload]
     else:
         print(
             "[FLET][WARN] uv introuvable: fallback vers l'interpréteur Python courant."
         )
-        cmd = [
-            sys.executable,
-            "-m",
-            "flet.cli",
-            "run",
-            str(main_file),
-            "-r",  # --recursive : hot reload
-        ]
+        cmd = [sys.executable, "-m", "flet.cli", "run", str(main_file), *hot_reload]
 
     if mode == "web":
         cmd.append("--web")
@@ -174,4 +168,3 @@ def _find_uv_executable() -> str | None:
                 return path
 
     return None
-
