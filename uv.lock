@@ -556,7 +556,7 @@ wheels = [
 
 [[package]]
 name = "gsm"
-version = "1.0.44"
+version = "1.1.1"
 source = { editable = "." }
 dependencies = [
     { name = "certifi" },

@@ -454,18 +454,47 @@ jobs:
 
           sed -i "s/^version = \".*\"/version = \"${app_build_version}\"/" pyproject.toml
 
+          # uv records the project version in uv.lock. Without this the lockfile
+          # stays one release behind, `uv lock --check` fails, and the container
+          # CMD (`uv run`) has to re-lock at startup. A version-only change does
+          # not touch dependencies: uv would only rewrite this one line.
+          APP_BUILD_VERSION="$app_build_version" python - <<'PY'
+          import os
+          import re
+          from pathlib import Path
+
+          version = os.environ["APP_BUILD_VERSION"]
+          path = Path("uv.lock")
+
+          if not path.exists():
+              raise SystemExit(f"Missing {path}")
+
+          text = path.read_text(encoding="utf-8")
+          pattern = re.compile(
+              r'(?m)^(\[\[package\]\]\nname = "[^"]+"\nversion = ")[^"]*("\nsource = \{ editable = "\." \})'
+          )
+          text, count = pattern.subn(lambda match: f"{match.group(1)}{version}{match.group(2)}", text)
+          if count != 1:
+              raise SystemExit(f"Expected exactly one editable project entry in {path}, found {count}")
+
+          path.write_text(text, encoding="utf-8", newline="\n")
+          print(f"uv.lock version synced to {version}")
+          PY
+
           pyproject_version=$(python -c "import pathlib,tomllib; data=tomllib.loads(pathlib.Path('pyproject.toml').read_text(encoding='utf-8')); print(str(data.get('project',{}).get('version','')).strip())")
+          uv_lock_version=$(python -c "import re,pathlib; text=pathlib.Path('uv.lock').read_text(encoding='utf-8'); m=re.search(r'(?ms)^\[\[package\]\]\nname = \"[^\"]+\"\nversion = \"([^\"]+)\"\nsource = \{ editable = \"\.\" \}', text); print(m.group(1) if m else '')")
 
           echo "app_build version: ${app_build_version}"
           echo "pyproject version: ${pyproject_version}"
+          echo "uv.lock version:   ${uv_lock_version}"
 
-          if [ -z "$app_build_version" ] || [ -z "$pyproject_version" ]; then
+          if [ -z "$app_build_version" ] || [ -z "$pyproject_version" ] || [ -z "$uv_lock_version" ]; then
             echo "::error::Empty version value detected during consistency check."
             exit 1
           fi
 
-          if [ "$app_build_version" != "$pyproject_version" ]; then
-            echo "::error::Version mismatch between src/gsm/app_data/app_build.json and pyproject.toml"
+          if [ "$app_build_version" != "$pyproject_version" ] || [ "$app_build_version" != "$uv_lock_version" ]; then
+            echo "::error::Version mismatch between src/gsm/app_data/app_build.json, pyproject.toml and uv.lock"
             exit 1
           fi
 
@@ -481,7 +510,7 @@ jobs:
           branch="${GITHUB_REF_NAME:-main}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/gsm/app_data/app_build.json pyproject.toml
+          git add src/gsm/app_data/app_build.json pyproject.toml uv.lock
           git diff --cached --quiet && echo "Nothing to commit." && exit 0
           git commit -m "chore: sync versions to ${{ steps.release_tag.outputs.release_tag }} [skip ci]"
           # Le build Flet/npm laisse des fichiers modifiés dans l'arbre de
