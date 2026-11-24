@@ -4,6 +4,7 @@ Trois fonctions indépendantes, chacune retournant un dict structuré,
 prêt à être affiché par les cards de components/diagnostic/.
 """
 
+import json
 import os, platform, socket, sys
 from importlib.metadata import PackageNotFoundError, version as pkg_version
 from pathlib import Path
@@ -17,6 +18,25 @@ def _safe_version(pkg: str) -> str:
         return pkg_version(pkg)
     except PackageNotFoundError:
         return "—"
+
+
+# app_build.json est la source de vérité du projet : c'est lui que le workflow
+# de release met à jour, et lui que l'APK embarque. Les métadonnées du paquet
+# `GSM`, elles, viennent du pyproject.toml installé à la construction de
+# l'image — donc de la version *précédente* au moment du déploiement.
+_APP_BUILD_PATH = Path(__file__).resolve().parents[1] / "app_data" / "app_build.json"
+
+
+def _app_version() -> str:
+    """Version de l'app depuis app_build.json, sinon métadonnées du paquet."""
+    try:
+        payload = json.loads(_APP_BUILD_PATH.read_text(encoding="utf-8"))
+        version = str(payload.get("version") or "").strip()
+        if version:
+            return version
+    except (OSError, ValueError, TypeError):
+        pass
+    return _safe_version("GSM")
 
 
 def _in_docker() -> bool:
@@ -44,7 +64,7 @@ def collect_versions() -> dict:
         },
         "app": {
             "name": "GSM",
-            "version": _safe_version("GSM"),
+            "version": _app_version(),
         },
     }
 
