@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/grcote7/gsm/compare/v1.1.2...v1.1.3) (2026-11-24)
+
+
+### Bug Fixes
+
+* start the Android app (explicit .env path) ([dac8060](https://github.com/grcote7/gsm/commit/dac806000965971d9c9e4e956d25c6203d9c43eb))
+
 ## [1.1.2](https://github.com/grcote7/gsm/compare/v1.1.1...v1.1.2) (2026-11-24)
 
 
