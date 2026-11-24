@@ -1,3 +1,20 @@
+## [1.0.44](https://github.com/grcote7/gsm/compare/v1.0.43...v1.0.44) (2026-11-24)
+
+
+### Bug Fixes
+
+* **ci:** autostash before the metadata rebase and sync 1.0.43 [skip ci] ([c5be7bf](https://github.com/grcote7/gsm/commit/c5be7bfb26383e0ce6aef3f7d17bf8b108a0f704))
+* **diag:** read the app version from app_build.json ([88d088c](https://github.com/grcote7/gsm/commit/88d088c3995dd59c884f26c822c4ed721961b5b9))
+* **go:** disable hot reload in web mode, it restart-looped the server [skip ci] ([ef718a3](https://github.com/grcote7/gsm/commit/ef718a34e82fb029afc3686448a9540577728eda))
+* **go:** ignore pid files left by a closed CLI [skip ci] ([c2310b1](https://github.com/grcote7/gsm/commit/c2310b1f2b02ddd399ddbd0dd21c3ef69c6f871d))
+* **go:** make the dedicated CLI visible, inheritable and diagnosable [skip ci] ([1c1cd94](https://github.com/grcote7/gsm/commit/1c1cd943acf3f3df72e5d4a446411d9efbbf12e8))
+* **go:** repair the liveness query and launch the console directly [skip ci] ([d8961d3](https://github.com/grcote7/gsm/commit/d8961d367a6f3b69d9acd096446e8a39c8250ad5))
+* **go:** target our own CLI window by title, ignore proxy processes [skip ci] ([4e73f01](https://github.com/grcote7/gsm/commit/4e73f01c1dc97220b448c7c328abb80a06dbd945))
+* **go:** wait long enough for a cold Windows Terminal start [skip ci] ([350dfe8](https://github.com/grcote7/gsm/commit/350dfe8d1da5f567fc627fefb20ea86a9d14f072))
+* **upu:** disable the startup update dialog too [skip ci] ([30852ce](https://github.com/grcote7/gsm/commit/30852cef591c380d1835defcc6ea78030c6b7bce))
+* **upu:** hide the update card when UPU runs alone [skip ci] ([e48a4ae](https://github.com/grcote7/gsm/commit/e48a4aee37c806752b93f32987e7cecdb16ce9ef))
+* **upu:** never show the release update card [skip ci] ([1ec93e0](https://github.com/grcote7/gsm/commit/1ec93e0aa85ea81704ab258ec134ccbd8ee23f1a))
+
 ## [1.0.43](https://github.com/grcote7/gsm/compare/v1.0.42...v1.0.43) (2026-11-24)
 
 
