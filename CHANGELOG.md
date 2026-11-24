@@ -1,3 +1,12 @@
+## [1.0.43](https://github.com/grcote7/gsm/compare/v1.0.42...v1.0.43) (2026-11-24)
+
+
+### Bug Fixes
+
+* **ci:** let the release bot commit without husky hooks, sync 1.0.42 [skip ci] ([f421eb2](https://github.com/grcote7/gsm/commit/f421eb248aa25df305755cb493f49c3400cc7c11))
+* **deploy:** rebuild the container and pin a flet-web compatible fastapi [skip ci] ([7e2af25](https://github.com/grcote7/gsm/commit/7e2af2591176d55bb7a43e97d52797e8b796d8df))
+* **go:** never leave the user with nothing when the dedicated CLI fails ([f0df48f](https://github.com/grcote7/gsm/commit/f0df48fd5fbb1d426bc38158b5919c42ec799e5b))
+
 ## [1.0.42](https://github.com/grcote7/gsm/compare/v1.0.41...v1.0.42) (2026-11-23)
 
 
