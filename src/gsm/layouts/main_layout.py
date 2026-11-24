@@ -57,16 +57,16 @@ class MainLayout:
             if pagelet_ref.current is not None:
                 await pagelet_ref.current.show_drawer()
 
-        async def handle_drawer_change(e: ft.Event[ft.NavigationDrawer]) -> None:
-            target = NavBar.path_for_selected_index(e.control.selected_index)
-
-            if target is None:
-                return
-
+        async def _select_route(target: str) -> None:
             if pagelet_ref.current is not None:
                 await pagelet_ref.current.close_drawer()
 
             ft.context.page.navigate(target)
+
+        def handle_drawer_select(target: str) -> None:
+            # ListTile.on_click est synchrone : on planifie la fermeture du
+            # menu + la navigation dans une tâche de la page.
+            ft.context.page.run_task(_select_route, target)
 
         return ft.Pagelet(
             ref=pagelet_ref,
@@ -77,7 +77,7 @@ class MainLayout:
                 brand_is_link=not home_active,
             ),
             drawer=NavBar.drawer(
-                on_change=handle_drawer_change,
+                on_select=handle_drawer_select,
                 selected_index=NavBar.index_for_path(ft.context.page.route),
             ),
             content=ft.Container(

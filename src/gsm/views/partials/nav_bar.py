@@ -2,6 +2,8 @@
 
 import flet as ft
 
+from typing import Callable
+
 from gsm.routing.routes_registry import PAGES
 
 
@@ -90,9 +92,19 @@ class NavBar:
     @staticmethod
     @ft.component
     def drawer(
-        on_change: ft.ControlEventHandler[ft.NavigationDrawer] | None,
+        on_select: Callable[[str], None] | None = None,
         selected_index: int = 0,
     ) -> ft.NavigationDrawer:
+        """Menu latéral.
+
+        Les entrées sont des `ListTile`, pas des `NavigationDrawerDestination` :
+        c'est le seul contrôle qui expose `mouse_cursor`, indispensable pour que
+        la main apparaisse au survol. La sélection reste rendue par
+        `selected`/icône pleine, et l'entrée de la page courante n'est ni
+        cliquable ni « curseur main ».
+        """
+
+        destinations = [page for page in PAGES if page.label is not None]
 
         return ft.NavigationDrawer(
             controls=[
@@ -109,13 +121,14 @@ class NavBar:
                     ),
                 ),
                 *[
-                    NavBar._destination(page)
-                    for page in PAGES
-                    if page.label is not None
+                    NavBar._destination(
+                        page,
+                        active=(index == selected_index),
+                        on_select=on_select,
+                    )
+                    for index, page in enumerate(destinations)
                 ],
             ],
-            selected_index=selected_index,
-            on_change=on_change,
         )
 
     # ========================================================
@@ -123,12 +136,34 @@ class NavBar:
     # ========================================================
 
     @staticmethod
-    def _destination(page) -> ft.NavigationDrawerDestination:
+    def _destination(
+        page,
+        active: bool = False,
+        on_select: Callable[[str], None] | None = None,
+    ) -> ft.ListTile:
+        """Entrée du menu pour `page`.
 
-        return ft.NavigationDrawerDestination(
-            label=page.label,
-            icon=page.icon or ft.Icons.CIRCLE_OUTLINED,
-            selected_icon=page.selected_icon or page.icon or ft.Icons.CIRCLE_OUTLINED,
+        Sur la page courante : icône pleine, sélectionnée, sans clic ni curseur.
+        Ailleurs : curseur main et navigation vers la page au clic.
+        """
+
+        icon = page.icon or ft.Icons.CIRCLE_OUTLINED
+        if active:
+            icon = page.selected_icon or icon
+
+        return ft.ListTile(
+            leading=ft.Icon(icon),
+            title=ft.Text(page.label or ""),
+            selected=active,
+            # Look « pastille » proche des destinations Material d'origine.
+            shape=ft.RoundedRectangleBorder(radius=28),
+            selected_tile_color=ft.Colors.SECONDARY_CONTAINER,
+            on_click=(
+                None
+                if active or on_select is None
+                else (lambda _e, path=page.path: on_select(path))
+            ),
+            mouse_cursor=None if active else ft.MouseCursor.CLICK,
         )
 
     # ========================================================
