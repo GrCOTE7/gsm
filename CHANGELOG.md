@@ -1,3 +1,20 @@
+# [1.1.0](https://github.com/grcote7/gsm/compare/v1.0.44...v1.1.0) (2026-11-24)
+
+
+### Bug Fixes
+
+* **ci:** clean the tree before the metadata rebase, sync 1.0.44 [skip ci] ([4d35b62](https://github.com/grcote7/gsm/commit/4d35b628d0870eccd2ed979dc85dfb85075570d6))
+* **ui:** carry the hand cursor on a GestureDetector [skip ci] ([b73f6c5](https://github.com/grcote7/gsm/commit/b73f6c5f4f731f16d4131e2ed106f6b36383180b))
+* **ui:** drop the invalid mouse_cursor kwarg that froze navigation [skip ci] ([89933b4](https://github.com/grcote7/gsm/commit/89933b44debb0f2073552b89ddbad51e83be0da2))
+* **ui:** never read ft.context.page while rendering the brand [skip ci] ([109b42e](https://github.com/grcote7/gsm/commit/109b42ea23a42ba27d98f8f911d3a7c2ffd2dfab))
+
+
+### Features
+
+* **ui:** hand cursor on drawer entries that are not the current page [skip ci] ([36dc749](https://github.com/grcote7/gsm/commit/36dc749b1922c75efa8aad820b149ca3fdd0f118))
+* **ui:** make the GSM brand clickable back to home [skip ci] ([2dda473](https://github.com/grcote7/gsm/commit/2dda4732eed19cb596e802f103f32d489c19d455))
+* **ui:** show a hand cursor on the clickable GSM brand [skip ci] ([dd3d102](https://github.com/grcote7/gsm/commit/dd3d102f03a3d2068d1d3c868f1d25b3b72644a1))
+
 ## [1.0.44](https://github.com/grcote7/gsm/compare/v1.0.43...v1.0.44) (2026-11-24)
 
 
