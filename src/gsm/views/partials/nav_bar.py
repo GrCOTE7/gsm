@@ -72,7 +72,6 @@ class NavBar:
             on_click=lambda _e: ft.context.page.navigate("/"),
             ink=True,
             tooltip="Aller à l'accueil",
-            mouse_cursor=ft.MouseCursor.CLICK,
             padding=ft.Padding.symmetric(horizontal=6, vertical=2),
             border_radius=6,
         )
