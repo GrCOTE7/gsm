@@ -487,9 +487,22 @@ jobs:
           # Le build Flet/npm laisse des fichiers modifiés dans l'arbre de
           # travail : ils empêchaient le rebase (exit 128) et le --autostash
           # échouait à les réappliquer. Le commit ci-dessus contient tout ce
-          # qui nous intéresse, donc on nettoie le reste avant de rebaser.
+          # qui nous intéresse, donc on jette le reste avant de rebaser.
           git reset --hard HEAD
-          git pull --rebase origin "$branch"
+          # Garde-fou : un fichier dont le blob est versionné en CRLF alors que
+          # .gitattributes impose des LF ne peut jamais être propre après un
+          # checkout (git réécrit le fichier en LF puis le compare au blob
+          # CRLF). `git reset --hard` ne peut pas le corriger : on échoue ici
+          # avec un message actionnable plutôt qu'avec le "You have unstaged
+          # changes" du rebase, qui ne dit pas quel fichier est en cause.
+          if ! git diff --quiet || ! git diff --cached --quiet; then
+            echo "::error::Working tree still dirty after 'git reset --hard':"
+            git status --short --untracked-files=no
+            echo "::error::Committed line endings do not match .gitattributes; run 'git add --renormalize .' and commit."
+            exit 1
+          fi
+          git fetch origin "$branch"
+          git rebase "origin/$branch"
           git push origin "HEAD:refs/heads/$branch"
 
       - name: Quick sync version metadata to VPS

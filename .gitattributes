@@ -1,6 +1,12 @@
 # Husky hooks and shell scripts must keep LF endings: they are executed by
 # /bin/sh on the Linux runners, where a trailing CR makes `set -e` fail with
 # "set: Illegal option -" (this broke the release workflow's metadata commit).
+#
+# The committed blobs must be LF too: with `eol=lf`, a CRLF blob is checked out
+# as LF, so `git diff` compares LF against CRLF and reports the file as modified
+# forever. `git reset --hard` cannot fix that, which blocked the release
+# workflow's rebase ("You have unstaged changes", exit 128). Keep blobs
+# normalized with `git add --renormalize .` after changing eol rules.
 *.sh text eol=lf
 .husky/* text eol=lf
 .husky/** text eol=lf
