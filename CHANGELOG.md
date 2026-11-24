@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/grcote7/gsm/compare/v1.1.1...v1.1.2) (2026-11-24)
+
+
+### Bug Fixes
+
+* **ci:** ship the release version inside the APK ([b6db232](https://github.com/grcote7/gsm/commit/b6db232d64ba1b8547cc2f54ed17df388f7a21ea))
+
 ## [1.1.1](https://github.com/grcote7/gsm/compare/v1.1.0...v1.1.1) (2026-11-24)
 
 
