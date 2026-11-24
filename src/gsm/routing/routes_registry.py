@@ -25,6 +25,7 @@ from gsm.views.pages.about import AboutPage
 from gsm.views.pages.counter import CounterPage
 from gsm.views.pages.test import TestPage
 
+
 @dataclass(frozen=True)
 class PageRoute:
     """Décrit une page navigable : où elle vit, ce qu'elle affiche."""
