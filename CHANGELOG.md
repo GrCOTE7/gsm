@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/grcote7/gsm/compare/v1.1.5...v1.1.6) (2026-11-25)
+
+
+### Bug Fixes
+
+* set less height for diagnostic in test page ([09a4bdf](https://github.com/grcote7/gsm/commit/09a4bdf977443c602bfadc5e0ac8f847833f4e32))
+
 ## [1.1.5](https://github.com/grcote7/gsm/compare/v1.1.4...v1.1.5) (2026-11-25)
 
 
