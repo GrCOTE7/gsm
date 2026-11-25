@@ -9,12 +9,41 @@ from upu.services.android_bridge import launch_url_intent
 from upu.helpers.snackbar import show_snackbar
 
 
+def _looks_like_page(obj: object) -> bool:
+    return isinstance(obj, ft.Page) or (
+        obj is not None and callable(getattr(obj, "run_task", None))
+    )
+
+
 def _as_page(target: object) -> ft.Page | None:
-    if isinstance(target, ft.Page):
+    """Page associée à un événement ou à un contrôle.
+
+    Flet 1.0 expose `e.page` sur les événements (`TapEvent`, `ClickEvent`, …).
+    L'ancienne forme (`e.control.page`) n'existe plus et renvoyait `None`, ce qui
+    faisait retomber `open_url()` sur `webbrowser.open()` — silencieusement
+    inopérant sur Android.
+    """
+    if _looks_like_page(target):
         return target
 
-    control = getattr(target, "control", None)
-    return getattr(control, "page", None)
+    try:
+        page = getattr(target, "page", None)
+    except Exception:  # noqa: BLE001 - contrôle non attaché
+        page = None
+    if _looks_like_page(page):
+        return page
+
+    try:
+        control = getattr(target, "control", None)
+    except Exception:  # noqa: BLE001
+        control = None
+
+    try:
+        page = getattr(control, "page", None) if control is not None else None
+    except Exception:  # noqa: BLE001
+        page = None
+
+    return page if _looks_like_page(page) else None
 
 
 def _get_platform_name(page: ft.Page | None) -> str:
@@ -42,31 +71,33 @@ def _is_web(page: ft.Page | None) -> bool:
 
 
 def open_url(e: object, url: str) -> None:
-    """Ouvre *url* en tenant compte de la plateforme (mobile vs desktop)."""
+    """Ouvre *url* sur toutes les plateformes.
+
+    Flet 1.0 a supprimé `page.launch_url()` : l'ouverture passe par le service
+    `ft.UrlLauncher()` (mobile, desktop et web). Sur Android, un intent natif
+    puis `webbrowser` servent de derniers recours.
+    """
     page = _as_page(e)
-    if _get_platform_name(page) == "android" and launch_url_intent(url):
-        return
 
-    if _is_mobile(page) and page is not None and hasattr(page, "launch_url"):
+    async def _launch() -> None:
+        try:
+            await ft.UrlLauncher().launch_url(url)
+            return
+        except Exception as exc:  # noqa: BLE001
+            print(f"open_url: UrlLauncher a échoué ({exc}) url={url}")
 
-        async def _open_mobile_url() -> None:
-            try:
-                await page.launch_url(url)
-            except Exception:
-                webbrowser.open(url)
+        if launch_url_intent(url):
+            return
 
-        page.run_task(_open_mobile_url)
-        return
+        webbrowser.open(url)
 
-    if page is not None and hasattr(page, "launch_url"):
+    if page is not None:
+        runner = getattr(page, "run_task", None)
+        if callable(runner):
+            runner(_launch)
+            return
 
-        async def _open_desktop_url() -> None:
-            try:
-                await page.launch_url(url)
-            except Exception:
-                webbrowser.open(url)
-
-        page.run_task(_open_desktop_url)
+    if launch_url_intent(url):
         return
 
     webbrowser.open(url)
