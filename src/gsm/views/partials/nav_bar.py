@@ -1,5 +1,8 @@
 # src/gsm/views/partials/nav_bar.py
 
+# pyright: reportCallIssue=false
+# Évite les faux positifs de pyright sur les appels de fonctions Flet
+
 import flet as ft
 
 from typing import Callable
@@ -33,6 +36,7 @@ class NavBar:
             icon=ft.Icons.MENU,
             tooltip="Menu",
             on_click=on_menu_click,
+            mouse_cursor=ft.MouseCursor.CLICK,
         )
         appbar.leading_width = 48
         appbar.title = ft.Row(
