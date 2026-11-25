@@ -1,24 +1,28 @@
 import flet as ft
 
-from upu.config import (
-    GITHUB_LATEST_RELEASE_PAGE,
-    VERSION,
-    get_latest_release_info,
-    get_latest_stable_version,
-    is_update_available,
-)
+from gsm.services.update_service import get_update_info
 from upu.helpers.app_actions import open_url
 from upu.helpers.buttons import filled_button
 
 
-def build_release_update_card(width: int = 360) -> ft.Control:
-    latest_release = get_latest_release_info(timeout_seconds=2, allow_remote=True)
-    latest_version = get_latest_stable_version(timeout_seconds=2, allow_remote=True)
-    update_available = is_update_available(VERSION, allow_remote=True)
-    release_page_url = GITHUB_LATEST_RELEASE_PAGE.removesuffix("/latest")
+def build_release_update_card(
+    info: dict | None = None, width: int = 360
+) -> ft.Control:
+    """Carte « Mises à jour » : versions locale/GitHub et lien vers la release.
+
+    `info` vient de `gsm.services.update_service.get_update_info()` : le passer
+    évite un second appel réseau quand l'appelant l'a déjà récupéré.
+    """
+    info = info or get_update_info()
+
+    local_version = str(info.get("local_version") or "?")
+    latest_version = str(info.get("latest_version") or "?")
+    update_available = bool(info.get("update_available"))
+    release_url = str(info.get("html_url") or "")
 
     def open_latest_release(e):
-        open_url(e, release_page_url)
+        if release_url:
+            open_url(e, release_url)
 
     status_text = (
         "Nouvelle version disponible" if update_available else "Application a jour"
@@ -35,7 +39,7 @@ def build_release_update_card(width: int = 360) -> ft.Control:
             spacing=8,
             controls=[
                 ft.Text("Mises à jour", weight=ft.FontWeight.BOLD, size=18),
-                ft.Text(f"Version locale: {VERSION}"),
+                ft.Text(f"Version locale: {local_version}"),
                 ft.Text(f"Dernière stable GitHub: {latest_version}"),
                 ft.Text(status_text, color=status_color, weight=ft.FontWeight.W_600),
                 filled_button(
