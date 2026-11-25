@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/grcote7/gsm/compare/v1.1.3...v1.1.4) (2026-11-25)
+
+
+### Bug Fixes
+
+* add hand on menu burger icon ([92c5138](https://github.com/grcote7/gsm/commit/92c51382f72fd95c893249c75de13e7ffde875bb))
+
 ## [1.1.3](https://github.com/grcote7/gsm/compare/v1.1.2...v1.1.3) (2026-11-24)
 
 
