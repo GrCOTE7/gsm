@@ -10,7 +10,7 @@ from .sections.section_ui import divider
 class DiagnosticBlock:
     """Card de diagnostic de l'application."""
 
-    MAX_HEIGHT = 500  # px — au-delà, scrollbar verticale
+    MAX_HEIGHT = 420  # px — au-delà, scrollbar verticale
 
     # Marge intérieure de la card, posée par le Container ci-dessous.
     #
