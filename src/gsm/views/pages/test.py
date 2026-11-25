@@ -15,7 +15,7 @@ class TestPage:
     def view() -> ft.Control:
         return ft.Column(
             controls=[
-                Header.view(),
+                # Header.view(),
                 ft.Text("Test ready.", size=28, weight=ft.FontWeight.BOLD),
                 DiagnosticBlock.view(),
                 ft.Text(
