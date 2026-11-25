@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/grcote7/gsm/compare/v1.1.4...v1.1.5) (2026-11-25)
+
+
+### Bug Fixes
+
+* show the update card on the home page ([6154260](https://github.com/grcote7/gsm/commit/6154260f180c28d945bb1c76b1f35aab432369e4))
+
 ## [1.1.4](https://github.com/grcote7/gsm/compare/v1.1.3...v1.1.4) (2026-11-25)
 
 
