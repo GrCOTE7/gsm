@@ -1,3 +1,10 @@
+## [1.1.7](https://github.com/grcote7/gsm/compare/v1.1.6...v1.1.7) (2026-11-25)
+
+
+### Bug Fixes
+
+* open links on Android (UrlLauncher) ([034abde](https://github.com/grcote7/gsm/commit/034abdedb3ce5ee70d74ff79b671d1ab9d8ad28f))
+
 ## [1.1.6](https://github.com/grcote7/gsm/compare/v1.1.5...v1.1.6) (2026-11-25)
 
 
