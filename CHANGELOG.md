@@ -1,3 +1,10 @@
+## [1.1.8](https://github.com/grcote7/gsm/compare/v1.1.7...v1.1.8) (2026-11-25)
+
+
+### Bug Fixes
+
+* try 420 diag height ([a7d8a91](https://github.com/grcote7/gsm/commit/a7d8a91c2ce93a1807b6097ed65910667a240fe3))
+
 ## [1.1.7](https://github.com/grcote7/gsm/compare/v1.1.6...v1.1.7) (2026-11-25)
 
 
