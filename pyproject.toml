@@ -16,6 +16,8 @@ dependencies = [
     "pymox_kit",
     "rich>=15.0.0",
     "qrcode[pil]>=8.2",
+    "python-dotenv>=1.2.3",
+    "requests>=2.34.2",
     "pytest>=8.0.0",
     "flet-webview>=1.0.0",
     "typing-extensions>=4.16.0",
