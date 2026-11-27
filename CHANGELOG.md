@@ -1,3 +1,10 @@
+## [1.1.9](https://github.com/grcote7/gsm/compare/v1.1.8...v1.1.9) (2026-11-27)
+
+
+### Bug Fixes
+
+* declarative mode for main + ↑ ROADMAP ([f7273c4](https://github.com/grcote7/gsm/commit/f7273c4d6553d994cffcea72a44128aa5b8a2935))
+
 ## [1.1.8](https://github.com/grcote7/gsm/compare/v1.1.7...v1.1.8) (2026-11-25)
 
 
