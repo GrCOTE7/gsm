@@ -117,17 +117,24 @@ def main() -> None:
             }
         )
 
-    # Tri + top 10
+    # Tri décroissant par nombre de commits
     results.sort(key=lambda x: x["commits"], reverse=True)
-    top = results[:10]
 
-    # Affichage tableau
+    # Affichage du tableau complet
     scope = "tous dépôts (forks inclus)" if args.include_forks else "hors forks"
-    print(f"\nTop 10 — {scope}")
+    print(f"\nDépôts — {scope}")
     print(f"{'Repo':<40} {'Commits':>8}  URL")
     print("-" * 100)
-    for row in top:
+    for row in results:
         print(f"{row['repo']:<40} {row['commits']:>8}  {row['url']}")
+    print("-" * 100)
+
+    # Synthèse
+    top10_sum = sum(r["commits"] for r in results[:10])
+    total_sum = sum(r["commits"] for r in results)
+
+    print(f"{'Nombre de commits du top 10':<40} {top10_sum:>8}")
+    print(f"{'Nombre total de tous les dépôts':<40} {total_sum:>8}")
 
 
 if __name__ == "__main__":
