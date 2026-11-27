@@ -499,10 +499,8 @@ alors que l'APK d'une release est signé avec le keystore de release : les deux
 signatures sont incompatibles. Si une version locale est déjà installée,
 Android refuse la release avec :
 
-```
-INSTALL_FAILED_UPDATE_INCOMPATIBLE: Existing package com.mycompany.gsm
-signatures do not match newer version; ignoring!
-```
+  INSTALL_FAILED_UPDATE_INCOMPATIBLE: Existing package com.mycompany.gsm
+  signatures do not match newer version; ignoring!
 
 Dans ce cas, désinstaller d'abord l'ancienne app (elle apparaît sous le nom
 `GSM` dans le tiroir d'applications) :
@@ -545,8 +543,8 @@ python -W error::DeprecationWarning src/main.py
 
 ### Debug android / PC → Android Studio
 
-| Action                                    | Rebuild APK ? |
-| ----------------------------------------- | ------------- |
+| Action                                    | Rebuild APK ?  |
+| ----------------------------------------- | -------------- |
 | Modifier du Python                        | ❌ Non         |
 | Modifier du Flet                          | ❌ Non         |
 | Modifier la logique d’update              | ❌ Non         |
@@ -563,14 +561,17 @@ python -W error::DeprecationWarning src/main.py
 
 ### Actuels goals prioritaires
 
-* [ ] Intégrer dans GSM les pages UPU (Calculator, etc…)
+* [ ] Intégrer dans GSM depuis UpU
+  * [ ] Le style de la MenuBar
+  * [ ] Les pages Achives (Avec subMenu)
+  * [ ] Les pages simples (Calculator, etc…)
 * [ ] Problème de fin du process d'upgrade / mobile
 * [ ] Écrire tout le projet en Anglais (Scripts/comments, Doc & commentaires)
-* [ ] Selon demande, finir (ou pas) docs de base (✅ Git, ✅ VSC, Py, Libs, IA) + Add autres docs initiatiques
+* [ ] Selon demande, finir (ou pas) docs de base (✅ Git, ✅ VSC, ⬜ Py, ⬜ Libs, ⬜ IA) + ⬜ Add autres docs initiatiques
 * [ ] Mettre en place dans le WorkFlow, le build pour IPhone
 
 ### Done
 
 * [x] → Passage branche declarative / branche main
-* [x] Transformer tout le projet en mode reactif (Flutter & React-like)
+* [x] Transformer tout le projet en mode DÉCLARATIF (Flutter & React-like)
 * [x] Dernier reset complet du n° de V
