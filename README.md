@@ -559,12 +559,18 @@ python -W error::DeprecationWarning src/main.py
 
 ---
 
-## .🎯 Actuels goals prioritaires
+## .🎯 ROADMAP
 
-* [ ] Transformer tout le projet en mode reactif (Flutter & React-like)
-* [ ] → Passage branche declarative / branche main
-* [ ] Finir docs de base (✅ Git, ✅ VSC, Py, Libs, IA) + Add autres docs initiatiques
+### .🎯 Actuels goals prioritaires
+
+* [ ] Intégrer dans GSM les pages UPU (Calculator, etc…)
 * [ ] Mettre en place dans le WorkFlow, le build pour IPhone (→ $Thera...)
 * [ ] Problème de fin du process d'upgrade / mobile
+* [ ] Selon demande, finir (ou pas) docs de base (✅ Git, ✅ VSC, Py, Libs, IA) + Add autres docs initiatiques
 * [ ] Écrire tout le projet en Anglais (Doc & commentaires)
 * [x] Dernier reset complet du n° de V
+
+### Done
+
+* [x] → Passage branche declarative / branche main
+* [x] Transformer tout le projet en mode reactif (Flutter & React-like)
